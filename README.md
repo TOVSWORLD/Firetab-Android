@@ -12,6 +12,7 @@ Android 17 requires substantially more kernel/platform and graphics work.
 - [Evidence and feasibility](docs/FEASIBILITY.md)
 - [Continuation, resources, and build recipes](docs/CONTINUE.md)
 - [Work log and validation](docs/WORKLOG.md)
+- [Maintenance objective and kernel strategy](docs/MAINTENANCE.md)
 - [Pinned source inventory](evidence/sources.lock.json)
 - [Actual Android 11 patch failures](evidence/android11-patch-probe.json)
 
