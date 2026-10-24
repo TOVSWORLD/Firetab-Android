@@ -1,0 +1,23 @@
+diff --git a/BoardConfig.mk b/BoardConfig.mk
+index ee16872..d27a63a 100644
+--- a/BoardConfig.mk
++++ b/BoardConfig.mk
+@@ -17,7 +17,7 @@
+ DEVICE_PATH := device/amazon/douglas
+ 
+ # Inherit from Amazon MT8163 common
+--include device/amazon/mt8163-common/BoardConfigCommon.mk
++include device/amazon/mt8163-common/BoardConfigCommon.mk
+ 
+ # Assert
+ TARGET_OTA_ASSERT_DEVICE := douglas,KFDOWI
+diff --git a/device.mk b/device.mk
+index e194b6b..050eaba 100644
+--- a/device.mk
++++ b/device.mk
+@@ -25,4 +25,4 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+ $(call inherit-product, device/amazon/mt8163-common/mt8163.mk)
+ 
+ # Proprietary
+-$(call inherit-product-if-exists, vendor/douglas/douglas/douglas-vendor.mk)
++$(call inherit-product, vendor/amazon/douglas/douglas-vendor.mk)

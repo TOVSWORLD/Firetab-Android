@@ -1,0 +1,100 @@
+[
+  {
+    "project": "bionic",
+    "commit": "b67b03356ceb6171bd0cfdb88c3ee9413c476935",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/bionic/0001-Disable-Fstack-Protector.patch",
+    "missing": [],
+    "sha256": {
+      "libc/Android.bp": "086119c52e8b98ffd17bc234bf1f9822b6593c63be4b9ccac4a2b542251819d4"
+    },
+    "exit_code": 1,
+    "diagnostics": "Checking patch libc/Android.bp...\nerror: while searching for:\n    // Clang's exit-time destructor registration hides __dso_handle, but\n    // __dso_handle needs to have default visibility on ARM32. See b/73485611.\n    \"-Wexit-time-destructors\",\n]\n\n// Define some common cflags\n\nerror: patch failed: libc/Android.bp:53\nerror: libc/Android.bp: patch does not apply"
+  },
+  {
+    "project": "frameworks/base",
+    "commit": "2f5cf1e4fc1e8b1480d3c27a855f95d6d45429f4",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/frameworks/base/0001-Fix-HWUI-bitmaps-on-MTK-devices.patch",
+    "missing": [
+      "core/jni/android/graphics/Bitmap.cpp",
+      "core/jni/android/graphics/BitmapFactory.cpp"
+    ],
+    "sha256": {
+      "graphics/java/android/graphics/Bitmap.java": "a372631b6068622a7f62eaaf7ca3232fafd84b85811e50ebdbbe4020476bc54d"
+    },
+    "exit_code": 1,
+    "diagnostics": "Checking patch core/jni/android/graphics/Bitmap.cpp...\nerror: core/jni/android/graphics/Bitmap.cpp: No such file or directory\nChecking patch core/jni/android/graphics/BitmapFactory.cpp...\nerror: core/jni/android/graphics/BitmapFactory.cpp: No such file or directory\nChecking patch graphics/java/android/graphics/Bitmap.java..."
+  },
+  {
+    "project": "frameworks/base",
+    "commit": "2f5cf1e4fc1e8b1480d3c27a855f95d6d45429f4",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/frameworks/base/0002-frameworks_base-core_view_Add_property_to_disable_VSync_for_CPU_rendered_apps.patch",
+    "missing": [],
+    "sha256": {
+      "core/java/android/view/Choreographer.java": "786225db1921c7e69f7a8e0bb324d0b7f2be6caebde493ea522807a4544f1078",
+      "core/java/android/view/ViewRootImpl.java": "f5e7e37ef4fc983fbaabdb2c7a893121ba1d714ef246f6f1bd4cd2c3607d66f4"
+    },
+    "exit_code": 1,
+    "diagnostics": "Checking patch core/java/android/view/Choreographer.java...\nHunk #2 succeeded at 268 (offset 1 line).\nHunk #3 succeeded at 404 (offset 2 lines).\nHunk #4 succeeded at 632 (offset 5 lines).\nChecking patch core/java/android/view/ViewRootImpl.java...\nerror: while searching for:\n    @UnsupportedAppUsage\n    FallbackEventHandler mFallbackEventHandler;\n    Choreographer mChoreographer;\n\n    final Rect mTempRect; // used in the transaction to not thrash the heap.\n    final Rect mVisRect; // used to retrieve visible rect of focused view.\n\nerror: patch failed: core/java/android/view/ViewRootImpl.java:405\nerror: core/java/android/view/ViewRootImpl.java: patch does not apply"
+  },
+  {
+    "project": "frameworks/base",
+    "commit": "2f5cf1e4fc1e8b1480d3c27a855f95d6d45429f4",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/frameworks/base/0003-MicroG-Singature-Spoofing-Patch-For-Q.patch",
+    "missing": [],
+    "sha256": {
+      "core/res/AndroidManifest.xml": "284da9ba33498a4174de5a3cbfb15e9e9794ea90e0bfca005cf4bbd857d87d52",
+      "core/res/res/values/config.xml": "a3f8e949263e976f4ef1cc64f53608c74bab1b2dee040980830b14be2377aef9",
+      "core/res/res/values/strings.xml": "bb5b8adda04b8be416afb7d8baa27850fb18240214473418f33ca5ed1a205891",
+      "services/core/java/com/android/server/pm/PackageManagerService.java": "fafae94cc6c93d21010e13e630296de80c67bb4dc4c190fcbc5d170e4f49f7ba"
+    },
+    "exit_code": 1,
+    "diagnostics": "Checking patch core/res/AndroidManifest.xml...\nHunk #1 succeeded at 2857 (offset 201 lines).\nChecking patch core/res/res/values/config.xml...\nHunk #1 succeeded at 1654 (offset -221 lines).\nChecking patch core/res/res/values/strings.xml...\nHunk #1 succeeded at 847 (offset 17 lines).\nChecking patch services/core/java/com/android/server/pm/PackageManagerService.java...\nerror: while searching for:\n                });\n            }\n\n            PackageInfo packageInfo = PackageParser.generatePackageInfo(p, gids, flags,\n                    ps.firstInstallTime, ps.lastUpdateTime, permissions, state, userId);\n\n            if (packageInfo == null) {\n                return null;\n\nerror: patch failed: services/core/java/com/android/server/pm/PackageManagerService.java:4203\nerror: services/core/java/com/android/server/pm/PackageManagerService.java: patch does not apply"
+  },
+  {
+    "project": "hardware/interfaces",
+    "commit": "203e87a39c04f30bc1f09f6c2306b701d6b97fe0",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/hardware/interfaces/0001-Disable-getPresentationPositionImpl.patch",
+    "missing": [],
+    "sha256": {
+      "audio/core/all-versions/default/StreamOut.cpp": "f2ad9a4cb547e518c5d4b1a94ed273e26511457b04de3c9874e87b6ff11ef645"
+    },
+    "exit_code": 1,
+    "diagnostics": "Checking patch audio/core/all-versions/default/StreamOut.cpp...\nerror: while searching for:\n    // continuously querying it, but the stream has been stopped.\n    static const std::vector<int> ignoredErrors{EINVAL, EAGAIN, ENODATA};\n    Result retval(Result::NOT_SUPPORTED);\n    if (stream->get_presentation_position == NULL) return retval;\n    struct timespec halTimeStamp;\n    retval = Stream::analyzeStatus(\"get_presentation_position\",\n\nerror: patch failed: audio/core/all-versions/default/StreamOut.cpp:504\nerror: audio/core/all-versions/default/StreamOut.cpp: patch does not apply"
+  },
+  {
+    "project": "hardware/interfaces",
+    "commit": "203e87a39c04f30bc1f09f6c2306b701d6b97fe0",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/hardware/interfaces/0002-Fix-hwc2on1adapter-fence-leak.patch",
+    "missing": [],
+    "sha256": {
+      "graphics/composer/2.1/utils/hwc2on1adapter/HWC2On1Adapter.cpp": "62d6b8c1179c81617c9cd2ea4811e5747c1f092d2daa49dcc9d7dcc4c7f1bb92"
+    },
+    "exit_code": 0,
+    "diagnostics": "Checking patch graphics/composer/2.1/utils/hwc2on1adapter/HWC2On1Adapter.cpp..."
+  },
+  {
+    "project": "system/core",
+    "commit": "92420679ffbd50b79d76525085b21278f8497037",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/system/core/0001-Bring-back-early-suspend-support.patch",
+    "missing": [],
+    "sha256": {
+      "libsuspend/Android.bp": "bdd08e20917669ea6898eb924e6fc4765a7c45ed1a644994237411dd9a6ba6c5",
+      "libsuspend/autosuspend.c": "184256bd52388b5e289c35a93166a270504c2ab4ef434de98a6552ad060813e4",
+      "libsuspend/autosuspend_ops.h": "ca0d72d15d148f2cb2a7d61a881eede2502c3eee1b4d0538c74b7be819958bc3"
+    },
+    "exit_code": 0,
+    "diagnostics": "Checking patch libsuspend/Android.bp...\nChecking patch libsuspend/autosuspend.c...\nChecking patch libsuspend/autosuspend_earlysuspend.cpp...\nChecking patch libsuspend/autosuspend_ops.h..."
+  },
+  {
+    "project": "system/bt",
+    "commit": "bcca9a572f1cc539ba21ebe940c3642ce8707d1a",
+    "patch": "sources/android_device_amazon_mt8163-common/patches/system/bt/0001-Fix-MTK-legacy-bluetooth.patch",
+    "missing": [],
+    "sha256": {
+      "device/src/controller.cc": "48720e6a73da0897681f14c80e55c82c0292b67dfd09c241226ee4da12eeca5d",
+      "hci/src/hci_packet_parser.cc": "957ea8d9ccfb9b99b18b15743318d47a4badf1f422a0f57b99db85abfad9bf47"
+    },
+    "exit_code": 0,
+    "diagnostics": "Checking patch device/src/controller.cc...\nHunk #1 succeeded at 196 (offset 9 lines).\nChecking patch hci/src/hci_packet_parser.cc...\nHunk #1 succeeded at 108 (offset -14 lines)."
+  }
+]

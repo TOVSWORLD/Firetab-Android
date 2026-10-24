@@ -1,0 +1,35 @@
+{
+  "retrieved": "2026-10-24",
+  "source": "https://play.google.com/store/apps/details?id=com.crestron.phoenix.app&hl=en_US",
+  "package": "com.crestron.phoenix.app",
+  "metadata_path": "ds:5 / 1 / 2 / 140",
+  "metadata": [
+    [
+      [
+        "4.12.18+pr"
+      ]
+    ],
+    [
+      [
+        [
+          35
+        ]
+      ],
+      [
+        [
+          [
+            26,
+            "8.0"
+          ]
+        ]
+      ]
+    ]
+  ],
+  "interpretation": {
+    "version": "4.12.18+pr",
+    "minSdk": 26,
+    "minimumAndroid": "8.0",
+    "targetSdk": 35
+  },
+  "caveat": "Store metadata, not APK manifest or device-specific delivery verification"
+}

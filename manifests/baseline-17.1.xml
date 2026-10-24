@@ -1,0 +1,9 @@
+<manifest>
+  <remote name="github-https" fetch="https://github.com/" />
+  <project path="device/amazon/douglas" name="mt8163-dev/android_device_amazon_douglas" revision="4c557e6b83c62d41ff10090d5ff25dda1caba784" remote="github-https" />
+  <project path="device/amazon/mt8163-common" name="mt8163-dev/android_device_amazon_mt8163-common" revision="7931739f1a5251fc5c72d532be35dea1d9be29cb" remote="github-https" />
+  <project path="vendor/amazon/douglas" name="mt8163-dev/android_vendor_amazon_douglas" revision="c4864bff734bcbd5aa22819ec60d28ff3b9df451" remote="github-https" />
+  <project path="vendor/amazon/mt8163-common" name="mt8163-dev/android_vendor_amazon_mt8163-common" revision="e246bd38d81f5d449f5267a5e6554233857ffe7f" remote="github-https" />
+  <project path="kernel/amazon/mt8163" name="mt8163-dev/android_kernel_amazon_mt8163" revision="e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74" remote="github-https" />
+  <project path="hardware/mediatek" name="mt8163-dev/android_hardware_mediatek" revision="379792b82e9a61c125def6a1d0cb72221592aebf" remote="github-https" />
+</manifest>

@@ -1,0 +1,330 @@
+[
+  {
+    "sha": "4174e0b4d0e2eb452d14fbe3c0e5094611f748b6",
+    "node_id": "C_kwDOKiYFMdoAKDQxNzRlMGI0ZDBlMmViNDUyZDE0ZmJlM2MwZTUwOTQ2MTFmNzQ4YjY",
+    "commit": {
+      "author": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-06T18:57:16Z"
+      },
+      "committer": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-08T13:09:59Z"
+      },
+      "message": "arm64: configs: Disable a few debugging options\n\nChange-Id: I7cb7648daea1619f930725627ee1fc0bd7a2e971\nSigned-off-by: bengris32 <bengris32@protonmail.ch>",
+      "tree": {
+        "sha": "b79055c68f50da972af4340276433607ae3ca30e",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/trees/b79055c68f50da972af4340276433607ae3ca30e"
+      },
+      "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/commits/4174e0b4d0e2eb452d14fbe3c0e5094611f748b6",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEE/9IufuDID+ArDyH+XHmOxVie2b8FAmkPQScACgkQXHmOxVie\n2b/F/g//TnMDDu6dL36FDUClzpFaHGnYWiZSCApI5sMSUFCbqcbOHPWR7Z0H2930\nbOjbYhgR18In2npXw2mHhbeOm4S4N+VnMB4sLWpT7Yw37TBdFleu82d0VaPIPLjh\nrCAoSv1A+DBB9indDUQ3X318OGnqqw6Rn6mp5UF9YnZlPB/3cuidiyHIOdIYiWkr\nRAoy5W/TOV1jW5VmYOAIEgyexCfSMTp1xujAy7efmhHPG1KJVCDN26sih1/C1nYB\nbkaA5dr/wt7UOB3LaWXOMU+A+QsBcD9BQ9tGs6B2DKc1nozApMCyc0Q/5mzZAbQa\n9ChN7g17kFimUGFDEKDXd2W4KHsr2yscF0Pc6cu2rXHo0EQZp4ktrRw1T4VXTFb7\nVbhzvf87P9604qMr8elzxHeUff5aM2yfYJl0mpMAwSfF6qF72Lp9dUUfzsdZd0+U\nHLR5NYyLFOI1x5LdZEPaCCURzNNV4j2lzUtGWU1FiN6wsAkPpqS96kEd19RfXc5h\nqvd3sgrDL2yK88e0NwFHyxyOUFUveTLgHH+ASuHag4a9mj8RyqecwgVZaWBKAswG\nIkGgNcdJ3SABnxvRqO9UNQHFHkHLLmXeH97oz7X8T4muU63nfrZu31tfPU9Pi1zR\nqsAt9AitmOC2f7b5aWY9YJV4jKo2Mkj7QeGIEbZvaZe0uOsuJk0=\n=cxe2\n-----END PGP SIGNATURE-----",
+        "payload": "tree b79055c68f50da972af4340276433607ae3ca30e\nparent 07826312f9cfb30dd47f5ad3cd2a24b7e3cfbd2a\nauthor bengris32 <bengris32@protonmail.ch> 1762455436 +0000\ncommitter bengris32 <bengris32@protonmail.ch> 1762607399 +0000\n\narm64: configs: Disable a few debugging options\n\nChange-Id: I7cb7648daea1619f930725627ee1fc0bd7a2e971\nSigned-off-by: bengris32 <bengris32@protonmail.ch>\n",
+        "verified_at": "2025-11-08T13:10:23Z"
+      }
+    },
+    "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/4174e0b4d0e2eb452d14fbe3c0e5094611f748b6",
+    "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/4174e0b4d0e2eb452d14fbe3c0e5094611f748b6",
+    "comments_url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/4174e0b4d0e2eb452d14fbe3c0e5094611f748b6/comments",
+    "author": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "07826312f9cfb30dd47f5ad3cd2a24b7e3cfbd2a",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/07826312f9cfb30dd47f5ad3cd2a24b7e3cfbd2a",
+        "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/07826312f9cfb30dd47f5ad3cd2a24b7e3cfbd2a"
+      }
+    ]
+  },
+  {
+    "sha": "d5189349d56e7a712921ca5452a070763a2d43e4",
+    "node_id": "C_kwDOKiYFMdoAKGQ1MTg5MzQ5ZDU2ZTdhNzEyOTIxY2E1NDUyYTA3MDc2M2EyZDQzZTQ",
+    "commit": {
+      "author": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-05T22:22:46Z"
+      },
+      "committer": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-08T13:09:25Z"
+      },
+      "message": "arm64: configs: Set CONFIG_NR_CPUS to 4\n\nChange-Id: I9bda852f5a9b6df605e60cd64c8f1a178260de2a\nSigned-off-by: bengris32 <bengris32@protonmail.ch>",
+      "tree": {
+        "sha": "dc48fb76b13e3575f1c8693d3b5bb49fb412c08f",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/trees/dc48fb76b13e3575f1c8693d3b5bb49fb412c08f"
+      },
+      "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/commits/d5189349d56e7a712921ca5452a070763a2d43e4",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEE/9IufuDID+ArDyH+XHmOxVie2b8FAmkPQQUACgkQXHmOxVie\n2b+YLQ/+LrzbPr/Rwmvjw+CMWdEU7BId7YMKKMKxZoOun49qz9H5t+T5UT4OCLnx\n6VsxrTZHyISO4llX7eAXtydxF9efU/LTRtMjAmXBV77uH0Wlv/DLmzDPoYwZMMkf\nyIwapT3kvjEc7jwIG8/9XHCARsIynQ3ssB1KkUOEY9TxkL3okuBy61VQXthYMUX7\nvHkvA9p5YYQ//lJSRi/iDGesz3r/fQZGPWtKKlyCj9MelaWKgLU2hn1PUZHaaTXH\n+HwkXbpzrzJHX7unRwWdholxBBKcXiKmiTHI/JeVB5FB7cbSo+tc/mzxtIQCTald\nbq9LJpRTQ94LktwR2OvVcx7VFCJhmCsqtNoo4GoP4SbnBzsVgKQJSqCJtMaaie8f\neE3coZTxdzKR39uO/NgJFKUaEDesRy6oouPyi3c1lSL+MsjkPIZCLe/F6ULCkllr\nqktx9Tdf5RxOPDsfBuPtG5UXToYh4syqGXcDf+BEx+VsIkj5zQthz50I5QPwj02R\nW1YsSZ1YtC2aj7mJzbEn4m2QwI39LvXQHj+PI7AudzVO4YLAiXUWTomziAbEp/Ig\nJTVQOvOomHGv/NKGIDXNNwG6KCWFx/gz4d5KanKWylChSNmCdvtA/fu39bCzdRxp\nbX8o9ycnh4bfqrTC4jbFtk+Y3zEG5WjcZpl2wrDuGomTOGdNNGg=\n=pXI1\n-----END PGP SIGNATURE-----",
+        "payload": "tree dc48fb76b13e3575f1c8693d3b5bb49fb412c08f\nparent 3ef6fad0e723529bc892ebf08a35b2422078722a\nauthor bengris32 <bengris32@protonmail.ch> 1762381366 +0000\ncommitter bengris32 <bengris32@protonmail.ch> 1762607365 +0000\n\narm64: configs: Set CONFIG_NR_CPUS to 4\n\nChange-Id: I9bda852f5a9b6df605e60cd64c8f1a178260de2a\nSigned-off-by: bengris32 <bengris32@protonmail.ch>\n",
+        "verified_at": "2025-11-08T13:10:23Z"
+      }
+    },
+    "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/d5189349d56e7a712921ca5452a070763a2d43e4",
+    "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/d5189349d56e7a712921ca5452a070763a2d43e4",
+    "comments_url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/d5189349d56e7a712921ca5452a070763a2d43e4/comments",
+    "author": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "3ef6fad0e723529bc892ebf08a35b2422078722a",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/3ef6fad0e723529bc892ebf08a35b2422078722a",
+        "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/3ef6fad0e723529bc892ebf08a35b2422078722a"
+      }
+    ]
+  },
+  {
+    "sha": "3ef6fad0e723529bc892ebf08a35b2422078722a",
+    "node_id": "C_kwDOKiYFMdoAKDNlZjZmYWQwZTcyMzUyOWJjODkyZWJmMDhhMzViMjQyMjA3ODcyMmE",
+    "commit": {
+      "author": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-10-27T20:23:54Z"
+      },
+      "committer": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-08T13:09:20Z"
+      },
+      "message": "arm64: configs: Regenerate after kernel rebase\n\nChange-Id: Ib60df1d48cbb11d71d3e5eb9105ba20c5de5d51a\nSigned-off-by: bengris32 <bengris32@protonmail.ch>",
+      "tree": {
+        "sha": "61a808744fe1956638459423f53f60b9c6887c9f",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/trees/61a808744fe1956638459423f53f60b9c6887c9f"
+      },
+      "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/commits/3ef6fad0e723529bc892ebf08a35b2422078722a",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEE/9IufuDID+ArDyH+XHmOxVie2b8FAmkPQQUACgkQXHmOxVie\n2b/G2hAArJOW11og0YuI5xuDAwKaC5QNBKNbK6r9QQdAOz8uqg2FUtwJUJUVDvXH\n2H2XxdufTznZrQ1ASx/OEmjbU0E6fnKTg04JoXoWbuT/FEYxdi+ifnQgutP2LKoC\nS3T17wQXcE50WWW8Tiat5i0nV2INEzcL/ltPpgYO4EYWg68fGLteW9bL4zFykS51\n/IqfYzqno/XEVEuouLfInOeoIu1qhgmQB+HYCP5yswJMkMXqxN6/YCL8nTFZu3Ne\njGcxU7O0D1qhRZUduBzuf0ZzwmUmjQDuVK9szZfo3VKT8VNsoCLTp35SGMjpdobg\nhpPfQ3MG3JV5PTtRl9gTSWwOGnYMfxhIYKNnT74P1+RxN0ngyBvpTRcWn4kwU8bH\nJN3++R3t8n/7FY6m3W8FA0ocoGc6d6VN2MDlLblByyuhXiVq7u5zEUBqFFHWaecF\nfugqLxirb0Gkiip98lPnHllPjOR2xHWzpQCGCXcgo0ofXEqj4U9msRvYAsL3AWwP\n+qOSIwerJglp4YtRIbu1RoKqeYPSVLuQwYYWWXG9F7VOTfKCqYvrHB/IM/yhdX8y\ncVRKgQrd8OZKKOi0PqEIRBJYDlxbkik2mLbOf5B+3SdI5zX4EcJxkoVTkONKnzX0\nd/Blpfvme/4sqnE9kAeYKE6liYyEWdNVK6cA2tlndnn++/6kffE=\n=iRiq\n-----END PGP SIGNATURE-----",
+        "payload": "tree 61a808744fe1956638459423f53f60b9c6887c9f\nparent 7ecf1e5d512250c3b0bd2d4d25eedccca458a771\nauthor bengris32 <bengris32@protonmail.ch> 1761596634 +0000\ncommitter bengris32 <bengris32@protonmail.ch> 1762607360 +0000\n\narm64: configs: Regenerate after kernel rebase\n\nChange-Id: Ib60df1d48cbb11d71d3e5eb9105ba20c5de5d51a\nSigned-off-by: bengris32 <bengris32@protonmail.ch>\n",
+        "verified_at": "2025-11-08T13:10:23Z"
+      }
+    },
+    "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/3ef6fad0e723529bc892ebf08a35b2422078722a",
+    "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/3ef6fad0e723529bc892ebf08a35b2422078722a",
+    "comments_url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/3ef6fad0e723529bc892ebf08a35b2422078722a/comments",
+    "author": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "7ecf1e5d512250c3b0bd2d4d25eedccca458a771",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/7ecf1e5d512250c3b0bd2d4d25eedccca458a771",
+        "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/7ecf1e5d512250c3b0bd2d4d25eedccca458a771"
+      }
+    ]
+  },
+  {
+    "sha": "6d3f54d35debcdb0a6b9d3dcbb348f3501d2b7c3",
+    "node_id": "C_kwDOKiYFMdoAKDZkM2Y1NGQzNWRlYmNkYjBhNmI5ZDNkY2JiMzQ4ZjM1MDFkMmI3YzM",
+    "commit": {
+      "author": {
+        "name": "R0rt1z2",
+        "email": "me@r0rt1z2.com",
+        "date": "2025-10-22T14:23:31Z"
+      },
+      "committer": {
+        "name": "bengris32",
+        "email": "bengris32@protonmail.ch",
+        "date": "2025-11-08T13:00:10Z"
+      },
+      "message": "arm64: configs: Generate initial douglas defconfig\n\nChange-Id: I01078d6325f51f07a669e84c1478f5cbb38bfb23",
+      "tree": {
+        "sha": "f9b61825eef8e3165e57d163cc6031960718e972",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/trees/f9b61825eef8e3165e57d163cc6031960718e972"
+      },
+      "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/git/commits/6d3f54d35debcdb0a6b9d3dcbb348f3501d2b7c3",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\niQIzBAABCgAdFiEE/9IufuDID+ArDyH+XHmOxVie2b8FAmkPPtoACgkQXHmOxVie\n2b9Hnw/+MWv9xndLRGMtd+OYTE47Ci2ZoVShZ8mawL7rYmZ6+gzeW013fUkltWhB\ngmapYsVdIlvsrkK5gSDLiZjHNvzgimArcpbysyU5CWU//F9eD1xKrwF8LdF1012Q\nS2eEJUhUlRITrwtoLm2yLrgcQFIfwveQxJKiu8mAxtgjaV7N/B+Jsq3n/lvf0Ova\nIo6z3mgzXTbB+FdK9sNBWXnH7t17VsMss2hNI3NhJJTXrax5zAjAkloC6Rf9f7I7\nI325p9lsWKdhm7HAD90I1QwAs4lwgqLIsFwA6RnT1I/Focj0OdDBJqhMywxLwiI/\nHp6rY1Y5vyQWTd1SvEft0SwFqVBl3DI40Gud/qq144nhok+ZIHXow0WWp2KgvnEU\nIysDjUX+Z6z+7Le/kZ/WUqX0COanlb+sSxaYvc5ZckCTUTGHVcgNIi3FJdwypJPq\nQ0ECtTSZdcxzJzaZ/Wv6kM/9NpprxzwDw1A62XSxZULGr1OAzx2LJG/qH1sIW8dy\nYUfF7Zf//GWdPMpMIi+tQ241AEbgKAiC83Uq87fp4FoiJ6CSQGeNsNuY6HFNrVB/\nab01SEnWLLCSZpY4lbEo/k/yQKcuXxC9u0tKd4Cvdi/MYk7Of+bARXCbNMgWk0Ic\nYPBlY4kW+1huk8ob+sd8ltK6XqMHEmlbJL0y6vTtKDNlLfbdtcM=\n=GfKW\n-----END PGP SIGNATURE-----",
+        "payload": "tree f9b61825eef8e3165e57d163cc6031960718e972\nparent 8e319ddb4d92b7ad7285aad7b61761cb8867ee47\nauthor R0rt1z2 <me@r0rt1z2.com> 1761143011 +0200\ncommitter bengris32 <bengris32@protonmail.ch> 1762606810 +0000\n\narm64: configs: Generate initial douglas defconfig\n\nChange-Id: I01078d6325f51f07a669e84c1478f5cbb38bfb23\n",
+        "verified_at": "2025-11-08T13:10:23Z"
+      }
+    },
+    "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/6d3f54d35debcdb0a6b9d3dcbb348f3501d2b7c3",
+    "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/6d3f54d35debcdb0a6b9d3dcbb348f3501d2b7c3",
+    "comments_url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/6d3f54d35debcdb0a6b9d3dcbb348f3501d2b7c3/comments",
+    "author": {
+      "login": "R0rt1z2",
+      "id": 39171306,
+      "node_id": "MDQ6VXNlcjM5MTcxMzA2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/39171306?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/R0rt1z2",
+      "html_url": "https://github.com/R0rt1z2",
+      "followers_url": "https://api.github.com/users/R0rt1z2/followers",
+      "following_url": "https://api.github.com/users/R0rt1z2/following{/other_user}",
+      "gists_url": "https://api.github.com/users/R0rt1z2/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/R0rt1z2/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/R0rt1z2/subscriptions",
+      "organizations_url": "https://api.github.com/users/R0rt1z2/orgs",
+      "repos_url": "https://api.github.com/users/R0rt1z2/repos",
+      "events_url": "https://api.github.com/users/R0rt1z2/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/R0rt1z2/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "bengris32",
+      "id": 74118785,
+      "node_id": "MDQ6VXNlcjc0MTE4Nzg1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74118785?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/bengris32",
+      "html_url": "https://github.com/bengris32",
+      "followers_url": "https://api.github.com/users/bengris32/followers",
+      "following_url": "https://api.github.com/users/bengris32/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bengris32/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bengris32/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bengris32/subscriptions",
+      "organizations_url": "https://api.github.com/users/bengris32/orgs",
+      "repos_url": "https://api.github.com/users/bengris32/repos",
+      "events_url": "https://api.github.com/users/bengris32/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bengris32/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "8e319ddb4d92b7ad7285aad7b61761cb8867ee47",
+        "url": "https://api.github.com/repos/amazon-oss/android_kernel_amazon_mt8163/commits/8e319ddb4d92b7ad7285aad7b61761cb8867ee47",
+        "html_url": "https://github.com/amazon-oss/android_kernel_amazon_mt8163/commit/8e319ddb4d92b7ad7285aad7b61761cb8867ee47"
+      }
+    ]
+  }
+]

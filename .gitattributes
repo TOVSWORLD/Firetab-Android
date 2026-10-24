@@ -1,0 +1,3 @@
+# Preserve upstream evidence bytes and unified-diff context whitespace.
+evidence/** -whitespace
+patches/** -whitespace

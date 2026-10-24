@@ -1,0 +1,62 @@
+[
+  {
+    "directory": "sources/android_device_amazon_mt8163-common",
+    "url": "https://github.com/mt8163-dev/android_device_amazon_mt8163-common.git",
+    "commit": "7931739f1a5251fc5c72d532be35dea1d9be29cb"
+  },
+  {
+    "directory": "sources/android_hardware_mediatek",
+    "url": "https://github.com/mt8163-dev/android_hardware_mediatek.git",
+    "commit": "379792b82e9a61c125def6a1d0cb72221592aebf"
+  },
+  {
+    "directory": "sources/android_vendor_amazon_douglas",
+    "url": "https://github.com/mt8163-dev/android_vendor_amazon_douglas.git",
+    "commit": "c4864bff734bcbd5aa22819ec60d28ff3b9df451"
+  },
+  {
+    "directory": "sources/android_vendor_amazon_mt8163-common",
+    "url": "https://github.com/mt8163-dev/android_vendor_amazon_mt8163-common.git",
+    "commit": "e246bd38d81f5d449f5267a5e6554233857ffe7f"
+  },
+  {
+    "directory": "sources/device-douglas",
+    "url": "https://github.com/mt8163-dev/android_device_amazon_douglas.git",
+    "commit": "4c557e6b83c62d41ff10090d5ff25dda1caba784"
+  },
+  {
+    "directory": "sources/kernel-mt8163",
+    "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163.git",
+    "commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74"
+  },
+  {
+    "directory": "sources/manifests",
+    "url": "https://github.com/mt8163-dev/local_manifests.git",
+    "commit": "9a84f84489c340c0e69cd982341ab39ef35e5d6e"
+  },
+  {
+    "directory": "sources/reference-amazon-oss-common",
+    "url": "https://github.com/amazon-oss/android_device_amazon_mt8163-common.git",
+    "commit": "e3f6a10329048ce89e007c072a01dee566961163"
+  },
+  {
+    "directory": "sources/reference-amazon-oss-patches",
+    "url": "https://github.com/amazon-oss/patches.git",
+    "commit": "03e9bb955398d78d6aa372e4e1eab4301bab86d1"
+  },
+  {
+    "directory": "sources/reference-amonet-douglas",
+    "url": "https://github.com/chaosmaster/amonet.git",
+    "commit": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31"
+  },
+  {
+    "directory": "sources/reference-amonet-koboreru",
+    "url": "https://github.com/R0rt1z2/amonet-koboreru.git",
+    "commit": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4"
+  },
+  {
+    "directory": "sources/reference-giza18",
+    "url": "https://github.com/amazon-oss/android_device_amazon_giza.git",
+    "commit": "5cef34f73be73a26b043aece96b0cf5ddc1b51a1"
+  }
+]

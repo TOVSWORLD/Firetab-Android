@@ -1,0 +1,12 @@
+{
+  "system": "Darwin",
+  "machine": "arm64",
+  "free_GiB": 42.3,
+  "RAM_GiB": 36.0,
+  "checks": {
+    "linux_x86_64": false,
+    "case_sensitive_filesystem": false,
+    "free_disk_at_least_400_GiB": false,
+    "RAM_at_least_32_GiB": true
+  }
+}
