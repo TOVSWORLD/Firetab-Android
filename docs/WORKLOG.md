@@ -70,3 +70,14 @@ features may be unavailable with accurate declarations. The prior old-kernel/int
 Android progression is superseded. Updated README, maintenance direction, feasibility
 conclusion and continuation notes to agree. No new porting/build/device work was started;
 waiting for the user's next instructions.
+
+## Crestron panel-mode scope
+
+User added a separate question about native Crestron panel behavior and clarified that
+the setup interface selects an application/use, then runs one app at a time. Official
+TSW-70 documentation confirms this model. Added a panel-mode research track to the
+maintenance document, distinguishing supported Android/web clients from an unverified
+native-runtime port. Found official Android clients for Smart Graphics (Go) and
+HTML5/Construct (ONE, documented Android 14+), plus Android browser Web XPanel support.
+No claim that arbitrary native panel applications can run on douglas; no prototype,
+firmware extraction, large download or device operation was undertaken.

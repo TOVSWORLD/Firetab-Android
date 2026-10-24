@@ -44,6 +44,58 @@ storage constraints require measurements, not an assumed Android version ceiling
 
 ## Required maintenance deliverables
 
+### Separate Crestron panel-mode research track
+
+The general-purpose Android port remains the foundation. The user also wants a
+distinct optional panel role matching a native Crestron touch screen: select an
+application/use mode in setup, then run one selected application full-screen at a
+time. This is not a request for simultaneous applications or an ordinary app switcher.
+Running the Crestron Home Android app satisfies the Home application requirement;
+native panel-mode compatibility is additional research, not a prerequisite for it.
+
+Verified references as of 24 October 2026:
+
+- [TSW-70 application selection](https://docs.crestron.com/en-us/8550/Content/Topics/Configuration/Application-Setup.htm)
+  documents a single selected app, Crestron-approved delivery and multiple modes,
+  including Home and scheduling/partner applications. The
+  [installation guide](https://docs.crestron.com/en-us/8550/Content/Topics/Installation/Installation-TSW-70.htm)
+  also describes User Project selection and uploads through the web interface or Toolbox.
+- [Crestron Go for Android](https://www.crestron.com/Products/Catalog/Control-and-Management/Software/Programming-Commissioning/CRESTRON-GO-ANDROID)
+  provides an Android client for Smart Graphics projects and 3-Series, 4-Series and
+  VC-4 systems. This is a mobile-client route, not proof of native TSW firmware compatibility.
+- [Crestron ONE Android configuration](https://docs.crestron.com/en-us/9580/Content/Topics/Configuration/Configuration.htm)
+  documents HTML5/Construct project loading and Android 14+ prerequisites.
+- [HTML5 User Interface](https://www.crestron.com/Products/Catalog/Control-and-Management/Software/Programming-Commissioning/Crestron-HTML5-User-Interface)
+  also supports compatible Android browsers through Web XPanel. Browser, mobile
+  and native-panel deployments require separate compatibility/feature verification.
+
+Two implementation levels must remain explicit:
+
+1. An Android-based panel mode selector using supported Android clients and web
+   runtimes, with kiosk/boot behavior, configuration and app lifecycle management.
+   This is technically plausible, subject to each app's compatibility and capabilities.
+2. Porting native Crestron panel runtimes/services so the tablet accepts native panel
+   projects and supports equivalent configuration, processor integration and management.
+   Feasibility is unverified. A selector UI or a changed device identity does not
+   establish those behaviors. “Any Crestron application” is not a validated scope.
+
+For the second level, inventory firmware packages and native/Java services, identify
+framework/HAL dependencies, project runtimes and deployment protocols, and determine
+whether usable source/SDKs or appropriately available binaries exist. Hardware binding,
+provisioning, certificates, entitlement checks and redistribution constraints are
+questions to investigate, not blockers demonstrated by this research. Verify current
+licensing per selected runtime; older product pages and release notes disagree over
+historical mobility licensing, so do not impose a blanket requirement.
+
+Classify every desired mode as supported Android client, supported web deployment,
+native runtime candidate, or unresolved. Evaluate custom Smart Graphics and HTML5
+projects, Home, scheduling and relevant partner apps independently. Native panel
+equivalence needs evidence for the applicable Toolbox upload/configuration workflows,
+processor registration, device management, audio/intercom, video and lifecycle behavior.
+No native firmware extraction, runtime port or panel-mode prototype has been performed.
+
+### Shared platform maintenance
+
 - A common MT8163 hardware layer with per-board configuration, not copied complete
   trees for each release. Giza, douglas and Echo device differences remain explicit.
 - A feature audit citing required Android source/API and matching kernel

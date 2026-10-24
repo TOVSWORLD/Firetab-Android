@@ -13,6 +13,11 @@ support and regression diagnosis. Extending those old kernels or building interm
 Android releases is not the selected maintenance strategy. Android 17 is the initial
 platform target under investigation; its feasibility remains unproven.
 
+A separate optional research track evaluates Crestron native-style panel modes: select
+one application/use in setup and run that application full-screen. Supported Android
+clients and native panel-runtime compatibility are distinct implementation levels;
+native firmware equivalence is not established.
+
 - [Evidence and feasibility](docs/FEASIBILITY.md)
 - [Continuation, resources, and build recipes](docs/CONTINUE.md)
 - [Work log and validation](docs/WORKLOG.md)
