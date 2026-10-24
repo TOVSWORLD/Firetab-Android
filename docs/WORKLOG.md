@@ -60,3 +60,13 @@ No Android build, image generation, full repo sync, GApps download, APK download
 paid resource use, tablet connection, unlock, wipe, flash or physical test occurred.
 The existing release ROM (~482 MB) was not downloaded. Inspection sources occupy
 roughly 1.1 GB expanded before small source fixtures.
+
+## Direction clarified after initial investigation
+
+The user selected a current maintained Android kernel that moves with Android releases,
+using the old kernel trees as hardware references. General-purpose tablet usefulness is
+the primary goal; Crestron Home is one application requirement. Optional hardware-absent
+features may be unavailable with accurate declarations. The prior old-kernel/intermediate-
+Android progression is superseded. Updated README, maintenance direction, feasibility
+conclusion and continuation notes to agree. No new porting/build/device work was started;
+waiting for the user's next instructions.

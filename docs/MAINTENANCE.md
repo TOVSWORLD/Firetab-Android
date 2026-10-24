@@ -1,43 +1,46 @@
 # Project direction: maintainable Android ports for legacy Fire tablets
 
-User clarification, 24 October 2026: the objective is a repeatable pathway for
-maintaining supported Android release branches across these devices. A one-off
-Crestron deployment or Android 11 port alone does not satisfy that objective.
+User direction, 24 October 2026: make legacy Fire devices useful as general-purpose
+Android tablets through a repeatable pathway for maintaining supported Android releases.
+Crestron Home is one required application, alongside broader everyday tablet use.
+A dedicated control panel or a one-off older Android port does not satisfy the objective.
 
-## Revised interpretation of feasibility
+## Agreed kernel and platform direction
 
-Android 11 is an integration diagnostic milestone, not the proposed permanent
-destination. Android 15 is a candidate first maintained platform branch because
-the discovered kernel family has a corresponding branch and LineageOS supports
-4.9-based devices there. Android 17 remains an explicit research target. None of
-these statements establishes a tested douglas firmware or an absolute OS ceiling.
+Port a current, maintained Android kernel appropriate to the target Android release to
+the hardware, and keep kernel support moving with future Android releases. Android 17
+is the initial platform target under investigation. Select the exact Android Common
+Kernel branch and support lifetime through source-based compatibility research; no
+specific kernel version has yet been selected or validated for douglas.
 
-The outstanding question is the amount and recurring cost of compatibility work,
-not whether a Cortex-A53 CPU can execute a modern Android instruction stream.
-Device performance still requires measurement, especially with 1.5 GB RAM and
-full Crestron Home media/intercom functionality.
+The existing 3.18 and 4.9 douglas trees provide hardware descriptions, drivers, boot
+contracts and regression references. Keeping those old kernel bases alive through an
+expanding set of backports is not the selected long-term strategy. Intermediate Android
+builds may be used for a specific diagnostic purpose if justified later; they are not
+mandatory release milestones or the destination.
 
-## Kernel strategy decision
+The work is to identify existing support in the current kernel, forward-port or replace
+missing drivers, adapt Android hardware interfaces, and validate the resulting device.
+Inventory panel, touchscreen variants, PMIC/regulators, storage, USB, battery/thermal,
+Wi-Fi, Bluetooth, sensors, audio, cameras and graphics. Preserve or replace proprietary
+userspace/kernel contracts deliberately. Reuse common MT8163 work and upstream changes
+where practical to reduce the cost of subsequent Android/kernel upgrades.
 
-Two tracks merit comparison before selecting the long-term base:
+## General-purpose functionality
 
-1. **Maintain the existing douglas 4.9 port with explicit feature backports.**
-   Inventory actual modern Android BPF programs, map types, helpers, verifier,
-   cgroup attachment and syscall requirements against this tree. Establish tests
-   for their real behavior. Validate ARM64 Clang builds and relevant hardening,
-   binder, memory-management and filesystem interfaces. Keep a documented list
-   of changes to Android itself; a growing list is maintenance cost, not progress
-   hidden behind an updated version string.
-2. **Forward-port the board to a newer maintained kernel.** Inventory panel,
-   touchscreen variants, PMIC/regulator, storage, USB, battery/thermal, Wi-Fi,
-   Bluetooth and graphics support. Identify which drivers can be reused, adapted
-   or upstreamed, and which proprietary userspace ioctl contracts must be retained
-   or replaced. Higher initial cost may reduce future recurring backport cost.
+Target ordinary tablet functionality: installation and updates of compatible apps,
+supported browsers and WebView, networking, display/touch, audio/video playback,
+storage/SD card access, USB, sensors, charging, power management and suspend/resume.
+Google Play/services remain a requested capability where feasible. Include broader app
+compatibility, multitasking and sustained everyday use in performance testing, alongside
+full Crestron Home functionality.
 
-No evidence gathered so far quantifies which track is cheaper. The newer douglas
-4.9 tree is a concrete starting asset for the first track and a hardware reference
-for the second. A newer kernel cannot be substituted without adapting the board
-drivers and userspace contracts.
+Features for hardware the device does not possess may be unavailable, as on other Android
+devices. Declare capabilities accurately so apps can detect them. Distinguish physically
+absent hardware from present hardware whose driver has not yet been ported; record the
+latter as an implementation gap. Document limitations and their effect on apps rather
+than treating every missing optional feature as a platform-wide blocker. CPU, RAM and
+storage constraints require measurements, not an assumed Android version ceiling.
 
 ## Required maintenance deliverables
 
@@ -51,7 +54,7 @@ drivers and userspace contracts.
 - Locked complete platform manifests and compiler/container digests, separate
   kernel/platform patch queues, repeatable image-content/size checks and CI.
 - A physical test matrix: boot, display/touch, networking and UID filtering,
-  suspend/resume, audio/video, relevant cameras, Home full-function tests, Google
+  suspend/resume, audio/video, relevant cameras, general-purpose app/browser/media tests, Home full-function tests, Google
   service installation, enforcing SELinux and long-duration operation.
 - A release policy defining supported Android branches, security-update cadence,
   kernel/blob coverage, signing keys, reproducible build records, upgrade/rollback
@@ -60,11 +63,15 @@ drivers and userspace contracts.
 
 ## Next engineering milestone
 
-Produce a **kernel feature-gap audit for Android 17 against the douglas 4.9 tree**,
-then compare it with the work needed for a newer kernel. This is more decision-useful
-than repeatedly building intermediate Android releases without answering the
-kernel question. The audit must include executable capability tests where practical;
-symbol names or defconfig entries alone are insufficient.
+Produce a **current-kernel hardware-support and Android 17 integration audit** for
+douglas. Choose a candidate maintained kernel branch, map existing and missing board
+support, identify reusable driver implementations and proprietary interface constraints,
+and define staged bring-up tests. Use the older kernels as references. Include
+executable capability tests where practical; symbols or defconfig entries alone do not
+establish functionality.
+
+The user will provide the next instructions. This document update does not begin a
+kernel port, large download, build, or physical device operation.
 
 Current work is source inspection and initial Android 11 patch adaptation only.
 No feature-gap audit, maintained kernel, complete build environment, CI pipeline,

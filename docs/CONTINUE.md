@@ -1,6 +1,6 @@
 # Continue the douglas port
 
-## User-confirmed device and acceptance scope
+## User-confirmed device and application requirements
 
 - Fire HD 8 (2017), douglas / KFDOWI.
 - Fire OS **5.7.1.0**, reported by user, 24 October 2026.
@@ -9,6 +9,7 @@
 - User reports a CP4 lab processor on latest firmware; exact processor suffix and
   firmware string are not recorded. Verify Home runtime/model from the processor
   when testing; a generic CP4 label alone does not verify CP4-R/Home compatibility.
+- General-purpose tablet use is the primary objective; Crestron Home is one requirement.
 - **Full Home app functionality required**, not a lighting-only panel. Include
   applicable camera feeds, intercom/audio and media controls in acceptance tests.
   A remote camera feed tests networking/decoding; it does not inherently require
@@ -88,60 +89,28 @@ independently, not as an integrated series. It saves diagnostics and SHA-256
 hashes. The isolated Git invocation rejects silently skipped fixtures. A passing
 `git apply --check` proves neither compilation nor correctness.
 
-## Development tracks and concrete next steps
+## Agreed direction and next instructions
 
-1. **Baseline reproduction (Android 10).** On the resource-qualified Linux host,
-   initialize the LineageOS 17.1 platform, put `manifests/baseline-17.1.xml` under
-   `.repo/local_manifests/`, then sync. Apply the tracked device-path patch under
-   `device/amazon/douglas`. Check the old platform patch series with `git apply
-   --check` before applying it. Do not run upstream `patches/uninstall.sh`: it
-   contains destructive checkout/clean operations. The signature-spoofing and
-   global stack-protector-disable patches need explicit review, not blind reuse.
-   Record the platform lock with `repo manifest -r -o resolved.xml`, tool versions,
-   build command and log. Build a baseline before changing kernel and userspace
-   together.
+The project targets general-purpose Android tablet use, with Crestron Home as one
+application requirement. Follow [MAINTENANCE.md](MAINTENANCE.md): port a current maintained
+Android kernel appropriate to Android 17, then maintain kernel/platform support together.
+Choose the exact kernel branch through research. The old 3.18/4.9 trees are hardware and
+regression references; a sequence of Android 11/13/15 builds on 4.9 is not the selected plan.
 
-2. **Android 11 integration.** The platform manifest head inspected here is
-   `88e370827501474db8f1905128fdea2e8128ead4`. Initialize this revision in a new
-   build directory, then resolve all nested project revisions at sync time.
-   `manifests/candidate-18.1-kernel49.xml` pins device dependencies and substitutes
-   the newer kernel at `kernel/amazon/mt8163`. This is an experimental dependency
-   selection, **not a complete buildable Android 11 manifest**. The older common
-   tree still declares kernel 3.18/GCC and old HAL/linker/APEX settings. Adapt those
-   deliberately; do not mistake manifest installation for completed integration.
+The next research milestone is a current-kernel hardware-support and Android 17 integration
+audit. Map reusable/missing drivers, boot contracts and proprietary interfaces; distinguish
+absent optional hardware from unimplemented support for existing hardware. Define staged
+boot and hardware tests, followed by general-purpose app/browser/media and Crestron tests.
+Wait for the user's next instructions before starting that work.
 
-3. **Kernel-first option.** Build the amazon-oss 4.9 douglas defconfig, preserving
-   both douglas DT variants and boot-image limits. Derive the actual `.config`
-   using the reference build's Android config fragments; a savedefconfig alone
-   cannot establish enabled BPF/SELinux/binder features. Compare touch controller
-   coverage (old tree includes Goodix and FT5526; the inspected new defconfig lists
-   Goodix), panel, regulator, PMIC, Wi-Fi module ABI and suspend. Keep boot-header
-   offsets and amonet packaging until their contract is understood. A kernel-only
-   test with baseline userspace, later performed by the user, isolates failures.
+## Existing experimental materials
 
-4. **Finish the Android 11 patches.** A bitmap workaround has been rebased to
-   `libs/hwui/jni/Bitmap*.cpp` in the tracked `patches/android11/` directory and
-   passes a source applicability check. This preserves upstream workaround
-   behavior, including questionable bitmap resizing/semantics; test it with Home
-   and Chrome before retaining it. Four other original failures remain. Determine
-   whether the audio presentation-position suppression is still necessary, rebase
-   CPU-rendered VSync changes only if logs justify them, omit microG spoofing when
-   building for real Google services, and investigate blob failures before
-   globally disabling stack protection. Consider the newer reference fdsan patch
-   only with evidence of that failure. Review Android 11 linkerconfig generation,
-   legacy shim injection, moved/removed modules and HIDL services next.
-
-5. **Build commands, after integration.** Source `build/envsetup.sh`, select
-   `lunch lineage_douglas-userdebug`, then `mka bootimage` and `mka bacon` as
-   appropriate. These are continuation commands, not commands already run.
-   Use a bounded job count based on memory. Record every failure verbatim. Before
-   transferring anything, inspect target-files/image contents, expanded image
-   sizes, vendor inclusion, init/SELinux/VINTF, and boot patch preservation.
-
-6. **Newer Android.** Only after the 4.9 kernel and Android 11 HAL baseline is
-   validated, evaluate Android 13 then 15. Android 17 adds stronger BPF, compiler,
-   linker/APEX and hardware-interface requirements; maintain an inventory of real
-   required kernel backports and API removals, not a changed version label.
+`manifests/baseline-17.1.xml`, `manifests/candidate-18.1-kernel49.xml` and the Android 11
+patches preserve the earlier investigation. They are not current-kernel build instructions,
+a release plan or a complete buildable Android 11 port. Keep them for provenance and
+reuse only when a later diagnostic task calls for them. The source restore and patch
+probe commands above reproduce historical inspection, not the selected kernel strategy.
+No complete current-kernel/Android 17 build recipe exists yet.
 
 ## Separate acceptance gates
 
@@ -154,6 +123,11 @@ data and stable SystemUI. No physical test performed.
 **Hardware works:** display/touch accuracy, Wi-Fi reconnect, suspend/wake, rotation,
 charging/thermal behavior, speaker/microphone, media decode and relevant camera
 paths. Camera-feed decoding and the tablet camera are separate tests.
+
+**General-purpose use is reliable:** test app installation/update, browser/WebView,
+media playback, storage/SD, USB, networking and multitasking through sustained ordinary
+use. Measure responsiveness and memory pressure, and record optional capability limits.
+Not reached.
 
 **Crestron is reliable:** current exact package installed, correct Home processor
 identified, pairing/authentication, all configured control types, feedback updates,

@@ -13,10 +13,11 @@ The official announcement was retrieved with curl and its article saved in
 manifest branch resolved to `b51a0c449a3279ca55fb6d4d91d2143e42e2fff5`.
 LineageOS 17.1 is Android 10, 18.1 is Android 11, and 22.2 is Android 15.
 
-The useful near-term goal is an Amazon-ad-free control panel. A Lineage build removes
-the Fire launcher/ad software, but reliable operation still depends on Crestron, Wi-Fi,
-graphics, suspend/resume, and Google services. A recent Android number alone does not
-establish any of those properties.
+The agreed goal is general-purpose tablet usefulness through maintained Android ports,
+with a current maintained Android kernel appropriate to each target release. Crestron
+Home is one application requirement. The old 3.18/4.9 sources are hardware references;
+extending those kernel bases is not the selected long-term strategy. See
+[the agreed maintenance direction](MAINTENANCE.md).
 
 ## Crestron Home, Play, and browser
 
@@ -192,23 +193,20 @@ is the material issue. Treblizing it would itself be a port involving linker,
 VINTF, HAL, boot and partition work. Do not download/flash an ARM64 GSI on the
 assumption that installing Android 10 makes the tablet Treble compliant.
 
-## Practical version assessment
+## Version assessment under the agreed direction
 
-- **Android 10:** published douglas baseline and the shortest route to testing Home
-  and a currently supported browser. Hardware/reliability still need verification.
-- **Android 11:** the best-supported next development milestone. Existing douglas
-  4.9 board support, current adjacent-device work, and initial compatibility work
-  make this a credible attempt. No successful local compilation is claimed.
-- **Android 12/13:** reasonable subsequent investigation on a validated 4.9 kernel,
-  requiring resolved BPF config and substantial graphics/HAL modernization.
-- **Android 15:** the newest defensible *stretch target* found, because a related
-  4.9 kernel branch includes douglas files and Lineage supports this kernel family
-  on 22.2. This is not an established achievable ceiling or a functioning douglas ROM.
-- **Android 17:** blocked with the unchanged 3.18 stack. A 4.9/backport/platform
-  compatibility route or a newer-kernel board port is conceivable, but current
-  evidence cannot justify promising it or choosing it over kernel-first bring-up.
+Android 17 is the initial target under investigation, using a current maintained Android
+kernel ported to douglas. No successful kernel or platform build, boot, or general-purpose
+hardware validation is claimed. An exact current-kernel branch remains to be selected.
 
-An absolute newest achievable Android version cannot honestly be established before
-kernel boot and HAL tests. Android 11 is the practical initial target; Android 15
-is a staged research destination. Nothing found proves Android 17 is fundamentally
-impossible on the silicon.
+The published Android 10 port and existing Android 11 work are useful reference points.
+The discovered 4.9 douglas kernel is an additional hardware/driver reference, not the
+selected maintained kernel. Earlier discussion of Android 11 as a destination or Android
+15 as a stretch ceiling is superseded by the user's current-kernel direction.
+
+The verified incompatibilities of the unchanged old stack establish work required when
+reusing that stack; they do not establish a hardware ceiling for a new kernel port.
+Assess the chosen current kernel's driver coverage and Android integration, then measure
+boot, hardware, general app compatibility and performance. Optional features absent from
+the physical device can remain unavailable with accurate capability declarations; present
+but unported hardware is a separately documented implementation gap.
