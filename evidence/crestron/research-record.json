@@ -1,0 +1,44 @@
+{
+  "retrieved": "2026-10-24",
+  "method": "Public HTTPS metadata and archives; read-only static APK analysis; no device access or app execution",
+  "files": {
+    "manifest_x70_apps.json": {
+      "bytes": 67157,
+      "sha256": "a203abe18561f9b700e1e058a61a821d189395a942f14451d177822b93e66f12"
+    },
+    "manifest_x70_firmware.json": {
+      "bytes": 2957,
+      "sha256": "41dba4c17692af76b2071ef2902ada47f516ca66972d4e3db4ab6659fc7890c3"
+    },
+    "apk-inspection.json": {
+      "bytes": 5116,
+      "sha256": "29f4fca19010b20a91105cb650b8d98ce70a0320fdbc29389414d3cd8e814444"
+    },
+    "downloads.lock.json": {
+      "bytes": 1101,
+      "sha256": "822c93d0455ae2402adc0cc3a47d45b83a2c2a07edf15b01dfb92d687910ba69"
+    }
+  },
+  "urls": {
+    "applications": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/manifest_x70_apps.json",
+    "firmware": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/firmware/manifest_x70_firmware.json",
+    "licensing": "https://www.crestron.com/Support/Tools/Licensing-Registration/Licensing-Portal",
+    "native-mode-manual": "https://docs.crestron.com/en-us/8550/Content/Topics/Configuration/Application-Setup.htm"
+  },
+  "firmware_head_checks": [
+    {
+      "url": "https://devicefiles.crestron.io/firmware/tsw-xx70_3.003.0021.001.puf",
+      "status": 404
+    },
+    {
+      "url": "https://devicefiles.crestron.io/firmware/tsw-xx70_3.001.0020.001.puf",
+      "status": 404
+    }
+  ],
+  "runtime_results": null,
+  "tools": {
+    "apkanalyzer": "/opt/homebrew/bin/apkanalyzer",
+    "java": "OpenJDK 25.0.2 Temurin"
+  },
+  "signature_verification": "Not performed; SHA-256 pins identify inspected files, not independent signer authentication."
+}

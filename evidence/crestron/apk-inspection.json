@@ -1,0 +1,138 @@
+[
+  {
+    "name": "h5display",
+    "package": "com.crestron.blackbird",
+    "version": "1.3.0.172",
+    "min_sdk": "26",
+    "target_sdk": "28",
+    "archive_sha256": "c6277955dfd86aab355145414d42ea2e72a40635228af343beb08e55fe55f629",
+    "apk_sha256": "c2ca8466bf9ded0e17c3da781ca337c70b35494370b01c14b528e48ea413c5d8",
+    "native_libraries": [
+      "lib/armeabi-v7a/libbcipclient.so",
+      "lib/armeabi-v7a/libcryptoandros.so",
+      "lib/armeabi-v7a/libiconvandros.so",
+      "lib/armeabi-v7a/libsslandros.so"
+    ],
+    "native_abis": [
+      "armeabi-v7a"
+    ],
+    "selected_class_inspections": [
+      {
+        "class_name": "com.crestron.cresstoreredis.CresStoreWrapper",
+        "output": "work/crestron/CresStoreWrapper.smali",
+        "sha256": "d1a42e0bd60973bf215501afeddb1dac76eb6958ab1d4072110815b0d86157d3",
+        "load_library_literals": [
+          "cresstore_jsonJNI"
+        ],
+        "references_localhost": false,
+        "references_cresstore_factory": false,
+        "references_signal_factory": false
+      },
+      {
+        "class_name": "com.crestron.cresstore.CresStoreManager",
+        "output": "work/crestron/CresStoreManager.smali",
+        "sha256": "210d5782141d31a9c6ec29a19b0ed5b78556cbdec804c408a8762a972afc6ae2",
+        "load_library_literals": [],
+        "references_localhost": false,
+        "references_cresstore_factory": true,
+        "references_signal_factory": false
+      },
+      {
+        "class_name": "com.crestron.securestorage.SecureStorageWrapper",
+        "output": "work/crestron/SecureStorageWrapper.smali",
+        "sha256": "159a458a5f244a7a0ed4e3830388d962c7162c46378913419f06e85572853952",
+        "load_library_literals": [
+          "SecureStorageJNI"
+        ],
+        "references_localhost": false,
+        "references_cresstore_factory": false,
+        "references_signal_factory": false
+      },
+      {
+        "class_name": "com.crestron.signal_transport.SignalTransportFactory",
+        "output": "work/crestron/SignalTransportFactory.smali",
+        "sha256": "8c1e712180cd4ce5ecbcfd7b40ac0e6ab31e6548b0796aa3d6358807329e90fa",
+        "load_library_literals": [],
+        "references_localhost": true,
+        "references_cresstore_factory": false,
+        "references_signal_factory": true
+      }
+    ]
+  },
+  {
+    "name": "generalweb",
+    "package": "com.crestron.generalweb",
+    "version": "1.02.017",
+    "min_sdk": "24",
+    "target_sdk": "24",
+    "archive_sha256": "910452f7a1b7a85b34ac5559af9d3b9caad7cbbb4519e2f739ba4592508a87d7",
+    "apk_sha256": "738e9617afd4cf047c3f261242282fb16046091921f2bc6dbb0710f50d674188",
+    "native_libraries": [
+      "lib/armeabi-v7a/libbcipclient.so",
+      "lib/armeabi-v7a/libcryptoandros.so",
+      "lib/armeabi-v7a/libiconvandros.so",
+      "lib/armeabi-v7a/libsslandros.so"
+    ],
+    "native_abis": [
+      "armeabi-v7a"
+    ],
+    "selected_class_inspections": [
+      {
+        "class_name": "com.crestron.generalweb.GeneralWebInterface",
+        "output": "work/crestron/GeneralWebInterface.smali",
+        "sha256": "722270ac799885961e0e7ffe348fa7d1fa907e78d9003826786dd5c731f64a78",
+        "load_library_literals": [],
+        "references_localhost": false,
+        "references_cresstore_factory": false,
+        "references_signal_factory": true
+      }
+    ]
+  },
+  {
+    "name": "home-panel",
+    "package": "com.crestron.phoenix.touchscreen",
+    "version": "4.12.18+tswr",
+    "min_sdk": "21",
+    "target_sdk": "35",
+    "archive_sha256": "35d1656a9f40624a82560ee06fbce28ef0a10cc9ecb3699757f26854f1337cc3",
+    "apk_sha256": "c42745510d63b8ed8c2b1ad02fcfff2ebbae068aaa19da77903175e956f0de5d",
+    "native_libraries": [
+      "lib/armeabi-v7a/libandroidx.graphics.path.so",
+      "lib/armeabi-v7a/libbcipclient.so",
+      "lib/armeabi-v7a/libcryptoandros.so",
+      "lib/armeabi-v7a/libcryptocrestron.so",
+      "lib/armeabi-v7a/libcurlcrestron.so",
+      "lib/armeabi-v7a/libiconvandros.so",
+      "lib/armeabi-v7a/liblive555andros.so",
+      "lib/armeabi-v7a/libsqlcipher.so",
+      "lib/armeabi-v7a/libsslandros.so",
+      "lib/armeabi-v7a/libsslcrestron.so",
+      "lib/armeabi-v7a/libvideo-streaming-lib.so"
+    ],
+    "native_abis": [
+      "armeabi-v7a"
+    ],
+    "selected_class_inspections": [
+      {
+        "class_name": "com.crestron.cresstoreredis.CresStoreWrapper",
+        "output": "work/crestron/HomeCresStoreWrapper.smali",
+        "sha256": "565015f3fce9ae0c1baca10f297030efd7e24cec5e7e62171ac30896708ff2ca",
+        "load_library_literals": [
+          "cresstore_jsonJNI"
+        ],
+        "references_localhost": false,
+        "references_cresstore_factory": false,
+        "references_signal_factory": false
+      },
+      {
+        "class_name": "com.crestron.signal_transport.SignalTransportFactory",
+        "output": "work/crestron/HomeSignalTransportFactory.smali",
+        "sha256": "455e7d217787a201057c7753cf8e306115cff0b8cbf0417c01dc48d53fe522f0",
+        "load_library_literals": [],
+        "references_localhost": true,
+        "references_cresstore_factory": false,
+        "references_signal_factory": true
+      }
+    ]
+  }
+]

@@ -58,5 +58,10 @@
     "directory": "sources/reference-giza18",
     "url": "https://github.com/amazon-oss/android_device_amazon_giza.git",
     "commit": "5cef34f73be73a26b043aece96b0cf5ddc1b51a1"
+  },
+  {
+    "directory": "sources/reference-crestronkeeper",
+    "url": "https://github.com/akellai/CrestronKeeper.git",
+    "commit": "6546f94d2864614c8cc5ca069fad0c39b3b75f69"
   }
 ]

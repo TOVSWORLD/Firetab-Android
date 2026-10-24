@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Content-Length: 6485786
+Content-Type: application/x-zip-compressed
+Content-MD5: Ifh+/D8FDXPQu2wII9/Z7Q==
+Last-Modified: Mon, 14 Jul 2025 19:34:41 GMT
+ETag: 0x8DDC30D7A9C11B6
+Server: Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+x-ms-request-id: c52d8bd3-e01e-008c-6b05-64761d000000
+x-ms-version: 2009-09-19
+x-ms-lease-status: unlocked
+x-ms-blob-type: BlockBlob
+Date: Sat, 24 Oct 2026 22:15:55 GMT
+Connection: keep-alive
+

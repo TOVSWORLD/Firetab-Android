@@ -81,3 +81,33 @@ native-runtime port. Found official Android clients for Smart Graphics (Go) and
 HTML5/Construct (ONE, documented Android 14+), plus Android browser Web XPanel support.
 No claim that arbitrary native panel applications can run on douglas; no prototype,
 firmware extraction, large download or device operation was undertaken.
+
+## Crestron research completed after user authorization
+
+- Verified the native single-selected-app model against TSW-70 documentation.
+- Located the real public app-update manifest. Initial `70series` URL attempts
+  returned 404; corrected `70-series` spelling using official release-note evidence.
+- Checked archive sizes with HTTP HEAD and reported the approximately 79 MiB total
+  before downloading HTML5 host, General Web and touchscreen Home archives.
+- Preserved download/source metadata, hashes and extracted manifests under
+  `evidence/crestron/`. APKs and full selected disassembly remain ignored under
+  `work/crestron/`. No APK or native library was run or modified.
+- Used installed Android SDK `apkanalyzer` and Java 25.0.2 for static inspection.
+  Identified ARM32-only bundled native libraries, explicit loads of missing
+  `cresstore_jsonJNI`/`SecureStorageJNI`, localhost signal transport, and General
+  Web's signal bridge. These are observed dependency contracts, not runtime results.
+- Public firmware manifest was readable and advertised `3.003.0021.001`; its exact
+  firmware URL returned HTTP 404 on HEAD. An older tested URL also returned 404.
+  Did not download a full PUF, BSP or emulator image. No emulator is configured here.
+- Checked official Home/Go/ONE/Web XPanel deployment paths, native CH5 video
+  architecture, Android lock-task APIs, Microsoft certification documentation,
+  Zoom Android controller requirements, and current Crestron mobility-license status.
+- Searched public repositories and inspected CrestronKeeper at pinned commit
+  `6546f94d2864614c8cc5ca069fad0c39b3b75f69`; it targets the old mobile app and is
+  a launcher/lifecycle reference, not a native-runtime port.
+- Added `scripts/inspect_crestron_apps.py` to reproduce archive verification,
+  manifest/native-library inventory and selected class inspection. Added
+  `docs/CRESTRON-PANEL.md` with a project direction and gated native-service milestone.
+- Retained the current-kernel/general-purpose Android objective. No OS/kernel
+  implementation, physical testing, processor program change, account messaging,
+  paid-resource provisioning or native compatibility prototype was performed.

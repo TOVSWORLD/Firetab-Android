@@ -18,6 +18,10 @@ one application/use in setup and run that application full-screen. Supported And
 clients and native panel-runtime compatibility are distinct implementation levels;
 native firmware equivalence is not established.
 
+The [Crestron panel research](docs/CRESTRON-PANEL.md) now includes inspection of three
+actual panel APKs, identified external service dependencies, supported Android-client
+alternatives, and a staged native-compatibility direction.
+
 - [Evidence and feasibility](docs/FEASIBILITY.md)
 - [Continuation, resources, and build recipes](docs/CONTINUE.md)
 - [Work log and validation](docs/WORKLOG.md)

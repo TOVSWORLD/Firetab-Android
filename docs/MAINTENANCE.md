@@ -46,6 +46,14 @@ storage constraints require measurements, not an assumed Android version ceiling
 
 ### Separate Crestron panel-mode research track
 
+**Research update:** [CRESTRON-PANEL.md](CRESTRON-PANEL.md) records the completed
+initial source and binary investigation. Three public panel APKs were statically
+inspected. The HTML5 and Home panel paths require a missing Crestron JNI/service
+layer; all three inspected APKs bundle ARM32 native libraries. Keep supported
+Android clients and a native-runtime compatibility experiment as separate paths
+on the same current-Android/current-kernel platform. Obtain and inventory the
+missing panel services before promising native equivalence. No APK was executed.
+
 The general-purpose Android port remains the foundation. The user also wants a
 distinct optional panel role matching a native Crestron touch screen: select an
 application/use mode in setup, then run one selected application full-screen at a
@@ -84,8 +92,9 @@ framework/HAL dependencies, project runtimes and deployment protocols, and deter
 whether usable source/SDKs or appropriately available binaries exist. Hardware binding,
 provisioning, certificates, entitlement checks and redistribution constraints are
 questions to investigate, not blockers demonstrated by this research. Verify current
-licensing per selected runtime; older product pages and release notes disagree over
-historical mobility licensing, so do not impose a blanket requirement.
+licensing per selected runtime. The current licensing portal confirms the old
+ONE/HTML5 mobility license is no longer required with current software; older
+SW-MOBILITY documents must not be used as a blanket blocker.
 
 Classify every desired mode as supported Android client, supported web deployment,
 native runtime candidate, or unresolved. Evaluate custom Smart Graphics and HTML5

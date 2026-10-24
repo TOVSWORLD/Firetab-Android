@@ -1,0 +1,156 @@
+[
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/MonochromePublic.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/chromium-hash.txt",
+    "fileType": "apk",
+    "packageName": "org.chromium.chrome",
+    "versionNumber": "100.0.4896.79",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770",
+      "TS*R",
+      "TSW-570",
+      "TSW-570P"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/h5display-1_3_0_172.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/blackbird-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.crestron.blackbird",
+    "versionNumber": "1.3.0.172",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770",
+      "TS*R",
+      "TSW-570",
+      "TSW-570P"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/CH_TSW70_4.12.18.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/crestronhome-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.crestron.phoenix.touchscreen",
+    "versionNumber": "4.12.18",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770",
+      "TS*R",
+      "TSW-570",
+      "TSW-570P"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/Crestron_General_Web_v1.02.017.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/crestron_general_web-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.crestron.generalweb",
+    "versionNumber": "1.02.017",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770",
+      "TSW-570",
+      "TSW-570P"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/crestronwebview_3_0.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/crestron_webview-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.crestron.webview",
+    "versionNumber": "3.0",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/envoy_v1_6_1.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/envoy-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.envoy.rooms.crestron",
+    "versionNumber": "1.6.1.crestron",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/indoor_finders_v9.5.0.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/indoor_finders-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.indoorfinders.rducrestron",
+    "versionNumber": "9.5.0",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/KardhamDigital.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/kardhamdigital-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.idm.viadirect.crestron",
+    "versionNumber": "1.0-crestron.viadirect.com",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/Korbyt_1_3.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/korbyt-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.crestron.korbyt",
+    "versionNumber": "1.01.003",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/PADS4-1_0.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/pads4-hash.txt",
+    "fileType": "apk",
+    "packageName": "com.pads4.viewer.crestron",
+    "versionNumber": "1.0",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  },
+  {
+    "fileUrl": "https://devicefiles.crestron.io/apps/70-Series/Signed/zrc_6_7_5.zip",
+    "fileHashUrl": "https://crestrondevicefiles.blob.core.windows.net/70-series/production/applications/zoomscheduling-hash.txt",
+    "fileType": "apk",
+    "packageName": "us.partner.zoom.zrc",
+    "versionNumber": "6.7.5.4692",
+    "downgradeable": false,
+    "models": [
+      "TS*GV",
+      "TS*1070",
+      "TS*770"
+    ]
+  }
+]
