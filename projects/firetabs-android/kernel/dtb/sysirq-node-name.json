@@ -1,0 +1,30 @@
+{
+  "purpose": "PMIC and sysirq node-name structural candidate; no hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "patches": [
+    {
+      "path": "patches/0001-include-thermal-bindings.patch",
+      "sha256": "b0eb49c8a20ed8b19d1125f81ec0977b68eb337b4b2cd829e8ee3e914f12391d"
+    },
+    {
+      "path": "patches/0002-correct-structural-diagnostics.patch",
+      "sha256": "0fa73601e7676278f416bc3cef63bee129b162c492bd8cb23137cf77585e9142"
+    },
+    {
+      "path": "patches/0003-pmic-child-node-names.patch",
+      "sha256": "0e97e4326558f0b1824abf9d9efa3b12c555422264bb6afc60c86420cec82058"
+    },
+    {
+      "path": "patches/0004-sysirq-node-name.patch",
+      "sha256": "931629b3df5b4d2cf461d2ea2b481badf5dd7837432f672a4c003f156fe43a76"
+    }
+  ],
+  "expected_artifact": {
+    "bytes": 26279,
+    "sha256": "78fd34cbe0c129da23dd2e296be0db9180e7d8b464e719b59304f09d01456bea"
+  },
+  "kernel_compiled": false,
+  "hardware_tested": false,
+  "variant": "sysirq-node-name"
+}

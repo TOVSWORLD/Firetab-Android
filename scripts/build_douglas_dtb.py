@@ -28,7 +28,7 @@ def verify_inputs(experiment_name="baseline"):
         require(len(data) == item['bytes'] and hashlib.sha256(data).hexdigest() == item['sha256'], 'DT source changed: '+name)
     for edge in index['dependencies']:
         require(edge['parent'] in paths and edge['path'] in paths, 'Unresolved DT dependency')
-    experiment_file = 'experiment.json' if experiment_name == 'baseline' else 'pmic-node-names.json'
+    experiment_file = 'experiment.json' if experiment_name == 'baseline' else safe_path(experiment_name) + '.json'
     experiment = json.loads((PROJECT/experiment_file).read_text())
     for item in experiment['patches']:
         path = PROJECT/safe_path(item['path'])
@@ -77,7 +77,7 @@ def compile_tree(index, experiment, output, dtc, fdtget):
             require(actual['model'] == 'Amazon Fire HD 8 (2017)' and actual['compatible'] == ['amazon,douglas','mediatek,mt8163'], 'Wrong compiled board identity')
             require(actual['memory_reg'] == '0 40000000 0 20000000', 'Donor memory declaration changed without review')
             require(actual['cpu_enable_methods'] == ['psci']*4 and actual['cooling_cells'] == ['2']*4, 'Unexpected compiled CPU declarations')
-            if experiment.get('variant') == 'pmic-node-names':
+            if experiment.get('variant') in ('pmic-node-names', 'sysirq-node-name'):
                 actual['pmic_children'] = {name: get('/soc/pwrap@1000d000/mt6323/'+name, 'compatible') for name in ['regulators', 'keys', 'audio-codec']}
                 require(actual['pmic_children'] == {'regulators': 'mediatek,mt6323-regulator', 'keys': 'mediatek,mt6323-keys', 'audio-codec': 'mediatek,mt6397-codec'}, 'PMIC compatible changed')
             report.update(status='compiled',artifact=artifact,inspection=actual,dtc_version=subprocess.check_output([str(dtc),'--version'],text=True).strip(),kernel_compiled=False,device_tested=False,binding_validation='not passed; full ACK/donor binding context remains outstanding')
@@ -90,7 +90,7 @@ def compile_tree(index, experiment, output, dtc, fdtget):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names'], default='baseline')
+    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
     parser.add_argument('--verify-only',action='store_true')
     parser.add_argument('--dtc',type=Path,default=ROOT/'work/dtb-tool/build/dtc')
     parser.add_argument('--fdtget',type=Path,default=ROOT/'work/dtb-tool/build/fdtget')
