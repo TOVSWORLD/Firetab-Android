@@ -115,11 +115,12 @@ def collect(reader):
         read('/proc/device-tree/' + name, ['exec-out', 'cat', '/proc/device-tree/' + name], binary=True)
     listing = read('DT root node names', ['shell', 'ls', '/proc/device-tree'])
     if listing:
-        for node in listing.decode('utf-8', errors='replace').split():
-            if re.fullmatch(r'memory(?:@[0-9a-fA-F]+)?', node):
-                for prop in ['reg', 'orig_dram_info', 'mblock_info']:
-                    path = '/proc/device-tree/' + node + '/' + prop
-                    read(path, ['exec-out', 'cat', path], binary=True)
+        nodes = sorted({node for node in listing.decode('utf-8', errors='replace').split() if re.fullmatch(r'memory(?:@[0-9a-fA-F]+)?', node)})
+        records.append({'name': 'DT memory node selection', 'observed_nodes': len(nodes), 'collected_nodes': nodes[:8], 'limited': len(nodes) > 8})
+        for node in nodes[:8]:
+            for prop in ['reg', 'orig_dram_info', 'mblock_info']:
+                path = '/proc/device-tree/' + node + '/' + prop
+                read(path, ['exec-out', 'cat', path], binary=True)
     return {'scope': 'Read-only stock metadata; no raw partitions, root, reboot, mounts or setting writes',
             'generated_utc': datetime.now(timezone.utc).isoformat(), 'identity': identity,
             'hardware_serial_recorded': False, 'records': records,

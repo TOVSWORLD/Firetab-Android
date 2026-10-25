@@ -30,7 +30,8 @@ settings or logs. Kernel cmdline is retained only through a public boot-contract
 key allowlist; the device serial and arbitrary stderr are not saved.
 
 Each host command has a 15-second timeout and a 1 MiB limit per output pipe,
-with process termination on overflow. Permission-denied/absent DT properties
+with process termination on overflow. At most eight validated memory-node names
+are queried, with any limitation recorded. Permission-denied/absent DT properties
 remain unavailable. It never escalates privileges, roots, reboots, mounts, writes
 tablet settings, installs apps or flashes firmware. ADB itself can start its host
 server; it is not a generic guarantee of zero background OS activity.

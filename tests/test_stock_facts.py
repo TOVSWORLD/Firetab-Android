@@ -48,6 +48,18 @@ class StockFacts(unittest.TestCase):
         module.collect(reader)
         self.assertFalse(any(x[-1].endswith('/serial-number') or '/chosen/' in x[-1] for x in reader.calls))
 
+    def test_memory_node_queries_are_bounded(self):
+        fake = FakeReader()
+        def reader(args):
+            if args == ['shell', 'ls', '/proc/device-tree']:
+                return module.Result(0, ' '.join(f'memory@{x:x}' for x in range(20)).encode())
+            return fake(args)
+        result = module.collect(reader)
+        selection = next(x for x in result['records'] if x['name'] == 'DT memory node selection')
+        self.assertTrue(selection['limited'])
+        self.assertEqual(len(selection['collected_nodes']), 8)
+        self.assertEqual(sum('/memory@' in x[-1] for x in fake.calls), 24)
+
     def test_refuses_ambiguous_serial(self):
         with self.assertRaises(ValueError):
             module.ADBReader('adb', 'SERIAL; reboot')
