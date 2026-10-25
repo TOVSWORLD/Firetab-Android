@@ -1,0 +1,13 @@
+--- a/mmc/mtk-sd.yaml
++++ b/mmc/mtk-sd.yaml
+@@ -28,7 +28,9 @@
+           - mediatek,mt8196-mmc
+           - mediatek,mt8516-mmc
+       - items:
+-          - const: mediatek,mt7623-mmc
++          - enum:
++              - mediatek,mt7623-mmc
++              - mediatek,mt8163-mmc
+           - const: mediatek,mt2701-mmc
+       - items:
+           - enum:

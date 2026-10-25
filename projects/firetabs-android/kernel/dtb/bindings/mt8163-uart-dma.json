@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact compatible proposal, not hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-uart-dma.patch",
+  "patch_sha256": "29e5b5a691c13eb1c0d17dde97f4031151d433576fadf5003f89f6b96b63bf11",
+  "schema": "dma/mediatek,uart-dma.yaml",
+  "original_sha256": "a2f68bf8756393db03dec07961c7574db2e3615b819973ca9fb5a176294313ca",
+  "proposed_sha256": "88ed90a8d2c0dcf26bbc2de0459c77a1416d7855310f1741cf19821d2affa45d"
+}

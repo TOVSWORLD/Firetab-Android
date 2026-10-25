@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact compatible proposal, not hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-mmc.patch",
+  "patch_sha256": "bff3b3cfd06b79e394a447fc247e0d5d0bc532e928da831e4e96809ce58995b1",
+  "schema": "mmc/mtk-sd.yaml",
+  "original_sha256": "2a8753dad64fb9e4a1dbf37446b4c007068604212a9627ca620aed7a9c507e99",
+  "proposed_sha256": "2dbacdaaa5f0ca1cc32127dccb85f2a35f9c3907d68c3e7fbea401812d7ab5d3"
+}

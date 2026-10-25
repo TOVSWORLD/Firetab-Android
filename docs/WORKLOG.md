@@ -674,3 +674,11 @@ after reviewed path substitutions. Clean DTC26259B hashc1824152...; CI fourth
 variant added. Full delta removes1/adds0:25errors/55unmatched remain.88 tests
 pass. No cells invented, schema relaxed, hardware tested or device accessed.
 Next#27 RDMA compatible coverage/remaining boot-relevant gaps.
+
+## 2026-10-25 — Storage/UART-DMA compatible coverage (#72)
+
+Pinned ACK fallback evidence retained; two strict opt-in compatible proposals
+keep all other constraints. Meta clean; processed controls reject invalid pairs
+and preserve existing SoCs. Full delta removes8/adds0:21errors/51unmatched,
+overallfailed.89 tests pass. No device/driver/DT/firmware or hardware claim.
+Next#27 remaining peripheral fallback or display binding gaps.

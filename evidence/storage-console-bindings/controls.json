@@ -1,0 +1,111 @@
+{
+  "results": [
+    {
+      "proposal": "mt8163-mmc",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-mmc",
+            "mediatek,mt2701-mmc"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-mmc"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-mmc",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-mmc",
+            "mediatek,mt2701-mmc",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt7623-mmc",
+            "mediatek,mt2701-mmc"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt2701-mmc"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    },
+    {
+      "proposal": "mt8163-uart-dma",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-uart-dma",
+            "mediatek,mt6577-uart-dma"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-uart-dma"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-uart-dma",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-uart-dma",
+            "mediatek,mt6577-uart-dma",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8365-uart-dma",
+            "mediatek,mt6577-uart-dma"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt6577-uart-dma"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    }
+  ],
+  "passed": true
+}

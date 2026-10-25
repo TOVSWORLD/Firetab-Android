@@ -1,0 +1,9 @@
+{
+  "command": "work/dtb-tool/venv/bin/python evidence/storage-console-bindings/check-controls.py",
+  "processed_corpus_sha256": "a1b4709f530d9231459265e0e1d157131788e2bd3c11c715510c764d493168ec",
+  "control_script_sha256": "1966005385ac2b35d4fe8f3be2ef08de8a4764f56f7246266d96e716761b7c43",
+  "processed_fragment_sha256": {
+    "mt8163-mmc": "c9393fecbc3745003469a17c7e76bc64e3b8faa862c356a08f223affe2b54814",
+    "mt8163-uart-dma": "83fc283cd3aad25e02cc587dbc24cb6d858715563d074f23424f5c50b5ea2656"
+  }
+}
