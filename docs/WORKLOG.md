@@ -471,3 +471,13 @@ to this integration mode; resource gate unchanged and reported before starting.
 53 local tests pass including rejection of modular storage and missing console.
 No configuration/compile success claimed until actual Linux CI resolves/builds
 it; stock memory/loader/recovery/logging remain #21, no tablet access occurred.
+
+
+## 2026-10-25 — Diagnose hidden BLOCK configuration prompt (#44)
+
+Actual run 40183576290 at 14d1b21 failed policy check before Image compilation:
+BLOCK resolved y. Pinned block/Kconfig makes its bool prompt conditional on
+EXPERT, with default y; generic defconfig has EXPERT=n. Captured source/hash and
+failure evidence. Added EXPERT=y, retained strict storage-disabled check, improved
+all-mismatch diagnostics and rejected-config logging. Rebuild required; no
+kernel/boot result claimed, no tablet access or firmware packing occurred.

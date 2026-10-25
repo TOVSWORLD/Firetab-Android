@@ -59,7 +59,10 @@ if [ "$mode" != generic ]; then
   fi
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 olddefconfig
   if [ "$mode" = diagnostic ]; then
-    python3 scripts/diagnostic_config.py check "$output/.config"
+    if ! python3 scripts/diagnostic_config.py check "$output/.config"; then
+      cat "$output/.config" # Retain rejected resolved config in logs.
+      exit 1
+    fi
   fi
   for symbol in COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     grep -qx "CONFIG_${symbol}=y" "$output/.config"

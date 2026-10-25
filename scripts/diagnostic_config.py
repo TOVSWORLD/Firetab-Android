@@ -30,11 +30,14 @@ def policy():
 
 def check(text, requirements):
     active = dict(re.findall(r'^CONFIG_([A-Z0-9_]+)=(.*)$', text, re.M))
+    mismatches = []
     for name, state in requirements.items():
         # Unavailable/disabled symbols cannot compile built-in or modular code.
         actual = active.get(name, 'n')
         if actual != state:
-            raise ValueError(f'CONFIG_{name} expected {state}, resolved {actual}')
+            mismatches.append(f'CONFIG_{name} expected {state}, resolved {actual}')
+    if mismatches:
+        raise ValueError('; '.join(mismatches))
     return {'scope': 'Resolved kernel configuration policy only; no boot/hardware qualification',
             'fragment_sha256': hashlib.sha256(FRAGMENT.read_bytes()).hexdigest(),
             'required': requirements, 'passed': True}

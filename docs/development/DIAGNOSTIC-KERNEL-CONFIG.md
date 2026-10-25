@@ -46,3 +46,22 @@ Kernel compilation, DT validation, boot, hardware operation and Android/app
 reliability remain separate gates. No physical test instructions are authorized
 or provided here; #21 still needs actual stock memory/loader and recovery/log
 facts before a qualified test package can be prepared.
+
+
+## First resolved-config failure
+
+Run 40183576290 at project revision 14d1b21 stopped before Image compilation:
+`CONFIG_BLOCK expected n, resolved y`. The retained pinned
+[evidence/diagnostic-kernel/ack/block/Kconfig](../../evidence/diagnostic-kernel/ack/block/Kconfig)
+defines BLOCK as `bool "Enable the block layer" if EXPERT` with default y.
+Generic defconfig has EXPERT disabled, so the hidden BLOCK prompt prevents the
+requested user n value from taking effect. This is a configuration dependency,
+not an Android/kernel incompatibility or compiler failure.
+
+The fragment now explicitly enables EXPERT to expose that choice, while still
+requiring BLOCK and storage subsystems disabled after olddefconfig. EXPERT
+selects DEBUG_KERNEL in pinned init/Kconfig; it does not automatically enable
+all debug features. The checker now reports all policy mismatches together and
+the build prints rejected resolved config for review. The first failure and
+source hashes are retained; a new actual build is required to establish whether
+the corrected configuration resolves and compiles.
