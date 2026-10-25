@@ -1,0 +1,69 @@
+{
+  "scope": "Pinned ACK corpus with explicitly reported local proposal, if selected; donor-specific schemas still incomplete; no hardware validation",
+  "experiment": "sysirq-node-name",
+  "binding_profile": "mt8163-uart-proposed",
+  "binding_proposal": {
+    "scope": "Local UART binding proposal, not upstream acceptance or hardware validation",
+    "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "patch": "bindings/mt8163-uart.patch",
+    "patch_sha256": "fd66980ac202aa1db059693dac2349e310a37afbd06c36c418c39f26391e2908",
+    "schema": "serial/mediatek,uart.yaml",
+    "original_sha256": "3d088774d677738abb17d5657662b48ae611223f55fdc43b10202d78c5f11d6b",
+    "proposed_sha256": "0de555737b276d68f83676c8484f45b3f1c96d343cc587db6ed1f620e6b86012"
+  },
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "archive_sha256": "4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526",
+  "yaml_files": 5186,
+  "dtschema_version": "2026.9",
+  "wrapper_sha256": "4aaf06ffa30f4a34a9eb397c6129b9f1d0ece9a55beab99923a892253539f5c3",
+  "dtb_sha256": "78fd34cbe0c129da23dd2e296be0db9180e7d8b464e719b59304f09d01456bea",
+  "commands": [
+    {
+      "stage": "doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/serial/mediatek,uart.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mk-schema",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-mk-schema",
+        "-j",
+        "-o",
+        "<workspace>/work/binding-validation/result-sysirq-node-name-mt8163-uart-proposed/processed.json",
+        "<ack-bindings>"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 1
+    },
+    {
+      "stage": "validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-validate",
+        "-s",
+        "<workspace>/work/binding-validation/result-sysirq-node-name-mt8163-uart-proposed/processed.json",
+        "-m",
+        "--json-output",
+        "<workspace>/work/binding-validation/result-sysirq-node-name-mt8163-uart-proposed/diagnostics.json",
+        "<workspace>/work/dtb-compile/sysirq-node-name/douglas.dtb"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 310
+    }
+  ],
+  "diagnostic_count": 86,
+  "diagnostic_types": {
+    "unmatched": 57,
+    "validation": 29
+  },
+  "diagnostic_levels": {
+    "warning": 57,
+    "error": 29
+  },
+  "passed": false
+}

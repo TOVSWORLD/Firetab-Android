@@ -448,3 +448,15 @@ dynamic segment. Gzip/newc archive 1,248 bytes, SHA256
 8d68234297e9ed50e025cb321d066b2d4ff8a4a09c57a654e09d9467c10e6ff4.
 Exact command/compiler/source and artifact hashes retained in
  evidence/diagnostic-initramfs/compile-result.json. No runtime execution occurred.
+
+## 2026-10-25 — Narrow local UART binding proposal (#27/#22)
+
+Added opt-in mt8163-uart-proposed binding profile, preserving the original ACK
+profile. Proposal adds only the exact MT8163 first compatible with required
+MT6577 fallback, backed by pinned donor DT and matching ACK driver source.
+Original schema/patch/proposed schema hashes checked before applying in a fresh
+corpus extraction. Meta-validation clean; full-context diagnostic delta removes
+four compatible errors and four unmatched entries without added signatures:
+29 errors/57 unmatched remain, upstream YAML parse issue remains, passed=false.
+49 tests pass, including real isolated patch application and rejection of changed
+original schema input. No compatible deletion, permissive schema or hardware claim.

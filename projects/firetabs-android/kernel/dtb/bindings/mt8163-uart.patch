@@ -1,0 +1,15 @@
+From: FireTabs contributors
+Subject: [PATCH] dt-bindings: serial: propose MT8163 with MT6577 fallback
+
+Local proposal only; source DT and driver fallback are not hardware qualification.
+
+--- a/serial/mediatek,uart.yaml
++++ b/serial/mediatek,uart.yaml
+@@ -43,6 +43,7 @@
+               - mediatek,mt7988-uart
+               - mediatek,mt8127-uart
+               - mediatek,mt8135-uart
++              - mediatek,mt8163-uart
+               - mediatek,mt8173-uart
+               - mediatek,mt8183-uart
+               - mediatek,mt8186-uart
