@@ -38,3 +38,30 @@ This is structural validation only. No kernel rebuild is necessary to establish
 that this DT candidate compiles, but a qualified kernel-plus-DT diagnostic image
 still requires the stock boot/memory contract and recovery/log procedure in #21.
 No boot image is packed and no tablet access or hardware validation is performed.
+
+## Strict MT8163 sysirq compatible coverage (#66)
+
+The unchanged donor declares mediatek,mt8163-sysirq followed by
+mediatek,mt6577-sysirq. Both pinned legacy and ACK drivers register the MT6577
+compatible; the proposal adds only MT8163 to the existing first-string enum.
+Retained driver snapshots/hashes are in evidence/sysirq-binding. This is support
+for the already declared fallback contract, not verified IRQ inverter behavior
+on hardware. Node naming repair from#40 remains separate.
+
+Reproduce full-context validation with the prior UART, Gunyah lexical and PMIC
+selector flags plus `--extra-binding mt8163-sysirq`. Default ACK remains unchanged;
+proposal input/output/patch hashes and ACK revision are locked. Meta-validation
+is clean. The actual processed compatible schema is retained: local controls
+accept the exact pair, reject missing/wrong/extra fallback strings and preserve
+previous MT8173 compatibility. All other original schema constraints are unchanged.
+Run controls with `work/dtb-tool/venv/bin/python evidence/sysirq-binding/check-controls.py`.
+Use dtschema-processed tuple constraints, not a draft2020 validator on raw YAML
+list-items syntax; the latter is a different JSON Schema dialect.
+
+Full-context delta removes exactly one incompatible-pair error plus one unmatched
+entry and adds none:27 validation errors/56 unmatched remain (83 total), overall
+passed=false/exit1. Logs/result, exact delta, processed-schema provenance and
+controls are retained.84 unit tests pass including isolated locked patch apply
+and refusal of changed source. No DT/driver/hardware behavior changed or device
+queried. Next#27 board-relevant task: timer compatible coverage or display-RDMA
+node naming versus generic DMA-provider selection, with strict negative controls.

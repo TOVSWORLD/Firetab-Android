@@ -1,0 +1,10 @@
+--- a/interrupt-controller/mediatek,mt6577-sysirq.yaml
++++ b/interrupt-controller/mediatek,mt6577-sysirq.yaml
+@@ -36,6 +36,7 @@
+               - mediatek,mt7629-sysirq
+               - mediatek,mt8127-sysirq
+               - mediatek,mt8135-sysirq
++              - mediatek,mt8163-sysirq
+               - mediatek,mt8173-sysirq
+               - mediatek,mt8183-sysirq
+               - mediatek,mt8365-sysirq

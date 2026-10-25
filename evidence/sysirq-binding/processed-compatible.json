@@ -1,0 +1,50 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "const": "mediatek,mt6577-sysirq"
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt2701-sysirq",
+            "mediatek,mt2712-sysirq",
+            "mediatek,mt6572-sysirq",
+            "mediatek,mt6580-sysirq",
+            "mediatek,mt6582-sysirq",
+            "mediatek,mt6589-sysirq",
+            "mediatek,mt6592-sysirq",
+            "mediatek,mt6755-sysirq",
+            "mediatek,mt6765-sysirq",
+            "mediatek,mt6779-sysirq",
+            "mediatek,mt6795-sysirq",
+            "mediatek,mt6797-sysirq",
+            "mediatek,mt7622-sysirq",
+            "mediatek,mt7623-sysirq",
+            "mediatek,mt7629-sysirq",
+            "mediatek,mt8127-sysirq",
+            "mediatek,mt8135-sysirq",
+            "mediatek,mt8163-sysirq",
+            "mediatek,mt8173-sysirq",
+            "mediatek,mt8183-sysirq",
+            "mediatek,mt8365-sysirq",
+            "mediatek,mt8516-sysirq"
+          ]
+        },
+        {
+          "const": "mediatek,mt6577-sysirq"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}

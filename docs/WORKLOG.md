@@ -649,3 +649,11 @@ clean; YAML/jsonschema controls preserve missing-cells rejection for real domain
 and MFD wrong-compatible/unknown-property rejection. Full-context delta removes
 one false domain-cells requirement, adds none:28errors/57unmatched remain.83
 unit tests pass. Next#27 remaining schema failures; no device/hardware claims.
+
+## 2026-10-25 — MT8163 sysirq binding coverage (#66)
+
+Pinned ACK/legacy fallback driver evidence retained. Opt-in enum adds MT8163
+first compatible requiring unchanged MT6577 fallback; no other constraints
+changed. Meta clean; actual processed tuple negative controls reject wrong/
+missing/extra fallback. Full delta removes2diagnostics/adds0, now27errors plus
+56unmatched, overallfailed.84 tests pass. Next#27 timer or RDMA selector work.
