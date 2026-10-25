@@ -136,3 +136,21 @@ User required main to be locked except for development-to-main releases. Created
 `development`, enabled CI on integration pushes and added a metadata-only source-branch
 check. Main requires release PRs from the same repository's development branch.
 No PR code executes in the privileged-event workflow; token permissions stay read-only.
+
+## 2026-10-24 — Public contribution and release process
+
+Added public contribution, conduct, governance, security, support and provenance docs;
+architecture, setup, testing, troubleshooting, roadmap, decision and release guides.
+Defined independent product SemVer streams and source-workspace tags, with a conditional
+monthly first-Tuesday window and explicit stable/LTS acceptance. No release was published.
+
+Implemented release-manifest checks and rejection tests; added tracked documentation-link
+and form/taxonomy checks to Repository integrity. Created seven issue forms, CODEOWNERS,
+release-note categories and monthly Actions dependency PR configuration. License selection
+is awaiting the owner; external code/doc merge acceptance is explicitly held meanwhile.
+
+Applied 27 labels, three milestones and eight bounded native parent/sub-issues.
+Seed identities are recorded in projects/github-setup.json; the reconciliation script
+preserves existing issue bodies and states. Enabled private vulnerability reporting.
+Active tag ruleset 25808738 blocks updates/deletion for all three release tag prefixes.
+No model service, full build, firmware upload or physical test was performed.

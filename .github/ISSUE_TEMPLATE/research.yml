@@ -1,0 +1,84 @@
+{
+  "name": "Research investigation",
+  "description": "Resolve an evidence gap without claiming an implementation",
+  "title": "[Research investigation] ",
+  "labels": [
+    "type:research",
+    "level:feature",
+    "status:proposed"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Do not post vulnerabilities, secrets, serials, private lab/customer data or vendor binaries. Use the private security-report link below for vulnerabilities. Proposed work is not implemented functionality."
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "project",
+      "attributes": {
+        "label": "Project",
+        "options": [
+          "FireTabs Android",
+          "Crestron Panel",
+          "Shared repository"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "parent",
+      "attributes": {
+        "label": "Parent project/feature issue"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "question",
+      "attributes": {
+        "label": "Question and decision it informs"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "sources",
+      "attributes": {
+        "label": "Starting sources and related work"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "method",
+      "attributes": {
+        "label": "Bounded method and resource budget"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "acceptance",
+      "attributes": {
+        "label": "Evidence needed to answer the question",
+        "description": "Separate verified blockers, hypotheses and missing tests."
+      },
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

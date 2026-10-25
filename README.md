@@ -19,6 +19,7 @@ Run the same inexpensive offline checks used by CI, without third-party Python p
 python3 scripts/ci.py repository
 python3 scripts/ci.py firetabs-android
 python3 scripts/ci.py crestron-panel
+python3 scripts/check_community.py
 python3 -m unittest discover -s tests -v
 ```
 
@@ -39,3 +40,10 @@ bundle or Crestron firmware distribution.
 
 Development targets `development`; `main` accepts development-to-main release PRs only.
 See [branch and release policy](docs/CI.md#branch-and-release-policy).
+
+## Community and releases
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before sending a PR. See the
+[documentation index](docs/README.md), [issue hierarchy](docs/project/ISSUES.md),
+[release cadence and numbering](docs/releases/PROCESS.md), [support](SUPPORT.md),
+[security reporting](SECURITY.md), and [licensing status](LICENSING.md).

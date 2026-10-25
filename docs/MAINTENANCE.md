@@ -135,5 +135,6 @@ The user will provide the next instructions. This document update does not begin
 kernel port, large download, build, or physical device operation.
 
 Current work is source inspection and initial Android 11 patch adaptation only.
-No feature-gap audit, maintained kernel, complete build environment, CI pipeline,
-Android 15/17 port or device validation is claimed complete.
+No feature-gap audit, maintained kernel, complete build environment, Android 15/17
+port or device validation is claimed complete. Repository CI is now implemented; it
+validates evidence consistency and does not build or run firmware. See CI.md.

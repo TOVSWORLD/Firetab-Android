@@ -1,20 +1,33 @@
-## Project and behavior
+## Project, issue and behavior
 
-Which project changes, what concrete behavior changes, and why?
+Project label and parent task/feature: Closes #... or Refs #...
+Concrete before/after behavior, reason and non-goals.
 
-## Evidence
+## Evidence and validation
 
-Commands run, actual results, source revisions, and log/artifact paths and hashes.
-Distinguish static checks, compilation, boot, hardware validation and application tests.
-State tests not performed and remaining gaps. Link the relevant validation record.
+Exact commands, actual results, source revisions, logs/hashes and CI links.
+Distinguish static checks, compilation, boot, hardware and application/soak tests.
+List unperformed tests and remaining gaps; link the project's validation record.
 
-## AI-assisted change review
+## Provenance and AI assistance
 
-Verify referenced APIs/files and upstream claims. Explain any removed functionality,
-large deletion, introduced compatibility behavior, or changed tests. Do not suppress
-failures, add inert implementations or present a proposed design as implemented work.
+Origin/license of new code or material; preserved upstream notices.
+Disclose material AI assistance and what the submitting human verified.
+Explain removed behavior, large deletions, compatibility adapters and changed tests.
+No inert implementations, suppressed failures or unverified completion claims.
+
+## Release and contributor review
+
+- [ ] I read CONTRIBUTING.md and the current LICENSING.md acceptance policy.
+- [ ] I reviewed actual outputs and included truthful test limits.
+- [ ] I reviewed logs/files for secrets, private lab data and redistribution restrictions.
+- [ ] Documentation, limitations and release implications match the change.
+
+For runtime changes: compatibility, security coverage, upgrade/recovery implications.
+For release PRs: development → main, version/manifest/notes and exact tested revision.
+For source-only changes: explicitly state that no runtime was validated.
 
 ## Resources and device scope
 
-List any new downloads, host requirements or secrets. Physical device actions need
-separate owner authorization; this PR does not authorize flashing or unlocking.
+New downloads, disk/RAM/paid resources or credentials required.
+Device-changing tests need separate owner authorization; this PR grants none.

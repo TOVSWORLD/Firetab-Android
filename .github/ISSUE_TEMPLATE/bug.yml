@@ -1,0 +1,96 @@
+{
+  "name": "Bug report",
+  "description": "A reproducible code, tool or documented-behavior failure",
+  "title": "[Bug report] ",
+  "labels": [
+    "type:bug",
+    "status:proposed"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Do not post vulnerabilities, secrets, serials, private lab/customer data or vendor binaries. Use the private security-report link below for vulnerabilities. Proposed work is not implemented functionality."
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "project",
+      "attributes": {
+        "label": "Project",
+        "options": [
+          "FireTabs Android",
+          "Crestron Panel",
+          "Shared repository"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "revision",
+      "attributes": {
+        "label": "Commit/tag and component"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "environment",
+      "attributes": {
+        "label": "Environment",
+        "description": "OS, architecture, device/codename and exact app/processor versions if relevant."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "reproduce",
+      "attributes": {
+        "label": "Steps to reproduce",
+        "description": "Include exact commands and actual sanitized output."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "expected",
+      "attributes": {
+        "label": "Expected and actual behavior"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "evidence",
+      "attributes": {
+        "label": "Evidence and scope",
+        "description": "Logs/run/source links; what was tested and what is still a hypothesis."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "impact",
+      "attributes": {
+        "label": "Impact and recovery",
+        "description": "Data/device impact and known recovery; do not perform destructive actions to complete this form."
+      },
+      "validations": {
+        "required": false
+      }
+    }
+  ]
+}

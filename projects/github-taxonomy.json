@@ -1,0 +1,153 @@
+{
+  "labels": [
+    {
+      "name": "project:firetabs-android",
+      "color": "1d76db",
+      "description": "Maintained general-purpose Android platform"
+    },
+    {
+      "name": "project:crestron-panel",
+      "color": "1d76db",
+      "description": "Optional Crestron panel load and compatibility"
+    },
+    {
+      "name": "level:project",
+      "color": "5319e7",
+      "description": "Top-level project scope"
+    },
+    {
+      "name": "level:feature",
+      "color": "5319e7",
+      "description": "Bounded feature or investigation"
+    },
+    {
+      "name": "level:task",
+      "color": "5319e7",
+      "description": "Reviewable implementation or evidence task"
+    },
+    {
+      "name": "type:bug",
+      "color": "0075ca",
+      "description": "Reproducible defect"
+    },
+    {
+      "name": "type:feature",
+      "color": "0075ca",
+      "description": "Behavior or capability proposal"
+    },
+    {
+      "name": "type:research",
+      "color": "0075ca",
+      "description": "Source-based investigation"
+    },
+    {
+      "name": "type:test-report",
+      "color": "0075ca",
+      "description": "Owner-run test evidence"
+    },
+    {
+      "name": "type:release",
+      "color": "0075ca",
+      "description": "Versioned release preparation"
+    },
+    {
+      "name": "type:docs",
+      "color": "0075ca",
+      "description": "Documentation or contribution guidance"
+    },
+    {
+      "name": "status:proposed",
+      "color": "fbca04",
+      "description": "Not accepted implementation scope"
+    },
+    {
+      "name": "status:ready",
+      "color": "fbca04",
+      "description": "Scoped and ready to start"
+    },
+    {
+      "name": "status:in-progress",
+      "color": "fbca04",
+      "description": "Active work"
+    },
+    {
+      "name": "status:blocked",
+      "color": "fbca04",
+      "description": "Needs identified dependency or evidence"
+    },
+    {
+      "name": "status:needs-validation",
+      "color": "fbca04",
+      "description": "Implementation needs execution/review"
+    },
+    {
+      "name": "priority:p0",
+      "color": "b60205",
+      "description": "Active security, data-loss or release danger"
+    },
+    {
+      "name": "priority:p1",
+      "color": "d4c5f9",
+      "description": "Blocks current accepted outcome"
+    },
+    {
+      "name": "priority:p2",
+      "color": "d4c5f9",
+      "description": "Normal priority"
+    },
+    {
+      "name": "priority:p3",
+      "color": "d4c5f9",
+      "description": "Optional or later work"
+    },
+    {
+      "name": "area:repository",
+      "color": "bfdadc",
+      "description": "Shared CI, documentation and release process"
+    },
+    {
+      "name": "area:kernel",
+      "color": "bfdadc",
+      "description": "Kernel and board support"
+    },
+    {
+      "name": "area:android",
+      "color": "bfdadc",
+      "description": "Android integration and hardware interfaces"
+    },
+    {
+      "name": "area:clients",
+      "color": "bfdadc",
+      "description": "Supported Android or web clients"
+    },
+    {
+      "name": "area:native-runtime",
+      "color": "bfdadc",
+      "description": "Native Crestron runtime/service compatibility"
+    },
+    {
+      "name": "device:douglas",
+      "color": "c2e0c6",
+      "description": "Fire HD 8 2017 KFDOWI; do not assume other models match"
+    },
+    {
+      "name": "question",
+      "color": "d876e3",
+      "description": "Support or research question needing context"
+    }
+  ],
+  "milestones": [
+    {
+      "title": "workspace-v0.1.0",
+      "description": "First reviewed source/tooling/contribution snapshot; no runtime release. Monthly review window is conditional, not a firmware due date."
+    },
+    {
+      "title": "Android: maintained-kernel audit",
+      "description": "Evidence milestone: select a kernel candidate and map douglas support gaps. Not a promise of compiled or booting firmware."
+    },
+    {
+      "title": "Panel: client and native-service assessment",
+      "description": "Evidence milestone: define full client acceptance and inventory native runtime dependencies. No parity claim."
+    }
+  ]
+}
