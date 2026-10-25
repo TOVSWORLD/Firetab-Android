@@ -80,3 +80,30 @@ the strict CPU_IDLE=n requirement. ARM_PSCI_FW remains available for firmware CP
 operations; disabling the cpuidle policy driver does not validate CPU_ON or stock
 PSCI compatibility. A corrected build is still required; no Image success is
 inferred from storage configuration resolving correctly.
+
+
+## Successful restricted compile
+
+[Run 40185547611](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40185547611)
+at project 3bf1010f3f007bd3fd202da30b3483ca12933531 passed in 23 minutes
+16 seconds with Ubuntu Clang18.1.3. The actual resolved policy check passed;
+clock, pinctrl and power-provider objects compiled W=1, then Image/vmlinux linked.
+No compiler warning/error lines were present. Complete resolved configuration,
+its verified hash, policy result, artifact sizes/hashes and log checksum are
+retained under evidence/diagnostic-kernel. The configuration recovered from logs
+matches the original sha256sum exactly, rather than being treated as equivalent
+based on a subset of symbols.
+
+Image: 28,576,256 bytes. Deterministic gzip Image: 9,187,928 bytes, SHA256
+a6ecd7444c9ffc8f47c4954902b23e15fd1f861b924ae9a082157652dc2ab1c1.
+These are measured kernel outputs, not an assembled firmware image. The raw
+Image size is not evidence of compressed boot-partition fit or failure; even the
+measured gzip size must be combined with actual stock layout, DT, initramfs,
+header/padding and loader requirements before a fit/boot claim. Build binaries
+were not published or retained as downloadable user firmware. The report and
+configuration allow a new build to be inspected and continued.
+
+No DT is appended and no initramfs is integrated. The matched full binding
+validation still fails (#27), and stock memory/PSCI/loader/recovery/logging gates
+remain #21. This completes #44's restricted compile scope, not qualified board
+bring-up, Android compilation, boot, hardware or application reliability.

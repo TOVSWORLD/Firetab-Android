@@ -491,3 +491,17 @@ Kconfig source proving ACPI_PROCESSOR -> ACPI_PROCESSOR_IDLE -> CPU_IDLE. Fragme
 now disables ACPI/processor idle policy for the donor-DT experiment; the strict
 CPU_IDLE=n gate remains. No ARM_PSCI_FW/DT/stock-loader changes. Corrected build
 still pending; no physical tablet access, firmware packing or runtime claim.
+
+
+## 2026-10-25 — Restricted diagnostic Image compile succeeded (#44)
+
+Actual run 40185547611 at 3bf1010f3f007bd3fd202da30b3483ca12933531 passed
+in 23m16s with zero compiler warning/error lines. Resolved strict policy passes;
+real clock/pinctrl/power objects W=1 and full Image/vmlinux compiled. Retained
+complete resolved config reconstructed from CI and matched original SHA256
+f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed.
+Image 28,576,256 bytes; Image.gz 9,187,928 bytes / SHA256
+a6ecd7444c9ffc8f47c4954902b23e15fd1f861b924ae9a082157652dc2ab1c1.
+Report/log checksum and policy evidence retained. No DT/ramdisk integration,
+firmware packing or published test package; stock #21 prerequisites and #27
+schema validation remain. No tablet access or runtime result claimed.

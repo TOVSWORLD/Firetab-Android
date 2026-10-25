@@ -1,0 +1,39 @@
+{
+  "scope": "Restricted diagnostic configuration and actual kernel compilation; no DT/initramfs integration, boot or hardware test",
+  "ci_run": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40185547611",
+  "project_commit": "3bf1010f3f007bd3fd202da30b3483ca12933531",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "started_at": "2026-10-25T10:37:39Z",
+  "completed_at": "2026-10-25T11:00:55Z",
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "full_downloaded_ci_log_sha256": "c1e8f4bd28b8f98c934da9a15f5a0d4017ee2e04281b0787ff1e2d94ea4e5074",
+  "config_sha256": "f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed",
+  "fragment_sha256": "2fdc8bb1dc7376484ef35cfa7c5daecc7497d9ccb9c40eff8e6f2bee97bb81cd",
+  "artifacts": {
+    "vmlinux": {
+      "bytes": 251067168,
+      "sha256": "7e1e483c0a9527a6fe58fe54dd2b5d6de831226bac3d40382422e10baf283e7e"
+    },
+    "Image": {
+      "bytes": 28576256,
+      "sha256": "9d85c4148eac0061736070729161ef237951677190080516c8adb15f2bffe891"
+    },
+    "Image.gz": {
+      "bytes": 9187928,
+      "sha256": "a6ecd7444c9ffc8f47c4954902b23e15fd1f861b924ae9a082157652dc2ab1c1"
+    }
+  },
+  "compiler_warning_lines": 0,
+  "compiler_error_lines": 0,
+  "provider_object_markers": [
+    "MT8163_CLOCK_OBJECT_COMPILE_COMPLETE",
+    "MT8163_PINCTRL_OBJECT_COMPILE_COMPLETE",
+    "MT8163_POWER_OBJECT_COMPILE_COMPLETE"
+  ],
+  "resolved_policy_passed": true,
+  "kernel_compiled": true,
+  "boot_tested": false,
+  "hardware_tested": false,
+  "android_compiled": false,
+  "firmware_packed": false
+}
