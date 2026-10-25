@@ -1,0 +1,74 @@
+{
+  "scope": "Static candidate declarations versus observed runtime banks, not runtime reservation ownership",
+  "candidate_dtb_sha256": "887392afe3b005b9324f0797f124153ed846649b0ebdba86f2018f1caf6c9da1",
+  "fixed_reservations": [
+    {
+      "node": "/reserved-memory/mdump-reserved-memory@4bd00000",
+      "start": 1271922688,
+      "bytes": 3145728,
+      "inside_runtime_usable_bank": true,
+      "overlap_top_exclusion_bytes": 0
+    },
+    {
+      "node": "/reserved-memory/atf-reserved-memory@43000000",
+      "start": 1124073472,
+      "bytes": 196608,
+      "inside_runtime_usable_bank": true,
+      "overlap_top_exclusion_bytes": 0
+    },
+    {
+      "node": "/reserved-memory/ram_console-reserved-memory@44400000",
+      "start": 1145044992,
+      "bytes": 2097152,
+      "inside_runtime_usable_bank": true,
+      "overlap_top_exclusion_bytes": 0
+    },
+    {
+      "node": "/reserved-memory/ll_log-reserved-memory@46600000",
+      "start": 1147142144,
+      "bytes": 131072,
+      "inside_runtime_usable_bank": true,
+      "overlap_top_exclusion_bytes": 0
+    }
+  ],
+  "dynamic_reservations": [
+    {
+      "node": "/reserved-memory/consys-reserve-memory",
+      "properties": {
+        "no-map": {
+          "exit_code": 0,
+          "value": ""
+        },
+        "size": {
+          "exit_code": 0,
+          "value": "0 200000"
+        },
+        "alignment": {
+          "exit_code": 0,
+          "value": "0 200000"
+        }
+      },
+      "address_known": false
+    }
+  ],
+  "fixed_bytes": 5570560,
+  "fixed_overlap_top_exclusion_bytes": 0,
+  "unattributed_top_exclusion": [
+    {
+      "start": 2573205504,
+      "bytes": 111149056
+    }
+  ],
+  "missing_runtime_evidence": [
+    "memory/tee_reserved_mem",
+    "memory/lca_reserved_mem",
+    "chosen/atag,videolfb"
+  ],
+  "reservation_ownership_verified": false,
+  "boot_qualified": false,
+  "input_sha256": {
+    "evidence/runtime-memory/result.json": "ab60b811a10028b6ddcb96797c2ff81fa3562423e2078d13e8f9eaeea18564e5",
+    "evidence/stock-dtb/candidate-report.json": "1a2287bc6251e627a966972bed71836452adbe81e6d2a8241c1d0976872a3350"
+  },
+  "inventory_sha256": "091a6da8f4eec964e41eaa18eb12d6d0978e43ec8a3984af12ee343a234aa156"
+}

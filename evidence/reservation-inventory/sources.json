@@ -1,0 +1,20 @@
+[
+  {
+    "path": "drivers/misc/mediatek/mem/mtk_memcfg.c",
+    "sha256": "9b3f4d0e422cfada46cca79ec347612bad232ba55e85e1a7969772d21d3a01c0",
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/mem/mtk_memcfg.c"
+  },
+  {
+    "path": "drivers/misc/mediatek/atf_log/atf_logger.c",
+    "sha256": "1d92cbbd2a088cf984afb2057ac1769f39bed7c2fe97bf6f14090720f2d42587",
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/atf_log/atf_logger.c"
+  },
+  {
+    "path": "drivers/misc/mediatek/video/mt8163/videox/mtkfb.c",
+    "sha256": "3e0c5ac5634a5a7a1fe909cff10a99e732f7c5c3791833b61134752197891ecb",
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/video/mt8163/videox/mtkfb.c"
+  }
+]

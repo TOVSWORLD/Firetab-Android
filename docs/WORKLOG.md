@@ -622,3 +622,13 @@ ARM64 vendor structs; pinned source and compiler layout retained. Actual ranks
 total1536MiB, usable reg/mblocks agree at1430MiB, excluding106MiB at top. No
 ownership inference or DT enlargement. Five malformed/actual-data test groups
 added, all78 tests pass. Next: source-audit excluded/reserved intervals under#21.
+
+## 2026-10-25 — Reservation interval/source audit (#60)
+
+Added reproducible static-vs-runtime inventory and boundary tests. Four fixed
+regions total5.3125MiB inside usable banks and have zero overlap with106MiB top
+exclusion; dynamic CONSYS location unknown. Pinned memory/ATF/display consumers
+identify missing tee/lca/framebuffer runtime fields; accounting equality check
+is disabled. No ownership inferred. Exact residual remains#21; next independent
+task#27 upstream schema parse/selector failures. All81 tests pass. No device
+queries, firmware assembly, helper execution, downloads or paid resources.
