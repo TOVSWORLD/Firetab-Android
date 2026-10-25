@@ -1,0 +1,164 @@
+{
+  "scope": "Sanitized selected facts from authorized read-only stock collection; no boot or recovery qualification",
+  "generated_utc": "2026-10-25T16:47:25.282578+00:00",
+  "raw_local_report_sha256": "f8521045dd891c20ea01a4baec9a3117edf6035a801b865fa2aeab5d8fe8f79a",
+  "collector_sha256": "c6deefa420f2892c11f9223e0960ae1037e3173b03cbea803acaa17c64f84a12",
+  "selected_records": [
+    {
+      "name": "ro.product.manufacturer",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "Amazon"
+    },
+    {
+      "name": "ro.product.model",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "KFDOWI"
+    },
+    {
+      "name": "ro.product.device",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "douglas"
+    },
+    {
+      "name": "ro.build.version.incremental",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "50.6.5.9_user_659664620"
+    },
+    {
+      "name": "ro.build.fingerprint",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "Amazon/douglas/douglas:5.1.1/LVY48F/50.6.5.9_user_659664620:user/release-keys"
+    },
+    {
+      "name": "ro.build.version.fireos",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "5.3.7.3"
+    },
+    {
+      "name": "ro.boot.pl_version",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "0x0007"
+    },
+    {
+      "name": "ro.boot.lk_version",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "0x0003"
+    },
+    {
+      "name": "ro.boot.tee_version",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "text": "0x0106"
+    },
+    {
+      "name": "/proc/device-tree/version",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "68767400"
+    },
+    {
+      "name": "/proc/device-tree/#address-cells",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "00000002"
+    },
+    {
+      "name": "/proc/device-tree/#size-cells",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "00000002"
+    },
+    {
+      "name": "/proc/device-tree/memory@00000000/reg",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "0000000040000000000000004000000000000000800000000000000019600000"
+    },
+    {
+      "name": "/proc/device-tree/memory@00000000/orig_dram_info",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "020000000000000000000040000000000000004000000000000000800000000000000020000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "name": "/proc/device-tree/memory@00000000/mblock_info",
+      "available": true,
+      "exit_code": 0,
+      "truncated": false,
+      "timed_out": false,
+      "hex": "0200000000000000000000400000000000000040000000000000000000000000000000800000000000006019000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "runtime_memory_banks": [
+    {
+      "start": "0x40000000",
+      "bytes": 1073741824,
+      "end_exclusive": "0x80000000"
+    },
+    {
+      "start": "0x80000000",
+      "bytes": 425721856,
+      "end_exclusive": "0x99600000"
+    }
+  ],
+  "dt_memory_total_bytes": 1499463680,
+  "memtotal_kib": 1406536,
+  "kernel_release": "3.18.19-01784-g988b7c2ec57",
+  "unavailable": [
+    "uname command",
+    "/proc/iomem",
+    "/proc/cmdline"
+  ],
+  "loader_versions_decimal": {
+    "preloader": 7,
+    "lk": 3,
+    "tee": 262
+  },
+  "pinned_helper_maximum_versions": {
+    "preloader": 6,
+    "lk": 2,
+    "tee": 259
+  },
+  "helper_revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+  "helper_source": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/step-1.sh",
+  "helper_executed": false,
+  "stock_ota_build_identity_matches": true,
+  "stock_ota_binary_equivalence_verified": false,
+  "physical_boot_tested": false
+}

@@ -605,3 +605,12 @@ returns host status0; do not retain error text. Traverse the device-tree symlink
 with a trailing slash and add proc/version for systems without uname. Fake
 transport covers status-zero permission/missing-command failures and privacy
 filtering. 73 tests pass. Device-specific evidence remains private locally.
+
+## 2026-10-25 — Publish owner-approved sanitized runtime evidence (#21)
+
+Owner explicitly approved sanitized publication. Selected firmware/build/loader
+identifiers, runtime DT memory properties and provenance hashes reviewed; no
+hardware serial, household data, raw logs or full local report published. Actual
+runtime hvt DT reports two banks totaling1430MiB; installed build identity agrees
+with inspected OTA candidate, not binary/signature equivalence. PL7/LK3/TEE262
+exceed pinned helper6/2/259 maximums. No helper/device operation performed here.
