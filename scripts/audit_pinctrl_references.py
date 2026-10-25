@@ -40,8 +40,20 @@ def audit():
             pin, function = definitions[symbol]
             consumers[symbol] = {'pin': int(pin), 'function': int(function),
                                  'driver_function': candidate[pin]['functions'][function]}
+    register_tables = []
+    old_driver = (ROOT / 'evidence/kernel-audit/legacy/drivers/pinctrl/mediatek/pinctrl-mt8163.c').read_text()
+    new_driver = (PORT / 'drivers/pinctrl/mediatek/pinctrl-mt8163.c').read_text()
+    for name in ['mt8163_drv_grp', 'mt8163_pin_drv', 'mt8163_spec_pupd', 'mt8163_ies_set', 'mt8163_smt_set']:
+        def entries(text):
+            body = re.search(r'\b' + name + r'\[\].*?=\s*\{(.*?)\n\};', text, re.S)[1]
+            return [re.sub(r'\s+', '', entry) for entry in re.findall(r'MTK_[A-Z_]+\([^)]*\)', body)]
+        before, after = entries(old_driver), entries(new_driver)
+        register_tables.append({'name': name, 'legacy_entries': len(before), 'candidate_entries': len(after),
+                                'added': sorted(set(after) - set(before)),
+                                'removed': sorted(set(before) - set(after)), 'identical_sequence': before == after})
     return {'scope': __doc__, 'identical_legacy_descriptor_count': len(candidate),
             'unique_literal_dt_pin_functions': consumers,
+            'register_table_comparison': register_tables,
             'legacy_goodix_gpio_descriptors': {n: candidate[n] for n in ['35', '46']},
             'limitations': ['No full preprocessor/schema validation or electrical routing test.',
                            'A GPIO number and its EINT line are distinct identifiers.',
@@ -57,6 +69,6 @@ if __name__ == '__main__':
         expected = json.loads((ROOT / 'evidence/pinctrl-port/reference-audit.json').read_text())
         if result != expected:
             raise SystemExit('Pinctrl report changed; review before regenerating')
-        print('PASS: 155 legacy pin descriptors match; 15 unique literal DT mux references checked')
+        print('PASS: 155 pin descriptors and 15 DT mux references checked; register-table deltas recorded')
     else:
         print(json.dumps(result, indent=2))

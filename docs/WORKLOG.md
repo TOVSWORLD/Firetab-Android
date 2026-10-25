@@ -282,3 +282,8 @@ remain unknown. Source is unchanged by the subsequent audit/evidence/CI addition
 Added both bounded reference audits to ordinary repository CI. #19 remains open:
 full Image integration, complete schema/register review and all runtime evidence
 are still pending.
+
+Expanded pinctrl audit: drive groups (3), pin-drive entries (119), special pulls
+(46) and Schmitt entries (57) match legacy. The donor adds one input-enable entry
+for GPIO87/MSDC2_DAT0, 0xcf0 bit 4; retained as an unvalidated donor delta and
+recorded explicitly. No register value was changed to force an audit pass.

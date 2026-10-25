@@ -40,3 +40,10 @@ prove electrical routing. The captured legacy Goodix node uses GPIO35 for IRQ
 and GPIO46 for reset; GPIO35 maps to EINT46, so GPIO and raw interrupt-line
 numbers must not be conflated during the later touch port. No new touch node
 is installed by this work.
+
+The register-table comparison finds identical drive groups (3), pin drive entries
+(119), special pull entries (46) and Schmitt entries (57). The donor adds one
+input-enable entry for GPIO87/MSDC2_DAT0: offset 0xcf0 bit 4. This value is retained
+as a donor candidate, not called a verified fix; its correctness requires further
+source/hardware evidence. The report records this delta rather than asserting
+that every register setting matches legacy.

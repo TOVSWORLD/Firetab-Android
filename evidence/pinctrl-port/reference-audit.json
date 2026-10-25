@@ -78,6 +78,50 @@
       "driver_function": "UTXD0"
     }
   },
+  "register_table_comparison": [
+    {
+      "name": "mt8163_drv_grp",
+      "legacy_entries": 3,
+      "candidate_entries": 3,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_pin_drv",
+      "legacy_entries": 119,
+      "candidate_entries": 119,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_spec_pupd",
+      "legacy_entries": 46,
+      "candidate_entries": 46,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_ies_set",
+      "legacy_entries": 34,
+      "candidate_entries": 35,
+      "added": [
+        "MTK_PIN_IES_SMT_SPEC(87,87,0xcf0,4)"
+      ],
+      "removed": [],
+      "identical_sequence": false
+    },
+    {
+      "name": "mt8163_smt_set",
+      "legacy_entries": 57,
+      "candidate_entries": 57,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    }
+  ],
   "legacy_goodix_gpio_descriptors": {
     "35": {
       "name": "KPROW2",
