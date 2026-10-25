@@ -292,3 +292,13 @@ Added explicit workflow_dispatch mode clocks-pinctrl for full combined Image
 integration after the object probe. It applies both pinned overlays, verifies
 PINCTRL_MT8163=y and all clock symbols, compiles both directories with W=1 and
 links Image/vmlinux. This is still a generic config, not a douglas boot claim.
+
+## 2026-10-25 — Prepare #20 PMIC/power object integration
+
+Prepared a minimal MT8163 wrapper/power-domain patch against actual pinned ACK
+files. Wrapper donor differences are MT8163-specific. Power core keeps ACK's
+implementation and imports only MT8163 include/match data and bus-protection
+masks, excluding unrelated hardware-voter/SMC changes from donor 7.0. Eight-domain
+header/binding retain donor licenses. Static wrapper register-offset comparison
+against pinned legacy header is recorded; runtime sequencing is unverified.
+Added bounded W=1 object probe; compilation result is not yet claimed.

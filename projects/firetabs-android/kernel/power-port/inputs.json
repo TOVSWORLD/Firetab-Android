@@ -1,0 +1,17 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "inputs": [
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+      "target": "drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+      "sha256": "221b2dcd067fd9ff8ec2e1a52e405a2a611a2885b09910ec53301f0ded96a0b6"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "target": "include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "sha256": "bca573acd8fe88a4d526edb8587e6f117cb7510701849e663628c856edd5ee21"
+    }
+  ],
+  "scope": "Experimental PMIC wrapper and power domain integration; not compiled/tested"
+}

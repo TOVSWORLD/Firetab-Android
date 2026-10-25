@@ -1,0 +1,22 @@
+{
+  "scope": "Static register offsets only; no transaction, initialization, voltage or power-sequencing validation",
+  "shared_named_registers": 79,
+  "mismatches": [],
+  "candidate_only_named_registers": [],
+  "legacy_only_named_registers": [
+    "ADC_CMD_ADDR",
+    "ADC_RDATA_ADDR1",
+    "ADC_RDATA_ADDR2",
+    "ADC_RDY_ADDR",
+    "EINT_CLR",
+    "EINT_STA",
+    "EINT_STA0_ADR",
+    "EINT_STA1_ADR",
+    "EXT_CK",
+    "GPS_STA",
+    "MSB_FIRST",
+    "OP_TYPE",
+    "PWRAP_ADC_CMD",
+    "SWRST"
+  ]
+}
