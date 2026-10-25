@@ -1,0 +1,13 @@
+{
+  "removed": [
+    {
+      "message": "'#power-domain-cells' is a required property",
+      "node": "/soc/pwrap@1000d000/mt6323/power-controller",
+      "type": "validation"
+    }
+  ],
+  "added": [],
+  "baseline_count": 86,
+  "proposed_count": 85,
+  "passed_full_validation": false
+}

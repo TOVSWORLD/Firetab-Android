@@ -1,0 +1,31 @@
+{
+  "scope": "Actual YAML/jsonschema selector/constraint negative controls; no hardware validation",
+  "selector_cases": [
+    {
+      "case": "mt6323_sys_off",
+      "selector_matches": false,
+      "expected": false
+    },
+    {
+      "case": "generic_without_cells",
+      "selector_matches": true,
+      "expected": true
+    },
+    {
+      "case": "unnamed_compatible_absent",
+      "selector_matches": true,
+      "expected": true
+    },
+    {
+      "case": "different_node",
+      "selector_matches": false,
+      "expected": false
+    }
+  ],
+  "generic_provider_missing_cells_still_rejected": true,
+  "mfd_child_valid_sys_off_accepted": true,
+  "mfd_child_unknown_property_rejected": true,
+  "mfd_child_wrong_compatible_rejected": true,
+  "all_original_domain_constraints_preserved": true,
+  "passed": true
+}

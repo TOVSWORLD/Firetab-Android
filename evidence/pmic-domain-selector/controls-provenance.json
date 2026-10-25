@@ -1,0 +1,5 @@
+{
+  "command": "work/dtb-tool/venv/bin/python evidence/pmic-domain-selector/check-controls.py",
+  "control_script_sha256": "616663eaeede120f1ea6d13083f01cc8070a5035ad5513686acae8ca701a9380",
+  "scope": "Local ruamel.yaml/jsonschema negative controls; ordinary CI tests locked patch application"
+}

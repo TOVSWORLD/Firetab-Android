@@ -1,0 +1,23 @@
+--- a/power/power-domain.yaml
++++ b/power/power-domain.yaml
+@@ -23,6 +23,20 @@
+   domains. A consumer node can refer to the provider by a phandle and a set of
+   phandle arguments (so called PM domain specifiers) of length specified by the
+   \#power-domain-cells property in the PM domain provider node.
++
++select:
++  properties:
++    $nodename:
++      pattern: "^(power-controller|power-domain|performance-domain)([@-].*)?$"
++  required:
++    - $nodename
++  not:
++    properties:
++      compatible:
++        contains:
++          const: mediatek,mt6323-pwrc
++    required:
++      - compatible
+ 
+ properties:
+   $nodename:
