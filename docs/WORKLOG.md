@@ -317,3 +317,13 @@ inspector supporting #21. Rejects ambiguous formats, malformed pages, oversized
 or truncated input; counts unclassified tail bytes. Does not decompress, extract,
 pack, access device nodes/USB or claim signatures/bootability. Ten synthetic
 boundary/rejection tests added; 31 total tests pass. No real stock image inspected.
+
+## 2026-10-25 — Combined clock/pinctrl Image passed
+
+Run 40170429213 at c61bc28 completed at 07:26 UTC (~38 minutes): full AArch64
+Image 41,363,968 bytes, with clock and pinctrl objects compiled under W=1 and
+zero compiler warning/error lines. Result/hashes and recovered full config are
+in evidence/pinctrl-port; config hash matches CI output. Later branch updates
+are evidence/docs/CI/base synchronization, leaving these driver sources intact.
+PR #28 refreshed against development for required checks; no policy bypass used.
+No douglas boot, Android configuration, schema or hardware pass is claimed.
