@@ -1,6 +1,12 @@
 name: MT8163 clock compile experiment
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Compile integration scope
+        type: choice
+        options: [clocks, clocks-pinctrl]
+        default: clocks
   pull_request:
     types: [opened, ready_for_review]
     paths:
@@ -27,4 +33,6 @@ jobs:
           sudo apt-get install --no-install-recommends -y dwarves libelf-dev libssl-dev
           dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
       - name: Preflight and compile generic ARM64 baseline
-        run: bash scripts/build_ack_baseline.sh clocks
+        env:
+          BUILD_MODE: ${{ inputs.mode || 'clocks' }}
+        run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"

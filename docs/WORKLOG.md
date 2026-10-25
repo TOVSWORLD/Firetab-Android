@@ -287,3 +287,8 @@ Expanded pinctrl audit: drive groups (3), pin-drive entries (119), special pulls
 (46) and Schmitt entries (57) match legacy. The donor adds one input-enable entry
 for GPIO87/MSDC2_DAT0, 0xcf0 bit 4; retained as an unvalidated donor delta and
 recorded explicitly. No register value was changed to force an audit pass.
+
+Added explicit workflow_dispatch mode clocks-pinctrl for full combined Image
+integration after the object probe. It applies both pinned overlays, verifies
+PINCTRL_MT8163=y and all clock symbols, compiles both directories with W=1 and
+links Image/vmlinux. This is still a generic config, not a douglas boot claim.

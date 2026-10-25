@@ -3,7 +3,7 @@
 set -euo pipefail
 readonly revision=d9318bdb4c34e8b2d997b4f67ced56b120b22b87
 readonly mode="${1:-generic}"
-[[ "$mode" = generic || "$mode" = clocks ]] || exit 2
+[[ "$mode" = generic || "$mode" = clocks || "$mode" = clocks-pinctrl ]] || exit 2
 readonly root="$PWD/work/ack-baseline"
 [ "$(uname -s)" = Linux ] || { echo 'A Linux build host is required'; exit 2; }
 for tool in git make clang-18 ld.lld-18 llvm-ar-18 bison flex bc openssl pahole; do
@@ -32,20 +32,31 @@ readonly output="$root/output"
 readonly jobs="$(nproc)"
 # Upstream ARM64 defconfig deliberately establishes a generic compiler baseline.
 # It is not Android GKI configuration and not a douglas driver configuration.
-if [ "$mode" = clocks ]; then
+if [ "$mode" != generic ]; then
   python3 scripts/apply_clock_port.py "$root/source"
+  if [ "$mode" = clocks-pinctrl ]; then
+    python3 scripts/apply_pinctrl_port.py "$root/source"
+  fi
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 defconfig
-if [ "$mode" = clocks ]; then
+if [ "$mode" != generic ]; then
   for symbol in COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     "$root/source/scripts/config" --file "$output/.config" --enable "$symbol"
   done
+  if [ "$mode" = clocks-pinctrl ]; then
+    "$root/source/scripts/config" --file "$output/.config" --enable PINCTRL_MT8163
+  fi
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 olddefconfig
   for symbol in COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     grep -qx "CONFIG_${symbol}=y" "$output/.config"
   done
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/clk/mediatek/
   echo MT8163_CLOCK_OBJECT_COMPILE_COMPLETE
+  if [ "$mode" = clocks-pinctrl ]; then
+    grep -qx CONFIG_PINCTRL_MT8163=y "$output/.config"
+    make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/pinctrl/mediatek/
+    echo MT8163_PINCTRL_OBJECT_COMPILE_COMPLETE
+  fi
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" Image vmlinux
 file "$output/vmlinux" "$output/arch/arm64/boot/Image"
