@@ -460,3 +460,14 @@ four compatible errors and four unmatched entries without added signatures:
 29 errors/57 unmatched remain, upstream YAML parse issue remains, passed=false.
 49 tests pass, including real isolated patch application and rejection of changed
 original schema input. No compatible deletion, permissive schema or hardware claim.
+
+## 2026-10-25 — Restricted diagnostic kernel compile setup (#44)
+
+Prepared separate diagnostic fragment and fail-closed resolved-config check.
+Requires implemented providers/UART/initramfs, disables block/storage/network,
+USB/display/audio/watchdog and power-policy subsystems. Adds deterministic gzip
+Image size/hash reporting without packing firmware. Provider workflow defaults
+to this integration mode; resource gate unchanged and reported before starting.
+53 local tests pass including rejection of modular storage and missing console.
+No configuration/compile success claimed until actual Linux CI resolves/builds
+it; stock memory/loader/recovery/logging remain #21, no tablet access occurred.

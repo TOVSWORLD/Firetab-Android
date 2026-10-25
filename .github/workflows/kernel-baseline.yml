@@ -1,18 +1,20 @@
-name: MT8163 clock compile experiment
+name: MT8163 provider compile experiment
 on:
   workflow_dispatch:
     inputs:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl, providers]
-        default: clocks
+        options: [clocks, clocks-pinctrl, providers, diagnostic]
+        default: diagnostic
   pull_request:
     types: [opened, ready_for_review]
     paths:
       - projects/firetabs-android/kernel/clock-port/**
       - scripts/apply_clock_port.py
       - scripts/build_ack_baseline.sh
+      - scripts/diagnostic_config.py
+      - projects/firetabs-android/kernel/diagnostic/**
       - .github/workflows/kernel-baseline.yml
 permissions:
   contents: read
@@ -34,5 +36,5 @@ jobs:
           dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
       - name: Preflight and compile generic ARM64 baseline
         env:
-          BUILD_MODE: ${{ inputs.mode || 'clocks' }}
+          BUILD_MODE: ${{ inputs.mode || 'diagnostic' }}
         run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"

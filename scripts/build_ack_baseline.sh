@@ -3,7 +3,7 @@
 set -euo pipefail
 readonly revision=d9318bdb4c34e8b2d997b4f67ced56b120b22b87
 readonly mode="${1:-generic}"
-[[ "$mode" = generic || "$mode" = clocks || "$mode" = clocks-pinctrl || "$mode" = providers ]] || exit 2
+[[ "$mode" = generic || "$mode" = clocks || "$mode" = clocks-pinctrl || "$mode" = providers || "$mode" = diagnostic ]] || exit 2
 readonly root="$PWD/work/ack-baseline"
 [ "$(uname -s)" = Linux ] || { echo 'A Linux build host is required'; exit 2; }
 for tool in git make clang-18 ld.lld-18 llvm-ar-18 bison flex bc openssl pahole; do
@@ -30,14 +30,14 @@ ld.lld-18 --version
 make --version | head -1
 readonly output="$root/output"
 readonly jobs="$(nproc)"
-# Upstream ARM64 defconfig deliberately establishes a generic compiler baseline.
-# It is not Android GKI configuration and not a douglas driver configuration.
+# Start from the reproducible generic ARM64 baseline; diagnostic mode applies
+# an explicit restricted fragment. Neither is a qualified Android/board config.
 if [ "$mode" != generic ]; then
   python3 scripts/apply_clock_port.py "$root/source"
-  if [[ "$mode" = clocks-pinctrl || "$mode" = providers ]]; then
+  if [[ "$mode" = clocks-pinctrl || "$mode" = providers || "$mode" = diagnostic ]]; then
     python3 scripts/apply_pinctrl_port.py "$root/source"
   fi
-  if [ "$mode" = providers ]; then
+  if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
     python3 scripts/apply_power_port.py "$root/source"
   fi
 fi
@@ -46,32 +46,43 @@ if [ "$mode" != generic ]; then
   for symbol in COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     "$root/source/scripts/config" --file "$output/.config" --enable "$symbol"
   done
-  if [[ "$mode" = clocks-pinctrl || "$mode" = providers ]]; then
+  if [[ "$mode" = clocks-pinctrl || "$mode" = providers || "$mode" = diagnostic ]]; then
     "$root/source/scripts/config" --file "$output/.config" --enable PINCTRL_MT8163
   fi
-  if [ "$mode" = providers ]; then
+  if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
     for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS; do
       "$root/source/scripts/config" --file "$output/.config" --enable "$symbol"
     done
   fi
+  if [ "$mode" = diagnostic ]; then
+    python3 scripts/diagnostic_config.py apply "$output/.config" --source "$root/source"
+  fi
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 olddefconfig
+  if [ "$mode" = diagnostic ]; then
+    python3 scripts/diagnostic_config.py check "$output/.config"
+  fi
   for symbol in COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     grep -qx "CONFIG_${symbol}=y" "$output/.config"
   done
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/clk/mediatek/
   echo MT8163_CLOCK_OBJECT_COMPILE_COMPLETE
-  if [[ "$mode" = clocks-pinctrl || "$mode" = providers ]]; then
+  if [[ "$mode" = clocks-pinctrl || "$mode" = providers || "$mode" = diagnostic ]]; then
     grep -qx CONFIG_PINCTRL_MT8163=y "$output/.config"
     make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/pinctrl/mediatek/
     echo MT8163_PINCTRL_OBJECT_COMPILE_COMPLETE
   fi
-  if [ "$mode" = providers ]; then
+  if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
     for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS; do grep -qx "CONFIG_${symbol}=y" "$output/.config"; done
     make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/soc/mediatek/mtk-pmic-wrap.o drivers/pmdomain/mediatek/mtk-pm-domains.o
     echo MT8163_POWER_OBJECT_COMPILE_COMPLETE
   fi
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" Image vmlinux
+if [ "$mode" = diagnostic ]; then
+  gzip -n -9 -c "$output/arch/arm64/boot/Image" > "$output/arch/arm64/boot/Image.gz"
+  sha256sum "$output/arch/arm64/boot/Image.gz"
+  wc -c "$output/arch/arm64/boot/Image.gz"
+fi
 file "$output/vmlinux" "$output/arch/arm64/boot/Image"
 llvm-readelf-18 -h "$output/vmlinux"
 sha256sum "$output/.config" "$output/vmlinux" "$output/arch/arm64/boot/Image"
