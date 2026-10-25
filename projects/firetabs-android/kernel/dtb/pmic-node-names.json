@@ -1,0 +1,26 @@
+{
+  "purpose": "PMIC child-name structural candidate; no hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "patches": [
+    {
+      "path": "patches/0001-include-thermal-bindings.patch",
+      "sha256": "b0eb49c8a20ed8b19d1125f81ec0977b68eb337b4b2cd829e8ee3e914f12391d"
+    },
+    {
+      "path": "patches/0002-correct-structural-diagnostics.patch",
+      "sha256": "0fa73601e7676278f416bc3cef63bee129b162c492bd8cb23137cf77585e9142"
+    },
+    {
+      "path": "patches/0003-pmic-child-node-names.patch",
+      "sha256": "0e97e4326558f0b1824abf9d9efa3b12c555422264bb6afc60c86420cec82058"
+    }
+  ],
+  "expected_artifact": {
+    "bytes": 26275,
+    "sha256": "119b6666a3caf217675d5aead3e9b0e0b21287d3e21f9d36e7d047f26698eddf"
+  },
+  "kernel_compiled": false,
+  "hardware_tested": false,
+  "variant": "pmic-node-names"
+}

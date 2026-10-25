@@ -1,0 +1,256 @@
+{
+  "scope": "DT compilation only; no kernel build or hardware test",
+  "status": "compiled",
+  "commands": [
+    {
+      "argv": [
+        "clang",
+        "-E",
+        "-P",
+        "-nostdinc",
+        "-undef",
+        "-x",
+        "assembler-with-cpp",
+        "-I",
+        "<STAGE>/include",
+        "-I",
+        "<STAGE>/arch/arm64/boot/dts/mediatek",
+        "<STAGE>/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts"
+      ],
+      "exit_code": 0,
+      "stdout": "/dts-v1/;\n\n\n/ {\n #address-cells = <2>;\n #size-cells = <2>;\n interrupt-parent = <&sysirq>;\n compatible = \"mediatek,mt8163\";\n aliases {\n  aal0 = &aal;\n  ccorr0 = &ccorr;\n  color0 = &color;\n  dither0 = &dither;\n  dsi0 = &dsi;\n  ovl0 = &ovl0;\n  pwm0 = &pwm0;\n  rdma0 = &rdma0;\n };\n cluster0_opp: opp-table-cluster0 {\n  compatible = \"operating-points-v2\";\n  opp-shared;\n  opp-600000000 {\n   opp-hz = /bits/ 64 <600000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-624000000 {\n   opp-hz = /bits/ 64 <624000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-741000000 {\n   opp-hz = /bits/ 64 <741000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-871000000 {\n   opp-hz = /bits/ 64 <871000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-1050000000 {\n   opp-hz = /bits/ 64 <1050000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-1133000000 {\n   opp-hz = /bits/ 64 <1133000000>;\n   opp-microvolt = <1200000>;\n  };\n  opp-1216000000 {\n   opp-hz = /bits/ 64 <1216000000>;\n   opp-microvolt = <1250000>;\n  };\n  opp-1300000000 {\n   opp-hz = /bits/ 64 <1300000000>;\n   opp-microvolt = <1300000>;\n  };\n };\n gpu_opp: opp-table-gpu {\n  compatible = \"operating-points-v2\";\n  opp-shared;\n  opp-520000000 {\n   opp-hz = /bits/ 64 <520000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-416000000 {\n   opp-hz = /bits/ 64 <416000000>;\n   opp-microvolt = <1150000>;\n  };\n  opp-299000000 {\n   opp-hz = /bits/ 64 <299000000>;\n   opp-microvolt = <1150000>;\n  };\n };\n vgpu_1v15: regulator-vgpu {\n  compatible = \"regulator-fixed\";\n  regulator-name = \"vgpu-1v15\";\n  regulator-min-microvolt = <1150000>;\n  regulator-max-microvolt = <1150000>;\n  regulator-boot-on;\n  regulator-always-on;\n };\n cpus {\n  #address-cells = <1>;\n  #size-cells = <0>;\n  cpu0: cpu@0 {\n   device_type = \"cpu\";\n   compatible = \"arm,cortex-a53\";\n   reg = <0x0>;\n   enable-method = \"psci\";\n   clocks = <&infracfg 71>,\n     <&topckgen 81>;\n   clock-names = \"cpu\", \"intermediate\";\n   operating-points-v2 = <&cluster0_opp>;\n   clock-frequency = <1300000000>;\n   cci-control-port = <&cci_control2>;\n   i-cache-size = <32768>;\n   i-cache-line-size = <64>;\n   i-cache-sets = <256>;\n   d-cache-size = <32768>;\n   d-cache-line-size = <64>;\n   d-cache-sets = <128>;\n   next-level-cache = <&l2_0>;\n  };\n  cpu1: cpu@1 {\n   device_type = \"cpu\";\n   compatible = \"arm,cortex-a53\";\n   reg = <0x1>;\n   enable-method = \"psci\";\n   clocks = <&infracfg 71>,\n     <&topckgen 81>;\n   clock-names = \"cpu\", \"intermediate\";\n   operating-points-v2 = <&cluster0_opp>;\n   clock-frequency = <1300000000>;\n   cci-control-port = <&cci_control2>;\n   i-cache-size = <32768>;\n   i-cache-line-size = <64>;\n   i-cache-sets = <256>;\n   d-cache-size = <32768>;\n   d-cache-line-size = <64>;\n   d-cache-sets = <128>;\n   next-level-cache = <&l2_0>;\n  };\n  cpu2: cpu@2 {\n   device_type = \"cpu\";\n   compatible = \"arm,cortex-a53\";\n   reg = <0x2>;\n   enable-method = \"psci\";\n   clocks = <&infracfg 71>,\n     <&topckgen 81>;\n   clock-names = \"cpu\", \"intermediate\";\n   operating-points-v2 = <&cluster0_opp>;\n   clock-frequency = <1300000000>;\n   cci-control-port = <&cci_control2>;\n   i-cache-size = <32768>;\n   i-cache-line-size = <64>;\n   i-cache-sets = <256>;\n   d-cache-size = <32768>;\n   d-cache-line-size = <64>;\n   d-cache-sets = <128>;\n   next-level-cache = <&l2_0>;\n  };\n  cpu3: cpu@3 {\n   device_type = \"cpu\";\n   compatible = \"arm,cortex-a53\";\n   reg = <0x3>;\n   enable-method = \"psci\";\n   clocks = <&infracfg 71>,\n     <&topckgen 81>;\n   clock-names = \"cpu\", \"intermediate\";\n   operating-points-v2 = <&cluster0_opp>;\n   clock-frequency = <1300000000>;\n   cci-control-port = <&cci_control2>;\n   i-cache-size = <32768>;\n   i-cache-line-size = <64>;\n   i-cache-sets = <256>;\n   d-cache-size = <32768>;\n   d-cache-line-size = <64>;\n   d-cache-sets = <128>;\n   next-level-cache = <&l2_0>;\n  };\n  cpu-map {\n   cluster0 {\n    core0 {\n     cpu = <&cpu0>;\n    };\n    core1 {\n     cpu = <&cpu1>;\n    };\n    core2 {\n     cpu = <&cpu2>;\n    };\n    core3 {\n     cpu = <&cpu3>;\n    };\n   };\n  };\n  l2_0: l2-cache0 {\n   compatible = \"cache\";\n   cache-level = <2>;\n   cache-size = <524288>;\n   cache-line-size = <64>;\n   cache-sets = <512>;\n   cache-unified;\n  };\n };\n psci {\n  compatible = \"arm,psci-0.2\";\n  method = \"smc\";\n };\n clocks {\n  clk26m: oscillator-26m {\n   compatible = \"fixed-clock\";\n   #clock-cells = <0>;\n   clock-frequency = <26000000>;\n   clock-output-names = \"clk26m\";\n  };\n  clk32k: oscillator-32k {\n   compatible = \"fixed-clock\";\n   #clock-cells = <0>;\n   clock-frequency = <32000>;\n   clock-output-names = \"clk32k\";\n  };\n  system_clk: dummy13m {\n   compatible = \"fixed-clock\";\n   clock-frequency = <13000000>;\n   #clock-cells = <0>;\n  };\n };\n pmu {\n  compatible = \"arm,cortex-a53-pmu\";\n  interrupts = <0 8 8>,\n       <0 9 8>,\n       <0 10 8>,\n       <0 11 8>;\n  interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;\n };\n timer {\n  compatible = \"arm,armv8-timer\";\n  interrupt-parent = <&gic>;\n  interrupts = <1 13 ((((1 << (4)) - 1) << 8) | 8)>,\n       <1 14 ((((1 << (4)) - 1) << 8) | 8)>,\n       <1 11 ((((1 << (4)) - 1) << 8) | 8)>,\n       <1 10 ((((1 << (4)) - 1) << 8) | 8)>;\n  clock-frequency = <13000000>;\n  arm,no-tick-in-suspend;\n };\n soc {\n  compatible = \"simple-bus\";\n  #address-cells = <2>;\n  #size-cells = <2>;\n  ranges;\n  topckgen: clock-controller@10000000 {\n   compatible = \"mediatek,mt8163-topckgen\";\n   reg = <0 0x10000000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  infracfg: clock-controller@10001000 {\n   compatible = \"mediatek,mt8163-infracfg\", \"syscon\";\n   reg = <0 0x10001000 0 0x1000>;\n   #clock-cells = <1>;\n   #reset-cells = <1>;\n  };\n  syscfg_pctl_a: syscon@10005000 {\n   compatible = \"mediatek,mt8163-pctl-a-syscfg\", \"syscon\";\n   reg = <0 0x10005000 0 0x1000>;\n  };\n  scpsys: syscon@10006000 {\n   compatible = \"mediatek,mt8163-scpsys\", \"syscon\", \"simple-mfd\";\n   reg = <0 0x10006000 0 0x1000>;\n   spm: power-controller {\n    compatible = \"mediatek,mt8163-power-controller\";\n    #address-cells = <1>;\n    #size-cells = <0>;\n    #power-domain-cells = <1>;\n    power-domain@0 {\n     reg = <0>;\n     clocks = <&topckgen 51>;\n     clock-names = \"mm\";\n     #power-domain-cells = <0>;\n     mediatek,infracfg = <&infracfg>;\n    };\n    power-domain@1 {\n     reg = <1>;\n     clocks = <&topckgen 51>;\n     clock-names = \"mm\";\n     #power-domain-cells = <0>;\n    };\n    power-domain@2 {\n     reg = <2>;\n     clocks = <&topckgen 51>;\n     clock-names = \"mm\";\n     #power-domain-cells = <0>;\n    };\n    power-domain@3 {\n     reg = <3>;\n     clocks = <&topckgen 51>;\n     clock-names = \"mm\";\n     #power-domain-cells = <0>;\n    };\n    power-domain@4 {\n     reg = <4>;\n     #power-domain-cells = <0>;\n     mediatek,infracfg = <&infracfg>;\n    };\n    power-domain@5 {\n     reg = <5>;\n     #power-domain-cells = <0>;\n    };\n    power-domain@6 {\n     reg = <6>;\n     clocks = <&topckgen 54>;\n     clock-names = \"mfg\";\n     #address-cells = <1>;\n     #size-cells = <0>;\n     #power-domain-cells = <1>;\n     mediatek,infracfg = <&infracfg>;\n     power-domain@7 {\n      reg = <7>;\n      #power-domain-cells = <0>;\n     };\n    };\n   };\n  };\n  watchdog: watchdog@10007000 {\n   compatible = \"mediatek,mt8163-wdt\";\n   reg = <0 0x10007000 0 0x1000>;\n   interrupts = <0 128 8>;\n   #reset-cells = <1>;\n  };\n  timer: timer@10008000 {\n   compatible = \"mediatek,mt8163-timer\", \"mediatek,mt6577-timer\";\n   reg = <0 0x10008000 0 0x1000>;\n   interrupts = <0 152 8>;\n   clocks = <&system_clk>, <&topckgen 80>;\n   clock-names = \"system-clk\", \"rtc-clk\";\n  };\n  pio: pinctrl@1000b000 {\n   compatible = \"mediatek,mt8163-pinctrl\";\n   reg = <0 0x1000b000 0 0x1000>;\n   mediatek,pctl-regmap = <&syscfg_pctl_a>;\n   gpio-controller;\n   #gpio-cells = <2>;\n   interrupt-controller;\n   #interrupt-cells = <2>;\n   interrupts = <0 153 4>,\n         <0 154 4>,\n         <0 155 4>;\n  };\n  apmixedsys: clock-controller@1000c000 {\n   compatible = \"mediatek,mt8163-apmixedsys\";\n   reg = <0 0x1000c000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  pwrap: pwrap@1000d000 {\n   compatible = \"mediatek,mt8163-pwrap\";\n   reg = <0 0x1000d000 0 0x1000>;\n   reg-names = \"pwrap\";\n   interrupts = <0 161 4>;\n   resets = <&infracfg 13>;\n   reset-names = \"pwrap\";\n   clocks = <&topckgen 65>, <&infracfg 1>;\n   clock-names = \"spi\", \"wrap\";\n  };\n  keypad: keyboard@10010000 {\n   compatible = \"mediatek,mt8163-keypad\", \"mediatek,mt6779-keypad\";\n   reg = <0 0x10010000 0 0x1000>;\n   interrupts = <0 162 2>;\n   clocks = <&clk26m>;\n   clock-names = \"kpd\";\n   status = \"disabled\";\n  };\n  sysirq: intpol-controller@10200620 {\n   compatible = \"mediatek,mt8163-sysirq\", \"mediatek,mt6577-sysirq\";\n   reg = <0 0x10200620 0 0x20>;\n   #interrupt-cells = <3>;\n   interrupt-parent = <&gic>;\n   interrupt-controller;\n  };\n  iommu: iommu@10205000 {\n   compatible = \"mediatek,mt8163-m4u\";\n   reg = <0 0x10205000 0 0x1000>;\n   interrupts = <0 147 8>;\n   mediatek,larbs = <&larb0 &larb1 &larb2 &larb3>;\n   power-domains = <&spm 0>;\n   #iommu-cells = <1>;\n  };\n  efuse: efuse@10206000 {\n   compatible = \"mediatek,mt8163-efuse\", \"mediatek,efuse\";\n   reg = <0 0x10206000 0 0x1000>;\n   #address-cells = <1>;\n   #size-cells = <1>;\n   thermal_calibration: calib@100 {\n    reg = <0x100 0xc>;\n   };\n  };\n  rng@1020f000 {\n   compatible = \"mediatek,mt8163-rng\", \"mediatek,mt7623-rng\";\n   reg = <0 0x1020f000 0 0x1000>;\n   clocks = <&infracfg 33>;\n   clock-names = \"rng\";\n  };\n  gce: mailbox@10212000 {\n   compatible = \"mediatek,mt8163-gce\", \"mediatek,mt8173-gce\";\n   reg = <0 0x10212000 0 0x1000>;\n   interrupts = <0 143 8>;\n   clocks = <&infracfg 9>;\n   clock-names = \"gce\";\n   #mbox-cells = <2>;\n  };\n  mipi_tx0: dsi-phy@10215000 {\n   compatible = \"mediatek,mt8163-mipi-tx\";\n   reg = <0 0x10215000 0 0x1000>;\n   clocks = <&apmixedsys 13>;\n   clock-output-names = \"mipi_tx0_pll\";\n   resets = <&infracfg 10>;\n   #clock-cells = <0>;\n   #phy-cells = <0>;\n   status = \"disabled\";\n  };\n  gic: interrupt-controller@10221000 {\n   compatible = \"arm,gic-400\";\n   reg = <0 0x10221000 0 0x1000>,\n         <0 0x10222000 0 0x1000>,\n         <0 0x10224000 0 0x2000>,\n         <0 0x10226000 0 0x2000>;\n   interrupt-controller;\n   #interrupt-cells = <3>;\n   interrupt-parent = <&gic>;\n   interrupts = <1 9 ((((1 << (4)) - 1) << 8) | 4)>;\n  };\n  cci: cci@10390000 {\n   compatible = \"arm,cci-400\";\n   #address-cells = <1>;\n   #size-cells = <1>;\n   reg = <0 0x10390000 0 0x1000>;\n   ranges = <0 0 0x10390000 0x10000>;\n   cci_control0: slave-if@1000 {\n    compatible = \"arm,cci-400-ctrl-if\";\n    interface-type = \"ace-lite\";\n    reg = <0x1000 0x1000>;\n   };\n   cci_control1: slave-if@4000 {\n    compatible = \"arm,cci-400-ctrl-if\";\n    interface-type = \"ace\";\n    reg = <0x4000 0x1000>;\n   };\n   cci_control2: slave-if@5000 {\n    compatible = \"arm,cci-400-ctrl-if\";\n    interface-type = \"ace\";\n    reg = <0x5000 0x1000>;\n   };\n   pmu@9000 {\n    compatible = \"arm,cci-400-pmu,r1\";\n    reg = <0x9000 0x5000>;\n    interrupts = <0 58 4>,\n          <0 59 4>,\n          <0 60 4>,\n          <0 61 4>,\n          <0 62 4>;\n   };\n  };\n  auxadc: auxadc@11001000 {\n   compatible = \"mediatek,mt8163-auxadc\", \"mediatek,mt8173-auxadc\";\n   reg = <0 0x11001000 0 0x1000>;\n   clocks = <&infracfg 34>;\n   clock-names = \"main\";\n   #io-channel-cells = <1>;\n   status = \"disabled\";\n  };\n  apdma: dma-controller@11000300 {\n   compatible = \"mediatek,mt8163-uart-dma\", \"mediatek,mt6577-uart-dma\";\n   reg = <0 0x11000300 0 0x80>,\n         <0 0x11000380 0 0x80>,\n         <0 0x11000400 0 0x80>,\n         <0 0x11000480 0 0x80>,\n         <0 0x11000500 0 0x80>,\n         <0 0x11000580 0 0x80>,\n         <0 0x11000600 0 0x80>,\n         <0 0x11000680 0 0x80>;\n   interrupts = <0 102 8>,\n         <0 103 8>,\n         <0 104 8>,\n         <0 105 8>,\n         <0 106 8>,\n         <0 107 8>,\n         <0 108 8>,\n         <0 109 8>;\n   dma-requests = <8>;\n   clocks = <&infracfg 42>;\n   clock-names = \"apdma\";\n   #dma-cells = <1>;\n  };\n  uart0: serial@11002000 {\n   compatible = \"mediatek,mt8163-uart\", \"mediatek,mt6577-uart\";\n   reg = <0 0x11002000 0 0x400>;\n   interrupts = <0 91 8>;\n   clocks = <&clk26m>, <&infracfg 19>;\n   clock-names = \"baud\", \"bus\";\n   dmas = <&apdma 0 &apdma 1>;\n   dma-names = \"tx\", \"rx\";\n   status = \"disabled\";\n  };\n  uart1: serial@11003000 {\n   compatible = \"mediatek,mt8163-uart\", \"mediatek,mt6577-uart\";\n   reg = <0 0x11003000 0 0x400>;\n   interrupts = <0 92 8>;\n   clocks = <&clk26m>, <&infracfg 20>;\n   clock-names = \"baud\", \"bus\";\n   dmas = <&apdma 2 &apdma 3>;\n   dma-names = \"tx\", \"rx\";\n   status = \"disabled\";\n  };\n  uart2: serial@11004000 {\n   compatible = \"mediatek,mt8163-uart\", \"mediatek,mt6577-uart\";\n   reg = <0 0x11004000 0 0x400>;\n   interrupts = <0 93 8>;\n   clocks = <&clk26m>, <&infracfg 21>;\n   clock-names = \"baud\", \"bus\";\n   dmas = <&apdma 4 &apdma 5>;\n   dma-names = \"tx\", \"rx\";\n   status = \"disabled\";\n  };\n  uart3: serial@11005000 {\n   compatible = \"mediatek,mt8163-uart\", \"mediatek,mt6577-uart\";\n   reg = <0 0x11005000 0 0x400>;\n   interrupts = <0 94 8>;\n   clocks = <&clk26m>, <&infracfg 22>;\n   clock-names = \"baud\", \"bus\";\n   dmas = <&apdma 6 &apdma 7>;\n   dma-names = \"tx\", \"rx\";\n   status = \"disabled\";\n  };\n  i2c0: i2c@11007000 {\n   compatible = \"mediatek,mt8163-i2c\", \"mediatek,mt8173-i2c\";\n   reg = <0 0x11007000 0 0x70>, <0 0x11000180 0 0x80>;\n   interrupts = <0 84 8>;\n   clock-div = <10>;\n   clocks = <&infracfg 11>, <&infracfg 42>;\n   clock-names = \"main\", \"dma\";\n   #address-cells = <1>;\n   #size-cells = <0>;\n   status = \"disabled\";\n  };\n  i2c1: i2c@11008000 {\n   compatible = \"mediatek,mt8163-i2c\", \"mediatek,mt8173-i2c\";\n   reg = <0 0x11008000 0 0x70>, <0 0x11000200 0 0x80>;\n   interrupts = <0 85 8>;\n   clock-div = <10>;\n   clocks = <&infracfg 12>, <&infracfg 42>;\n   clock-names = \"main\", \"dma\";\n   #address-cells = <1>;\n   #size-cells = <0>;\n   status = \"disabled\";\n  };\n  i2c2: i2c@11009000 {\n   compatible = \"mediatek,mt8163-i2c\", \"mediatek,mt8173-i2c\";\n   reg = <0 0x11009000 0 0x70>, <0 0x11000280 0 0x80>;\n   interrupts = <0 86 8>;\n   clock-div = <10>;\n   clocks = <&infracfg 13>, <&infracfg 42>;\n   clock-names = \"main\", \"dma\";\n   #address-cells = <1>;\n   #size-cells = <0>;\n   status = \"disabled\";\n  };\n  spi: spi@1100a000 {\n   compatible = \"mediatek,mt8163-spi\", \"mediatek,mt2712-spi\";\n   reg = <0 0x1100a000 0 0x1000>;\n   interrupts = <0 118 8>;\n   clocks = <&topckgen 31>,\n     <&topckgen 57>,\n     <&infracfg 27>;\n   clock-names = \"parent-clk\", \"sel-clk\", \"spi-clk\";\n   assigned-clocks = <&infracfg 66>;\n   assigned-clock-parents = <&topckgen 57>;\n   #address-cells = <1>;\n   #size-cells = <0>;\n   status = \"disabled\";\n  };\n  thermal: thermal@1100b000 {\n   #thermal-sensor-cells = <1>;\n   compatible = \"mediatek,mt8163-thermal\";\n   reg = <0 0x1100b000 0 0x1000>;\n   interrupts = <0 78 8>;\n   clocks = <&infracfg 10>, <&infracfg 34>;\n   clock-names = \"therm\", \"auxadc\";\n   resets = <&infracfg 0>;\n   mediatek,auxadc = <&auxadc>;\n   mediatek,apmixedsys = <&apmixedsys>;\n   nvmem-cells = <&thermal_calibration>;\n   nvmem-cell-names = \"calibration-data\";\n  };\n  usb0: usb@11200000 {\n   compatible = \"mediatek,mt8163-musb\", \"mediatek,mtk-musb\";\n   reg = <0 0x11200000 0 0x1000>;\n   interrupts = <0 72 8>;\n   interrupt-names = \"mc\";\n   phys = <&u2port0 3>;\n   dr_mode = \"otg\";\n   clocks = <&infracfg 7>,\n     <&infracfg 23>,\n     <&apmixedsys 2>;\n   clock-names = \"main\", \"mcu\", \"univpll\";\n   status = \"disabled\";\n  };\n  u2phy0: t-phy@11210000 {\n   compatible = \"mediatek,mt8163-tphy\", \"mediatek,generic-tphy-v1\";\n   reg = <0 0x11210000 0 0x0800>;\n   #address-cells = <2>;\n   #size-cells = <2>;\n   ranges;\n   status = \"disabled\";\n   u2port0: usb-phy@11210800 {\n    reg = <0 0x11210800 0 0x0100>;\n    clocks = <&apmixedsys 14>;\n    clock-names = \"ref\";\n    #phy-cells = <1>;\n   };\n   u2port1: usb-phy@11210900 {\n    reg = <0 0x11210900 0 0x0100>;\n    clocks = <&apmixedsys 14>;\n    clock-names = \"ref\";\n    #phy-cells = <1>;\n   };\n  };\n  audiosys: clock-controller@11220000 {\n   compatible = \"mediatek,mt8163-audsys\", \"syscon\";\n   reg = <0 0x11220000 0 0x1000>;\n   #clock-cells = <1>;\n   afe: audio-controller {\n    compatible = \"mediatek,mt8163-afe-pcm\";\n    interrupts = <0 142 8>;\n    power-domains = <&spm 5>;\n    clocks = <&infracfg 49>,\n      <&topckgen 63>,\n      <&topckgen 64>,\n      <&topckgen 71>,\n      <&topckgen 72>,\n      <&apmixedsys 8>,\n      <&audiosys 6>,\n      <&audiosys 13>,\n      <&apmixedsys 9>,\n      <&audiosys 5>,\n      <&audiosys 14>,\n      <&audiosys 0>,\n      <&audiosys 9>,\n      <&audiosys 10>,\n      <&audiosys 11>,\n      <&audiosys 2>,\n      <&audiosys 3>,\n      <&audiosys 1>,\n      <&audiosys 15>,\n      <&audiosys 16>,\n      <&audiosys 17>,\n      <&audiosys 18>,\n      <&clk26m>;\n    clock-names = \"infrasys_aud\",\n           \"top_pdn_aud\",\n           \"top_pdn_aud_bus\",\n           \"aud_1_sel\",\n           \"aud_2_sel\",\n           \"apll1\",\n           \"apll1_tuner\",\n           \"apll1_div\",\n           \"apll2\",\n           \"apll2_tuner\",\n           \"apll2_div\",\n           \"afe\",\n           \"adc\",\n           \"dac\",\n           \"dac_predis\",\n           \"22m\",\n           \"24m\",\n           \"top_i2s\",\n           \"i2s0\",\n           \"i2s1\",\n           \"i2s2\",\n           \"i2s3\",\n           \"clk26m\";\n    status = \"disabled\";\n   };\n  };\n  mmc0: mmc@11230000 {\n   compatible = \"mediatek,mt8163-mmc\", \"mediatek,mt2701-mmc\";\n   reg = <0 0x11230000 0 0x1000>;\n   interrupts = <0 79 8>;\n   clocks = <&infracfg 31>,\n     <&topckgen 58>,\n     <&infracfg 28>;\n   clock-names = \"source\", \"hclk\", \"bus_clk\";\n   status = \"disabled\";\n  };\n  mmc1: mmc@11240000 {\n   compatible = \"mediatek,mt8163-mmc\", \"mediatek,mt2701-mmc\";\n   reg = <0 0x11240000 0 0x1000>;\n   interrupts = <0 80 8>;\n   clocks = <&infracfg 29>,\n     <&topckgen 59>;\n   clock-names = \"source\", \"hclk\";\n   status = \"disabled\";\n  };\n  mmc2: mmc@11250000 {\n   compatible = \"mediatek,mt8163-mmc\", \"mediatek,mt2701-mmc\";\n   reg = <0 0x11250000 0 0x1000>;\n   interrupts = <0 81 8>;\n   clocks = <&infracfg 30>,\n     <&topckgen 60>;\n   clock-names = \"source\", \"hclk\";\n   status = \"disabled\";\n  };\n  usb1: usb@11270000 {\n   compatible = \"mediatek,mt8163-musb\", \"mediatek,mtk-musb\";\n   reg = <0 0x11270000 0 0x1000>;\n   interrupts = <0 73 8>;\n   interrupt-names = \"mc\";\n   phys = <&u2port1 3>;\n   dr_mode = \"otg\";\n   clocks = <&infracfg 8>,\n     <&infracfg 23>,\n     <&apmixedsys 2>;\n   clock-names = \"main\", \"mcu\", \"univpll\";\n   status = \"disabled\";\n  };\n  mfgcfg: clock-controller@13000000 {\n   compatible = \"mediatek,mt8163-mfgcfg\", \"syscon\";\n   reg = <0 0x13000000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  gpu: gpu@13040000 {\n   compatible = \"mediatek,mt8163-mali\", \"arm,mali-t720\";\n   reg = <0 0x13040000 0 0x4000>;\n   interrupts = <0 227 8>,\n         <0 226 8>,\n         <0 225 8>;\n   interrupt-names = \"job\", \"mmu\", \"gpu\";\n   clocks = <&mfgcfg 0>;\n   assigned-clocks = <&topckgen 54>;\n   assigned-clock-parents = <&apmixedsys 3>;\n   power-domains = <&spm 7>;\n   mali-supply = <&vgpu_1v15>;\n   operating-points-v2 = <&gpu_opp>;\n   #cooling-cells = <2>;\n   status = \"disabled\";\n  };\n  mmsys: syscon@14000000 {\n   compatible = \"mediatek,mt8163-mmsys\", \"syscon\";\n   reg = <0 0x14000000 0 0x1000>;\n   power-domains = <&spm 0>;\n   #clock-cells = <1>;\n   #reset-cells = <1>;\n   mboxes = <&gce 0 7>,\n     <&gce 1 7>;\n   mediatek,gce-client-reg = <&gce 1 0 0x1000>;\n  };\n  ovl0: ovl@14007000 {\n   compatible = \"mediatek,mt8163-disp-ovl\", \"mediatek,mt8173-disp-ovl\";\n   reg = <0 0x14007000 0 0x1000>;\n   interrupts = <0 184 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 10>;\n   iommus = <&iommu (((0) << 5) | (0))>;\n   mediatek,gce-client-reg = <&gce 1 0x7000 0x1000>;\n  };\n  rdma0: dma-controller@14009000 {\n   compatible = \"mediatek,mt8163-disp-rdma\", \"mediatek,mt8173-disp-rdma\";\n   reg = <0 0x14009000 0 0x1000>;\n   interrupts = <0 186 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 12>;\n   iommus = <&iommu (((0) << 5) | (1))>;\n   mediatek,gce-client-reg = <&gce 1 0x9000 0x1000>;\n  };\n  color: color@1400c000 {\n   compatible = \"mediatek,mt8163-disp-color\", \"mediatek,mt8173-disp-color\";\n   reg = <0 0x1400c000 0 0x1000>;\n   interrupts = <0 189 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 15>;\n   mediatek,gce-client-reg = <&gce 1 0xc000 0x1000>;\n  };\n  ccorr: ccorr@1400d000 {\n   compatible = \"mediatek,mt8163-disp-ccorr\", \"mediatek,mt8192-disp-ccorr\";\n   reg = <0 0x1400d000 0 0x1000>;\n   interrupts = <0 190 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 16>;\n   mediatek,gce-client-reg = <&gce 1 0xd000 0x1000>;\n  };\n  aal: aal@1400e000 {\n   compatible = \"mediatek,mt8163-disp-aal\", \"mediatek,mt8183-disp-aal\";\n   reg = <0 0x1400e000 0 0x1000>;\n   interrupts = <0 191 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 17>;\n   mediatek,gce-client-reg = <&gce 1 0xe000 0x1000>;\n  };\n  gamma: gamma@1400f000 {\n   compatible = \"mediatek,mt8163-disp-gamma\";\n   reg = <0 0x1400f000 0 0x1000>;\n   interrupts = <0 192 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 18>;\n   mediatek,gce-client-reg = <&gce 1 0xf000 0x1000>;\n  };\n  dither: dither@14010000 {\n   compatible = \"mediatek,mt8163-disp-dither\", \"mediatek,mt8183-disp-dither\";\n   reg = <0 0x14010000 0 0x1000>;\n   interrupts = <0 193 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 19>;\n   mediatek,gce-client-reg = <&gce 2 0x0000 0x1000>;\n  };\n  ufoe: ufoe@14011000 {\n   compatible = \"mediatek,mt8163-disp-ufoe\", \"mediatek,mt8173-disp-ufoe\";\n   reg = <0 0x14011000 0 0x1000>;\n   interrupts = <0 194 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 20>;\n   mediatek,gce-client-reg = <&gce 2 0x1000 0x1000>;\n  };\n  dsi: dsi@14012000 {\n   compatible = \"mediatek,mt8163-dsi\";\n   reg = <0 0x14012000 0 0x1000>;\n   interrupts = <0 195 8>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 34>,\n     <&mmsys 35>,\n     <&mipi_tx0>;\n   clock-names = \"engine\", \"digital\", \"hs\";\n   resets = <&mmsys 23>;\n   phys = <&mipi_tx0>;\n   phy-names = \"dphy\";\n   status = \"disabled\";\n  };\n  pwm0: pwm@14014000 {\n   compatible = \"mediatek,mt8163-disp-pwm\", \"mediatek,mt8173-disp-pwm\";\n   reg = <0 0x14014000 0 0x1000>;\n   #pwm-cells = <2>;\n   power-domains = <&spm 0>;\n   clocks = <&mmsys 33>,\n     <&mmsys 32>;\n   clock-names = \"main\", \"mm\";\n   status = \"disabled\";\n  };\n  mutex: mutex@14015000 {\n   compatible = \"mediatek,mt8163-disp-mutex\";\n   reg = <0 0x14015000 0 0x1000>;\n   interrupts = <0 177 8>;\n   power-domains = <&spm 0>;\n   mediatek,gce-client-reg = <&gce 2 0x5000 0x1000>;\n   mediatek,gce-events = <58>,\n           <59>;\n  };\n  larb0: larb@14016000 {\n   compatible = \"mediatek,mt8163-smi-larb\";\n   reg = <0 0x14016000 0 0x1000>;\n   interrupts = <0 205 8>;\n   mediatek,smi = <&smi_common>;\n   mediatek,larb-id = <0>;\n   clocks = <&mmsys 1>,\n     <&mmsys 1>;\n   clock-names = \"apb\", \"smi\";\n   power-domains = <&spm 0>;\n  };\n  smi_common: smi@14017000 {\n   compatible = \"mediatek,mt8163-smi-common\";\n   reg = <0 0x14017000 0 0x1000>;\n   clocks = <&mmsys 0>,\n     <&mmsys 0>;\n   clock-names = \"apb\", \"smi\";\n   power-domains = <&spm 0>;\n  };\n  imgsys: clock-controller@15000000 {\n   compatible = \"mediatek,mt8163-imgsys\", \"syscon\";\n   reg = <0 0x15000000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  larb2: larb@15001000 {\n   compatible = \"mediatek,mt8163-smi-larb\";\n   reg = <0 0x15001000 0 0x1000>;\n   interrupts = <0 217 8>;\n   mediatek,smi = <&smi_common>;\n   mediatek,larb-id = <2>;\n   clocks = <&imgsys 0>,\n     <&imgsys 0>;\n   clock-names = \"apb\", \"smi\";\n   power-domains = <&spm 3>;\n  };\n  vdecsys: clock-controller@16000000 {\n   compatible = \"mediatek,mt8163-vdecsys\", \"syscon\";\n   reg = <0 0x16000000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  larb1: larb@16010000 {\n   compatible = \"mediatek,mt8163-smi-larb\";\n   reg = <0 0x16010000 0 0x10000>;\n   interrupts = <0 213 8>;\n   mediatek,smi = <&smi_common>;\n   mediatek,larb-id = <1>;\n   clocks = <&vdecsys 0>,\n     <&vdecsys 1>;\n   clock-names = \"apb\", \"smi\";\n   power-domains = <&spm 1>;\n  };\n  vencsys: clock-controller@17000000 {\n   compatible = \"mediatek,mt8163-vencsys\", \"syscon\";\n   reg = <0 0x17000000 0 0x1000>;\n   #clock-cells = <1>;\n  };\n  larb3: larb@17001000 {\n   compatible = \"mediatek,mt8163-smi-larb\";\n   reg = <0 0x17001000 0 0x1000>;\n   interrupts = <0 207 8>;\n   mediatek,smi = <&smi_common>;\n   mediatek,larb-id = <3>;\n   clocks = <&vencsys 1>,\n     <&vencsys 0>;\n   clock-names = \"apb\", \"smi\";\n   power-domains = <&spm 2>;\n  };\n };\n thermal-zones {\n  cpu_thermal: cpu-thermal {\n   polling-delay-passive = <1000>;\n   polling-delay = <1000>;\n   thermal-sensors = <&thermal 0>;\n   sustainable-power = <1000>;\n   trips {\n    threshold: trip-point0 {\n     temperature = <68000>;\n     hysteresis = <2000>;\n     type = \"passive\";\n    };\n    target: trip-point1 {\n     temperature = <80000>;\n     hysteresis = <2000>;\n     type = \"passive\";\n    };\n    cpu_crit: cpu-crit {\n     temperature = <115000>;\n     hysteresis = <2000>;\n     type = \"critical\";\n    };\n   };\n   cooling-maps {\n    map0 {\n     trip = <&target>;\n     cooling-device = <&cpu0 (~0) (~0)>,\n        <&cpu1 (~0) (~0)>,\n        <&cpu2 (~0) (~0)>,\n        <&cpu3 (~0) (~0)>;\n    };\n   };\n  };\n  gpu_thermal: gpu-thermal {\n   polling-delay-passive = <1000>;\n   polling-delay = <1000>;\n   thermal-sensors = <&thermal 1>;\n   sustainable-power = <1000>;\n   trips {\n    gpu_alert: trip-alert {\n     temperature = <80000>;\n     hysteresis = <2000>;\n     type = \"passive\";\n    };\n    gpu_crit: trip-crit {\n     temperature = <115000>;\n     hysteresis = <2000>;\n     type = \"critical\";\n    };\n   };\n   cooling-maps {\n    map0 {\n     trip = <&gpu_alert>;\n     cooling-device = <&gpu 1 (~0)>;\n    };\n    map1 {\n     trip = <&gpu_crit>;\n     cooling-device = <&gpu 2 (~0)>;\n    };\n   };\n  };\n  soc_thermal: soc-thermal {\n   polling-delay-passive = <1000>;\n   polling-delay = <1000>;\n   thermal-sensors = <&thermal 2>;\n   sustainable-power = <1000>;\n   trips {\n    soc_alert: trip-alert {\n     temperature = <80000>;\n     hysteresis = <2000>;\n     type = \"passive\";\n    };\n    soc_crit: trip-crit {\n     temperature = <115000>;\n     hysteresis = <2000>;\n     type = \"critical\";\n    };\n   };\n  };\n };\n};\n&pwrap {\n pmic: mt6323 {\n  compatible = \"mediatek,mt6323\";\n  interrupt-controller;\n  #interrupt-cells = <2>;\n  mt6323_leds: leds {\n   compatible = \"mediatek,mt6323-led\";\n   #address-cells = <1>;\n   #size-cells = <0>;\n   status = \"disabled\";\n  };\n  mt6323regulator: regulators {\n   compatible = \"mediatek,mt6323-regulator\";\n   mt6323_vproc_reg: buck_vproc {\n    regulator-name = \"vproc\";\n    regulator-min-microvolt = < 700000>;\n    regulator-max-microvolt = <1350000>;\n    regulator-ramp-delay = <12500>;\n   };\n   mt6323_vsys_reg: buck_vsys {\n    regulator-name = \"vsys\";\n    regulator-min-microvolt = <1400000>;\n    regulator-max-microvolt = <2987500>;\n    regulator-ramp-delay = <25000>;\n   };\n   mt6323_vpa_reg: buck_vpa {\n    regulator-name = \"vpa\";\n    regulator-min-microvolt = < 500000>;\n    regulator-max-microvolt = <3650000>;\n   };\n   mt6323_vtcxo_reg: ldo_vtcxo {\n    regulator-name = \"vtcxo\";\n    regulator-min-microvolt = <2800000>;\n    regulator-max-microvolt = <2800000>;\n    regulator-enable-ramp-delay = <90>;\n   };\n   mt6323_vcn28_reg: ldo_vcn28 {\n    regulator-name = \"vcn28\";\n    regulator-min-microvolt = <2800000>;\n    regulator-max-microvolt = <2800000>;\n    regulator-enable-ramp-delay = <185>;\n   };\n   mt6323_vcn33_bt_reg: ldo_vcn33_bt {\n    regulator-name = \"vcn33_bt\";\n    regulator-min-microvolt = <3300000>;\n    regulator-max-microvolt = <3600000>;\n    regulator-enable-ramp-delay = <185>;\n   };\n   mt6323_vcn33_wifi_reg: ldo_vcn33_wifi {\n    regulator-name = \"vcn33_wifi\";\n    regulator-min-microvolt = <3300000>;\n    regulator-max-microvolt = <3600000>;\n    regulator-enable-ramp-delay = <185>;\n   };\n   mt6323_va_reg: ldo_va {\n    regulator-name = \"va\";\n    regulator-min-microvolt = <2800000>;\n    regulator-max-microvolt = <2800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vcama_reg: ldo_vcama {\n    regulator-name = \"vcama\";\n    regulator-min-microvolt = <1500000>;\n    regulator-max-microvolt = <2800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vio28_reg: ldo_vio28 {\n    regulator-name = \"vio28\";\n    regulator-min-microvolt = <2800000>;\n    regulator-max-microvolt = <2800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vusb_reg: ldo_vusb {\n    regulator-name = \"vusb\";\n    regulator-min-microvolt = <3300000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vmc_reg: ldo_vmc {\n    regulator-name = \"vmc\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <36>;\n   };\n   mt6323_vmch_reg: ldo_vmch {\n    regulator-name = \"vmch\";\n    regulator-min-microvolt = <3000000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <36>;\n   };\n   mt6323_vemc3v3_reg: ldo_vemc3v3 {\n    regulator-name = \"vemc3v3\";\n    regulator-min-microvolt = <3000000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <36>;\n   };\n   mt6323_vgp1_reg: ldo_vgp1 {\n    regulator-name = \"vgp1\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vgp2_reg: ldo_vgp2 {\n    regulator-name = \"vgp2\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <3000000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vgp3_reg: ldo_vgp3 {\n    regulator-name = \"vgp3\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vcn18_reg: ldo_vcn18 {\n    regulator-name = \"vcn18\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vsim1_reg: ldo_vsim1 {\n    regulator-name = \"vsim1\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <3000000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vsim2_reg: ldo_vsim2 {\n    regulator-name = \"vsim2\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <3000000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vrtc_reg: ldo_vrtc {\n    regulator-name = \"vrtc\";\n    regulator-min-microvolt = <2800000>;\n    regulator-max-microvolt = <2800000>;\n   };\n   mt6323_vcamaf_reg: ldo_vcamaf {\n    regulator-name = \"vcamaf\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vibr_reg: ldo_vibr {\n    regulator-name = \"vibr\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <3300000>;\n    regulator-enable-ramp-delay = <36>;\n   };\n   mt6323_vrf18_reg: ldo_vrf18 {\n    regulator-name = \"vrf18\";\n    regulator-min-microvolt = <1825000>;\n    regulator-max-microvolt = <1825000>;\n    regulator-enable-ramp-delay = <187>;\n   };\n   mt6323_vm_reg: ldo_vm {\n    regulator-name = \"vm\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vio18_reg: ldo_vio18 {\n    regulator-name = \"vio18\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vcamd_reg: ldo_vcamd {\n    regulator-name = \"vcamd\";\n    regulator-min-microvolt = <1200000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n   mt6323_vcamio_reg: ldo_vcamio {\n    regulator-name = \"vcamio\";\n    regulator-min-microvolt = <1800000>;\n    regulator-max-microvolt = <1800000>;\n    regulator-enable-ramp-delay = <216>;\n   };\n  };\n  mt6323keys: keys {\n   compatible = \"mediatek,mt6323-keys\";\n   mediatek,long-press-mode = <1>;\n   power-off-time-sec = <0>;\n   power {\n    linux,keycodes = <116>;\n    wakeup-source;\n   };\n   home {\n    linux,keycodes = <114>;\n   };\n  };\n  codec: audio-codec {\n   compatible = \"mediatek,mt6397-codec\";\n  };\n  power-controller {\n   compatible = \"mediatek,mt6323-pwrc\";\n  };\n  rtc {\n   compatible = \"mediatek,mt6323-rtc\";\n  };\n };\n};\n\n/ {\n aliases {\n  serial0 = &uart0;\n };\n chosen {\n  stdout-path = \"serial0:921600n8\";\n };\n disp_backlight: display-backlight {\n  compatible = \"pwm-backlight\";\n  pwms = <&pwm0 0 500000>;\n  brightness-levels = <0 1023>;\n  num-interpolated-steps = <1023>;\n  default-brightness-level = <512>;\n };\n memory@40000000 {\n  device_type = \"memory\";\n  reg = <0 0x40000000 0 0x20000000>;\n };\n reserved-memory {\n  #address-cells = <2>;\n  #size-cells = <2>;\n  ranges;\n  afe_dma_mem: audio-dma-pool {\n   compatible = \"shared-dma-pool\";\n   size = <0 0x100000>;\n   alignment = <0 0x10>;\n   no-map;\n  };\n  bl31_secmon_reserved: secmon@43000000 {\n   reg = <0 0x43000000 0 0x30000>;\n   no-map;\n  };\n };\n vgpu_1v15: regulator-vgpu {\n  compatible = \"regulator-fixed\";\n  regulator-name = \"vgpu_1v15\";\n  regulator-min-microvolt = <1150000>;\n  regulator-max-microvolt = <1150000>;\n  regulator-boot-on;\n  regulator-always-on;\n };\n};\n&afe {\n memory-region = <&afe_dma_mem>;\n};\n&cpu0 {\n #cooling-cells = <2>;\n proc-supply = <&sym827_vproc>;\n};\n&cpu1 {\n #cooling-cells = <2>;\n proc-supply = <&sym827_vproc>;\n};\n&cpu2 {\n #cooling-cells = <2>;\n proc-supply = <&sym827_vproc>;\n};\n&cpu3 {\n #cooling-cells = <2>;\n proc-supply = <&sym827_vproc>;\n};\n&gpu {\n status = \"okay\";\n mali-supply = <&vgpu_1v15>;\n};\n&i2c1 {\n clock-frequency = <400000>;\n pinctrl-names = \"default\";\n pinctrl-0 = <&i2c1_pins_default>;\n status = \"okay\";\n sym827_vproc: regulator@60 {\n  compatible = \"silergy,sym827\";\n  reg = <0x60>;\n  fcs,suspend-voltage-selector = <1>;\n  regulator-name = \"sym827-vproc\";\n  regulator-min-microvolt = <600000>;\n  regulator-max-microvolt = <1387500>;\n  regulator-enable-ramp-delay = <400>;\n  regulator-ramp-delay = <8000>;\n  regulator-always-on;\n };\n};\n&mt6323_vproc_reg {\n regulator-always-on;\n regulator-boot-on;\n};\n&mt6323_vsys_reg {\n regulator-always-on;\n regulator-boot-on;\n};\n&mt6323_vm_reg {\n regulator-always-on;\n regulator-boot-on;\n};\n&mt6323_vrtc_reg {\n regulator-always-on;\n regulator-boot-on;\n};\n&mt6323_vtcxo_reg {\n regulator-always-on;\n regulator-boot-on;\n};\n&mmc0 {\n pinctrl-names = \"default\", \"state_uhs\";\n pinctrl-0 = <&mmc0_pins_default>;\n pinctrl-1 = <&mmc0_pins_uhs>;\n status = \"okay\";\n bus-width = <8>;\n mediatek,latch-ck = <1>;\n max-frequency = <200000000>;\n cap-mmc-highspeed;\n mmc-hs200-1_8v;\n cap-mmc-hw-reset;\n vmmc-supply = <&mt6323_vemc3v3_reg>;\n vqmmc-supply = <&mt6323_vio18_reg>;\n assigned-clocks = <&topckgen 58>;\n assigned-clock-parents = <&topckgen 21>;\n non-removable;\n};\n&pmic {\n interrupts-extended = <&pio 24 4>;\n};\n&pwm0 {\n status = \"okay\";\n};\n&uart0 {\n pinctrl-names = \"default\";\n pinctrl-0 = <&uart0_pins_default>;\n status = \"okay\";\n};\n&pio {\n i2c1_pins_default: i2c1-pins {\n  pins {\n   pinmux = <(((57) << 8) | 1)>,\n     <(((58) << 8) | 1)>;\n   bias-disable;\n  };\n };\n mmc0_pins_default: emmc-sdr-pins {\n  pins_cmd_dat {\n   pinmux = <(((137) << 8) | 1)>,\n     <(((136) << 8) | 1)>,\n     <(((135) << 8) | 1)>,\n     <(((134) << 8) | 1)>,\n     <(((130) << 8) | 1)>,\n     <(((129) << 8) | 1)>,\n     <(((128) << 8) | 1)>,\n     <(((127) << 8) | 1)>,\n     <(((132) << 8) | 1)>;\n   input-enable;\n   bias-pull-up;\n  };\n  pins_clk {\n   pinmux = <(((133) << 8) | 1)>;\n   bias-pull-down;\n  };\n  pins_rst {\n   pinmux = <(((131) << 8) | 1)>;\n   bias-pull-up;\n  };\n };\n mmc0_pins_uhs: emmc-uhs-pins {\n  pins_cmd_dat {\n   pinmux = <(((137) << 8) | 1)>,\n     <(((136) << 8) | 1)>,\n     <(((135) << 8) | 1)>,\n     <(((134) << 8) | 1)>,\n     <(((130) << 8) | 1)>,\n     <(((129) << 8) | 1)>,\n     <(((128) << 8) | 1)>,\n     <(((127) << 8) | 1)>,\n     <(((132) << 8) | 1)>;\n   input-enable;\n   drive-strength = <6>;\n   bias-pull-up = <101>;\n  };\n  pins_clk {\n   pinmux = <(((133) << 8) | 1)>;\n   drive-strength = <6>;\n   bias-pull-down = <101>;\n  };\n  pins_rst {\n   pinmux = <(((131) << 8) | 1)>;\n   bias-pull-up;\n  };\n };\n uart0_pins_default: uart0-pins {\n  pins {\n   pinmux = <(((79) << 8) | 1)>,\n     <(((80) << 8) | 1)>;\n  };\n };\n};\n\n/ {\n model = \"Amazon Fire HD 8 (2017)\";\n compatible = \"amazon,douglas\", \"mediatek,mt8163\";\n chassis-type = \"tablet\";\n};\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/dtc",
+        "-I",
+        "dts",
+        "-O",
+        "dtb",
+        "-o",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "work/dtb-compile/pmic-node-names/douglas.pp.dts"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/",
+        "model"
+      ],
+      "exit_code": 0,
+      "stdout": "Amazon Fire HD 8 (2017)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/",
+        "compatible"
+      ],
+      "exit_code": 0,
+      "stdout": "amazon,douglas mediatek,mt8163\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "x",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/memory@40000000",
+        "reg"
+      ],
+      "exit_code": 0,
+      "stdout": "0 40000000 0 20000000\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@0",
+        "enable-method"
+      ],
+      "exit_code": 0,
+      "stdout": "psci\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@1",
+        "enable-method"
+      ],
+      "exit_code": 0,
+      "stdout": "psci\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@2",
+        "enable-method"
+      ],
+      "exit_code": 0,
+      "stdout": "psci\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@3",
+        "enable-method"
+      ],
+      "exit_code": 0,
+      "stdout": "psci\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "u",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@0",
+        "#cooling-cells"
+      ],
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "u",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@1",
+        "#cooling-cells"
+      ],
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "u",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@2",
+        "#cooling-cells"
+      ],
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "u",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/cpus/cpu@3",
+        "#cooling-cells"
+      ],
+      "exit_code": 0,
+      "stdout": "2\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/soc/pwrap@1000d000/mt6323/regulators",
+        "compatible"
+      ],
+      "exit_code": 0,
+      "stdout": "mediatek,mt6323-regulator\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/soc/pwrap@1000d000/mt6323/keys",
+        "compatible"
+      ],
+      "exit_code": 0,
+      "stdout": "mediatek,mt6323-keys\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "work/dtb-tool/build/fdtget",
+        "-t",
+        "s",
+        "work/dtb-compile/pmic-node-names/douglas.dtb",
+        "/soc/pwrap@1000d000/mt6323/audio-codec",
+        "compatible"
+      ],
+      "exit_code": 0,
+      "stdout": "mediatek,mt6397-codec\n",
+      "stderr": ""
+    }
+  ],
+  "artifact": {
+    "format_version": 17,
+    "bytes": 26275,
+    "sha256": "119b6666a3caf217675d5aead3e9b0e0b21287d3e21f9d36e7d047f26698eddf"
+  },
+  "inspection": {
+    "model": "Amazon Fire HD 8 (2017)",
+    "compatible": [
+      "amazon,douglas",
+      "mediatek,mt8163"
+    ],
+    "memory_reg": "0 40000000 0 20000000",
+    "cpu_enable_methods": [
+      "psci",
+      "psci",
+      "psci",
+      "psci"
+    ],
+    "cooling_cells": [
+      "2",
+      "2",
+      "2",
+      "2"
+    ],
+    "pmic_children": {
+      "regulators": "mediatek,mt6323-regulator",
+      "keys": "mediatek,mt6323-keys",
+      "audio-codec": "mediatek,mt6397-codec"
+    }
+  },
+  "dtc_version": "Version: DTC 1.8.1",
+  "kernel_compiled": false,
+  "device_tested": false,
+  "binding_validation": "not passed; full ACK/donor binding context remains outstanding"
+}

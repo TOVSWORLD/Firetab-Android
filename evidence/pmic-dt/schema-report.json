@@ -1,0 +1,45 @@
+{
+  "scope": "Pinned ACK corpus only; donor-specific schemas still incomplete; no hardware validation",
+  "experiment": "pmic-node-names",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "archive_sha256": "4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526",
+  "yaml_files": 5186,
+  "dtschema_version": "2026.9",
+  "dtb_sha256": "119b6666a3caf217675d5aead3e9b0e0b21287d3e21f9d36e7d047f26698eddf",
+  "commands": [
+    {
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-mk-schema",
+        "-j",
+        "-o",
+        "<workspace>/work/binding-validation/result-pmic-node-names/processed.json",
+        "<ack-bindings>"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 1
+    },
+    {
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-validate",
+        "-s",
+        "<workspace>/work/binding-validation/result-pmic-node-names/processed.json",
+        "-m",
+        "--json-output",
+        "<workspace>/work/binding-validation/result-pmic-node-names/diagnostics.json",
+        "<workspace>/work/dtb-compile/pmic-node-names/douglas.dtb"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 336
+    }
+  ],
+  "diagnostic_count": 95,
+  "diagnostic_types": {
+    "unmatched": 61,
+    "validation": 34
+  },
+  "diagnostic_levels": {
+    "warning": 61,
+    "error": 34
+  },
+  "passed": false
+}

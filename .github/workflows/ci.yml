@@ -58,6 +58,10 @@ jobs:
         run: python3 scripts/setup_dtb_tools.py --download
       - name: Compile and inspect experimental douglas DTB
         run: python3 scripts/build_douglas_dtb.py
+      - name: Compile PMIC node-name candidate and compare all DT properties
+        run: |
+          python3 scripts/build_douglas_dtb.py --experiment pmic-node-names
+          python3 scripts/compare_pmic_dtb.py
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04
