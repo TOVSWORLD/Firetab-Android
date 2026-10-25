@@ -505,3 +505,18 @@ a6ecd7444c9ffc8f47c4954902b23e15fd1f861b924ae9a082157652dc2ab1c1.
 Report/log checksum and policy evidence retained. No DT/ramdisk integration,
 firmware packing or published test package; stock #21 prerequisites and #27
 schema validation remain. No tablet access or runtime result claimed.
+
+## 2026-10-25 — Bounded stock OTA model/boot-image inspection (#46/#21)
+
+Found discovery index HD8/HD10 5.7.1.0 links swapped; verified actual package
+identity from CRC-checked properties, rejecting suez/KFSUWI and selecting
+candidate douglas/KFDOWI/MT8163 build659664620. Marketing-version/installed-build
+match remains unverified (embedded Fire OS property says5.3.7.3). Initial two
+metadata probes used204800 bytes; reusable opt-in extractor used8612864 bytes,
+within20MiB response-body budget, rather than whole907705758-byte OTA. Boot.img
+8689664 bytes / SHA2568982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363.
+Existing inspector confirms2KiB pages/header fields; bounded gzip-prefix check
+finds AArch64 magic behind512-byte kernel prefix. Unclassified2KiB trailer and
+all signatures remain unverified. Report/ranges/hashes retained, binaries ignored.
+59 tests pass with synthetic archives/fake transport. No archive execution,
+firmware packing, tablet access or physical change; no test package ready.

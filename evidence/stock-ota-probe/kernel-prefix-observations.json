@@ -1,0 +1,20 @@
+{
+  "scope": "Observed bounded prefixes only; no wrapper/authentication/loader qualification",
+  "boot_image_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "kernel_component_offset": 2048,
+  "component_bytes": 7191666,
+  "first_two_little_endian_words": [
+    "0x58881688",
+    7191154
+  ],
+  "wrapper_name_bytes": "4b45524e454c0000000000000000000000000000000000000000000000000000",
+  "payload_offset_within_component": 512,
+  "declared_payload_equals_component_minus512": true,
+  "payload_prefix": "1f8b080000000000",
+  "gzip_decompressed_prefix_bytes": 64,
+  "gzip_decompressed_prefix_hex": "4d5a009157000014000008000000000000101d0100000000000000000000000000000000000000000000000000000000000000000000000041524d6440000000",
+  "arm64_magic_at_decompressed_offset56": true,
+  "unclassified_trailer_bytes": 2048,
+  "trailer_prefix_hex": "30820433308202eba003020102020900",
+  "signature_verified": false
+}
