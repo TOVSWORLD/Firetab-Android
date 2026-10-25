@@ -597,3 +597,11 @@ new header consistency, bounded local JSON input and uint64 arithmetic guards.
 Actual old text_offset=0x80000 aligns at the old address; new offset=0 does not.
 Retained exact result plus input/auditor hashes. No replacement address selected,
 loader behavior authenticated or firmware packed. All 72 tests pass.
+
+## 2026-10-25 — Harden legacy ADB metadata reads (#21/#22)
+
+Classify known remote shell error prefixes as unavailable even when old ADB
+returns host status0; do not retain error text. Traverse the device-tree symlink
+with a trailing slash and add proc/version for systems without uname. Fake
+transport covers status-zero permission/missing-command failures and privacy
+filtering. 73 tests pass. Device-specific evidence remains private locally.
