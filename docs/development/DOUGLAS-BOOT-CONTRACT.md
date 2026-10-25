@@ -269,3 +269,40 @@ Next actionable offline task: reconcile the106MiB exclusion and other retained
 reserved-memory regions against pinned firmware/legacy memory sources, then
 assess a board DT candidate preserving those regions. No physical query or boot
 image assembly was performed for this work.
+
+## Reservation inventory — issue #60
+
+Reproduce with `python3 scripts/inventory_reservations.py`. It compares the actual
+hvt candidate reserved-node facts with decoded runtime banks, retaining input
+and script hashes in `evidence/reservation-inventory/result.json`. Four fixed
+regions (ATF, RAM console, mdump, low log) total0x550000 bytes (5.3125MiB).
+All lie inside runtime usable-bank extents; none intersects the excluded106MiB
+at the top. These reservations must remain reserved within those banks; they
+cannot explain the top exclusion and must not be subtracted twice. CONSYS is a
+dynamic2MiB declaration with unknown placement, not a measured fixed interval.
+The candidate declarations have not been verified as runtime reservation values.
+
+Pinned source/hash snapshots in `evidence/reservation-inventory/sources.json`
+provide a narrower investigation path than guessing from sizes:
+
+- mtk_memcfg.c lines461–486 reads native mem_desc properties lca_reserved_mem
+  and tee_reserved_mem and adds their sizes to mblock accounting.
+- Its CONFIG_MTK_VIDEO path also adds framebuffer size at490–493; the comparison
+  with physical-rank total is inside #if0, so source does not enforce equality.
+- atf_logger.c at397 reads tee_reserved_mem but labels it ATF in its message.
+  A log label alone does not equate this property with the static ATF node.
+- mtkfb.c at2046–2080 reads chosen/chosen@0 atag,videolfb for VRAM size/base.
+  Its fallback calculation at2102 uses a fixed low-memory end address; this
+  cannot be treated as the current1.5GiB tablet's measured framebuffer placement.
+
+No exact0x99600000 boundary/106MiB allocation was established by these cached
+source paths. The whole top gap remains unattributed; no TEE/framebuffer size is
+invented to make the arithmetic fit. Residual blocker under#21: obtain explicitly
+reviewed read-only values of memory lca_reserved_mem/tee_reserved_mem and the
+narrow framebuffer descriptor (which includes a panel name, requiring sanitation)
+or matched loader reservation evidence, then reconcile overlaps and totals.
+Automatic runs must not query the tablet. No available binary or source proves
+loader placement/recovery either. This completes the bounded source/interval
+audit, not reservation ownership or a safe boot-image contract. Independent next
+work is#27 full binding-context failures, starting with the preserved malformed
+upstream Gunyah YAML and PMIC schema-selection overlap.
