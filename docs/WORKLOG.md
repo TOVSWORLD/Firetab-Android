@@ -210,3 +210,7 @@ Runner compiler/package versions are recorded, not hermetically pinned. The
 experiment logs the resolved config, ELF architecture, artifact sizes/hashes.
 No boot image packaging, upload/release or device access. Compilation outcome
 must be read from CI before marking any validation gate complete.
+
+First Linux run 40168107152 stopped in host-tool preflight: pahole absent.
+No kernel source was fetched. Added Ubuntu dwarves/libelf-dev/libssl-dev host
+packages with installed versions logged; apt repositories remain host-dependent.
