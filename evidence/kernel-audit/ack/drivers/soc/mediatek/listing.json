@@ -1,0 +1,131 @@
+{
+  "id": "7be13b7281e6cf71f0dd2475bca4997a5f01f794",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d28b0817ce51b1d9f3c3260727e1e0ca22279700",
+      "name": "Kconfig"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0665573e3c4b3bf96595b884b0620ffc411dc0eb",
+      "name": "Makefile"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c468926561b4751754d6de0df417bbfc95c009ce",
+      "name": "mt8167-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "957876d7c16661afa6f223d06fc5dbd76f4b7c35",
+      "name": "mt8173-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "123384958c4b7f8d1307176394b82fd66aadc657",
+      "name": "mt8183-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "354664be72bd79183c6ae929e1ab95384247c125",
+      "name": "mt8186-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "99080afead7e7a07ef13c32b50441763ec41bcb3",
+      "name": "mt8188-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7cafa2455fd09764a13398ee3383a06d852ce035",
+      "name": "mt8192-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f69929a2a4d4d1053e70ffa71ee4e8227dcf4a01",
+      "name": "mt8195-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "533a3fd0923b680fb31be5888fa9af71382a54b9",
+      "name": "mt8365-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "455221e8de24f27e8ed9c8957eec5f638b94d5d6",
+      "name": "mtk-cmdq-helper.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f54c966138b5b8bda32c383d179a57c78172bf52",
+      "name": "mtk-devapc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "41add5636b03c073e833e229cd0005c8f61d22d6",
+      "name": "mtk-dvfsrc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8a88805468cc0556f14d56b151efeacee9aaae01",
+      "name": "mtk-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bb4639ca0b8cdc0731554cb487e8454cdd31de18",
+      "name": "mtk-mmsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fe628d5f5198618f905d6af3c293e3f79cd479d9",
+      "name": "mtk-mmsys.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "38179e8cd98f84a6207a57d701383552328d52e0",
+      "name": "mtk-mutex.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0bcd8582637550c90c1c6df619077b7df7bb0048",
+      "name": "mtk-pmic-wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0b6a2884145e3789d0fb0c367e405901cf9a5069",
+      "name": "mtk-regulator-coupler.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "32153c1224163b16844d43f8d835118218fe2603",
+      "name": "mtk-socinfo.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "99edecb204f2547129cf196ec297bb42adee5f5f",
+      "name": "mtk-svs.c"
+    }
+  ]
+}

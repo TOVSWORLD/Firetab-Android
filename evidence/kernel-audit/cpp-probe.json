@@ -1,0 +1,23 @@
+{
+  "kind": "preprocessing-only",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "argv": [
+    "/usr/bin/clang",
+    "-E",
+    "-P",
+    "-nostdinc",
+    "-undef",
+    "-x",
+    "assembler-with-cpp",
+    "-I",
+    "evidence/kernel-audit/ack/include",
+    "-I",
+    "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek",
+    "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts"
+  ],
+  "exit_code": 1,
+  "expected_missing_header": "dt-bindings/clock/mediatek,mt8163-audsys.h",
+  "stderr": "In file included from evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts:7:\nIn file included from evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi:6:\nevidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163.dtsi:9:10: fatal error: 'dt-bindings/clock/mediatek,mt8163-audsys.h' file not found\n    9 | #include <dt-bindings/clock/mediatek,mt8163-audsys.h>\n      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+  "kernel_compiled": false,
+  "device_tested": false
+}

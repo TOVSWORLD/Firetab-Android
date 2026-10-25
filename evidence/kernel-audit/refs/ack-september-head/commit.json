@@ -1,0 +1,38 @@
+{
+  "commit": "7ff4606f62347129a94e3dcd1f32c274c2356107",
+  "tree": "ba465d5e8112409a48675a392854d7c285acdd12",
+  "parents": [
+    "71c817580f6faaa1b9acb08a42e486ee930b4a5e"
+  ],
+  "author": {
+    "name": "Youngchan Kim",
+    "email": "ycshark.kim@samsung.corp-partner.google.com",
+    "time": "Tue Sep 01 22:57:10 2026 +0900"
+  },
+  "committer": {
+    "name": "android-test-infra-autosubmit@system.gserviceaccount.com",
+    "email": "android-test-infra-autosubmit@system.gserviceaccount.com",
+    "time": "Fri Oct 23 09:16:45 2026 -0700"
+  },
+  "message": "ANDROID: ABI: Update symbol list for galaxy\n\n1 function symbol(s) added\n  \u0027struct page* __alloc_frozen_pages_noprof(gfp_t, unsigned int, int, nodemask_t*)\u0027\n\nBug: 576115425\nBug: 555667864\nChange-Id: I02c44a3a0eb791cfdac941a0676b8c1a38fa581f\nSigned-off-by: Youngchan Kim \u003cycshark.kim@samsung.corp-partner.google.com\u003e\n(cherry picked from commit 1aae27f403d484274792d7bd22c7e14abb9830e0)\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "2d4d6cd886e385e77fd755e36b6efccaa85c2180",
+      "old_mode": 33188,
+      "old_path": "gki/aarch64/abi.stg",
+      "new_id": "f1d039f69785d5a55a5bc9d6cefcb03a088b984e",
+      "new_mode": 33188,
+      "new_path": "gki/aarch64/abi.stg"
+    },
+    {
+      "type": "modify",
+      "old_id": "b811585d2ab1a0b9b9e9856d52eca5848ebe0089",
+      "old_mode": 33188,
+      "old_path": "gki/aarch64/symbols/galaxy",
+      "new_id": "a49aaac87ee4ba9a1f893f24440be664a09c2fb3",
+      "new_mode": 33188,
+      "new_path": "gki/aarch64/symbols/galaxy"
+    }
+  ]
+}

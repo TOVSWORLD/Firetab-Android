@@ -162,3 +162,21 @@ FireTabs Android (#4) and Crestron Panel (#5), linked both to the repository, an
 added project-specific issues plus shared repository tasks. Recorded board identities
 and preserved them across metadata reconciliation. Public visibility awaits explicit
 owner approval after automatic approval review rejected that separate visibility change.
+
+## 2026-10-25 — Issue #5 maintained-kernel candidate/support audit
+
+Inspected pinned Android 17 ACK, recent bengris32 MT8163 work (including an explicit
+douglas DTS), its separate upstream submission and LibreEcho 6.1 source references.
+Recommended the Android 17 / 6.18 ACK family with an exact LTS-integration candidate,
+recording development/release-ref version differences rather than claiming latest
+security coverage from the name. Added twelve source-anchored component records.
+
+Captured 78 source/listing records plus three upstream license/notice records with hashes; 16 MT8163 binding-header paths are absent
+at the inspected ACK pin. Reproduced a clang preprocessing failure at the first missing
+clock header and recorded the actual command/error. Added offline source verification
+and rejection tests to CI. No complete kernel checkout/toolchain/AOSP sync or paid
+resources; no kernel compilation, image packing, APK execution or physical device actions.
+
+Documented stock mt-boot vs PSCI/power sequencing, memory/boot-envelope concerns,
+32-bit EL0/userspace distinctions, graphics/CDD gaps and the next minimal compile/resource
+plan. Hardware validation records remain not_run; this closes an audit, not a port.

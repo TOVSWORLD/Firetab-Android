@@ -1,0 +1,1325 @@
+{
+  "id": "ba3387ff642bbe680c913a69c6b24c49e87f4897",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0e8dd82aa84ed1ddb332932f142d58a89b14d615",
+      "name": "Kconfig"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d8736a060dbdca6565fea5b0bd7d1d29840dde4f",
+      "name": "Makefile"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "60e34f124250ddceaf97373397718c1c235f3c90",
+      "name": "clk-apmixed.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a03826db4dcb70741982cfb9534ad85c3bfeb06d",
+      "name": "clk-cpumux.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "64e45c63b4a0d5fc47ce5296e1ac2d81e5b75983",
+      "name": "clk-cpumux.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "33b6ad8fdc2efa1386199e26fa1f337d51a3fd71",
+      "name": "clk-fhctl.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bfa6d281a3ee3f830a31b32c81a74f9ea304c33b",
+      "name": "clk-fhctl.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f6b1429ff7578e157c2c705754d3cc3d4e6d874a",
+      "name": "clk-gate.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4f05b9855dae0c39fe238c8767de6aac2dab8769",
+      "name": "clk-gate.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e103121cf58e77a72f42a42e7637b409090c399a",
+      "name": "clk-mt2701-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f11c7a4fa37b65936b7897d21c0699a853334484",
+      "name": "clk-mt2701-bdp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "608252e73f24df342b525e5dd24bb7810548907a",
+      "name": "clk-mt2701-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b3e18b6db75d424f2eb0f9c19caed14a50f94f8c",
+      "name": "clk-mt2701-g3d.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "000e00576052b973ddb967f7dfc11eb3ba3826ef",
+      "name": "clk-mt2701-hif.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c158e54c46526e271cefeabd2661b4724f6a8f76",
+      "name": "clk-mt2701-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "474d87d62e8331e8088224290c80ac9f41e9ba54",
+      "name": "clk-mt2701-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5299d92f3aba0ff3dac3cb33ae863877c1c5495f",
+      "name": "clk-mt2701-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1e88ad8b93f4485ad40f842e19c68117e00a2fbe",
+      "name": "clk-mt2701.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a60622d251ff30fe8db2e596d87986a88f854e61",
+      "name": "clk-mt2712-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c838311a0c510477914a78ec74ba57beb81cbad5",
+      "name": "clk-mt2712-bdp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bedebf86b0b55c3f993dd3957ab0734ad6b6b5ba",
+      "name": "clk-mt2712-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1a73474b2f996661ffe65ff23733d4f7b5b0c96a",
+      "name": "clk-mt2712-jpgdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c1bb45c7469e7f08b45954d35303935d6eef3ef7",
+      "name": "clk-mt2712-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "32ecb949f7eb35a877439deb244f006f2a6a8125",
+      "name": "clk-mt2712-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a766342fbafa0a6edfea94f982307b4c74c11b28",
+      "name": "clk-mt2712-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fc193dc8e8f6e92ba09dae07973c742ea781b5e6",
+      "name": "clk-mt2712-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "964c92130e3caa5fe5393a62c5ed89336f51e5c7",
+      "name": "clk-mt2712.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e0949911e8f7da7894b204012caefd0404cf8308",
+      "name": "clk-mt6735-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c564f8f7243242e9baf6fda1c99f94b092a57be8",
+      "name": "clk-mt6735-imgsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c1171f903cfae5c63e31624dbb7e20f24e61b8ba",
+      "name": "clk-mt6735-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1f5aedddf209dfea8b5d25b0b9f5b3d8b534b463",
+      "name": "clk-mt6735-mfgcfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cbdf6d25c1b252f9eb29a4d54e9890d6495479f2",
+      "name": "clk-mt6735-pericfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2589ebfe227160ffbf464338356b8b91924f95b3",
+      "name": "clk-mt6735-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8817085fc1db4ff21e0e10e0f1da3f5a6c61474f",
+      "name": "clk-mt6735-vdecsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8dec7f98492ac52a8c228007ee67190b7ed0e605",
+      "name": "clk-mt6735-vencsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2be1458087e6689993cd210aed0cc818578020dc",
+      "name": "clk-mt6765-audio.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2a7f30dc85bbb3eb31222ccd7ab917feb7860c25",
+      "name": "clk-mt6765-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ff857852cfb0a60f3cfda4056d192905110e7b9e",
+      "name": "clk-mt6765-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8261dfd12a9aa3cfd38eb4c31edf046efc5794f3",
+      "name": "clk-mt6765-mipi0a.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e525919f9e819bc03e7ca0aa6b28f039969aa6df",
+      "name": "clk-mt6765-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f309d1090cda1e9b7e8038a13ba644752d1f2664",
+      "name": "clk-mt6765-vcodec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d53731e7933f46d88ff180e43eb7163e52fb5b1c",
+      "name": "clk-mt6765.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8ed318bd776581f3cba8794ea2890fae09f0ff5c",
+      "name": "clk-mt6779-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f397b55606de56385bef30ebdbe495ee21003bf9",
+      "name": "clk-mt6779-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "474a59a4ca9ece20186793c236ed23009c023ea9",
+      "name": "clk-mt6779-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c2314654f43ab2a270e27129bd9146ec3cc04d1f",
+      "name": "clk-mt6779-ipe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "21793cb6e6e32c61b9da1ad95f818d92a5ca1a39",
+      "name": "clk-mt6779-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "30bbab3083883718f18ebc601c17b10114f4bacc",
+      "name": "clk-mt6779-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "458d012f023c6ccacd6da94d043b3a1975b130d3",
+      "name": "clk-mt6779-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "70cebc2740313ab220e3ecd9393ef5c8a2304fb8",
+      "name": "clk-mt6779-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "86732f5acf93407a5aa99bc2f386f0728a06bb9b",
+      "name": "clk-mt6779.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "91665d7f125efde4941cc4de881c5b503a935529",
+      "name": "clk-mt6795-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e4559569f5b02f9976df73988bad901496e28115",
+      "name": "clk-mt6795-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1d658bb19e822f739eeb73678d0a1c6f45149317",
+      "name": "clk-mt6795-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "733d0e2021fc1bd613344514d3c732f3d47c6253",
+      "name": "clk-mt6795-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d48240eb2a67cb133e20fd04708b6502d3e0542f",
+      "name": "clk-mt6795-pericfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9c6d63a80b19b8ede1b6349fc1e1007a3dba2e5a",
+      "name": "clk-mt6795-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f2968f859dca09a538640e36fa6bdda9b9f84a59",
+      "name": "clk-mt6795-vdecsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2f8d48da1a8599e1b9d790cb3cdb95c2e9f10758",
+      "name": "clk-mt6795-vencsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "338c69234f24e8303fe33007d27015077959b7ff",
+      "name": "clk-mt6797-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ddb40b8a1a7d2925e15d5711d06b476ea98f0648",
+      "name": "clk-mt6797-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d832f48123f58ebb788cc8a0e796834f6900e409",
+      "name": "clk-mt6797-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fd4446f4a9d7b45f4b55fa876da2b2146cde1c8a",
+      "name": "clk-mt6797-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fb59e71af58e32d9419e036e3dbd28cdaa61cac3",
+      "name": "clk-mt6797.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2350592d9a934f3ec8efb0cd8197e4c4fee49697",
+      "name": "clk-mt7622-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a4ea5e20efa29be58ff6e528caeac84a347f5224",
+      "name": "clk-mt7622-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1c1033a92c4661c6e95e115c04f39d1b8ec4804d",
+      "name": "clk-mt7622-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5bcfe12c4fd07f58720d303678a83df3e6ebab6b",
+      "name": "clk-mt7622-hif.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cfdf3b07c3e069bff094c8f004475deef98dfbcc",
+      "name": "clk-mt7622-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f62b03abab4fd06db568a05c908f784f1adf9654",
+      "name": "clk-mt7622.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "29ea93abaac535a5082631c45492d2275f647dc7",
+      "name": "clk-mt7629-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3fdc2d7d427405760d83024900076606db5e260e",
+      "name": "clk-mt7629-hif.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "baf94e7bea373c59cb6333fdb483d00240b744c7",
+      "name": "clk-mt7629.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e8211eb4e09e1a645f7e50a1e5814d29030c1757",
+      "name": "clk-mt7981-apmixed.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0655ebb6c561f6cc370a71e6c2549529e5f8781e",
+      "name": "clk-mt7981-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0487b6bb80ae3c36b13f60d666b6a8189538a770",
+      "name": "clk-mt7981-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1943f11e47c13f9a8d68b3f846549f5ba05c1031",
+      "name": "clk-mt7981-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "93751abe6be89784a102a0e5ac629d363ab3baaf",
+      "name": "clk-mt7986-apmixed.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4514d42c0829f51f8a041766a4731de67ac06a32",
+      "name": "clk-mt7986-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "732c65e616dea7dfe30c5f65bb82adb19369108a",
+      "name": "clk-mt7986-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2dd30da306d999a56884347403ef749681b9a108",
+      "name": "clk-mt7986-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "63d33a78cb48805f71aa6a74f8ed6b83f3b4fe22",
+      "name": "clk-mt7988-apmixed.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7d9463688be244d7710968d9cc84454c55ce7119",
+      "name": "clk-mt7988-eth.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ef8267319d91b9437fd8fcc19469ec37bedf58c5",
+      "name": "clk-mt7988-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "50e02cc7a214355c212e566118f0ba3008e8b43f",
+      "name": "clk-mt7988-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f941e4d3ef28799141ef05a0d1ec74199e664890",
+      "name": "clk-mt7988-xfipll.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bdadc35c64cbd8987061c4442b8ff2f5fe50cc32",
+      "name": "clk-mt8135-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "084e48a554c26297aad978359f6aab205f9ca2af",
+      "name": "clk-mt8135.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "adf576786696e0962dfd5147dfc8897bfaa48054",
+      "name": "clk-mt8167-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d6cff4bdf4cb971b58bbbd884bbef914fea3634e",
+      "name": "clk-mt8167-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "42d38ae94b69e2cfdabba9e8235585346eb834bc",
+      "name": "clk-mt8167-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1ef37a3e685164b8269a9863502e902f2d095a5a",
+      "name": "clk-mt8167-mfgcfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cef66ee836f3fa2bba3e29313a6fac4e288df15e",
+      "name": "clk-mt8167-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e3769bc556a96a3711c84d86fc42a177bf9fb58b",
+      "name": "clk-mt8167-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c64d918c37dead98922375675e23cdb261198f85",
+      "name": "clk-mt8167.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "95385bb67d5511eda3a851f81986e67eaf81e5fb",
+      "name": "clk-mt8173-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6db2b9ab2bc9194d34c2cf7cc15c242a7463f9e8",
+      "name": "clk-mt8173-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fa2d1d557e04f8cbc5e57c152ddd1c5ba70d5fc4",
+      "name": "clk-mt8173-infracfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "26d27250b914b08078303264c15d84d1eb912d46",
+      "name": "clk-mt8173-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bebda74d0f4391493bdb0774db4db873200159ae",
+      "name": "clk-mt8173-pericfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "42c37541cebb442368bc41f146b670e611eda8fb",
+      "name": "clk-mt8173-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "625ca0b09cc225283b870264e7c6df68fd30a51d",
+      "name": "clk-mt8173-vdecsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "87755dd1a337f9208578907239ef76e9fa8f75c6",
+      "name": "clk-mt8173-vencsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "551adbfd7ac9309bbc4f9beefe4f26230514f062",
+      "name": "clk-mt8183-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "011d329ad30e96140be1cfb98db90d28455cc007",
+      "name": "clk-mt8183-audio.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c7642085f8deb15728138740ab4e626c9bb64a18",
+      "name": "clk-mt8183-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ee92459c74ca53afd123b2ad3e3c281cc91e90bd",
+      "name": "clk-mt8183-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6831747f123b65c8a6d9823789f265d743866729",
+      "name": "clk-mt8183-ipu0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ecf434432e7bb118920136dc3bb5cad380c4288f",
+      "name": "clk-mt8183-ipu1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c1a770ba3245bbc3423d32c704c0c1b65b74a312",
+      "name": "clk-mt8183-ipu_adl.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f0e72e6edb7a6decab7eb7e14186bb3341f5e038",
+      "name": "clk-mt8183-ipu_conn.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "be44889783ff2a396e6516ebe67bdb66b8a7de00",
+      "name": "clk-mt8183-mfgcfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0f132f05fa8b22e3ebb903c64e5ade1373e44098",
+      "name": "clk-mt8183-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "43bf34077b16a7a330d05a197ac92ec6ade2b9be",
+      "name": "clk-mt8183-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c3d99b3b8ff79929fb9f45f9803e1f6e68898482",
+      "name": "clk-mt8183-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "aa7cc7709b2d679e065b9f8eef35daba0c6d9b79",
+      "name": "clk-mt8183.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4b2b16578232d986f78deed4778c5fab7f460184",
+      "name": "clk-mt8186-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2ddd5f90377fba315dccb440910f29ae76c0d063",
+      "name": "clk-mt8186-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5e466e1f5f44402b2b48f7312e5ae09d90f60d77",
+      "name": "clk-mt8186-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "75abb871044ce862ad053cc823b2e562d42d8177",
+      "name": "clk-mt8186-imp_iic_wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8d9d86a510ffd4a51a46c3bca396454382ebe30a",
+      "name": "clk-mt8186-infra_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f66a0aeaa6b318f2d7716c4385a5ba7dfb5c703e",
+      "name": "clk-mt8186-ipe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d1640e4dc2adbdc0683800416b19f8ea3c58785a",
+      "name": "clk-mt8186-mcu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "01561cf902c477d9d100c9f27d8a6397eb497d67",
+      "name": "clk-mt8186-mdp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3f21b1f222e1a5367a665ce8e2799fdfe72fc65f",
+      "name": "clk-mt8186-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fc8488c448667e7abb81374f87474ef7007630f6",
+      "name": "clk-mt8186-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "14f1cbdbbd13db93fb9768a2b4dccc1c02ba4cc2",
+      "name": "clk-mt8186-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "522b8c952969b5951b18f64b49bdffe6a660cc3f",
+      "name": "clk-mt8186-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c0c98bc7511255e4ebcbf9a62c043e81ea88cbb4",
+      "name": "clk-mt8186-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "babd7b2778c2c4a7e8e3468b6d86669be638135a",
+      "name": "clk-mt8186-wpe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dcde2187d24a09f1f901c51c00273def05d9f946",
+      "name": "clk-mt8188-adsp_audio26m.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "21d7a9a2ab1af64cca6962960418d44c81dc664a",
+      "name": "clk-mt8188-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9b029fdd584e02aec0647395b4b06cc5ed9a0931",
+      "name": "clk-mt8188-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1566fc437ea3f1489c0c0ec05e7b02ee20a6e564",
+      "name": "clk-mt8188-ccu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d44bfbd8308a57e81bdafac585f13181481cae90",
+      "name": "clk-mt8188-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "14a4b575b5839b1799cde6957ade39ce8be7e605",
+      "name": "clk-mt8188-imp_iic_wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b9bc8fcc2adeaec699efe0c906124bfffb410c64",
+      "name": "clk-mt8188-infra_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "70a011c1f9ced40a0397f8e722767b47e95a0394",
+      "name": "clk-mt8188-ipe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2ddfb1a3de471eea595bfb4bb12b1ec99b6aad5b",
+      "name": "clk-mt8188-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "639865335fc81aac1a78722b1a1725a2fdf3db4f",
+      "name": "clk-mt8188-peri_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6b07abe9a8f5f2226dcede59c4dc5733f30a36ab",
+      "name": "clk-mt8188-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f48f0716d7c2ba1e1aad628c9a0e86ae73843ce4",
+      "name": "clk-mt8188-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "017d6662589bfa58ded32ebdc00451fc7ff6e676",
+      "name": "clk-mt8188-vdo0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f715d45e545e808cb0dc903000128cd8cbe514b6",
+      "name": "clk-mt8188-vdo1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "01e971545506c66a8ac4a7994880d5af3ac86d8b",
+      "name": "clk-mt8188-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cd2579b7b9c332ceba1e4ca40d740ed9e6d43167",
+      "name": "clk-mt8188-vpp0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0e1bd8306e8a62cb69f24db1c8ec33d1bd0ebb10",
+      "name": "clk-mt8188-vpp1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d709bb1ee1d62c97e8932d881f04aa0fb07ed4f4",
+      "name": "clk-mt8188-wpe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0b66a27e4d5ac68f09dc6a4197fd84ef82342df9",
+      "name": "clk-mt8192-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f3ebf8713fbb754f04dc793a5c58eb0cf9342031",
+      "name": "clk-mt8192-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "891d2f88d9cf798deaba27590302f30c9faa6718",
+      "name": "clk-mt8192-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c08e831125a5bffbe8a2130d84e4749022859d90",
+      "name": "clk-mt8192-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0f9530d9263c43962090c3ad3f97dc7fc6ac8d13",
+      "name": "clk-mt8192-imp_iic_wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c932b8b20edc4ba4e12808404d0cd6caba22537c",
+      "name": "clk-mt8192-ipe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "30334ebca864e97bd1d7efdd9614f711cb727df9",
+      "name": "clk-mt8192-mdp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9d176659e8a273b351a88ca7d0522d589fd15022",
+      "name": "clk-mt8192-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bda4406e13042abe7679cf8647536dfe495026b0",
+      "name": "clk-mt8192-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "04a66220f269831e497aee9424df116bfabec4da",
+      "name": "clk-mt8192-msdc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f9e4c16573e2a7c05583a59dac5cb1bb9dedb81c",
+      "name": "clk-mt8192-scp_adsp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9c10161807b2e218263103de55bb89c2a0089e30",
+      "name": "clk-mt8192-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0b01e2b7f036fb5fa8330ab8cce65384d8caaaa1",
+      "name": "clk-mt8192-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "50b43807c60cfbae3c23cc5b730698d19df8dc40",
+      "name": "clk-mt8192.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "282a3137dc89419a6d0b574fd549cee941687900",
+      "name": "clk-mt8195-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8b45a3fad02f18df30e4c2ce2ba5b6338eae321f",
+      "name": "clk-mt8195-apusys_pll.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "02cb20c2948b36a2f286c8e983feb71e9ad94852",
+      "name": "clk-mt8195-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "22cd1cb070f1370f2fd50370342e06704f77de0f",
+      "name": "clk-mt8195-ccu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "11beba4b2ac275e9c4959726c12dd6444b4bb280",
+      "name": "clk-mt8195-img.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8711b18b15760b2d30b64bac61f9d3978b48bf3b",
+      "name": "clk-mt8195-imp_iic_wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ad47fdb23460754a5de9ac15861d094d21ee0f0e",
+      "name": "clk-mt8195-infra_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b1af00348a86ea2c1ebafc700750dd48dfc593f9",
+      "name": "clk-mt8195-ipe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "07c358db1af9474719cf080f521158d09d94929a",
+      "name": "clk-mt8195-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b743eb60a30bfc346c4ccc113abd9f929f44a720",
+      "name": "clk-mt8195-peri_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bc73fccd051521acae71d2e965ca2b35da147a12",
+      "name": "clk-mt8195-scp_adsp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b1f44b873354ae92ed8054e57018d271af2586b5",
+      "name": "clk-mt8195-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0bad706047c9299d029b36f40bf5a77636133f18",
+      "name": "clk-mt8195-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "581d99f8c254b574b9c878923b2e3af6ef8a0b39",
+      "name": "clk-mt8195-vdo0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7f8b1a8967bdae7def076c5d66d330eb5fc406e5",
+      "name": "clk-mt8195-vdo1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3b52ff025d5e6ce2157d411f57f017facd8ea0ec",
+      "name": "clk-mt8195-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0e3e1dd7977c48d293bd20d2fd4aa5fa9f6b19f1",
+      "name": "clk-mt8195-vpp0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fb7b7aef0bba13dd1921866ca1a4b4a6f763c426",
+      "name": "clk-mt8195-vpp1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "315b93bbfcdcb9a7226094fc339d310f1ad0884f",
+      "name": "clk-mt8195-wpe.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "617f5449b88b8bcaf282e8ed8593b52413a233a8",
+      "name": "clk-mt8196-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9474aad26e92b371cd27c59d2df57bbbca768f1e",
+      "name": "clk-mt8196-disp0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3bbec79a7010385dc5a9ab69908a74d2f9aeed0a",
+      "name": "clk-mt8196-disp1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a6324167165093ba2f1b0372e8fa681026768ce9",
+      "name": "clk-mt8196-imp_iic_wrap.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5cbcc411ae734c82b97bf099a645cb6aaa31d9c3",
+      "name": "clk-mt8196-mcu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7667d88f0eb076d43cd40eb3bf144dc4c4160cc1",
+      "name": "clk-mt8196-mdpsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f40795b47ff1fd264e22aeef75475b320fcaa86a",
+      "name": "clk-mt8196-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d4affd14d2c4525444079993482a63b70c1e0b88",
+      "name": "clk-mt8196-ovl0.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c8843d0d3ede492566eb5d7ed06c507f68b76f74",
+      "name": "clk-mt8196-ovl1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f227a86c5d60e318ecf558033bb08cd4ab694845",
+      "name": "clk-mt8196-peri_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3e505ecc4b6eb775648a1744a4499ea908622022",
+      "name": "clk-mt8196-pextp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6ace11ef6b694b871c55a96443ca79530b6fd4f2",
+      "name": "clk-mt8196-topckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6df93d7fbf91022c59294aa35f0dcc48a0b4e4f9",
+      "name": "clk-mt8196-topckgen2.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0c04717b7b4b8b09aacedee174093400cf309ab0",
+      "name": "clk-mt8196-ufs_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f8dcd84a2b58ed6604123365ec61dd2811af9afe",
+      "name": "clk-mt8196-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fddb69d1c3eb2099a5d5952cd749491091b99a05",
+      "name": "clk-mt8196-vdisp_ao.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "13e2e36e945f1e2feff967ea59d6a98b76d33fbd",
+      "name": "clk-mt8196-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d59a8a9d98550e897d18031d9bb814aa96d3cf57",
+      "name": "clk-mt8196-vlpckgen.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f41b991a0178af3067b19a693512ec922af48e07",
+      "name": "clk-mt8365-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2583c4704ffabaf14f16bd9d081aa675d4288a5f",
+      "name": "clk-mt8365-apu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "89d2bd50263b40cac5ed3c15ca58ec77e8897ddb",
+      "name": "clk-mt8365-cam.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "41bcd389119c7c3b8e59a4b30b98e2e35cdad8bd",
+      "name": "clk-mt8365-mfg.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "56fb2a43ecd029e1b8c45876a066a7a3bb5494d8",
+      "name": "clk-mt8365-mm.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f5d0518bc2e0c44b91bc961f02473eaa18c10e1e",
+      "name": "clk-mt8365-vdec.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "35abd908537c8a032883b657251d767732482946",
+      "name": "clk-mt8365-venc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e7952121112ed90cf363298c9dd41e0adef3c4c1",
+      "name": "clk-mt8365.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "edd9174d2f2ff97a0c1198caa2a0b9c1ca40ffd2",
+      "name": "clk-mt8516-apmixedsys.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6227635fd5a1c04de6649d2f6995de31b3aa1085",
+      "name": "clk-mt8516-aud.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "342a59019fea9bcb896cd2d35936d43bc3a132d8",
+      "name": "clk-mt8516.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "deafe55a96cb1d46842037f82edc682e85307cc3",
+      "name": "clk-mtk.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5417b9264e6df9c5fbc7548dd2d4e150ec50e9a2",
+      "name": "clk-mtk.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c5af6dc078a3a40c7b1f2a33abbfc5989523e8c3",
+      "name": "clk-mux.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "151e56dcf88427c33301371afa2885b119e9641f",
+      "name": "clk-mux.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "de3eb02670554f7af5578a4001e7539ee77fd4a5",
+      "name": "clk-pll.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "de5a8fb7cbcfe941f1fdc903fcbdc6b8007d02bc",
+      "name": "clk-pll.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "83630ee07ee976bf980c8cf2dd35ea24c1b40821",
+      "name": "clk-pllfh.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5f419c2ec01f988ede4e40289c6e5d5f8070ad14",
+      "name": "clk-pllfh.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2e3303975096a48d10655c8d2234acba6979aee2",
+      "name": "reset.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "562ffd290a224ae7016588374f2831c8b08dae7d",
+      "name": "reset.h"
+    }
+  ]
+}

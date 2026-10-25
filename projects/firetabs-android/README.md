@@ -33,3 +33,11 @@ Shared paths remain at the repository root so existing source locks and commands
 The 3.18/4.9 trees and Android 11 patches are historical hardware references, not the
 selected maintained platform. Standard pull-request CI does not download AOSP or build
 firmware. Provisioning a large Linux build host is a separate resource decision.
+
+## Maintained-kernel audit
+
+[Issue #5 audit](../../docs/development/DOUGLAS-KERNEL-AUDIT.md) recommends the Android 17 /
+6.18 ACK family and pins an initial integration candidate. It records an existing modern
+douglas DTS, reusable MT8163 drivers, boot ABI gaps and a reproduced missing-header failure.
+[Component matrix](kernel/support-matrix.json) is source evidence, not hardware validation.
+Run `python3 scripts/kernel_audit.py` for offline source integrity/anchor checks.

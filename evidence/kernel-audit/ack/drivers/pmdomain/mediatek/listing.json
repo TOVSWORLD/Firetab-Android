@@ -1,0 +1,107 @@
+{
+  "id": "bfb6284e7a6322f0640c511152e40e00246dc937",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0e34a517ab7d5a867bebaab11c0d866282a15e45",
+      "name": "Kconfig"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "18ba92e3c418154e1d428dbc6b59b97b26056d98",
+      "name": "Makefile"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3b1d202f89dc516922887cdd968c95f5147491f4",
+      "name": "airoha-cpu-pmdomain.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "71896be68e227fa2f7da73025a7a92873005d416",
+      "name": "mt6735-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dc8e9f8877addd76f247860ec2e41ad8a852b6d2",
+      "name": "mt6795-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c9e2aa5114487079cd99ddada4c513cbabaa7bd4",
+      "name": "mt6893-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f6ee48a711a16aca94ac2b74b0fabec2d93e451d",
+      "name": "mt8167-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "561a644b5d1cb2ce40b9e89d1bf5786421a0a9af",
+      "name": "mt8173-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3742782a2702e49a36caac1b461ef2fe0de32246",
+      "name": "mt8183-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "00b9861af7c9c086a79392917482cffd454d4378",
+      "name": "mt8186-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3a989e83e9b791f647efc36c5d1405b2bce8164b",
+      "name": "mt8188-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5d62fac5f68231069316398304d1fab00e61d1a5",
+      "name": "mt8192-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1d3ca195ac75806c458db71db4538940f37128a8",
+      "name": "mt8195-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "33265ab8ce76f2999434efe9f1e476d29a2fc863",
+      "name": "mt8365-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1716d726b8ccafa3fdf6a2c30a02658b60aa2aa6",
+      "name": "mtk-pm-domains.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b2e3dee0383119ccbf0f0e1451108a9dd2eb84d0",
+      "name": "mtk-pm-domains.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1a80c1537a43d2f3ae3ee0456090bd9e41834afa",
+      "name": "mtk-scpsys.c"
+    }
+  ]
+}

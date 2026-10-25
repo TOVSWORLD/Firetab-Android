@@ -1,0 +1,29 @@
+{
+  "commit": "533c1b80b8a9556fea6728bd85fa3a276bccbd15",
+  "tree": "63e0209a9e996df69f405a2b01a76457404cae7b",
+  "parents": [
+    "056779ef69e29ceb438dad7d6cdf0b59cbc52792"
+  ],
+  "author": {
+    "name": "yoonho.shin",
+    "email": "yoonho.shin@samsung.com",
+    "time": "Wed Apr 09 15:45:21 2025 +0900"
+  },
+  "committer": {
+    "name": "Sandeep Dhavale",
+    "email": "dhavale@google.com",
+    "time": "Fri Oct 23 13:02:41 2026 -0700"
+  },
+  "message": "ANDROID: fuse-bpf: fix wrong logic in read backing\n\n1. Direct IO support is handled at the open(), so there\u0027s no need to\n   handle it at the read.\n2. Ensure that return value is correctly returned in error situation.\n\nBug: 577115327\nBug: 409455146\nTest: Do direct read, make sure fails with correct error\nChange-Id: I7675b429ddaa548e88930d6aa2f3b3b5eed6c4ba\nSigned-off-by: yoonho.shin \u003cyoonho.shin@samsung.com\u003e\n(cherry picked from commit af1823716af37f31a539b28360dd71a95e1a6eae)\n[dhavale: applied to fs/fuse/fuse_bpf_backing.c instead of backing.c]\nSigned-off-by: Sandeep Dhavale \u003cdhavale@google.com\u003e\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "cf8ad94c94a4ce999f4baf030adc0d49197d2b60",
+      "old_mode": 33188,
+      "old_path": "fs/fuse/fuse_bpf_backing.c",
+      "new_id": "a9a423cc5afdad69fc59bff9a98ed7985185fde1",
+      "new_mode": 33188,
+      "new_path": "fs/fuse/fuse_bpf_backing.c"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "device": "douglas/KFDOWI",
+  "date": "2026-10-25",
+  "scope": "source audit only; no kernel compilation or hardware validation",
+  "candidate_family": "android17-6.18",
+  "candidate_ref": "android17-6.18-lts",
+  "candidate_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "components": [
+    {
+      "id": "cpu-boot",
+      "status": "integration-gap",
+      "summary": "Legacy mt-boot adds vendor CPU power sequencing; ACK only registers spin-table and PSCI.",
+      "next_test": "Review legacy PSCI/MTCMOS operations against modern firmware before any owner-authorized multicore boot test.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/mt8163.dtsi",
+          "needle": "enable-method = \"mt-boot\""
+        },
+        {
+          "path": "evidence/kernel-audit/legacy/drivers/misc/mediatek/base/power/mt8163/mt_psci.c",
+          "needle": "spm_mtcmos_ctrl_cpu(cpu, STA_POWER_ON, 1)"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/kernel/cpu_ops.c",
+          "needle": "&cpu_psci_ops"
+        }
+      ]
+    },
+    {
+      "id": "board-and-memory",
+      "status": "integration-gap",
+      "summary": "A modern douglas DTS exists in the community tree; ACK has no douglas/MT8163 DTS. The shared community memory declaration is 512 MiB and is not the measured 1.5 GB layout.",
+      "next_test": "Resolve board-specific RAM/reservations/bootloader fixups; preprocess and validate the dependency closure without assuming Echo layout.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+          "needle": "compatible = \"amazon,douglas\""
+        },
+        {
+          "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+          "needle": "reg = <0 0x40000000 0 0x20000000>"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/boot/dts/mediatek/listing.json",
+          "needle": "mt8173.dtsi"
+        }
+      ]
+    },
+    {
+      "id": "clocks",
+      "status": "reuse-candidate",
+      "summary": "Community MT8163 split clock drivers and bindings are available; their ACK backport is uncompiled.",
+      "next_test": "Import and compile clock/binding changes against pinned ACK; verify resolved Kconfig and rate/parent data before runtime.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/Makefile",
+          "needle": "CONFIG_COMMON_CLK_MT8163"
+        },
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+          "needle": "mediatek,mt8163-topckgen"
+        }
+      ]
+    },
+    {
+      "id": "pinctrl",
+      "status": "reuse-candidate",
+      "summary": "Community MT8163 pinctrl driver and pin tables exist; board pin mux and IRQ mapping remain untested.",
+      "next_test": "Forward/adapt pinctrl dependencies and compile; reconcile douglas pins against legacy DTS.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+          "needle": "mediatek,mt8163-pinctrl"
+        },
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas.dts",
+          "needle": "goodix,rst-gpio"
+        }
+      ]
+    },
+    {
+      "id": "pmic-and-power-domains",
+      "status": "reuse-candidate",
+      "summary": "ACK has MT6323 slave/regulator support; community adds MT8163 wrapper and power-domain data.",
+      "next_test": "Port MT8163 host wrapper/domain integration and validate regulator names, interrupts and power sequencing.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/ack/drivers/soc/mediatek/mtk-pmic-wrap.c",
+          "needle": "mediatek,mt6323"
+        },
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/soc/mediatek/mtk-pmic-wrap.c",
+          "needle": "mediatek,mt8163-pwrap"
+        },
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+          "needle": "scpsys_domain_data_mt8163"
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "status": "reuse-candidate",
+      "summary": "Community DT maps MT8163 MMC to the existing mt2701 fallback; actual timing/pin/regulator behavior is untested.",
+      "next_test": "Compile controller/DT path; initially use conservative timing and validate eMMC read/write integrity only with owner authorization.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+          "needle": "\"mediatek,mt8163-mmc\", \"mediatek,mt2701-mmc\""
+        },
+        {
+          "path": "evidence/kernel-audit/ack/drivers/mmc/host/mtk-sd.c",
+          "needle": "\"mediatek,mt2701-mmc\""
+        },
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas.dts",
+          "needle": "mmc-hs200-1_8v"
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "status": "integration-gap",
+      "summary": "Community has MT8163 DRM controller integration; the douglas wrapper/common DTS does not connect a panel endpoint. Legacy uses a vendor NT35521 panel driver.",
+      "next_test": "Port/validate panel power/reset/DSI timing and controller dependencies; a simple framebuffer or controller symbol is not panel support.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/bengris7/drivers/gpu/drm/mediatek/mtk_drm_drv.c",
+          "needle": "mt8163_mmsys_driver_data"
+        },
+        {
+          "path": "evidence/kernel-audit/legacy/drivers/misc/mediatek/lcm/nt35521_wxga_dsi_vdo_douglas/nt35521_wxga_dsi_vdo_douglas.c",
+          "needle": "LCM_DRIVER"
+        }
+      ]
+    },
+    {
+      "id": "touch",
+      "status": "reuse-candidate",
+      "summary": "Legacy board declares goodix,gt9xx; ACK includes Goodix family driver, but chip-specific compatible/config and board wiring need adaptation.",
+      "next_test": "Identify actual touch-controller variant/config and compare bindings/reset/IRQ/power before a tested DTS.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas.dts",
+          "needle": "compatible = \"goodix,gt9xx\""
+        },
+        {
+          "path": "evidence/kernel-audit/ack/drivers/input/touchscreen/goodix.c",
+          "needle": "goodix,gt911"
+        }
+      ]
+    },
+    {
+      "id": "gpu",
+      "status": "reuse-candidate",
+      "summary": "ACK Panfrost recognizes T720. Kernel recognition is not an Android EGL/gralloc/composer implementation or proof of GLES compatibility.",
+      "next_test": "Resolve Mesa T720 feature limits, DRM/SMI/IOMMU/power dependencies and Android buffer/compositor integration; run rendering tests later.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/ack/drivers/gpu/drm/panfrost/panfrost_gpu.c",
+          "needle": "GPU_MODEL(t720, 0x720)"
+        },
+        {
+          "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+          "needle": "\"arm,mali-t720\""
+        }
+      ]
+    },
+    {
+      "id": "wireless",
+      "status": "unverified",
+      "summary": "Legacy uses the MT8163 CONSYS vendor combo stack; an upstream mt76 directory does not establish an equivalent radio driver.",
+      "next_test": "Identify actual CONSYS radio/bus/firmware contracts and reusable drivers; resolve a bounded compile experiment before assuming wireless.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/configs/douglas_defconfig",
+          "needle": "CONFIG_MTK_COMBO_CHIP_CONSYS_8163=y"
+        },
+        {
+          "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas.dts",
+          "needle": "vcn33_wifi-supply"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/drivers/net/wireless/mediatek/listing.json",
+          "needle": "mt76"
+        }
+      ]
+    },
+    {
+      "id": "arm32-userspace",
+      "status": "reuse-candidate",
+      "summary": "ARM64 ACK has CONFIG_COMPAT and 4 KiB page support; Android 17 retains zygote32. Complete ARM32 userspace/app compatibility is not built.",
+      "next_test": "Resolve a single-ABI product strategy for the 1.5 GB device, build the actual platform and test required apps; do not equate 64-bit kernel with 64-bit app ABI.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/Kconfig",
+          "needle": "menuconfig COMPAT"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/configs/gki_defconfig",
+          "needle": "CONFIG_COMPAT=y"
+        },
+        {
+          "path": "evidence/kernel-audit/aosp17/rootdir/init.zygote32.rc",
+          "needle": "service zygote"
+        }
+      ]
+    },
+    {
+      "id": "android-services-and-security",
+      "status": "reuse-candidate",
+      "summary": "ACK declares BPF/cgroups/Binder/SELinux support. A resolved board config and userspace policy are still required.",
+      "next_test": "Build resolved configs, enforce SELinux, validate networking/Binder/cgroup behavior and current Android tests on hardware.",
+      "evidence": [
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/configs/gki_defconfig",
+          "needle": "CONFIG_BPF_SYSCALL=y"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/configs/gki_defconfig",
+          "needle": "CONFIG_ANDROID_BINDERFS=y"
+        },
+        {
+          "path": "evidence/kernel-audit/ack/arch/arm64/configs/gki_defconfig",
+          "needle": "CONFIG_SECURITY_SELINUX=y"
+        }
+      ]
+    }
+  ]
+}

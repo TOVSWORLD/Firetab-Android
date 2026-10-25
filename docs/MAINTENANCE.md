@@ -138,3 +138,12 @@ Current work is source inspection and initial Android 11 patch adaptation only.
 No feature-gap audit, maintained kernel, complete build environment, Android 15/17
 port or device validation is claimed complete. Repository CI is now implemented; it
 validates evidence consistency and does not build or run firmware. See CI.md.
+
+## 2026-10-25 source-audit update
+
+[The first kernel candidate/support audit](development/DOUGLAS-KERNEL-AUDIT.md) is
+complete as source research. It recommends the Android 17 / 6.18 ACK family and pins
+an initial LTS-integration experiment. It identifies reusable modern douglas/MT8163
+source and concrete boot/DT/graphics/ABI gaps. No kernel compilation or device validation
+has occurred. The next experiment is a bounded DT dependency/compilation test, followed
+by reviewed board-driver/CPU-method integration on a suitable Linux host.

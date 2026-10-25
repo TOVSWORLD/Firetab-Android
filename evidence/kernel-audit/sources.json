@@ -1,0 +1,796 @@
+{
+  "retrieved": "2026-10-25",
+  "pins": {
+    "android17-6.18": "533c1b80b8a9556fea6728bd85fa3a276bccbd15",
+    "bengris-mt8163-7.0": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+    "bengris-upstream-series": "84fae418d21ba2f7b92215834cfe4708305954c8",
+    "libreecho6.1": "23721f56408fb4c4fe1a368abf06caa98edaecfa",
+    "android17-6.18-lts": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "ack-development": "533c1b80b8a9556fea6728bd85fa3a276bccbd15",
+    "ack-lts": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "ack-september-head": "7ff4606f62347129a94e3dcd1f32c274c2356107",
+    "ack-september-r9": "e23aa8e8ab337ee88518a7fad4b175d8d68890c8"
+  },
+  "records": [
+    {
+      "path": "evidence/kernel-audit/bengris7/Makefile",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/Makefile",
+      "format": "raw",
+      "bytes": 74215,
+      "sha256": "a8069e47631f4da41b43029143258adea704bd53f42a07f3b5c7dad23a63ff42",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "format": "raw",
+      "bytes": 31399,
+      "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+      "format": "raw",
+      "bytes": 290,
+      "sha256": "fc95a4931ff02269ca5bf70abe553a72fe0a9d532731fa5c77f0eaff9b2928a0",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "format": "raw",
+      "bytes": 4766,
+      "sha256": "e2b90d6afa1d8a5b9e80d32b048a721e13eb100c62f5a381c55f2fbee22348e4",
+      "status": 200
+    },
+    {
+      "requested_path": "bengris7/drivers/clk/mediatek/clk-mt8163.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mt8163.c",
+      "format": "raw",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "format": "raw",
+      "bytes": 13586,
+      "sha256": "aa3c679d8eade2dfa2363fb9e1a7e8c778fa364e69ac56b41a3444f25941bcee",
+      "status": 200
+    },
+    {
+      "requested_path": "bengris7/drivers/soc/mediatek/mt8163-pm-domains.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/soc/mediatek/mt8163-pm-domains.h",
+      "format": "raw",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/soc/mediatek/mtk-pmic-wrap.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/soc/mediatek/mtk-pmic-wrap.c",
+      "format": "raw",
+      "bytes": 73628,
+      "sha256": "fc43466aa2f8fadfd49c174aad5b92911b7a267405e70db7d0cd570d8997e9e5",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/mmc/host/mtk-sd.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/mmc/host/mtk-sd.c",
+      "format": "raw",
+      "bytes": 100347,
+      "sha256": "baf11a79907562aa73867c85c66677bf1995a80472f76b7f2ced2c317b8df0dc",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/upstream-series/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/84fae418d21ba2f7b92215834cfe4708305954c8/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "format": "raw",
+      "bytes": 5477,
+      "sha256": "7cd39a2ad10df9fc4306bb4f9df4b30a681b532417cede34d016f2bb0cea6930",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/upstream-series/arch/arm64/boot/dts/mediatek/mt8163-amazon-biscuit.dts",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/84fae418d21ba2f7b92215834cfe4708305954c8/arch/arm64/boot/dts/mediatek/mt8163-amazon-biscuit.dts",
+      "format": "raw",
+      "bytes": 1196,
+      "sha256": "f42ceae627be941c8e509aca8f8ce9c181032752aa1181238dce1e18756c7dec",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/upstream-series/drivers/watchdog/mtk_wdt.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/84fae418d21ba2f7b92215834cfe4708305954c8/drivers/watchdog/mtk_wdt.c",
+      "format": "raw",
+      "bytes": 16924,
+      "sha256": "39f0d5ada7e66bc8e62b15b8776c76df3265ab8fa64ccd50a2b3c28ae814a407",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/libreecho/README.md",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/README.md",
+      "format": "raw",
+      "bytes": 6882,
+      "sha256": "bb983dfebf6b5d652031d17e5935bb598fc3ef0a6728a676cfd65017b589f05c",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/libreecho/Makefile",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/Makefile",
+      "format": "raw",
+      "bytes": 72425,
+      "sha256": "78fc31d5454bb3728b39493d1e0f562790bbfcad5281cc3ccc1bd1526064ff46",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/libreecho/arch/arm/boot/dts/mt8163.dtsi",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/arch/arm/boot/dts/mt8163.dtsi",
+      "format": "raw",
+      "bytes": 48717,
+      "sha256": "ab62a63d079d8fe7858856d7253d036560abc7061e02c4f98f7d8e4412d7763b",
+      "status": 200
+    },
+    {
+      "requested_path": "libreecho/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "format": "raw",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/mt8163.dtsi",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/boot/dts/mt8163.dtsi",
+      "format": "raw",
+      "bytes": 48528,
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas.dts",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/boot/dts/douglas.dts",
+      "format": "raw",
+      "bytes": 34796,
+      "sha256": "7b0c8f480672cf98eeb0f8d2901a8ee2270e4c0ab25383828641962c9aae1c12",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/douglas_hvt.dts",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/boot/dts/douglas_hvt.dts",
+      "format": "raw",
+      "bytes": 35651,
+      "sha256": "704c02096578de5ec71892a35c0b0bcec3f45da9e1f365a9cb99cf99cfe4014b",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/configs/douglas_defconfig",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/configs/douglas_defconfig",
+      "format": "raw",
+      "bytes": 14994,
+      "sha256": "8586e5f0946ad2a880478eec01f4401e4eed6ed9627d0a5b16bff1a0d10ccd40",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/drivers/clk/mediatek/clk-mt8163.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/clk/mediatek/clk-mt8163.c",
+      "format": "raw",
+      "bytes": 36035,
+      "sha256": "3aef9e7da88f4ba736b299b54d99473ce8015a64e9893933d7062aec5975b3b1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "format": "raw",
+      "bytes": 15697,
+      "sha256": "e6df57572ad87441237e32868a26ad65420d7b2857792d99dfd132177b9bcfd9",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/kernel/smp.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/kernel/smp.c",
+      "format": "raw",
+      "bytes": 17451,
+      "sha256": "de9221605f0fa863e127d96154cb634f135a26675087bc7b578548e0d47e7f8c",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Makefile?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 74313,
+      "sha256": "6bbb8095e25ce51d87cb55b712eca13e0ba8dd33170000577b4026cf890017c3",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/arch/arm64/Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/Kconfig?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 89856,
+      "sha256": "ec6b9fcc7e36dc834c153f11946b332b9d57803631b6d104a05254ab62c0816b",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/arch/arm64/configs/gki_defconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/configs/gki_defconfig?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 21686,
+      "sha256": "3200acfc26e058f9d45b86da64099e6f5e1434d14ac978221b836a0a0373040e",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/mmc/host/mtk-sd.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mmc/host/mtk-sd.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 100333,
+      "sha256": "8fd10e3a6f6d60e37216de79b2d7a8b8f766c7d7e5cdd5851cccfe375e2536d1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/gpu/drm/panfrost/panfrost_gpu.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/panfrost/panfrost_gpu.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 15953,
+      "sha256": "29e83b644f47ffb9279ddc0e526940e3a49583013d18ff1d901ad75481864019",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/gpu/drm/panfrost/Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/panfrost/Kconfig?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 536,
+      "sha256": "05df336aed17bf2b6825799daa2d05b03c7bd7ae247f1edfd17adec5ae64c271",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/gpu/drm/mediatek/mtk_drm_drv.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/mediatek/mtk_drm_drv.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 36285,
+      "sha256": "7c55fcf212abfc5e6ec7c8b88c086083dfdbec6c07359c8148fbaf683bad4d83",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/mfd/mt6397-core.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mfd/mt6397-core.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 11924,
+      "sha256": "4c9b1a942df7ade97f0bb4cd7af65a8f7a9487df96b278eedc125f1eda6e3209",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/input/touchscreen/goodix.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/input/touchscreen/goodix.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 41978,
+      "sha256": "03379465564da73d041e207c9cd83b2466085595a51f42682f87d64968a275dc",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/tty/serial/8250/8250_mtk.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/tty/serial/8250/8250_mtk.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 18626,
+      "sha256": "9ed47647ccf4c2cada2b09d61d088b04cbc80b92f9455673b41fd645e5dfe821",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/soc/mediatek/mtk-pmic-wrap.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/soc/mediatek/mtk-pmic-wrap.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 70783,
+      "sha256": "80173dd03ba85c5f900d27d35a2b6d0bd60bb5cf4bd801295e9953a0e4eaec12",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/android/binder.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/android/binder.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 216997,
+      "sha256": "43c9cfc44bf75c328fc709d0fa09206da3a15581376110e24b2b9a849d7b8577",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/arch/arm64/boot/dts/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/boot/dts/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 26145,
+      "sha256": "7cad79c0aaeb330e7e62765da2cadd6343c2cbc2d07581424bdf9cadcd06e6e1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/clk/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/clk/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 32227,
+      "sha256": "ef3eba6c976357ff9d3431528cfa93ab6aae573e4192910beadabc19fcd58ed8",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/pinctrl/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pinctrl/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 10442,
+      "sha256": "140c2f25ba18061dd83d4541519945e425eb091e3b63c71bb9277f737b4d8ba3",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/soc/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/soc/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 3058,
+      "sha256": "f5334b114030c5c7cf121d3629359b747b292e4f772c6439a9e6d60c7d578c22",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/net/wireless/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/net/wireless/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 616,
+      "sha256": "939173712687f2d3c167dcfe4540078f8e601454165c56ed3a79041d94f1d4d6",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/mfd/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mfd/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 38727,
+      "sha256": "eb0d5d48db3ca8bbf13c7ab11e757db8f0d08f8b7478552f57ce7beb817c7b09",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/regulator/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/regulator/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 33264,
+      "sha256": "ced6aa7cf8e1c4a3ece12d8a0e279a0ac8c7be6d6677b992f7276a7a31c06697",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/android/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/android/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 2882,
+      "sha256": "5fbcf3aa2daa22dca6049bc9a4e69b76d158e63bcc8de217a39744585115875a",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "format": "raw",
+      "bytes": 12471,
+      "sha256": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+      "format": "raw",
+      "bytes": 7034,
+      "sha256": "d8547b97b1b71fe8a28e566decb21a582b09a4e3adfa45507492e5fc7b0e567e",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-infracfg.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mt8163-infracfg.c",
+      "format": "raw",
+      "bytes": 10827,
+      "sha256": "9fbecfdd5bb51a09eb3fbb079b2d6ecacdd58b1bce28adc3094abfe025f23dee",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+      "format": "raw",
+      "bytes": 3127,
+      "sha256": "221b2dcd067fd9ff8ec2e1a52e405a2a611a2885b09910ec53301f0ded96a0b6",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/pmdomain/mediatek/mtk-pm-domains.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pmdomain/mediatek/mtk-pm-domains.c",
+      "format": "raw",
+      "bytes": 35440,
+      "sha256": "9d58eb985f55260bc5dc00263dd5b1f271028f202f791add4fd2931ca1beb2d3",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "format": "raw",
+      "bytes": 34396,
+      "sha256": "53c1adc2ef0af8af42eb17ce4dcc0b32a41354cee1adcd956fa63a1794ef5106",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/Makefile",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/Makefile",
+      "format": "raw",
+      "bytes": 11171,
+      "sha256": "c191d987dbce493eea8cb9aedcd209b894cd2390b717cc9d654ed6897b4d496a",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/gpu/drm/mediatek/mtk_drm_drv.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/gpu/drm/mediatek/mtk_drm_drv.c",
+      "format": "raw",
+      "bytes": 37050,
+      "sha256": "e6a433ae517939dd8a83080ba1f4b8d5669f4533dd7cc7a0be7c1b952e2f51f9",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/memory/mtk-smi.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/memory/mtk-smi.c",
+      "format": "raw",
+      "bytes": 34136,
+      "sha256": "d5f3b1a5a248a79a2f494666ecb23fd30ce431f356b2d09f9a955032f6a9875c",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/iommu/mtk_iommu.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/iommu/mtk_iommu.c",
+      "format": "raw",
+      "bytes": 62291,
+      "sha256": "f0b7d5eab2f193e2af018f4cc00c4df57ccdbf0a86695e24fa476981fc46a242",
+      "status": 200
+    },
+    {
+      "requested_path": "bengris7/drivers/net/wireless/mediatek/mt66xx/Kconfig",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/net/wireless/mediatek/mt66xx/Kconfig",
+      "format": "raw",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/libreecho/drivers/soc/mediatek/mtk-pmic-wrap.c",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/drivers/soc/mediatek/mtk-pmic-wrap.c",
+      "format": "raw",
+      "bytes": 64263,
+      "sha256": "8bd757f3587ac59c26e10bb9f3e3d46b8893b9ee53b5e4a0f8e8008480b2703b",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/libreecho/arch/arm/configs/mt8163_arm32_defconfig",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/arch/arm/configs/mt8163_arm32_defconfig",
+      "format": "raw",
+      "bytes": 4278,
+      "sha256": "81286261171dcedcb5cf270723a2eaca41f04ea5536dc78bcf587ad24d76bc99",
+      "status": 200
+    },
+    {
+      "requested_path": "libreecho/arch/arm/boot/dts/mt8163-radar-puffin.dts",
+      "url": "https://raw.githubusercontent.com/aslater3/LibreEcho-Linux-6.1/23721f56408fb4c4fe1a368abf06caa98edaecfa/arch/arm/boot/dts/mt8163-radar-puffin.dts",
+      "format": "raw",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/pmdomain/mediatek/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pmdomain/mediatek/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 2556,
+      "sha256": "da56efefa77e6ffceed55b602b2859354de0f82d8b7f7485a84ffb2d4fe867a2",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/mmc/host/listing.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mmc/host/?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 18508,
+      "sha256": "983b06e9e2e6a9d4df6e039ba59c7a058e624f78a3bd535a8c42e118e812cd0e",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/pmdomain/mediatek/mtk-pm-domains.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pmdomain/mediatek/mtk-pm-domains.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 27948,
+      "sha256": "fc86b8c8e12931b337ab98fff4678cc93300f807a6d9d2ae813c12135f9e1ecd",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/drivers/firmware/psci/psci.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/firmware/psci/psci.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 20251,
+      "sha256": "3e097697618c4af475bc3442aea6cd58ea33cc9d92e1d0c876e95a31d6f9466e",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/arch/arm64/kernel/cpu_ops.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/kernel/cpu_ops.c?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 2641,
+      "sha256": "b47ce91342071c78999a6db81a4d27366816ce01e05e3231137cd0ab980891d6",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-development/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/533c1b80b8a9556fea6728bd85fa3a276bccbd15/Makefile?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 74650,
+      "sha256": "56985622c1d9bdb46c95e1c3095dae21959530d549a073ae395b74ffc083d2d2",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-development/commit.json",
+      "url": "https://android.googlesource.com/kernel/common/+/533c1b80b8a9556fea6728bd85fa3a276bccbd15?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 1425,
+      "sha256": "09028005cf2e52f0c7ff5bc42238cddd1773edc0ef939e511abe0d8e27bef177",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-lts/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Makefile?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 74313,
+      "sha256": "6bbb8095e25ce51d87cb55b712eca13e0ba8dd33170000577b4026cf890017c3",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-lts/commit.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 1858,
+      "sha256": "b9fe6cdd8aad80b6974dc5aaedf1e11d2891dcaa83fa8256764d6b2837a056c4",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-september-head/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/7ff4606f62347129a94e3dcd1f32c274c2356107/Makefile?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 73739,
+      "sha256": "286c89ec74b8433090ccb40a4e2053d8d9d12aecf8b4a4817356094a5cc396a1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-september-head/commit.json",
+      "url": "https://android.googlesource.com/kernel/common/+/7ff4606f62347129a94e3dcd1f32c274c2356107?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 1587,
+      "sha256": "29d90cbc70885185cdd3fcecdb822ad4c5447d8bbcf89cccd06260b6285f10ab",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-september-r9/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/e23aa8e8ab337ee88518a7fad4b175d8d68890c8/Makefile?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 73739,
+      "sha256": "286c89ec74b8433090ccb40a4e2053d8d9d12aecf8b4a4817356094a5cc396a1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/refs/ack-september-r9/commit.json",
+      "url": "https://android.googlesource.com/kernel/common/+/e23aa8e8ab337ee88518a7fad4b175d8d68890c8?format=JSON",
+      "format": "gitiles-json",
+      "bytes": 3741,
+      "sha256": "bd901351c0a0dad25f6b9d30f393e45ea7d18333c6da32bea567e1d65ea524db",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/include/dt-bindings/interrupt-controller/arm-gic.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/interrupt-controller/arm-gic.h?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 574,
+      "sha256": "80dc56e8aa61b3681ee42fb0bfd34bf35ea2578ac6d82f1fa972b963667e8ff7",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/include/dt-bindings/interrupt-controller/irq.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/interrupt-controller/irq.h?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 611,
+      "sha256": "392400a309a54ea5b1a2ac2e52773d3ab68e07323109b9aed88a69fedc74e082",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/ack/include/dt-bindings/phy/phy.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/phy/phy.h?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 618,
+      "sha256": "f4221e68541c911f2d24a16473ac48530152e1956a90ba25ca232055cea1bde7",
+      "status": 200
+    },
+    {
+      "requested_path": "ack/arch/arm64/boot/dts/mediatek/mt6323.dtsi",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/boot/dts/mediatek/mt6323.dtsi?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/ack/arch/arm64/Kconfig.platforms",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/Kconfig.platforms?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 10935,
+      "sha256": "4a1080d724eee97f2c5dea1dc54addf3bb9fc12415097ec47619459add8198d1",
+      "status": 200
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-audsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-imgsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-infracfg.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-mmsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-topckgen.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-vencsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/gce/mediatek,mt8163-gce.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/gce/mediatek,mt8163-gce.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/memory/mt8163-larb-port.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/memory/mt8163-larb-port.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/pinctrl/mt8163-pinfunc.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/power/mediatek,mt8163-power-controller.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-infracfg.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-mmsys.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "requested_path": "ack/include/dt-bindings/reset/mediatek,mt8163-wdt.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-wdt.h?format=TEXT",
+      "format": "gitiles-text",
+      "status": 404
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/drivers/misc/mediatek/base/power/mt8163/mt_psci.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/base/power/mt8163/mt_psci.c",
+      "format": "raw",
+      "bytes": 2508,
+      "sha256": "362f5c6471582b955db599ad374ee6f69f89592d9ade6b2c1038222c168af876",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/kernel/cpu_ops.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/kernel/cpu_ops.c",
+      "format": "raw",
+      "bytes": 2308,
+      "sha256": "f71c30ba8922545608159a3aa06b39f4d18929d5a7e1378261dc7c69b68c854d",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/legacy/drivers/misc/mediatek/lcm/nt35521_wxga_dsi_vdo_douglas/nt35521_wxga_dsi_vdo_douglas.c",
+      "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/lcm/nt35521_wxga_dsi_vdo_douglas/nt35521_wxga_dsi_vdo_douglas.c",
+      "format": "raw",
+      "bytes": 42984,
+      "sha256": "6dcd01113c5d4954b9a424ff65409b4853fdc1a642de50776cb7e9c49a36b185",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/sound/soc/mediatek/mt8163/Makefile",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/sound/soc/mediatek/mt8163/Makefile",
+      "format": "raw",
+      "bytes": 192,
+      "sha256": "03c5b306e85d82c5f8abfa3d43ea192e14b4cafa5dd51560e0284830a5ef4506",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/Kconfig",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/Kconfig",
+      "format": "raw",
+      "bytes": 35811,
+      "sha256": "633dcabb9e8481283353f42c1242dd6a90398dc487cb270027634ecb013ba60a",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/Kconfig",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pinctrl/mediatek/Kconfig",
+      "format": "raw",
+      "bytes": 8257,
+      "sha256": "859ac23e216299014d619df960ec3735c2b30dd03efd1511c7b8309268514f62",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/bengris7/drivers/net/wireless/mediatek/Kconfig",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/net/wireless/mediatek/Kconfig",
+      "format": "raw",
+      "bytes": 591,
+      "sha256": "7637f36bf9f374dde6df785e3caab3a1750b488f9dff841e0578b8c49a4682fd",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/aosp17/rootdir/init.zygote32.rc",
+      "url": "https://android.googlesource.com/platform/system/core/+/refs/tags/android-17.0.0_r1/rootdir/init.zygote32.rc?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 1048,
+      "sha256": "136910f4fc5887f2af07190d34e034ba5c54c77e231b877bbb72bf0b910b4a45",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/aosp17/libs/hwui/renderthread/EglManager.cpp",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-17.0.0_r1/libs/hwui/renderthread/EglManager.cpp?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 31976,
+      "sha256": "8aaac125e303894c0ddf25fe2d36a6ca4a7b3f2dd4b4e951ad5bf6c2d6f576d1",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/licenses/GPL-2.0",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/LICENSES/preferred/GPL-2.0?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 18600,
+      "sha256": "8780e78a1a737e127f25a65f6d95269bffd36158dc261114de7859b490bfc5aa",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/licenses/MIT",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/LICENSES/preferred/MIT?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 1372,
+      "sha256": "323c587d0ccf10e376f8bf9a7f31fb4ca6078105194b42e0b1e0ee2bc9bde71f",
+      "status": 200
+    },
+    {
+      "path": "evidence/kernel-audit/licenses/AOSP-frameworks-base-NOTICE",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-17.0.0_r1/NOTICE?format=TEXT",
+      "format": "gitiles-text",
+      "bytes": 18182,
+      "sha256": "cf4dd7cea5b6bcd2622ddd3529b3c74d16ba2b4db444575bc6f5c33f8a960530",
+      "status": 200
+    }
+  ]
+}

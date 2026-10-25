@@ -10,7 +10,8 @@ drivers, graphics contracts or Android interfaces automatically.
 
 Legacy 3.18/4.9 trees and Android 10/11 work are hardware references. The chosen direction
 is a maintained release-appropriate kernel with Android 17 as the initial target under
-investigation. No specific ACK branch has been selected. This device has no demonstrated
+investigation. The first source-audit candidate is pinned Android 17 / 6.18 ACK LTS;
+its integration and runtime behavior are unvalidated (see development/DOUGLAS-KERNEL-AUDIT.md). This device has no demonstrated
 Treble/GSI path; do not substitute a generic image for board integration work.
 
 ## Crestron Panel
