@@ -408,3 +408,14 @@ pass. No real device transport executed. Checked installed SDK adb version only:
 36.0.2-14143358 on shared Mac; this host-only command does not query devices.
 Documented connection/debugging authorization separately from collector scope.
 Actual stock facts remain needed for #21; no boot/test package is ready yet.
+
+
+## 2026-10-25 — Classify PMIC shutdown schema selection (#27)
+
+Traced the missing domain-cells diagnostic to the pinned generic power-domain
+schema's node-name selector. The MFD binding itself calls the sys-off child
+power-controller but does not require cells. Preserved the generic schema with
+source hash and documented the selection overlap, MFD-provided memory resource,
+and sys-off driver semantics. No permissive schema or DT change; counts remain
+34 errors/61 unmatched. Actual stock-data collection still awaits the user's
+computer choice; no tablet transport or settings change performed.

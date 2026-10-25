@@ -38,3 +38,32 @@ domain provider. Adding domain cells solely for a schema count would assert an
 interface the reviewed driver does not implement. Review the binding selection
 and intended node semantics before changing that property. The earlier missing-
 cell diagnostic should not be interpreted as proof of a missing hardware domain.
+
+
+## Why the shutdown node selects a domain schema
+
+The diagnostic names the generic
+[power-domain.yaml](../../evidence/pmic-dt/ack/Documentation/devicetree/bindings/power/power-domain.yaml),
+not the MT6323 MFD child definition. The generic schema's `$nodename` pattern
+matches `power-controller` and its required list demands `#power-domain-cells`.
+The MFD schema independently names this shutdown child `power-controller` and
+permits the zero-cell property, but does not require it. This is a verified
+selection overlap in the pinned corpus, rather than evidence that the shutdown
+driver supplies PM domains.
+
+The [MFD core](../../evidence/pmic-dt/ack/drivers/mfd/mt6397-core.c)
+`mt6323_devs` entry supplies the shutdown driver's memory resource and matches
+`mediatek,mt6323-pwrc`. The
+[shutdown driver](../../evidence/pmic-dt/ack/drivers/power/reset/mt6323-poweroff.c)
+uses that resource for PMIC BBPU accesses and registers a system-off handler.
+Its reviewed implementation does not register a generic domain provider. Thus
+absence of a DT `reg` property on this child is also not, by itself, proof that
+its required resource is missing: the parent supplies it.
+
+Resolution remains open in #27: reconcile the generic selector and MFD binding
+with upstream binding maintainers, preserving the real shutdown interface.
+Renaming this child alone would conflict with the existing parent binding;
+adding domain cells merely to reduce the error count would not implement genpd.
+No schema override, node rename, diagnostic suppression or DT property change
+is made by this classification. The recorded result stays 34 errors and 61
+unmatched entries, with the separate upstream YAML parse failure unresolved.
