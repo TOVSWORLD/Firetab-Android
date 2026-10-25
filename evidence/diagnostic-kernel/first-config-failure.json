@@ -1,0 +1,11 @@
+{
+  "scope": "Failed configuration check, no Image compilation or hardware test",
+  "ci_run": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40183576290",
+  "project_commit": "14d1b21be6ea6ca97d0744e804c22c9a0ec3ee8e",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "full_downloaded_ci_log_sha256": "0547091b820eb94c65f5b83d137f724f035a77b16d1ab4bc7c753010e602f5bb",
+  "error": "CONFIG_BLOCK expected n, resolved y",
+  "cause": "BLOCK prompt visible only if EXPERT; generic defconfig has EXPERT disabled",
+  "kernel_compiled": false,
+  "hardware_tested": false
+}

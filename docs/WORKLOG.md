@@ -460,3 +460,48 @@ four compatible errors and four unmatched entries without added signatures:
 29 errors/57 unmatched remain, upstream YAML parse issue remains, passed=false.
 49 tests pass, including real isolated patch application and rejection of changed
 original schema input. No compatible deletion, permissive schema or hardware claim.
+
+## 2026-10-25 — Restricted diagnostic kernel compile setup (#44)
+
+Prepared separate diagnostic fragment and fail-closed resolved-config check.
+Requires implemented providers/UART/initramfs, disables block/storage/network,
+USB/display/audio/watchdog and power-policy subsystems. Adds deterministic gzip
+Image size/hash reporting without packing firmware. Provider workflow defaults
+to this integration mode; resource gate unchanged and reported before starting.
+53 local tests pass including rejection of modular storage and missing console.
+No configuration/compile success claimed until actual Linux CI resolves/builds
+it; stock memory/loader/recovery/logging remain #21, no tablet access occurred.
+
+
+## 2026-10-25 — Diagnose hidden BLOCK configuration prompt (#44)
+
+Actual run 40183576290 at 14d1b21 failed policy check before Image compilation:
+BLOCK resolved y. Pinned block/Kconfig makes its bool prompt conditional on
+EXPERT, with default y; generic defconfig has EXPERT=n. Captured source/hash and
+failure evidence. Added EXPERT=y, retained strict storage-disabled check, improved
+all-mismatch diagnostics and rejected-config logging. Rebuild required; no
+kernel/boot result claimed, no tablet access or firmware packing occurred.
+
+
+## 2026-10-25 — Remove ACPI idle-policy selector (#44)
+
+Second actual run 40184459476 resolves storage disabled but rejects CPU_IDLE=y
+before Image compilation. Captured the rejected config from CI stdout and pinned
+Kconfig source proving ACPI_PROCESSOR -> ACPI_PROCESSOR_IDLE -> CPU_IDLE. Fragment
+now disables ACPI/processor idle policy for the donor-DT experiment; the strict
+CPU_IDLE=n gate remains. No ARM_PSCI_FW/DT/stock-loader changes. Corrected build
+still pending; no physical tablet access, firmware packing or runtime claim.
+
+
+## 2026-10-25 — Restricted diagnostic Image compile succeeded (#44)
+
+Actual run 40185547611 at 3bf1010f3f007bd3fd202da30b3483ca12933531 passed
+in 23m16s with zero compiler warning/error lines. Resolved strict policy passes;
+real clock/pinctrl/power objects W=1 and full Image/vmlinux compiled. Retained
+complete resolved config reconstructed from CI and matched original SHA256
+f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed.
+Image 28,576,256 bytes; Image.gz 9,187,928 bytes / SHA256
+a6ecd7444c9ffc8f47c4954902b23e15fd1f861b924ae9a082157652dc2ab1c1.
+Report/log checksum and policy evidence retained. No DT/ramdisk integration,
+firmware packing or published test package; stock #21 prerequisites and #27
+schema validation remain. No tablet access or runtime result claimed.
