@@ -178,3 +178,28 @@ firmware reservations rather than overwriting them. UART instead needs verified
 pad accessibility, electrical levels, routing and early/runtime driver setup.
 Neither route is qualified yet. Hashes and resolved symbols are retained in
 `evidence/boot-contract/log-path-review.json`; #21/#22 remain open.
+
+## Reproduce header comparison without firmware assembly
+
+The offline auditor compares both recorded AArch64 headers against the same
+stock boot-header address and refuses mismatched stock image hashes, malformed
+headers, inconsistent decoded fields and unsigned arithmetic overflow/underflow.
+It selects no replacement address and does not claim memory safety or loader
+compatibility. Reports are metadata inputs, not authenticated binary evidence.
+
+```sh
+python3 scripts/audit_image_placement.py \
+  --runtime-report evidence/qemu-diagnostic/generic-runtime-result.json \
+  --boot-report evidence/stock-ota-probe/boot-inspection.json \
+  --stock-prefix-report evidence/stock-ota-probe/kernel-prefix-observations.json
+```
+
+The retained result is `evidence/boot-contract/reproduced-placement-audit.json`.
+The stock header has text_offset=0x80000: at entry0x40080000 its required base
+is0x40000000, satisfying 2MiB alignment. The new header has text_offset=0, giving
+base0x40080000 and failing alignment under the same unchanged-entry assumption.
+This demonstrates why the existing address can suit the old Image while requiring
+loader investigation for the new one. Actual relocation remains unverified.
+Input-report and auditor hashes make the calculation independently repeatable.
+Unit tests exercise these actual reports, identity mismatch, header inconsistency
+and arithmetic boundary refusal. No downloads, binary packing or tablet queries.

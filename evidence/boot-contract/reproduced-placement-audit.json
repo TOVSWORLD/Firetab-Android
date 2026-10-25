@@ -1,0 +1,35 @@
+{
+  "scope": "Conditional report-based arithmetic; source binaries and actual loader placement not authenticated",
+  "stock_boot_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "diagnostic_kernel_sha256": "08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909",
+  "assumption": "Loader uses the stock boot header kernel address as decompressed entry unchanged",
+  "stock_header_at_candidate_address": {
+    "assumed_entry_address": "0x40080000",
+    "text_offset": 524288,
+    "image_size": 18681856,
+    "required_base": "0x40000000",
+    "base_alignment_bytes": 2097152,
+    "alignment_satisfied": true,
+    "end_exclusive": "0x41251000"
+  },
+  "diagnostic_header_at_candidate_address": {
+    "assumed_entry_address": "0x40080000",
+    "text_offset": 0,
+    "image_size": 29360128,
+    "required_base": "0x40080000",
+    "base_alignment_bytes": 2097152,
+    "alignment_satisfied": false,
+    "end_exclusive": "0x41c80000"
+  },
+  "actual_loader_placement_verified": false,
+  "memory_safety_qualified": false,
+  "firmware_packed": false,
+  "douglas_boot_tested": false,
+  "abi_source": "https://docs.kernel.org/arch/arm64/booting.html",
+  "input_report_sha256": [
+    "d3d61a19d03c5ec11ed9acd6a30614afa0ed506acfb03791f5afb2f7596d2dc2",
+    "14b04ceab18b5a8358f84ab33baf821c5a13b34ab8440d5757f4d9442df5a96e",
+    "4dcda982a3c2075377cf67285726af3bfb8b6bf932438b9d6cb0cc58769a5098"
+  ],
+  "auditor_sha256": "a28ed382d7c2f39388fa2df2b8f05b1bc9d6815f789f5755b524fb450e3e6137"
+}
