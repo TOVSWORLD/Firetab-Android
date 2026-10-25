@@ -1,34 +1,38 @@
-# FireTabs: douglas development investigation
+# Firetab Android
 
-Status, 24 October 2026: source investigation and initial Android 11 bring-up work.
-No ROM was compiled, booted, flashed, or represented as working. No device commands were run.
+Two projects share one source and evidence repository:
 
-The agreed direction is to make these devices useful as general-purpose Android tablets
-through maintainable ports of current Android releases and a current, maintained Android
-kernel appropriate to each release. Crestron Home is one application requirement, not the
-product scope. Hardware-absent features may be unavailable and must be documented.
+- **[FireTabs Android](projects/firetabs-android/)** — maintained, general-purpose Android
+  loads with a current maintained kernel appropriate to each Android release.
+- **[Crestron Panel](projects/crestron-panel/)** — optional single-application panel modes,
+  supported Crestron Android clients and separate native panel compatibility research.
 
-The existing Android 10 ROM and 3.18/4.9 kernel sources are reference material for hardware
-support and regression diagnosis. Extending those old kernels or building intermediate
-Android releases is not the selected maintenance strategy. Android 17 is the initial
-platform target under investigation; its feasibility remains unproven.
+Initial hardware: Amazon Fire HD 8 (2017), douglas/KFDOWI, 16 GB, Fire OS 5.7.1.0.
+Initial platform target: Android 17. Status: research, static inspection and historical
+patch preparation only. No firmware has been compiled, booted, flashed or validated.
 
-A separate optional research track evaluates Crestron native-style panel modes: select
-one application/use in setup and run that application full-screen. Supported Android
-clients and native panel-runtime compatibility are distinct implementation levels;
-native firmware equivalence is not established.
+## Start here
 
-The [Crestron panel research](docs/CRESTRON-PANEL.md) now includes inspection of three
-actual panel APKs, identified external service dependencies, supported Android-client
-alternatives, and a staged native-compatibility direction.
+Run the same inexpensive offline checks used by CI, without third-party Python packages:
 
-- [Evidence and feasibility](docs/FEASIBILITY.md)
-- [Continuation, resources, and build recipes](docs/CONTINUE.md)
-- [Work log and validation](docs/WORKLOG.md)
-- [Maintenance objective and kernel strategy](docs/MAINTENANCE.md)
-- [Pinned source inventory](evidence/sources.lock.json)
-- [Actual Android 11 patch failures](evidence/android11-patch-probe.json)
+```sh
+python3 scripts/ci.py repository
+python3 scripts/ci.py firetabs-android
+python3 scripts/ci.py crestron-panel
+python3 -m unittest discover -s tests -v
+```
 
-The workspace branch is `port/douglas-bringup`; the device checkout branch is
-`port/android11-bringup`. Source clones are intentionally ignored by the outer repository.
-Patches, source pins, manifests, and tools are tracked instead. Nothing has been pushed.
+[Continuation and resources](docs/CONTINUE.md) describes source restoration and build-host
+requirements. Full Android builds need a separate Linux x86_64 environment with a
+case-sensitive filesystem and at least 400 GiB available; 64 GiB RAM is preferred.
+The root Dockerfile is an unbuilt historical Android 11 recipe, not an Android 17 SDK.
+Source checkouts, APKs and build outputs are ignored, not bundled with this repository.
+
+[CI and AI development policy](docs/CI.md) explains evidence levels, change review and
+what a green check establishes. [Work log](docs/WORKLOG.md) records actual work.
+[Maintenance strategy](docs/MAINTENANCE.md) records the user-selected kernel direction.
+
+Research references retain their original authorship and licensing. No blanket license
+is asserted over third-party evidence or proprietary materials; check upstream terms
+before redistribution. This repository does not contain an authorized Google services
+bundle or Crestron firmware distribution.

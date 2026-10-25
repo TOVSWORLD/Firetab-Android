@@ -1,0 +1,25 @@
+{
+  "project": "crestron-panel",
+  "stages": {
+    "client_runtime": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "cp4_integration": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "full_function_soak": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "native_runtime": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    }
+  }
+}

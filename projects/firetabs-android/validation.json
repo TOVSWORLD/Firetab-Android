@@ -1,0 +1,30 @@
+{
+  "project": "firetabs-android",
+  "stages": {
+    "kernel_compile": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "android_compile": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "boot": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "hardware": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    },
+    "general_purpose_soak": {
+      "status": "not_run",
+      "revision": null,
+      "evidence": []
+    }
+  }
+}

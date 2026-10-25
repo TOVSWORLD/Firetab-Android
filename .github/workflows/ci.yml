@@ -1,0 +1,55 @@
+name: Project validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: validation-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  repository:
+    name: Repository integrity
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Validate syntax and change integrity
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BASE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          base="$PUSH_BASE"
+          if [ "$EVENT" = pull_request ]; then base="$PR_BASE"; fi
+          if [ -n "$base" ] && [ "$base" != 0000000000000000000000000000000000000000 ]; then
+            python3 scripts/ci.py repository --base "$base"
+          else
+            python3 scripts/ci.py repository
+          fi
+      - name: Test gate rejection paths
+        run: python3 -m unittest discover -s tests -v
+  android:
+    name: FireTabs Android evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: python3 scripts/ci.py firetabs-android
+  panel:
+    name: Crestron Panel evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: python3 scripts/ci.py crestron-panel

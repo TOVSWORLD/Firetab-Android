@@ -111,3 +111,17 @@ firmware extraction, large download or device operation was undertaken.
 - Retained the current-kernel/general-purpose Android objective. No OS/kernel
   implementation, physical testing, processor program change, account messaging,
   paid-resource provisioning or native compatibility prototype was performed.
+
+## 2026-10-24 — GitHub project split and CI
+
+User supplied TOVSWORLD/Firetab-Android and authorized publishing the starting repository.
+Added two project entry points with separate scope, acceptance and validation records:
+`projects/firetabs-android` and `projects/crestron-panel`. Shared evidence and tools retain
+existing paths to preserve reproducible commands. These are repository projects, not
+separate GitHub repositories or GitHub Projects boards.
+
+Read actual Valethon AI guidance and CI checks as reference. Adapted verification,
+anti-vaporware, canonical evidence, truncation detection, and focused blocking checks.
+Added three read-only GitHub Actions jobs, offline checker and rejection-path tests.
+No paid model service, privileged runner, large build/download or physical device action.
+Firmware and panel execution stages remain explicitly `not_run`.
