@@ -313,3 +313,28 @@ objects are AArch64 ELF, W=1, zero compiler warning/error lines. Hashes and
 measured source/Git storage are recorded in evidence/power-port/object-result.json.
 Full Image integration, binding dependencies and runtime power sequencing remain
 open on #20. This does not advance any Android/douglas runtime validation gate.
+## 2026-10-25 — Begin diagnostic boot-contract investigation (#21)
+
+Captured pinned legacy runtime-memory readers and ACK PSCI implementation.
+ACK supports old explicit-ID arm,psci as well as version-probed bindings; the
+legacy vendor MTCMOS sequence remains a separate unresolved delta. Both legacy
+and donor source DTs say 512 MiB; runtime DRAM/mblock inputs and actual loader
+fixups must be resolved rather than guessing a RAM replacement. Recorded reserved
+region discrepancies and a staged diagnostic/log/recovery plan. Inspected amonet
+source only; no unlock/helper/device operation or image packing performed.
+#21 remains open pending actual firmware/memory/loader and recovery evidence.
+
+Clock Image run 40169479688 succeeded at 07:09 UTC, about 36 minutes including
+setup/fetch/object/full build, with no compiler warning/error lines. Actual
+AArch64 Image is 41,351,680 bytes; SHA256 and vmlinux/config metadata recorded in
+evidence/kernel-compile/clock-image-result.json. Clock source is unchanged by
+the later audit/documentation update. PR #26 merged to development. Schema #27
+and parent resolution #29 remain open; no target boot/runtime gate is promoted.
+
+## 2026-10-25 — Local boot image inspector (#32)
+
+Implemented a regular-file-only, read-only header-v0 layout/hash/partition-fit
+inspector supporting #21. Rejects ambiguous formats, malformed pages, oversized
+or truncated input; counts unclassified tail bytes. Does not decompress, extract,
+pack, access device nodes/USB or claim signatures/bootability. Ten synthetic
+boundary/rejection tests added; 31 total tests pass. No real stock image inspected.

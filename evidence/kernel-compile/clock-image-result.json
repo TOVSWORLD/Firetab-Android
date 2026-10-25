@@ -1,0 +1,23 @@
+{
+  "scope": "Full generic ARM64 Image with nine MT8163 clock providers; not douglas/Android boot qualification",
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40169479688",
+  "repository_revision": "1775d60",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "mode": "clocks",
+  "elapsed_minutes_approximately": 36,
+  "hashes": {
+    ".config": "1da165befdde68c58c5260475535e5eafb706e68a35a2c6c22e325f9ed622b3a",
+    "vmlinux": "da63c5bc55172145b8067a368b6c84785edf939ee7986a15b8886ddf755241ae",
+    "arch/arm64/boot/Image": "2474038f7aa43f70046a887b4d478b9772c0bf3c27574efe50c292a7320f54e6"
+  },
+  "sizes": {
+    "vmlinux": 441196816,
+    "arch/arm64/boot/Image": 41351680
+  },
+  "diagnostic_warning_error_lines": 0,
+  "hardware_tested": false,
+  "remaining_issues": [
+    27,
+    29
+  ]
+}

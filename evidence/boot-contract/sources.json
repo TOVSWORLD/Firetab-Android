@@ -1,0 +1,32 @@
+[
+  {
+    "path": "evidence/boot-contract/legacy/drivers/misc/mediatek/mem/mtk_memcfg.c",
+    "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/mem/mtk_memcfg.c",
+    "sha256": "9b3f4d0e422cfada46cca79ec347612bad232ba55e85e1a7969772d21d3a01c0",
+    "bytes": 15016
+  },
+  {
+    "path": "evidence/boot-contract/legacy/drivers/misc/mediatek/mem/mtk_meminfo.c",
+    "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/mem/mtk_meminfo.c",
+    "sha256": "d6bb94e1cc09877907fb72a9d0568698da9c72db904c8e44f967d3be8a15c9bf",
+    "bytes": 2752
+  },
+  {
+    "path": "evidence/boot-contract/legacy/arch/arm64/kernel/psci.c",
+    "url": "https://raw.githubusercontent.com/mt8163-dev/android_kernel_amazon_mt8163/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/kernel/psci.c",
+    "sha256": "a186bd01298e1ecbad8441ebeb7b2f26e73580ca3221e21155a9598a2a70e4bf",
+    "bytes": 13066
+  },
+  {
+    "path": "evidence/boot-contract/ack/drivers/firmware/psci/psci.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/firmware/psci/psci.c?format=TEXT",
+    "sha256": "3e097697618c4af475bc3442aea6cd58ea33cc9d92e1d0c876e95a31d6f9466e",
+    "bytes": 20251
+  },
+  {
+    "path": "evidence/boot-contract/ack/arch/arm64/kernel/psci.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/kernel/psci.c?format=TEXT",
+    "sha256": "634062ea1c0034439a07d48abafd03081ee81466d88658f80354b24f2acf9e4d",
+    "bytes": 2700
+  }
+]
