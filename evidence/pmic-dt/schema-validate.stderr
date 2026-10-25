@@ -1,0 +1,336 @@
+work/dtb-compile/pmic-node-names/douglas.dtb: /: failed to match any schema with compatible: ['amazon,douglas', 'mediatek,mt8163']
+work/dtb-compile/pmic-node-names/douglas.dtb: /: failed to match any schema with compatible: ['amazon,douglas', 'mediatek,mt8163']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@10000000: failed to match any schema with compatible: ['mediatek,mt8163-topckgen']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@10001000: failed to match any schema with compatible: ['mediatek,mt8163-infracfg', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/syscon@10005000: failed to match any schema with compatible: ['mediatek,mt8163-pctl-a-syscfg', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/syscon@10006000: failed to match any schema with compatible: ['mediatek,mt8163-scpsys', 'syscon', 'simple-mfd']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/syscon@10006000/power-controller: failed to match any schema with compatible: ['mediatek,mt8163-power-controller']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/watchdog@10007000: failed to match any schema with compatible: ['mediatek,mt8163-wdt']
+work/dtb-compile/pmic-node-names/douglas.dtb: timer@10008000 (mediatek,mt8163-timer): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-timer', 'mediatek,mt6577-timer'] is too long
+	'mediatek,mt8163-timer' is not one of ['mediatek,mt6577-timer', 'mediatek,mt6765-timer', 'mediatek,mt6795-systimer']
+	'mediatek,mt8163-timer' is not one of ['mediatek,mt2701-timer', 'mediatek,mt6572-timer', 'mediatek,mt6580-timer', 'mediatek,mt6582-timer', 'mediatek,mt6589-timer', 'mediatek,mt6795-timer', 'mediatek,mt7623-timer', 'mediatek,mt8127-timer', 'mediatek,mt8135-timer', 'mediatek,mt8173-timer', 'mediatek,mt8516-timer']
+	'mediatek,mt8163-timer' is not one of ['mediatek,mt7629-timer', 'mediatek,mt8183-timer', 'mediatek,mt8186-timer', 'mediatek,mt8188-timer', 'mediatek,mt8192-timer', 'mediatek,mt8195-timer', 'mediatek,mt8196-timer', 'mediatek,mt8365-systimer']
+	'mediatek,mt6765-timer' was expected
+	from schema $id: http://devicetree.org/schemas/timer/mediatek,timer.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/timer@10008000: failed to match any schema with compatible: ['mediatek,mt8163-timer', 'mediatek,mt6577-timer']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/pinctrl@1000b000: failed to match any schema with compatible: ['mediatek,mt8163-pinctrl']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@1000c000: failed to match any schema with compatible: ['mediatek,mt8163-apmixedsys']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/pwrap@1000d000: failed to match any schema with compatible: ['mediatek,mt8163-pwrap']
+work/dtb-compile/pmic-node-names/douglas.dtb: power-controller (mediatek,mt6323-pwrc): '#power-domain-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/power/power-domain.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: keyboard@10010000 (mediatek,mt8163-keypad): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad'] is too long
+	'mediatek,mt6779-keypad' was expected
+	'mediatek,mt8163-keypad' is not one of ['mediatek,mt6873-keypad', 'mediatek,mt8183-keypad', 'mediatek,mt8365-keypad', 'mediatek,mt8516-keypad']
+	from schema $id: http://devicetree.org/schemas/input/mediatek,mt6779-keypad.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/keyboard@10010000: failed to match any schema with compatible: ['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad']
+work/dtb-compile/pmic-node-names/douglas.dtb: intpol-controller@10200620 (mediatek,mt8163-sysirq): $nodename:0: 'intpol-controller@10200620' does not match '^interrupt-controller(@[0-9a-f,]+)*$'
+	from schema $id: http://devicetree.org/schemas/interrupt-controller/mediatek,mt6577-sysirq.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: intpol-controller@10200620 (mediatek,mt8163-sysirq): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-sysirq', 'mediatek,mt6577-sysirq'] is too long
+	'mediatek,mt6577-sysirq' was expected
+	'mediatek,mt8163-sysirq' is not one of ['mediatek,mt2701-sysirq', 'mediatek,mt2712-sysirq', 'mediatek,mt6572-sysirq', 'mediatek,mt6580-sysirq', 'mediatek,mt6582-sysirq', 'mediatek,mt6589-sysirq', 'mediatek,mt6592-sysirq', 'mediatek,mt6755-sysirq', 'mediatek,mt6765-sysirq', 'mediatek,mt6779-sysirq', 'mediatek,mt6795-sysirq', 'mediatek,mt6797-sysirq', 'mediatek,mt7622-sysirq', 'mediatek,mt7623-sysirq', 'mediatek,mt7629-sysirq', 'mediatek,mt8127-sysirq', 'mediatek,mt8135-sysirq', 'mediatek,mt8173-sysirq', 'mediatek,mt8183-sysirq', 'mediatek,mt8365-sysirq', 'mediatek,mt8516-sysirq']
+	from schema $id: http://devicetree.org/schemas/interrupt-controller/mediatek,mt6577-sysirq.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/intpol-controller@10200620: failed to match any schema with compatible: ['mediatek,mt8163-sysirq', 'mediatek,mt6577-sysirq']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/iommu@10205000: failed to match any schema with compatible: ['mediatek,mt8163-m4u']
+work/dtb-compile/pmic-node-names/douglas.dtb: efuse@10206000 (mediatek,mt8163-efuse): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-efuse', 'mediatek,efuse'] is too long
+	'mediatek,mt8188-efuse' was expected
+	'mediatek,mt8186-efuse' was expected
+	'mediatek,mt8163-efuse' is not one of ['mediatek,mt8186-efuse', 'mediatek,mt8188-efuse']
+	'mediatek,mt8163-efuse' is not one of ['mediatek,mt7622-efuse', 'mediatek,mt7623-efuse', 'mediatek,mt7981-efuse', 'mediatek,mt7986-efuse', 'mediatek,mt7988-efuse', 'mediatek,mt8173-efuse', 'mediatek,mt8183-efuse', 'mediatek,mt8192-efuse', 'mediatek,mt8195-efuse', 'mediatek,mt8516-efuse']
+	'mediatek,mt8173-efuse' was expected
+	from schema $id: http://devicetree.org/schemas/nvmem/mediatek,efuse.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/efuse@10206000: failed to match any schema with compatible: ['mediatek,mt8163-efuse', 'mediatek,efuse']
+work/dtb-compile/pmic-node-names/douglas.dtb: rng@1020f000 (mediatek,mt8163-rng): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-rng', 'mediatek,mt7623-rng'] is too long
+	'mediatek,mt8163-rng' is not one of ['mediatek,mt7623-rng']
+	'mediatek,mt8163-rng' is not one of ['mediatek,mt7622-rng', 'mediatek,mt7629-rng', 'mediatek,mt7986-rng', 'mediatek,mt8365-rng', 'mediatek,mt8516-rng']
+	from schema $id: http://devicetree.org/schemas/rng/mtk-rng.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/rng@1020f000: failed to match any schema with compatible: ['mediatek,mt8163-rng', 'mediatek,mt7623-rng']
+work/dtb-compile/pmic-node-names/douglas.dtb: mailbox@10212000 (mediatek,mt8163-gce): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-gce', 'mediatek,mt8173-gce'] is too long
+	'mediatek,mt8163-gce' is not one of ['mediatek,mt6779-gce', 'mediatek,mt8173-gce', 'mediatek,mt8183-gce', 'mediatek,mt8186-gce', 'mediatek,mt8188-gce', 'mediatek,mt8192-gce', 'mediatek,mt8195-gce', 'mediatek,mt8196-gce']
+	'mediatek,mt6795-gce' was expected
+	from schema $id: http://devicetree.org/schemas/mailbox/mediatek,gce-mailbox.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/mailbox@10212000: failed to match any schema with compatible: ['mediatek,mt8163-gce', 'mediatek,mt8173-gce']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/dsi-phy@10215000: failed to match any schema with compatible: ['mediatek,mt8163-mipi-tx']
+work/dtb-compile/pmic-node-names/douglas.dtb: auxadc@11001000 (mediatek,mt8163-auxadc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-auxadc', 'mediatek,mt8173-auxadc'] is too long
+	'mediatek,mt8163-auxadc' is not one of ['mediatek,mt2701-auxadc', 'mediatek,mt2712-auxadc', 'mediatek,mt6765-auxadc', 'mediatek,mt7622-auxadc', 'mediatek,mt7986-auxadc', 'mediatek,mt8173-auxadc']
+	'mediatek,mt8163-auxadc' is not one of ['mediatek,mt7623-auxadc']
+	'mediatek,mt8163-auxadc' is not one of ['mediatek,mt7981-auxadc']
+	'mediatek,mt8163-auxadc' is not one of ['mediatek,mt6893-auxadc', 'mediatek,mt8183-auxadc', 'mediatek,mt8186-auxadc', 'mediatek,mt8188-auxadc', 'mediatek,mt8195-auxadc', 'mediatek,mt8516-auxadc']
+	'mediatek,mt2701-auxadc' was expected
+	'mediatek,mt7986-auxadc' was expected
+	from schema $id: http://devicetree.org/schemas/iio/adc/mediatek,mt2701-auxadc.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/auxadc@11001000: failed to match any schema with compatible: ['mediatek,mt8163-auxadc', 'mediatek,mt8173-auxadc']
+work/dtb-compile/pmic-node-names/douglas.dtb: dma-controller@11000300 (mediatek,mt8163-uart-dma): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-uart-dma', 'mediatek,mt6577-uart-dma'] is too long
+	'mediatek,mt8163-uart-dma' is not one of ['mediatek,mt2712-uart-dma', 'mediatek,mt6795-uart-dma', 'mediatek,mt8365-uart-dma', 'mediatek,mt8516-uart-dma']
+	'mediatek,mt8163-uart-dma' is not one of ['mediatek,mt6577-uart-dma']
+	from schema $id: http://devicetree.org/schemas/dma/mediatek,uart-dma.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/dma-controller@11000300: failed to match any schema with compatible: ['mediatek,mt8163-uart-dma', 'mediatek,mt6577-uart-dma']
+work/dtb-compile/pmic-node-names/douglas.dtb: serial@11002000 (mediatek,mt8163-uart): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is too long
+	'mediatek,mt6577-uart' was expected
+	'mediatek,mt8163-uart' is not one of ['mediatek,mt2701-uart', 'mediatek,mt2712-uart', 'mediatek,mt6572-uart', 'mediatek,mt6580-uart', 'mediatek,mt6582-uart', 'mediatek,mt6589-uart', 'mediatek,mt6755-uart', 'mediatek,mt6765-uart', 'mediatek,mt6779-uart', 'mediatek,mt6795-uart', 'mediatek,mt6797-uart', 'mediatek,mt6893-uart', 'mediatek,mt7622-uart', 'mediatek,mt7623-uart', 'mediatek,mt7629-uart', 'mediatek,mt7981-uart', 'mediatek,mt7986-uart', 'mediatek,mt7988-uart', 'mediatek,mt8127-uart', 'mediatek,mt8135-uart', 'mediatek,mt8173-uart', 'mediatek,mt8183-uart', 'mediatek,mt8186-uart', 'mediatek,mt8188-uart', 'mediatek,mt8192-uart', 'mediatek,mt8195-uart', 'mediatek,mt8365-uart', 'mediatek,mt8516-uart']
+	from schema $id: http://devicetree.org/schemas/serial/mediatek,uart.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/serial@11002000: failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']
+work/dtb-compile/pmic-node-names/douglas.dtb: serial@11003000 (mediatek,mt8163-uart): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is too long
+	'mediatek,mt6577-uart' was expected
+	'mediatek,mt8163-uart' is not one of ['mediatek,mt2701-uart', 'mediatek,mt2712-uart', 'mediatek,mt6572-uart', 'mediatek,mt6580-uart', 'mediatek,mt6582-uart', 'mediatek,mt6589-uart', 'mediatek,mt6755-uart', 'mediatek,mt6765-uart', 'mediatek,mt6779-uart', 'mediatek,mt6795-uart', 'mediatek,mt6797-uart', 'mediatek,mt6893-uart', 'mediatek,mt7622-uart', 'mediatek,mt7623-uart', 'mediatek,mt7629-uart', 'mediatek,mt7981-uart', 'mediatek,mt7986-uart', 'mediatek,mt7988-uart', 'mediatek,mt8127-uart', 'mediatek,mt8135-uart', 'mediatek,mt8173-uart', 'mediatek,mt8183-uart', 'mediatek,mt8186-uart', 'mediatek,mt8188-uart', 'mediatek,mt8192-uart', 'mediatek,mt8195-uart', 'mediatek,mt8365-uart', 'mediatek,mt8516-uart']
+	from schema $id: http://devicetree.org/schemas/serial/mediatek,uart.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/serial@11003000: failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']
+work/dtb-compile/pmic-node-names/douglas.dtb: serial@11004000 (mediatek,mt8163-uart): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is too long
+	'mediatek,mt6577-uart' was expected
+	'mediatek,mt8163-uart' is not one of ['mediatek,mt2701-uart', 'mediatek,mt2712-uart', 'mediatek,mt6572-uart', 'mediatek,mt6580-uart', 'mediatek,mt6582-uart', 'mediatek,mt6589-uart', 'mediatek,mt6755-uart', 'mediatek,mt6765-uart', 'mediatek,mt6779-uart', 'mediatek,mt6795-uart', 'mediatek,mt6797-uart', 'mediatek,mt6893-uart', 'mediatek,mt7622-uart', 'mediatek,mt7623-uart', 'mediatek,mt7629-uart', 'mediatek,mt7981-uart', 'mediatek,mt7986-uart', 'mediatek,mt7988-uart', 'mediatek,mt8127-uart', 'mediatek,mt8135-uart', 'mediatek,mt8173-uart', 'mediatek,mt8183-uart', 'mediatek,mt8186-uart', 'mediatek,mt8188-uart', 'mediatek,mt8192-uart', 'mediatek,mt8195-uart', 'mediatek,mt8365-uart', 'mediatek,mt8516-uart']
+	from schema $id: http://devicetree.org/schemas/serial/mediatek,uart.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/serial@11004000: failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']
+work/dtb-compile/pmic-node-names/douglas.dtb: serial@11005000 (mediatek,mt8163-uart): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is too long
+	'mediatek,mt6577-uart' was expected
+	'mediatek,mt8163-uart' is not one of ['mediatek,mt2701-uart', 'mediatek,mt2712-uart', 'mediatek,mt6572-uart', 'mediatek,mt6580-uart', 'mediatek,mt6582-uart', 'mediatek,mt6589-uart', 'mediatek,mt6755-uart', 'mediatek,mt6765-uart', 'mediatek,mt6779-uart', 'mediatek,mt6795-uart', 'mediatek,mt6797-uart', 'mediatek,mt6893-uart', 'mediatek,mt7622-uart', 'mediatek,mt7623-uart', 'mediatek,mt7629-uart', 'mediatek,mt7981-uart', 'mediatek,mt7986-uart', 'mediatek,mt7988-uart', 'mediatek,mt8127-uart', 'mediatek,mt8135-uart', 'mediatek,mt8173-uart', 'mediatek,mt8183-uart', 'mediatek,mt8186-uart', 'mediatek,mt8188-uart', 'mediatek,mt8192-uart', 'mediatek,mt8195-uart', 'mediatek,mt8365-uart', 'mediatek,mt8516-uart']
+	from schema $id: http://devicetree.org/schemas/serial/mediatek,uart.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/serial@11005000: failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']
+work/dtb-compile/pmic-node-names/douglas.dtb: i2c@11007000 (mediatek,mt8163-i2c): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is too long
+	'mediatek,mt2712-i2c' was expected
+	'mediatek,mt6577-i2c' was expected
+	'mediatek,mt6589-i2c' was expected
+	'mediatek,mt7622-i2c' was expected
+	'mediatek,mt7981-i2c' was expected
+	'mediatek,mt7986-i2c' was expected
+	'mediatek,mt8168-i2c' was expected
+	'mediatek,mt8173-i2c' was expected
+	'mediatek,mt8183-i2c' was expected
+	'mediatek,mt8186-i2c' was expected
+	'mediatek,mt8188-i2c' was expected
+	'mediatek,mt8192-i2c' was expected
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt7629-i2c', 'mediatek,mt8516-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt2701-i2c', 'mediatek,mt6797-i2c', 'mediatek,mt7623-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt8365-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6795-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6878-i2c', 'mediatek,mt6991-i2c', 'mediatek,mt8196-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6893-i2c', 'mediatek,mt8195-i2c']
+	from schema $id: http://devicetree.org/schemas/i2c/i2c-mt65xx.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/i2c@11007000: failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']
+work/dtb-compile/pmic-node-names/douglas.dtb: i2c@11008000 (mediatek,mt8163-i2c): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is too long
+	'mediatek,mt2712-i2c' was expected
+	'mediatek,mt6577-i2c' was expected
+	'mediatek,mt6589-i2c' was expected
+	'mediatek,mt7622-i2c' was expected
+	'mediatek,mt7981-i2c' was expected
+	'mediatek,mt7986-i2c' was expected
+	'mediatek,mt8168-i2c' was expected
+	'mediatek,mt8173-i2c' was expected
+	'mediatek,mt8183-i2c' was expected
+	'mediatek,mt8186-i2c' was expected
+	'mediatek,mt8188-i2c' was expected
+	'mediatek,mt8192-i2c' was expected
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt7629-i2c', 'mediatek,mt8516-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt2701-i2c', 'mediatek,mt6797-i2c', 'mediatek,mt7623-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt8365-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6795-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6878-i2c', 'mediatek,mt6991-i2c', 'mediatek,mt8196-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6893-i2c', 'mediatek,mt8195-i2c']
+	from schema $id: http://devicetree.org/schemas/i2c/i2c-mt65xx.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/i2c@11008000: failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/i2c@11008000/regulator@60: failed to match any schema with compatible: ['silergy,sym827']
+work/dtb-compile/pmic-node-names/douglas.dtb: i2c@11009000 (mediatek,mt8163-i2c): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is too long
+	'mediatek,mt2712-i2c' was expected
+	'mediatek,mt6577-i2c' was expected
+	'mediatek,mt6589-i2c' was expected
+	'mediatek,mt7622-i2c' was expected
+	'mediatek,mt7981-i2c' was expected
+	'mediatek,mt7986-i2c' was expected
+	'mediatek,mt8168-i2c' was expected
+	'mediatek,mt8173-i2c' was expected
+	'mediatek,mt8183-i2c' was expected
+	'mediatek,mt8186-i2c' was expected
+	'mediatek,mt8188-i2c' was expected
+	'mediatek,mt8192-i2c' was expected
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt7629-i2c', 'mediatek,mt8516-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt2701-i2c', 'mediatek,mt6797-i2c', 'mediatek,mt7623-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt8365-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6795-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6878-i2c', 'mediatek,mt6991-i2c', 'mediatek,mt8196-i2c']
+	'mediatek,mt8163-i2c' is not one of ['mediatek,mt6893-i2c', 'mediatek,mt8195-i2c']
+	from schema $id: http://devicetree.org/schemas/i2c/i2c-mt65xx.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/i2c@11009000: failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']
+work/dtb-compile/pmic-node-names/douglas.dtb: spi@1100a000 (mediatek,mt8163-spi): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-spi', 'mediatek,mt2712-spi'] is too long
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt7629-spi', 'mediatek,mt8365-spi']
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt8516-spi']
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt6779-spi', 'mediatek,mt8186-spi', 'mediatek,mt8192-spi', 'mediatek,mt8195-spi']
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt7981-spi-ipm', 'mediatek,mt7986-spi-ipm', 'mediatek,mt7988-spi-quad', 'mediatek,mt7988-spi-single', 'mediatek,mt8188-spi-ipm']
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt8196-spi']
+	'mediatek,mt8163-spi' is not one of ['mediatek,mt2701-spi', 'mediatek,mt2712-spi', 'mediatek,mt6589-spi', 'mediatek,mt6765-spi', 'mediatek,mt6893-spi', 'mediatek,mt6991-spi', 'mediatek,mt7622-spi', 'mediatek,mt8135-spi', 'mediatek,mt8173-spi', 'mediatek,mt8183-spi']
+	'mediatek,mt7622-spi' was expected
+	'mediatek,mt6765-spi' was expected
+	'mediatek,spi-ipm' was expected
+	'mediatek,mt6991-spi' was expected
+	from schema $id: http://devicetree.org/schemas/spi/mediatek,spi-mt65xx.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/spi@1100a000: failed to match any schema with compatible: ['mediatek,mt8163-spi', 'mediatek,mt2712-spi']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/thermal@1100b000: failed to match any schema with compatible: ['mediatek,mt8163-thermal']
+work/dtb-compile/pmic-node-names/douglas.dtb: usb@11200000 (mediatek,mt8163-musb): compatible:0: 'mediatek,mt8163-musb' is not one of ['mediatek,mt8516-musb', 'mediatek,mt2701-musb', 'mediatek,mt7623-musb']
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,musb.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/usb@11200000: failed to match any schema with compatible: ['mediatek,mt8163-musb', 'mediatek,mtk-musb']
+work/dtb-compile/pmic-node-names/douglas.dtb: t-phy@11210000 (mediatek,mt8163-tphy): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-tphy', 'mediatek,generic-tphy-v1'] is too long
+	'mediatek,mt8163-tphy' is not one of ['mediatek,mt2701-tphy', 'mediatek,mt7623-tphy', 'mediatek,mt7622-tphy', 'mediatek,mt8516-tphy']
+	'mediatek,mt8163-tphy' is not one of ['mediatek,mt2712-tphy', 'mediatek,mt6893-tphy', 'mediatek,mt7629-tphy', 'mediatek,mt7986-tphy', 'mediatek,mt8183-tphy', 'mediatek,mt8186-tphy', 'mediatek,mt8192-tphy', 'mediatek,mt8365-tphy']
+	'mediatek,mt8163-tphy' is not one of ['mediatek,mt8188-tphy', 'mediatek,mt8195-tphy']
+	'mediatek,mt2701-u3phy' was expected
+	'mediatek,mt2712-u3phy' was expected
+	'mediatek,mt8173-u3phy' was expected
+	'mediatek,generic-tphy-v2' was expected
+	'mediatek,generic-tphy-v3' was expected
+	from schema $id: http://devicetree.org/schemas/phy/mediatek,tphy.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/t-phy@11210000: failed to match any schema with compatible: ['mediatek,mt8163-tphy', 'mediatek,generic-tphy-v1']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@11220000: failed to match any schema with compatible: ['mediatek,mt8163-audsys', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@11220000/audio-controller: failed to match any schema with compatible: ['mediatek,mt8163-afe-pcm']
+work/dtb-compile/pmic-node-names/douglas.dtb: mmc@11230000 (mediatek,mt8163-mmc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is too long
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt2701-mmc', 'mediatek,mt2712-mmc', 'mediatek,mt6779-mmc', 'mediatek,mt6795-mmc', 'mediatek,mt7620-mmc', 'mediatek,mt7622-mmc', 'mediatek,mt7986-mmc', 'mediatek,mt7988-mmc', 'mediatek,mt8135-mmc', 'mediatek,mt8173-mmc', 'mediatek,mt8183-mmc', 'mediatek,mt8196-mmc', 'mediatek,mt8516-mmc']
+	'mediatek,mt7623-mmc' was expected
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt6893-mmc', 'mediatek,mt8186-mmc', 'mediatek,mt8188-mmc', 'mediatek,mt8192-mmc', 'mediatek,mt8195-mmc', 'mediatek,mt8365-mmc']
+	'mediatek,mt8183-mmc' was expected
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/mmc@11230000: failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']
+work/dtb-compile/pmic-node-names/douglas.dtb: mmc@11240000 (mediatek,mt8163-mmc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is too long
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt2701-mmc', 'mediatek,mt2712-mmc', 'mediatek,mt6779-mmc', 'mediatek,mt6795-mmc', 'mediatek,mt7620-mmc', 'mediatek,mt7622-mmc', 'mediatek,mt7986-mmc', 'mediatek,mt7988-mmc', 'mediatek,mt8135-mmc', 'mediatek,mt8173-mmc', 'mediatek,mt8183-mmc', 'mediatek,mt8196-mmc', 'mediatek,mt8516-mmc']
+	'mediatek,mt7623-mmc' was expected
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt6893-mmc', 'mediatek,mt8186-mmc', 'mediatek,mt8188-mmc', 'mediatek,mt8192-mmc', 'mediatek,mt8195-mmc', 'mediatek,mt8365-mmc']
+	'mediatek,mt8183-mmc' was expected
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/mmc@11240000: failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']
+work/dtb-compile/pmic-node-names/douglas.dtb: mmc@11250000 (mediatek,mt8163-mmc): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is too long
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt2701-mmc', 'mediatek,mt2712-mmc', 'mediatek,mt6779-mmc', 'mediatek,mt6795-mmc', 'mediatek,mt7620-mmc', 'mediatek,mt7622-mmc', 'mediatek,mt7986-mmc', 'mediatek,mt7988-mmc', 'mediatek,mt8135-mmc', 'mediatek,mt8173-mmc', 'mediatek,mt8183-mmc', 'mediatek,mt8196-mmc', 'mediatek,mt8516-mmc']
+	'mediatek,mt7623-mmc' was expected
+	'mediatek,mt8163-mmc' is not one of ['mediatek,mt6893-mmc', 'mediatek,mt8186-mmc', 'mediatek,mt8188-mmc', 'mediatek,mt8192-mmc', 'mediatek,mt8195-mmc', 'mediatek,mt8365-mmc']
+	'mediatek,mt8183-mmc' was expected
+	from schema $id: http://devicetree.org/schemas/mmc/mtk-sd.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/mmc@11250000: failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']
+work/dtb-compile/pmic-node-names/douglas.dtb: usb@11270000 (mediatek,mt8163-musb): compatible:0: 'mediatek,mt8163-musb' is not one of ['mediatek,mt8516-musb', 'mediatek,mt2701-musb', 'mediatek,mt7623-musb']
+	from schema $id: http://devicetree.org/schemas/usb/mediatek,musb.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/usb@11270000: failed to match any schema with compatible: ['mediatek,mt8163-musb', 'mediatek,mtk-musb']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@13000000: failed to match any schema with compatible: ['mediatek,mt8163-mfgcfg', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: gpu@13040000 (mediatek,mt8163-mali): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-mali', 'arm,mali-t720'] is too short
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos5250-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos5420-mali']
+	'mediatek,mt8163-mali' is not one of ['allwinner,sun50i-h6-mali']
+	'mediatek,mt8163-mali' is not one of ['amlogic,meson-gxm-mali', 'realtek,rtd1295-mali']
+	'mediatek,mt8163-mali' is not one of ['arm,juno-mali']
+	'mediatek,mt8163-mali' is not one of ['rockchip,rk3288-mali', 'samsung,exynos5433-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos7-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos7870-mali']
+	'mediatek,mt8163-mali' is not one of ['rockchip,rk3399-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos8890-mali']
+	'arm,mali-t604' was expected
+	'arm,mali-t628' was expected
+	'arm,mali-t820' was expected
+	'arm,mali-t624' was expected
+	'arm,mali-t760' was expected
+	'samsung,exynos5433-mali' was expected
+	'arm,mali-t830' was expected
+	'arm,mali-t860' was expected
+	'arm,mali-t880' was expected
+	from schema $id: http://devicetree.org/schemas/gpu/arm,mali-midgard.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/gpu@13040000: failed to match any schema with compatible: ['mediatek,mt8163-mali', 'arm,mali-t720']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/syscon@14000000: failed to match any schema with compatible: ['mediatek,mt8163-mmsys', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: ovl@14007000 (mediatek,mt8163-disp-ovl): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ovl', 'mediatek,mt8173-disp-ovl'] is too long
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt2701-disp-ovl', 'mediatek,mt8173-disp-ovl', 'mediatek,mt8183-disp-ovl', 'mediatek,mt8192-disp-ovl', 'mediatek,mt8195-disp-ovl', 'mediatek,mt8195-mdp3-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt7623-disp-ovl', 'mediatek,mt2712-disp-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt6795-disp-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt8186-disp-ovl', 'mediatek,mt8365-disp-ovl']
+	'mediatek,mt8188-disp-ovl' was expected
+	'mediatek,mt8188-mdp3-ovl' was expected
+	'mediatek,mt2701-disp-ovl' was expected
+	'mediatek,mt8192-disp-ovl' was expected
+	'mediatek,mt8195-disp-ovl' was expected
+	'mediatek,mt8195-mdp3-ovl' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ovl.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/ovl@14007000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ovl', 'mediatek,mt8173-disp-ovl']
+work/dtb-compile/pmic-node-names/douglas.dtb: dma-controller@14009000 (mediatek,mt8163-disp-rdma): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-rdma', 'mediatek,mt8173-disp-rdma'] is too long
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt2701-disp-rdma', 'mediatek,mt8173-disp-rdma', 'mediatek,mt8183-disp-rdma', 'mediatek,mt8195-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt8188-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt7623-disp-rdma', 'mediatek,mt2712-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt6795-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt8186-disp-rdma', 'mediatek,mt8192-disp-rdma', 'mediatek,mt8365-disp-rdma']
+	'mediatek,mt8195-disp-rdma' was expected
+	'mediatek,mt2701-disp-rdma' was expected
+	'mediatek,mt8183-disp-rdma' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,rdma.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/dma-controller@14009000: failed to match any schema with compatible: ['mediatek,mt8163-disp-rdma', 'mediatek,mt8173-disp-rdma']
+work/dtb-compile/pmic-node-names/douglas.dtb: dma-controller@14009000 (mediatek,mt8163-disp-rdma): '#dma-cells' is a required property
+	from schema $id: http://devicetree.org/schemas/dma/dma-controller.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: color@1400c000 (mediatek,mt8163-disp-color): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-color', 'mediatek,mt8173-disp-color'] is too long
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt2701-disp-color', 'mediatek,mt8167-disp-color', 'mediatek,mt8173-disp-color', 'mediatek,mt8195-mdp3-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt8188-mdp3-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt7623-disp-color', 'mediatek,mt2712-disp-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt6795-disp-color', 'mediatek,mt8183-disp-color', 'mediatek,mt8186-disp-color', 'mediatek,mt8188-disp-color', 'mediatek,mt8192-disp-color', 'mediatek,mt8195-disp-color', 'mediatek,mt8365-disp-color']
+	'mediatek,mt8195-mdp3-color' was expected
+	'mediatek,mt2701-disp-color' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,color.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/color@1400c000: failed to match any schema with compatible: ['mediatek,mt8163-disp-color', 'mediatek,mt8173-disp-color']
+work/dtb-compile/pmic-node-names/douglas.dtb: ccorr@1400d000 (mediatek,mt8163-disp-ccorr): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ccorr', 'mediatek,mt8192-disp-ccorr'] is too long
+	'mediatek,mt8163-disp-ccorr' is not one of ['mediatek,mt8183-disp-ccorr', 'mediatek,mt8192-disp-ccorr']
+	'mediatek,mt8365-disp-ccorr' was expected
+	'mediatek,mt8163-disp-ccorr' is not one of ['mediatek,mt8186-disp-ccorr', 'mediatek,mt8188-disp-ccorr', 'mediatek,mt8195-disp-ccorr']
+	'mediatek,mt8183-disp-ccorr' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ccorr.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/ccorr@1400d000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ccorr', 'mediatek,mt8192-disp-ccorr']
+work/dtb-compile/pmic-node-names/douglas.dtb: aal@1400e000 (mediatek,mt8163-disp-aal): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-aal', 'mediatek,mt8183-disp-aal'] is too long
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8173-disp-aal', 'mediatek,mt8183-disp-aal', 'mediatek,mt8195-mdp3-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8188-mdp3-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt2712-disp-aal', 'mediatek,mt6795-disp-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8186-disp-aal', 'mediatek,mt8188-disp-aal', 'mediatek,mt8192-disp-aal', 'mediatek,mt8195-disp-aal', 'mediatek,mt8365-disp-aal']
+	'mediatek,mt8195-mdp3-aal' was expected
+	'mediatek,mt8173-disp-aal' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,aal.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/aal@1400e000: failed to match any schema with compatible: ['mediatek,mt8163-disp-aal', 'mediatek,mt8183-disp-aal']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/gamma@1400f000: failed to match any schema with compatible: ['mediatek,mt8163-disp-gamma']
+work/dtb-compile/pmic-node-names/douglas.dtb: dither@14010000 (mediatek,mt8163-disp-dither): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-dither', 'mediatek,mt8183-disp-dither'] is too long
+	'mediatek,mt8163-disp-dither' is not one of ['mediatek,mt8183-disp-dither']
+	'mediatek,mt8163-disp-dither' is not one of ['mediatek,mt8186-disp-dither', 'mediatek,mt8188-disp-dither', 'mediatek,mt8192-disp-dither', 'mediatek,mt8195-disp-dither', 'mediatek,mt8365-disp-dither']
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,dither.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/dither@14010000: failed to match any schema with compatible: ['mediatek,mt8163-disp-dither', 'mediatek,mt8183-disp-dither']
+work/dtb-compile/pmic-node-names/douglas.dtb: ufoe@14011000 (mediatek,mt8163-disp-ufoe): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ufoe', 'mediatek,mt8173-disp-ufoe'] is too long
+	'mediatek,mt8163-disp-ufoe' is not one of ['mediatek,mt8173-disp-ufoe']
+	'mediatek,mt6795-disp-ufoe' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ufoe.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/ufoe@14011000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ufoe', 'mediatek,mt8173-disp-ufoe']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/dsi@14012000: failed to match any schema with compatible: ['mediatek,mt8163-dsi']
+work/dtb-compile/pmic-node-names/douglas.dtb: pwm@14014000 (mediatek,mt8163-disp-pwm): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-pwm', 'mediatek,mt8173-disp-pwm'] is too long
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt2701-disp-pwm', 'mediatek,mt6595-disp-pwm', 'mediatek,mt8173-disp-pwm', 'mediatek,mt8183-disp-pwm']
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt6795-disp-pwm', 'mediatek,mt8167-disp-pwm']
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt6893-disp-pwm', 'mediatek,mt8186-disp-pwm', 'mediatek,mt8188-disp-pwm', 'mediatek,mt8192-disp-pwm', 'mediatek,mt8195-disp-pwm', 'mediatek,mt8365-disp-pwm']
+	'mediatek,mt8183-disp-pwm' was expected
+	from schema $id: http://devicetree.org/schemas/pwm/mediatek,pwm-disp.yaml
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/pwm@14014000: failed to match any schema with compatible: ['mediatek,mt8163-disp-pwm', 'mediatek,mt8173-disp-pwm']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/mutex@14015000: failed to match any schema with compatible: ['mediatek,mt8163-disp-mutex']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/larb@14016000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/smi@14017000: failed to match any schema with compatible: ['mediatek,mt8163-smi-common']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@15000000: failed to match any schema with compatible: ['mediatek,mt8163-imgsys', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/larb@15001000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@16000000: failed to match any schema with compatible: ['mediatek,mt8163-vdecsys', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/larb@16010000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/clock-controller@17000000: failed to match any schema with compatible: ['mediatek,mt8163-vencsys', 'syscon']
+work/dtb-compile/pmic-node-names/douglas.dtb: /soc/larb@17001000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']

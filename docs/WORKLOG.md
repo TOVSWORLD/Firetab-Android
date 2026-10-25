@@ -349,3 +349,15 @@ passed=false. One upstream Gunyah YAML file fails parsing and is preserved, so
 this remains provisional corpus processing, not a complete matched schema pass.
 Logs/structured errors expose real PMIC/interrupt-node mismatches and compatible
 coverage gaps. No diagnostics suppressed and no hardware test performed.
+
+## 2026-10-25 — Narrow PMIC DT structural fix (#27)
+
+Added a separate candidate renaming three PMIC child nodes to the pinned binding
+names, retaining labels/compatibles and all properties. DTB compiles without
+diagnostics: 26,275 bytes / 119b6666a3caf217675d5aead3e9b0e0b21287d3e21f9d36e7d047f26698eddf.
+Binary comparison confirms identical 880 property values across 186 nodes after
+only allowed path substitutions. Full-context validation changes 36->34 errors,
+61 unmatched unchanged, zero added diagnostic signatures; still passed=false.
+Did not add domain cells to the PMIC shutdown node: reviewed driver provides a
+sys-off handler, not genpd. Stored source evidence and retained this diagnostic
+for semantic review. Added four comparison rejection tests; 35 total tests pass.

@@ -1,0 +1,11 @@
+{
+  "scope": "Binary DT property/path comparison; no schema or hardware qualification",
+  "nodes_compared": 186,
+  "properties_compared": 880,
+  "allowed_node_path_renames": {
+    "mt6323regulator": "regulators",
+    "mt6323keys": "keys",
+    "mt6397codec": "audio-codec"
+  },
+  "property_values_identical": true
+}

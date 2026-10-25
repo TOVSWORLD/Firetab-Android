@@ -17,6 +17,7 @@ WORK = ROOT / 'work/binding-validation'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names'], default='baseline')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
     args = parser.parse_args()
     lock = json.loads(LOCK.read_text())
@@ -32,15 +33,17 @@ def main():
         archive.write_bytes(data)
     if hashlib.sha256(archive.read_bytes()).hexdigest() != lock['sha256']:
         parser.error('Existing archive hash mismatch')
-    dtb = ROOT / 'work/dtb-compile/repro/douglas.dtb'
-    experiment = json.loads((LOCK.parent / 'experiment.json').read_text())
+    variant_dir = 'repro' if args.experiment == 'baseline' else args.experiment
+    variant_file = 'experiment.json' if args.experiment == 'baseline' else args.experiment + '.json'
+    dtb = ROOT / 'work/dtb-compile' / variant_dir / 'douglas.dtb'
+    experiment = json.loads((LOCK.parent / variant_file).read_text())
     if hashlib.sha256(dtb.read_bytes()).hexdigest() != experiment['expected_artifact']['sha256']:
         parser.error('DTB differs from pinned DT-only experiment')
     tools = ROOT / 'work/dtb-tool/venv/bin'
     version = subprocess.check_output([str(tools / 'dt-validate'), '-V'], text=True).strip()
     if version != lock['dtschema_version']:
         parser.error('Unexpected dtschema version')
-    output = WORK / 'result'
+    output = WORK / ('result' if args.experiment == 'baseline' else 'result-' + args.experiment)
     output.mkdir(exist_ok=True)
     (output / 'diagnostics.json').unlink(missing_ok=True)
     with tempfile.TemporaryDirectory(prefix='source-', dir=WORK) as temporary:
@@ -66,7 +69,7 @@ def main():
         diagnostics = json.loads((output / 'diagnostics.json').read_text()) if len(results) == 2 and (output / 'diagnostics.json').exists() else []
         passed = len(results) == 2 and all(x['exit_code'] == 0 and x['stderr_lines'] == 0 for x in results) and not diagnostics
         report = {'scope': 'Pinned ACK corpus only; donor-specific schemas still incomplete; no hardware validation',
-                  'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
+                  'experiment': args.experiment, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
                   'dtschema_version': version, 'dtb_sha256': experiment['expected_artifact']['sha256'],
                   'commands': results, 'diagnostic_count': len(diagnostics),
                   'diagnostic_types': dict(Counter(x['type'] for x in diagnostics)),
