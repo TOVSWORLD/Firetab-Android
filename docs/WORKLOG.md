@@ -640,3 +640,12 @@ corpus. Original preserved; no semantic relaxation/suppression. Actual full
 context still29errors/57unmatched, passed=false/exit1. YAML parser issue removed,
 but schema now explicitly ignored for invalid compatible shape; separate meta
 errors retained. All82 tests pass. Next#27 semantic/schema-selector repair.
+
+## 2026-10-25 — Exact PMIC sys-off/domain selection fix (#64)
+
+Opt-in hash-locked generic-domain selector excludes only MT6323 sys-off compatible;
+all original domain constraints and MFD binding unchanged. Actual meta-validation
+clean; YAML/jsonschema controls preserve missing-cells rejection for real domains
+and MFD wrong-compatible/unknown-property rejection. Full-context delta removes
+one false domain-cells requirement, adds none:28errors/57unmatched remain.83
+unit tests pass. Next#27 remaining schema failures; no device/hardware claims.

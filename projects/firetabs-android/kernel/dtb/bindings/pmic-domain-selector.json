@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact sys-off selection correction, not upstream acceptance/hardware validation",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/pmic-domain-selector.patch",
+  "patch_sha256": "2b1276acc703f2c120d78bdae0aa86fe6975fad1248aa17999b26fb0daa52362",
+  "schema": "power/power-domain.yaml",
+  "original_sha256": "7c300a191edea03ccc7efbf8ea467f43e067695dca24431085e17d46399dabbe",
+  "proposed_sha256": "8605d2fd4cade3a941f8f0272265a53bd50e30e3f91ab37ccf979b9a182e3d28"
+}

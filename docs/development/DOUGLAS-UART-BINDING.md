@@ -61,3 +61,32 @@ example, preserving compatible/memory-region behavior, then rerun full corpus;
 alternatively independently resolve the PMIC shutdown/generic-domain selector
 overlap. No hardware/device/compiler build or download occurred here. This closes
 only the bounded lexical-repair implementation scope, not#27 validation.
+
+## Exact MT6323 sys-off selection correction (#64)
+
+Add `--repair-pmic-selector` to the preceding repaired-corpus command to apply
+an independent opt-in, input/output/patch-hash-locked proposal to
+power/power-domain.yaml. The generic domain schema auto-selects by node name;
+the MFD binding names its sys-off child power-controller, despite the actual
+mt6323-poweroff driver registering sys-off rather than genpd. The proposal makes
+that name selection explicit and excludes only nodes whose compatible contains
+mediatek,mt6323-pwrc. It changes no domain property constraints, MFD schema, DT
+properties, hardware driver or node name, and does not invent domain cells.
+The MFD binding continues constraining that exact child.
+
+Actual local meta-validation of the proposed schema is clean. Negative controls
+run with `work/dtb-tool/venv/bin/python evidence/pmic-domain-selector/check-controls.py`
+verify that a generic domain missing cells still fails, nodes without compatible
+still select by domain name, and MFD sys-off nodes still reject unknown properties
+and wrong compatibles. Exact original domain constraints are preserved. Unit tests
+verify locked patch application, byte-for-byte preservation outside select and
+refusal of changed upstream input. Hashes/profiles and local logs/results are
+retained in `evidence/pmic-domain-selector`.
+
+Full-context diagnostic delta removes exactly one required-cells error at
+/soc/pwrap@1000d000/mt6323/power-controller and adds none:28 validation errors plus
+57 unmatched entries remain, overall passed=false/exit1. Gunyah structural schema
+error is still explicitly reported. This is a local source-backed selector
+proposal, not upstream acceptance or a full-schema/hardware pass. Next#27 task:
+map and resolve remaining errors by binding/node with negative controls, beginning
+with Gunyah structural invalidity or a board-relevant mismatch. No device access.

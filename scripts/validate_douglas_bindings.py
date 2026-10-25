@@ -16,9 +16,9 @@ LOCK = ROOT / 'projects/firetabs-android/kernel/dtb/bindings.lock.json'
 WORK = ROOT / 'work/binding-validation'
 
 
-def apply_uart_proposal(source, ack_commit):
+def apply_locked_proposal(source, ack_commit, filename):
     """Apply only the hash-locked UART proposal to an isolated corpus extraction."""
-    profile = json.loads((LOCK.parent / 'bindings/mt8163-uart.json').read_text())
+    profile = json.loads((LOCK.parent / ('bindings/' + filename)).read_text())
     patch = LOCK.parent / profile['patch']
     schema = source / profile['schema']
     if (profile['ack_commit'] != ack_commit or
@@ -30,6 +30,10 @@ def apply_uart_proposal(source, ack_commit):
     if hashlib.sha256(schema.read_bytes()).hexdigest() != profile['proposed_sha256']:
         raise ValueError('Proposed binding output hash mismatch')
     return profile, schema
+
+
+def apply_uart_proposal(source, ack_commit):
+    return apply_locked_proposal(source, ack_commit, 'mt8163-uart.json')
 
 
 def apply_gunyah_yaml_repair(source, ack_commit):
@@ -49,6 +53,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
     parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
+    parser.add_argument('--repair-pmic-selector', action='store_true', help='Opt-in exact MT6323 sys-off selector proposal')
     parser.add_argument('--repair-gunyah-yaml', action='store_true', help='Opt-in hash-locked indentation repair; not schema qualification')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
     args = parser.parse_args()
@@ -80,6 +85,8 @@ def main():
         result_name += '-' + args.binding_profile
     if args.repair_gunyah_yaml:
         result_name += '-gunyah-yaml-repaired'
+    if args.repair_pmic_selector:
+        result_name += '-pmic-selector'
     output = WORK / result_name
     output.mkdir(exist_ok=True)
     (output / 'diagnostics.json').unlink(missing_ok=True)
@@ -96,6 +103,10 @@ def main():
         if args.binding_profile != 'ack':
             profile, schema = apply_uart_proposal(source, lock['ack_commit'])
             commands.append(('doc-validate', [str(tools / 'dt-doc-validate'), '-u', str(source), str(schema)]))
+        pmic_proposal = None
+        if args.repair_pmic_selector:
+            pmic_proposal, schema = apply_locked_proposal(source, lock['ack_commit'], 'pmic-domain-selector.json')
+            commands.append(('pmic-doc-validate', [str(tools / 'dt-doc-validate'), '-u', str(source), str(schema)]))
         commands += [
             ('mk-schema', [str(tools / 'dt-mk-schema'), '-j', '-o', str(output / 'processed.json'), str(source)]),
             ('validate', [str(tools / 'dt-validate'), '-s', str(output / 'processed.json'), '-m', '--json-output', str(output / 'diagnostics.json'), str(dtb)])]
@@ -112,7 +123,7 @@ def main():
         diagnostics = json.loads((output / 'diagnostics.json').read_text()) if results and results[-1]['stage'] == 'validate' and (output / 'diagnostics.json').exists() else []
         passed = len(results) == len(commands) and all(x['exit_code'] == 0 and x['stderr_lines'] == 0 for x in results) and not diagnostics
         report = {'scope': 'Pinned ACK corpus with explicitly reported local proposal, if selected; donor-specific schemas still incomplete; no hardware validation',
-                  'yaml_repair': yaml_repair, 'experiment': args.experiment, 'binding_profile': args.binding_profile, 'binding_proposal': profile, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
+                  'pmic_selector_proposal': pmic_proposal, 'yaml_repair': yaml_repair, 'experiment': args.experiment, 'binding_profile': args.binding_profile, 'binding_proposal': profile, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
                   'dtschema_version': version, 'wrapper_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), 'dtb_sha256': experiment['expected_artifact']['sha256'],
                   'commands': results, 'diagnostic_count': len(diagnostics),
                   'diagnostic_types': dict(Counter(x['type'] for x in diagnostics)),
