@@ -2,6 +2,7 @@ name: MT8163 clock compile experiment
 on:
   workflow_dispatch:
   pull_request:
+    types: [opened, ready_for_review]
     paths:
       - projects/firetabs-android/kernel/clock-port/**
       - scripts/apply_clock_port.py

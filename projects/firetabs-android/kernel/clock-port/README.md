@@ -48,3 +48,25 @@ allocation APIs. Using set/clear ops with zero set/clear offsets would be wrong.
 The audio driver retains donor composite flags=0 through a local initializer;
 ACK's ordinary MUX_DIV_GATE forces CLK_SET_RATE_PARENT and is not equivalent.
 New donor common-source references are hash-recorded in evidence/clock-port.
+
+## Bounded reference review
+
+Run `python3 scripts/audit_clock_references.py`. The committed report records
+numeric header identifiers mentioned in each provider source; this is a textual
+cross-check, not proof of successful clock registration or a full DT consumer
+mapping. Board DT supplies the external `clk26m` and `clk32k` names.
+
+Three literal parents remain unresolved: `apll2_div0`, `apll2_div1` (MM HDMI audio
+and SPDIF gates), and `hdmitx_dig_cts` (top HDMI CTS factors). The legacy driver
+has two 1:1 APLL aliases and an HDMI CTS parent chained to `clk_null`; these are
+not evidence of a functioning hardware clock path. No aliases or dummy CTS
+source are added by this port. Determine actual ownership/rates if these HDMI
+paths are needed; their impact on the tablet's integrated display is untested.
+These gaps prevent claiming a complete hardware clock implementation despite
+successful object compilation. Full matched binding/schema validation is #27.
+
+The audit also maps 102 literal named DT clock references in the captured source
+files to the expected provider's header and numeric ID. It fails on unknown
+provider labels or IDs. This does not expand arbitrary DTS/C expressions or
+validate live providers, mux routing, clock rates or schemas. Use `--check` to
+compare the recomputed report with the committed evidence.

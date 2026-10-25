@@ -248,3 +248,14 @@ into the full kernel build before being superseded by the evidence-recording
 commit. Full Image linkage with the overlay is still pending. A git-apply blank
 line warning in generated Kconfig wiring was fixed; no warning flag was disabled.
 Added per-PR concurrency cancellation to avoid duplicate obsolete builds.
+
+## 2026-10-25 — Clock reference follow-through
+
+Added a bounded source audit of nine provider files and 102 literal DT clock
+references. Provider header/ID checks pass; three literal HDMI parents remain
+unresolved and documented, not hidden with aliases/dummy clocks. This is not a
+schema/register/runtime validation. Heavy kernel experiments now run on PR open,
+ready-for-review or explicit workflow_dispatch, rather than on every documentation
+push. Source-affecting updates require an explicit rebuild at the new revision;
+repository validation continues on every PR update. Run 40169479688's clock source
+is unchanged by this audit/documentation/workflow-trigger update.

@@ -1,0 +1,781 @@
+{
+  "scope": "Bounded textual clock-reference audit; not C/DT/schema/runtime validation.",
+  "providers": [
+    {
+      "driver": "clk-mt8163-apmixedsys.c",
+      "numeric_header_definitions": 16,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-audsys.c",
+      "numeric_header_definitions": 19,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-imgsys.c",
+      "numeric_header_definitions": 7,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-infracfg.c",
+      "numeric_header_definitions": 73,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-mfgcfg.c",
+      "numeric_header_definitions": 1,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-mmsys.c",
+      "numeric_header_definitions": 48,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-topckgen.c",
+      "numeric_header_definitions": 83,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-vdecsys.c",
+      "numeric_header_definitions": 2,
+      "declared_ids_not_mentioned_in_source": []
+    },
+    {
+      "driver": "clk-mt8163-vencsys.c",
+      "numeric_header_definitions": 4,
+      "declared_ids_not_mentioned_in_source": []
+    }
+  ],
+  "board_external_clock_names": [
+    "clk26m",
+    "clk32k",
+    "mipi_tx0_pll"
+  ],
+  "unresolved_literal_parent_names": [
+    "apll2_div0",
+    "apll2_div1",
+    "hdmitx_dig_cts"
+  ],
+  "captured_literal_clock_consumers": [
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "line": 142,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MSDC30_0_SEL",
+      "id": 58
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "line": 143,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MSDCPLL_D2",
+      "id": 21
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 126,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_CA53SEL",
+      "id": 71
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 127,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_ARMPLL_DIVIDER_PLL1_EN",
+      "id": 81
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 146,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_CA53SEL",
+      "id": 71
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 147,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_ARMPLL_DIVIDER_PLL1_EN",
+      "id": 81
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 166,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_CA53SEL",
+      "id": 71
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 167,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_ARMPLL_DIVIDER_PLL1_EN",
+      "id": 81
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 186,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_CA53SEL",
+      "id": 71
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 187,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_ARMPLL_DIVIDER_PLL1_EN",
+      "id": 81
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 315,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MM_SEL",
+      "id": 51
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 323,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MM_SEL",
+      "id": 51
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 330,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MM_SEL",
+      "id": 51
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 337,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MM_SEL",
+      "id": 51
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 355,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MFG_SEL",
+      "id": 54
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 381,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_RTC_SEL",
+      "id": 80
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 411,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_PMICSPI_SEL",
+      "id": 65
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 411,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_PMIC_AP",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 455,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_TRNG",
+      "id": 33
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 463,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_GCE",
+      "id": 9
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 471,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_MIPI_26M",
+      "id": 13
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 530,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AUXADC",
+      "id": 34
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 555,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AP_DMA",
+      "id": 42
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 564,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_UART0",
+      "id": 19
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 575,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_UART1",
+      "id": 20
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 586,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_UART2",
+      "id": 21
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 597,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_UART3",
+      "id": 22
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 609,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_I2C0",
+      "id": 11
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 609,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AP_DMA",
+      "id": 42
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 621,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_I2C1",
+      "id": 12
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 621,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AP_DMA",
+      "id": 42
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 633,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_I2C2",
+      "id": 13
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 633,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AP_DMA",
+      "id": 42
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 644,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_SYSPLL3_D2",
+      "id": 31
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 645,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_SPI_SEL",
+      "id": 57
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 646,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_SPI",
+      "id": 27
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 648,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_SPI_SEL",
+      "id": 66
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 649,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_SPI_SEL",
+      "id": 57
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 660,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_THERM",
+      "id": 10
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 660,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AUXADC",
+      "id": 34
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 676,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_USB",
+      "id": 7
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 677,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_USB_MCU",
+      "id": 23
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 678,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_UNIVPLL",
+      "id": 2
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 693,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_REF2USB_TX",
+      "id": 14
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 700,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_REF2USB_TX",
+      "id": 14
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 715,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_AUDIO",
+      "id": 49
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 716,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_AUDIO_SEL",
+      "id": 63
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 717,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_AUD_INTBUS_SEL",
+      "id": 64
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 718,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_AUD_1_SEL",
+      "id": 71
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 719,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_AUD_2_SEL",
+      "id": 72
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 720,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_AUD1PLL",
+      "id": 8
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 721,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL_TUNER",
+      "id": 6
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 722,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL1_DIV0",
+      "id": 13
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 723,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_AUD2PLL",
+      "id": 9
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 724,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL2_TUNER",
+      "id": 5
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 725,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL2_DIV0",
+      "id": 14
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 726,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_AFE",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 727,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_ADC",
+      "id": 9
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 728,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_DAC",
+      "id": 10
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 729,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_DAC_PREDIS",
+      "id": 11
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 730,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_22M",
+      "id": 2
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 731,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_24M",
+      "id": 3
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 732,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_I2S",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 733,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL_I2S0",
+      "id": 15
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 734,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL_I2S1",
+      "id": 16
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 735,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL_I2S2",
+      "id": 17
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 736,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL_I2S3",
+      "id": 18
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 769,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_MSDC0",
+      "id": 31
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 770,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MSDC30_0_SEL",
+      "id": 58
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 771,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_MSDC3",
+      "id": 28
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 780,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_MSDC1",
+      "id": 29
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 781,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MSDC30_1_SEL",
+      "id": 59
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 790,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_MSDC2",
+      "id": 30
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 791,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MSDC30_2_SEL",
+      "id": 60
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 803,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_ICUSB",
+      "id": 8
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 804,
+      "provider": "infracfg",
+      "symbol": "CLK_INFRA_USB_MCU",
+      "id": 23
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 805,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_UNIVPLL",
+      "id": 2
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 823,
+      "provider": "mfgcfg",
+      "symbol": "CLK_MFG_BG3D",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 824,
+      "provider": "topckgen",
+      "symbol": "CLK_TOP_MFG_SEL",
+      "id": 54
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 825,
+      "provider": "apmixedsys",
+      "symbol": "CLK_APMIXED_MMPLL",
+      "id": 3
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 849,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_OVL0",
+      "id": 10
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 859,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_RDMA0",
+      "id": 12
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 869,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_COLOR",
+      "id": 15
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 878,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_CCORR",
+      "id": 16
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 887,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_AAL",
+      "id": 17
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 896,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_GAMMA",
+      "id": 18
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 905,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_DITHER",
+      "id": 19
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 914,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_UFOE",
+      "id": 20
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 923,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DSI_ENGINE",
+      "id": 34
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 924,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DSI_DIGITAL",
+      "id": 35
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 938,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_PWM_26M",
+      "id": 33
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 939,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_DISP_PWM_MM",
+      "id": 32
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 960,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_SMI_LARB0",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 961,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_SMI_LARB0",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 969,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_SMI_COMMON",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 970,
+      "provider": "mmsys",
+      "symbol": "CLK_MM_SMI_COMMON",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 987,
+      "provider": "imgsys",
+      "symbol": "CLK_IMG_LARB2_SMI",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 988,
+      "provider": "imgsys",
+      "symbol": "CLK_IMG_LARB2_SMI",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 1005,
+      "provider": "vdecsys",
+      "symbol": "CLK_VDEC_CKEN",
+      "id": 0
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 1006,
+      "provider": "vdecsys",
+      "symbol": "CLK_VDEC_LARB_CKEN",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 1023,
+      "provider": "vencsys",
+      "symbol": "CLK_VENC_CKE1",
+      "id": 1
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 1024,
+      "provider": "vencsys",
+      "symbol": "CLK_VENC_CKE0",
+      "id": 0
+    }
+  ],
+  "limitations": [
+    "Textual identifier presence is not clock registration proof.",
+    "Only literal named clock consumers in captured DT files are checked; no exhaustive C/DT expansion, schema or register audit.",
+    "No clocks or hardware were exercised."
+  ]
+}
