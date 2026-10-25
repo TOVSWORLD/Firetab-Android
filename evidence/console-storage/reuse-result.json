@@ -1,0 +1,36 @@
+{
+  "scope": "Source/configuration reuse evidence; no device console/storage qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40170429213",
+  "config_path": "evidence/pinctrl-port/combined-image.config",
+  "config_sha256": "8992fb95f689ad6022a82dfae5b910a06d4d5593e4449fbf7f21175ecd87524d",
+  "resolved_symbols": [
+    "CONFIG_SERIAL_EARLYCON=y",
+    "CONFIG_SERIAL_8250_CONSOLE=y",
+    "CONFIG_SERIAL_8250_MT6577=y",
+    "CONFIG_MMC_BLOCK=y",
+    "CONFIG_MMC_MTK=y",
+    "CONFIG_DEVTMPFS=y"
+  ],
+  "uart": {
+    "dt_compatible_fallback": "mediatek,mt6577-uart",
+    "register_base": "0x11002000",
+    "dt_clock_names": [
+      "baud",
+      "bus"
+    ],
+    "driver_of_earlycon": true,
+    "physical_log_capture_validated": false
+  },
+  "mmc": {
+    "dt_compatible_fallback": "mediatek,mt2701-mmc",
+    "dt_clock_names": [
+      "source",
+      "hclk",
+      "bus_clk"
+    ],
+    "runtime_timings_voltages_validated": false
+  },
+  "schema_mt8163_compats_present": false,
+  "hardware_tested": false
+}

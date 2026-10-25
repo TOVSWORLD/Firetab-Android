@@ -327,3 +327,13 @@ in evidence/pinctrl-port; config hash matches CI output. Later branch updates
 are evidence/docs/CI/base synchronization, leaving these driver sources intact.
 PR #28 refreshed against development for required checks; no policy bypass used.
 No douglas boot, Android configuration, schema or hardware pass is claimed.
+
+## 2026-10-25 — Console/MMC reuse investigation (#22)
+
+Captured exact ACK UART/MMC drivers and schemas (133,433 decoded bytes). Prior
+successful Image run 40170429213 actually compiled both built-in drivers;
+compiler excerpts and configuration hash are retained. Donor fallbacks and
+clock names match driver interfaces, while voltage/timing/DMA and physical log
+capture remain unverified. ACK schemas do not list the MT8163 compatibles: an
+explicit #27 follow-up, not a driver or hardware validation pass. No new kernel
+build was launched to duplicate already-recorded compilation.

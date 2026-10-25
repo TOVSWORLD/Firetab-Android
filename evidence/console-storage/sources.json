@@ -1,0 +1,26 @@
+[
+  {
+    "path": "evidence/console-storage/ack/drivers/tty/serial/8250/8250_mtk.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/tty/serial/8250/8250_mtk.c?format=TEXT",
+    "sha256": "9ed47647ccf4c2cada2b09d61d088b04cbc80b92f9455673b41fd645e5dfe821",
+    "bytes": 18626
+  },
+  {
+    "path": "evidence/console-storage/ack/drivers/mmc/host/mtk-sd.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mmc/host/mtk-sd.c?format=TEXT",
+    "sha256": "8fd10e3a6f6d60e37216de79b2d7a8b8f766c7d7e5cdd5851cccfe375e2536d1",
+    "bytes": 100333
+  },
+  {
+    "path": "evidence/console-storage/ack/Documentation/devicetree/bindings/serial/mediatek,uart.yaml",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/serial/mediatek,uart.yaml?format=TEXT",
+    "sha256": "3d088774d677738abb17d5657662b48ae611223f55fdc43b10202d78c5f11d6b",
+    "bytes": 3176
+  },
+  {
+    "path": "evidence/console-storage/ack/Documentation/devicetree/bindings/mmc/mtk-sd.yaml",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/mmc/mtk-sd.yaml?format=TEXT",
+    "sha256": "2a8753dad64fb9e4a1dbf37446b4c007068604212a9627ca620aed7a9c507e99",
+    "bytes": 11298
+  }
+]
