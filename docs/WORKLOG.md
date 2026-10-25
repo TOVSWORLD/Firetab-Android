@@ -533,3 +533,15 @@ not runtime measurements. Collector now reads individual DT version property;
 only fake transport tests ran. 63 tests pass, including gzip cap/truncation and
 invalid wrapper/DT suffix rejection. No downloads, firmware changes, packing or
 device access; #21 runtime/loader/log/recovery gates remain open.
+
+## 2026-10-25 — Prepare generic ARM64 VM runtime test (#49)
+
+Added bounded QEMU virt8.2/Cortex-A53/one-CPU/512MiB diagnostic userspace runner,
+using existing restricted kernel/initramfs inputs. No disks/network/host shares,
+software TCG,120s/2MiB console caps, required init/mount/metadata/idle markers and
+5s continued execution; reject panic/read errors/early exit. Dependency installer
+requires disposable Linux GitHub runner and <=200MiB APT package archive plan
+before install; package versions logged. Existing ACK build resources unchanged.
+68 local tests pass, including incomplete/panic/error console rejection and
+package gate. Actual VM execution still pending; no douglas boot/hardware/Android
+runtime claim. No tablet access, firmware packing or paid provisioning.
