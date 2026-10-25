@@ -20,8 +20,11 @@ LOG_LIMIT = 2*1024*1024
 
 
 def transcript_ready(data):
-    if any(marker in data for marker in FATAL):
-        raise ValueError('Guest kernel panic/Oops')
+    # Serial consoles may translate LF to CRLF. Preserve raw log hashes, but
+    # normalize line endings when interpreting exact diagnostic error lines.
+    checked = data.replace(b'\r\n', b'\n')
+    if any(marker in checked for marker in FATAL):
+        raise ValueError('Guest kernel panic/Oops or diagnostic read failure')
     return all(marker in data for marker in MARKERS) and data.count(b'END_FILE') >= 4
 
 

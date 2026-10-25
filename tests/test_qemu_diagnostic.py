@@ -21,8 +21,11 @@ class GenericVMChecks(unittest.TestCase):
             guest.transcript_ready(self.complete()+b'Kernel panic - not syncing')
 
     def test_failed_metadata_read_is_not_runtime_success(self):
-        with self.assertRaises(ValueError):
-            guest.transcript_ready(self.complete()+b'\nUNAVAILABLE\n')
+        for ending in [b'\n', b'\r\n']:
+            for error in [b'UNAVAILABLE', b'READ_ERROR']:
+                with self.subTest(ending=ending, error=error):
+                    with self.assertRaisesRegex(ValueError, 'diagnostic read failure'):
+                        guest.transcript_ready(self.complete().replace(b'\n', ending)+ending+error+ending)
 
     def test_apt_archive_bytes_are_summed(self):
         self.assertEqual(dependencies.package_bytes("'https://example/a.deb' a.deb 100 MD5Sum:x\n'https://example/b.deb' b.deb 200 MD5Sum:y"), 300)

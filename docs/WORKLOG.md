@@ -581,3 +581,11 @@ Pinned legacy source has a custom multi-stage buffer and optional eMMC write
 path; no wholesale logging backport or reservation reuse is justified yet.
 Recorded exact hashes and requirements for an isolated backend/retention/reader
 or qualified UART path. No config/device changes or helper execution.
+
+## 2026-10-25 — Reject CRLF diagnostic error lines (#49 follow-up)
+
+Found VM verdict parser matched UNAVAILABLE/READ_ERROR only between LF bytes;
+serial CRLF translation could bypass that fatal override in an otherwise
+complete transcript. Normalize CRLF only for verdict parsing, preserving raw
+console bytes and hashes. Regression exercises both errors with LF and CRLF.
+No kernel/initramfs/config changes, new heavy build or tablet access.
