@@ -7,6 +7,10 @@ on:
         type: choice
         options: [clocks, clocks-pinctrl, providers, diagnostic]
         default: diagnostic
+      emulated_boot:
+        description: Run bounded generic ARM64 virt userspace test (diagnostic mode only)
+        type: boolean
+        default: false
   pull_request:
     types: [opened, ready_for_review]
     paths:
@@ -14,6 +18,10 @@ on:
       - scripts/apply_clock_port.py
       - scripts/build_ack_baseline.sh
       - scripts/diagnostic_config.py
+      - scripts/run_qemu_diagnostic.py
+      - scripts/install_qemu_for_ci.py
+      - scripts/build_diagnostic_initramfs.py
+      - projects/firetabs-android/diagnostic/**
       - projects/firetabs-android/kernel/diagnostic/**
       - .github/workflows/kernel-baseline.yml
 permissions:
@@ -34,7 +42,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y dwarves libelf-dev libssl-dev
           dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
+      - name: Gate and install generic ARM64 VM dependencies
+        if: github.event_name == 'pull_request' || inputs.emulated_boot
+        run: python3 scripts/install_qemu_for_ci.py --install
       - name: Preflight and compile generic ARM64 baseline
         env:
           BUILD_MODE: ${{ inputs.mode || 'diagnostic' }}
         run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"
+
+      - name: Generic QEMU virt diagnostic userspace smoke test
+        if: github.event_name == 'pull_request' || inputs.emulated_boot
+        run: |
+          python3 scripts/build_diagnostic_initramfs.py
+          python3 scripts/run_qemu_diagnostic.py --kernel work/ack-baseline/output/arch/arm64/boot/Image --config work/ack-baseline/output/.config --initramfs out/diagnostic-initramfs/initramfs.cpio.gz --output out/qemu-diagnostic
