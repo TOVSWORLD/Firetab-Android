@@ -1,0 +1,43 @@
+{
+  "scope": "Read-only component layout; no signature, firmware identity, load-address, DT or boot qualification",
+  "bytes": 8689664,
+  "sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "header_layout": "v0 or legacy zero-dt-size; indistinguishable here",
+  "page_size": 2048,
+  "tags_address": 1207959552,
+  "os_version_word": 0,
+  "components": [
+    {
+      "name": "kernel",
+      "offset": 2048,
+      "bytes": 7191666,
+      "load_address": 1074266112,
+      "padded_end": 7194624,
+      "sha256": "1bc3d2ed848a576259f4a04bb01b1206e5ddc60480b20d4e2567b524504b5e1e",
+      "identification": "unknown kernel payload"
+    },
+    {
+      "name": "ramdisk",
+      "offset": 7194624,
+      "bytes": 1492335,
+      "load_address": 1140850688,
+      "padded_end": 8687616,
+      "sha256": "2fbdceb228be3312a549ae13f415dac9699539686ebb6b099bd480fc362c304c",
+      "identification": "not inspected"
+    },
+    {
+      "name": "second",
+      "offset": 8687616,
+      "bytes": 0,
+      "load_address": 1089470464,
+      "padded_end": 8687616,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "identification": "not inspected"
+    }
+  ],
+  "unclassified_trailing_bytes": 2048,
+  "partition_bytes": null,
+  "fits_supplied_partition": null,
+  "signature_verified": false,
+  "bootable": "not determined"
+}

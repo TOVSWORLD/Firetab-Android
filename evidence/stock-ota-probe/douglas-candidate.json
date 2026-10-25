@@ -1,0 +1,318 @@
+{
+  "scope": "Partial OTA inspection; ZIP CRC is not signature/full-package authentication",
+  "identity": {
+    "ro.build.version.incremental": [
+      "50.6.5.9_user_659664620"
+    ],
+    "ro.build.version.fireos": [
+      "5.3.7.3",
+      "5.3.7.3"
+    ],
+    "ro.build.version.sdk": [
+      "22"
+    ],
+    "ro.build.version.release": [
+      "5.1.1"
+    ],
+    "ro.product.model": [
+      "KFDOWI"
+    ],
+    "ro.product.name": [
+      "douglas"
+    ],
+    "ro.product.device": [
+      "douglas"
+    ],
+    "ro.product.manufacturer": [
+      "Amazon"
+    ],
+    "ro.board.platform": [
+      "mt8163"
+    ],
+    "ro.build.fingerprint": [
+      "Amazon/douglas/douglas:5.1.1/LVY48F/50.6.5.9_user_659664620:user/release-keys"
+    ]
+  },
+  "douglas_identity_matched": true,
+  "properties_sha256": "a3779b428fdb696b51b86e072f3a354ab942e5dde95140ad06abc6763ffa9185",
+  "entries": [
+    {
+      "name": "system.patch.dat",
+      "flags": 2048,
+      "method": 0,
+      "crc32": 0,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0,
+      "offset": 0
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.blocklist",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 770425371,
+      "compressed_bytes": 733,
+      "uncompressed_bytes": 2712,
+      "offset": 50
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.build.prop",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 4073818205,
+      "compressed_bytes": 2913,
+      "uncompressed_bytes": 7473,
+      "offset": 873
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.system.devicepath",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 4293917007,
+      "compressed_bytes": 46,
+      "uncompressed_bytes": 45,
+      "offset": 3877
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.system.map",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2294863238,
+      "compressed_bytes": 154,
+      "uncompressed_bytes": 387,
+      "offset": 4021
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.system.map.sha1",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2371629894,
+      "compressed_bytes": 40,
+      "uncompressed_bytes": 40,
+      "offset": 4266
+    },
+    {
+      "name": "META-INF/com/android/metadata",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 1138880534,
+      "compressed_bytes": 118,
+      "uncompressed_bytes": 134,
+      "offset": 4402
+    },
+    {
+      "name": "META-INF/com/google/android/update-binary",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 1322525114,
+      "compressed_bytes": 430161,
+      "uncompressed_bytes": 761192,
+      "offset": 4595
+    },
+    {
+      "name": "META-INF/com/google/android/updater-script",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 616051032,
+      "compressed_bytes": 445,
+      "uncompressed_bytes": 1378,
+      "offset": 434843
+    },
+    {
+      "name": "boot.img",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 3907722053,
+      "compressed_bytes": 8544281,
+      "uncompressed_bytes": 8689664,
+      "offset": 435376
+    },
+    {
+      "name": "file_contexts",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2452909504,
+      "compressed_bytes": 6549,
+      "uncompressed_bytes": 32004,
+      "offset": 8979711
+    },
+    {
+      "name": "images/lk.bin",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2250206794,
+      "compressed_bytes": 294421,
+      "uncompressed_bytes": 485552,
+      "offset": 8986319
+    },
+    {
+      "name": "images/preloader.bin",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 4259382018,
+      "compressed_bytes": 89263,
+      "uncompressed_bytes": 139352,
+      "offset": 9280799
+    },
+    {
+      "name": "images/preloader.hdr0",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 3665875975,
+      "compressed_bytes": 64,
+      "uncompressed_bytes": 2048,
+      "offset": 9370128
+    },
+    {
+      "name": "images/preloader.hdr1",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 3484126813,
+      "compressed_bytes": 65,
+      "uncompressed_bytes": 2048,
+      "offset": 9370259
+    },
+    {
+      "name": "images/tz.img",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 1676968414,
+      "compressed_bytes": 4459472,
+      "uncompressed_bytes": 4459520,
+      "offset": 9370391
+    },
+    {
+      "name": "ota.prop",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 619248866,
+      "compressed_bytes": 171,
+      "uncompressed_bytes": 251,
+      "offset": 13829922
+    },
+    {
+      "name": "system.new.dat",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 967160229,
+      "compressed_bytes": 893864933,
+      "uncompressed_bytes": 1529413632,
+      "offset": 13830147
+    },
+    {
+      "name": "system.transfer.list",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2293932782,
+      "compressed_bytes": 188,
+      "uncompressed_bytes": 422,
+      "offset": 907695140
+    },
+    {
+      "name": "system/build.prop",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 4073818205,
+      "compressed_bytes": 2913,
+      "uncompressed_bytes": 7473,
+      "offset": 907695394
+    },
+    {
+      "name": "META-INF/com/android/otacert",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 1838056524,
+      "compressed_bytes": 1047,
+      "uncompressed_bytes": 1452,
+      "offset": 907698370
+    },
+    {
+      "name": "META-INF/MANIFEST.MF",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2050055577,
+      "compressed_bytes": 776,
+      "uncompressed_bytes": 1733,
+      "offset": 907699491
+    },
+    {
+      "name": "META-INF/CERT.SF",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 728721527,
+      "compressed_bytes": 823,
+      "uncompressed_bytes": 1975,
+      "offset": 907700333
+    },
+    {
+      "name": "META-INF/CERT.RSA",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2676937184,
+      "compressed_bytes": 1157,
+      "uncompressed_bytes": 1553,
+      "offset": 907701218
+    }
+  ],
+  "boot_image": {
+    "bytes": 8689664,
+    "sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363"
+  },
+  "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659664620.bin",
+  "headers": {
+    "x-amz-id-2": "eYNB5GI0f2coWscmuxUU1JGQ36nwVTph1fFRcQk+8OZvE7nxXRdXDIPPaLesRwXyebkQJg9xTFM=",
+    "x-amz-request-id": "FHQY8KH6XC3QJRCG",
+    "Date": "Sun, 25 Oct 2026 11:26:29 GMT",
+    "Last-Modified": "Wed, 09 Aug 2023 13:38:48 GMT",
+    "ETag": "\"2312512edef1e8f78b32eab8d1ca2e39-53\"",
+    "x-amz-server-side-encryption": "AES256",
+    "Accept-Ranges": "bytes",
+    "Content-Type": "application/macbinary",
+    "Content-Length": "907705758",
+    "Server": "AmazonS3",
+    "Connection": "close"
+  },
+  "response_body_bytes": 8612864,
+  "response_body_budget": 20971520,
+  "ranges": [
+    {
+      "offset": 907640201,
+      "bytes": 65557,
+      "sha256": "9795ed3ee3cd9ea9f1302b21fb6d5dadeb1fa15919695137c95677867c08a891"
+    },
+    {
+      "offset": 873,
+      "bytes": 30,
+      "sha256": "a40c00fc0e60cfb6037a36a63087c956b9d8e7c7673961ed04f490bc1e2c5b68"
+    },
+    {
+      "offset": 903,
+      "bytes": 45,
+      "sha256": "c2594341f8c34f51a2026020dd980b7880c17e5dff70f681c29cf7abcd9b954d"
+    },
+    {
+      "offset": 948,
+      "bytes": 2913,
+      "sha256": "5aab33dbad9f5ebe8a9b984232809a157dfc78af0306f8f0ac264f647263c3af"
+    },
+    {
+      "offset": 435376,
+      "bytes": 30,
+      "sha256": "60af9758fbfd3bb173b6387d99bd24103512ce650c883b94a02bf1523f6e4787"
+    },
+    {
+      "offset": 435406,
+      "bytes": 8,
+      "sha256": "f64286d1572e19f022baa534da35212d8c6ea50cd42bec8c3caf1a73f308a1b0"
+    },
+    {
+      "offset": 435414,
+      "bytes": 8544281,
+      "sha256": "f0f44f6dd55a26cc00f76c55c0600ab6fb6514113fb227ee4fb259ae914c22fa"
+    }
+  ],
+  "full_package_downloaded": false,
+  "signature_verified": false,
+  "installed_build_matched": false,
+  "hardware_tested": false,
+  "probe_script_sha256_at_execution": "1ed44f8f54f92cc3d59a16ad103cef85d628582da2259615feebd0d9896f3542"
+}

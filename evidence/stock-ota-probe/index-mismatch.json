@@ -1,0 +1,52 @@
+{
+  "scope": "Discovery index labels conflict with CRC-checked package identity; no signature/full-OTA hash verification",
+  "discovery_url": "https://github.com/fireos-archive/fireos-archive/blob/main/README.md",
+  "discovery_readme_git_blob": "adbfb8e247b2b7e9172c80238563af6fac1ebb5f",
+  "discovery_readme_sha256": "22fe965dba507d3b4a429af4be1167c1cc0617b9c0f2fbe474c7477bd81971b1",
+  "rejected_hd8_index_entry": {
+    "index_label": "Fire HD 8 7th gen, 5.7.1.0",
+    "head": {
+      "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD10_7th_Gen-40.6.5.9_user_659664620.bin",
+      "status": 200,
+      "headers": {
+        "Last-Modified": "Wed, 09 Aug 2023 13:38:48 GMT",
+        "ETag": "\"6a81df2a775a40c30ebc101200890f06-54\"",
+        "Accept-Ranges": "bytes",
+        "Content-Length": "914304861",
+        "Content-Type": "application/macbinary"
+      }
+    },
+    "actual_identity": {
+      "ro.product.model": "KFSUWI",
+      "ro.product.name": "suez",
+      "ro.product.device": "suez",
+      "ro.board.platform": "mt8173",
+      "ro.build.fingerprint": "Amazon/suez/suez:5.1.1/LVY48F/40.6.5.9_user_659664620:user/release-keys"
+    },
+    "properties_sha256": "15052e0afacb3605771acc9342d927cab5111731559a7a48578f77428ae8fdda",
+    "ranges": [
+      {
+        "name": "prefix",
+        "start": 0,
+        "bytes": 4096,
+        "sha256": "4854266175a5df6f61ef2ced148ec716e269cf0023b0b335a9350a295c2c9c3b"
+      },
+      {
+        "name": "tail",
+        "start": 914173789,
+        "bytes": 131072,
+        "sha256": "045ed96f57bf9195a8145a7aa36467891ba082c59839f6e7db090cdbcf6028be"
+      }
+    ]
+  },
+  "correct_hardware_candidate": {
+    "index_label": "Fire HD 10 7th gen, 5.7.1.0",
+    "actual_model": "KFDOWI",
+    "actual_device": "douglas",
+    "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659664620.bin"
+  },
+  "initial_two_candidate_metadata_body_bytes": 204800,
+  "correct_candidate_probe_body_bytes": 8612864,
+  "installed_build_matched": false,
+  "signature_verified": false
+}
