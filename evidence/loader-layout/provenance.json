@@ -1,0 +1,49 @@
+{
+  "source_records": [
+    {
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "create_tee_image.py",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/create_tee_image.py",
+      "sha256": "43665e508bc6905293872ae6eca3852056bb890ebbcb85cf1a56c9d138dd37ba"
+    },
+    {
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "include/preloader.h",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/include/preloader.h",
+      "sha256": "d867f7fe1d87f9cfdcdf0f3f9cd47894cb172f7cbc7177c702df64313f7bed97"
+    },
+    {
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "devices/douglas.c",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/devices/douglas.c",
+      "sha256": "03d2ac584fd1cf492bb8e5b1fad5e3103aaa72ac62cd8c57a89bf2d0680576fe"
+    },
+    {
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "lk-payload/create_boot_img.py",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/lk-payload/create_boot_img.py",
+      "sha256": "929fbf25865f357f068b3b56eff57f308379f044706bb955a3a81433b25953c2"
+    },
+    {
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "lk-payload/main.c",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/lk-payload/main.c",
+      "sha256": "a98172b957fce059ffc1d05dc1da5647add14cec6a0eaf5300ad2b1b3224f30f"
+    }
+  ],
+  "legacy_bundled_files": [
+    {
+      "path": "bin/preloader.bin",
+      "present": false,
+      "git_exit_code": 128
+    },
+    {
+      "path": "bin/lk.bin",
+      "present": false,
+      "git_exit_code": 128
+    }
+  ],
+  "source_repositories_unchanged": true,
+  "disassembly_dependency": "Existing Apple LLVM21 objdump located with xcrun; no dependency downloaded",
+  "instruction_flow_verified": false
+}

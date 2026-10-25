@@ -361,3 +361,54 @@ from proof of exploitability. Full907705758-byte OTA download is unnecessary and
 not authorized by this task. Cached source audit is complete;#21 retains actual
 entry, authenticated restoration, recovery, logging and explicit owner approval
 for any future destructive unlock/wipe. No payload was built or tablet queried.
+
+## Exact loader container/entry assumptions (#80)
+
+The strict offline `inspect_loader_layout.py` requires regular local loader files
+at most1MiB and verifies exact hashes from the retained build-matched report.
+It writes nothing to firmware and executes no loaded bytes. Reproduce:
+
+```sh
+python3 scripts/inspect_loader_layout.py \
+  --preloader out/ota-loader-inspection-659664620/preloader.bin \
+  --lk out/ota-loader-inspection-659664620/lk.bin
+```
+
+The preloader's GFH v1 FILE_INFO declares load base0x200d00, content offset0x300,
+file length139352 and signature-region length292. The source-defined code view
+is [0x201000,0x222c34),138292 bytes, excluding the declared signature region.
+The parser checks name/version, total/maximum/content/signature bounds and32-bit
+address overflow. This declaration is not proof of authenticated execution at
+that address. The GFH interpretation is anchored to the pinned newer fork's
+preloader_text function; hashes/URLs are retained, without running its helper.
+
+LK's512-byte prefix has magic0x58881688, nameLK and payload length485040. Its
+maddr and mode words are both0xffffffff; pinned preloader.h defines this maddr
+as PART_HEADER_DEFAULT_ADDR. Therefore this artifact does not independently
+supply a concrete load base. The legacy exploit generator's base0x4bd00000 is a
+source assumption, not a base authenticated by this current LK header.
+
+The report maps four newer-fork preloader patch addresses to bounded16-byte
+windows using the GFH-declared code view, and three old LK patch addresses only
+under the explicit hypothetical legacy base. All are observations, never verified
+function identities or compatible patch sites. Being in bounds is not proof
+that current firmware has the expected function there. The pinned old helper
+repository does not contain bin/lk.bin or bin/preloader.bin, so no expected donor
+binary fingerprints are available there to compare against; metadata records
+those missing git objects. No old patch was applied to the current files.
+
+The modern Image's text_offset=0 still conflicts with unchanged0x40080000 entry
+under the ARM64 alignment rule. Container inspection alone does not prove LK's
+decompression/relocation branch or final jump address, nor register/EL/cache
+handoff. Result/provenance/script hashes and bounded byte windows are retained
+in evidence/loader-layout.102 tests pass, including malformed containers, wrong
+hashes, address/window bounds and sentinel handling. No physical/kernel boot or
+recovery qualification is claimed.
+
+Next concrete#21 task: recover the stock LK kernel-header/decompress/jump flow
+using the already installed LLVM objdump (no new dependency download), tying
+instruction offsets to exact-hash bytes and labelling load-base/Thumb assumptions.
+If complete flow cannot be established statically, record the exact missing
+branch/assumption before proposing any physical test; do not treat string/literal
+hits as control-flow proof. Existing native tools are available, but no payload
+was built and no firmware instruction executed in this scope.

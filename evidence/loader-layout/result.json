@@ -1,0 +1,106 @@
+{
+  "scope": "Static container and hypothetical address mapping only; no instruction-flow or boot qualification",
+  "preloader_sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "preloader": {
+    "format": "GFH v1 FILE_INFO",
+    "declared_load_base": 2100480,
+    "payload_offset": 768,
+    "payload_bytes": 138292,
+    "declared_code_start": 2101248,
+    "declared_code_end_exclusive": 2239540,
+    "signature_region_bytes": 292,
+    "maximum_file_bytes": 262144,
+    "signature_verified": false
+  },
+  "lk": {
+    "format": "MTK 512-byte LK prefix",
+    "payload_offset": 512,
+    "payload_bytes": 485040,
+    "declared_address_word": 4294967295,
+    "mode_word": 4294967295,
+    "uses_preloader_default_address": true,
+    "actual_load_base_verified": false,
+    "signature_verified": false
+  },
+  "newer_fork_patch_address_windows": [
+    {
+      "address": "0x21b970",
+      "assumed_or_declared_code_base": "0x201000",
+      "file_offset": 109680,
+      "bytes_hex": "002d06dda0192a461c30bde8f042faf7",
+      "sha256": "f80b7480447968cc42f05fabe91f09ac1929b854bb888f03e75c1f5927667ae2",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    },
+    {
+      "address": "0x217420",
+      "assumed_or_declared_code_base": "0x201000",
+      "file_offset": 91936,
+      "bytes_hex": "7fa30000d0b5000014ffffff35a30000",
+      "sha256": "4aa4f350c783a81db03e9a54bff874a15ab71db75a8d3519936f1a5d5511c934",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    },
+    {
+      "address": "0x201934",
+      "assumed_or_declared_code_base": "0x201000",
+      "file_offset": 3124,
+      "bytes_hex": "6e48f0b5c3b0784402ac11f019ff2046",
+      "sha256": "32942aa18a55face6e8036a7b50b5ae66ee4c0d7ab5f3dd1871553c401f5f17e",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    },
+    {
+      "address": "0x20a204",
+      "assumed_or_declared_code_base": "0x201000",
+      "file_offset": 38148,
+      "bytes_hex": "7944226809f0b4fa002004b0bde8f08e",
+      "sha256": "28d09e5afc14eac46d4f481737e913049ed8ac07e68afd483d7ddb823d26d1a1",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    }
+  ],
+  "legacy_lk_patch_address_windows_assuming_source_base": [
+    {
+      "address": "0x4bd205ec",
+      "assumed_or_declared_code_base": "0x4bd00000",
+      "file_offset": 133100,
+      "bytes_hex": "10b5c0b000214ff48072684625f0b4ea",
+      "sha256": "59601dc133be13bf0faf907a68da61a054c7f6d195b70cda1e240c3332675560",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    },
+    {
+      "address": "0x4bd2080c",
+      "assumed_or_declared_code_base": "0x4bd00000",
+      "file_offset": 133644,
+      "bytes_hex": "00221346fff70cbf002918bf002814bf",
+      "sha256": "9362f79dfc157276289a2f8cfb262d67a1c672c43b44aeeee84455c9c2032548",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    },
+    {
+      "address": "0x4bd3fd1e",
+      "assumed_or_declared_code_base": "0x4bd00000",
+      "file_offset": 261918,
+      "bytes_hex": "bde838407844fff7aebc14492046144b",
+      "sha256": "beaa25fb28ffd94fef6c2ea153d45166d32635ddafef53a087d926bdaebc30c7",
+      "function_identity_verified": false,
+      "patch_compatibility_verified": false
+    }
+  ],
+  "modern_image_at_stock_header_entry": {
+    "assumed_entry_address": "0x40080000",
+    "text_offset": 0,
+    "image_size": 29360128,
+    "required_base": "0x40080000",
+    "base_alignment_bytes": 2097152,
+    "alignment_satisfied": false,
+    "end_exclusive": "0x41c80000"
+  },
+  "legacy_helper_bundled_loader_binaries_present_in_pinned_git": false,
+  "loader_branch_behavior_verified": false,
+  "boot_qualified": false,
+  "inspector_sha256": "55ca4fe070164e520577aab68a4646feb3efe2cf154b931f5c28a3fafc3bbc16"
+}
