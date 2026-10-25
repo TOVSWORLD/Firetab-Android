@@ -1,0 +1,261 @@
+{
+  "scope": "Read-only source inspection; external repositories unchanged and no upstream issues/comments created",
+  "legacy_software_maximum_versions": {
+    "preloader": 6,
+    "lk": 2,
+    "tee": 259
+  },
+  "records": [
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "README.md",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/README.md",
+      "bytes": 513,
+      "sha256": "bb9028b3f0b2b0c9bfe43e8515864f460f02b1111c42814bea87135e65f117ea",
+      "selected_observations": [
+        {
+          "line": 3,
+          "text": "This is an exploit chain for Fire HD 10 (2017) (7th gen / suez / KFSUWI). It contains a MediaTek bootrom exploit and a LittleKernel bootloader exploit."
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "step-1.sh",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/step-1.sh",
+      "bytes": 2631,
+      "sha256": "7edb01494fef78671a166e8e396a4fd0de427452f829872ff01bb8293e9eb97d",
+      "selected_observations": [
+        {
+          "line": 9,
+          "text": "max_tee=259"
+        },
+        {
+          "line": 10,
+          "text": "max_lk=2"
+        },
+        {
+          "line": 11,
+          "text": "max_pl=6"
+        },
+        {
+          "line": 28,
+          "text": "echo \"TZ, Preloader or LK are too new, RPMB downgrade necessary (or brick option used)\""
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "modules/main.py",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/modules/main.py",
+      "bytes": 7874,
+      "sha256": "5e4a7332bcee1ef8e2f66924b2b9c0c48f5c7c71ce17f6cfd0ac98565c2c3402",
+      "selected_observations": [
+        {
+          "line": 161,
+          "text": "log(\"Flash new primary GPT\")"
+        },
+        {
+          "line": 164,
+          "text": "log(\"Flash new backup GPT\")"
+        },
+        {
+          "line": 186,
+          "text": "# Clear preloader so, we get into bootrom without shorting, should the script stall (we flash preloader as last step)"
+        },
+        {
+          "line": 188,
+          "text": "log(\"Clear preloader header\")"
+        },
+        {
+          "line": 194,
+          "text": "dev.rpmb_write(b\"\\x00\" * 0x100)"
+        },
+        {
+          "line": 205,
+          "text": "log(\"Flash tz\")"
+        },
+        {
+          "line": 210,
+          "text": "log(\"Flash lk\")"
+        },
+        {
+          "line": 214,
+          "text": "# 9) Flash payload"
+        },
+        {
+          "line": 227,
+          "text": "# Flash preloader as last step, so we still have access to bootrom, should the script stall"
+        },
+        {
+          "line": 229,
+          "text": "log(\"Flash preloader\")"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "fastboot-step.sh",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/fastboot-step.sh",
+      "bytes": 327,
+      "sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99",
+      "selected_observations": [
+        {
+          "line": 9,
+          "text": "fastboot flash recovery_x bin/twrp.img"
+        },
+        {
+          "line": 10,
+          "text": "fastboot erase userdata"
+        },
+        {
+          "line": 12,
+          "text": "fastboot flash MISC bin/boot-recovery.bin"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "boot-fastboot.sh",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/boot-fastboot.sh",
+      "bytes": 69,
+      "sha256": "bc27cb0f070ad13620ae6601525aea1edff83cdced7add285117639713ef5f57",
+      "selected_observations": [
+        {
+          "line": 6,
+          "text": "python3 handshake2.py FACTFACT"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-douglas",
+      "revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+      "path": "modules/handshake2.py",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/modules/handshake2.py",
+      "bytes": 431,
+      "sha256": "057db6e4051c0b241b4835d41db4f740d50c228abf9d342217746e1761a2653e",
+      "selected_observations": [
+        {
+          "line": 8,
+          "text": "def handshake2(dev, cmd='FACTFACT'):"
+        },
+        {
+          "line": 23,
+          "text": "handshake2(dev,cmd)"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-koboreru",
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "README.md",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/README.md",
+      "bytes": 5301,
+      "sha256": "15c8dd1d36cb45b71e72fe70311b89cb4f4459b222dbbe5d0047b175c1d0649a",
+      "selected_observations": [
+        {
+          "line": 76,
+          "text": "> Amazon patched this around 2022, so recent Preloaders are not vulnerable. You need to downgrade the Preloader to an older version first."
+        },
+        {
+          "line": 84,
+          "text": "With the exploit in place, you can load a custom TEE and a custom LK. Flash your custom LK to whatever partition the device configuration specifies (see `LK_PART_NAME`)."
+        },
+        {
+          "line": 89,
+          "text": "> Be careful about what you flash. If you damage `tee1` (which holds the malicious TZ image) or `lk` (which contains the original LK image), you could hard brick the device."
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-koboreru",
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "devices/douglas.c",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/devices/douglas.c",
+      "bytes": 542,
+      "sha256": "03d2ac584fd1cf492bb8e5b1fad5e3103aaa72ac62cd8c57a89bf2d0680576fe",
+      "selected_observations": [
+        {
+          "line": 10,
+          "text": "patch_ret(0x0021B970, 0);"
+        },
+        {
+          "line": 16,
+          "text": "patch_ret(0x00201934, 0);"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-koboreru",
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "include/devices/douglas.h",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/include/devices/douglas.h",
+      "bytes": 790,
+      "sha256": "785f40bcfcc2f4232d0ecd12837e7bb0a0079c55dd6892493adf9eca687ea18b",
+      "selected_observations": [
+        {
+          "line": 3,
+          "text": "#define DEVICE_NAME \"douglas\""
+        },
+        {
+          "line": 4,
+          "text": "#define PLATFORM     mt8163"
+        },
+        {
+          "line": 11,
+          "text": "#define LK_PART_NAME  \"lk2\""
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-koboreru",
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "main.c",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/main.c",
+      "bytes": 2682,
+      "sha256": "8ddbe249610cffb0202454cc850c00da37ae09fab6780251d356aa1966867635",
+      "selected_observations": [
+        {
+          "line": 16,
+          "text": "DEVICE_NAME, PLATFORM_NAME,"
+        },
+        {
+          "line": 52,
+          "text": "// valid / signed LK image has to always be present in the original"
+        },
+        {
+          "line": 58,
+          "text": "ret = bldr_load_part(LK_PART_NAME, dev, &addr, &size);"
+        }
+      ]
+    },
+    {
+      "cache": "sources/reference-amonet-koboreru",
+      "revision": "d51af735e5b95fa2c03c0b311d5c05f0f73461d4",
+      "path": "arb.c",
+      "url": "https://github.com/R0rt1z2/amonet-koboreru/blob/d51af735e5b95fa2c03c0b311d5c05f0f73461d4/arb.c",
+      "bytes": 1126,
+      "sha256": "ee899ba969c0dc42f8c4cffb2a4e37b1f61203260310ab89be2928340c1c5f77",
+      "selected_observations": [
+        {
+          "line": 5,
+          "text": "#ifdef RPMB_BLOCK0_READ_ADDR"
+        },
+        {
+          "line": 10,
+          "text": "(void *)(RPMB_BLOCK0_READ_ADDR | 1);"
+        },
+        {
+          "line": 34,
+          "text": "void clear_rpmb_arb(void)"
+        }
+      ]
+    }
+  ],
+  "external_thread_fetch": "XDA starting thread returned HTTP403; no current physical-entry instructions inferred"
+}

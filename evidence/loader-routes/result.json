@@ -1,0 +1,71 @@
+{
+  "scope": "Source-backed route triage only; no device access or recovery/boot qualification",
+  "legacy_software_version_gate_passes": false,
+  "exceeded_version_limits": {
+    "preloader": {
+      "installed": 7,
+      "maximum": 6
+    },
+    "lk": {
+      "installed": 3,
+      "maximum": 2
+    },
+    "tee": {
+      "installed": 262,
+      "maximum": 259
+    }
+  },
+  "routes": [
+    {
+      "route": "stock_recovery",
+      "ready_for_custom_kernel": false,
+      "reason": "Stock signed-update restoration is not proof of arbitrary-kernel acceptance or matched recovery package."
+    },
+    {
+      "route": "stock_fastboot_or_handshake",
+      "ready_for_custom_kernel": false,
+      "reason": "boot-fastboot.sh invokes a handshake; no verified stock RAM boot implementation or safe recovery demonstrated."
+    },
+    {
+      "route": "legacy_software_unlock",
+      "ready_for_custom_kernel": false,
+      "version_gate_rejects": true,
+      "persistent_changes": true,
+      "root_required_by_source": true,
+      "reason": "Newer-version branch intentionally clears preloader and writes LK/TEE; provided fastboot installation erases userdata."
+    },
+    {
+      "route": "legacy_bootrom_chain",
+      "ready_for_custom_kernel": false,
+      "persistent_changes": true,
+      "reason": "Host main modifies GPT/preloader/RPMB/boot/recovery and loader images; minimal mode still writes. Physical entry and recovery on this unit unqualified."
+    },
+    {
+      "route": "koboreru_preloader_exploit",
+      "ready_for_custom_kernel": false,
+      "persistent_changes": true,
+      "douglas_target_exists": true,
+      "custom_lk_partition": "lk2",
+      "reason": "README requires an older vulnerable preloader/downgrade. Exact installed binary susceptibility and lk2 layout are unverified; flashing TEE/LK is a prerequisite."
+    },
+    {
+      "route": "custom_tee_or_lk",
+      "ready_for_custom_kernel": false,
+      "persistent_changes": true,
+      "reason": "Post-unlock integration option, not an established entry path from untouched stock firmware."
+    }
+  ],
+  "next_offline_step": "Inspect model/build-matched OTA preloader/LK/TEE artifacts with bounded local static analysis; verify patch-address/format claims without executing payloads.",
+  "physical_prerequisites_still_missing": [
+    "Matched restoration images authenticated and retained",
+    "Exact-board BootROM entry and tested recovery path",
+    "Explicit owner authorization for any destructive unlock/wipe",
+    "Verified custom kernel entry/log route"
+  ],
+  "diagnostic_package_ready": false,
+  "physical_boot_tested": false,
+  "sources_manifest_sha256": "6acbe681ce2469b9cb617e26599b7b551b4e6ec25947a527d00123aaa6d3399b",
+  "stock_facts_sha256": "a173d6a7820e6c7c68d30ce9487a577eb9c44c51554c4bc3718d17f476e7aac6",
+  "auditor_sha256": "a59efdedce58e81217cf9f7458dc8545688b57db22c706ab07d55425ec0d9c34",
+  "cached_source_hashes_verified": true
+}

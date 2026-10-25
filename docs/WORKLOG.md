@@ -690,3 +690,13 @@ drivers/source hashes retained. Meta clean, processed controls pass. Actual full
 delta removes12/adds0:15errors/45unmatched remain, overallfailed.90 tests pass.
 No bus/ADC/RNG hardware/security qualification. Next#21 cached loader/recovery
 alternative audit to advance the physical diagnostic boot blocker.
+
+## 2026-10-25 — Loader/recovery alternatives audit (#76)
+
+Source/hash/line inventory distinguishes stock recovery, handshake, old software
+unlock, BootROM chain, newer preloader exploit and post-unlock custom loaders.
+Newer fork has explicit douglas target but requires older vulnerable preloader;
+old minimal chain still modifies GPT/RPMB/preloader/boot. No qualified safe route
+yet. Offline assessor and3tests added;93tests pass. Next bounded OTA preloader/LK
+static inspection planned383684compressed bytes plus metadata, no fullOTA.
+No helper/payload compiled/executed, reference modified or tablet accessed.
