@@ -51,7 +51,7 @@ def apply_gunyah_yaml_repair(source, ack_commit):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
+    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name', 'rdma-node-name'], default='baseline')
     parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
     parser.add_argument('--extra-binding', choices=['mt8163-sysirq', 'mt8163-timer'], action='append', default=[], help='Additional opt-in locked binding proposals')
     parser.add_argument('--repair-pmic-selector', action='store_true', help='Opt-in exact MT6323 sys-off selector proposal')

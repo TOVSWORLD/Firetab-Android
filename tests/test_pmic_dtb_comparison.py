@@ -47,3 +47,39 @@ class PMICComparison(unittest.TestCase):
     def test_sysirq_rename_requires_expected_source_node(self):
         with self.assertRaises(ValueError):
             module.compare(*self.trees(), include_sysirq=True)
+
+    def rdma_trees(self):
+        old, new = self.trees()
+        old_path, new_path = '/soc/dma-controller@14009000', '/soc/rdma@14009000'
+        props = {'reg': '0 14009000 0 1000', 'phandle': '9', 'compatible': '6d 74 0'}
+        old[old_path], new[new_path] = props.copy(), props.copy()
+        encode = lambda value: ' '.join(format(x, 'x') for x in value.encode()+b'\0')
+        old['/aliases'] = {'rdma0': encode(old_path)}
+        new['/aliases'] = {'rdma0': encode(new_path)}
+        return old, new
+
+    def test_rdma_rename_allows_only_exact_alias_rewrite(self):
+        old, new = self.rdma_trees()
+        result = module.compare(old, new, include_rdma=True)
+        self.assertTrue(result['all_other_property_values_identical'])
+        self.assertFalse(result['property_values_identical'])
+        new['/aliases']['rdma0'] = '0'
+        with self.assertRaises(ValueError):
+            module.compare(old, new, include_rdma=True)
+
+    def test_rdma_rename_rejects_phandle_or_other_alias_change(self):
+        for field in ['phandle', 'reg']:
+            old, new = self.rdma_trees()
+            new['/soc/rdma@14009000'][field] = 'ff'
+            with self.assertRaises(ValueError):
+                module.compare(old, new, include_rdma=True)
+        old, new = self.rdma_trees()
+        new['/aliases']['unexpected'] = '0'
+        with self.assertRaises(ValueError):
+            module.compare(old, new, include_rdma=True)
+
+    def test_rdma_rename_requires_baseline_alias(self):
+        old, new = self.rdma_trees()
+        del old['/aliases']
+        with self.assertRaises(ValueError):
+            module.compare(old, new, include_rdma=True)
