@@ -61,3 +61,21 @@ console hashes, raw AArch64 header fields, limits and outcome. Package versions
 are logged separately. This provides generic execution evidence, not hardware
 identity, MT8163 driver exercise or a user physical-test package. No emulation
 success is claimed until the actual CI run completes and its logs are reviewed.
+
+## First executed result
+
+[CI run 40193403656](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40193403656),
+project `2fc0da6d65371783c13bfd800b3a1630f7fa3511`, passed on 2026-10-25.
+The restricted kernel reached diagnostic PID1, mounted proc/sysfs, completed all
+four metadata reads and remained alive for the five-second idle observation.
+The guest reported MemTotal 486180 kB from its configured 512 MiB. QEMU 8.2.2
+used software TCG; the entire VM check took 5.52 seconds. The full CI job took
+11 minutes 6 seconds. See `evidence/qemu-diagnostic/generic-runtime-result.json`
+for exact hashes, header fields, command and bounded package plan. Config and
+initramfs hashes match the prior compiled inputs; the rebuilt kernel has its
+own recorded hash. No binary was retained for distribution.
+
+This completes only issue #49 generic execution. Issue #21 remains open for
+installed-build identity, runtime RAM/DT fixups, CPU/loader contract and a qualified
+recoverable boot/log route. The VM result does not select physical load addresses
+or validate a douglas DT, SMP, MT8163 drivers, Android, graphics or applications.

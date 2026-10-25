@@ -545,3 +545,13 @@ before install; package versions logged. Existing ACK build resources unchanged.
 68 local tests pass, including incomplete/panic/error console rejection and
 package gate. Actual VM execution still pending; no douglas boot/hardware/Android
 runtime claim. No tablet access, firmware packing or paid provisioning.
+
+## 2026-10-25 — Generic diagnostic execution passed (#49)
+
+Reviewed successful CI 40193403656 at project 2fc0da6d65371783c13bfd800b3a1630f7fa3511,
+pinned ACK d9318bdb4c34e8b2d997b4f67ced56b120b22b87. QEMU virt8.2/Cortex-A53
+ran restricted kernel plus unchanged diagnostic initramfs: proc/sysfs mounted,
+four metadata reads completed, idle survived five seconds. Exact hashes/command,
+ARM64 header and CI-log hash retained in evidence/qemu-diagnostic. All routine
+checks also passed; 68 tests. Generic execution only; #21 physical loader/memory,
+recovery and log qualification remain open. No tablet access or firmware packing.
