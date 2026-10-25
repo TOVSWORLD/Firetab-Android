@@ -520,3 +520,16 @@ finds AArch64 magic behind512-byte kernel prefix. Unclassified2KiB trailer and
 all signatures remain unverified. Report/ranges/hashes retained, binaries ignored.
 59 tests pass with synthetic archives/fake transport. No archive execution,
 firmware packing, tablet access or physical change; no test package ready.
+
+## 2026-10-25 — Actual candidate DTB memory/PSCI evidence (#21)
+
+Added bounded local wrapped-gzip/concatenated-DTB inspector. Actual candidate
+kernel gzip decompression16584856 bytes; suffix is exactly two DTBs pre_evt/hvt
+(82277/82641 bytes), hashes and selected facts retained. Both corroborate static
+512MiB memory, legacy explicit-ID PSCI and CPU0 mt-boot, plus all legacy firmware
+and log reservations omitted from newer donor. Header reservation maps empty;
+body reservations and dynamic CONSYS remain authoritative static declarations,
+not runtime measurements. Collector now reads individual DT version property;
+only fake transport tests ran. 63 tests pass, including gzip cap/truncation and
+invalid wrapper/DT suffix rejection. No downloads, firmware changes, packing or
+device access; #21 runtime/loader/log/recovery gates remain open.

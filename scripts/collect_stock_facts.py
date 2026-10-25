@@ -111,7 +111,7 @@ def collect(reader):
     else:
         records.append({'name': '/proc/cmdline', 'available': False})
     # Read individual DT properties, never a full bootargs/serial-containing blob.
-    for name in ['model', 'compatible', '#address-cells', '#size-cells']:
+    for name in ['model', 'compatible', 'version', '#address-cells', '#size-cells']:
         read('/proc/device-tree/' + name, ['exec-out', 'cat', '/proc/device-tree/' + name], binary=True)
     listing = read('DT root node names', ['shell', 'ls', '/proc/device-tree'])
     if listing:

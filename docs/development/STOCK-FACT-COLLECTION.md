@@ -25,6 +25,8 @@ first. The agent must not initiate device queries merely because USB is attached
 unless manufacturer/model/device properties identify Amazon douglas/KFDOWI.
 It uses fixed getprop/uname/cat/ls queries for software identity, kernel version,
 RAM/iomem/partition metadata and individual readable DT root/memory properties.
+The raw DT root version property is included to compare the candidate pre_evt/hvt
+variants later; absence or permission denial remains unavailable data.
 It does not read raw partitions, full bootargs/serial DT blobs, household app
 settings or logs. Kernel cmdline is retained only through a public boot-contract
 key allowlist; the device serial and arbitrary stderr are not saved.
