@@ -1,0 +1,27 @@
+{
+  "scope": "Generic ARM64 full Image with MT8163 clock, pinctrl, wrapper and power-domain candidates; not douglas/Android boot qualification",
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40173436578",
+  "repository_revision": "e4e4468",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "mode": "providers",
+  "config_identical_to": "evidence/pinctrl-port/combined-image.config",
+  "hashes": {
+    ".config": "8992fb95f689ad6022a82dfae5b910a06d4d5593e4449fbf7f21175ecd87524d",
+    "vmlinux": "b32fa87e18b04e150a4761969b98a7c5319a04005d87764fe3e795555937031f",
+    "arch/arm64/boot/Image": "8b8db531704f2f895e752ba1e22f1b6920b85426e1768a37730041f695afb39e"
+  },
+  "sizes": {
+    "vmlinux": 441333032,
+    "arch/arm64/boot/Image": 41363968
+  },
+  "elapsed_minutes_approximately": 37,
+  "diagnostic_warning_error_lines": 0,
+  "hardware_tested": false,
+  "remaining_issues": [
+    21,
+    22,
+    24,
+    27,
+    29
+  ]
+}

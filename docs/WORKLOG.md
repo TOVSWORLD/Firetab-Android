@@ -292,6 +292,27 @@ Added explicit workflow_dispatch mode clocks-pinctrl for full combined Image
 integration after the object probe. It applies both pinned overlays, verifies
 PINCTRL_MT8163=y and all clock symbols, compiles both directories with W=1 and
 links Image/vmlinux. This is still a generic config, not a douglas boot claim.
+
+## 2026-10-25 — Prepare #20 PMIC/power object integration
+
+Prepared a minimal MT8163 wrapper/power-domain patch against actual pinned ACK
+files. Wrapper donor differences are MT8163-specific. Power core keeps ACK's
+implementation and imports only MT8163 include/match data and bus-protection
+masks, excluding unrelated hardware-voter/SMC changes from donor 7.0. Eight-domain
+header/binding retain donor licenses. Static wrapper register-offset comparison
+against pinned legacy header is recorded; runtime sequencing is unverified.
+Added bounded W=1 object probe; compilation result is not yet claimed.
+
+Added a reproducible PMIC wrapper register-offset audit to ordinary CI; 79 shared
+named offsets match the pinned legacy header. No initialization transactions or
+power transitions are executed. This audit addition leaves probed driver source
+unchanged from the initial #30 commit.
+
+Power object run 40170813712 passed: actual wrapper and common power-domain
+objects are AArch64 ELF, W=1, zero compiler warning/error lines. Hashes and
+measured source/Git storage are recorded in evidence/power-port/object-result.json.
+Full Image integration, binding dependencies and runtime power sequencing remain
+open on #20. This does not advance any Android/douglas runtime validation gate.
 ## 2026-10-25 — Begin diagnostic boot-contract investigation (#21)
 
 Captured pinned legacy runtime-memory readers and ACK PSCI implementation.
@@ -328,6 +349,11 @@ are evidence/docs/CI/base synchronization, leaving these driver sources intact.
 PR #28 refreshed against development for required checks; no policy bypass used.
 No douglas boot, Android configuration, schema or hardware pass is claimed.
 
+Added explicit providers workflow mode for the next full Image integration:
+clock, pinctrl, PMIC wrapper and eight-domain controller candidates together.
+Checks all resolved config symbols, compiles each affected object set with W=1,
+then links the full generic Image. Same existing resource gates; no Android or
+bootable device package is produced. Results pending until actual CI completion.
 ## 2026-10-25 — Console/MMC reuse investigation (#22)
 
 Captured exact ACK UART/MMC drivers and schemas (133,433 decoded bytes). Prior
@@ -361,3 +387,14 @@ only allowed path substitutions. Full-context validation changes 36->34 errors,
 Did not add domain cells to the PMIC shutdown node: reviewed driver provides a
 sys-off handler, not genpd. Stored source evidence and retained this diagnostic
 for semantic review. Added four comparison rejection tests; 35 total tests pass.
+
+## 2026-10-25 — Full provider Image succeeded (#20)
+
+Run 40173436578 at e4e4468 completed 08:13 UTC (~37 min), with real clock,
+pinctrl, PMIC wrapper and power-domain objects built W=1 and full Image linked.
+AArch64 Image 41,363,968 bytes / SHA256
+8b8db531704f2f895e752ba1e22f1b6920b85426e1768a37730041f695afb39e.
+Zero compiler warning/error lines. Config hash equals the retained pinctrl
+combined config; provider source changes are real and Image/vmlinux hashes differ.
+Result metadata retained. This generic configuration has no appended board DT,
+qualified loader/ramdisk contract or hardware/Android runtime validation.
