@@ -55,6 +55,8 @@ jobs:
         with:
           persist-credentials: false
       - run: python3 scripts/ci.py firetabs-android
+      - name: Compile isolated diagnostic userspace (no firmware packing)
+        run: python3 scripts/build_diagnostic_initramfs.py
       - name: Build pinned isolated device-tree compiler
         run: python3 scripts/setup_dtb_tools.py --download
       - name: Compile and inspect experimental douglas DTB
