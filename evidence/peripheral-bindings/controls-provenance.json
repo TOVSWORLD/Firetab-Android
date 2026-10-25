@@ -1,0 +1,11 @@
+{
+  "command": "work/dtb-tool/venv/bin/python evidence/peripheral-bindings/check-controls.py",
+  "processed_corpus_sha256": "ded52927a0c20c5052b7ee5896e0cbf31fe38573899a412d94324f0349d3663b",
+  "control_script_sha256": "c325c285661e2547dbd59e735e0ab75da2bdff8a9a881c270a7538e885a82054",
+  "processed_fragment_sha256": {
+    "mt8163-i2c": "5ccaa5fdeade18ae77963492649b5bbcffa51cbe42ff9a85ea08f4191adfe4fe",
+    "mt8163-spi": "8ef38e119bf70a56b8de323f37ae9dbc913f7b973d46bbada7d0f63ed202aa17",
+    "mt8163-auxadc": "c3771ddedaae224dd9d64507c13409d9fe2e2f77ea6a2e92a9ce4b030a91dc4f",
+    "mt8163-rng": "d67252c5db791a7375aff9569d4b6abb2a25109de894dab3680d1a06c88f71fe"
+  }
+}

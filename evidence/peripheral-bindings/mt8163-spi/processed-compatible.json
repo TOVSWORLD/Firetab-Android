@@ -1,0 +1,121 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7629-spi",
+            "mediatek,mt8365-spi"
+          ]
+        },
+        {
+          "const": "mediatek,mt7622-spi"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "const": "mediatek,mt8163-spi"
+        },
+        {
+          "const": "mediatek,mt2712-spi"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt8516-spi"
+          ]
+        },
+        {
+          "const": "mediatek,mt2712-spi"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6779-spi",
+            "mediatek,mt8186-spi",
+            "mediatek,mt8192-spi",
+            "mediatek,mt8195-spi"
+          ]
+        },
+        {
+          "const": "mediatek,mt6765-spi"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7981-spi-ipm",
+            "mediatek,mt7986-spi-ipm",
+            "mediatek,mt7988-spi-quad",
+            "mediatek,mt7988-spi-single",
+            "mediatek,mt8188-spi-ipm"
+          ]
+        },
+        {
+          "const": "mediatek,spi-ipm"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt8196-spi"
+          ]
+        },
+        {
+          "const": "mediatek,mt6991-spi"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt2701-spi",
+            "mediatek,mt2712-spi",
+            "mediatek,mt6589-spi",
+            "mediatek,mt6765-spi",
+            "mediatek,mt6893-spi",
+            "mediatek,mt6991-spi",
+            "mediatek,mt7622-spi",
+            "mediatek,mt8135-spi",
+            "mediatek,mt8173-spi",
+            "mediatek,mt8183-spi"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    }
+  ]
+}

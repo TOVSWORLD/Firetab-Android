@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-i2c.patch",
+  "patch_sha256": "c91f9dcda5cbe7627e688469f0674dc6918b2b8fd3d654238b41dbce5b5c1496",
+  "schema": "i2c/i2c-mt65xx.yaml",
+  "original_sha256": "2cf48f67160ff269e5cb1feddc60e57b0e0204c035b559c4dd8bcbae2aad0ac7",
+  "proposed_sha256": "9d0bf9f6e2ebe204839e6ff51073f8d06513afdc96974af13bd40f82d55cdde3"
+}

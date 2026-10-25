@@ -1,0 +1,36 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7623-rng"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7622-rng",
+            "mediatek,mt7629-rng",
+            "mediatek,mt7986-rng",
+            "mediatek,mt8163-rng",
+            "mediatek,mt8365-rng",
+            "mediatek,mt8516-rng"
+          ]
+        },
+        {
+          "const": "mediatek,mt7623-rng"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "results": [
+    {
+      "proposal": "mt8163-i2c",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-i2c",
+            "mediatek,mt8173-i2c"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-i2c"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-i2c",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-i2c",
+            "mediatek,mt8173-i2c",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt6795-i2c",
+            "mediatek,mt8173-i2c"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8173-i2c"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    },
+    {
+      "proposal": "mt8163-spi",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-spi",
+            "mediatek,mt2712-spi"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-spi"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-spi",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-spi",
+            "mediatek,mt2712-spi",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8516-spi",
+            "mediatek,mt2712-spi"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt2712-spi"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    },
+    {
+      "proposal": "mt8163-auxadc",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-auxadc",
+            "mediatek,mt8173-auxadc"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-auxadc"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-auxadc",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-auxadc",
+            "mediatek,mt8173-auxadc",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8183-auxadc",
+            "mediatek,mt8173-auxadc"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8173-auxadc"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    },
+    {
+      "proposal": "mt8163-rng",
+      "cases": [
+        {
+          "compatible": [
+            "mediatek,mt8163-rng",
+            "mediatek,mt7623-rng"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-rng"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-rng",
+            "mediatek,wrong"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8163-rng",
+            "mediatek,mt7623-rng",
+            "extra"
+          ],
+          "accepted": false,
+          "expected": false
+        },
+        {
+          "compatible": [
+            "mediatek,mt8365-rng",
+            "mediatek,mt7623-rng"
+          ],
+          "accepted": true,
+          "expected": true
+        },
+        {
+          "compatible": [
+            "mediatek,mt7623-rng"
+          ],
+          "accepted": true,
+          "expected": true
+        }
+      ],
+      "all_other_constraints_preserved": true
+    }
+  ],
+  "passed": true
+}

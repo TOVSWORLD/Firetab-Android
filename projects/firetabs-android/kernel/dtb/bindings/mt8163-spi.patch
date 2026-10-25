@@ -1,0 +1,12 @@
+--- a/spi/mediatek,spi-mt65xx.yaml
++++ b/spi/mediatek,spi-mt65xx.yaml
+@@ -20,6 +20,9 @@
+               - mediatek,mt7629-spi
+               - mediatek,mt8365-spi
+           - const: mediatek,mt7622-spi
++      - items:
++          - const: mediatek,mt8163-spi
++          - const: mediatek,mt2712-spi
+       - items:
+           - enum:
+               - mediatek,mt8516-spi

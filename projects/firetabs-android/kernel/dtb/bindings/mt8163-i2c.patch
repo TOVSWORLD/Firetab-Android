@@ -1,0 +1,10 @@
+--- a/i2c/i2c-mt65xx.yaml
++++ b/i2c/i2c-mt65xx.yaml
+@@ -49,6 +49,7 @@
+       - items:
+           - enum:
+               - mediatek,mt6795-i2c
++              - mediatek,mt8163-i2c
+           - const: mediatek,mt8173-i2c
+       - items:
+           - enum:

@@ -1,0 +1,72 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt2701-auxadc",
+            "mediatek,mt2712-auxadc",
+            "mediatek,mt6765-auxadc",
+            "mediatek,mt7622-auxadc",
+            "mediatek,mt7986-auxadc",
+            "mediatek,mt8173-auxadc"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7623-auxadc"
+          ]
+        },
+        {
+          "const": "mediatek,mt2701-auxadc"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7981-auxadc"
+          ]
+        },
+        {
+          "const": "mediatek,mt7986-auxadc"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6893-auxadc",
+            "mediatek,mt8163-auxadc",
+            "mediatek,mt8183-auxadc",
+            "mediatek,mt8186-auxadc",
+            "mediatek,mt8188-auxadc",
+            "mediatek,mt8195-auxadc",
+            "mediatek,mt8516-auxadc"
+          ]
+        },
+        {
+          "const": "mediatek,mt8173-auxadc"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}
