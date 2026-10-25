@@ -441,3 +441,10 @@ so full ELF/archive compilation is delegated to the existing Linux CI toolchain.
 47 unit tests pass, including ELF rejection and actual archive metadata/content
 parsing. Build is not a firmware package or a boot/runtime result. No tablet
 transport or physical changes. Stock loader/memory/recovery gates remain #21.
+
+Linux CI run 40181473575 at cb82cb8 passed the static ELF/archive build with
+Ubuntu Clang 18.1.3; ELF checks confirm AArch64 ET_EXEC with no interpreter or
+dynamic segment. Gzip/newc archive 1,248 bytes, SHA256
+8d68234297e9ed50e025cb321d066b2d4ff8a4a09c57a654e09d9467c10e6ff4.
+Exact command/compiler/source and artifact hashes retained in
+ evidence/diagnostic-initramfs/compile-result.json. No runtime execution occurred.
