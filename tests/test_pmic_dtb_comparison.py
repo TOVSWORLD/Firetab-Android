@@ -33,3 +33,17 @@ class PMICComparison(unittest.TestCase):
     def test_reject_missing_baseline(self):
         with self.assertRaises(ValueError):
             module.compare({}, {})
+
+    def test_sysirq_rename_preserves_interrupt_properties(self):
+        old, new = self.trees()
+        props = {'reg': '0 10200620 0 20', '#interrupt-cells': '3', 'phandle': '1'}
+        old['/soc/intpol-controller@10200620'] = props.copy()
+        new['/soc/interrupt-controller@10200620'] = props.copy()
+        self.assertTrue(module.compare(old, new, True)['sysirq_node_renamed'])
+        new['/soc/interrupt-controller@10200620']['#interrupt-cells'] = '1'
+        with self.assertRaises(ValueError):
+            module.compare(old, new, True)
+
+    def test_sysirq_rename_requires_expected_source_node(self):
+        with self.assertRaises(ValueError):
+            module.compare(*self.trees(), include_sysirq=True)

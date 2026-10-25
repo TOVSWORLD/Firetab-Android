@@ -17,7 +17,7 @@ WORK = ROOT / 'work/binding-validation'
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names'], default='baseline')
+    parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
     args = parser.parse_args()
     lock = json.loads(LOCK.read_text())

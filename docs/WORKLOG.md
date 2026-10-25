@@ -419,3 +419,14 @@ source hash and documented the selection overlap, MFD-provided memory resource,
 and sys-off driver semantics. No permissive schema or DT change; counts remain
 34 errors/61 unmatched. Actual stock-data collection still awaits the user's
 computer choice; no tablet transport or settings change performed.
+
+## 2026-10-25 — Sysirq node-name structural fix (#27)
+
+Added isolated sysirq-node-name candidate on the PMIC candidate, preserving all
+interrupt properties and compatibles. Clean DTC result 26,279 bytes / SHA256
+78fd34cbe0c129da23dd2e296be0db9180e7d8b464e719b59304f09d01456bea.
+Actual binary comparison retains 880 values across 186 nodes, permitting only
+four reviewed path renames. Schema run removes one naming diagnostic with none
+added after path normalization: 33 errors/61 unmatched remain, passed=false;
+upstream YAML parse issue remains. Added CI compilation/property comparison and
+rejection tests; 44 local tests pass. No physical device access or firmware pack.

@@ -63,6 +63,10 @@ jobs:
         run: |
           python3 scripts/build_douglas_dtb.py --experiment pmic-node-names
           python3 scripts/compare_pmic_dtb.py
+      - name: Compile sysirq node-name candidate and compare all DT properties
+        run: |
+          python3 scripts/build_douglas_dtb.py --experiment sysirq-node-name
+          python3 scripts/compare_pmic_dtb.py --experiment sysirq-node-name
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04

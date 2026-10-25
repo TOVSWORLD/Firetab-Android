@@ -1,0 +1,12 @@
+{
+  "scope": "Diagnostic delta against PMIC candidate, normalizing only the reviewed sysirq node rename; no hardware qualification",
+  "removed": [
+    {
+      "type": "validation",
+      "node": "/soc/interrupt-controller@10200620",
+      "message": "'intpol-controller@10200620' does not match '^interrupt-controller(@[0-9a-f,]+)*$'",
+      "count": 1
+    }
+  ],
+  "added": []
+}
