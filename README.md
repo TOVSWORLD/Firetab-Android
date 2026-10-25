@@ -1,6 +1,10 @@
 # Firetab Android
 
-Two projects share one source and evidence repository:
+Two projects share one source and evidence repository. Their linked GitHub Projects are
+[FireTabs Android](https://github.com/users/TOVSWORLD/projects/4) and
+[Crestron Panel](https://github.com/users/TOVSWORLD/projects/5).
+
+Project source and scope:
 
 - **[FireTabs Android](projects/firetabs-android/)** — maintained, general-purpose Android
   loads with a current maintained kernel appropriate to each Android release.

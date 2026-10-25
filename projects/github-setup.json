@@ -47,5 +47,17 @@
       "number": 3,
       "url": "https://github.com/TOVSWORLD/Firetab-Android/milestone/3"
     }
+  },
+  "boards": {
+    "firetabs-android": {
+      "number": 4,
+      "id": "PVT_kwHOAkws184BonGX",
+      "url": "https://github.com/users/TOVSWORLD/projects/4"
+    },
+    "crestron-panel": {
+      "number": 5,
+      "id": "PVT_kwHOAkws184BonGa",
+      "url": "https://github.com/users/TOVSWORLD/projects/5"
+    }
   }
 }
