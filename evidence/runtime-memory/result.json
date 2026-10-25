@@ -1,0 +1,47 @@
+{
+  "scope": "Offline memory structure consistency only; reservation ownership and physical boot unqualified",
+  "physical_ranks": [
+    {
+      "start": 1073741824,
+      "bytes": 1073741824
+    },
+    {
+      "start": 2147483648,
+      "bytes": 536870912
+    }
+  ],
+  "usable_banks": [
+    {
+      "start": 1073741824,
+      "bytes": 1073741824
+    },
+    {
+      "start": 2147483648,
+      "bytes": 425721856
+    }
+  ],
+  "mblocks": [
+    {
+      "start": 1073741824,
+      "bytes": 1073741824,
+      "rank": 0
+    },
+    {
+      "start": 2147483648,
+      "bytes": 425721856,
+      "rank": 1
+    }
+  ],
+  "physical_bytes": 1610612736,
+  "usable_dt_bytes": 1499463680,
+  "excluded_from_usable_dt": [
+    {
+      "start": 2573205504,
+      "bytes": 111149056
+    }
+  ],
+  "standard_reg_matches_vendor_mblocks": true,
+  "boot_qualified": false,
+  "input_sha256": "a173d6a7820e6c7c68d30ce9487a577eb9c44c51554c4bc3718d17f476e7aac6",
+  "decoder_sha256": "e699c6967171a2e02ac92720c730cda8848e90ff52a3736030ad85894ec187f7"
+}

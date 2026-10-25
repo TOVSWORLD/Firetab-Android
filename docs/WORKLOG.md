@@ -614,3 +614,11 @@ hardware serial, household data, raw logs or full local report published. Actual
 runtime hvt DT reports two banks totaling1430MiB; installed build identity agrees
 with inspected OTA candidate, not binary/signature equivalence. PL7/LK3/TEE262
 exceed pinned helper6/2/259 maximums. No helper/device operation performed here.
+
+## 2026-10-25 — Decode actual runtime memory handoff (#58)
+
+Implemented strict offline decoder for big-endian DT reg and native little-endian
+ARM64 vendor structs; pinned source and compiler layout retained. Actual ranks
+total1536MiB, usable reg/mblocks agree at1430MiB, excluding106MiB at top. No
+ownership inference or DT enlargement. Five malformed/actual-data test groups
+added, all78 tests pass. Next: source-audit excluded/reserved intervals under#21.
