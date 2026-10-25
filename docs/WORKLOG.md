@@ -269,3 +269,16 @@ ports/169 AP interrupts/64 debounce entries. These are not hardware measurements
 A bounded Linux W=1 object-only probe will record actual ELF/hash/config results.
 Full Image linkage, legacy routing comparison and schema/runtime tests remain
 required. No pinctrl compilation pass is claimed before CI executes.
+
+Pinctrl reference audit: all 155 donor pin names, literal mux functions and EINT
+mappings match the pinned legacy Git object; 15 unique captured modern DT mux
+references map to descriptor entries. Original legacy table and hashes retained.
+This is a source comparison, not register/schema/electrical validation.
+
+Pinctrl object run 40169973832 passed with W=1 and zero compiler warning/error
+lines. ELF64 AArch64 object SHA256 recorded in evidence/pinctrl-port/object-result.json.
+Git storage measured 291,136 KiB; source including Git 2,066,692 KiB. Transfer bytes
+remain unknown. Source is unchanged by the subsequent audit/evidence/CI additions.
+Added both bounded reference audits to ordinary repository CI. #19 remains open:
+full Image integration, complete schema/register review and all runtime evidence
+are still pending.

@@ -28,3 +28,15 @@ Pending: compiler result; comparison against legacy pin/register/EINT mappings
 and actual douglas consumers; full DT schema work (#27); full Image integration
 with clock providers (#18); all hardware tests. No installable firmware, physical
 operations or runtime qualification are provided.
+
+## Legacy descriptor cross-check
+
+`python3 scripts/audit_pinctrl_references.py --check` compares pin names, all
+literal function entries and EINT mappings against the actual Git object from
+legacy kernel e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74. All 155 descriptors
+match. The 15 unique pin-function symbols in the captured modern DT also map to
+valid descriptor function slots. This does not compare every register table or
+prove electrical routing. The captured legacy Goodix node uses GPIO35 for IRQ
+and GPIO46 for reset; GPIO35 maps to EINT46, so GPIO and raw interrupt-line
+numbers must not be conflated during the later touch port. No new touch node
+is installed by this work.
