@@ -40,6 +40,20 @@ class StockFacts(unittest.TestCase):
         version = next(x for x in result['records'] if x['name'] == '/proc/device-tree/version')
         self.assertEqual(version['hex'], '68767400')
 
+    def test_loader_versions_are_retained_without_reading_serial(self):
+        fake = FakeReader()
+        versions = {'ro.boot.pl_version': b'6', 'ro.boot.lk_version': b'2',
+                    'ro.boot.tee_version': b'259', 'ro.build.version.fireos': b'5.3.7.3'}
+        def reader(args):
+            if args[:2] == ['shell', 'getprop'] and args[-1] in versions:
+                fake.calls.append(args)
+                return module.Result(0, versions[args[-1]])
+            return fake(args)
+        records = {x['name']: x for x in module.collect(reader)['records']}
+        for key, value in versions.items():
+            self.assertEqual(records[key]['text'], value.decode())
+        self.assertFalse(any('serial' in x[-1] for x in fake.calls))
+
     def test_refuses_wrong_device_before_other_reads(self):
         reader = FakeReader(model='OTHER', device='other')
         with self.assertRaises(ValueError):

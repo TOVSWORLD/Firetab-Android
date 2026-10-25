@@ -564,3 +564,11 @@ and official ARM64 boot ABI. New text_offset=0 requires 2MiB-aligned entry; old
 pinned amonet LK source hashes; payload is not complete loader evidence and
 MISC transitions can write persistently. No chosen addresses, firmware assembly,
 helpers executed or tablet access. Actual loader relocation remains unresolved.
+
+## 2026-10-25 — Include loader version identifiers in stock facts (#21)
+
+The read-only collector omitted three preloader/LK/TEE version properties used
+by pinned amonet step-1.sh. Added only those fixed names and internal Fire OS
+version for later installed/candidate matching; serial remains excluded. Fake
+transport verifies preservation and no serial query. No real ADB/device access
+or helper execution. Property values alone do not authenticate loader binaries.

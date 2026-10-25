@@ -12,7 +12,9 @@ import threading
 PROPERTIES = ('ro.product.manufacturer', 'ro.product.model', 'ro.product.device',
               'ro.build.version.release', 'ro.build.version.sdk', 'ro.build.display.id',
               'ro.build.version.incremental', 'ro.build.fingerprint', 'ro.bootloader',
-              'ro.hardware', 'ro.board.platform', 'ro.bootmode')
+              'ro.hardware', 'ro.board.platform', 'ro.bootmode',
+              'ro.build.version.fireos', 'ro.boot.pl_version', 'ro.boot.lk_version',
+              'ro.boot.tee_version')
 PROC_FILES = ('meminfo', 'iomem', 'partitions')
 CMDLINE_KEYS = {'console', 'earlycon', 'bootopt', 'mem', 'maxcpus', 'nr_cpus',
                 'androidboot.hardware', 'androidboot.bootloader',
