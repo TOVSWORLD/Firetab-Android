@@ -309,3 +309,11 @@ AArch64 Image is 41,351,680 bytes; SHA256 and vmlinux/config metadata recorded i
 evidence/kernel-compile/clock-image-result.json. Clock source is unchanged by
 the later audit/documentation update. PR #26 merged to development. Schema #27
 and parent resolution #29 remain open; no target boot/runtime gate is promoted.
+
+## 2026-10-25 — Local boot image inspector (#32)
+
+Implemented a regular-file-only, read-only header-v0 layout/hash/partition-fit
+inspector supporting #21. Rejects ambiguous formats, malformed pages, oversized
+or truncated input; counts unclassified tail bytes. Does not decompress, extract,
+pack, access device nodes/USB or claim signatures/bootability. Ten synthetic
+boundary/rejection tests added; 31 total tests pass. No real stock image inspected.
