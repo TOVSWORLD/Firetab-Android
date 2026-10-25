@@ -1,0 +1,21 @@
+{
+  "scope": "PMIC wrapper and power-domain object-only compile; no Image or runtime qualification",
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40170813712",
+  "repository_revision": "53e6960",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "compiler": "Ubuntu clang 18.1.3 (1ubuntu1)",
+  "linker": "Ubuntu LLD 18.1.3",
+  "extra_warnings": "W=1",
+  "object_architecture": "ELF64 AArch64 relocatable",
+  "hashes": {
+    "drivers/soc/mediatek/mtk-pmic-wrap.o": "72d508443fa0088d8fffc3b32b8236d8ad8b24e1ba11b7b36ddfb1bd1eaf1ff7",
+    "drivers/pmdomain/mediatek/mtk-pm-domains.o": "f96267016f79e31169704e203a8655ea5f73b131dbc773947aed578bc4db1b90",
+    ".config": "0b1c82af12a85b0045f3173edce9f961ec9f798db17b4af6152f512ab51f1acd"
+  },
+  "diagnostic_warning_error_lines": 0,
+  "git_storage_kib": 291136,
+  "source_including_git_kib": 2066692,
+  "network_bytes": null,
+  "full_image_linked": false,
+  "hardware_tested": false
+}

@@ -307,3 +307,9 @@ Added a reproducible PMIC wrapper register-offset audit to ordinary CI; 79 share
 named offsets match the pinned legacy header. No initialization transactions or
 power transitions are executed. This audit addition leaves probed driver source
 unchanged from the initial #30 commit.
+
+Power object run 40170813712 passed: actual wrapper and common power-domain
+objects are AArch64 ELF, W=1, zero compiler warning/error lines. Hashes and
+measured source/Git storage are recorded in evidence/power-port/object-result.json.
+Full Image integration, binding dependencies and runtime power sequencing remain
+open on #20. This does not advance any Android/douglas runtime validation gate.
