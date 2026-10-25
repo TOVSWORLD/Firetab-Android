@@ -3,9 +3,6 @@ evidence/** -whitespace
 patches/** -whitespace
 
 projects/firetabs-android/kernel/dtb/patches/** -whitespace
-
 projects/firetabs-android/kernel/clock-port/*.patch -whitespace
-
 projects/firetabs-android/kernel/pinctrl-port/*.patch -whitespace
-
 projects/firetabs-android/kernel/power-port/*.patch -whitespace
