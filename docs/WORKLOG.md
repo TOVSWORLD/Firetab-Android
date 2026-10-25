@@ -292,3 +292,20 @@ Added explicit workflow_dispatch mode clocks-pinctrl for full combined Image
 integration after the object probe. It applies both pinned overlays, verifies
 PINCTRL_MT8163=y and all clock symbols, compiles both directories with W=1 and
 links Image/vmlinux. This is still a generic config, not a douglas boot claim.
+## 2026-10-25 — Begin diagnostic boot-contract investigation (#21)
+
+Captured pinned legacy runtime-memory readers and ACK PSCI implementation.
+ACK supports old explicit-ID arm,psci as well as version-probed bindings; the
+legacy vendor MTCMOS sequence remains a separate unresolved delta. Both legacy
+and donor source DTs say 512 MiB; runtime DRAM/mblock inputs and actual loader
+fixups must be resolved rather than guessing a RAM replacement. Recorded reserved
+region discrepancies and a staged diagnostic/log/recovery plan. Inspected amonet
+source only; no unlock/helper/device operation or image packing performed.
+#21 remains open pending actual firmware/memory/loader and recovery evidence.
+
+Clock Image run 40169479688 succeeded at 07:09 UTC, about 36 minutes including
+setup/fetch/object/full build, with no compiler warning/error lines. Actual
+AArch64 Image is 41,351,680 bytes; SHA256 and vmlinux/config metadata recorded in
+evidence/kernel-compile/clock-image-result.json. Clock source is unchanged by
+the later audit/documentation update. PR #26 merged to development. Schema #27
+and parent resolution #29 remain open; no target boot/runtime gate is promoted.
