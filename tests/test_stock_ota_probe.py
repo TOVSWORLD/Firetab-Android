@@ -78,5 +78,6 @@ class OTAProbe(unittest.TestCase):
     def test_transfer_budget_is_checked_before_request(self):
         client = object.__new__(module.RangeClient)
         client.size, client.used, client.cache = module.LIMIT*2, module.LIMIT-1, []
+        client.limit = module.LIMIT
         with self.assertRaisesRegex(ValueError, 'budget'):
             client.read(0, 1)

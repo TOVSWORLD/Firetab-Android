@@ -80,3 +80,47 @@ Remaining #21 gates include exact installed build/stock facts, runtime RAM and
 reservations, CPU/PSCI handoff, wrapper/trailer/authentication requirements,
 recoverable loader route and a qualified log channel. No DT/ramdisk integration,
 boot-image packing or physical device operation occurs in this work.
+
+## Explicit preloader/LK static inspection (#78)
+
+The loader mode requires --loader-images plus --expected-build and refuses its
+combination with --boot-image. Manufacturer/model/device/platform must all match
+and incremental build must match exactly once before either loader is extracted.
+Only images/preloader.bin and images/lk.bin map to fixed output names. Local
+headers, CRC, compression/size checks remain active. Each raw/packed loader is
+capped1MiB; this mode enforces2MiB cumulative response bodies at the transport,
+including ZIP/property metadata. Unexpected full responses are refused before
+body reads; metadata/ZIP names never become arbitrary filesystem paths.
+
+Reproduce using the candidate URL documented above, fresh output path and:
+
+```sh
+python3 scripts/probe_stock_ota.py --download --loader-images \
+  --expected-build 50.6.5.9_user_659664620 --url "$OTA_URL" \
+  --output out/ota-loader-inspection-replay
+```
+
+Actual model/build-matched range inspection used452322 response-body bytes,
+below2097152; not the full907705758-byte package. preloader.bin139352 bytes,
+SHA256 b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5;
+lk.bin485552 bytes, SHA256
+4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08.
+Preloader begins MMM/FILE_INFO rather than the512-byte MTK image wrapper used
+by LK. LK has0x58881688 magic and declared payload485040 bytes, exactly file
+size minus512. This does not validate signatures or entry addresses.
+
+The documented heuristic string check_part_overlapped done is absent in this
+preloader. Absence is not proof it is patched or impossible to exploit; presence
+would not prove the code path usable either. LK contains androidboot.lk_version
+at byte388360, not a decoded/authenticated runtime-version value. No firmware
+code was executed, disassembled into a verified entry flow or written to a device.
+Installed properties agree with candidate build identity; installed binary hashes
+and full-package authentication remain unverified.
+
+Selected report, exact CRC/offset/size/range hashes, inspector hash and original
+local-report hash are retained in evidence/ota-loaders/inspection-result.json.
+Binaries remain ignored locally and are not redistributed.98 unit tests pass,
+including identity/build rejection before loader extraction, bad budget/entry
+refusal, exact whitelist, marker caps and inconclusive classification. Next#21
+work is static LK/preloader format/entry analysis against these exact artifacts,
+keeping old payload patch addresses untrusted until binary compatibility is proven.

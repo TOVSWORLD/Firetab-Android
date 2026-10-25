@@ -12,10 +12,16 @@ import zlib
 
 LIMIT = 20 * 1024 * 1024
 ENTRY_LIMIT = 16 * 1024 * 1024
+LOADER_BUDGET = 2 * 1024 * 1024
+LOADER_ENTRY_LIMIT = 1024 * 1024
+LOADER_ENTRIES = {'images/preloader.bin': 'preloader.bin', 'images/lk.bin': 'lk.bin'}
 
 
 class RangeClient:
-    def __init__(self, url, opener=urllib.request.urlopen):
+    def __init__(self, url, opener=urllib.request.urlopen, budget=LIMIT):
+        if type(budget) is not int or not 0 < budget <= LIMIT:
+            raise ValueError('Invalid response-body budget')
+        self.limit = budget
         parsed = urllib.parse.urlsplit(url)
         if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
             raise ValueError('Credential-free HTTPS URL required')
@@ -36,7 +42,7 @@ class RangeClient:
         for begin, data in self.cache:
             if begin <= start and start + length <= begin + len(data):
                 return data[start-begin:start-begin+length]
-        if self.used + length + 1 > LIMIT:
+        if self.used + length + 1 > self.limit:
             raise ValueError('Response-body budget exceeded')
         request = urllib.request.Request(self.url, headers={
             'Range': f'bytes={start}-{start+length-1}', 'If-Match': self.etag,
@@ -145,10 +151,58 @@ def probe(client, boot=False):
     return report, image
 
 
+def inspect_loader(data):
+    if not 8 <= len(data) <= LOADER_ENTRY_LIMIT:
+        raise ValueError('Loader size outside static inspection limit')
+    markers = {}
+    for marker in [b'check_part_overlapped done', b'androidboot.lk_version', b'bootopt=']:
+        offsets, start = [], 0
+        while len(offsets) < 32:
+            index = data.find(marker, start)
+            if index < 0:
+                break
+            offsets.append(index)
+            start = index+len(marker)
+        markers[marker.decode()] = {'offsets': offsets, 'occurrences_capped_at_32': len(offsets) == 32}
+    magic, declared = struct.unpack_from('<II', data)
+    return {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest(),
+            'first64_hex': data[:64].hex(), 'first_word_le': hex(magic),
+            'mtk_512_prefix_magic': magic == 0x58881688,
+            'declared_payload_bytes_if_mtk_prefix': declared if magic == 0x58881688 else None,
+            'declared_payload_within_file_if_mtk_prefix': declared <= len(data)-512 if magic == 0x58881688 else None,
+            'markers': markers, 'signature_verified': False, 'exploitability': 'not determined',
+            'installed_binary_equivalence_verified': False, 'executed': False}
+
+
+def probe_loaders(client, expected_build):
+    if not re.fullmatch(r'[A-Za-z0-9_.-]{1,128}', expected_build):
+        raise ValueError('Explicit expected incremental build required')
+    if getattr(client, 'limit', LOADER_BUDGET) > LOADER_BUDGET:
+        raise ValueError('Loader client must enforce at most 2 MiB response-body budget')
+    report, _ = probe(client)
+    if not report['douglas_identity_matched']:
+        raise ValueError('Wrong model identity; refusing loader extraction')
+    if report['identity'].get('ro.build.version.incremental') != [expected_build]:
+        raise ValueError('Wrong incremental build; refusing loader extraction')
+    entries = {x['name']: x for x in report['entries']}
+    selected = [entries[name] for name in LOADER_ENTRIES]
+    if any(e['compressed_bytes'] > LOADER_ENTRY_LIMIT or e['uncompressed_bytes'] > LOADER_ENTRY_LIMIT for e in selected):
+        raise ValueError('Oversized loader entry')
+    if sum(e['compressed_bytes'] for e in selected)+getattr(client, 'used', 0)+2*(4096+30+3) > min(getattr(client, 'limit', LOADER_BUDGET), LOADER_BUDGET):
+        raise ValueError('Planned loader extraction exceeds response-body budget')
+    payloads = {LOADER_ENTRIES[e['name']]: extract_entry(client, e) for e in selected}
+    report.update(expected_incremental_build=expected_build, build_identity_matched=True,
+                  loader_images={name: inspect_loader(data) for name, data in payloads.items()})
+    return report, payloads
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--download', action='store_true')
-    parser.add_argument('--boot-image', action='store_true', help='Fetch boot.img only after matching douglas identity')
+    images = parser.add_mutually_exclusive_group()
+    images.add_argument('--loader-images', action='store_true', help='Fetch only preloader/LK after explicit model/build match; 2 MiB body cap')
+    parser.add_argument('--expected-build', help='Required incremental build for loader inspection')
+    images.add_argument('--boot-image', action='store_true', help='Fetch boot.img only after matching douglas identity')
     parser.add_argument('--url', required=True)
     parser.add_argument('--output', required=True, type=Path)
     args = parser.parse_args()
@@ -156,13 +210,22 @@ def main():
         parser.error('--download required for bounded network access')
     if args.output.exists():
         parser.error('Output path exists; refusing to overwrite')
-    client = RangeClient(args.url)
-    report, image = probe(client, args.boot_image)
+    if args.loader_images and not args.expected_build:
+        parser.error('--expected-build required with --loader-images')
+    client = RangeClient(args.url, budget=LOADER_BUDGET if args.loader_images else LIMIT)
+    payloads = {}
+    if args.loader_images:
+        report, payloads = probe_loaders(client, args.expected_build)
+        image = None
+    else:
+        report, image = probe(client, args.boot_image)
     args.output.mkdir(parents=True)
     if image is not None:
         (args.output/'boot.img').write_bytes(image)
+    for name, data in payloads.items():
+        (args.output/name).write_bytes(data)
     report.update(url=client.url, headers=client.headers, response_body_bytes=client.used,
-                  response_body_budget=LIMIT, ranges=client.ranges, full_package_downloaded=False,
+                  response_body_budget=client.limit, ranges=client.ranges, full_package_downloaded=False,
                   signature_verified=False, installed_build_matched=False, hardware_tested=False)
     (args.output/'report.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k: report[k] for k in ['identity', 'boot_image', 'response_body_bytes', 'signature_verified']}, indent=2))

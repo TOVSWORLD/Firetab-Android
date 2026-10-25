@@ -1,0 +1,180 @@
+{
+  "scope": "Partial OTA inspection; ZIP CRC is not signature/full-package authentication",
+  "identity": {
+    "ro.build.version.incremental": [
+      "50.6.5.9_user_659664620"
+    ],
+    "ro.build.version.fireos": [
+      "5.3.7.3",
+      "5.3.7.3"
+    ],
+    "ro.build.version.sdk": [
+      "22"
+    ],
+    "ro.build.version.release": [
+      "5.1.1"
+    ],
+    "ro.product.model": [
+      "KFDOWI"
+    ],
+    "ro.product.name": [
+      "douglas"
+    ],
+    "ro.product.device": [
+      "douglas"
+    ],
+    "ro.product.manufacturer": [
+      "Amazon"
+    ],
+    "ro.board.platform": [
+      "mt8163"
+    ],
+    "ro.build.fingerprint": [
+      "Amazon/douglas/douglas:5.1.1/LVY48F/50.6.5.9_user_659664620:user/release-keys"
+    ]
+  },
+  "douglas_identity_matched": true,
+  "expected_incremental_build": "50.6.5.9_user_659664620",
+  "build_identity_matched": true,
+  "properties_sha256": "a3779b428fdb696b51b86e072f3a354ab942e5dde95140ad06abc6763ffa9185",
+  "loader_images": {
+    "preloader.bin": {
+      "bytes": 139352,
+      "sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+      "first64_hex": "4d4d4d013800000046494c455f494e464f0000000100000001000503000d20005820020000000400000300002401000000030000010000004d4d4d010c000100",
+      "first_word_le": "0x14d4d4d",
+      "mtk_512_prefix_magic": false,
+      "declared_payload_bytes_if_mtk_prefix": null,
+      "declared_payload_within_file_if_mtk_prefix": null,
+      "markers": {
+        "check_part_overlapped done": {
+          "offsets": [],
+          "occurrences_capped_at_32": false
+        },
+        "androidboot.lk_version": {
+          "offsets": [],
+          "occurrences_capped_at_32": false
+        },
+        "bootopt=": {
+          "offsets": [],
+          "occurrences_capped_at_32": false
+        }
+      },
+      "signature_verified": false,
+      "exploitability": "not determined",
+      "installed_binary_equivalence_verified": false,
+      "executed": false
+    },
+    "lk.bin": {
+      "bytes": 485552,
+      "sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "first64_hex": "88168858b06607004c4b000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffff",
+      "first_word_le": "0x58881688",
+      "mtk_512_prefix_magic": true,
+      "declared_payload_bytes_if_mtk_prefix": 485040,
+      "declared_payload_within_file_if_mtk_prefix": true,
+      "markers": {
+        "check_part_overlapped done": {
+          "offsets": [],
+          "occurrences_capped_at_32": false
+        },
+        "androidboot.lk_version": {
+          "offsets": [
+            388360
+          ],
+          "occurrences_capped_at_32": false
+        },
+        "bootopt=": {
+          "offsets": [],
+          "occurrences_capped_at_32": false
+        }
+      },
+      "signature_verified": false,
+      "exploitability": "not determined",
+      "installed_binary_equivalence_verified": false,
+      "executed": false
+    }
+  },
+  "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659664620.bin",
+  "response_body_bytes": 452322,
+  "response_body_budget": 2097152,
+  "ranges": [
+    {
+      "offset": 907640201,
+      "bytes": 65557,
+      "sha256": "9795ed3ee3cd9ea9f1302b21fb6d5dadeb1fa15919695137c95677867c08a891"
+    },
+    {
+      "offset": 873,
+      "bytes": 30,
+      "sha256": "a40c00fc0e60cfb6037a36a63087c956b9d8e7c7673961ed04f490bc1e2c5b68"
+    },
+    {
+      "offset": 903,
+      "bytes": 45,
+      "sha256": "c2594341f8c34f51a2026020dd980b7880c17e5dff70f681c29cf7abcd9b954d"
+    },
+    {
+      "offset": 948,
+      "bytes": 2913,
+      "sha256": "5aab33dbad9f5ebe8a9b984232809a157dfc78af0306f8f0ac264f647263c3af"
+    },
+    {
+      "offset": 9280799,
+      "bytes": 30,
+      "sha256": "e5abbc2a2339b07dc386571fd5441b6dc7f53d69e8faa2d658d900be4b7dcb5f"
+    },
+    {
+      "offset": 9280829,
+      "bytes": 20,
+      "sha256": "bf9f89ddd5d271b35aa06481035a2d965f907804a26b46b9eefd3852cf85ddd4"
+    },
+    {
+      "offset": 9280849,
+      "bytes": 89263,
+      "sha256": "5fc3af753fc774798b8e966d9f76e5e357f5ca745b3ebd20162297c7f8ed9e2b"
+    },
+    {
+      "offset": 8986319,
+      "bytes": 30,
+      "sha256": "5043259f5abdc4f87786783db8f5e4a689f4de778d22d06cb9057ab2e061f580"
+    },
+    {
+      "offset": 8986349,
+      "bytes": 13,
+      "sha256": "061f42ed9bd7b8a7faa566ff0b52ea3c9eb327409e35dfbcdb59287f88b97a77"
+    },
+    {
+      "offset": 8986362,
+      "bytes": 294421,
+      "sha256": "9385eab252231f5a8238b1d5436223b8514d550060b4f76b4de6bdd23edce90d"
+    }
+  ],
+  "full_package_downloaded": false,
+  "signature_verified": false,
+  "installed_build_matched": false,
+  "hardware_tested": false,
+  "selected_entries": [
+    {
+      "name": "images/lk.bin",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 2250206794,
+      "compressed_bytes": 294421,
+      "uncompressed_bytes": 485552,
+      "offset": 8986319
+    },
+    {
+      "name": "images/preloader.bin",
+      "flags": 2056,
+      "method": 8,
+      "crc32": 4259382018,
+      "compressed_bytes": 89263,
+      "uncompressed_bytes": 139352,
+      "offset": 9280799
+    }
+  ],
+  "inspector_sha256": "219a9a198d48b80220c13c389a9de17c6a04ea2a22f9318fa5404212da0bd7a2",
+  "raw_local_report_sha256": "6b639351f22e05058b58b46effed0df5224a29526b3489ff3d2705814547c6ee",
+  "binaries_published": false
+}

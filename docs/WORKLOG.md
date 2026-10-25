@@ -700,3 +700,11 @@ old minimal chain still modifies GPT/RPMB/preloader/boot. No qualified safe rout
 yet. Offline assessor and3tests added;93tests pass. Next bounded OTA preloader/LK
 static inspection planned383684compressed bytes plus metadata, no fullOTA.
 No helper/payload compiled/executed, reference modified or tablet accessed.
+
+## 2026-10-25 — Bounded build-matched loader inspection (#78)
+
+Explicit loader whitelist/model/build gate,2MiB transport body cap,1MiB entries
+and capped static marker/header reports added. Actual452322B fetched; preloader
+139352B/LK485552B hashes retained, binaries ignored/notexecuted. Heuristic marker
+absent; exploitability remains unknown. LK wrapper485040B payload equals file
+minus512.98 tests pass. Next#21 static entry/format audit, no tablet operations.
