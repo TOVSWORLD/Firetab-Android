@@ -1,0 +1,69 @@
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:memory-region: False schema does not allow [{'description': 'Describes the specific reserved memory region that this allocator\nwill allocate memory from for a Virtual Machine. Refer to\nDocumentation/devicetree/bindings/reserved-memory/reserved-memory.txt\nfor more information.\n'}]
+	hint: Scalar properties should not have array keywords
+	from schema $id: http://devicetree.org/meta-schemas/keywords.yaml
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+	from schema $id: http://devicetree.org/meta-schemas/keywords.yaml
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: 'example' is not one of ['$id', '$schema', 'title', 'description', 'examples', 'required', 'allOf', 'anyOf', 'oneOf', 'definitions', '$defs', 'additionalProperties', 'dependencies', 'dependentRequired', 'dependentSchemas', 'patternProperties', 'properties', 'not', 'if', 'then', 'else', 'unevaluatedProperties', 'deprecated', 'maintainers', 'select', '$ref']
+	from schema $id: http://devicetree.org/meta-schemas/base.yaml
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: 'oneOf' conditional failed, one must be fixed:
+	'unevaluatedProperties' is a required property
+	'additionalProperties' is a required property
+	hint: Either unevaluatedProperties or additionalProperties must be present
+	from schema $id: http://devicetree.org/meta-schemas/core.yaml
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:memory-region: 'anyOf' conditional failed, one must be fixed:
+	'maxItems' is a required property
+		hint: Only "maxItems" is required for a single entry if there are no constraints defined for the values.
+	'$ref' is not one of ['maxItems', 'description', 'deprecated']
+		hint: Only "maxItems" is required for a single entry if there are no constraints defined for the values.
+	'items' is not one of ['maxItems', 'description', 'deprecated']
+		hint: Only "maxItems" is required for a single entry if there are no constraints defined for the values.
+	Additional properties are not allowed ('$ref' was unexpected)
+		hint: Arrays must be described with a combination of minItems/maxItems/items
+	'items' is not one of ['description', 'deprecated', 'const', 'enum', 'minimum', 'maximum', 'multipleOf', 'default', '$ref', 'oneOf']
+	hint: cell array properties must define how many entries and what the entries are when there is more than one entry.
+	from schema $id: http://devicetree.org/meta-schemas/cell.yaml
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+<workspace>/work/gunyah-review/firmware/gunyah-cma-mem.yaml: properties:compatible: [{'const': 'gunyah-cma-vm-mem'}] is not of type 'object', 'boolean'
+Traceback (most recent call last):
+  File "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate", line 6, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/doc_validate.py", line 66, in main
+    ret |= check_doc(f)
+           ~~~~~~~~~^^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/doc_validate.py", line 37, in check_doc
+    dtsch.check_schema_refs()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/schema.py", line 242, in check_schema_refs
+    self._check_schema_refs(resolver, self)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/schema.py", line 212, in _check_schema_refs
+    self._check_schema_refs(resolver, v, parent=k, is_common=is_common,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            has_constraint=has_constraint)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/schema.py", line 212, in _check_schema_refs
+    self._check_schema_refs(resolver, v, parent=k, is_common=is_common,
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                            has_constraint=has_constraint)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/dtschema/schema.py", line 203, in _check_schema_refs
+    ref_sch = resolver.lookup(schema['$ref']).contents
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/referencing/_core.py", line 682, in lookup
+    retrieved = self._registry.get_or_retrieve(uri)
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/referencing/_core.py", line 422, in get_or_retrieve
+    registry = self.crawl()
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/referencing/_core.py", line 500, in crawl
+    id = resource.id()
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/referencing/_core.py", line 231, in id
+    id = self._specification.id_of(self.contents)
+  File "<workspace>/work/dtb-tool/venv/lib/python3.15/site-packages/referencing/jsonschema.py", line 50, in _dollar_id
+    return contents.get("$id")
+           ^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'

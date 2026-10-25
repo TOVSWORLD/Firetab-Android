@@ -36,3 +36,28 @@ The upstream Gunyah YAML parsing failure and remaining coverage/validation error
 persist. The overall command exits 1 and reports passed=false. Logs, structured
 delta and exact hashes are retained under evidence/uart-binding. No kernel build,
 firmware packing, tablet access or physical changes occur.
+
+## Opt-in full-corpus YAML lexical repair (#62)
+
+`validate_douglas_bindings.py --experiment sysirq-node-name --binding-profile
+mt8163-uart-proposed --repair-gunyah-yaml` applies a separate hash-locked local
+repair to the extracted corpus: exactly three tab indentation characters become
+six spaces. Default ACK input and schema semantics remain unchanged. Input/output
+hashes and ACK revision are locked in bindings/gunyah-yaml-repair.json; changed
+inputs are refused. No diagnostics or schemas are suppressed.
+
+Actual local full-corpus run retained under `evidence/gunyah-binding` now gets
+past YAML lexical parsing. Gunyah remains ignored by dt-mk-schema for an invalid
+compatible schema, explicitly recorded in stderr. Separate meta-validation
+exposes compatible list type, memory-region constraints, singular example key
+and missing additional/unevaluatedProperties issues. Indentation repair does
+not qualify that schema or the full corpus. Tools still return0 despite those
+errors; wrapper correctly returns1/passed=false. DT results remain29 validation
+errors plus57 unmatched entries (86 diagnostics), unchanged by this unrelated
+schema's lexical repair. The opt-in UART schema itself remains meta-clean.
+
+Next task under#27: source-backed semantic correction of the Gunyah schema and
+example, preserving compatible/memory-region behavior, then rerun full corpus;
+alternatively independently resolve the PMIC shutdown/generic-domain selector
+overlap. No hardware/device/compiler build or download occurred here. This closes
+only the bounded lexical-repair implementation scope, not#27 validation.
