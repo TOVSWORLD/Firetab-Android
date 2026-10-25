@@ -1,0 +1,22 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "inputs": [
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "target": "drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "sha256": "aa3c679d8eade2dfa2363fb9e1a7e8c778fa364e69ac56b41a3444f25941bcee"
+    },
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "target": "drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "sha256": "53c1adc2ef0af8af42eb17ce4dcc0b32a41354cee1adcd956fa63a1794ef5106"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "target": "include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "sha256": "870564d41f8905c8c955ab4c3e57547a889f598fca24f8bff7272811e4f83106"
+    }
+  ],
+  "scope": "Unmodified donor pinctrl candidate; object compilation and hardware behavior untested"
+}

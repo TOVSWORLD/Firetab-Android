@@ -259,3 +259,13 @@ ready-for-review or explicit workflow_dispatch, rather than on every documentati
 push. Source-affecting updates require an explicit rebuild at the new revision;
 repository validation continues on every PR update. Run 40169479688's clock source
 is unchanged by this audit/documentation/workflow-trigger update.
+
+## 2026-10-25 — Prepare pinctrl/EINT object probe (#19)
+
+While the #18 full kernel compile runs, prepared the next source integration as
+a separate stacked change: three unmodified donor files and real Kconfig/Makefile
+wiring. ACK common APIs/data fields exist; donor declares 155 pins, six EINT
+ports/169 AP interrupts/64 debounce entries. These are not hardware measurements.
+A bounded Linux W=1 object-only probe will record actual ELF/hash/config results.
+Full Image linkage, legacy routing comparison and schema/runtime tests remain
+required. No pinctrl compilation pass is claimed before CI executes.
