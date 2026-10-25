@@ -1,0 +1,42 @@
+
+*** Dumping AST Record Layout
+         0 | struct __va_list
+         0 |   void * __stack
+         8 |   void * __gr_top
+        16 |   void * __vr_top
+        24 |   int __gr_offs
+        28 |   int __vr_offs
+           | [sizeof=32, align=8]
+
+*** Dumping AST Record Layout
+         0 | struct __NSConstantString_tag
+         0 |   const int * isa
+         8 |   int flags
+        16 |   const char * str
+        24 |   long length
+           | [sizeof=32, align=8]
+
+*** Dumping AST Record Layout
+         0 | struct mem_desc
+         0 |   u64 start
+         8 |   u64 size
+           | [sizeof=16, align=8]
+
+*** Dumping AST Record Layout
+         0 | struct mblock
+         0 |   u64 start
+         8 |   u64 size
+        16 |   u32 rank
+           | [sizeof=24, align=8]
+
+*** Dumping AST Record Layout
+         0 | struct mblock_info
+         0 |   u32 mblock_num
+         8 |   struct mblock[4] mblock
+           | [sizeof=104, align=8]
+
+*** Dumping AST Record Layout
+         0 | struct dram_info
+         0 |   u32 rank_num
+         8 |   struct mem_desc[4] rank_info
+           | [sizeof=72, align=8]

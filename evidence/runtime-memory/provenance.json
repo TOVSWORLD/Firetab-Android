@@ -1,0 +1,17 @@
+{
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "source_path": "arch/arm64/include/uapi/asm/setup.h",
+  "source_sha256": "eb0058e1000af326423fa5c47ebfd4527f26bfad3cfa24a71810765f6d78e32c",
+  "source_url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/include/uapi/asm/setup.h",
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "layout_command": [
+    "clang",
+    "-cc1",
+    "-triple",
+    "aarch64-linux-gnu",
+    "-fdump-record-layouts-complete",
+    "/tmp/firetabs-memory-layout.c"
+  ],
+  "consumer_source": "evidence/boot-contract/legacy/drivers/misc/mediatek/mem/mtk_memcfg.c",
+  "interpretation": "ARM64 little-endian native structs, unlike big-endian standard DT reg cells"
+}

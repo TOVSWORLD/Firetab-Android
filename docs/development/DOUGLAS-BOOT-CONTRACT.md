@@ -233,3 +233,39 @@ All three exceed that source's limits. No helper was executed; this is evidence
 against treating that software path as a ready non-destructive boot route, not
 proof every alternative unlock/recovery technique is impossible. No root,
 reboot, raw partition read, unlock, flash or wipe was performed.
+
+## Runtime memory reconciliation — issue #58
+
+Run the strict offline decoder:
+
+```sh
+python3 scripts/decode_runtime_memory.py evidence/stock-facts/runtime-contract.json
+```
+
+Pinned legacy ARM64 `arch/arm64/include/uapi/asm/setup.h` defines native dram_info
+and mblock_info structs. The retained source, hash/provenance and AArch64 compiler
+layout are under `evidence/runtime-memory/`. Their u32 counts are followed by
+four padding bytes, then four records: dram rank stride16/total72 bytes, mblock
+stride24/total104 bytes. The legacy memory consumer casts the properties directly
+to these structs; standard DT reg instead uses big-endian cells. No layout is
+inferred merely from convenient values. Compiler input uses the exact upstream
+struct declarations and explicit u64/u32 typedefs; command/version are recorded.
+
+The actual rank entries describe [0x40000000,0x80000000) plus
+[0x80000000,0xa0000000), totaling1536MiB. mblocks exactly match standard DT reg:
+1024MiB plus406MiB, total1430MiB. A106MiB top interval
+[0x99600000,0xa0000000) is excluded from that usable map. This is a measured
+handoff distinction, not identification of that interval's owner. MemTotal is
+smaller again; kernel allocations/reservations cannot be attributed from this
+arithmetic alone. Never expose the106MiB gap to Linux based on physical rank size.
+
+The decoder refuses wrong property sizes/cell widths, duplicate/unavailable
+records, invalid counts/rank indexes, zero/overflowing/overlapping ranges,
+mblocks outside their ranks and disagreement with standard reg. Padding/inactive
+record bytes are ignored. Retained result includes exact input/decoder hashes.
+Issue #58 completes this bounded decoding/reconciliation scope; #21 still owns
+loader placement, reservation ownership, entry contract, recovery and logging.
+Next actionable offline task: reconcile the106MiB exclusion and other retained
+reserved-memory regions against pinned firmware/legacy memory sources, then
+assess a board DT candidate preserving those regions. No physical query or boot
+image assembly was performed for this work.
