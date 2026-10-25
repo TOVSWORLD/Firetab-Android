@@ -20,6 +20,7 @@ class FakeReader:
         values = {'ro.product.manufacturer': b'Amazon', 'ro.product.model': self.model.encode(),
                   'ro.product.device': self.device.encode(), '/proc/cmdline': b'console=ttyS0 androidboot.serialno=SECRET bootopt=64S3 unknown=PRIVATE',
                   '/proc/device-tree': b'memory@40000000 chosen serial-number',
+                  '/proc/device-tree/version': b'hvt\0',
                   '/proc/device-tree/memory@40000000/reg': bytes.fromhex('00000000400000000000000060000000')}
         return module.Result(0, values[key]) if key in values else module.Result(1, stderr=b'unavailable SECRET')
 
@@ -36,6 +37,8 @@ class StockFacts(unittest.TestCase):
         memory = next(x for x in result['records'] if x['name'].endswith('/reg'))
         self.assertTrue(memory['available'])
         self.assertEqual(memory['hex'], '00000000400000000000000060000000')
+        version = next(x for x in result['records'] if x['name'] == '/proc/device-tree/version')
+        self.assertEqual(version['hex'], '68767400')
 
     def test_refuses_wrong_device_before_other_reads(self):
         reader = FakeReader(model='OTHER', device='other')

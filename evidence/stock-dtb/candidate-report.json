@@ -1,0 +1,234 @@
+{
+  "scope": "Static file layout, not signature/loader/runtime qualification",
+  "gzip_bytes": 7026236,
+  "gzip_uncompressed_bytes": 16584856,
+  "gzip_uncompressed_sha256": "43b5e6440ad70a6622e3d4ee9cb92f3207d45707e54a16697430036080f2f6e0",
+  "arm64_magic": true,
+  "decompression_budget": 67108864,
+  "dtbs": [
+    {
+      "index": 0,
+      "offset_in_kernel_component": 7026748,
+      "bytes": 82277,
+      "sha256": "176c96a8f36c44d00340b428eab0a9cc0ca7e8f20b79d4903a24eb003d718498",
+      "header_reservations": [],
+      "facts": {
+        "model": {
+          "exit_code": 0,
+          "value": "MT8163"
+        },
+        "compatible": {
+          "exit_code": 0,
+          "value": "mediatek,mt8163"
+        },
+        "version": {
+          "exit_code": 0,
+          "value": "pre_evt"
+        },
+        "#address-cells": {
+          "exit_code": 0,
+          "value": "2"
+        },
+        "#size-cells": {
+          "exit_code": 0,
+          "value": "2"
+        },
+        "memory_nodes": {
+          "/memory@00000000": {
+            "exit_code": 0,
+            "value": "0 40000000 0 20000000"
+          }
+        },
+        "psci": {
+          "compatible": {
+            "exit_code": 0,
+            "value": "arm,psci"
+          },
+          "method": {
+            "exit_code": 0,
+            "value": "smc"
+          },
+          "cpu_suspend": {
+            "exit_code": 0,
+            "value": "84000001"
+          },
+          "cpu_off": {
+            "exit_code": 0,
+            "value": "84000002"
+          },
+          "cpu_on": {
+            "exit_code": 0,
+            "value": "84000003"
+          },
+          "affinity_info": {
+            "exit_code": 0,
+            "value": "84000004"
+          }
+        },
+        "cpu0_enable_method": {
+          "exit_code": 0,
+          "value": "mt-boot"
+        },
+        "reserved_nodes": {
+          "/reserved-memory/mdump-reserved-memory@4bd00000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 4bd00000 0 300000"
+            }
+          },
+          "/reserved-memory/atf-reserved-memory@43000000": {
+            "no-map": {
+              "exit_code": 0,
+              "value": ""
+            },
+            "reg": {
+              "exit_code": 0,
+              "value": "0 43000000 0 30000"
+            }
+          },
+          "/reserved-memory/ram_console-reserved-memory@44400000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 44400000 0 200000"
+            }
+          },
+          "/reserved-memory/consys-reserve-memory": {
+            "no-map": {
+              "exit_code": 0,
+              "value": ""
+            },
+            "size": {
+              "exit_code": 0,
+              "value": "0 200000"
+            },
+            "alignment": {
+              "exit_code": 0,
+              "value": "0 200000"
+            }
+          },
+          "/reserved-memory/ll_log-reserved-memory@46600000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 44600000 0 20000"
+            }
+          }
+        }
+      }
+    },
+    {
+      "index": 1,
+      "offset_in_kernel_component": 7109025,
+      "bytes": 82641,
+      "sha256": "887392afe3b005b9324f0797f124153ed846649b0ebdba86f2018f1caf6c9da1",
+      "header_reservations": [],
+      "facts": {
+        "model": {
+          "exit_code": 0,
+          "value": "MT8163"
+        },
+        "compatible": {
+          "exit_code": 0,
+          "value": "mediatek,mt8163"
+        },
+        "version": {
+          "exit_code": 0,
+          "value": "hvt"
+        },
+        "#address-cells": {
+          "exit_code": 0,
+          "value": "2"
+        },
+        "#size-cells": {
+          "exit_code": 0,
+          "value": "2"
+        },
+        "memory_nodes": {
+          "/memory@00000000": {
+            "exit_code": 0,
+            "value": "0 40000000 0 20000000"
+          }
+        },
+        "psci": {
+          "compatible": {
+            "exit_code": 0,
+            "value": "arm,psci"
+          },
+          "method": {
+            "exit_code": 0,
+            "value": "smc"
+          },
+          "cpu_suspend": {
+            "exit_code": 0,
+            "value": "84000001"
+          },
+          "cpu_off": {
+            "exit_code": 0,
+            "value": "84000002"
+          },
+          "cpu_on": {
+            "exit_code": 0,
+            "value": "84000003"
+          },
+          "affinity_info": {
+            "exit_code": 0,
+            "value": "84000004"
+          }
+        },
+        "cpu0_enable_method": {
+          "exit_code": 0,
+          "value": "mt-boot"
+        },
+        "reserved_nodes": {
+          "/reserved-memory/mdump-reserved-memory@4bd00000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 4bd00000 0 300000"
+            }
+          },
+          "/reserved-memory/atf-reserved-memory@43000000": {
+            "no-map": {
+              "exit_code": 0,
+              "value": ""
+            },
+            "reg": {
+              "exit_code": 0,
+              "value": "0 43000000 0 30000"
+            }
+          },
+          "/reserved-memory/ram_console-reserved-memory@44400000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 44400000 0 200000"
+            }
+          },
+          "/reserved-memory/consys-reserve-memory": {
+            "no-map": {
+              "exit_code": 0,
+              "value": ""
+            },
+            "size": {
+              "exit_code": 0,
+              "value": "0 200000"
+            },
+            "alignment": {
+              "exit_code": 0,
+              "value": "0 200000"
+            }
+          },
+          "/reserved-memory/ll_log-reserved-memory@46600000": {
+            "reg": {
+              "exit_code": 0,
+              "value": "0 44600000 0 20000"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "boot_image_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "fdtget_version": "Version: DTC 1.8.1",
+  "inspector_sha256": "29bd287ecfd99ca778da161e44b297cf8dfd85f446905166285e3f0cbda902cc",
+  "installed_build_matched": false,
+  "signature_verified": false,
+  "hardware_tested": false
+}

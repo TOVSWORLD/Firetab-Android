@@ -110,3 +110,10 @@ contract, usable log capture and recoverability are prerequisites still lacking.
 Coordinate storage/console #22, matched schemas #27 and provider integration
 #18–#20. Current kernel builds are generic compile experiments, not this diagnostic
 configuration or an Android/douglas boot result.
+
+The [candidate's actual appended DTBs](STOCK-DTB-CONTRACT.md) now corroborate the
+legacy source: two versions(pre_evt/hvt), static512MiB memory, legacy explicit-ID
+PSCI with CPU0 mt-boot, and ATF/RAM-console/mdump/low-log/CONSYS reservations.
+Selection, runtime fixups and secondary-CPU behavior remain unverified. Read-only
+stock collection includes the individual DT version property for later evidence;
+no device transport was executed.
