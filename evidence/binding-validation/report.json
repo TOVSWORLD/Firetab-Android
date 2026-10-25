@@ -1,0 +1,44 @@
+{
+  "scope": "Pinned ACK corpus only; donor-specific schemas still incomplete; no hardware validation",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "archive_sha256": "4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526",
+  "yaml_files": 5186,
+  "dtschema_version": "2026.9",
+  "dtb_sha256": "15ee8e58fde850ee571ac607bca5cce480b30c7641265f166edb4b848cda2cf8",
+  "commands": [
+    {
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-mk-schema",
+        "-j",
+        "-o",
+        "<workspace>/work/binding-validation/result/processed.json",
+        "<ack-bindings>"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 1
+    },
+    {
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-validate",
+        "-s",
+        "<workspace>/work/binding-validation/result/processed.json",
+        "-m",
+        "--json-output",
+        "<workspace>/work/binding-validation/result/diagnostics.json",
+        "<workspace>/work/dtb-compile/repro/douglas.dtb"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 340
+    }
+  ],
+  "diagnostic_count": 97,
+  "diagnostic_types": {
+    "unmatched": 61,
+    "validation": 36
+  },
+  "diagnostic_levels": {
+    "warning": 61,
+    "error": 36
+  },
+  "passed": false
+}
