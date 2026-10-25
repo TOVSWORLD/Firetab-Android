@@ -1,0 +1,2 @@
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T07:13:37.6958542Z   CC      drivers/tty/serial/8250/8250_mtk.o
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T07:23:22.7438529Z   CC      drivers/mmc/host/mtk-sd.o
