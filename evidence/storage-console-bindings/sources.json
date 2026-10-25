@@ -1,0 +1,19 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "drivers": [
+    {
+      "local_path": "evidence/console-storage/ack/drivers/mmc/host/mtk-sd.c",
+      "sha256": "8fd10e3a6f6d60e37216de79b2d7a8b8f766c7d7e5cdd5851cccfe375e2536d1"
+    },
+    {
+      "local_path": "evidence/storage-console-bindings/ack-mtk-uart-apdma.c",
+      "sha256": "85a6da8ad900ff3c15f0b2af72c01f8028457df95c591483769ad539512090b2"
+    }
+  ],
+  "matches": {
+    "mmc": "mediatek,mt2701-mmc",
+    "uart_dma": "mediatek,mt6577-uart-dma"
+  },
+  "dt_source": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+  "hardware_tested": false
+}

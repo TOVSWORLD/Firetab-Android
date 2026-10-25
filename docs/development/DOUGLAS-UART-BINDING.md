@@ -90,3 +90,32 @@ error is still explicitly reported. This is a local source-backed selector
 proposal, not upstream acceptance or a full-schema/hardware pass. Next#27 task:
 map and resolve remaining errors by binding/node with negative controls, beginning
 with Gunyah structural invalidity or a board-relevant mismatch. No device access.
+
+## Strict storage and UART-DMA compatible coverage (#72)
+
+The unchanged donor's three MMC controllers declare MT8163 followed by MT2701;
+its UART APDMA declares MT8163 followed by MT6577. Pinned ACK mtk-sd.c and
+mtk-uart-apdma.c match those fallbacks. Source hashes/snapshot provenance are in
+evidence/storage-console-bindings. No claim is made that the fallback's timing,
+DMA addressing or tuning is qualified on douglas.
+
+Two new independent opt-in profiles, --extra-binding mt8163-mmc and
+--extra-binding mt8163-uart-dma, add only these exact compatible pairs. For MMC,
+the existing MT7623+MT2701 tuple becomes a first-string enum of MT7623/MT8163;
+UART-DMA adds MT8163 to its first-string enum. Required fallbacks and all clock,
+register, interrupt, DMA, pinctrl and power constraints remain unchanged. Default
+corpus and DT/driver inputs do not change. Append both profiles to the preceding
+rdma-node-name full-context command including prior proposal flags.
+
+Actual meta-validation of both proposals is clean. Processed-schema controls
+accept exact pairs and existing supported SoCs, reject missing/wrong/extra
+fallbacks, and compare all other YAML constraints with original. Reproduce with
+`work/dtb-tool/venv/bin/python evidence/storage-console-bindings/check-controls.py`.
+Locked patch tests reject changed input and prove all other constraint bytes
+preserved.89 unit tests pass. Full-context delta removes4 validation errors and
+4 unmatched entries (three MMC nodes and one DMA node), adds none:21 validation
+errors/51 unmatched remain,72 diagnostics, overallpassed=false/exit1. Exact
+source/patch/input/processed/control hashes, local logs/results and delta retained.
+This is binding coverage only, not storage access, UART DMA operation or a
+boot-ready image. Next#27 remaining I2C/SPI/ADC/RNG fallback coverage, or display
+binding gaps with the same negative-control discipline. No tablet accessed.

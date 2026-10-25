@@ -1,0 +1,48 @@
+{
+  "removed": [
+    {
+      "message": "['mediatek,mt8163-uart-dma', 'mediatek,mt6577-uart-dma'] is not valid under any of the given schemas",
+      "node": "/soc/dma-controller@11000300",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-uart-dma', 'mediatek,mt6577-uart-dma']",
+      "node": "/soc/dma-controller@11000300",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is not valid under any of the given schemas",
+      "node": "/soc/mmc@11230000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']",
+      "node": "/soc/mmc@11230000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is not valid under any of the given schemas",
+      "node": "/soc/mmc@11240000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']",
+      "node": "/soc/mmc@11240000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc'] is not valid under any of the given schemas",
+      "node": "/soc/mmc@11250000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mmc', 'mediatek,mt2701-mmc']",
+      "node": "/soc/mmc@11250000",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "baseline_count": 80,
+  "new_count": 72,
+  "passed_full_validation": false
+}
