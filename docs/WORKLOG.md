@@ -572,3 +572,12 @@ by pinned amonet step-1.sh. Added only those fixed names and internal Fire OS
 version for later installed/candidate matching; serial remains excluded. Fake
 transport verifies preservation and no serial query. No real ADB/device access
 or helper execution. Property values alone do not authenticate loader binaries.
+
+## 2026-10-25 — Audit diagnostic RAM logging gap (#21/#22)
+
+Resolved config has PSTORE_RAM=m with console/pmsg disabled, while minimal init
+cannot load modules. QEMU success is live PL011 output, not retained RAM logs.
+Pinned legacy source has a custom multi-stage buffer and optional eMMC write
+path; no wholesale logging backport or reservation reuse is justified yet.
+Recorded exact hashes and requirements for an isolated backend/retention/reader
+or qualified UART path. No config/device changes or helper execution.
