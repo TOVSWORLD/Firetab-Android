@@ -1,0 +1,322 @@
+work/dtb-compile/douglas.dtb: regulator-vgpu (regulator-fixed): regulator-name: b'vgpu_1v15\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu@0 (arm,cortex-a53): cci-control-port: b'\x00\x00\x00\x05' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu@1 (arm,cortex-a53): cci-control-port: b'\x00\x00\x00\x05' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu@2 (arm,cortex-a53): cci-control-port: b'\x00\x00\x00\x05' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu@3 (arm,cortex-a53): cci-control-port: b'\x00\x00\x00\x05' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: psci (arm,psci-0.2): method: b'smc\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pmu (arm,cortex-a53-pmu): interrupt-affinity: b'\x00\x00\x00\x08\x00\x00\x00\t\x00\x00\x00\n\x00\x00\x00\x0b' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: power-domain@0: mediatek,infracfg: b'\x00\x00\x00\x02' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: power-domain@4: mediatek,infracfg: b'\x00\x00\x00\x02' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: power-domain@6: mediatek,infracfg: b'\x00\x00\x00\x02' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pinctrl@1000b000 (mediatek,mt8163-pinctrl): mediatek,pctl-regmap: b'\x00\x00\x00\x0e' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins: pinmux: b'\x00\x009\x01\x00\x00:\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_cmd_dat: pinmux: b'\x00\x00\x89\x01\x00\x00\x88\x01\x00\x00\x87\x01\x00\x00\x86\x01\x00\x00\x82\x01\x00\x00\x81\x01\x00\x00\x80\x01\x00\x00\x7f\x01\x00\x00\x84\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_clk: pinmux: b'\x00\x00\x85\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_rst: pinmux: b'\x00\x00\x83\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_cmd_dat: pinmux: b'\x00\x00\x89\x01\x00\x00\x88\x01\x00\x00\x87\x01\x00\x00\x86\x01\x00\x00\x82\x01\x00\x00\x81\x01\x00\x00\x80\x01\x00\x00\x7f\x01\x00\x00\x84\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_cmd_dat: drive-strength: b'\x00\x00\x00\x06' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_cmd_dat: bias-pull-up: b'\x00\x00\x00e' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_clk: pinmux: b'\x00\x00\x85\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_clk: drive-strength: b'\x00\x00\x00\x06' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_clk: bias-pull-down: b'\x00\x00\x00e' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins_rst: pinmux: b'\x00\x00\x83\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: pins: pinmux: b'\x00\x00O\x01\x00\x00P\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: buck_vproc: regulator-name: b'vproc\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: buck_vproc: regulator-ramp-delay: b'\x00\x000\xd4' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: buck_vsys: regulator-name: b'vsys\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: buck_vsys: regulator-ramp-delay: b'\x00\x00a\xa8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: buck_vpa: regulator-name: b'vpa\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vtcxo: regulator-name: b'vtcxo\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vtcxo: regulator-enable-ramp-delay: b'\x00\x00\x00Z' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn28: regulator-name: b'vcn28\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn28: regulator-enable-ramp-delay: b'\x00\x00\x00\xb9' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn33_bt: regulator-name: b'vcn33_bt\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn33_bt: regulator-enable-ramp-delay: b'\x00\x00\x00\xb9' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn33_wifi: regulator-name: b'vcn33_wifi\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn33_wifi: regulator-enable-ramp-delay: b'\x00\x00\x00\xb9' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_va: regulator-name: b'va\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_va: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcama: regulator-name: b'vcama\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcama: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vio28: regulator-name: b'vio28\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vio28: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vusb: regulator-name: b'vusb\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vusb: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vmc: regulator-name: b'vmc\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vmc: regulator-enable-ramp-delay: b'\x00\x00\x00$' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vmch: regulator-name: b'vmch\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vmch: regulator-enable-ramp-delay: b'\x00\x00\x00$' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vemc3v3: regulator-name: b'vemc3v3\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vemc3v3: regulator-enable-ramp-delay: b'\x00\x00\x00$' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp1: regulator-name: b'vgp1\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp1: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp2: regulator-name: b'vgp2\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp2: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp3: regulator-name: b'vgp3\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vgp3: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn18: regulator-name: b'vcn18\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcn18: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vsim1: regulator-name: b'vsim1\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vsim1: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vsim2: regulator-name: b'vsim2\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vsim2: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vrtc: regulator-name: b'vrtc\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamaf: regulator-name: b'vcamaf\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamaf: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vibr: regulator-name: b'vibr\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vibr: regulator-enable-ramp-delay: b'\x00\x00\x00$' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vrf18: regulator-name: b'vrf18\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vrf18: regulator-enable-ramp-delay: b'\x00\x00\x00\xbb' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vm: regulator-name: b'vm\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vm: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vio18: regulator-name: b'vio18\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vio18: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamd: regulator-name: b'vcamd\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamd: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamio: regulator-name: b'vcamio\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ldo_vcamio: regulator-enable-ramp-delay: b'\x00\x00\x00\xd8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mt6323keys (mediatek,mt6323-keys): mediatek,long-press-mode: b'\x00\x00\x00\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: power: linux,keycodes: b'\x00\x00\x00t' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: home: linux,keycodes: b'\x00\x00\x00r' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: iommu@10205000 (mediatek,mt8163-m4u): mediatek,larbs: b'\x00\x00\x00\x11\x00\x00\x00\x12\x00\x00\x00\x13\x00\x00\x00\x14' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: slave-if@1000 (arm,cci-400-ctrl-if): interface-type: b'ace-lite\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: slave-if@4000 (arm,cci-400-ctrl-if): interface-type: b'ace\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: slave-if@5000 (arm,cci-400-ctrl-if): interface-type: b'ace\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: dma-controller@11000300 (mediatek,mt8163-uart-dma): dma-requests: b'\x00\x00\x00\x08' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: i2c@11007000 (mediatek,mt8163-i2c): clock-div: b'\x00\x00\x00\n' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: i2c@11008000 (mediatek,mt8163-i2c): clock-div: b'\x00\x00\x00\n' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: regulator@60 (silergy,sym827): fcs,suspend-voltage-selector: b'\x00\x00\x00\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: regulator@60 (silergy,sym827): regulator-name: b'sym827-vproc\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: regulator@60 (silergy,sym827): regulator-enable-ramp-delay: b'\x00\x00\x01\x90' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: regulator@60 (silergy,sym827): regulator-ramp-delay: b'\x00\x00\x1f@' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: i2c@11009000 (mediatek,mt8163-i2c): clock-div: b'\x00\x00\x00\n' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: thermal@1100b000 (mediatek,mt8163-thermal): mediatek,auxadc: b'\x00\x00\x00\x1a' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: thermal@1100b000 (mediatek,mt8163-thermal): mediatek,apmixedsys: b'\x00\x00\x00\x16' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: thermal@1100b000 (mediatek,mt8163-thermal): nvmem-cells: b'\x00\x00\x00\x1b' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: usb@11200000 (mediatek,mt8163-musb): dr_mode: b'otg\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mmc@11230000 (mediatek,mt8163-mmc): bus-width: b'\x00\x00\x00\x08' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mmc@11230000 (mediatek,mt8163-mmc): mediatek,latch-ck: b'\x00\x00\x00\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mmc@11230000 (mediatek,mt8163-mmc): max-frequency: b'\x0b\xeb\xc2\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: usb@11270000 (mediatek,mt8163-musb): dr_mode: b'otg\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: syscon@14000000 (mediatek,mt8163-mmsys): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ovl@14007000 (mediatek,mt8163-disp-ovl): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00p\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: dma-controller@14009000 (mediatek,mt8163-disp-rdma): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\x90\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: color@1400c000 (mediatek,mt8163-disp-color): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\xc0\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ccorr@1400d000 (mediatek,mt8163-disp-ccorr): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\xd0\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: aal@1400e000 (mediatek,mt8163-disp-aal): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\xe0\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: gamma@1400f000 (mediatek,mt8163-disp-gamma): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x01\x00\x00\xf0\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: dither@14010000 (mediatek,mt8163-disp-dither): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: ufoe@14011000 (mediatek,mt8163-disp-ufoe): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x02\x00\x00\x10\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mutex@14015000 (mediatek,mt8163-disp-mutex): mediatek,gce-client-reg: b"\x00\x00\x00'\x00\x00\x00\x02\x00\x00P\x00\x00\x00\x10\x00" is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: mutex@14015000 (mediatek,mt8163-disp-mutex): mediatek,gce-events: b'\x00\x00\x00:\x00\x00\x00;' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@14016000 (mediatek,mt8163-smi-larb): mediatek,smi: b'\x00\x00\x00+' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@14016000 (mediatek,mt8163-smi-larb): mediatek,larb-id: b'\x00\x00\x00\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@15001000 (mediatek,mt8163-smi-larb): mediatek,smi: b'\x00\x00\x00+' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@15001000 (mediatek,mt8163-smi-larb): mediatek,larb-id: b'\x00\x00\x00\x02' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@16010000 (mediatek,mt8163-smi-larb): mediatek,smi: b'\x00\x00\x00+' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@16010000 (mediatek,mt8163-smi-larb): mediatek,larb-id: b'\x00\x00\x00\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@17001000 (mediatek,mt8163-smi-larb): mediatek,smi: b'\x00\x00\x00+' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: larb@17001000 (mediatek,mt8163-smi-larb): mediatek,larb-id: b'\x00\x00\x00\x03' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-thermal: polling-delay-passive: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-thermal: polling-delay: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-thermal: thermal-sensors: b'\x00\x00\x00/\x00\x00\x00\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-thermal: sustainable-power: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point0: temperature: b'\x00\x01\t\xa0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point0: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point0: type: b'passive\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point1: temperature: b'\x00\x018\x80' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point1: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-point1: type: b'passive\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-crit: temperature: b'\x00\x01\xc18' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-crit: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: cpu-crit: type: b'critical\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map0: trip: b'\x00\x00\x000' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map0: cooling-device: b'\x00\x00\x00\x08\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\t\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\n\xff\xff\xff\xff\xff\xff\xff\xff\x00\x00\x00\x0b\xff\xff\xff\xff\xff\xff\xff\xff' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: gpu-thermal: polling-delay-passive: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: gpu-thermal: polling-delay: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: gpu-thermal: thermal-sensors: b'\x00\x00\x00/\x00\x00\x00\x01' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: gpu-thermal: sustainable-power: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: temperature: b'\x00\x018\x80' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: type: b'passive\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: temperature: b'\x00\x01\xc18' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: type: b'critical\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map0: trip: b'\x00\x00\x001' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map0: cooling-device: b'\x00\x00\x002\x00\x00\x00\x01\xff\xff\xff\xff' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map1: trip: b'\x00\x00\x003' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: map1: cooling-device: b'\x00\x00\x002\x00\x00\x00\x02\xff\xff\xff\xff' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: soc-thermal: polling-delay-passive: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: soc-thermal: polling-delay: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: soc-thermal: thermal-sensors: b'\x00\x00\x00/\x00\x00\x00\x02' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: soc-thermal: sustainable-power: b'\x00\x00\x03\xe8' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: temperature: b'\x00\x018\x80' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-alert: type: b'passive\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: temperature: b'\x00\x01\xc18' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: hysteresis: b'\x00\x00\x07\xd0' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: trip-crit: type: b'critical\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: display-backlight (pwm-backlight): brightness-levels: b'\x00\x00\x00\x00\x00\x00\x03\xff' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: display-backlight (pwm-backlight): num-interpolated-steps: b'\x00\x00\x03\xff' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml
+work/dtb-compile/douglas.dtb: display-backlight (pwm-backlight): default-brightness-level: b'\x00\x00\x02\x00' is not of type 'object', 'integer', 'array', 'boolean', 'null'
+	from schema $id: http://devicetree.org/schemas/dt-core.yaml

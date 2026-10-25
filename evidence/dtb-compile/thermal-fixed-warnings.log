@@ -1,0 +1,2 @@
+work/dtb-compile/thermal-fixed.pp.dts:1198.9-1201.4: Warning (unit_address_vs_reg): /memory: node has a reg or ranges property, but no unit name
+work/dtb-compile/thermal-fixed.pp.dts:923.10-929.7: Warning (cooling_device_property): /thermal-zones/cpu-thermal/cooling-maps/map0: Missing property '#cooling-cells' in node /cpus/cpu@0 or bad phandle (referred from cooling-device[0])

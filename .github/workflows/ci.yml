@@ -37,6 +37,8 @@ jobs:
         run: python3 scripts/check_community.py
       - name: Verify maintained-kernel audit evidence
         run: python3 scripts/kernel_audit.py
+      - name: Verify DT source inputs and patches
+        run: python3 scripts/build_douglas_dtb.py --verify-only
       - name: Test gate rejection paths
         run: python3 -m unittest discover -s tests -v
   android:
@@ -48,6 +50,10 @@ jobs:
         with:
           persist-credentials: false
       - run: python3 scripts/ci.py firetabs-android
+      - name: Build pinned isolated device-tree compiler
+        run: python3 scripts/setup_dtb_tools.py --download
+      - name: Compile and inspect experimental douglas DTB
+        run: python3 scripts/build_douglas_dtb.py
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04

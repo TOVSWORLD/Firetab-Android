@@ -1,0 +1,14 @@
+{
+  "scope": "dtschema 2026.9 built-in schemas only; no full kernel binding corpus",
+  "status": "not_passed",
+  "diagnostic_lines": 322,
+  "interpretation": "Missing property typing context yields raw-byte diagnostics; these are not established hardware defects. Full matching ACK/donor schemas and validation are required.",
+  "validator_exit_code": 0,
+  "successful_validation_claim": false,
+  "command": [
+    "work/dtb-tool/venv/bin/dt-validate",
+    "work/dtb-compile/douglas.dtb"
+  ],
+  "tool_inputs": "schema-tools.lock.json",
+  "tool_compatibility": "SWIG 4.5.1 failed building pylibfdt with removed PyString macros; SWIG 4.3.1 succeeded. No C errors were suppressed."
+}
