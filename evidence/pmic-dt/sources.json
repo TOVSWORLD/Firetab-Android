@@ -1,0 +1,26 @@
+[
+  {
+    "path": "evidence/pmic-dt/ack/drivers/mfd/mt6397-core.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mfd/mt6397-core.c?format=TEXT",
+    "sha256": "4c9b1a942df7ade97f0bb4cd7af65a8f7a9487df96b278eedc125f1eda6e3209",
+    "bytes": 11924
+  },
+  {
+    "path": "evidence/pmic-dt/ack/drivers/regulator/mt6323-regulator.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/regulator/mt6323-regulator.c?format=TEXT",
+    "sha256": "c64e2077ff90fe4055c304a2054e159b680713eb47e91bd64332e8f0dda33686",
+    "bytes": 12920
+  },
+  {
+    "path": "evidence/pmic-dt/ack/Documentation/devicetree/bindings/mfd/mediatek,mt6397.yaml",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/mfd/mediatek,mt6397.yaml?format=TEXT",
+    "sha256": "e6f996823156d274ebbdbcff1cabbd56a0862774529df71b6f09123bcec101db",
+    "bytes": 16708
+  },
+  {
+    "path": "evidence/pmic-dt/ack/drivers/power/reset/mt6323-poweroff.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/power/reset/mt6323-poweroff.c?format=TEXT",
+    "sha256": "7ce333b601878e3a2a9aa60c2b3d0f9509b7aff49738ce9bffab168af1d402da",
+    "bytes": 2326
+  }
+]

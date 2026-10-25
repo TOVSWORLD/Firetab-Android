@@ -1,0 +1,35 @@
+From: FireTabs contributors
+Subject: [PATCH] arm64: dts: mt6323: use binding-defined child names
+
+Retain all labels, compatibles, supplies and register/voltage settings.
+This is structural conformance, not hardware qualification.
+
+--- a/arch/arm64/boot/dts/mediatek/mt6323.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt6323.dtsi
+@@ -19,7 +19,7 @@
+ 			status = "disabled";
+ 		};
+ 
+-		mt6323regulator: mt6323regulator {
++		mt6323regulator: regulators {
+ 			compatible = "mediatek,mt6323-regulator";
+ 
+ 			mt6323_vproc_reg: buck_vproc {
+@@ -217,7 +217,7 @@
+ 			};
+ 		};
+ 
+-		mt6323keys: mt6323keys {
++		mt6323keys: keys {
+ 			compatible = "mediatek,mt6323-keys";
+ 			mediatek,long-press-mode = <1>;
+ 			power-off-time-sec = <0>;
+@@ -232,7 +232,7 @@
+ 			};
+ 		};
+ 
+-		codec: mt6397codec {
++		codec: audio-codec {
+ 			compatible = "mediatek,mt6397-codec";
+ 		};
+ 

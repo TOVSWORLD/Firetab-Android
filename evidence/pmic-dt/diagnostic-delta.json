@@ -1,0 +1,16 @@
+{
+  "scope": "Diagnostic signature delta, not hardware fixes",
+  "removed": [
+    {
+      "message": "'mt6323keys', 'mt6323regulator', 'mt6397codec' do not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "node": "/soc/pwrap@1000d000/mt6323",
+      "type": "validation"
+    },
+    {
+      "message": "'regulators' is a required property",
+      "node": "/soc/pwrap@1000d000/mt6323",
+      "type": "validation"
+    }
+  ],
+  "added": []
+}

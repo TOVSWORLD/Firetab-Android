@@ -354,3 +354,36 @@ clock, pinctrl, PMIC wrapper and eight-domain controller candidates together.
 Checks all resolved config symbols, compiles each affected object set with W=1,
 then links the full generic Image. Same existing resource gates; no Android or
 bootable device package is produced. Results pending until actual CI completion.
+## 2026-10-25 — Console/MMC reuse investigation (#22)
+
+Captured exact ACK UART/MMC drivers and schemas (133,433 decoded bytes). Prior
+successful Image run 40170429213 actually compiled both built-in drivers;
+compiler excerpts and configuration hash are retained. Donor fallbacks and
+clock names match driver interfaces, while voltage/timing/DMA and physical log
+capture remain unverified. ACK schemas do not list the MT8163 compatibles: an
+explicit #27 follow-up, not a driver or hardware validation pass. No new kernel
+build was launched to duplicate already-recorded compilation.
+
+## 2026-10-25 — Full ACK binding corpus diagnostic (#27)
+
+Retrieved the exact ACK bindings archive: 3,275,172 bytes, 5,186 YAML files,
+SHA256 4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526.
+Added bounded/hash-verified archive recipe and full-context wrapper. Actual run
+with dtschema 2026.9 reports 36 validation errors and 61 unmatched-schema entries.
+Both upstream tools return zero despite diagnostics; wrapper returns 1 and
+passed=false. One upstream Gunyah YAML file fails parsing and is preserved, so
+this remains provisional corpus processing, not a complete matched schema pass.
+Logs/structured errors expose real PMIC/interrupt-node mismatches and compatible
+coverage gaps. No diagnostics suppressed and no hardware test performed.
+
+## 2026-10-25 — Narrow PMIC DT structural fix (#27)
+
+Added a separate candidate renaming three PMIC child nodes to the pinned binding
+names, retaining labels/compatibles and all properties. DTB compiles without
+diagnostics: 26,275 bytes / 119b6666a3caf217675d5aead3e9b0e0b21287d3e21f9d36e7d047f26698eddf.
+Binary comparison confirms identical 880 property values across 186 nodes after
+only allowed path substitutions. Full-context validation changes 36->34 errors,
+61 unmatched unchanged, zero added diagnostic signatures; still passed=false.
+Did not add domain cells to the PMIC shutdown node: reviewed driver provides a
+sys-off handler, not genpd. Stored source evidence and retained this diagnostic
+for semantic review. Added four comparison rejection tests; 35 total tests pass.
