@@ -21,7 +21,9 @@ git -C "$root/source" remote add origin https://android.googlesource.com/kernel/
 # after transfer; hosted runner timeout also bounds stalled network/build work.
 git -C "$root/source" -c http.lowSpeedLimit=1024 -c http.lowSpeedTime=120 fetch --depth=1 --no-tags origin "$revision"
 [ "$(du -sk "$root/source/.git" | awk '{print $1}')" -le 3145728 ] || { echo 'Fetch exceeded 3 GiB budget'; exit 2; }
+echo "Fetched Git storage (KiB): $(du -sk "$root/source/.git" | awk '{print $1}')"
 git -C "$root/source" checkout --detach FETCH_HEAD
+echo "Expanded source (KiB): $(du -sk "$root/source" | awk '{print $1}')"
 [ "$(git -C "$root/source" rev-parse HEAD)" = "$revision" ]
 clang-18 --version
 ld.lld-18 --version
@@ -43,6 +45,7 @@ if [ "$mode" = clocks ]; then
     grep -qx "CONFIG_${symbol}=y" "$output/.config"
   done
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/clk/mediatek/
+  echo MT8163_CLOCK_OBJECT_COMPILE_COMPLETE
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" Image vmlinux
 file "$output/vmlinux" "$output/arch/arm64/boot/Image"

@@ -232,3 +232,13 @@ mux macros/ops and flags-selectable composite initializer. Backported the donor'
 actual direct-update operations as a minimal ACK patch, leaving existing ACK ops
 and allocation implementation intact. Preserved audio composite flags=0 rather
 than silently substituting ACK's rate-propagating macro. Rebuild pending.
+
+Generic ACK compile run 40168232549 succeeded: ARM64 4 KiB Image 41,286,144
+bytes, vmlinux 440,617,560 bytes; ~16 min 34 sec including fetch/config/build.
+Recorded result metadata and recovered the full config from CI logs; its SHA256
+matches the compiler-run checksum. No compiler warning/error lines were found.
+This generic config does not enable Android Binder/SELinux; it is not the target
+Android/douglas config and does not advance that kernel validation record.
+PR #17 merged to development. Full matching binding/schema work is now tracked
+explicitly in #27; driver/configuration work in #18–#25. Exact transfer and
+expanded checkout sizes were not emitted and remain unknown.
