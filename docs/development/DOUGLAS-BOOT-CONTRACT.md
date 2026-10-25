@@ -203,3 +203,33 @@ loader investigation for the new one. Actual relocation remains unverified.
 Input-report and auditor hashes make the calculation independently repeatable.
 Unit tests exercise these actual reports, identity mismatch, header inconsistency
 and arithmetic boundary refusal. No downloads, binary packing or tablet queries.
+
+## First authorized stock collection: runtime facts
+
+The owner's tablet was queried read-only after USB debugging and Mac authorization
+were confirmed. Selected sanitized fields and raw-report/collector hashes are in
+`evidence/stock-facts/runtime-contract.json`; full reports stay ignored locally.
+The incremental build and fingerprint match the inspected OTA candidate's claims
+(659664620). This establishes identity agreement, not installed binary hashes or
+OTA signature verification. Internal Fire OS property remains5.3.7.3 despite the
+owner-facing5.7.1.0; do not equate these version schemes.
+
+Runtime DT version is hvt. With root address/size cells both2, memory reg decodes
+to [0x40000000,0x80000000) and [0x80000000,0x99600000): total1430MiB. These differ
+from the candidate's static512MiB declaration, providing direct evidence of a
+changed runtime memory handoff. MemTotal=1406536KiB is usable Linux memory, not
+the complete physical DRAM map. orig_dram_info and mblock_info bytes are retained
+without assuming their native vendor struct layouts. Firmware/loader reservations
+still need reconciliation; no DT enlargement or physical load address selected.
+Kernel release is3.18.19-01784-g988b7c2ec57. uname is absent; /proc/version works.
+The old ADB shell incorrectly returned status0 for some failed commands; the
+collector now classifies those errors as unavailable. /proc/iomem and cmdline are
+permission-denied. A trailing slash is required for ls to traverse the DT symlink.
+
+Loader properties report PL=0x0007, LK=0x0003, TEE=0x0106 (7/3/262). The pinned
+[amonet step-1 source](https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/step-1.sh)
+sets maximums6/2/259 and branches on any excess to a preloader-brick/downgrade path.
+All three exceed that source's limits. No helper was executed; this is evidence
+against treating that software path as a ready non-destructive boot route, not
+proof every alternative unlock/recovery technique is impossible. No root,
+reboot, raw partition read, unlock, flash or wipe was performed.
