@@ -260,6 +260,38 @@ push. Source-affecting updates require an explicit rebuild at the new revision;
 repository validation continues on every PR update. Run 40169479688's clock source
 is unchanged by this audit/documentation/workflow-trigger update.
 
+## 2026-10-25 — Prepare pinctrl/EINT object probe (#19)
+
+While the #18 full kernel compile runs, prepared the next source integration as
+a separate stacked change: three unmodified donor files and real Kconfig/Makefile
+wiring. ACK common APIs/data fields exist; donor declares 155 pins, six EINT
+ports/169 AP interrupts/64 debounce entries. These are not hardware measurements.
+A bounded Linux W=1 object-only probe will record actual ELF/hash/config results.
+Full Image linkage, legacy routing comparison and schema/runtime tests remain
+required. No pinctrl compilation pass is claimed before CI executes.
+
+Pinctrl reference audit: all 155 donor pin names, literal mux functions and EINT
+mappings match the pinned legacy Git object; 15 unique captured modern DT mux
+references map to descriptor entries. Original legacy table and hashes retained.
+This is a source comparison, not register/schema/electrical validation.
+
+Pinctrl object run 40169973832 passed with W=1 and zero compiler warning/error
+lines. ELF64 AArch64 object SHA256 recorded in evidence/pinctrl-port/object-result.json.
+Git storage measured 291,136 KiB; source including Git 2,066,692 KiB. Transfer bytes
+remain unknown. Source is unchanged by the subsequent audit/evidence/CI additions.
+Added both bounded reference audits to ordinary repository CI. #19 remains open:
+full Image integration, complete schema/register review and all runtime evidence
+are still pending.
+
+Expanded pinctrl audit: drive groups (3), pin-drive entries (119), special pulls
+(46) and Schmitt entries (57) match legacy. The donor adds one input-enable entry
+for GPIO87/MSDC2_DAT0, 0xcf0 bit 4; retained as an unvalidated donor delta and
+recorded explicitly. No register value was changed to force an audit pass.
+
+Added explicit workflow_dispatch mode clocks-pinctrl for full combined Image
+integration after the object probe. It applies both pinned overlays, verifies
+PINCTRL_MT8163=y and all clock symbols, compiles both directories with W=1 and
+links Image/vmlinux. This is still a generic config, not a douglas boot claim.
 ## 2026-10-25 — Begin diagnostic boot-contract investigation (#21)
 
 Captured pinned legacy runtime-memory readers and ACK PSCI implementation.
@@ -285,3 +317,13 @@ inspector supporting #21. Rejects ambiguous formats, malformed pages, oversized
 or truncated input; counts unclassified tail bytes. Does not decompress, extract,
 pack, access device nodes/USB or claim signatures/bootability. Ten synthetic
 boundary/rejection tests added; 31 total tests pass. No real stock image inspected.
+
+## 2026-10-25 — Combined clock/pinctrl Image passed
+
+Run 40170429213 at c61bc28 completed at 07:26 UTC (~38 minutes): full AArch64
+Image 41,363,968 bytes, with clock and pinctrl objects compiled under W=1 and
+zero compiler warning/error lines. Result/hashes and recovered full config are
+in evidence/pinctrl-port; config hash matches CI output. Later branch updates
+are evidence/docs/CI/base synchronization, leaving these driver sources intact.
+PR #28 refreshed against development for required checks; no policy bypass used.
+No douglas boot, Android configuration, schema or hardware pass is claimed.

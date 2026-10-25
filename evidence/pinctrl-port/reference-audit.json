@@ -1,0 +1,158 @@
+{
+  "scope": "Compare captured MT8163 pin tables and literal DT mux references; no hardware tests.",
+  "identical_legacy_descriptor_count": 155,
+  "unique_literal_dt_pin_functions": {
+    "MT8163_PIN_57_SDA1__FUNC_SDA1_0": {
+      "pin": 57,
+      "function": 1,
+      "driver_function": "SDA1_0"
+    },
+    "MT8163_PIN_58_SCL1__FUNC_SCL1_0": {
+      "pin": 58,
+      "function": 1,
+      "driver_function": "SCL1_0"
+    },
+    "MT8163_PIN_137_MSDC0_DAT0__FUNC_MSDC0_DAT0": {
+      "pin": 137,
+      "function": 1,
+      "driver_function": "MSDC0_DAT0"
+    },
+    "MT8163_PIN_136_MSDC0_DAT1__FUNC_MSDC0_DAT1": {
+      "pin": 136,
+      "function": 1,
+      "driver_function": "MSDC0_DAT1"
+    },
+    "MT8163_PIN_135_MSDC0_DAT2__FUNC_MSDC0_DAT2": {
+      "pin": 135,
+      "function": 1,
+      "driver_function": "MSDC0_DAT2"
+    },
+    "MT8163_PIN_134_MSDC0_DAT3__FUNC_MSDC0_DAT3": {
+      "pin": 134,
+      "function": 1,
+      "driver_function": "MSDC0_DAT3"
+    },
+    "MT8163_PIN_130_MSDC0_DAT4__FUNC_MSDC0_DAT4": {
+      "pin": 130,
+      "function": 1,
+      "driver_function": "MSDC0_DAT4"
+    },
+    "MT8163_PIN_129_MSDC0_DAT5__FUNC_MSDC0_DAT5": {
+      "pin": 129,
+      "function": 1,
+      "driver_function": "MSDC0_DAT5"
+    },
+    "MT8163_PIN_128_MSDC0_DAT6__FUNC_MSDC0_DAT6": {
+      "pin": 128,
+      "function": 1,
+      "driver_function": "MSDC0_DAT6"
+    },
+    "MT8163_PIN_127_MSDC0_DAT7__FUNC_MSDC0_DAT7": {
+      "pin": 127,
+      "function": 1,
+      "driver_function": "MSDC0_DAT7"
+    },
+    "MT8163_PIN_132_MSDC0_CMD__FUNC_MSDC0_CMD": {
+      "pin": 132,
+      "function": 1,
+      "driver_function": "MSDC0_CMD"
+    },
+    "MT8163_PIN_133_MSDC0_CLK__FUNC_MSDC0_CLK": {
+      "pin": 133,
+      "function": 1,
+      "driver_function": "MSDC0_CLK"
+    },
+    "MT8163_PIN_131_MSDC0_RSTB__FUNC_MSDC0_RSTB": {
+      "pin": 131,
+      "function": 1,
+      "driver_function": "MSDC0_RSTB"
+    },
+    "MT8163_PIN_79_URXD0__FUNC_URXD0": {
+      "pin": 79,
+      "function": 1,
+      "driver_function": "URXD0"
+    },
+    "MT8163_PIN_80_UTXD0__FUNC_UTXD0": {
+      "pin": 80,
+      "function": 1,
+      "driver_function": "UTXD0"
+    }
+  },
+  "register_table_comparison": [
+    {
+      "name": "mt8163_drv_grp",
+      "legacy_entries": 3,
+      "candidate_entries": 3,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_pin_drv",
+      "legacy_entries": 119,
+      "candidate_entries": 119,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_spec_pupd",
+      "legacy_entries": 46,
+      "candidate_entries": 46,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    },
+    {
+      "name": "mt8163_ies_set",
+      "legacy_entries": 34,
+      "candidate_entries": 35,
+      "added": [
+        "MTK_PIN_IES_SMT_SPEC(87,87,0xcf0,4)"
+      ],
+      "removed": [],
+      "identical_sequence": false
+    },
+    {
+      "name": "mt8163_smt_set",
+      "legacy_entries": 57,
+      "candidate_entries": 57,
+      "added": [],
+      "removed": [],
+      "identical_sequence": true
+    }
+  ],
+  "legacy_goodix_gpio_descriptors": {
+    "35": {
+      "name": "KPROW2",
+      "eint": "0, 46",
+      "functions": {
+        "0": "GPIO35",
+        "1": "KPROW2",
+        "2": "USB_DRVVBUS",
+        "3": "EXT_FRAME_SYNC",
+        "4": "CONN_TEST_CK",
+        "7": "DBG_MON_B[6]"
+      }
+    },
+    "46": {
+      "name": "EINT14",
+      "eint": "0, 14",
+      "functions": {
+        "0": "GPIO46",
+        "1": "TP_GPIO0_AO",
+        "2": "I2S1_DO",
+        "3": "SFWP_B",
+        "4": "ANT_SEL1",
+        "5": "CONN_MCU_DBGACK_N",
+        "6": "NCLE",
+        "7": "DBG_MON_A[14]"
+      }
+    }
+  },
+  "limitations": [
+    "No full preprocessor/schema validation or electrical routing test.",
+    "A GPIO number and its EINT line are distinct identifiers.",
+    "No interrupt/drive-strength/debounce behavior was measured."
+  ]
+}

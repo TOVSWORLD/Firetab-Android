@@ -1,0 +1,21 @@
+--- a/drivers/pinctrl/mediatek/Kconfig
++++ b/drivers/pinctrl/mediatek/Kconfig
+@@ -340,3 +340,10 @@
+ 	select PINCTRL_MTK
+ 
+ endmenu
++
++config PINCTRL_MT8163
++	bool "MediaTek MT8163 pin control"
++	depends on OF
++	depends on ARM64 || COMPILE_TEST
++	default ARM64 && ARCH_MEDIATEK
++	select PINCTRL_MTK
+--- a/drivers/pinctrl/mediatek/Makefile
++++ b/drivers/pinctrl/mediatek/Makefile
+@@ -42,3 +42,5 @@
+ obj-$(CONFIG_PINCTRL_MT8365)		+= pinctrl-mt8365.o
+ obj-$(CONFIG_PINCTRL_MT8516)		+= pinctrl-mt8516.o
+ obj-$(CONFIG_PINCTRL_MT6397)		+= pinctrl-mt6397.o
++
++obj-$(CONFIG_PINCTRL_MT8163)		+= pinctrl-mt8163.o

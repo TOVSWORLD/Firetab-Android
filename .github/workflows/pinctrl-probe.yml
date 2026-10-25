@@ -1,0 +1,30 @@
+name: MT8163 pinctrl object compile
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, ready_for_review]
+    paths:
+      - projects/firetabs-android/kernel/pinctrl-port/**
+      - scripts/apply_pinctrl_port.py
+      - scripts/build_pinctrl_probe.sh
+      - .github/workflows/pinctrl-probe.yml
+permissions:
+  contents: read
+concurrency:
+  group: pinctrl-probe-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  compile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Install kernel host dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y dwarves libelf-dev libssl-dev
+          dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
+      - name: Preflight and compile generic ARM64 baseline
+        run: bash scripts/build_pinctrl_probe.sh
