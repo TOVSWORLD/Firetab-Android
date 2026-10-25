@@ -61,16 +61,19 @@ class OTAProbe(unittest.TestCase):
 
     def test_ignored_range_is_rejected_without_reading_body(self):
         class Response:
-            def __init__(self, status, headers): self.status, self.headers = status, headers
+            def __init__(self, status, headers):
+                self.status, self.headers, self.closed = status, headers, False
             def __enter__(self): return self
-            def __exit__(self, *args): pass
+            def __exit__(self, *args): self.closed = True
             def geturl(self): return 'https://example.com/ota'
             def read(self, count): raise AssertionError('must not read full response')
-        responses = iter([Response(200, {'Content-Length': '100', 'ETag': 'fixed', 'Accept-Ranges': 'bytes'}),
-                          Response(200, {})])
+        head = Response(200, {'Content-Length': '100', 'ETag': 'fixed', 'Accept-Ranges': 'bytes'})
+        fallback = Response(200, {})
+        responses = iter([head, fallback])
         client = module.RangeClient('https://example.com/ota', lambda *args, **kwargs: next(responses))
         with self.assertRaisesRegex(ValueError, 'refusing response body'):
             client.read(0, 20)
+        self.assertTrue(head.closed and fallback.closed)
 
     def test_transfer_budget_is_checked_before_request(self):
         client = object.__new__(module.RangeClient)
