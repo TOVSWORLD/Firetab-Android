@@ -25,6 +25,13 @@ first. The agent must not initiate device queries merely because USB is attached
 unless manufacturer/model/device properties identify Amazon douglas/KFDOWI.
 It uses fixed getprop/uname/cat/ls queries for software identity, kernel version,
 RAM/iomem/partition metadata and individual readable DT root/memory properties.
+The explicit software allowlist also includes ro.build.version.fireos and the
+preloader/LK/TEE version properties ro.boot.pl_version, ro.boot.lk_version and
+ro.boot.tee_version. The pinned [amonet step-1 source](https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/step-1.sh#L17)
+uses those three identifiers; only their property names are reused here. The
+helper itself is never invoked. Values from stock getprop are claims to compare
+with matched firmware, not binary hashes or proof of unlock compatibility. Empty
+values do not identify a loader. Serial properties remain excluded.
 The raw DT root version property is included to compare the candidate pre_evt/hvt
 variants later; absence or permission denial remains unavailable data.
 It does not read raw partitions, full bootargs/serial DT blobs, household app
