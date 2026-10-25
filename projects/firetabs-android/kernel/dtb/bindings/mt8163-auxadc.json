@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-auxadc.patch",
+  "patch_sha256": "eea7d206b22956274b3cceca6d205b9ab47375f96c5ccde5e2e676c74cb69141",
+  "schema": "iio/adc/mediatek,mt2701-auxadc.yaml",
+  "original_sha256": "2ff827459d237adf5edc7aef0f3169e023fa6df3493da17b37aa99773bd54a4d",
+  "proposed_sha256": "c80124feec7e4e29bac776347f048bbe5d3a679a0cc6256660148c78dfe0952c"
+}

@@ -682,3 +682,11 @@ keep all other constraints. Meta clean; processed controls reject invalid pairs
 and preserve existing SoCs. Full delta removes8/adds0:21errors/51unmatched,
 overallfailed.89 tests pass. No device/driver/DT/firmware or hardware claim.
 Next#27 remaining peripheral fallback or display binding gaps.
+
+## 2026-10-25 — Strict peripheral fallback coverage (#74)
+
+Four opt-in compatible profiles preserve all other constraints; pinned fallback
+drivers/source hashes retained. Meta clean, processed controls pass. Actual full
+delta removes12/adds0:15errors/45unmatched remain, overallfailed.90 tests pass.
+No bus/ADC/RNG hardware/security qualification. Next#21 cached loader/recovery
+alternative audit to advance the physical diagnostic boot blocker.

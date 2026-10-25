@@ -1,0 +1,68 @@
+{
+  "removed": [
+    {
+      "message": "['mediatek,mt8163-rng', 'mediatek,mt7623-rng'] is not valid under any of the given schemas",
+      "node": "/soc/rng@1020f000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-rng', 'mediatek,mt7623-rng']",
+      "node": "/soc/rng@1020f000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-auxadc', 'mediatek,mt8173-auxadc'] is not valid under any of the given schemas",
+      "node": "/soc/auxadc@11001000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-auxadc', 'mediatek,mt8173-auxadc']",
+      "node": "/soc/auxadc@11001000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is not valid under any of the given schemas",
+      "node": "/soc/i2c@11007000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']",
+      "node": "/soc/i2c@11007000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is not valid under any of the given schemas",
+      "node": "/soc/i2c@11008000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']",
+      "node": "/soc/i2c@11008000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c'] is not valid under any of the given schemas",
+      "node": "/soc/i2c@11009000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-i2c', 'mediatek,mt8173-i2c']",
+      "node": "/soc/i2c@11009000",
+      "type": "unmatched"
+    },
+    {
+      "message": "['mediatek,mt8163-spi', 'mediatek,mt2712-spi'] is not valid under any of the given schemas",
+      "node": "/soc/spi@1100a000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-spi', 'mediatek,mt2712-spi']",
+      "node": "/soc/spi@1100a000",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "baseline_count": 72,
+  "new_count": 60,
+  "passed_full_validation": false
+}

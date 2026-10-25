@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-spi.patch",
+  "patch_sha256": "00cac44927b08ba946c0da0e8bdcacc1ffb79845aed37735915ec6e5c1acd896",
+  "schema": "spi/mediatek,spi-mt65xx.yaml",
+  "original_sha256": "26b06e61380d4318de94f9298b670593e4784de5dba8a9e87756b1571c5c1e77",
+  "proposed_sha256": "b8fd1e94520ad1c45b77c53db66a087854f77db52ebd7c87d81547214c89c593"
+}

@@ -1,0 +1,10 @@
+--- a/rng/mtk-rng.yaml
++++ b/rng/mtk-rng.yaml
+@@ -22,6 +22,7 @@
+               - mediatek,mt7622-rng
+               - mediatek,mt7629-rng
+               - mediatek,mt7986-rng
++              - mediatek,mt8163-rng
+               - mediatek,mt8365-rng
+               - mediatek,mt8516-rng
+           - const: mediatek,mt7623-rng

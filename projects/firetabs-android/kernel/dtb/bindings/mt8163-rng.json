@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-rng.patch",
+  "patch_sha256": "83f41deff822318c35160c7fc6edb71c8b61deab54efd661ede14ec274b98261",
+  "schema": "rng/mtk-rng.yaml",
+  "original_sha256": "c073fb84fda7e277a5ffb8f8228ab119e6c73e566ffbd09d236bdec030993741",
+  "proposed_sha256": "07891460f040f4eb46eb373249906f37bf7f43a707a3800c91044aa328d304d0"
+}

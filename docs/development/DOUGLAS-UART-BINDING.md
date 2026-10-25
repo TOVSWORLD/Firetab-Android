@@ -119,3 +119,27 @@ source/patch/input/processed/control hashes, local logs/results and delta retain
 This is binding coverage only, not storage access, UART DMA operation or a
 boot-ready image. Next#27 remaining I2C/SPI/ADC/RNG fallback coverage, or display
 binding gaps with the same negative-control discipline. No tablet accessed.
+
+## Strict peripheral fallback coverage (#74)
+
+Four additional independently opt-in profiles cover donor-declared I2C, SPI,
+ADC and RNG pairs: --extra-binding mt8163-i2c, mt8163-spi, mt8163-auxadc and
+mt8163-rng (repeat the flag for each). I2C/ADC retain MT8173 fallbacks, SPI
+retains MT2712 and RNG retains MT7623. Pinned ACK drivers match each fallback;
+source snapshots/hashes, exact schema/patch changes and defaults are recorded
+in evidence/peripheral-bindings/changes.json and the binding profiles. All
+non-compatible constraints remain unchanged. Source matching does not qualify
+bus timing, ADC calibration, RNG entropy quality or actual peripheral hardware.
+
+Actual meta-validation is clean for all four proposals. Processed controls accept
+exact pairs and previous SoCs, reject missing/wrong/extra fallbacks, and compare
+all other schema constraints with original. Reproduce with
+`work/dtb-tool/venv/bin/python evidence/peripheral-bindings/check-controls.py`.
+Append these four profiles to the complete rdma-node-name command with the prior
+UART/Gunyah/PMIC/sysirq/timer/MMC/UART-DMA proposal flags for full-context replay.
+Full delta removes6 validation errors and6 unmatched entries (three I2C nodes,
+SPI, ADC and RNG), adds none:15 errors/45 unmatched remain,60 diagnostics;
+overallpassed=false/exit1.90 unit tests pass. Exact sources, inputs, processed
+schema/control hashes and local logs/results/delta retained. No DT/driver/device
+or firmware change. Next development priority returns to#21 loader/recovery
+alternatives using cached forks; remaining display/binding failures stay#27.

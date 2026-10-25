@@ -1,0 +1,46 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "changes": [
+    {
+      "name": "mt8163-i2c",
+      "schema": "i2c/i2c-mt65xx.yaml",
+      "old": "              - mediatek,mt6795-i2c\n",
+      "new": "              - mediatek,mt6795-i2c\n              - mediatek,mt8163-i2c\n",
+      "fallback": "mt8173-i2c",
+      "previous": "mt6795-i2c",
+      "driver": "drivers/i2c/busses/i2c-mt65xx.c",
+      "driver_sha256": "97a7193f00827341b26f074ed26fb5b4ed7839e45b87b7a2a2c03681c46d7b69"
+    },
+    {
+      "name": "mt8163-spi",
+      "schema": "spi/mediatek,spi-mt65xx.yaml",
+      "old": "      - items:\n          - enum:\n              - mediatek,mt8516-spi\n",
+      "new": "      - items:\n          - const: mediatek,mt8163-spi\n          - const: mediatek,mt2712-spi\n      - items:\n          - enum:\n              - mediatek,mt8516-spi\n",
+      "fallback": "mt2712-spi",
+      "previous": "mt8516-spi",
+      "driver": "drivers/spi/spi-mt65xx.c",
+      "driver_sha256": "0ed8beb97cd0646ae0fd91cab319c3760d5871be71e3d6373273887a805dad84"
+    },
+    {
+      "name": "mt8163-auxadc",
+      "schema": "iio/adc/mediatek,mt2701-auxadc.yaml",
+      "old": "              - mediatek,mt8183-auxadc\n",
+      "new": "              - mediatek,mt8163-auxadc\n              - mediatek,mt8183-auxadc\n",
+      "fallback": "mt8173-auxadc",
+      "previous": "mt8183-auxadc",
+      "driver": "drivers/iio/adc/mt6577_auxadc.c",
+      "driver_sha256": "28885190819e7c5bc66aed04f0279dcf29b86783203dbaeb8fb759d18f9d7661"
+    },
+    {
+      "name": "mt8163-rng",
+      "schema": "rng/mtk-rng.yaml",
+      "old": "              - mediatek,mt8365-rng\n",
+      "new": "              - mediatek,mt8163-rng\n              - mediatek,mt8365-rng\n",
+      "fallback": "mt7623-rng",
+      "previous": "mt8365-rng",
+      "driver": "drivers/char/hw_random/mtk-rng.c",
+      "driver_sha256": "7cac6f14e874d7e7dd8b142d17d54d5864daee6cc48c38e6fa652f0ee044e75d"
+    }
+  ],
+  "hardware_tested": false
+}
