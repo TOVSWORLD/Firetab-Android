@@ -1,0 +1,9 @@
+{
+  "scope": "Local UART binding proposal, not upstream acceptance or hardware validation",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-uart.patch",
+  "patch_sha256": "fd66980ac202aa1db059693dac2349e310a37afbd06c36c418c39f26391e2908",
+  "schema": "serial/mediatek,uart.yaml",
+  "original_sha256": "3d088774d677738abb17d5657662b48ae611223f55fdc43b10202d78c5f11d6b",
+  "proposed_sha256": "0de555737b276d68f83676c8484f45b3f1c96d343cc587db6ed1f620e6b86012"
+}

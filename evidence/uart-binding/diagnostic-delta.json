@@ -1,0 +1,54 @@
+{
+  "scope": "Same DTB, local exact UART-compatible proposal versus original ACK corpus; no hardware qualification",
+  "removed": [
+    {
+      "type": "unmatched",
+      "node": "/soc/serial@11002000",
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']",
+      "count": 1
+    },
+    {
+      "type": "unmatched",
+      "node": "/soc/serial@11003000",
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']",
+      "count": 1
+    },
+    {
+      "type": "unmatched",
+      "node": "/soc/serial@11004000",
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']",
+      "count": 1
+    },
+    {
+      "type": "unmatched",
+      "node": "/soc/serial@11005000",
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-uart', 'mediatek,mt6577-uart']",
+      "count": 1
+    },
+    {
+      "type": "validation",
+      "node": "/soc/serial@11002000",
+      "message": "['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is not valid under any of the given schemas",
+      "count": 1
+    },
+    {
+      "type": "validation",
+      "node": "/soc/serial@11003000",
+      "message": "['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is not valid under any of the given schemas",
+      "count": 1
+    },
+    {
+      "type": "validation",
+      "node": "/soc/serial@11004000",
+      "message": "['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is not valid under any of the given schemas",
+      "count": 1
+    },
+    {
+      "type": "validation",
+      "node": "/soc/serial@11005000",
+      "message": "['mediatek,mt8163-uart', 'mediatek,mt6577-uart'] is not valid under any of the given schemas",
+      "count": 1
+    }
+  ],
+  "added": []
+}

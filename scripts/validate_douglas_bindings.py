@@ -4,6 +4,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import tarfile
@@ -15,9 +16,26 @@ LOCK = ROOT / 'projects/firetabs-android/kernel/dtb/bindings.lock.json'
 WORK = ROOT / 'work/binding-validation'
 
 
+def apply_uart_proposal(source, ack_commit):
+    """Apply only the hash-locked UART proposal to an isolated corpus extraction."""
+    profile = json.loads((LOCK.parent / 'bindings/mt8163-uart.json').read_text())
+    patch = LOCK.parent / profile['patch']
+    schema = source / profile['schema']
+    if (profile['ack_commit'] != ack_commit or
+            hashlib.sha256(patch.read_bytes()).hexdigest() != profile['patch_sha256'] or
+            hashlib.sha256(schema.read_bytes()).hexdigest() != profile['original_sha256']):
+        raise ValueError('Proposed binding input hash/revision mismatch')
+    subprocess.run(['git', 'apply', '--no-index', str(patch)], cwd=source,
+                   env={**os.environ, 'GIT_CEILING_DIRECTORIES': str(source.parent)}, check=True)
+    if hashlib.sha256(schema.read_bytes()).hexdigest() != profile['proposed_sha256']:
+        raise ValueError('Proposed binding output hash mismatch')
+    return profile, schema
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
+    parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
     args = parser.parse_args()
     lock = json.loads(LOCK.read_text())
@@ -43,7 +61,10 @@ def main():
     version = subprocess.check_output([str(tools / 'dt-validate'), '-V'], text=True).strip()
     if version != lock['dtschema_version']:
         parser.error('Unexpected dtschema version')
-    output = WORK / ('result' if args.experiment == 'baseline' else 'result-' + args.experiment)
+    result_name = 'result' if args.experiment == 'baseline' else 'result-' + args.experiment
+    if args.binding_profile != 'ack':
+        result_name += '-' + args.binding_profile
+    output = WORK / result_name
     output.mkdir(exist_ok=True)
     (output / 'diagnostics.json').unlink(missing_ok=True)
     with tempfile.TemporaryDirectory(prefix='source-', dir=WORK) as temporary:
@@ -53,24 +74,29 @@ def main():
         count = len(list(source.rglob('*.yaml')))
         if count != lock['yaml_files']:
             parser.error('Binding corpus file count mismatch')
-        commands = [
-            [str(tools / 'dt-mk-schema'), '-j', '-o', str(output / 'processed.json'), str(source)],
-            [str(tools / 'dt-validate'), '-s', str(output / 'processed.json'), '-m', '--json-output', str(output / 'diagnostics.json'), str(dtb)]]
+        profile = None
+        commands = []
+        if args.binding_profile != 'ack':
+            profile, schema = apply_uart_proposal(source, lock['ack_commit'])
+            commands.append(('doc-validate', [str(tools / 'dt-doc-validate'), '-u', str(source), str(schema)]))
+        commands += [
+            ('mk-schema', [str(tools / 'dt-mk-schema'), '-j', '-o', str(output / 'processed.json'), str(source)]),
+            ('validate', [str(tools / 'dt-validate'), '-s', str(output / 'processed.json'), '-m', '--json-output', str(output / 'diagnostics.json'), str(dtb)])]
         results = []
-        for name, command in zip(['mk-schema', 'validate'], commands):
+        for name, command in commands:
             process = subprocess.run(command, capture_output=True, text=True, timeout=180)
             for stream in ['stdout', 'stderr']:
                 value = getattr(process, stream).replace(str(source), '<ack-bindings>').replace(str(ROOT), '<workspace>')
                 (output / f'{name}.{stream}').write_text(value)
-            results.append({'command': [x.replace(str(source), '<ack-bindings>').replace(str(ROOT), '<workspace>') for x in command],
+            results.append({'stage': name, 'command': [x.replace(str(source), '<ack-bindings>').replace(str(ROOT), '<workspace>') for x in command],
                             'exit_code': process.returncode, 'stderr_lines': len(process.stderr.splitlines())})
             if process.returncode != 0:
                 break
-        diagnostics = json.loads((output / 'diagnostics.json').read_text()) if len(results) == 2 and (output / 'diagnostics.json').exists() else []
-        passed = len(results) == 2 and all(x['exit_code'] == 0 and x['stderr_lines'] == 0 for x in results) and not diagnostics
-        report = {'scope': 'Pinned ACK corpus only; donor-specific schemas still incomplete; no hardware validation',
-                  'experiment': args.experiment, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
-                  'dtschema_version': version, 'dtb_sha256': experiment['expected_artifact']['sha256'],
+        diagnostics = json.loads((output / 'diagnostics.json').read_text()) if results and results[-1]['stage'] == 'validate' and (output / 'diagnostics.json').exists() else []
+        passed = len(results) == len(commands) and all(x['exit_code'] == 0 and x['stderr_lines'] == 0 for x in results) and not diagnostics
+        report = {'scope': 'Pinned ACK corpus with explicitly reported local proposal, if selected; donor-specific schemas still incomplete; no hardware validation',
+                  'experiment': args.experiment, 'binding_profile': args.binding_profile, 'binding_proposal': profile, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
+                  'dtschema_version': version, 'wrapper_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), 'dtb_sha256': experiment['expected_artifact']['sha256'],
                   'commands': results, 'diagnostic_count': len(diagnostics),
                   'diagnostic_types': dict(Counter(x['type'] for x in diagnostics)),
                   'diagnostic_levels': dict(Counter(x['level'] for x in diagnostics)), 'passed': passed}
