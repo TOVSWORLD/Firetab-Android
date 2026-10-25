@@ -398,3 +398,13 @@ Zero compiler warning/error lines. Config hash equals the retained pinctrl
 combined config; provider source changes are real and Image/vmlinux hashes differ.
 Result metadata retained. This generic configuration has no appended board DT,
 qualified loader/ramdisk contract or hardware/Android runtime validation.
+
+## 2026-10-25 — Prepare user-run read-only stock facts (#37)
+
+Added explicit-serial/wrong-device refusal, fixed metadata command collection,
+cmdline allowlisting, binary DT property handling, no serial/stderr persistence,
+and enforced pipe/runtime limits. Six fake/host-only tests added; 41 total tests
+pass. No real device transport executed. Checked installed SDK adb version only:
+36.0.2-14143358 on shared Mac; this host-only command does not query devices.
+Documented connection/debugging authorization separately from collector scope.
+Actual stock facts remain needed for #21; no boot/test package is ready yet.
