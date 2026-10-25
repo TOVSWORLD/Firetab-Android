@@ -665,3 +665,12 @@ fallback. Pinned ACK/legacy source hashes retained. Meta clean, processed tuple
 negative controls reject invalid fallbacks. Actual full delta removes2/adds0:
 26errors/55unmatched remain, overallfailed.85 tests pass. Next#27 display-RDMA
 node name/generic DMA selector conflict. No tablet access or firmware assembly.
+
+## 2026-10-25 — Display RDMA node-name candidate (#70)
+
+Canonical rdma@ name prevents generic DMA-provider misselection. Compiled alias
+path rewrite explicitly checked; other879 property bytes across186nodes unchanged
+after reviewed path substitutions. Clean DTC26259B hashc1824152...; CI fourth
+variant added. Full delta removes1/adds0:25errors/55unmatched remain.88 tests
+pass. No cells invented, schema relaxed, hardware tested or device accessed.
+Next#27 RDMA compatible coverage/remaining boot-relevant gaps.

@@ -87,3 +87,34 @@ and wrapper exit1. Source/input/patch/processed/control hashes, logs and delta
 are retained;85 unit tests pass. No kernel/DT/driver/device change or hardware
 qualification. Next#27 task is display-RDMA node naming versus generic DMA
 provider selection, using canonical display binding examples and property checks.
+
+## Display-RDMA canonical node name (#70)
+
+The donor display engine is labelled rdma0 but named dma-controller@14009000.
+The pinned display binding example uses rdma@..., while the generic DMA binding
+selects dma-controller names and requires #dma-cells. A display engine's transfer
+function does not establish a generic DMA-provider interface. The isolated
+rdma-node-name candidate renames only that node to rdma@14009000, retaining label,
+phandle, compatible strings, register/interrupt/clock data and all other values.
+The compiled /aliases/rdma0 path necessarily updates to the renamed node. That
+one reviewed alias string is explicitly checked; all other879 property values
+across186 nodes remain identical after the five reviewed node-path substitutions.
+No fake #dma-cells or binding suppression is introduced.
+
+Reproduce `python3 scripts/build_douglas_dtb.py --experiment rdma-node-name`, then
+`python3 scripts/compare_pmic_dtb.py --experiment rdma-node-name`. The comparator
+rejects wrong/missing alias targets, phandle/register changes and unexpected
+aliases. DTC output is clean,26259 bytes, SHA256
+c1824152e3684da0d4d0748ad99c5724fd948c63f02bb4a051e286c6150297ff.
+Routine CI now repeats this fourth DT variant and binary comparison. Existing
+variants/defaults remain available; donor RAM/PSCI declarations remain unqualified.
+
+For full schema replay use --experiment rdma-node-name with the prior opt-in
+UART/Gunyah/PMIC/sysirq/timer proposal flags. After normalizing only the reviewed
+RDMA path, the delta removes one false DMA-cells requirement and adds no errors:
+25 validation errors/55 unmatched remain,80 total, passed=false/exit1. RDMA's
+MT8163 compatible coverage and display hardware still need separate work.
+Exact patch/DT/schema/source hashes, clean compiler report, binary comparison,
+logs and diagnostic delta are retained in evidence/rdma-node-name.88 unit tests
+pass. No device, kernel, firmware packing or runtime test performed. Next task:
+strict display-RDMA compatible coverage, or remaining boot-relevant binding gaps.

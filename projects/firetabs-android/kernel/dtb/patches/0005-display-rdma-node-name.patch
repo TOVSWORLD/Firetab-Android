@@ -1,0 +1,11 @@
+--- a/arch/arm64/boot/dts/mediatek/mt8163.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8163.dtsi
+@@ -851,7 +851,7 @@
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x7000 0x1000>;
+ 		};
+ 
+-		rdma0: dma-controller@14009000 {
++		rdma0: rdma@14009000 {
+ 			compatible = "mediatek,mt8163-disp-rdma", "mediatek,mt8173-disp-rdma";
+ 			reg = <0 0x14009000 0 0x1000>;
+ 			interrupts = <GIC_SPI 186 IRQ_TYPE_LEVEL_LOW>;

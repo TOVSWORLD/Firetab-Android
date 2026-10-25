@@ -25,11 +25,15 @@ def snapshot(binary, dtb):
     return result
 
 
-def compare(baseline, candidate, include_sysirq=False):
+def compare(baseline, candidate, include_sysirq=False, include_rdma=False):
     if any(PREFIX + old not in baseline for old in RENAMES):
         raise ValueError('Baseline lacks the expected PMIC child nodes')
     if include_sysirq and "/soc/intpol-controller@10200620" not in baseline:
         raise ValueError("Baseline lacks expected sysirq node")
+    old_rdma, new_rdma = '/soc/dma-controller@14009000', '/soc/rdma@14009000'
+    encode = lambda value: ' '.join(format(x, 'x') for x in value.encode()+b'\0')
+    if include_rdma and (old_rdma not in baseline or baseline.get('/aliases', {}).get('rdma0') != encode(old_rdma)):
+        raise ValueError('Baseline lacks expected RDMA node/alias')
     expected = {}
     for path, properties in baseline.items():
         newpath = path
@@ -39,6 +43,10 @@ def compare(baseline, candidate, include_sysirq=False):
                 break
         if include_sysirq and path == "/soc/intpol-controller@10200620":
             newpath = "/soc/interrupt-controller@10200620"
+        if include_rdma and path == old_rdma:
+            newpath = new_rdma
+        if include_rdma and path == '/aliases':
+            properties = {**properties, 'rdma0': encode(new_rdma)}
         if newpath in expected:
             raise ValueError('Rename collision')
         expected[newpath] = properties
@@ -46,17 +54,19 @@ def compare(baseline, candidate, include_sysirq=False):
         raise ValueError('Property values or unexpected node paths changed')
     return {'scope': 'Binary DT property/path comparison; no schema or hardware qualification',
             'nodes_compared': len(candidate), 'properties_compared': sum(len(x) for x in candidate.values()),
-            'allowed_node_path_renames': RENAMES, 'property_values_identical': True, 'sysirq_node_renamed': include_sysirq}
+            'allowed_node_path_renames': RENAMES, 'property_values_identical': not include_rdma, 'sysirq_node_renamed': include_sysirq,
+            'rdma_node_renamed': include_rdma, 'reviewed_alias_path_rewrites': ['rdma0'] if include_rdma else [],
+            'all_other_property_values_identical': True}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fdtget', type=Path, default=ROOT / 'work/dtb-tool/build/fdtget')
-    parser.add_argument('--experiment', choices=['pmic-node-names', 'sysirq-node-name'], default='pmic-node-names')
+    parser.add_argument('--experiment', choices=['pmic-node-names', 'sysirq-node-name', 'rdma-node-name'], default='pmic-node-names')
     args = parser.parse_args()
     baseline = snapshot(args.fdtget, ROOT / 'work/dtb-compile/repro/douglas.dtb')
     candidate = snapshot(args.fdtget, ROOT / 'work/dtb-compile' / args.experiment / 'douglas.dtb')
-    print(json.dumps(compare(baseline, candidate, args.experiment == 'sysirq-node-name'), indent=2))
+    print(json.dumps(compare(baseline, candidate, args.experiment in ['sysirq-node-name', 'rdma-node-name'], args.experiment == 'rdma-node-name'), indent=2))
 
 
 if __name__ == '__main__':

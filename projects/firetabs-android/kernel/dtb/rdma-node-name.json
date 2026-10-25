@@ -1,0 +1,34 @@
+{
+  "purpose": "Display RDMA canonical node-name candidate; alias path rewrite only, no hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "patches": [
+    {
+      "path": "patches/0001-include-thermal-bindings.patch",
+      "sha256": "b0eb49c8a20ed8b19d1125f81ec0977b68eb337b4b2cd829e8ee3e914f12391d"
+    },
+    {
+      "path": "patches/0002-correct-structural-diagnostics.patch",
+      "sha256": "0fa73601e7676278f416bc3cef63bee129b162c492bd8cb23137cf77585e9142"
+    },
+    {
+      "path": "patches/0003-pmic-child-node-names.patch",
+      "sha256": "0e97e4326558f0b1824abf9d9efa3b12c555422264bb6afc60c86420cec82058"
+    },
+    {
+      "path": "patches/0004-sysirq-node-name.patch",
+      "sha256": "931629b3df5b4d2cf461d2ea2b481badf5dd7837432f672a4c003f156fe43a76"
+    },
+    {
+      "path": "patches/0005-display-rdma-node-name.patch",
+      "sha256": "ca0e88ddb799894831a1bf429dfb51f5f0dc282febc9a3a6765e274d9b7c2072"
+    }
+  ],
+  "expected_artifact": {
+    "bytes": 26259,
+    "sha256": "c1824152e3684da0d4d0748ad99c5724fd948c63f02bb4a051e286c6150297ff"
+  },
+  "kernel_compiled": false,
+  "hardware_tested": false,
+  "variant": "rdma-node-name"
+}

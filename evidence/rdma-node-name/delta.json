@@ -1,0 +1,14 @@
+{
+  "normalization": "Reviewed RDMA path rename only",
+  "removed": [
+    {
+      "message": "'#dma-cells' is a required property",
+      "node": "/soc/rdma@14009000",
+      "type": "validation"
+    }
+  ],
+  "added": [],
+  "baseline_count": 81,
+  "new_count": 80,
+  "passed_full_validation": false
+}

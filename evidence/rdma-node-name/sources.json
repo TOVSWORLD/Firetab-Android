@@ -1,0 +1,15 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schemas": [
+    {
+      "path": "display/mediatek/mediatek,rdma.yaml",
+      "sha256": "5f40bca838da2329b0e134c67877076126def3d14ca844a29e66a0b75c587173"
+    },
+    {
+      "path": "dma/dma-controller.yaml",
+      "sha256": "6726416ed8eefce02702f9a4cd4821b43dfdb264aa0dd88a7382175380fef6d3"
+    }
+  ],
+  "changes": "Canonical display rdma node name; generated rdma0 alias path updated; all other property bytes identical",
+  "hardware_tested": false
+}
