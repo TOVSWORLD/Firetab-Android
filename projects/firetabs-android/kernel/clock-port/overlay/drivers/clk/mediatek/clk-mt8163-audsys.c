@@ -49,6 +49,26 @@ static const struct mtk_gate aud_clks[] = {
 	DIV_GATE(_id, _name, _parent, AUDIO_CLK_AUDDIV_0, _gate_shift,	\
 		 AUDIO_CLK_AUDDIV_0, 3 /* div_width */, _div_shift)
 
+/* Preserve donor flags=0; ACK MUX_DIV_GATE forces CLK_SET_RATE_PARENT. */
+#define MUX_DIV_GATE_FLAGS(_id, _name, _parents,	\
+		_mux_reg, _mux_shift, _mux_width,	\
+		_div_reg, _div_shift, _div_width,	\
+		_gate_reg, _gate_shift, _flags) {	\
+		.id            = _id,			\
+		.name          = _name,			\
+		.parent_names  = _parents,		\
+		.num_parents   = ARRAY_SIZE(_parents),	\
+		.mux_reg       = _mux_reg,		\
+		.mux_shift     = _mux_shift,		\
+		.mux_width     = _mux_width,		\
+		.divider_reg   = _div_reg,		\
+		.divider_shift = _div_shift,		\
+		.divider_width = _div_width,		\
+		.gate_reg      = _gate_reg,		\
+		.gate_shift    = _gate_shift,		\
+		.flags         = _flags,		\
+	}
+
 #define AUD_MUX_DIV(_id, _name, _mux_shift, _div_shift, _gate_shift)	\
 	MUX_DIV_GATE_FLAGS(_id, _name, apll_div_parents, AUDIO_CLK_AUDDIV_0,	\
 		_mux_shift, 1 /* mux_width */, AUDIO_CLK_AUDDIV_1,	\

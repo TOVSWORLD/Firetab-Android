@@ -91,6 +91,30 @@
       "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mt8163-vencsys.c",
       "sha256": "9f81ab848876539c802150f89563c46b3fc5bcfe17dbe91d3f048dbdd676ff48",
       "bytes": 1522
+    },
+    {
+      "path": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mux.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mux.h",
+      "sha256": "37ff5fb4b694a0d5d5eec9a6373d1c68781c043f18f418ebfa4553ac2e73fe22",
+      "bytes": 9289
+    },
+    {
+      "path": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mux.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mux.c",
+      "sha256": "334541416ae6f0e17b6827e07761cb26de8d4e2382fc109c42437d78dea64f4c",
+      "bytes": 13166
+    },
+    {
+      "path": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mtk.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/clk/mediatek/clk-mtk.h",
+      "sha256": "c386824a2417980a5cde29e56c15c6b2ee1d3a59739060f41ed98794b1246d75",
+      "bytes": 7935
+    },
+    {
+      "path": "evidence/clock-port/ack/drivers/clk/mediatek/clk-mux.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/clk/mediatek/clk-mux.c?format=TEXT",
+      "sha256": "c0241c2c3ff6b7fabe6c4a6ef254cef915f691722d78fe20760e49cb1a484b08",
+      "bytes": 10861
     }
   ]
 }

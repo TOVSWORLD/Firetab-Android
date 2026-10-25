@@ -39,3 +39,12 @@ Pending: actual compilation result; exhaustive DT consumer/parent-name/ID review
 matching full binding-schema validation; register/critical-clock audit; physical
 clock rates/reset behavior. This work does not complete #18 or any runtime gate.
 No firmware packaging or device operations are performed.
+
+First Linux compile (run 40168938776) failed on donor `MUX_GATE_UPD_FLAGS`,
+`MUX_GATE_UPD` and `MUX_DIV_GATE_FLAGS`, absent from ACK. `mux-api.patch`
+backports the donor's actual direct-register read/modify/write + update-bit
+operations and initializer macros, retaining ACK's existing set/clear ops and
+allocation APIs. Using set/clear ops with zero set/clear offsets would be wrong.
+The audio driver retains donor composite flags=0 through a local initializer;
+ACK's ordinary MUX_DIV_GATE forces CLK_SET_RATE_PARENT and is not equivalent.
+New donor common-source references are hash-recorded in evidence/clock-port.

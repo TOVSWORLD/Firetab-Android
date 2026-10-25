@@ -226,3 +226,9 @@ mode that verifies seven enabled symbols, builds affected objects with W=1 and
 then a full generic Image. No clock compilation or hardware pass is yet claimed.
 The Linux run uses the previously reported per-run 3 GiB source budget and host
 resource gates; no full Android checkout, paid host or device access is involved.
+
+Clock run 40168938776 reached real compilation and failed on missing direct-update
+mux macros/ops and flags-selectable composite initializer. Backported the donor's
+actual direct-update operations as a minimal ACK patch, leaving existing ACK ops
+and allocation implementation intact. Preserved audio composite flags=0 rather
+than silently substituting ACK's rate-propagating macro. Rebuild pending.

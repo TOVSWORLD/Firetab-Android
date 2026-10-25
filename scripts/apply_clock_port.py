@@ -26,9 +26,9 @@ def main():
             raise SystemExit(f'Input hash mismatch: {original}')
         if (source / record['target']).exists():
             raise SystemExit(f'Refusing to overwrite {record["target"]}')
-    patch = str(PORT / 'build-wiring.patch')
-    subprocess.run(['git', '-C', str(source), 'apply', '--check', patch], check=True)
-    subprocess.run(['git', '-C', str(source), 'apply', patch], check=True)
+    patches = [str(PORT / name) for name in ['build-wiring.patch', 'mux-api.patch']]
+    subprocess.run(['git', '-C', str(source), 'apply', '--check', *patches], check=True)
+    subprocess.run(['git', '-C', str(source), 'apply', *patches], check=True)
     for record in lock['inputs']:
         target = source / record['target']
         target.parent.mkdir(parents=True, exist_ok=True)
