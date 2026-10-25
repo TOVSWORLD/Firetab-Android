@@ -214,3 +214,48 @@ must be read from CI before marking any validation gate complete.
 First Linux run 40168107152 stopped in host-tool preflight: pahole absent.
 No kernel source was fetched. Added Ubuntu dwarves/libelf-dev/libssl-dev host
 packages with installed versions logged; apt repositories remain host-dependent.
+
+## 2026-10-25 — Start issue #18 source integration
+
+#16 kernel compile is still pending; it remains open. Started #18's independent
+source comparison on kernel/mt8163-clock-port, based on the unmerged #17 branch.
+Retrieved 15 pinned source/API files (98,463 decoded bytes). Prepared nine real
+clock drivers and eleven binding headers, donor build wiring, and lifecycle/factor
+registration corrections documented in the overlay README. Added a clock compile
+mode that verifies seven enabled symbols, builds affected objects with W=1 and
+then a full generic Image. No clock compilation or hardware pass is yet claimed.
+The Linux run uses the previously reported per-run 3 GiB source budget and host
+resource gates; no full Android checkout, paid host or device access is involved.
+
+Clock run 40168938776 reached real compilation and failed on missing direct-update
+mux macros/ops and flags-selectable composite initializer. Backported the donor's
+actual direct-update operations as a minimal ACK patch, leaving existing ACK ops
+and allocation implementation intact. Preserved audio composite flags=0 rather
+than silently substituting ACK's rate-propagating macro. Rebuild pending.
+
+Generic ACK compile run 40168232549 succeeded: ARM64 4 KiB Image 41,286,144
+bytes, vmlinux 440,617,560 bytes; ~16 min 34 sec including fetch/config/build.
+Recorded result metadata and recovered the full config from CI logs; its SHA256
+matches the compiler-run checksum. No compiler warning/error lines were found.
+This generic config does not enable Android Binder/SELinux; it is not the target
+Android/douglas config and does not advance that kernel validation record.
+PR #17 merged to development. Full matching binding/schema work is now tracked
+explicitly in #27; driver/configuration work in #18–#25. Exact transfer and
+expanded checkout sizes were not emitted and remain unknown.
+
+Rebuild 40169238323 compiled all nine MT8163 clock objects with W=1 and advanced
+into the full kernel build before being superseded by the evidence-recording
+commit. Full Image linkage with the overlay is still pending. A git-apply blank
+line warning in generated Kconfig wiring was fixed; no warning flag was disabled.
+Added per-PR concurrency cancellation to avoid duplicate obsolete builds.
+
+## 2026-10-25 — Clock reference follow-through
+
+Added a bounded source audit of nine provider files and 102 literal DT clock
+references. Provider header/ID checks pass; three literal HDMI parents remain
+unresolved and documented, not hidden with aliases/dummy clocks. This is not a
+schema/register/runtime validation. Heavy kernel experiments now run on PR open,
+ready-for-review or explicit workflow_dispatch, rather than on every documentation
+push. Source-affecting updates require an explicit rebuild at the new revision;
+repository validation continues on every PR update. Run 40169479688's clock source
+is unchanged by this audit/documentation/workflow-trigger update.

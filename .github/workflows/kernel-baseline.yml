@@ -1,12 +1,18 @@
-name: ACK ARM64 compile experiment
+name: MT8163 clock compile experiment
 on:
   workflow_dispatch:
   pull_request:
+    types: [opened, ready_for_review]
     paths:
+      - projects/firetabs-android/kernel/clock-port/**
+      - scripts/apply_clock_port.py
       - scripts/build_ack_baseline.sh
       - .github/workflows/kernel-baseline.yml
 permissions:
   contents: read
+concurrency:
+  group: clock-compile-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   compile:
     runs-on: ubuntu-24.04
@@ -21,4 +27,4 @@ jobs:
           sudo apt-get install --no-install-recommends -y dwarves libelf-dev libssl-dev
           dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
       - name: Preflight and compile generic ARM64 baseline
-        run: bash scripts/build_ack_baseline.sh
+        run: bash scripts/build_ack_baseline.sh clocks
