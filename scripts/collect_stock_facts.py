@@ -15,7 +15,7 @@ PROPERTIES = ('ro.product.manufacturer', 'ro.product.model', 'ro.product.device'
               'ro.hardware', 'ro.board.platform', 'ro.bootmode',
               'ro.build.version.fireos', 'ro.boot.pl_version', 'ro.boot.lk_version',
               'ro.boot.tee_version')
-PROC_FILES = ('meminfo', 'iomem', 'partitions')
+PROC_FILES = ('version', 'meminfo', 'iomem', 'partitions')
 CMDLINE_KEYS = {'console', 'earlycon', 'bootopt', 'mem', 'maxcpus', 'nr_cpus',
                 'androidboot.hardware', 'androidboot.bootloader',
                 'androidboot.verifiedbootstate', 'androidboot.unlocked_kernel'}
@@ -76,12 +76,19 @@ class ADBReader:
         return bounded_run([self.adb, '-s', self.serial, *arguments])
 
 
+def successful(result):
+    # Android 5 shell transport may return host status zero for remote failures.
+    output = result.stdout.lstrip()
+    shell_error = output.startswith((b'/system/bin/sh:', b'sh:', b'cat:', b'ls:', b'uname:'))
+    return result.code == 0 and not result.truncated and not result.timed_out and not shell_error
+
+
 def collect(reader):
     """Transport injection permits complete tests with no real ADB/device calls."""
     records = []
     def read(name, arguments, binary=False):
         result = reader(arguments)
-        ok = result.code == 0 and not result.truncated and not result.timed_out
+        ok = successful(result)
         record = {'name': name, 'available': ok, 'exit_code': result.code,
                   'truncated': result.truncated, 'timed_out': result.timed_out}
         if ok:
@@ -103,7 +110,7 @@ def collect(reader):
     for name in PROC_FILES:
         read('/proc/' + name, ['shell', 'cat', '/proc/' + name])
     result = reader(['shell', 'cat', '/proc/cmdline'])
-    if result.code == 0 and not result.truncated and not result.timed_out:
+    if successful(result):
         filtered = {}
         for token in result.stdout.decode('utf-8', errors='replace').split():
             key, separator, value = token.partition('=')
@@ -115,7 +122,7 @@ def collect(reader):
     # Read individual DT properties, never a full bootargs/serial-containing blob.
     for name in ['model', 'compatible', 'version', '#address-cells', '#size-cells']:
         read('/proc/device-tree/' + name, ['exec-out', 'cat', '/proc/device-tree/' + name], binary=True)
-    listing = read('DT root node names', ['shell', 'ls', '/proc/device-tree'])
+    listing = read('DT root node names', ['shell', 'ls', '/proc/device-tree/'])
     if listing:
         nodes = sorted({node for node in listing.decode('utf-8', errors='replace').split() if re.fullmatch(r'memory(?:@[0-9a-fA-F]+)?', node)})
         records.append({'name': 'DT memory node selection', 'observed_nodes': len(nodes), 'collected_nodes': nodes[:8], 'limited': len(nodes) > 8})

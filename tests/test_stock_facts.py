@@ -19,7 +19,7 @@ class FakeReader:
         key = args[-1]
         values = {'ro.product.manufacturer': b'Amazon', 'ro.product.model': self.model.encode(),
                   'ro.product.device': self.device.encode(), '/proc/cmdline': b'console=ttyS0 androidboot.serialno=SECRET bootopt=64S3 unknown=PRIVATE',
-                  '/proc/device-tree': b'memory@40000000 chosen serial-number',
+                  '/proc/device-tree/': b'memory@40000000 chosen serial-number',
                   '/proc/device-tree/version': b'hvt\0',
                   '/proc/device-tree/memory@40000000/reg': bytes.fromhex('00000000400000000000000060000000')}
         return module.Result(0, values[key]) if key in values else module.Result(1, stderr=b'unavailable SECRET')
@@ -54,6 +54,18 @@ class StockFacts(unittest.TestCase):
             self.assertEqual(records[key]['text'], value.decode())
         self.assertFalse(any('serial' in x[-1] for x in fake.calls))
 
+    def test_legacy_zero_exit_errors_are_unavailable_and_not_saved(self):
+        fake = FakeReader()
+        def reader(args):
+            if args[-1] in ['/proc/iomem', '/proc/cmdline'] or 'uname' in args:
+                return module.Result(0, b'/system/bin/sh: cat: Permission denied SECRET')
+            return fake(args)
+        report = module.collect(reader)
+        self.assertNotIn('SECRET', str(report))
+        for record in report['records']:
+            if record['name'] in ['/proc/iomem', '/proc/cmdline', 'uname -r', 'uname -m']:
+                self.assertFalse(record['available'])
+
     def test_refuses_wrong_device_before_other_reads(self):
         reader = FakeReader(model='OTHER', device='other')
         with self.assertRaises(ValueError):
@@ -68,7 +80,7 @@ class StockFacts(unittest.TestCase):
     def test_memory_node_queries_are_bounded(self):
         fake = FakeReader()
         def reader(args):
-            if args == ['shell', 'ls', '/proc/device-tree']:
+            if args == ['shell', 'ls', '/proc/device-tree/']:
                 return module.Result(0, ' '.join(f'memory@{x:x}' for x in range(20)).encode())
             return fake(args)
         result = module.collect(reader)
