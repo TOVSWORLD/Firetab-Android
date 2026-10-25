@@ -109,3 +109,13 @@ unreviewed DTB content changes. Repository integrity also verifies input/patch h
 This establishes DT syntax/binary reproducibility only. Full binding validation is
 not passed; the incomplete-context local schema attempt is separately recorded.
 No kernel_compile, boot or hardware stage is promoted by this job.
+
+The heavy `kernel-baseline.yml` experiment runs on PR open/ready-for-review and
+manual dispatch. Documentation updates do not restart a whole kernel compile.
+After a source/config/tool/build-script change, explicitly dispatch it on the
+feature branch and record the exact run/revision before accepting compilation.
+A source-identical older run may support a documentation update; explain that
+comparison. Ordinary required repository checks still run on every PR update.
+The textual clock-reference audit is reproducible with
+`python3 scripts/audit_clock_references.py --check`; it records unresolved parents
+and never represents a schema or hardware validation pass.
