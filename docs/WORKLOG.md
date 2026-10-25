@@ -337,3 +337,15 @@ clock names match driver interfaces, while voltage/timing/DMA and physical log
 capture remain unverified. ACK schemas do not list the MT8163 compatibles: an
 explicit #27 follow-up, not a driver or hardware validation pass. No new kernel
 build was launched to duplicate already-recorded compilation.
+
+## 2026-10-25 — Full ACK binding corpus diagnostic (#27)
+
+Retrieved the exact ACK bindings archive: 3,275,172 bytes, 5,186 YAML files,
+SHA256 4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526.
+Added bounded/hash-verified archive recipe and full-context wrapper. Actual run
+with dtschema 2026.9 reports 36 validation errors and 61 unmatched-schema entries.
+Both upstream tools return zero despite diagnostics; wrapper returns 1 and
+passed=false. One upstream Gunyah YAML file fails parsing and is preserved, so
+this remains provisional corpus processing, not a complete matched schema pass.
+Logs/structured errors expose real PMIC/interrupt-node mismatches and compatible
+coverage gaps. No diagnostics suppressed and no hardware test performed.
