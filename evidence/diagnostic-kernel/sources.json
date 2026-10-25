@@ -10,5 +10,35 @@
     "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/init/Kconfig?format=TEXT",
     "bytes": 72532,
     "sha256": "ddc5be371fd930fa877a46e8cdeb8689c02726f78277584ad17c23604febbbfc"
+  },
+  {
+    "path": "evidence/diagnostic-kernel/ack/drivers/cpuidle/Kconfig",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/cpuidle/Kconfig?format=TEXT",
+    "bytes": 2333,
+    "sha256": "ed8ea8136c0bee5eaad86ddf28277b7b22f12b8e457c814010d5ffc483592204"
+  },
+  {
+    "path": "evidence/diagnostic-kernel/ack/arch/arm64/Kconfig",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/Kconfig?format=TEXT",
+    "bytes": 89856,
+    "sha256": "ec6b9fcc7e36dc834c153f11946b332b9d57803631b6d104a05254ab62c0816b"
+  },
+  {
+    "path": "evidence/diagnostic-kernel/ack/drivers/cpuidle/Kconfig.arm",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/cpuidle/Kconfig.arm?format=TEXT",
+    "bytes": 4472,
+    "sha256": "14561f6d373fc6b88cb8e8d4504d947eaa16d31f9a97022c09d7ec4b02968858"
+  },
+  {
+    "path": "evidence/diagnostic-kernel/ack/arch/arm64/Kconfig.platforms",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/Kconfig.platforms?format=TEXT",
+    "bytes": 10935,
+    "sha256": "4a1080d724eee97f2c5dea1dc54addf3bb9fc12415097ec47619459add8198d1"
+  },
+  {
+    "path": "evidence/diagnostic-kernel/ack/drivers/acpi/Kconfig",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/acpi/Kconfig?format=TEXT",
+    "bytes": 19913,
+    "sha256": "bf42be17538153e78941c70ea91fae7046be0620bde0ea0e67b05d104be94992"
   }
 ]

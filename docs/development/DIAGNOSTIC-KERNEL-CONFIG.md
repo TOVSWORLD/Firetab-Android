@@ -65,3 +65,18 @@ all debug features. The checker now reports all policy mismatches together and
 the build prints rejected resolved config for review. The first failure and
 source hashes are retained; a new actual build is required to establish whether
 the corrected configuration resolves and compiles.
+
+
+## Second resolved-config failure
+
+Run 40184459476 at bbdcc8982c485800e69207711f9c3c9a0b1b9cc3 resolves
+EXPERT=y and BLOCK/MMC/MTD disabled, but rejects CPU_IDLE=y before compilation.
+The rejected config is retained as reconstructed CI stdout, with explicit
+provenance and checksum in evidence/diagnostic-kernel/second-config-failure.json.
+Pinned drivers/acpi/Kconfig shows the exact chain: ACPI_PROCESSOR selects
+ACPI_PROCESSOR_IDLE, which selects CPU_IDLE. The fragment now disables ACPI and
+those dependent policy symbols for this donor-DT diagnostic experiment, retaining
+the strict CPU_IDLE=n requirement. ARM_PSCI_FW remains available for firmware CPU
+operations; disabling the cpuidle policy driver does not validate CPU_ON or stock
+PSCI compatibility. A corrected build is still required; no Image success is
+inferred from storage configuration resolving correctly.

@@ -481,3 +481,13 @@ EXPERT, with default y; generic defconfig has EXPERT=n. Captured source/hash and
 failure evidence. Added EXPERT=y, retained strict storage-disabled check, improved
 all-mismatch diagnostics and rejected-config logging. Rebuild required; no
 kernel/boot result claimed, no tablet access or firmware packing occurred.
+
+
+## 2026-10-25 — Remove ACPI idle-policy selector (#44)
+
+Second actual run 40184459476 resolves storage disabled but rejects CPU_IDLE=y
+before Image compilation. Captured the rejected config from CI stdout and pinned
+Kconfig source proving ACPI_PROCESSOR -> ACPI_PROCESSOR_IDLE -> CPU_IDLE. Fragment
+now disables ACPI/processor idle policy for the donor-DT experiment; the strict
+CPU_IDLE=n gate remains. No ARM_PSCI_FW/DT/stock-loader changes. Corrected build
+still pending; no physical tablet access, firmware packing or runtime claim.

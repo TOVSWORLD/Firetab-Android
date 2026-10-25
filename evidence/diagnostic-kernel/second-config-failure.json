@@ -1,0 +1,13 @@
+{
+  "scope": "Rejected resolved config reconstructed from CI stdout; not a successful build",
+  "ci_run": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40184459476",
+  "project_commit": "bbdcc8982c485800e69207711f9c3c9a0b1b9cc3",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "full_downloaded_ci_log_sha256": "892c616879bf710ac6c4ac05b1995603d29c6fec3177c4239f2c58e445694232",
+  "reconstructed_config_sha256": "dace3090028c5b1dae4543cf4c3a75ede42ef7533150b1c64e9720a2611db7be",
+  "error": "CONFIG_CPU_IDLE expected n, resolved y",
+  "cause": "ACPI_PROCESSOR selects ACPI_PROCESSOR_IDLE, which selects CPU_IDLE",
+  "storage_policy_resolved_disabled": true,
+  "kernel_compiled": false,
+  "hardware_tested": false
+}
