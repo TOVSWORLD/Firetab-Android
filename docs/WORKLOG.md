@@ -125,3 +125,7 @@ anti-vaporware, canonical evidence, truncation detection, and focused blocking c
 Added three read-only GitHub Actions jobs, offline checker and rejection-path tests.
 No paid model service, privileged runner, large build/download or physical device action.
 Firmware and panel execution stages remain explicitly `not_run`.
+
+Published initial main revision `82c7fc4`; GitHub run 40158159017 passed all three
+jobs and six rejection-path tests. Updated checkout to the pinned v6 revision after
+reviewing the hosted runner warning about the v4 Node runtime.
