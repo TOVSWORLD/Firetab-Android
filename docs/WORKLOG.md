@@ -430,3 +430,14 @@ four reviewed path renames. Schema run removes one naming diagnostic with none
 added after path normalization: 33 errors/61 unmatched remain, passed=false;
 upstream YAML parse issue remains. Added CI compilation/property comparison and
 rejection tests; 44 local tests pass. No physical device access or firmware pack.
+
+## 2026-10-25 — Minimal diagnostic userspace experiment (#41)
+
+Created separate freestanding AArch64 /init and deterministic newc/gzip builder.
+Only console output, bounded kernel metadata reads, read-only virtual mounts and
+controlled idle; no block nodes/storage mounts or reboot interface. Local Apple
+Clang cross-object compile passes strict warnings; no local Linux linker present,
+so full ELF/archive compilation is delegated to the existing Linux CI toolchain.
+47 unit tests pass, including ELF rejection and actual archive metadata/content
+parsing. Build is not a firmware package or a boot/runtime result. No tablet
+transport or physical changes. Stock loader/memory/recovery gates remain #21.
