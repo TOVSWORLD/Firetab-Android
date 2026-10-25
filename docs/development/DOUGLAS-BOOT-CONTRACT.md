@@ -55,9 +55,18 @@ evidence. Do not merely enlarge reg to 1.5 GiB or discard firmware reservations.
 
 The existing device tree's BoardConfig identifies a 16 MiB boot partition; older
 build references use Image.gz-dtb/header-v0 packaging. They do not establish what
-the untouched stock loader accepts. The generic compiled Image was 41,286,144
-bytes uncompressed; compressed size and diagnostic initramfs/DT/header fit have
-not been measured. Raw Image size alone neither proves nor disproves fit.
+the untouched stock loader accepts. The early generic Image was 41,286,144
+bytes uncompressed. The later [restricted diagnostic build](DIAGNOSTIC-KERNEL-CONFIG.md)
+measured Image.gz at 9,187,928 bytes; the isolated initramfs also compiles (#41).
+Combined DT/ramdisk/header/trailer fit and actual partition size remain unverified.
+Raw Image size alone neither proves nor disproves fit.
+
+A [model-verified OTA candidate](STOCK-OTA-INSPECTION.md) now supplies actual
+boot-header evidence: KFDOWI/douglas/MT8163 build659664620, 2KiB pages, a
+512-byte kernel prefix before gzip/AArch64 data and an unclassified2KiB trailer.
+Installed-build equivalence, marketing-version mapping and signatures are not
+verified. Those header fields are evidence for review, not validated new-kernel
+load addresses or a recovery package.
 
 Inspected chaosmaster/amonet revision
 `2d8a4e6f73d9dab42d313c9cd751802b23ea7d31` contains persistent modifications in
@@ -74,8 +83,10 @@ unlock state. Do not assume custom TF-A, U-Boot or recovery is already present.
 
 ## First discriminating test
 
-Prepare a minimal diagnostic configuration only after the above contracts are
-resolved. Keep its userspace independent of Android and internal storage: print
+Qualify a physical diagnostic image only after the above contracts are resolved.
+Isolated restricted kernel and minimal initramfs compilation are complete; no
+combined image has been packed or booted. Keep its userspace independent of
+Android and internal storage: print
 explicit initramfs progress markers, provide a controlled idle endpoint, and
 avoid mounting/writing user partitions. Display, Wi-Fi and Google services are
 not prerequisites for this early experiment. No diagnostic image is packed here.
