@@ -270,3 +270,10 @@ fixups must be resolved rather than guessing a RAM replacement. Recorded reserve
 region discrepancies and a staged diagnostic/log/recovery plan. Inspected amonet
 source only; no unlock/helper/device operation or image packing performed.
 #21 remains open pending actual firmware/memory/loader and recovery evidence.
+
+Clock Image run 40169479688 succeeded at 07:09 UTC, about 36 minutes including
+setup/fetch/object/full build, with no compiler warning/error lines. Actual
+AArch64 Image is 41,351,680 bytes; SHA256 and vmlinux/config metadata recorded in
+evidence/kernel-compile/clock-image-result.json. Clock source is unchanged by
+the later audit/documentation update. PR #26 merged to development. Schema #27
+and parent resolution #29 remain open; no target boot/runtime gate is promoted.
