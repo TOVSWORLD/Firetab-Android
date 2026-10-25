@@ -1,0 +1,29 @@
+{
+  "scope": "Conditional static address arithmetic only; no qualified physical placement or firmware assembly",
+  "kernel_source_report": "evidence/qemu-diagnostic/generic-runtime-result.json",
+  "kernel_sha256": "08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909",
+  "text_offset": 0,
+  "image_size": 29360128,
+  "candidate_header_load_address": "0x40080000",
+  "required_base_if_loaded_at_header_address": "0x40080000",
+  "base_alignment_bytes": 2097152,
+  "header_address_satisfies_new_image_alignment": false,
+  "conditional_image_end_exclusive": "0x41c80000",
+  "atf_start": "0x43000000",
+  "conditional_image_overlaps_static_atf": false,
+  "actual_loader_placement_verified": false,
+  "boot_abi": "https://docs.kernel.org/arch/arm64/booting.html",
+  "reference_revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+  "reference_files": [
+    {
+      "path": "lk-payload/main.c",
+      "sha256": "a98172b957fce059ffc1d05dc1da5647add14cec6a0eaf5300ad2b1b3224f30f",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/lk-payload/main.c"
+    },
+    {
+      "path": "lk-payload/create_boot_img.py",
+      "sha256": "929fbf25865f357f068b3b56eff57f308379f044706bb955a3a81433b25953c2",
+      "url": "https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/lk-payload/create_boot_img.py"
+    }
+  ]
+}
