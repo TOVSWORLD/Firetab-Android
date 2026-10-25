@@ -1,0 +1,9 @@
+{
+  "scope": "Local GPT compatible coverage only; not upstream acceptance or timer runtime validation",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-timer.patch",
+  "patch_sha256": "6547f483ab487c7cf3c427e053f7187ae81b2222adaad8e9d6695b9967fa7e64",
+  "schema": "timer/mediatek,timer.yaml",
+  "original_sha256": "1bc18fd510435ed8829d2a4249678627c38237a87d082f229b7a9c3189ac23d1",
+  "proposed_sha256": "679ae73d2d949de3657529ca52e30d477af16546a6b70f1169ef442df8726eee"
+}

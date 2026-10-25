@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "compatible": [
+        "mediatek,mt8163-timer",
+        "mediatek,mt6577-timer"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-timer"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-timer",
+        "mediatek,wrong-timer"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-timer",
+        "mediatek,mt6577-timer",
+        "extra"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8173-timer",
+        "mediatek,mt6577-timer"
+      ],
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_other_schema_constraints_preserved": true,
+  "passed": true
+}

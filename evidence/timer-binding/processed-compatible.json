@@ -1,0 +1,66 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6577-timer",
+            "mediatek,mt6765-timer",
+            "mediatek,mt6795-systimer"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt2701-timer",
+            "mediatek,mt6572-timer",
+            "mediatek,mt6580-timer",
+            "mediatek,mt6582-timer",
+            "mediatek,mt6589-timer",
+            "mediatek,mt6795-timer",
+            "mediatek,mt7623-timer",
+            "mediatek,mt8127-timer",
+            "mediatek,mt8135-timer",
+            "mediatek,mt8163-timer",
+            "mediatek,mt8173-timer",
+            "mediatek,mt8516-timer"
+          ]
+        },
+        {
+          "const": "mediatek,mt6577-timer"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt7629-timer",
+            "mediatek,mt8183-timer",
+            "mediatek,mt8186-timer",
+            "mediatek,mt8188-timer",
+            "mediatek,mt8192-timer",
+            "mediatek,mt8195-timer",
+            "mediatek,mt8196-timer",
+            "mediatek,mt8365-systimer"
+          ]
+        },
+        {
+          "const": "mediatek,mt6765-timer"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}

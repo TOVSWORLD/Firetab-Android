@@ -1,0 +1,18 @@
+{
+  "removed": [
+    {
+      "message": "['mediatek,mt8163-timer', 'mediatek,mt6577-timer'] is not valid under any of the given schemas",
+      "node": "/soc/timer@10008000",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-timer', 'mediatek,mt6577-timer']",
+      "node": "/soc/timer@10008000",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "baseline_count": 83,
+  "new_count": 81,
+  "passed_full_validation": false
+}

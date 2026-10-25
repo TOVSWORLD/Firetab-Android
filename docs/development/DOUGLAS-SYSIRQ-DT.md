@@ -65,3 +65,25 @@ controls are retained.84 unit tests pass including isolated locked patch apply
 and refusal of changed source. No DT/driver/hardware behavior changed or device
 queried. Next#27 board-relevant task: timer compatible coverage or display-RDMA
 node naming versus generic DMA-provider selection, with strict negative controls.
+
+## Strict MT8163 GPT timer coverage (#68)
+
+The same opt-in extra-binding mechanism now supports mt8163-timer. Add
+`--extra-binding mt8163-timer` alongside mt8163-sysirq and prior proposal flags
+when reproducing the full-context run. Both pinned legacy mtk_timer.c and ACK
+timer-mediatek.c register mediatek,mt6577-timer, already the donor DT's fallback.
+The proposal inserts MT8163 only into the existing GPT first-string enum; it
+does not change clocks, interrupts, register ranges or other schema constraints.
+Driver source/hash provenance is retained in evidence/timer-binding. This does
+not prove timer frequency/interrupt behavior on the actual tablet.
+
+Meta-validation is clean. Actual processed-compatible controls accept the pair,
+reject missing/wrong/extra fallback strings and preserve existing MT8173 support.
+Run them with `work/dtb-tool/venv/bin/python evidence/timer-binding/check-controls.py`.
+Unit tests verify exact locked patch application and changed-input refusal.
+Full-context delta removes one timer compatibility error and one unmatched entry,
+adds none:26 validation errors/55 unmatched remain (81 diagnostics), passed=false
+and wrapper exit1. Source/input/patch/processed/control hashes, logs and delta
+are retained;85 unit tests pass. No kernel/DT/driver/device change or hardware
+qualification. Next#27 task is display-RDMA node naming versus generic DMA
+provider selection, using canonical display binding examples and property checks.
