@@ -101,7 +101,10 @@ The next research milestone is a current-kernel hardware-support and Android 17 
 audit. Map reusable/missing drivers, boot contracts and proprietary interfaces; distinguish
 absent optional hardware from unimplemented support for existing hardware. Define staged
 boot and hardware tests, followed by general-purpose app/browser/media and Crestron tests.
-Wait for the user's next instructions before starting that work.
+The user authorized this work. Issues #5 and #14 completed the source audit and
+DT-only compile; #16 now tracks the Linux ARM64 kernel compilation experiment.
+See `.github/workflows/kernel-baseline.yml` and `scripts/build_ack_baseline.sh`.
+The initial defconfig compile is generic and does not qualify douglas hardware.
 
 ## Existing experimental materials
 

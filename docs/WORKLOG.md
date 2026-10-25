@@ -196,3 +196,21 @@ validation stages stay not_run. A separate schema attempt used incomplete bindin
 context and is explicitly not passed despite the validator's zero exit code.
 The tool-specific SWIG incompatibility was fixed by a compatible pinned dependency,
 not by suppressing C errors. No full kernel/AOSP download or physical device action.
+
+## 2026-10-25 — Issue #16 generic ACK compiler baseline
+
+Reconciled closed issue #9's stale status and moved Android root #2 and task #16
+into progress on the Android board. Added an isolated Linux CI experiment for
+ACK d9318bdb4c34e8b2d997b4f67ced56b120b22b87 with Ubuntu LLVM 18.
+The source's scripts/min-tool-version.sh requires LLVM >=15; Kconfig.ext is an
+existing intentionally empty upstream placeholder, so no source stub is added.
+Uses ARM64 defconfig, not GKI/douglas config. Source fetch shallow/no tags,
+3 GiB post-transfer budget, 15 GiB free-disk and 7 GiB RAM gates, 60 minute timeout.
+Runner compiler/package versions are recorded, not hermetically pinned. The
+experiment logs the resolved config, ELF architecture, artifact sizes/hashes.
+No boot image packaging, upload/release or device access. Compilation outcome
+must be read from CI before marking any validation gate complete.
+
+First Linux run 40168107152 stopped in host-tool preflight: pahole absent.
+No kernel source was fetched. Added Ubuntu dwarves/libelf-dev/libssl-dev host
+packages with installed versions logged; apt repositories remain host-dependent.
