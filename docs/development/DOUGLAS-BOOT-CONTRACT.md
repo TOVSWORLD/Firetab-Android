@@ -148,3 +148,33 @@ also declares disable_uart2 but calls the second strcpy with disable_uart again;
 source intent is insufficient to qualify usable UART logging. No payload was
 built, run or changed here. Continue by identifying the actual installed loader
 and its decompression/relocation/entry behavior before selecting placement.
+
+## Diagnostic log backend audit
+
+The retained restricted `diagnostic.config` has CONFIG_PSTORE=y but
+CONFIG_PSTORE_RAM=m, CONFIG_PSTORE_CONSOLE disabled and CONFIG_PSTORE_PMSG
+disabled. Our isolated initramfs has no module loader or module files. Therefore
+that configured RAM backend cannot provide logs in this diagnostic environment;
+the successful QEMU test used the live PL011 console, not retained pstore logs.
+This is a verified configuration limitation, not a claim that modern ramoops
+cannot be developed for douglas. No module is loaded or config changed here.
+
+The pinned [legacy MediaTek RAM-console implementation](https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/ram_console/mtk_ram_console.c)
+defines its own multi-stage buffer layout at lines99–118 and signature at119.
+It carries preloader/LK/Linux offsets plus a circular console. Its optional
+CONFIG_MTK_EMMC_SUPPORT + CONFIG_MTK_AEE_IPANIC path includes
+last_kmsg_store_to_emmc, which calls card_dump_func_write at lines176–180;
+late initialization also starts an eMMC log-reader thread at659. This source
+contains a persistent write path; whether that path is enabled/reached in the
+installed stock firmware is unverified. Do not import the entire legacy logging
+subsystem into the storage-free diagnostic just to obtain console output.
+
+A RAM-console reservation alone establishes neither wire format compatibility
+nor survival across reset or a readable recovery interface. A future RAM logging
+experiment needs an explicit isolated memory area, agreement with firmware and
+loader ownership, built-in backend and selected capture policy, a compatible
+reader and a verified reset/retention path. It must account for the legacy
+firmware reservations rather than overwriting them. UART instead needs verified
+pad accessibility, electrical levels, routing and early/runtime driver setup.
+Neither route is qualified yet. Hashes and resolved symbols are retained in
+`evidence/boot-contract/log-path-review.json`; #21/#22 remain open.

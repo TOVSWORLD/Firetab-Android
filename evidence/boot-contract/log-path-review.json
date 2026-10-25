@@ -1,0 +1,18 @@
+{
+  "scope": "Source/config log-path review; no runtime retention or recovery qualification",
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "legacy_path": "drivers/misc/mediatek/ram_console/mtk_ram_console.c",
+  "legacy_sha256": "cc57dd6936a85f40fb59ded3ee45f66db7ee9dc6dbc415b1c4049591ac66779e",
+  "legacy_url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/ram_console/mtk_ram_console.c",
+  "diagnostic_config_sha256": "f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed",
+  "resolved_symbols": {
+    "CONFIG_PSTORE": "y",
+    "CONFIG_PSTORE_RAM": "m",
+    "CONFIG_PSTORE_CONSOLE": "n",
+    "CONFIG_PSTORE_PMSG": "n"
+  },
+  "initramfs_module_loader": false,
+  "physical_uart_tested": false,
+  "ram_log_path_qualified": false,
+  "storage_logging_enabled_by_this_change": false
+}
