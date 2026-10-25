@@ -73,7 +73,9 @@ def main():
             if issue['id'] not in {x['id'] for x in children}:
                 api(f'issues/{parent["number"]}/sub_issues', dict(sub_issue_id=issue['id']))
         print(f'{item["key"]}: {issue["html_url"]}')
-    state = {'repository':REPO,'issues':{key:dict(number=value['number'],url=value['html_url']) for key,value in mapped.items()},'milestones':{key:dict(number=value['number'],url=value['html_url']) for key,value in milestones.items()}}
+    state_path = ROOT/'projects/github-setup.json'
+    previous_state = json.loads(state_path.read_text()) if state_path.exists() else {}
+    state = {**previous_state, 'repository':REPO,'issues':{key:dict(number=value['number'],url=value['html_url']) for key,value in mapped.items()},'milestones':{key:dict(number=value['number'],url=value['html_url']) for key,value in milestones.items()}}
     (ROOT/'projects/github-setup.json').write_text(json.dumps(state,indent=2)+'\n')
     print('Applied metadata; recorded server identities in projects/github-setup.json. No existing issue bodies/statuses were overwritten.')
 

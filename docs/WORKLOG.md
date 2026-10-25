@@ -154,3 +154,11 @@ Seed identities are recorded in projects/github-setup.json; the reconciliation s
 preserves existing issue bodies and states. Enabled private vulnerability reporting.
 Active tag ruleset 25808738 blocks updates/deletion for all three release tag prefixes.
 No model service, full build, firmware upload or physical test was performed.
+
+## 2026-10-25 — Actual GitHub Projects
+
+The earlier split created folders and parent issues, not GitHub Projects. Created
+FireTabs Android (#4) and Crestron Panel (#5), linked both to the repository, and
+added project-specific issues plus shared repository tasks. Recorded board identities
+and preserved them across metadata reconciliation. Public visibility awaits explicit
+owner approval after automatic approval review rejected that separate visibility change.

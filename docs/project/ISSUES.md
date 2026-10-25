@@ -58,3 +58,18 @@ not a scheduled issue generator or evidence of approved implementation.
 - [Crestron Panel #3](https://github.com/TOVSWORLD/Firetab-Android/issues/3)
 
 See `projects/github-setup.json` for feature/task and milestone identities.
+
+## GitHub Projects
+
+The repository's Projects tab links two actual GitHub Projects, in addition to the
+source folders and parent/sub-issue hierarchy:
+
+- [FireTabs Android](https://github.com/users/TOVSWORLD/projects/4)
+- [Crestron Panel](https://github.com/users/TOVSWORLD/projects/5)
+
+Each contains its project/feature/task issues; shared repository issues appear in both.
+Status uses Todo, In Progress and Done, with closed completed tasks marked Done.
+Board visibility is managed separately from repository visibility; it is private until
+the owner explicitly approves publication. The setup tool preserves board identities
+but does not synchronize membership/status automatically. Maintainers add new issues
+to their applicable board and update status when work changes.
