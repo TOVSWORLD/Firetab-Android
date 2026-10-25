@@ -555,3 +555,12 @@ four metadata reads completed, idle survived five seconds. Exact hashes/command,
 ARM64 header and CI-log hash retained in evidence/qemu-diagnostic. All routine
 checks also passed; 68 tests. Generic execution only; #21 physical loader/memory,
 recovery and log qualification remain open. No tablet access or firmware packing.
+
+## 2026-10-25 — Resolve conditional Image placement mismatch (#21)
+
+Compared actual executed Image header with model-verified candidate boot header
+and official ARM64 boot ABI. New text_offset=0 requires 2MiB-aligned entry; old
+0x40080000 field is misaligned if honored unchanged. Recorded arithmetic and
+pinned amonet LK source hashes; payload is not complete loader evidence and
+MISC transitions can write persistently. No chosen addresses, firmware assembly,
+helpers executed or tablet access. Actual loader relocation remains unresolved.

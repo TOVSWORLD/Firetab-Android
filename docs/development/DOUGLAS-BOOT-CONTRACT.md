@@ -108,8 +108,8 @@ recovery outcome. The user must separately authorize and perform physical tests.
 Source findings do not complete #21. Runtime firmware/memory handoff, exact image
 contract, usable log capture and recoverability are prerequisites still lacking.
 Coordinate storage/console #22, matched schemas #27 and provider integration
-#18–#20. Current kernel builds are generic compile experiments, not this diagnostic
-configuration or an Android/douglas boot result.
+#18–#20. The restricted diagnostic kernel now compiles and executes its isolated initramfs
+on a generic QEMU virt platform (#49). This is not an Android/douglas boot result.
 
 The [candidate's actual appended DTBs](STOCK-DTB-CONTRACT.md) now corroborate the
 legacy source: two versions(pre_evt/hvt), static512MiB memory, legacy explicit-ID
@@ -117,3 +117,34 @@ PSCI with CPU0 mt-boot, and ATF/RAM-console/mdump/low-log/CONSYS reservations.
 Selection, runtime fixups and secondary-CPU behavior remain unverified. Read-only
 stock collection includes the individual DT version property for later evidence;
 no device transport was executed.
+
+## New Image placement versus the stock candidate
+
+The [executed generic kernel report](../../evidence/qemu-diagnostic/generic-runtime-result.json)
+records text_offset=0, image_size=29360128 (28 MiB), flags=10 (little endian,
+4 KiB pages, flexible physical placement). The [ARM64 boot ABI](https://docs.kernel.org/arch/arm64/booting.html)
+requires the Image entry address minus text_offset to be aligned to 2 MiB and
+at least image_size bytes available from entry. Flexible placement does not
+remove that alignment requirement. The candidate boot header's kernel address
+is 0x40080000. With this new Image, that yields a base misaligned by 0x80000.
+Consequently, copying the old header address and loading/jumping there unchanged
+would violate this kernel's ABI. This is a verified conditional mismatch, not
+proof the stock loader actually uses that field without relocation.
+
+The conditional occupied range would end at 0x41c80000, below the candidate's
+static ATF reservation at 0x43000000. That arithmetic alone does not establish
+safe RAM: compressed staging buffers, loader work areas, DT/initramfs placement,
+firmware reservations and runtime RAM fixups remain unknown. Compressed partition
+fit and decompressed runtime placement must be checked independently. No new
+address is selected or boot image packed. Exact inputs/arithmetic/source hashes
+are retained in `evidence/boot-contract/image-placement-review.json`.
+
+The pinned [amonet LK payload](https://github.com/chaosmaster/amonet/blob/2d8a4e6f73d9dab42d313c9cd751802b23ea7d31/lk-payload/main.c)
+redirects boot/recovery reads to renamed partitions, patches version-specific LK
+addresses, and changes unlock/fastboot behavior. It is not the complete original
+loader or proof of generic RAM boot support. Its MISC flag handling includes
+persistent writes even for some boot-mode transitions. The UART flag branch
+also declares disable_uart2 but calls the second strcpy with disable_uart again;
+source intent is insufficient to qualify usable UART logging. No payload was
+built, run or changed here. Continue by identifying the actual installed loader
+and its decompression/relocation/entry behavior before selecting placement.
