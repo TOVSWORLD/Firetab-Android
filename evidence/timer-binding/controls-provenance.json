@@ -1,0 +1,7 @@
+{
+  "command": "work/dtb-tool/venv/bin/python evidence/timer-binding/check-controls.py",
+  "processed_corpus_sha256": "dde3e6a4909d4db4f83bfee07b52a75640630fa2a80a030aee1503512f70962c",
+  "processed_compatible_sha256": "2a485dfcfbe11d971f8764ebf6e008607e383f0a03ff610526e0a1d64c8b8eef",
+  "control_script_sha256": "78ea21c1928cfe97006ae10be7c5c5b1130035695acd306184bb4b4727d7545f",
+  "scope": "Actual processed tuple constraints, local jsonschema controls"
+}

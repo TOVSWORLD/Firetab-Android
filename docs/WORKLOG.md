@@ -657,3 +657,11 @@ first compatible requiring unchanged MT6577 fallback; no other constraints
 changed. Meta clean; actual processed tuple negative controls reject wrong/
 missing/extra fallback. Full delta removes2diagnostics/adds0, now27errors plus
 56unmatched, overallfailed.84 tests pass. Next#27 timer or RDMA selector work.
+
+## 2026-10-25 — MT8163 timer binding coverage (#68)
+
+Source-backed exact first-compatible enum proposal requires existing MT6577 GPT
+fallback. Pinned ACK/legacy source hashes retained. Meta clean, processed tuple
+negative controls reject invalid fallbacks. Actual full delta removes2/adds0:
+26errors/55unmatched remain, overallfailed.85 tests pass. Next#27 display-RDMA
+node name/generic DMA selector conflict. No tablet access or firmware assembly.
