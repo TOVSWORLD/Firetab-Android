@@ -306,3 +306,58 @@ loader placement/recovery either. This completes the bounded source/interval
 audit, not reservation ownership or a safe boot-image contract. Independent next
 work is#27 full binding-context failures, starting with the preserved malformed
 upstream Gunyah YAML and PMIC schema-selection overlap.
+
+## Loader/recovery alternatives audit (#76)
+
+`python3 scripts/audit_loader_routes.py --verify-sources` reads only cached git
+objects and approved facts; it never imports or executes device helpers. Exact
+revisions, file hashes/URLs and line observations are retained in
+`evidence/loader-routes/sources.json`; the route assessment retains source/facts/
+auditor hashes.93 host-only tests pass. The upstream reference repositories were
+read only; no changes, issues or comments were made there.
+
+The distinction is between possible exploit families and a qualified procedure:
+
+- Stock recovery can be a signed restoration route, but neither matching full
+  restoration authentication nor arbitrary custom-kernel acceptance is established.
+- Legacy boot-fastboot.sh runs handshake2, not a demonstrated stock fastboot RAM
+  boot command. No helper name is evidence of nonpersistent recovery.
+- Legacy software step-1 requires root and rejects PL7/LK3/TEE262 against6/2/259.
+  Its newer-firmware branch explicitly clears preloader and writes LK/TEE. The
+  supplied fastboot installation explicitly erases userdata. No such step ran.
+- Legacy BootROM main is a distinct bootstrap family, so the software version
+  gate alone does not prove BootROM infeasible. However, its host chain writes
+  primary/backup GPT, preloader, RPMB, boot/recovery and loader images. Minimal
+  mode still performs persistent writes; it assumes LK/TZ were already flashed.
+  Physical BootROM entry and recoverability on this tablet are unqualified.
+- The newer cached amonet-koboreru revision
+  d51af735e5b95fa2c03c0b311d5c05f0f73461d4 includes an explicit douglas/MT8163
+  target and custom-LK partition lk2. Its README says newer preloaders are patched
+  and an older vulnerable preloader/downgrade is required; exact PL7 binary
+  susceptibility is not proven by its version number alone. Installation requires
+  persistent TEE/LK changes and a valid original LK. It is not a standalone safe
+  escape from an untouched updated tablet. lk2 layout has not been verified.
+  The README's general RPMB-clearing claim must not be applied blindly: douglas.c
+  skips an ARB check using patch_ret, unlike several targets calling clear_rpmb_arb,
+  and douglas.h does not define the RPMB access addresses used by arb.c.
+- Custom TEE/LK is a later integration option once a bootstrap is established,
+  not an independently verified initial entry method.
+
+The old cached repository README still describes suez/HD10, despite the selected
+source's douglas adaptations. Use per-file target evidence, not README labels,
+for model compatibility. The starting XDA douglas thread returned HTTP403 during
+this audit; no current pad/shorting or recovery instructions were inferred from
+unread content. No physical action is proposed from these sources alone.
+
+Result: no currently qualified nonpersistent diagnostic boot/recovery route.
+This is not a proof that unlocking/current-kernel bring-up is impossible. The
+next concrete offline task is model/build-identified OTA preloader/LK inspection:
+the retained ZIP index lists images/preloader.bin (compressed89263, raw139352)
+and images/lk.bin (compressed294421, raw485552), total383684 compressed bytes plus
+bounded ZIP/property metadata. Use explicit bounded range fetches/CRC/identity
+checks, local files only, no execution or redistribution. Inspect documented
+vulnerability marker and header/load behavior, keeping string heuristics distinct
+from proof of exploitability. Full907705758-byte OTA download is unnecessary and
+not authorized by this task. Cached source audit is complete;#21 retains actual
+entry, authenticated restoration, recovery, logging and explicit owner approval
+for any future destructive unlock/wipe. No payload was built or tablet queried.
