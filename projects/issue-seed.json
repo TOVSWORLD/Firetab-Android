@@ -1,0 +1,112 @@
+[
+  {
+    "key": "android",
+    "title": "FireTabs Android \u2014 maintained general-purpose platform",
+    "parent": null,
+    "labels": [
+      "project:firetabs-android",
+      "level:project",
+      "status:ready"
+    ],
+    "milestone": null,
+    "body": "Track the user-selected general-purpose Android platform with a current maintained release-appropriate kernel. Initial hardware is douglas/KFDOWI; Android 17 is the initial target under investigation. Legacy kernels are references. No maintained-kernel firmware is built or booted. Child investigations need source-based evidence before implementation choices are treated as accepted. See projects/firetabs-android/README.md and docs/MAINTENANCE.md."
+  },
+  {
+    "key": "panel",
+    "title": "Crestron Panel \u2014 optional panel load and runtime compatibility",
+    "parent": null,
+    "labels": [
+      "project:crestron-panel",
+      "level:project",
+      "status:ready"
+    ],
+    "milestone": null,
+    "body": "Track the optional selected-application panel load separately from general-purpose Android. Supported Android clients and native panel-runtime compatibility are separate deliverables. Full Home functionality is the lab workload; native parity is unproven. No panel selector or runtime has executed. See projects/crestron-panel/README.md and docs/CRESTRON-PANEL.md."
+  },
+  {
+    "key": "kernel-audit",
+    "title": "Investigate maintained-kernel and Android 17 integration for douglas",
+    "parent": "android",
+    "labels": [
+      "project:firetabs-android",
+      "level:feature",
+      "type:research",
+      "area:kernel",
+      "device:douglas",
+      "status:proposed"
+    ],
+    "milestone": "Android: maintained-kernel audit",
+    "body": "Question: which maintained kernel branch is a plausible basis for douglas with Android 17, and what actual board/driver/interface work is required?\n\nAcceptance: cite current upstream source/config requirements, reusable hardware work and proprietary interface contracts; distinguish verified gaps from hypotheses; recommend a candidate and bounded build experiment with resource estimates. A source audit does not claim compilation, boot or hardware support. No large download or device modification is authorized by this issue."
+  },
+  {
+    "key": "kernel-candidate",
+    "title": "Produce source-cited kernel candidate and hardware support matrix",
+    "parent": "kernel-audit",
+    "labels": [
+      "project:firetabs-android",
+      "level:task",
+      "type:research",
+      "area:kernel",
+      "device:douglas",
+      "status:proposed"
+    ],
+    "milestone": "Android: maintained-kernel audit",
+    "body": "Bounded first task: identify maintained ACK/kernel candidates and inventory douglas boot, clocks/PMIC, storage, display/touch, graphics and wireless support against actual source. Include ABI/32-bit userspace and Android-required features.\n\nAcceptance: commit an evidence matrix with paths/commits, known missing drivers/contracts, exact unresolved questions and the smallest useful compile test/resource estimate. No kernel branch is preselected by this task."
+  },
+  {
+    "key": "panel-assessment",
+    "title": "Define full panel-client acceptance and native-service evidence gaps",
+    "parent": "panel",
+    "labels": [
+      "project:crestron-panel",
+      "level:feature",
+      "type:research",
+      "area:clients",
+      "status:proposed"
+    ],
+    "milestone": "Panel: client and native-service assessment",
+    "body": "Build on the actual static APK investigation without claiming the missing service layer works. Keep mobile Home, Go, ONE/web and native runtimes distinct.\n\nAcceptance: a full-function client/processor acceptance matrix and a native dependency inventory with source evidence, missing JNI/localhost services, authorized input options and a bounded first runtime experiment. Record exact lab processor variant/firmware when available. No APK execution or physical changes are implied."
+  },
+  {
+    "key": "panel-tests",
+    "title": "Document full-function Home and CP4 test matrix before runtime tests",
+    "parent": "panel-assessment",
+    "labels": [
+      "project:crestron-panel",
+      "level:task",
+      "type:research",
+      "area:clients",
+      "status:proposed"
+    ],
+    "milestone": "Panel: client and native-service assessment",
+    "body": "Define tests for controls/feedback, authentication, video/cameras, audio/intercom, reconnect, processor/tablet restarts, app lifecycle and soak.\n\nAcceptance: a reviewable matrix with exact package identity, required platform/processor versions, evidence to capture, unsupported versus untested behavior and explicit physical authorization boundary. Record unavailable processor details as unknown. This task defines tests, not passing runtime results."
+  },
+  {
+    "key": "community",
+    "title": "Establish public contribution, issue and release governance",
+    "parent": "android",
+    "labels": [
+      "project:firetabs-android",
+      "level:feature",
+      "type:docs",
+      "area:repository",
+      "status:in-progress"
+    ],
+    "milestone": "workspace-v0.1.0",
+    "body": "Shared repository work requested by the owner, primarily parented here to avoid duplicate epics. Serves both projects.\n\nAcceptance: contributor/security/governance/development docs; independent release numbering and gated cadence; issue forms, native hierarchy, labels and milestones; CI for doc/form/release metadata; explicit license decision or clearly disclosed acceptance hold. No product version is published just because process docs merge."
+  },
+  {
+    "key": "community-implementation",
+    "title": "Publish contributor documentation and tested release/issue process",
+    "parent": "community",
+    "labels": [
+      "project:firetabs-android",
+      "level:task",
+      "type:docs",
+      "area:repository",
+      "status:in-progress"
+    ],
+    "milestone": "workspace-v0.1.0",
+    "body": "Concrete implementation of the current repository-setup request.\n\nAcceptance: public CONTRIBUTING and supporting docs; seven issue forms; live labels/milestones/native parent links; source-only versus runtime release gates; negative tests and passing CI; private security reporting enabled; owner license selection recorded or external contribution acceptance explicitly held. Close only after documentation and tools are merged to development and actual outputs reviewed."
+  }
+]

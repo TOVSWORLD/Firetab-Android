@@ -33,6 +33,8 @@ jobs:
           else
             python3 scripts/ci.py repository
           fi
+      - name: Validate community docs and release records
+        run: python3 scripts/check_community.py
       - name: Test gate rejection paths
         run: python3 -m unittest discover -s tests -v
   android:

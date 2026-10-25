@@ -1,0 +1,96 @@
+{
+  "name": "Test report",
+  "description": "Sanitized evidence from an explicitly authorized owner-run test",
+  "title": "[Test report] ",
+  "labels": [
+    "type:test-report",
+    "status:proposed"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Do not post vulnerabilities, secrets, serials, private lab/customer data or vendor binaries. Use the private security-report link below for vulnerabilities. Proposed work is not implemented functionality."
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "project",
+      "attributes": {
+        "label": "Project",
+        "options": [
+          "FireTabs Android",
+          "Crestron Panel",
+          "Shared repository"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "parent",
+      "attributes": {
+        "label": "Related issue/PR"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "revision",
+      "attributes": {
+        "label": "Exact tested source revision and artifact SHA256"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "hardware",
+      "attributes": {
+        "label": "Hardware and software identity",
+        "description": "Device/codename, Android/kernel/app versions; exact processor model/firmware for panel tests. No serials or credentials."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "scope",
+      "attributes": {
+        "label": "Authorized test scope and commands",
+        "description": "Only describe actions already explicitly authorized; filing this report does not authorize flashing."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "results",
+      "attributes": {
+        "label": "Actual results and duration",
+        "description": "Pass/fail by feature; expected vs actual, reboot/reconnect/soak details, untested gaps."
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "logs",
+      "attributes": {
+        "label": "Sanitized logs and hashes",
+        "description": "Review before uploading. No unreviewed full bugreports or proprietary images."
+      },
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

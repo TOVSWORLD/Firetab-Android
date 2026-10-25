@@ -1,0 +1,72 @@
+{
+  "name": "Implementation task",
+  "description": "A reviewable task under an accepted feature",
+  "title": "[Implementation task] ",
+  "labels": [
+    "level:task",
+    "status:proposed"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Do not post vulnerabilities, secrets, serials, private lab/customer data or vendor binaries. Use the private security-report link below for vulnerabilities. Proposed work is not implemented functionality."
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "project",
+      "attributes": {
+        "label": "Project",
+        "options": [
+          "FireTabs Android",
+          "Crestron Panel",
+          "Shared repository"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "parent",
+      "attributes": {
+        "label": "Parent feature issue"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "behavior",
+      "attributes": {
+        "label": "Concrete change and non-goals"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "acceptance",
+      "attributes": {
+        "label": "Acceptance criteria and validation"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "dependencies",
+      "attributes": {
+        "label": "Sources, dependencies and resource/device impact"
+      },
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

@@ -80,3 +80,17 @@ force pushes, and branch deletion are disabled. No automatic merge or publicatio
 Use merge commits for development-to-main releases so development remains an ancestor
 of main; do not squash or rebase the release PR. GitHub's literal branch-lock setting
 is not used because it would also block the intended release merges.
+
+## Community and release checks
+
+Repository integrity also runs `scripts/check_community.py`: required public docs,
+tracked local Markdown link targets, seven JSON-syntax YAML issue forms and their label
+references, release policy and all committed release manifests. The release checker
+rejects runtime candidates without applicable evidence at the exact tested revision.
+Stable/rc candidates also need active named support and install/upgrade/recovery records.
+Local artifact size/content verification is explicit and must precede publication.
+External links, legal rights, log truth and artifact signatures still need human review.
+
+Actions dependency updates are proposed monthly against development through Dependabot;
+its PRs use the same checks and do not merge automatically. Release-note categories
+can group reviewed PRs by project, but maintainers still supply validation and limitations.

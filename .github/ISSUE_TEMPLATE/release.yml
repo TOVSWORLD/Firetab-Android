@@ -1,0 +1,94 @@
+{
+  "name": "Release preparation",
+  "description": "Prepare a versioned source or runtime release",
+  "title": "[Release preparation] ",
+  "labels": [
+    "type:release",
+    "level:task",
+    "status:proposed"
+  ],
+  "body": [
+    {
+      "type": "markdown",
+      "attributes": {
+        "value": "Do not post vulnerabilities, secrets, serials, private lab/customer data or vendor binaries. Use the private security-report link below for vulnerabilities. Proposed work is not implemented functionality."
+      }
+    },
+    {
+      "type": "dropdown",
+      "id": "project",
+      "attributes": {
+        "label": "Project",
+        "options": [
+          "FireTabs Android",
+          "Crestron Panel",
+          "Shared repository"
+        ]
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "parent",
+      "attributes": {
+        "label": "Parent feature/project issue"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "input",
+      "id": "version",
+      "attributes": {
+        "label": "Project version, tag and release kind"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "scope",
+      "attributes": {
+        "label": "Included PRs, compatibility changes and non-goals"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "gates",
+      "attributes": {
+        "label": "Validation gates and outstanding blockers"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "artifacts",
+      "attributes": {
+        "label": "Manifest, provenance, permitted artifacts and hashes"
+      },
+      "validations": {
+        "required": true
+      }
+    },
+    {
+      "type": "textarea",
+      "id": "recovery",
+      "attributes": {
+        "label": "Upgrade, recovery and support coverage",
+        "description": "For source snapshots state that no installable runtime is included."
+      },
+      "validations": {
+        "required": true
+      }
+    }
+  ]
+}

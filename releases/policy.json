@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "cadence": {
+    "timezone": "America/New_York",
+    "window": "first Tuesday of each month",
+    "scope_cutoff_days_before": 7,
+    "rc_days_before": 5,
+    "gated": true
+  },
+  "streams": {
+    "workspace": {
+      "tag_prefix": "workspace-v",
+      "next_version": "0.1.0",
+      "kind": "source-snapshot"
+    },
+    "firetabs-android": {
+      "tag_prefix": "firetabs-android-v",
+      "next_version": "0.1.0-alpha.1",
+      "kind": "firmware"
+    },
+    "crestron-panel": {
+      "tag_prefix": "crestron-panel-v",
+      "next_version": "0.1.0-alpha.1",
+      "kind": "panel-load"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+changelog:
+  categories:
+    - title: FireTabs Android
+      labels: ["project:firetabs-android"]
+    - title: Crestron Panel
+      labels: ["project:crestron-panel"]
+    - title: Repository and documentation
+      labels: ["area:repository", "documentation", "type:docs"]
+    - title: Other reviewed changes
+      labels: ["*"]
