@@ -36,3 +36,6 @@ Research references retain their original authorship and licensing. No blanket l
 is asserted over third-party evidence or proprietary materials; check upstream terms
 before redistribution. This repository does not contain an authorized Google services
 bundle or Crestron firmware distribution.
+
+Development targets `development`; `main` accepts development-to-main release PRs only.
+See [branch and release policy](docs/CI.md#branch-and-release-policy).
