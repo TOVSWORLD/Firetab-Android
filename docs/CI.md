@@ -60,7 +60,9 @@ All are currently `not_run`. A green PR is never a firmware or panel release.
 
 ## Resource boundaries
 
-Default CI performs no source restore, AOSP sync, APK download, firmware build or flash.
+Default CI performs no kernel/platform checkout restore, AOSP sync, APK download,
+firmware build or flash. The Android job explicitly fetches the small pinned dtc/Meson/
+Ninja tool inputs to compile the tracked DT-only experiment.
 Large builds and device tests require a later concrete workflow and provisioned host.
 Never run untrusted PR code on a lab runner with USB devices or processor credentials.
 When builds become possible, add independent artifact checks (architecture, partitions,
@@ -98,3 +100,12 @@ can group reviewed PRs by project, but maintainers still supply validation and l
 Repository integrity now also runs `scripts/kernel_audit.py` offline to verify the pinned
 modern-kernel source snapshot and component claim anchors. It does not run the optional
 clang dependency-failure probe, build a kernel or establish device support.
+
+## Actual device-tree compilation
+
+FireTabs Android evidence now builds pinned dtc/fdtget in work/ and runs the real
+`build_douglas_dtb.py` compile/inspection on Linux. It rejects warnings, errors and
+unreviewed DTB content changes. Repository integrity also verifies input/patch hashes.
+This establishes DT syntax/binary reproducibility only. Full binding validation is
+not passed; the incomplete-context local schema attempt is separately recorded.
+No kernel_compile, boot or hardware stage is promoted by this job.

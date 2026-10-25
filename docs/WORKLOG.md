@@ -180,3 +180,19 @@ resources; no kernel compilation, image packing, APK execution or physical devic
 Documented stock mt-boot vs PSCI/power sequencing, memory/boot-envelope concerns,
 32-bit EL0/userspace distinctions, graphics/CDD gaps and the next minimal compile/resource
 plan. Hardware validation records remain not_run; this closes an audit, not a port.
+
+## 2026-10-25 — Issue #14 DT dependency closure and actual compilation
+
+Resolved 26 real pinned DTS/header inputs (20 donor, six ACK); built dtc 1.8.1 in an
+isolated workspace with pinned small bootstrap inputs. The unmodified source failed
+on missing thermal constants. Two patches add the real include and correct memory
+unit naming/cooling declarations. The patched tree compiles without diagnostics to
+a 26,283-byte DTB; fdtget inspection verifies board identity and preserves explicit
+512 MiB/PSCI donor assumptions. These are not validated physical hardware facts.
+
+Added a reproducible offline build/inspection command, Linux CI compilation and input/
+artifact-integrity tests. No compiled DTB is committed or published. Kernel and device
+validation stages stay not_run. A separate schema attempt used incomplete binding
+context and is explicitly not passed despite the validator's zero exit code.
+The tool-specific SWIG incompatibility was fixed by a compatible pinned dependency,
+not by suppressing C errors. No full kernel/AOSP download or physical device action.

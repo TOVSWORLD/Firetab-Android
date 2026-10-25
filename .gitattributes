@@ -1,3 +1,5 @@
 # Preserve upstream evidence bytes and unified-diff context whitespace.
 evidence/** -whitespace
 patches/** -whitespace
+
+projects/firetabs-android/kernel/dtb/patches/** -whitespace

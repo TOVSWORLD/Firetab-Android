@@ -87,7 +87,7 @@ def repository(base):
     for name in files:
         path = ROOT / name
         require(not name.startswith(('sources/', 'work/', 'out/')), f'Unreviewed generated content: {name}')
-        require(path.suffix.lower() not in {'.apk', '.puf', '.img', '.so'}, f'Unexpected binary distribution: {name}')
+        require(path.suffix.lower() not in {'.apk', '.puf', '.img', '.so', '.dtb'}, f'Unexpected binary distribution: {name}')
         if path.suffix == '.json':
             load(name)
         elif path.suffix == '.xml':

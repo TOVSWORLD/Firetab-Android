@@ -1,0 +1,18 @@
+From: FireTabs contributors
+Subject: [PATCH] arm64: dts: mt8163: include thermal binding constants
+
+The pinned community MT8163 DTS uses THERMAL_NO_LIMIT in thermal maps without
+including its binding definition. Standalone preprocessing leaves those tokens
+unexpanded and dtc 1.8.1 rejects them. Use the real ACK thermal binding header.
+This fixes a compile dependency only and does not validate thermal behavior.
+
+--- a/arch/arm64/boot/dts/mediatek/mt8163.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8163.dtsi
+@@ -5,6 +5,7 @@
+ 
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/phy/phy.h>
++#include <dt-bindings/thermal/thermal.h>
+ 
+ #include <dt-bindings/clock/mediatek,mt8163-audsys.h>
+ #include <dt-bindings/clock/mediatek,mt8163-apmixedsys.h>

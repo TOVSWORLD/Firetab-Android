@@ -1,0 +1,418 @@
+{
+  "device": "douglas/KFDOWI",
+  "retrieved": "2026-10-25",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "entry": "arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+  "records": [
+    {
+      "path": "arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+      "bytes": 290,
+      "sha256": "fc95a4931ff02269ca5bf70abe553a72fe0a9d532731fa5c77f0eaff9b2928a0"
+    },
+    {
+      "path": "arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "bytes": 4766,
+      "sha256": "e2b90d6afa1d8a5b9e80d32b048a721e13eb100c62f5a381c55f2fbee22348e4"
+    },
+    {
+      "path": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "bytes": 31399,
+      "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629"
+    },
+    {
+      "path": "include/dt-bindings/interrupt-controller/arm-gic.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/interrupt-controller/arm-gic.h?format=TEXT",
+      "bytes": 574,
+      "sha256": "80dc56e8aa61b3681ee42fb0bfd34bf35ea2578ac6d82f1fa972b963667e8ff7"
+    },
+    {
+      "path": "include/dt-bindings/interrupt-controller/irq.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/interrupt-controller/irq.h?format=TEXT",
+      "bytes": 611,
+      "sha256": "392400a309a54ea5b1a2ac2e52773d3ab68e07323109b9aed88a69fedc74e082"
+    },
+    {
+      "path": "include/dt-bindings/phy/phy.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/phy/phy.h?format=TEXT",
+      "bytes": 618,
+      "sha256": "f4221e68541c911f2d24a16473ac48530152e1956a90ba25ca232055cea1bde7"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "bytes": 738,
+      "sha256": "50f777458df074d816da3bfa86c5276462799a3acb4555987dbcdabdaa0a6a77"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "bytes": 698,
+      "sha256": "79ad800586196916c143d106be55e710e41e7f26849798e880fa7c6f6c5cbb07"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "bytes": 386,
+      "sha256": "ec1c50795adb221c3f0ca0d4f21bd43b2a212e692e976c3719a9478bb2c9a38f"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "bytes": 2271,
+      "sha256": "3a559330bcb5ff22984f32447909dacdd4a760934a78ad53f1575b9d91cbbe37"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "bytes": 222,
+      "sha256": "bce3ad6b7f00c3afaff0a2a75b8141c0050b529ea0314a5a76116aad76be50b5"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "bytes": 1661,
+      "sha256": "1a411a525ba1bb215e99cfbf847f54dd78d6f31c8eb812eb45228f98c9e62d7f"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "bytes": 2790,
+      "sha256": "852998dc9577129aa5f5c7e05c2ef50a5f419d64348cc4f6daf7252a84cbd4d7"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "bytes": 256,
+      "sha256": "458c5c5cda939141b9036a5bf9f3fd4a8f23e437da6e68f1ef2b15d333e90a6a"
+    },
+    {
+      "path": "include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "bytes": 298,
+      "sha256": "53b12c11093228d7227af8064d7c26339ec2f3291ace2cf34711fed389dd0461"
+    },
+    {
+      "path": "include/dt-bindings/gce/mediatek,mt8163-gce.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/gce/mediatek,mt8163-gce.h",
+      "bytes": 4451,
+      "sha256": "9f9df65f1f761fbda3a20f5a65fcd60a18af9ad8196f766ac521450a7e90dbea"
+    },
+    {
+      "path": "include/dt-bindings/memory/mt8163-larb-port.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/memory/mt8163-larb-port.h",
+      "bytes": 2948,
+      "sha256": "1b8e03b30fdf506191e43a996a4a4746f525611b80de8752ed592b9d3cb0ec22"
+    },
+    {
+      "path": "include/dt-bindings/memory/mtk-memory-port.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/memory/mtk-memory-port.h?format=TEXT",
+      "bytes": 470,
+      "sha256": "8d2022cce228332ec92a9b766a4976f0c4aaed877a239db45e6d40873cea13f7"
+    },
+    {
+      "path": "include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "bytes": 43672,
+      "sha256": "870564d41f8905c8c955ab4c3e57547a889f598fca24f8bff7272811e4f83106"
+    },
+    {
+      "path": "include/dt-bindings/pinctrl/mt65xx.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/pinctrl/mt65xx.h?format=TEXT",
+      "bytes": 1096,
+      "sha256": "f65c0ac3ff79e3100adb89f17333792ad71998b108992c2734e0a81ba23c4b8f"
+    },
+    {
+      "path": "include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "bytes": 514,
+      "sha256": "bca573acd8fe88a4d526edb8587e6f117cb7510701849e663628c856edd5ee21"
+    },
+    {
+      "path": "include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "bytes": 912,
+      "sha256": "b6bcde0dc42803e783c95313952b8fb50d061d72fecf032e97e1f2a87cfd2317"
+    },
+    {
+      "path": "include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "bytes": 1489,
+      "sha256": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f"
+    },
+    {
+      "path": "include/dt-bindings/reset/mediatek,mt8163-wdt.h",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/reset/mediatek,mt8163-wdt.h",
+      "bytes": 781,
+      "sha256": "d27396fabd69658febd25de6669951e12af1a610286a43a837d0533aea6587b8"
+    },
+    {
+      "path": "arch/arm64/boot/dts/mediatek/mt6323.dtsi",
+      "source": "donor",
+      "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/arch/arm64/boot/dts/mediatek/mt6323.dtsi",
+      "bytes": 6243,
+      "sha256": "2794447b31a2856764bb63b41d94ace827adb45ab77556205501363a4eee975b"
+    },
+    {
+      "path": "include/dt-bindings/thermal/thermal.h",
+      "source": "ack",
+      "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/thermal/thermal.h?format=TEXT",
+      "bytes": 369,
+      "sha256": "d74d498871c3bf3d6aa985ad01c15dfa916614369dbcd832bdcb9d2d45b15e08",
+      "reason": "required by actual unresolved thermal constants after the first compile"
+    }
+  ],
+  "dependencies": [
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163-amazon-douglas.dts",
+      "include": "mt8163-amazon-common.dtsi",
+      "path": "arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "include": "mt8163.dtsi",
+      "path": "arch/arm64/boot/dts/mediatek/mt8163.dtsi"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/interrupt-controller/arm-gic.h",
+      "path": "include/dt-bindings/interrupt-controller/arm-gic.h"
+    },
+    {
+      "parent": "include/dt-bindings/interrupt-controller/arm-gic.h",
+      "include": "dt-bindings/interrupt-controller/irq.h",
+      "path": "include/dt-bindings/interrupt-controller/irq.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/phy/phy.h",
+      "path": "include/dt-bindings/phy/phy.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-audsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-imgsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-infracfg.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-mmsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-topckgen.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-vdecsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "path": "include/dt-bindings/clock/mediatek,mt8163-vencsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/gce/mediatek,mt8163-gce.h",
+      "path": "include/dt-bindings/gce/mediatek,mt8163-gce.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/memory/mt8163-larb-port.h",
+      "path": "include/dt-bindings/memory/mt8163-larb-port.h"
+    },
+    {
+      "parent": "include/dt-bindings/memory/mt8163-larb-port.h",
+      "include": "dt-bindings/memory/mtk-memory-port.h",
+      "path": "include/dt-bindings/memory/mtk-memory-port.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "path": "include/dt-bindings/pinctrl/mt8163-pinfunc.h"
+    },
+    {
+      "parent": "include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "include": "dt-bindings/pinctrl/mt65xx.h",
+      "path": "include/dt-bindings/pinctrl/mt65xx.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "path": "include/dt-bindings/power/mediatek,mt8163-power-controller.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "path": "include/dt-bindings/reset/mediatek,mt8163-infracfg.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "path": "include/dt-bindings/reset/mediatek,mt8163-mmsys.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "include": "dt-bindings/reset/mediatek,mt8163-wdt.h",
+      "path": "include/dt-bindings/reset/mediatek,mt8163-wdt.h"
+    },
+    {
+      "parent": "arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi",
+      "include": "mt6323.dtsi",
+      "path": "arch/arm64/boot/dts/mediatek/mt6323.dtsi"
+    }
+  ],
+  "absence_observations": [
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/boot/dts/mediatek/mt8163-amazon-common.dtsi?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/boot/dts/mediatek/mt8163.dtsi?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-audsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-imgsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-infracfg.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-mmsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-topckgen.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/clock/mediatek,mt8163-vencsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/gce/mediatek,mt8163-gce.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/memory/mt8163-larb-port.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/pinctrl/mt8163-pinfunc.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/power/mediatek,mt8163-power-controller.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-infracfg.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-mmsys.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/dt-bindings/reset/mediatek,mt8163-wdt.h?format=TEXT",
+      "status": 404
+    },
+    {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/boot/dts/mediatek/mt6323.dtsi?format=TEXT",
+      "status": 404
+    }
+  ]
+}

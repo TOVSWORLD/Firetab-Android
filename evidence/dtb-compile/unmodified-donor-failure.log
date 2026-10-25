@@ -1,0 +1,11 @@
+Lexical error: work/dtb-compile/donor.pp.dts:925.30-46 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:925.47-63 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:926.16-32 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:926.33-49 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:927.16-32 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:927.33-49 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:928.16-32 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:928.33-49 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:952.31-47 Unexpected 'THERMAL_NO_LIMIT'
+Lexical error: work/dtb-compile/donor.pp.dts:956.31-47 Unexpected 'THERMAL_NO_LIMIT'
+FATAL ERROR: Syntax error parsing input tree

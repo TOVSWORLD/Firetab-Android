@@ -41,3 +41,7 @@ firmware. Provisioning a large Linux build host is a separate resource decision.
 douglas DTS, reusable MT8163 drivers, boot ABI gaps and a reproduced missing-header failure.
 [Component matrix](kernel/support-matrix.json) is source evidence, not hardware validation.
 Run `python3 scripts/kernel_audit.py` for offline source integrity/anchor checks.
+
+[Issue #14 DT experiment](kernel/dtb/README.md) now compiles an experimental DTB with
+reviewed source corrections and binary inspection. It does not compile a kernel or
+validate memory, firmware, drivers or a bootable image.
