@@ -214,3 +214,15 @@ must be read from CI before marking any validation gate complete.
 First Linux run 40168107152 stopped in host-tool preflight: pahole absent.
 No kernel source was fetched. Added Ubuntu dwarves/libelf-dev/libssl-dev host
 packages with installed versions logged; apt repositories remain host-dependent.
+
+## 2026-10-25 — Start issue #18 source integration
+
+#16 kernel compile is still pending; it remains open. Started #18's independent
+source comparison on kernel/mt8163-clock-port, based on the unmerged #17 branch.
+Retrieved 15 pinned source/API files (98,463 decoded bytes). Prepared nine real
+clock drivers and eleven binding headers, donor build wiring, and lifecycle/factor
+registration corrections documented in the overlay README. Added a clock compile
+mode that verifies seven enabled symbols, builds affected objects with W=1 and
+then a full generic Image. No clock compilation or hardware pass is yet claimed.
+The Linux run uses the previously reported per-run 3 GiB source budget and host
+resource gates; no full Android checkout, paid host or device access is involved.

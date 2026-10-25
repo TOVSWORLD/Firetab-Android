@@ -3,3 +3,5 @@ evidence/** -whitespace
 patches/** -whitespace
 
 projects/firetabs-android/kernel/dtb/patches/** -whitespace
+
+projects/firetabs-android/kernel/clock-port/*.patch -whitespace

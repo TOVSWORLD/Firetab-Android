@@ -1,0 +1,107 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "inputs": [
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+      "sha256": "d8547b97b1b71fe8a28e566decb21a582b09a4e3adfa45507492e5fc7b0e567e"
+    },
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-infracfg.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-infracfg.c",
+      "sha256": "9fbecfdd5bb51a09eb3fbb079b2d6ecacdd58b1bce28adc3094abfe025f23dee"
+    },
+    {
+      "source": "evidence/kernel-audit/bengris7/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "sha256": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-audsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-audsys.c",
+      "sha256": "c9bb0931db2c64362ff3f4e293e31a1a5402fd3fe75698f56d813d02ca50af8f"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-vdecsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-vdecsys.c",
+      "sha256": "95629aa8eadc268cf2ed0c51dcc66bd4c4f8f9690be95b07c5075ed750eede34"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-vencsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-vencsys.c",
+      "sha256": "9f81ab848876539c802150f89563c46b3fc5bcfe17dbe91d3f048dbdd676ff48"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-mfgcfg.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-mfgcfg.c",
+      "sha256": "537ff2fec283c89ca8a26e42d6ad2edfe0165d8f19a6ca2c9b664f96c3d3c327"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-imgsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-imgsys.c",
+      "sha256": "69302aa9d9e87abc91d9d2d155b46be5368e5009fd4f88c1414c29a7f82026a3"
+    },
+    {
+      "source": "evidence/clock-port/donor/drivers/clk/mediatek/clk-mt8163-mmsys.c",
+      "target": "drivers/clk/mediatek/clk-mt8163-mmsys.c",
+      "sha256": "9900d38786b8fc046e176265c1060570b90d6e7d4bd674e0ecaf7812e3081ffd"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "sha256": "852998dc9577129aa5f5c7e05c2ef50a5f419d64348cc4f6daf7252a84cbd4d7"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "sha256": "50f777458df074d816da3bfa86c5276462799a3acb4555987dbcdabdaa0a6a77"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "sha256": "bce3ad6b7f00c3afaff0a2a75b8141c0050b529ea0314a5a76116aad76be50b5"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "sha256": "3a559330bcb5ff22984f32447909dacdd4a760934a78ad53f1575b9d91cbbe37"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "sha256": "79ad800586196916c143d106be55e710e41e7f26849798e880fa7c6f6c5cbb07"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "sha256": "ec1c50795adb221c3f0ca0d4f21bd43b2a212e692e976c3719a9478bb2c9a38f"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "sha256": "1a411a525ba1bb215e99cfbf847f54dd78d6f31c8eb812eb45228f98c9e62d7f"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "sha256": "458c5c5cda939141b9036a5bf9f3fd4a8f23e437da6e68f1ef2b15d333e90a6a"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "target": "include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "sha256": "53b12c11093228d7227af8064d7c26339ec2f3291ace2cf34711fed389dd0461"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "target": "include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "sha256": "b6bcde0dc42803e783c95313952b8fb50d061d72fecf032e97e1f2a87cfd2317"
+    },
+    {
+      "source": "evidence/dtb-compile/inputs/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "target": "include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "sha256": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f"
+    }
+  ],
+  "scope": "Experimental source overlay; not compiled or hardware-tested"
+}

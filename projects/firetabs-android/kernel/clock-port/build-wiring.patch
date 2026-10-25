@@ -1,0 +1,71 @@
+--- a/drivers/clk/mediatek/Kconfig
++++ b/drivers/clk/mediatek/Kconfig
+@@ -1138,3 +1138,54 @@
+ 	  This driver supports MediaTek MT8516 audsys clocks.
+ 
+ endmenu
++
++config COMMON_CLK_MT8163
++	tristate "Clock driver for MediaTek MT8163"
++	depends on (ARCH_MEDIATEK && ARM64) || COMPILE_TEST
++	select COMMON_CLK_MEDIATEK
++	default ARCH_MEDIATEK
++	help
++	  This driver supports MediaTek MT8163 basic clocks.
++
++config COMMON_CLK_MT8163_AUDSYS
++	tristate "Clock driver for MediaTek MT8163 audiosys"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 audiosys clocks.
++
++config COMMON_CLK_MT8163_IMGSYS
++	tristate "Clock driver for MediaTek MT8163 imgsys"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 imgsys clocks.
++
++config COMMON_CLK_MT8163_MFGCFG
++	tristate "Clock driver for MediaTek MT8163 mfgcfg"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 mfgcfg clocks.
++
++config COMMON_CLK_MT8163_MMSYS
++	tristate "Clock driver for MediaTek MT8163 mmsys"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 mmsys clocks.
++
++config COMMON_CLK_MT8163_VDECSYS
++	tristate "Clock driver for MediaTek MT8163 vdecsys"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 vdecsys clocks.
++
++config COMMON_CLK_MT8163_VENCSYS
++	tristate "Clock driver for MediaTek MT8163 vencsys"
++	depends on COMMON_CLK_MT8163
++	default COMMON_CLK_MT8163
++	help
++	  This driver supports MediaTek MT8163 vencsys clocks.
++
+--- a/drivers/clk/mediatek/Makefile
++++ b/drivers/clk/mediatek/Makefile
+@@ -172,3 +172,11 @@
+ obj-$(CONFIG_COMMON_CLK_MT8365_VENC) += clk-mt8365-venc.o
+ obj-$(CONFIG_COMMON_CLK_MT8516) += clk-mt8516-apmixedsys.o clk-mt8516.o
+ obj-$(CONFIG_COMMON_CLK_MT8516_AUDSYS) += clk-mt8516-aud.o
++
++obj-$(CONFIG_COMMON_CLK_MT8163) += clk-mt8163-apmixedsys.o clk-mt8163-infracfg.o clk-mt8163-topckgen.o
++obj-$(CONFIG_COMMON_CLK_MT8163_AUDSYS) += clk-mt8163-audsys.o
++obj-$(CONFIG_COMMON_CLK_MT8163_IMGSYS) += clk-mt8163-imgsys.o
++obj-$(CONFIG_COMMON_CLK_MT8163_MFGCFG) += clk-mt8163-mfgcfg.o
++obj-$(CONFIG_COMMON_CLK_MT8163_MMSYS) += clk-mt8163-mmsys.o
++obj-$(CONFIG_COMMON_CLK_MT8163_VDECSYS) += clk-mt8163-vdecsys.o
++obj-$(CONFIG_COMMON_CLK_MT8163_VENCSYS) += clk-mt8163-vencsys.o
