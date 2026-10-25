@@ -1,0 +1,12 @@
+{
+  "scope": "Indentation-repaired Gunyah schema meta-validation; not a pass",
+  "exit_code": 1,
+  "stderr_lines": 69,
+  "passed": false,
+  "remaining_issues": [
+    "compatible is a list rather than schema object",
+    "memory-region scalar/array constraints conflict",
+    "example keyword should be examples",
+    "additionalProperties/unevaluatedProperties absent"
+  ]
+}

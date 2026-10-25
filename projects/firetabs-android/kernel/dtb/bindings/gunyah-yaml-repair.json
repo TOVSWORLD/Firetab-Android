@@ -1,0 +1,8 @@
+{
+  "scope": "Opt-in YAML lexical repair only; schema semantic/meta errors remain visible",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "firmware/gunyah-cma-mem.yaml",
+  "original_sha256": "24f2cf919ae2433761364966eae4215223b389556b4713daec9d86d323bc39a5",
+  "repaired_sha256": "611f72101dd804abe189dfd6122fd6e541e8f3adabdc72681bbd5bf43b7596f8",
+  "tab_replacement_spaces": 6
+}

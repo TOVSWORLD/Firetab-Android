@@ -32,10 +32,24 @@ def apply_uart_proposal(source, ack_commit):
     return profile, schema
 
 
+def apply_gunyah_yaml_repair(source, ack_commit):
+    profile = json.loads((LOCK.parent / 'bindings/gunyah-yaml-repair.json').read_text())
+    schema = source / profile['schema']
+    original = schema.read_bytes()
+    if profile['ack_commit'] != ack_commit or hashlib.sha256(original).hexdigest() != profile['original_sha256']:
+        raise ValueError('Gunyah repair input hash/revision mismatch')
+    repaired = original.replace(b'\t', b' ' * profile['tab_replacement_spaces'])
+    if hashlib.sha256(repaired).hexdigest() != profile['repaired_sha256']:
+        raise ValueError('Gunyah repair output hash mismatch')
+    schema.write_bytes(repaired)
+    return profile
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name'], default='baseline')
     parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
+    parser.add_argument('--repair-gunyah-yaml', action='store_true', help='Opt-in hash-locked indentation repair; not schema qualification')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
     args = parser.parse_args()
     lock = json.loads(LOCK.read_text())
@@ -64,6 +78,8 @@ def main():
     result_name = 'result' if args.experiment == 'baseline' else 'result-' + args.experiment
     if args.binding_profile != 'ack':
         result_name += '-' + args.binding_profile
+    if args.repair_gunyah_yaml:
+        result_name += '-gunyah-yaml-repaired'
     output = WORK / result_name
     output.mkdir(exist_ok=True)
     (output / 'diagnostics.json').unlink(missing_ok=True)
@@ -74,6 +90,7 @@ def main():
         count = len(list(source.rglob('*.yaml')))
         if count != lock['yaml_files']:
             parser.error('Binding corpus file count mismatch')
+        yaml_repair = apply_gunyah_yaml_repair(source, lock['ack_commit']) if args.repair_gunyah_yaml else None
         profile = None
         commands = []
         if args.binding_profile != 'ack':
@@ -95,7 +112,7 @@ def main():
         diagnostics = json.loads((output / 'diagnostics.json').read_text()) if results and results[-1]['stage'] == 'validate' and (output / 'diagnostics.json').exists() else []
         passed = len(results) == len(commands) and all(x['exit_code'] == 0 and x['stderr_lines'] == 0 for x in results) and not diagnostics
         report = {'scope': 'Pinned ACK corpus with explicitly reported local proposal, if selected; donor-specific schemas still incomplete; no hardware validation',
-                  'experiment': args.experiment, 'binding_profile': args.binding_profile, 'binding_proposal': profile, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
+                  'yaml_repair': yaml_repair, 'experiment': args.experiment, 'binding_profile': args.binding_profile, 'binding_proposal': profile, 'ack_commit': lock['ack_commit'], 'archive_sha256': lock['sha256'], 'yaml_files': count,
                   'dtschema_version': version, 'wrapper_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), 'dtb_sha256': experiment['expected_artifact']['sha256'],
                   'commands': results, 'diagnostic_count': len(diagnostics),
                   'diagnostic_types': dict(Counter(x['type'] for x in diagnostics)),

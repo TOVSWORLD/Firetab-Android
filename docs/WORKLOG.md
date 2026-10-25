@@ -632,3 +632,11 @@ identify missing tee/lca/framebuffer runtime fields; accounting equality check
 is disabled. No ownership inferred. Exact residual remains#21; next independent
 task#27 upstream schema parse/selector failures. All81 tests pass. No device
 queries, firmware assembly, helper execution, downloads or paid resources.
+
+## 2026-10-25 — Opt-in corpus YAML lexical repair (#62)
+
+Three Gunyah indentation tabs replaced only in hash-locked opt-in extracted
+corpus. Original preserved; no semantic relaxation/suppression. Actual full
+context still29errors/57unmatched, passed=false/exit1. YAML parser issue removed,
+but schema now explicitly ignored for invalid compatible shape; separate meta
+errors retained. All82 tests pass. Next#27 semantic/schema-selector repair.
