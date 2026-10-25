@@ -129,3 +129,10 @@ Firmware and panel execution stages remain explicitly `not_run`.
 Published initial main revision `82c7fc4`; GitHub run 40158159017 passed all three
 jobs and six rejection-path tests. Updated checkout to the pinned v6 revision after
 reviewing the hosted runner warning about the v4 Node runtime.
+
+## 2026-10-24 — Development-to-main release policy
+
+User required main to be locked except for development-to-main releases. Created
+`development`, enabled CI on integration pushes and added a metadata-only source-branch
+check. Main requires release PRs from the same repository's development branch.
+No PR code executes in the privileged-event workflow; token permissions stay read-only.

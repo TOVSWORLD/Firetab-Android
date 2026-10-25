@@ -26,11 +26,14 @@ Apply those lessons to this repository as follows:
 
 ## What runs
 
-Three named GitHub jobs run on every PR and main push: Repository integrity, FireTabs
+Three named GitHub validation jobs run on every PR and development/main push: Repository integrity, FireTabs
 Android evidence, Crestron Panel evidence. The repository job also runs adversarial
 unit tests for the gate logic. Actions are commit-pinned; permissions are read-only,
 credentials are not persisted, timeouts are bounded and obsolete runs are cancelled.
-PR code receives no secrets. There is no `pull_request_target` workflow.
+PR code receives no secrets. A separate `pull_request_target` workflow checks only
+GitHub event metadata; it never checks out or executes PR content and has read-only
+permissions. Its required `Release source policy` check rejects main PRs unless their
+source is this repository’s `development` branch.
 
 Checks cover Python syntax, JSON/XML parsing, source-pin safety, historical manifest
 revisions, APK evidence/package/hash agreement, and ordered validation records.
@@ -64,3 +67,16 @@ When builds become possible, add independent artifact checks (architecture, part
 hashes, build logs) and test stages before release automation. Do not add a successful
 empty build job now. Required-status branch protection must be enabled separately once
 the named checks exist; workflow files alone cannot enforce GitHub merge settings.
+
+
+## Branch and release policy
+
+`development` is the default integration branch. Feature and fix PRs target it and
+must pass the three validation checks. `main` accepts releases only through a PR from
+this repository's `development` branch, with all three checks and the metadata-only
+release source check required. Protection applies to administrators too; direct pushes,
+force pushes, and branch deletion are disabled. No automatic merge or publication.
+
+Use merge commits for development-to-main releases so development remains an ancestor
+of main; do not squash or rebase the release PR. GitHub's literal branch-lock setting
+is not used because it would also block the intended release merges.

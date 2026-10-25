@@ -1,0 +1,27 @@
+name: Release policy
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+permissions:
+  contents: read
+jobs:
+  release-source:
+    name: Release source policy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - name: Require same-repository development branch for main releases
+        env:
+          BASE: ${{ github.event.pull_request.base.ref }}
+          HEAD: ${{ github.event.pull_request.head.ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if [ "$BASE" = main ]; then
+            if [ "$HEAD" != development ] || [ "$HEAD_REPO" != "$REPO" ]; then
+              echo "Main accepts release PRs only from this repository's development branch."
+              exit 1
+            fi
+          fi
+          echo "PASS: release source policy"

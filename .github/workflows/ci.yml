@@ -2,7 +2,7 @@ name: Project validation
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [development, main]
   workflow_dispatch:
 permissions:
   contents: read
