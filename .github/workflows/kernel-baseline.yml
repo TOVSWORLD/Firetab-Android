@@ -5,7 +5,7 @@ on:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl]
+        options: [clocks, clocks-pinctrl, providers]
         default: clocks
   pull_request:
     types: [opened, ready_for_review]

@@ -348,3 +348,9 @@ in evidence/pinctrl-port; config hash matches CI output. Later branch updates
 are evidence/docs/CI/base synchronization, leaving these driver sources intact.
 PR #28 refreshed against development for required checks; no policy bypass used.
 No douglas boot, Android configuration, schema or hardware pass is claimed.
+
+Added explicit providers workflow mode for the next full Image integration:
+clock, pinctrl, PMIC wrapper and eight-domain controller candidates together.
+Checks all resolved config symbols, compiles each affected object set with W=1,
+then links the full generic Image. Same existing resource gates; no Android or
+bootable device package is produced. Results pending until actual CI completion.
