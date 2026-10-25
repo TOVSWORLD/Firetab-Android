@@ -242,3 +242,9 @@ Android/douglas config and does not advance that kernel validation record.
 PR #17 merged to development. Full matching binding/schema work is now tracked
 explicitly in #27; driver/configuration work in #18–#25. Exact transfer and
 expanded checkout sizes were not emitted and remain unknown.
+
+Rebuild 40169238323 compiled all nine MT8163 clock objects with W=1 and advanced
+into the full kernel build before being superseded by the evidence-recording
+commit. Full Image linkage with the overlay is still pending. A git-apply blank
+line warning in generated Kconfig wiring was fixed; no warning flag was disabled.
+Added per-PR concurrency cancellation to avoid duplicate obsolete builds.

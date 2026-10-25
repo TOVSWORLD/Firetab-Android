@@ -1,6 +1,6 @@
 --- a/drivers/clk/mediatek/Kconfig
 +++ b/drivers/clk/mediatek/Kconfig
-@@ -1138,3 +1138,54 @@
+@@ -1138,3 +1138,53 @@
  	  This driver supports MediaTek MT8516 audsys clocks.
  
  endmenu
@@ -54,7 +54,6 @@
 +	default COMMON_CLK_MT8163
 +	help
 +	  This driver supports MediaTek MT8163 vencsys clocks.
-+
 --- a/drivers/clk/mediatek/Makefile
 +++ b/drivers/clk/mediatek/Makefile
 @@ -172,3 +172,11 @@

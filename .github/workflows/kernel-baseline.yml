@@ -9,6 +9,9 @@ on:
       - .github/workflows/kernel-baseline.yml
 permissions:
   contents: read
+concurrency:
+  group: clock-compile-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   compile:
     runs-on: ubuntu-24.04
