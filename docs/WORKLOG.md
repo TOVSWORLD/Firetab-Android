@@ -708,3 +708,11 @@ and capped static marker/header reports added. Actual452322B fetched; preloader
 139352B/LK485552B hashes retained, binaries ignored/notexecuted. Heuristic marker
 absent; exploitability remains unknown. LK wrapper485040B payload equals file
 minus512.98 tests pass. Next#21 static entry/format audit, no tablet operations.
+
+## 2026-10-25 — Exact loader container/address audit (#80)
+
+GFH declaration gives preloader code view0x201000..0x222c34; LK prefix uses default
+address sentinel, so old4bd00000base is unverified. Strict hash/bounds parser and
+source-based hypothetical patch windows retained with compatibility=false. Old
+helper donor binaries absent in pinned git.102 tests pass. Next#21 stock LK
+control-flow analysis using existing LLVM, no new dependency or device operation.
