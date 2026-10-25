@@ -1,0 +1,47 @@
+{
+  "commit": "e23aa8e8ab337ee88518a7fad4b175d8d68890c8",
+  "tree": "4ec999c0773b61c77e1b6109ab74b36c1d0c255c",
+  "parents": [
+    "7da32808683977a8c247db97586d1c0647f11ddb"
+  ],
+  "author": {
+    "name": "Lee Jones",
+    "email": "lee@kernel.org",
+    "time": "Wed Sep 02 12:30:31 2026 +0000"
+  },
+  "committer": {
+    "name": "Lee Jones",
+    "email": "joneslee@google.com",
+    "time": "Tue Oct 20 13:29:09 2026 +0000"
+  },
+  "message": "UPSTREAM: nfc: llcp: Fix race condition in accept_queue lifecycle\n\n[ Upstream commit c3eef2f988a3db9690369d7cef9a3344dd9788d3 ]\n\nIn nfc_llcp_socket_release(), sockets and listener accept queues are\nwalked under the local sockets rwlock and bh_lock_sock().  However,\nbh_lock_sock() does not synchronise against process-context lock_sock()\nheld by nfc_llcp_accept_dequeue() during accept().  Because\nsocket_release() does not check sock_owned_by_user(), both paths can\nconcurrently unlink and release the same child socket, resulting in\nuse-after-free or a NULL pointer dereference of child-\u003eparent in\nnfc_llcp_accept_unlink().\n\nFix this synchronisation race by having nfc_llcp_socket_release() use\nprocess-context lock_sock() instead of bh_lock_sock():\n\n1. Pop sockets from the local sockets list under the write lock using\n   nfc_llcp_sock_list_pop() so lock_sock() can be acquired without\n   holding the rwlock.\n\n2. Because lock_sock() can sleep, defer the final release of the\n   nfc_llcp_local structure to a workqueue (release_work).  This avoids\n   a sleeping-in-atomic bug when the last local reference is dropped\n   from softirq context.  Additionally, hold a single device reference\n   on local from registration until final destruction.\n\n3. In nfc_llcp_local_get(), use kref_get_unless_zero() to prevent\n   resurrecting a local object whose teardown has been scheduled.\n\n4. In llcp_sock_accept(), verify that the listener socket state is still\n   LLCP_LISTEN after waking from schedule_timeout() to prevent hangs if\n   the listener is closed concurrently.\n\n5. When unlinking unaccepted child sockets during listener release,\n   unlink them from local-\u003esockets, call sock_orphan(), and drop their\n   initial sk_alloc creation reference via sock_put().\n\n6. Make nfc_llcp_accept_unlink() idempotent by guarding parent access with\n   a NULL check.\n\nFixes: 50b78b2a6500 (\"NFC: Fix sleeping in atomic when releasing socket\")\nBug: 500034330\nChange-Id: I5ceb8b9993d1cb87c0128ba28e1c161ae8036014\nSigned-off-by: Lee Jones \u003clee@kernel.org\u003e\nLink: https://patch.msgid.link/20260902123033.1169067-1-lee@kernel.org\nSigned-off-by: David Heidelberg \u003cdavid@ixit.cz\u003e\nSigned-off-by: Sasha Levin \u003csashal@kernel.org\u003e\n(cherry picked from commit da8a07757383614a8380a0f7dd54749d2687b82e)\nSigned-off-by: Lee Jones \u003cjoneslee@google.com\u003e\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "d8345ed57c9542f470acf67b186cfcfa2a6d173d",
+      "old_mode": 33188,
+      "old_path": "net/nfc/llcp.h",
+      "new_id": "23ae7a0112d37d6310eb95a96332c548a439ae93",
+      "new_mode": 33188,
+      "new_path": "net/nfc/llcp.h"
+    },
+    {
+      "type": "modify",
+      "old_id": "ed03dc685a96b1aa71823db393ec9af8e9f622b0",
+      "old_mode": 33188,
+      "old_path": "net/nfc/llcp_core.c",
+      "new_id": "d3ae2406f9b6c4f861469c1dfadee859d3fd4f02",
+      "new_mode": 33188,
+      "new_path": "net/nfc/llcp_core.c"
+    },
+    {
+      "type": "modify",
+      "old_id": "915929cd724f90ec14a5cc6853dc80461cb66e35",
+      "old_mode": 33188,
+      "old_path": "net/nfc/llcp_sock.c",
+      "new_id": "283e26966afd9d3cd243f51260c00924ce26b591",
+      "new_mode": 33188,
+      "new_path": "net/nfc/llcp_sock.c"
+    }
+  ]
+}

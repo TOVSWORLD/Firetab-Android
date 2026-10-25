@@ -13,6 +13,7 @@
 - [Development setup](development/SETUP.md), [testing](development/TESTING.md), [troubleshooting](development/TROUBLESHOOTING.md)
 - [Resource estimates and historical recipes](CONTINUE.md)
 - [CI and AI-development lessons](CI.md)
+- [Douglas maintained-kernel audit](development/DOUGLAS-KERNEL-AUDIT.md) and [source support matrix](../projects/firetabs-android/kernel/support-matrix.json)
 - [Feasibility evidence](FEASIBILITY.md), [maintenance direction](MAINTENANCE.md)
 - [Crestron panel investigation](CRESTRON-PANEL.md)
 - [Android project](../projects/firetabs-android/README.md) and [panel project](../projects/crestron-panel/README.md)

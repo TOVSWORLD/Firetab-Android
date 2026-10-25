@@ -35,6 +35,8 @@ jobs:
           fi
       - name: Validate community docs and release records
         run: python3 scripts/check_community.py
+      - name: Verify maintained-kernel audit evidence
+        run: python3 scripts/kernel_audit.py
       - name: Test gate rejection paths
         run: python3 -m unittest discover -s tests -v
   android:

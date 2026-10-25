@@ -23,3 +23,9 @@ Each future distributable needs its own complete component and license inventory
 Report a missing attribution or provenance concern privately through SECURITY.md if it
 contains sensitive material, otherwise open a documentation issue with the exact path.
 Do not introduce an unsupported SPDX label on third-party or vendor-derived content.
+
+`evidence/kernel-audit/` preserves pinned upstream ACK, MediaTek community, legacy,
+LibreEcho and AOSP source/listing references with original headers and a SHA256 index.
+These sources retain their file-level terms; source excerpts are not relicensed as
+first-party documentation. Research integration proposals do not establish runtime or
+redistribution approval for any separately obtained vendor firmware.

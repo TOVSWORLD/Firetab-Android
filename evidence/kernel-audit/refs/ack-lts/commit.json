@@ -1,0 +1,56 @@
+{
+  "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "tree": "29b1a1e7ba81f4acd3a0c56f3d8e3b69d104f4ef",
+  "parents": [
+    "9929239ea933e3e7b2232a65b62a7835a423c46f"
+  ],
+  "author": {
+    "name": "Ricardo Barreira",
+    "email": "rsf@google.com",
+    "time": "Wed Oct 21 09:36:59 2026 +0000"
+  },
+  "committer": {
+    "name": "Ricardo Barreira",
+    "email": "rsf@google.com",
+    "time": "Thu Oct 22 09:47:06 2026 -0700"
+  },
+  "message": "ANDROID: ABI update with new STG version.\n\nBug: 559631832\nChange-Id: I53c4637aa55c98377970f0dc438c7fba29d91b0c\nSigned-off-by: Ricardo Barreira \u003crsf@google.com\u003e\n",
+  "tree_diff": [
+    {
+      "type": "modify",
+      "old_id": "67992840877004ccf6f12109c55a1f882fd99215",
+      "old_mode": 33188,
+      "old_path": "gki/aarch64/abi.stg",
+      "new_id": "29354e58e6bd5b1afddb844e0f3881f98382d172",
+      "new_mode": 33188,
+      "new_path": "gki/aarch64/abi.stg"
+    },
+    {
+      "type": "modify",
+      "old_id": "575c6100d8b6a3196199db204456c7cdd781b99d",
+      "old_mode": 33188,
+      "old_path": "gki/aarch64/abi.stg.allowed_breaks",
+      "new_id": "c2e19ef90717dc637401d252bf71018bdd902897",
+      "new_mode": 33188,
+      "new_path": "gki/aarch64/abi.stg.allowed_breaks"
+    },
+    {
+      "type": "modify",
+      "old_id": "6035652062c09d4e6c66d7e31b2bd8d87a4a137b",
+      "old_mode": 33188,
+      "old_path": "gki/x86_64/abi.stg",
+      "new_id": "bf5cde7f0aafccd7c288eb4fec7aebaf333f3cc3",
+      "new_mode": 33188,
+      "new_path": "gki/x86_64/abi.stg"
+    },
+    {
+      "type": "modify",
+      "old_id": "994c6ae220ea60ba2f7a12486e4e69d459972a60",
+      "old_mode": 33188,
+      "old_path": "gki/x86_64/abi.stg.allowed_breaks",
+      "new_id": "38ddaea3ea9ca051fc3a67c8af482aee70513ec0",
+      "new_mode": 33188,
+      "new_path": "gki/x86_64/abi.stg.allowed_breaks"
+    }
+  ]
+}

@@ -1,0 +1,1025 @@
+{
+  "id": "d3041b31d3320bcf24f96eceac26372b501bc63b",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b50799b2a65fbdf5c3f9031addba22be1a92529b",
+      "name": "Makefile"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0449686bd06ba17c5798aafdfb3fa071fca7e2f2",
+      "name": "mt2712-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "385c455a7c985801827b577f973321c43f95eaa3",
+      "name": "mt2712-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "082672efba0a3408e9a9bb47ffad26046f97c3a2",
+      "name": "mt2712e.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "243afbffa21fd724f53d37d139c4ad28859caeea",
+      "name": "mt6331.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dca4e5c3d8e210c1e118539153e77e2822066da3",
+      "name": "mt6357.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e23672a2eea4afd99603abf67833b8deab9b6040",
+      "name": "mt6358.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "467d8a4c2aa7f16ade92a287ecdeed5089302045",
+      "name": "mt6359.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "53b335d2de5fa39f36d0f0a59c4e0ec1c8c5edd6",
+      "name": "mt6380.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "00b14f85c6a16f0adf6dd3cfc228ea7f58b94c99",
+      "name": "mt6755-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8da5c0a56a02504e3212f9ea733a4903451275ce",
+      "name": "mt6755.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "56b1bf06e26b562890559ca3c746b670316997ad",
+      "name": "mt6779-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "70f3375916e8c437f4b9047dab91b9d6c585dee9",
+      "name": "mt6779.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e0d4d7a63139473f5af62a41970e8a3de3432894",
+      "name": "mt6795-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fccb948cfa456b687c27e533e83287457125a14a",
+      "name": "mt6795-sony-xperia-m5.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9757e37a65d4e6d4ac979df3cbf56382f09ef98d",
+      "name": "mt6795.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c927932afa0d6b0de9290d529a30c8f9b8d70c2f",
+      "name": "mt6797-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9534cf3a09d01f65d30edf70d89643063154c0e7",
+      "name": "mt6797-x20-dev.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8ac98a378fd65aa78e0d572e76f2830e41d6a788",
+      "name": "mt6797.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "982bc95c471ccf7909ae4dfccda7b6ebb1785cbe",
+      "name": "mt6893-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9f100b18a6765655db03316531c9b186796a46d8",
+      "name": "mt7622-bananapi-bpi-r64.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8c3e2e2578bce53d8ec3a7c28d4ad12b0ecc1081",
+      "name": "mt7622-rfb1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "917fa39a74f8d7f3d07cb71b7f0533c0777b5583",
+      "name": "mt7622.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "54101cc08a25bf3ea63749589f466edf89167e8f",
+      "name": "mt7981b-cudy-wr3000-v1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4f6cbb49128722e4b8f63d32847e77da198b5027",
+      "name": "mt7981b-openwrt-one.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a314c3e05e5004556a5d55e802a236f4e06eb12d",
+      "name": "mt7981b-xiaomi-ax3000t.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "88d7c3da3e49b651c4ddbcaa921b532e5fc6b249",
+      "name": "mt7981b.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "30805a6102623e27a4ca87bf4e74c090612b7902",
+      "name": "mt7986a-acelink-ew-7886cax.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "047a8388811eb9c09d7c1ea6dc7a38c79bfb7a20",
+      "name": "mt7986a-bananapi-bpi-r3-emmc.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e2a2fea7adf09bc44e8014f27d3a8e8c9a79667a",
+      "name": "mt7986a-bananapi-bpi-r3-mini.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "24398f8a7da4345c5bea4d29eedb86008c7476ca",
+      "name": "mt7986a-bananapi-bpi-r3-nand.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6a0d529b54aca5bd27062cebf5ce6658a59a173b",
+      "name": "mt7986a-bananapi-bpi-r3-nor.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f7dd529819779bd5034285424daca30482ff8186",
+      "name": "mt7986a-bananapi-bpi-r3-sata.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d9e01967acc471b83b3d793d3cc095c14e43ffa0",
+      "name": "mt7986a-bananapi-bpi-r3-sd.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e7654dc9a1c9b4ddaa3d296a86ed3f1909c916df",
+      "name": "mt7986a-bananapi-bpi-r3.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5d8e3d3f6c200e0c56b0bdbf494951c1c40fa54c",
+      "name": "mt7986a-rfb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6786e5b590e85ae4333076057461eaad5312dbea",
+      "name": "mt7986a.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "58f77d932429f832c9945c613d0dac928dc56002",
+      "name": "mt7986b-rfb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "db5189664c29ba8be8096d259f4691e6bfba0b95",
+      "name": "mt7986b.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6f0c81e3fd941ec723f82d83e68d9ea7959371e6",
+      "name": "mt7988a-bananapi-bpi-r4-2g5.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3e320b2f83d5a20219169e1b2fdd78b292b88e8e",
+      "name": "mt7988a-bananapi-bpi-r4-emmc.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "663c6345dd31e7c3beff2c9ecb246dbc7fd24be8",
+      "name": "mt7988a-bananapi-bpi-r4-sd.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4b3796ba82e36aae693f16c27dcfdf95f9ce8185",
+      "name": "mt7988a-bananapi-bpi-r4.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0ff69dae45d32757541cacdcbf0295fd82075ce4",
+      "name": "mt7988a-bananapi-bpi-r4.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "366203a72d6d20f754e18eb985eda009c413ce79",
+      "name": "mt7988a.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "061c3255a973c662cd658f7b3a12839a82faa08c",
+      "name": "mt8167-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ebf1a358f42aaf97cd94c3cb6978028a772f2553",
+      "name": "mt8167-pumpkin.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2374c095305755a2aad6d51a3a173b18109a7a75",
+      "name": "mt8167.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1c9fc791bdfc56d4740d24a1ce68d5598017dfba",
+      "name": "mt8173-elm-hana-rev7.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fcf0cb76a87c340b3a2061430f91e8ac4d9baa31",
+      "name": "mt8173-elm-hana.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dfc5c2f0ddefd7bb0f2b989fe3214ba9a903100b",
+      "name": "mt8173-elm-hana.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2390d04204e83323aa0104a243bedb2824d26f97",
+      "name": "mt8173-elm.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0d995b342d46315fcb855ca7da2bfdea52bfc608",
+      "name": "mt8173-elm.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9fffed0ef4bff4bbd6dabcd968daaf49f9f05121",
+      "name": "mt8173-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a5e308dc85450d3c7e73ff5dc35fda3e91f26368",
+      "name": "mt8173-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "122a57c3780b69ac25bb114193814f68dac43791",
+      "name": "mt8173.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f04baea5d6cbe2375537462dc32c9ac47acc0c71",
+      "name": "mt8183-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e4aeea4599f5e5b5d073b64c75b89848a465e77a",
+      "name": "mt8183-kukui-audio-da7219-max98357a.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "16ce5a3612eec3470556ea4f1b27d67e25f1836b",
+      "name": "mt8183-kukui-audio-da7219-rt1015p.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f69ffcb9792adb1e5a0a825f8143773442d6e056",
+      "name": "mt8183-kukui-audio-da7219.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2b60967c0c1cc855918b2b0051fed9e6d0bb81e4",
+      "name": "mt8183-kukui-audio-max98357a.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "658a764fe9ee569142cb1e708ef8d4e18ddae490",
+      "name": "mt8183-kukui-audio-rt1015p.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "260a5f56149595eb957e94fc57cf076f8d953587",
+      "name": "mt8183-kukui-audio-ts3a227e-max98357a.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2f7d1fa1c90fad8dd5ca47cacce24be81ab88ccc",
+      "name": "mt8183-kukui-audio-ts3a227e-rt1015p.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c4aedf8cbfcddd62ea08cbb1e37900b2dbf2e5c3",
+      "name": "mt8183-kukui-audio-ts3a227e.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "20b71f2e7159ade7e7d2135aabe6587c8f8d64de",
+      "name": "mt8183-kukui-jacuzzi-burnet.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "83bbcfe620835ab6d34cd2f4c2183fbdf11d0909",
+      "name": "mt8183-kukui-jacuzzi-cozmo.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7bc7c2687d6f6bcd47c4d151c1e72bebef6f98d5",
+      "name": "mt8183-kukui-jacuzzi-damu.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "863f3e403de8577da41b17b144cdb17c578b2027",
+      "name": "mt8183-kukui-jacuzzi-fennel-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e0a583ce4a0bb18095a77d23ab8409bb80898979",
+      "name": "mt8183-kukui-jacuzzi-fennel-sku6.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7874c9a20e124c65ace3f90e2ec5bcaf59b69c40",
+      "name": "mt8183-kukui-jacuzzi-fennel-sku7.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f9c1ec366b26607581c116b364cc2f80f8621a57",
+      "name": "mt8183-kukui-jacuzzi-fennel.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "877256eab2622833f6e14b93eec629e610eb519c",
+      "name": "mt8183-kukui-jacuzzi-fennel14-sku2.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b981dd31a430c6d1146f36f5dbc101ac5a04e810",
+      "name": "mt8183-kukui-jacuzzi-fennel14.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8ac6bf5b17f97719e532eec9b22c964e0b663d63",
+      "name": "mt8183-kukui-jacuzzi-juniper-sku16.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "078bc765646f57fd8c55e97325893ab50e4dac51",
+      "name": "mt8183-kukui-jacuzzi-juniper.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f3ac9c074226932ff0c810531d676d880594e42a",
+      "name": "mt8183-kukui-jacuzzi-kappa.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "561770fcf69e66341c080687e2efaa6e98c550a8",
+      "name": "mt8183-kukui-jacuzzi-kenzo.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ddb993521bbfee1b94f9451d329aab0784837825",
+      "name": "mt8183-kukui-jacuzzi-makomo-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "10c4f920a7d82ea6efc01b2ab10959e90fad7239",
+      "name": "mt8183-kukui-jacuzzi-makomo-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8ce9568fee95a6faba0c238f6c43f43948c26d9b",
+      "name": "mt8183-kukui-jacuzzi-pico.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "40af5656d6f15f6088dfcf3aad15b45a6a2db34b",
+      "name": "mt8183-kukui-jacuzzi-pico6.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "928b205a616a0e4b52abf33f7609e4c388b1c57b",
+      "name": "mt8183-kukui-jacuzzi-willow-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "71307a8052d614e7ef6a4cb93586f6f8b35b4c0d",
+      "name": "mt8183-kukui-jacuzzi-willow-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c942e461a177efe1e711a978c3bfb9f852f1b0ee",
+      "name": "mt8183-kukui-jacuzzi-willow.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1b74ec171c10cd1095fac94f1007c0c0ac8b0ffa",
+      "name": "mt8183-kukui-jacuzzi.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1ecf39458d9308f7775b50803d759d4b042f1068",
+      "name": "mt8183-kukui-kakadu-sku22.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ba74109a49094e723eb8d8562876f7e0cc6b8f6f",
+      "name": "mt8183-kukui-kakadu.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d71972c94e4287ca7c6565c948c5dbadd9db68df",
+      "name": "mt8183-kukui-kakadu.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2b5a8d1f900e0d3c75597022a95a7ea6c957a7e1",
+      "name": "mt8183-kukui-katsu-sku32.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "75fadf2c7059ed8c9f3008cf18d716464d9ea6c9",
+      "name": "mt8183-kukui-katsu-sku38.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7213cdcca612a6fdc7933d7aca5dbd5f9ca45b6b",
+      "name": "mt8183-kukui-kodama-sku16.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bbf0cd1aa66d1121b1415bd5605b95b9e2810e0e",
+      "name": "mt8183-kukui-kodama-sku272.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a429ffeac3bdf98dab72932cbe300cb2659be308",
+      "name": "mt8183-kukui-kodama-sku288.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5a416143b4a09bd51dcfc9b7ca87d4f77a9557ae",
+      "name": "mt8183-kukui-kodama-sku32.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b702ff066636e568f230c8c7a1f5801f03aa1dca",
+      "name": "mt8183-kukui-kodama.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4ac75806fa9484e6e0e524b210bbb3a3d8eda6e5",
+      "name": "mt8183-kukui-krane-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "095279e55d50c8a6e4a5641959137f71e9aa8992",
+      "name": "mt8183-kukui-krane-sku176.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b6cfcafd8b062f9b640775973d767d43c5084973",
+      "name": "mt8183-kukui-krane.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4b87d4940c8c739869c347698c6545ded62896d2",
+      "name": "mt8183-kukui.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f60ef3e53a09b57ac16dd635a74d39b37284e762",
+      "name": "mt8183-pumpkin.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "27ce4b31cc99decdc21d852c2b2eec7e779b5153",
+      "name": "mt8183.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5d012bc4ff0da07dc7c88c1ec6de2b642ec5c3c3",
+      "name": "mt8186-corsola-chinchou-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9d6e62af694404eb37010898a506c1a95647f983",
+      "name": "mt8186-corsola-chinchou-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "eb377de1fcde6ca34c10a93d572f105ed881a1b8",
+      "name": "mt8186-corsola-chinchou-sku16.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "800792157021fd9d35ce01a7b45a81aa270a534c",
+      "name": "mt8186-corsola-chinchou.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "72a2a2bff0a93f41795ec5237fd25dec49c2d3df",
+      "name": "mt8186-corsola-krabby.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c9673381ad3b38767c724f3585e8a57d06317c68",
+      "name": "mt8186-corsola-magneton-sku393216.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "28e3bbe56421de8bcc8bb8f66e88de2766f62e96",
+      "name": "mt8186-corsola-magneton-sku393217.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "332894218f074a714d7fed375eea82aec93c0fd0",
+      "name": "mt8186-corsola-magneton-sku393218.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "986498af4c70987b57de678027f9251875d06587",
+      "name": "mt8186-corsola-ponyta-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ff5eea0ddeb447dfbd2bd9a05b396f88247075e7",
+      "name": "mt8186-corsola-ponyta-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0abf69077089d1c59d2b746d0ac6f88d7228425d",
+      "name": "mt8186-corsola-ponyta.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "731b0d60228dddfa329091f350040921d839ea5f",
+      "name": "mt8186-corsola-rusty-sku196608.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f721ad4e5c97825550692dba3363973fbcbe6c54",
+      "name": "mt8186-corsola-squirtle.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "23e194579bf2074ff4c796f2974e1bf86cec19a3",
+      "name": "mt8186-corsola-starmie-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "214b972c9357a05126d7c544dd43d203d94c62ac",
+      "name": "mt8186-corsola-starmie-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a8e79c2791ba10e163904ba27e07385b673fc378",
+      "name": "mt8186-corsola-starmie.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "eae17bca85854425f5a6e1464026716edff88e8c",
+      "name": "mt8186-corsola-steelix-sku131072.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a55375b95d0d4f10d45fc24670ee10ccdc3a2b83",
+      "name": "mt8186-corsola-steelix-sku131073.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8a196dc9a96b8d0b369f71aa561b9386a57514ce",
+      "name": "mt8186-corsola-steelix.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9bb64353ca65e36f8558485157ed1273c56f3c46",
+      "name": "mt8186-corsola-tentacool-sku327681.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4dbf2cb73a81e15d1ac1afc73cf1b6174c950331",
+      "name": "mt8186-corsola-tentacool-sku327683.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "24d9ede63eaa21472db78bfcfceff9d09f20900d",
+      "name": "mt8186-corsola-tentacruel-sku262144.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ee5bc2cd9e9feb913eed9565b8f22c75c82518ac",
+      "name": "mt8186-corsola-tentacruel-sku262148.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cc805408a8b7a3897a7f8c8db54cfadb396c13f6",
+      "name": "mt8186-corsola-voltorb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b495a241b4432bb835fdf7e4a6f788c3111520b9",
+      "name": "mt8186-corsola-voltorb.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ff20376a44d7a511d208f07f89107c123a4d6f11",
+      "name": "mt8186-corsola.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2667a7424200e2ede7d7aaf8b76e6829ae01e758",
+      "name": "mt8186-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b91f88ffae0e8b81b70269ea2d058b016a50232b",
+      "name": "mt8186.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f4c207d65b877e1eefaa26540446c3c06369ca21",
+      "name": "mt8188-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "79d6d12394b9666678eaa93583f9b9e5b3864b34",
+      "name": "mt8188-geralt-ciri-sku0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ef5ea9d12b1def5c02d0353eb049accfce2b4fdf",
+      "name": "mt8188-geralt-ciri-sku1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ef56786fc2be5a9997f13c42fd9e356652992b96",
+      "name": "mt8188-geralt-ciri-sku2.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "524f7f0064c1a4deeb098ce083de31fb35fd23f4",
+      "name": "mt8188-geralt-ciri-sku3.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ea953d7e154301110797ef004ea5c7c579058f75",
+      "name": "mt8188-geralt-ciri-sku4.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bf87201ccf27354be46f01dc95c2a13a118d196b",
+      "name": "mt8188-geralt-ciri-sku5.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "17d7359dfb6a9c98600bde2e05500280c87b716e",
+      "name": "mt8188-geralt-ciri-sku6.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "825015b452d594895906f211e508c7de67044599",
+      "name": "mt8188-geralt-ciri-sku7.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6815c435a57e1a6ad1ce19d47270622e14f72570",
+      "name": "mt8188-geralt-ciri.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7fedbacdac44c69a7e2d27bc409c45d4b7fbe3b6",
+      "name": "mt8188-geralt.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "90c388f1890f5139be6a9513c4cd9b683a501279",
+      "name": "mt8188.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ac2673e56fb86cd3a002350e302d9fee005a5bac",
+      "name": "mt8192-asurada-hayato-r1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "163960f58db5c3224d58d84ad80c7c961a4d43e2",
+      "name": "mt8192-asurada-spherion-r0.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0b4664f044a159e389da7db05725ca8729fb4fa7",
+      "name": "mt8192-asurada.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "808be492e9702bc0b228d3f73b2c9514851d9f6a",
+      "name": "mt8192-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "47dea10dd3b8b1e424f4d10fe5600a7e27cd4828",
+      "name": "mt8192.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "49664de99b882700dd8566658b21fafc3cc8c2ad",
+      "name": "mt8195-cherry-dojo-r1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a50b4e8efaba7f84d93093ab7c1f4bcac2008a5d",
+      "name": "mt8195-cherry-tomato-r1.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a8657c0068d58f5defd9d82946977dba9c33c941",
+      "name": "mt8195-cherry-tomato-r2.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9049d362a5e015e70626071e70bcdaf17afc2108",
+      "name": "mt8195-cherry-tomato-r3.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b3761b80cac7ede113dc2ebd69c1458c2034db78",
+      "name": "mt8195-cherry.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1f59b5786b81155f21a9e794091c5b2a40bb4c3c",
+      "name": "mt8195-demo.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "83456d649ff7594d5346326c6d9b0234bbc0532b",
+      "name": "mt8195-evb.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c7adafaa83288d2d86ddf45c97cc984344e1ff77",
+      "name": "mt8195.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "99535a6d5cbacdedd34a12eb45149e4fb64fc114",
+      "name": "mt8196-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c8418888268d982875b3aa1aff5551f7c6b5e339",
+      "name": "mt8365-evk.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "49ad4dee9c4cf563743dc55d5e0b055cfb69986a",
+      "name": "mt8365.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "71a8cbed1df6a1d976e7dc8ccafac3c21b04614b",
+      "name": "mt8370-genio-510-evk.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7ac8b8d0349455922a73f35db607b2b27cad23d7",
+      "name": "mt8370.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "612336713a64ee0681f6ebead04ba4ea293d1a53",
+      "name": "mt8390-genio-700-evk.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a2cdecd2b9034e2f295d817e846d6ed1845e686a",
+      "name": "mt8390-genio-common.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cf8cd37f570845a836a97564fd64a6a9a0e4e4d0",
+      "name": "mt8395-genio-1200-evk.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d16f545cbbb27278262b28d0ce589082fb4ddaf0",
+      "name": "mt8395-kontron-3-5-sbc-i1200.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0389c9cb8581c0bb50bb38fd35d1190de13feb6e",
+      "name": "mt8395-radxa-nio-12l-8-hd-panel.dtso"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d32f973f5e0528bc3233ff01f029006dbe6ef894",
+      "name": "mt8395-radxa-nio-12l.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "73339bb48f0daf49c8c607d791a5ca46626dfd7e",
+      "name": "mt8516-pinfunc.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3d3db33a64dc66b032926a6ebc1905f00f92d129",
+      "name": "mt8516-pumpkin.dts"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b5e753759465d9c2f41a87b2f55316bec319963b",
+      "name": "mt8516.dtsi"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "805fb82138a80269319a75693db3b229bcfb9aa1",
+      "name": "pumpkin-common.dtsi"
+    }
+  ]
+}

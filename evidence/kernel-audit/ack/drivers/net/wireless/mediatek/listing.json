@@ -1,0 +1,29 @@
+{
+  "id": "bcf69ef210bf73025dd2866dd66b782538b852d0",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bd4db128248e846b8d25fc1e63dad46125ec5cbb",
+      "name": "Kconfig"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "806172659bf2e150db1f0a585b99fa78a3a06351",
+      "name": "Makefile"
+    },
+    {
+      "mode": 16384,
+      "type": "tree",
+      "id": "e5163049943edf21036c1c069cbca45d9fc47a0f",
+      "name": "mt76"
+    },
+    {
+      "mode": 16384,
+      "type": "tree",
+      "id": "4aafea00cc107fd2b81299f6a68589186f849841",
+      "name": "mt7601u"
+    }
+  ]
+}

@@ -1,0 +1,1373 @@
+{
+  "id": "6bf175d9728825d7fc5f89858a6d3fe9370ffb50",
+  "entries": [
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e6598e74ec94e4a7b25edbed233ccc2090f7bed3",
+      "name": "88pg86x.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "83e8860309dccf1ca8a52b4f7e53daa4001b8d8b",
+      "name": "88pm800-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e6c436955e25177f5f408e84201b2b3d51d0cb04",
+      "name": "88pm8607.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a38bd4f312b723e2b87fb1f82dbd3d808f9ed6d5",
+      "name": "88pm886-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d84f3d054c59d86d91d859808aa73a3b609d16d0",
+      "name": "Kconfig"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b3101376029d71b0e8e2133dd28aa6660815fee0",
+      "name": "Makefile"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "970d86f2bbb81154978d013be00e232cf9706cd0",
+      "name": "aat2870-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b9955aa4e0d1b0a5a617bd46593f344f2e2d16a6",
+      "name": "ab8500-ext.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6b4a3a3d838513f8f871ec580e8a8f0624c98cbb",
+      "name": "ab8500.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b2a6ddc6f56d32e8758977e25858b972e294bc84",
+      "name": "act8865-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5bbe2bce740eaf3ba3a27979469f0610e72151cb",
+      "name": "act8945a-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "eb2a666a45cbab9c553975bfc5541fcfb8018646",
+      "name": "ad5398.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4b004a6b2f84e8201228e7f542d83903031e00b7",
+      "name": "adp5055-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "700bd0343196a1a7337a0302eaefb94507ece9b5",
+      "name": "anatop-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "501843996faae1089905a1972dc42d48f00c5817",
+      "name": "arizona-ldo1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e250e5f3fcbcb3de95ccb6ac91aa94015610f8ac",
+      "name": "arizona-micsupp.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0431a732cd785f27bb788c4d8ea23b557e31b8bf",
+      "name": "as3711-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "da378bfdba40662edcdaeb1b3a45c7ac86381d74",
+      "name": "as3722-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3e9f8fd54fca8fe9059ccf37df86b0fd494e3f56",
+      "name": "atc260x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a5ff6dfd29b5f5399071aae07ea2d9311e67a759",
+      "name": "aw37503-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "da891415efc0b398f87231af3ee0638c5f933255",
+      "name": "axp20x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "50414f4cb10958bb33a9fcfa5ed5aaecde9d0715",
+      "name": "bcm590xx-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "79fbb45297f6bc0ddd0df9a1e4c901a48098cec7",
+      "name": "bd71815-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dd871ffe979c37ffa2b6789744ba01ab39d1f615",
+      "name": "bd71828-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ea9c4058ee6a5ea8fdf26bdd83fa31b104b1e054",
+      "name": "bd718x7-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f4de24a281b123984b6a67e28fd00ff16e5ac564",
+      "name": "bd9571mwv-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bf5f9c3f2c97529598126a4a848f4684b8f09a94",
+      "name": "bd9576-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "24d21172298b31b0f85537e9b1eeaab1b0f0a79b",
+      "name": "bd96801-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "711dbe045383c434d95e6e0a70a3227c3eaed1ef",
+      "name": "bq257xx-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "39d317ad73a33c4aa27e179cc436d8bf4daf5bcc",
+      "name": "core.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6958d154442be23a45097f8e395f888cedc4d515",
+      "name": "cpcap-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fb0767b33a36641b453ac1381b6b1bc632b54458",
+      "name": "cros-ec-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2f85897183b3b0f7eb8955dc6d9b23f2d7e72ae2",
+      "name": "da903x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fbebe538a648ee48c7e2b96c2a6342e83ffbb8bd",
+      "name": "da9052-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a0d3414aa79e6b267b75943bd3f14471ef5fe971",
+      "name": "da9055-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e0c96f10e570cec67ce3a9455a24d3d072a7af5e",
+      "name": "da9062-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9d369cc45d4178f93e0efd6a0d298ed64a62609c",
+      "name": "da9063-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ef161eb0ca27709dcb82a1122001b282b2822ac6",
+      "name": "da9121-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a328a0bdfa29e9b74c62a6d271ba7afab217e3eb",
+      "name": "da9121-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "39ade0dba40f010d151c50c0c50d5c0c9ec2b4b0",
+      "name": "da9210-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b1f1a607c208c1f59ffc585bf4ea773750c5c43a",
+      "name": "da9210-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d4f14d7ea8cfae55bf045584e8c06d968e275408",
+      "name": "da9211-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1201e7cc056cc156b3b5c6830b6aa4c62fd45889",
+      "name": "da9211-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1ec2e1348891df1257c847a19b7565c8c8c19ce9",
+      "name": "db8500-prcmu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a45c1e1ac7ef66180fc57ec6d37ae48063771604",
+      "name": "dbx500-prcmu.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2fb3aaef9dbb8886ae892b0971377f40b25d5c56",
+      "name": "dbx500-prcmu.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2cf03042fddf4263d05c95e29dd534003fb8246c",
+      "name": "devres.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e5197ec7234d01518b26844c555f3900a4ee5750",
+      "name": "dummy.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c79e28209025a10a4f75f7000fc0581430cd4bbb",
+      "name": "dummy.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ea3bd49544e88a532b5bcee0393f53c82431ff23",
+      "name": "event.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c282236959b1803e3cba8f4b9cc15e458f6e8436",
+      "name": "fan53555.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6cb5656845f9e8dad92f9dd784bdf78faa8fa247",
+      "name": "fan53880.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b6cb0aaac3b1692411dee37d5a0fcc333ebeaa74",
+      "name": "fixed-helper.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "254c0a8a455594e7605df7d09299b9a5a7f0785e",
+      "name": "fixed.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6351ceefdb3e13485870e1fb98e7567d9e3f996a",
+      "name": "gpio-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0def82eb8b46a16ff8e098a009cf118bfc9da8c9",
+      "name": "helpers.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "69d24728d6a4c3595eb9aa010aa50fb5fbe25b6d",
+      "name": "hi6421-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b3ebd162481435ac223459555b0c8db01fb6fb99",
+      "name": "hi6421v530-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e5f6fbfc9016420116868581f0ecffbf4f2997bc",
+      "name": "hi6421v600-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1d8211f635b771a147c6fd4d271d5ab6ecee23fd",
+      "name": "hi655x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b3d48dc38bc4a5b9bef1ebad1103bda2594772bf",
+      "name": "internal.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5742faee8071dd8104c094587d66693f48fb0f9b",
+      "name": "irq_helpers.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7883cd160727d9ca159841e9d1103c30196d86e7",
+      "name": "isl6271a-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5a234f25e6bb015182dea2fd7bc2212c9d107916",
+      "name": "isl9305.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7531b2c37f959b031a3f8ecf4714c4c818885e45",
+      "name": "lm363x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e53911c807195bb7472544a7035a5d7f390e2b94",
+      "name": "lochnagar-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d4dab86fe3854583171f1120dcd3b460a0191c58",
+      "name": "lp3971.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1b918fb72134613499fe23540eccf5a116f70ad6",
+      "name": "lp3972.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "942f37082cb13463b37811b62c751d1036e117be",
+      "name": "lp872x.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "84a134cfcd9c98d70a7dc95ecd6622502b6d90ea",
+      "name": "lp873x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5509bee49bda4083c67884c986c7ac8ea5de779d",
+      "name": "lp8755.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1259b5d20153658b5d859b6e2151346812110d65",
+      "name": "lp87565-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2ade249ab6df335b10c01c2122d49dc6082f4fbf",
+      "name": "lp8788-buck.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8e45b7b99556a6740ccf7ad9d0a35252269cab1c",
+      "name": "lp8788-ldo.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3f70c2225dba0837ba9e0f3625a351b41912d909",
+      "name": "ltc3589.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "73d511eb1c1dceff75217b9dbc702246a1e309c7",
+      "name": "ltc3676.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "41fd15adfd1fddef1c296cc1489300a758732381",
+      "name": "max14577-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4242fbb7b147670dcc3795eed26d0610292bd4e9",
+      "name": "max1586.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fcdd2d0317a573e477a373a6c53c2bd8fe4f658e",
+      "name": "max20086-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "02d7009ea0e61f4740fc8e1eaa90aa6d95da27ec",
+      "name": "max20411-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fc14177ddf5d2bb1cbb0860161991261bda93f54",
+      "name": "max5970-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c7c94e868fc13f062be82e68b627fa221482a575",
+      "name": "max77503-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e6b3d9147c3738e0ef18dc549644fa1efa8435de",
+      "name": "max77541-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7bc87d8e9f686651067b443c06d0791557e1d1e6",
+      "name": "max77620-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "99293bde33583c630497e23784b7cecde319aeb6",
+      "name": "max77650-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c7b270fd9e0cf28c764c03ec8434da6d451033d8",
+      "name": "max77686-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "72a67d0c5f1e892db0498f1e87ccaf8f6bfaa7bc",
+      "name": "max77693-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b2e87642bec419fe9ef76d9e6914b677e9fa40b2",
+      "name": "max77802-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "310bc8ee7af8424080c16829d7532622df788bb4",
+      "name": "max77826-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9faddbfd25fd80963121c789ec9594a3231179c2",
+      "name": "max77838-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1216cc3a6f72bbe91d28891e6ea93a61365dfd0c",
+      "name": "max77857-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f57c588bcf28ba9d6c18281f7154402e425dac9c",
+      "name": "max8649.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ede17099b727499713989f1270f2d5284981e8fd",
+      "name": "max8660.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5a90633d8536babbefc78bb4eeb05686534b5993",
+      "name": "max8893.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e59aa7a3ee5460f7c98153c47ec083afb456d0ee",
+      "name": "max8907-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c1532db0a4ee43c2d9586c6736d7dedaedb462ef",
+      "name": "max8925-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1f94315bfb02ba57c09b246bb8709d1912921b1e",
+      "name": "max8952.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f68caa07f546f119f883b917ecf4f3b778690425",
+      "name": "max8973-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e77621b6466c752480b060caf7591fc65d109d3e",
+      "name": "max8997-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "254a77887f66110d9fdde2d4d6224474fbd1f11d",
+      "name": "max8998.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fb3aa1cec1f29f796c2ed50e4744e30c6a09c044",
+      "name": "mc13783-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b29cf6ba6f12cedc753e07aad2c4b8df5ce66e65",
+      "name": "mc13892-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8ff19150ca9230811c88d8284375505e8d28ff47",
+      "name": "mc13xxx-regulator-core.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "057aaef6f0867d648b2ea19ac62fa7bc1c72eefb",
+      "name": "mc13xxx.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b34ae0bbba6f74657c8cae7a21cf3d35c954cfed",
+      "name": "mcp16502.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e6794190cb68ec185bf1c17f074181e2e8e778d2",
+      "name": "mp5416.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ab105ffd6a2e0462f6430df2f7ca69de20217420",
+      "name": "mp8859.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9ad16b04c913cd9a2c451f83a33fb0ceed0e9153",
+      "name": "mp886x.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a670e09891e71a7fa881a332772b87271bb1b172",
+      "name": "mpq7920.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "489924655a96a2aea88f0ea0f01d925c69392947",
+      "name": "mpq7920.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2ebc1c0b5e6f60d52dd27a936fd3f895bd819e13",
+      "name": "mt6311-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4904d67517148922fc888c3c22924f8a511c4941",
+      "name": "mt6311-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2608a6652d778525b9817523f8252599428de53b",
+      "name": "mt6315-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b43da848a06e5e221ea40ffd0ee5a6b715872d34",
+      "name": "mt6323-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0059f88c6fd7e647b00466a6b7603cd3a9ce3ecb",
+      "name": "mt6331-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8d8331a2aca5f6708edc8d5a3a231e383b48b7b3",
+      "name": "mt6332-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "09feb454ab6b849d50f1b7f123766d9ae7e4fba5",
+      "name": "mt6357-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e4745f616cea3b461ac3131a3f885536412c1014",
+      "name": "mt6358-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c8a788858824909cf5de4e5fb75b80e151d1e9d2",
+      "name": "mt6359-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "24cc9fc94e900a43a8bfa8c30c364cedb2b0b948",
+      "name": "mt6360-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c2cea904b0ca97646def29dec4639f8adb4fc1c1",
+      "name": "mt6370-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "83e50df7f7c3b43b29bb65d79f6bd812dcaa2d9e",
+      "name": "mt6380-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "92a2d92f84f946a86c6f3675b555df5cc35ca358",
+      "name": "mt6397-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c0c9a6751c26babbcab09bba704c9ddc2046e91d",
+      "name": "mtk-dvfsrc-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "32e88cada47a254c3b184f3d1d6d8c1dccdfcc28",
+      "name": "of_regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "60656a815b9ec906a123720932032812d5dd53b5",
+      "name": "palmas-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cd5a0d7e44555f04d1e44470036c6e3d9feb7be6",
+      "name": "pbias-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f991dc9365f18dd82715b6382683e1676d42e017",
+      "name": "pca9450-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "441c9344aef7c3191fad2e1e8eb8e31b4aad7ef6",
+      "name": "pcap-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b5effee3291724f95ba4c820f6518ee25d8a57e2",
+      "name": "pf0900-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f789c4b6a499e12ec44dcc1b573a235728b8dcfd",
+      "name": "pf530x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ea3611de42b4a41fe8d4b10a98af21e7f4727540",
+      "name": "pf8x00-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f9828af748170d986dc34139c5f18ab800072931",
+      "name": "pf9453-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7d56c22b5e400713908b39069670e17ea9b5b4e0",
+      "name": "pfuze100-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ae1c4b9daaa1e1c72226bc8913e57c35249aa0b6",
+      "name": "pv88060-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d333dbf3be943c9864efe2512e6fd60d6406dc76",
+      "name": "pv88060-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9fe539a34786a406d9b61279cd8577e404dd97c2",
+      "name": "pv88080-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7d7f8f11a75af3d16b4ced36173eb3737011dd47",
+      "name": "pv88080-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3c48757bbbdad03cb04897213de44cc3351829a7",
+      "name": "pv88090-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f814ee52cff38781205d23296668685cf9a71794",
+      "name": "pv88090-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7434b6b22d3253d88d7acc21fe982f1e38c68e86",
+      "name": "pwm-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "ba3f9391565f5b77f475af758eb491366797088a",
+      "name": "qcom-labibb-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "90c78ee1c37bf9bf69f43e0bb7798fed94590e95",
+      "name": "qcom-pm8008-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "299ac3c8c3bc3d59c2990c6edd927ae3290b4d64",
+      "name": "qcom-refgen-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "109f0aae09b1df431d2e14d45a64d115e87cdec4",
+      "name": "qcom-rpmh-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2d5fec1457d15fc02ef0b28ce47168279c3fa862",
+      "name": "qcom_rpm-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "25ed9f713974ba25058c9dbf38d36e88f70a940b",
+      "name": "qcom_smd-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c1a41ce70b363977df119b67df4b18b7014d6ece",
+      "name": "qcom_spmi-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "cd94ed67621fee9f6d7a0327054db0ebab6cc7ee",
+      "name": "qcom_usb_vbus-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6982565c8aa4c7a895d3eaef1b81b19d5c55865c",
+      "name": "raa215300.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a25a141e86c400a2f6e1672d257ba34e94733027",
+      "name": "rc5t583-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "bcba16cc05cc719a755fb5101a3b7abbe2f685b1",
+      "name": "regnl.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dec7cac5e8d59414c2b97bbc77fc2d1b78bf4d2b",
+      "name": "renesas-usb-vbus-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "94cfb66ae656c640ed10041ed724bd4477299fa0",
+      "name": "rk808-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "91808e0735b32845fe13d7391e6b4f9ded2b828d",
+      "name": "rn5t618-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4b95ca01959c1b77b8730cc7d732b39a66e779a6",
+      "name": "rohm-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3020839b9ef104ac9f54ec2cc97226215f798a55",
+      "name": "rpi-panel-attiny-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "30b78aa75ee386c57b21b4cf8d61e96d407d4f0e",
+      "name": "rpi-panel-v2-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4955bfea4e844ce41dcaaa24a461f1f8bb081a33",
+      "name": "rt4801-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c96fb026dc1023097e3fd6b9d073f1a831966784",
+      "name": "rt4803.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "dfc868a24056a1016ba8089d025c224cabc5e30b",
+      "name": "rt4831-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2ba74f2055433915031d8f07c4cb87e9e2bdc459",
+      "name": "rt5033-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f0d3efd160d45f2b692a59358faaf073b522c360",
+      "name": "rt5120-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "129b1f13c8802861a99da6ecb8e434e31bc90f05",
+      "name": "rt5133-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a53ed523b5d7d5f02c1d303eaf9ef684af9be514",
+      "name": "rt5190a-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5fcddd7c2da7356c7effc0080fd8e7cf86cb2014",
+      "name": "rt5739.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c2553dcee050aef570ac812b146ec4cdaee343d5",
+      "name": "rt5759-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "548ffdf537d30f9f1eebcd949801264d6216651d",
+      "name": "rt6160-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3883440295edf8acbe91e2b89d77841ad2c2c302",
+      "name": "rt6190-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1843ecec19229f09951be14d89e5b8b8f71da845",
+      "name": "rt6245-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3d8d29f87b5861d11799f12ff2279a6f8d0a6382",
+      "name": "rtmv20-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b7372cb2b97d7e1148e158fdbd84ac55764b2a50",
+      "name": "rtq2134-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f669a562f03613af04658b09510a09d9ed468d9f",
+      "name": "rtq2208-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "618904ede72c44d10d4a039a550650bb9d43183c",
+      "name": "rtq6752-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a1c394ddbaff6e7e49cc5bedfa48ac5c7f767ceb",
+      "name": "s2dos05-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "c22fdde67f9cce31fb89467ebd5295b43d94aed1",
+      "name": "s2mpa01.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "04ae9c6150bd5ae9dba47b9b3cfcfb62e4698b6d",
+      "name": "s2mps11.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fe2631378ccd9cfdced937a7c3ee5e176fa65ed0",
+      "name": "s5m8767.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5447e1a47d154f6656952831b4e7463eb94555c2",
+      "name": "sc2731-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6d609c42e4793bb81461df33bdedd50f13aa4a11",
+      "name": "scmi-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "359e83e37d2d354ee64b9878c9e901905a5fc75c",
+      "name": "sky81452-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3bbd4a29e6d32664bbf11f8b73345875f5730673",
+      "name": "slg51000-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "20feb7f9194256fc37a182f1893d37e192654b4d",
+      "name": "slg51000-regulator.h"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2b585ba01a93d0ce163c33e14c8022a506bdce11",
+      "name": "spacemit-p1.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2cdc7f0474f8a0b25b6807fd7c52a4690b9d4627",
+      "name": "stm32-booster.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b7aeef6e09e7c1b3c63bccf9c5a7311af966e68c",
+      "name": "stm32-pwr.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9e391206f09ddee1015d9360db3cd8731935a188",
+      "name": "stm32-vrefbuf.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a498df7cb01677d5398d201f5a86cf2570dd946d",
+      "name": "stpmic1_regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3958d906bd77bb6e8ae966163e43b962c2693a53",
+      "name": "stw481x-vmmc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e09be44859e7dce10c6c09817760ec0210aae583",
+      "name": "sun20i-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "27e3d939b7bb9e9af8821bbda053b7d961710fb3",
+      "name": "sy7636a-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d79a4cc25a0da7b75ffa1ad862b2e82d7c2e34b5",
+      "name": "sy8106a-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5bec84db25f13f9637b1facb91985fbb66e7b03d",
+      "name": "sy8824x.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "0b811514782f54705abdb5b90cf9046e6af1f7ff",
+      "name": "sy8827n.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "04133510e5af7dee68f7d4cb8f10f7af02ff44ab",
+      "name": "ti-abb-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3a384bf9d2c5921dde433af3ee4a70669a930842",
+      "name": "tps51632-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "a09c6ae6a0cea2cc6bf5a2cc5970b0b8c0e9ca52",
+      "name": "tps6105x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "be6a6702cbfa900379deaae2cc88672bb24c8966",
+      "name": "tps62360-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "e29aab06bf79e9bc9254ea114b2d2ee23a63e303",
+      "name": "tps6286x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7b7d3ae392065d88fdb63e1d58d49b8328af8a22",
+      "name": "tps6287x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3334b5b7d907f1f1e14fa5d3568aa1f7518c3926",
+      "name": "tps65023-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6655d9c31187e3ddeeec33e81b1c06cd3280f79c",
+      "name": "tps6507x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2d284c64eeb7d8eb6cd1942403bce0f14bd6007f",
+      "name": "tps65086-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "8f916ee366e5136a519e404462bf3c262baa0add",
+      "name": "tps65090-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "9c2f0dd42613d43a456974c0fd0018607e2867fe",
+      "name": "tps65132-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "b167ba22fe165e82b227c2cf56c8310dd29a2f39",
+      "name": "tps65217-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "f44b5767099c2d6b101d5fd01875740e5eeefe64",
+      "name": "tps65218-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "324c3a33af8a42e38b3e191f4ee316454e30d44c",
+      "name": "tps65219-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6beb51293e8e1dfa0abcb7acf41572c31df8e6cd",
+      "name": "tps6524x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "1ab5767590f39b735b0d0c2f40e450f82d4ff1ea",
+      "name": "tps6586x-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "3a3027e0b94ef32414703fef42db0373cb5223cb",
+      "name": "tps65910-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "7ff7877a2e09a9acdb73abadaee33b829635787a",
+      "name": "tps65912-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "645e83462c645e75fcedd88f2ea40ebfdddb8b5a",
+      "name": "tps6594-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "de7db7690f6b1f6532f30d8765be0eedbcf2d7d1",
+      "name": "tps68470-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "5bacfcebf59aae514dc5ef511840faec484d6cd2",
+      "name": "twl-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6eed0f6e0adb6058463a73773463875e162b3810",
+      "name": "twl6030-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "74939b7fcd81850095d25d3433aa8fd1ba74d763",
+      "name": "uniphier-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "72bb5ffb49a8ce4f63ee551ee53318aa572a9329",
+      "name": "userspace-consumer.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2796580a3a3ccba96e962fe9e624bcc4884d59c1",
+      "name": "vctrl-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "6687077e9a97183f2e6605df4478bc6558bb034e",
+      "name": "vexpress-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "218a0d66a15282f6020fa03c09e2fba2d1efccb4",
+      "name": "virtual.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "4955616517ce9caa22f652e9370e7d517098b378",
+      "name": "vqmmc-ipq4019-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "834d7c181971db53a0f2c9b723c9a6a273eceffb",
+      "name": "wm831x-dcdc.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "43f220cea21c135391d513bbb3dc35eb72fc8287",
+      "name": "wm831x-isink.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "76b89b1cd519cbd744f9977f6f985bd7ac6a82c0",
+      "name": "wm831x-ldo.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "d09864bae5ef4f5237bdd6c9d6742619123d7641",
+      "name": "wm8350-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "fb3ca7956d00c653b79f4bba92002794c7469f5c",
+      "name": "wm8400-regulator.c"
+    },
+    {
+      "mode": 33188,
+      "type": "blob",
+      "id": "2946db448aecab963c1f6efee41bc7eee7463526",
+      "name": "wm8994-regulator.c"
+    }
+  ]
+}

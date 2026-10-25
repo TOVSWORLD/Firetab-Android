@@ -94,3 +94,7 @@ External links, legal rights, log truth and artifact signatures still need human
 Actions dependency updates are proposed monthly against development through Dependabot;
 its PRs use the same checks and do not merge automatically. Release-note categories
 can group reviewed PRs by project, but maintainers still supply validation and limitations.
+
+Repository integrity now also runs `scripts/kernel_audit.py` offline to verify the pinned
+modern-kernel source snapshot and component claim anchors. It does not run the optional
+clang dependency-failure probe, build a kernel or establish device support.

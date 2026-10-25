@@ -4,7 +4,9 @@ Neither project has a current-kernel firmware build, boot result or validated in
 release. There is no supported installation/upgrade/rollback procedure for project
 firmware yet. Existing third-party ROMs are external reference work, not our releases.
 
-- Maintained kernel branch selection and board/driver audit are outstanding.
+- An initial Android 17 / 6.18 ACK candidate and source support matrix are documented
+  in development/DOUGLAS-KERNEL-AUDIT.md. Kernel integration, compilation and the full
+  peripheral inventory remain outstanding.
 - Android 17 platform integration, graphics/media interfaces, enforcing SELinux and
   real memory/storage behavior are unvalidated.
 - Google Play/services distribution and device certification are not established.
