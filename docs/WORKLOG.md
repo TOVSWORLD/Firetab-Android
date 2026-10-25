@@ -589,3 +589,11 @@ serial CRLF translation could bypass that fatal override in an otherwise
 complete transcript. Normalize CRLF only for verdict parsing, preserving raw
 console bytes and hashes. Regression exercises both errors with LF and CRLF.
 No kernel/initramfs/config changes, new heavy build or tablet access.
+
+## 2026-10-25 — Reproducible offline Image placement audit (#21)
+
+Added report-based auditor with cross-report stock hash checks, exact raw/decoded
+new header consistency, bounded local JSON input and uint64 arithmetic guards.
+Actual old text_offset=0x80000 aligns at the old address; new offset=0 does not.
+Retained exact result plus input/auditor hashes. No replacement address selected,
+loader behavior authenticated or firmware packed. All 72 tests pass.
