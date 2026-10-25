@@ -387,3 +387,14 @@ only allowed path substitutions. Full-context validation changes 36->34 errors,
 Did not add domain cells to the PMIC shutdown node: reviewed driver provides a
 sys-off handler, not genpd. Stored source evidence and retained this diagnostic
 for semantic review. Added four comparison rejection tests; 35 total tests pass.
+
+## 2026-10-25 — Full provider Image succeeded (#20)
+
+Run 40173436578 at e4e4468 completed 08:13 UTC (~37 min), with real clock,
+pinctrl, PMIC wrapper and power-domain objects built W=1 and full Image linked.
+AArch64 Image 41,363,968 bytes / SHA256
+8b8db531704f2f895e752ba1e22f1b6920b85426e1768a37730041f695afb39e.
+Zero compiler warning/error lines. Config hash equals the retained pinctrl
+combined config; provider source changes are real and Image/vmlinux hashes differ.
+Result metadata retained. This generic configuration has no appended board DT,
+qualified loader/ramdisk contract or hardware/Android runtime validation.
