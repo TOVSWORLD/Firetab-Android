@@ -214,3 +214,14 @@ must be read from CI before marking any validation gate complete.
 First Linux run 40168107152 stopped in host-tool preflight: pahole absent.
 No kernel source was fetched. Added Ubuntu dwarves/libelf-dev/libssl-dev host
 packages with installed versions logged; apt repositories remain host-dependent.
+
+## 2026-10-25 — Begin diagnostic boot-contract investigation (#21)
+
+Captured pinned legacy runtime-memory readers and ACK PSCI implementation.
+ACK supports old explicit-ID arm,psci as well as version-probed bindings; the
+legacy vendor MTCMOS sequence remains a separate unresolved delta. Both legacy
+and donor source DTs say 512 MiB; runtime DRAM/mblock inputs and actual loader
+fixups must be resolved rather than guessing a RAM replacement. Recorded reserved
+region discrepancies and a staged diagnostic/log/recovery plan. Inspected amonet
+source only; no unlock/helper/device operation or image packing performed.
+#21 remains open pending actual firmware/memory/loader and recovery evidence.
