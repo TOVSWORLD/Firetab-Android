@@ -43,6 +43,7 @@ jobs:
         run: |
           python3 scripts/audit_clock_references.py --check
           python3 scripts/audit_pinctrl_references.py --check
+          python3 scripts/audit_power_references.py --check
       - name: Test gate rejection paths
         run: python3 -m unittest discover -s tests -v
   android:

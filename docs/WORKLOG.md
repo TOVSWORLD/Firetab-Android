@@ -302,3 +302,8 @@ masks, excluding unrelated hardware-voter/SMC changes from donor 7.0. Eight-doma
 header/binding retain donor licenses. Static wrapper register-offset comparison
 against pinned legacy header is recorded; runtime sequencing is unverified.
 Added bounded W=1 object probe; compilation result is not yet claimed.
+
+Added a reproducible PMIC wrapper register-offset audit to ordinary CI; 79 shared
+named offsets match the pinned legacy header. No initialization transactions or
+power transitions are executed. This audit addition leaves probed driver source
+unchanged from the initial #30 commit.
