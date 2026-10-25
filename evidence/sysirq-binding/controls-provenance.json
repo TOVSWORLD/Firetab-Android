@@ -1,0 +1,7 @@
+{
+  "command": "work/dtb-tool/venv/bin/python evidence/sysirq-binding/check-controls.py",
+  "processed_corpus_sha256": "ac89a3b06e9b6422c7a2183510a974966e4733bd380bfb460852aa93115c43cc",
+  "processed_compatible_sha256": "377a1f2af40befb5e6cfebb2207d1b2c2e4cf5af2c4564457fd5669e919da9a8",
+  "control_script_sha256": "0d7580ca80b5399a50ed0c0875815bf508b7c9d9becde53f673ac3f500da8e33",
+  "scope": "Actual dtschema-processed tuple constraints, local jsonschema negative controls"
+}

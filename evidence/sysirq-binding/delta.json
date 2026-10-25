@@ -1,0 +1,18 @@
+{
+  "removed": [
+    {
+      "message": "['mediatek,mt8163-sysirq', 'mediatek,mt6577-sysirq'] is not valid under any of the given schemas",
+      "node": "/soc/interrupt-controller@10200620",
+      "type": "validation"
+    },
+    {
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-sysirq', 'mediatek,mt6577-sysirq']",
+      "node": "/soc/interrupt-controller@10200620",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "baseline_count": 85,
+  "new_count": 83,
+  "passed_full_validation": false
+}
