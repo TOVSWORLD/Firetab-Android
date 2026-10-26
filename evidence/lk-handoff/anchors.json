@@ -1,0 +1,46 @@
+{
+  "scope": "Selected exact payload-offset bytes, not executable artifact",
+  "ranges": [
+    {
+      "offset": 0,
+      "hex": "070000eae6f100eaecf100eaf2f100eaf8f100eafef100eafef100ea15f200ea0000000044609fe5004086e5100f11ee0b0ac0e30500c0e3020080e3100f01ee0f00a0e1480040e224109fe5010050e10a00000a1c209fe5043090e4043081e4020051e1fbffff1a0c009fe510ff2fe12000d04b0000d04bac65d74b8000d04b"
+    },
+    {
+      "offset": 253468,
+      "hex": "2de9f04fadf2ac4ddff86c8b16460d460c930a90f844"
+    },
+    {
+      "offset": 255794,
+      "hex": "099f3868002800f026810a98294600220123fff744fbfee7"
+    },
+    {
+      "offset": 253392,
+      "hex": "f8b504460d46014617461e460748784406f0b6ff204629463a463346fef778ed0348784406f0acfffee700bf1e7b0200227b0200"
+    },
+    {
+      "offset": 248032,
+      "hex": "0340a0e10230a0e10120a0e10010a0e108009fe5700060e1feffffea3800201000020082"
+    },
+    {
+      "offset": 256912,
+      "hex": "fff744f9"
+    },
+    {
+      "offset": 256364,
+      "hex": "84497844794406f0"
+    },
+    {
+      "offset": 256896,
+      "hex": "7c6d0200"
+    },
+    {
+      "offset": 415472,
+      "hex": "626f6f745f6c696e75785f6664740000"
+    },
+    {
+      "offset": 416000,
+      "hex": "0a5b4c4b5d6a756d7020746f204b363420307825780a000044"
+    }
+  ],
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08"
+}
