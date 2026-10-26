@@ -635,3 +635,35 @@ and its unmatched-node diagnostic disappear, with **no new diagnostics**.
 The keypad schema's doc validation is clean. The preexisting Gunyah schema
 semantic warning remains visible. Parent#27 stays open. The driver source fetch
 was bounded128KiB encoded; no dependency/build/device operation was added.
+
+## Generic efuse compatible/calibration constraint audit (#92)
+
+Pinned donor mt8163.dtsi lines441–449 declares MT8163 plus generic efuse fallback,
+4KiB region and a legacy thermal calibration cell atoffset0x100/size0xc. ACK's
+`drivers/nvmem/mtk-efuse.c` generic fallback match (line115) uses
+`uses_post_processing=false`; only the MT8186 match enables GPU speedbin decoding.
+The generic path reads resource bytes and enables legacy fixed cells. These
+sources justify assessing exact generic tuple coverage. They do not establish
+correct calibration contents or the thermal driver's interpretation on hardware.
+No efuse reads, writes or tablet operations occurred.
+
+The opt-in `mt8163-efuse` proposal inserts only the MT8163 first compatible in the
+existing generic fallback enum. It leaves MT8186/MT8188 decoding-specific and
+deprecated branches, cells, required properties and all other constraints intact.
+Source URLs/hashes, original/proposed schema, patch hash, processed schema and
+nine accepted/rejected tuple controls are retained in `evidence/efuse-binding/`.
+The proposal is local; upstream acceptance and hardware behavior are unqualified.
+
+Reproduce the full command in the preceding keypad section with one additional
+`--extra-binding mt8163-efuse`, then run:
+
+```sh
+work/dtb-tool/venv/bin/python evidence/efuse-binding/check-controls.py
+python3 -m unittest discover -s tests -q
+```
+
+The full-corpus count falls58→56: one efuse compatible validation error and its
+unmatched-node diagnostic disappear, with zero new diagnostics.13validation and
+43unmatched diagnostics remain. Wrapper exits1; overall validation still fails.
+The efuse schema's doc validation is clean. Parent#27 and all thermal/calibration
+hardware gates remain open. No DT data or status was changed.

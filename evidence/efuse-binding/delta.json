@@ -1,0 +1,175 @@
+{
+  "before": 58,
+  "after": 56,
+  "removed": [
+    {
+      "column": null,
+      "compatible": "mediatek,mt8163-efuse",
+      "context": [
+        {
+          "message": "['mediatek,mt8163-efuse', 'mediatek,efuse'] is too long",
+          "property_path": [
+            "compatible"
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            1,
+            "maxItems"
+          ]
+        },
+        {
+          "message": "['mediatek,mt8163-efuse', 'mediatek,efuse'] is too long",
+          "property_path": [
+            "compatible"
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            4,
+            "maxItems"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8188-efuse' was expected",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "items",
+            0,
+            "const"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8186-efuse' was expected",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            1,
+            "items",
+            0,
+            "const"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8163-efuse' is not one of ['mediatek,mt8186-efuse', 'mediatek,mt8188-efuse']",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            2,
+            "items",
+            0,
+            "enum"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8163-efuse' is not one of ['mediatek,mt7622-efuse', 'mediatek,mt7623-efuse', 'mediatek,mt7981-efuse', 'mediatek,mt7986-efuse', 'mediatek,mt7988-efuse', 'mediatek,mt8173-efuse', 'mediatek,mt8183-efuse', 'mediatek,mt8192-efuse', 'mediatek,mt8195-efuse', 'mediatek,mt8516-efuse']",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            3,
+            "items",
+            0,
+            "enum"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8173-efuse' was expected",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            4,
+            "items",
+            0,
+            "const"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8186-efuse' was expected",
+          "property_path": [
+            "compatible",
+            1
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "items",
+            1,
+            "const"
+          ]
+        }
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: efuse@10206000 (mediatek,mt8163-efuse): compatible: 'oneOf' conditional failed, one must be fixed:\n\t['mediatek,mt8163-efuse', 'mediatek,efuse'] is too long\n\t'mediatek,mt8188-efuse' was expected\n\t'mediatek,mt8186-efuse' was expected\n\t'mediatek,mt8163-efuse' is not one of ['mediatek,mt8186-efuse', 'mediatek,mt8188-efuse']\n\t'mediatek,mt8163-efuse' is not one of ['mediatek,mt7622-efuse', 'mediatek,mt7623-efuse', 'mediatek,mt7981-efuse', 'mediatek,mt7986-efuse', 'mediatek,mt7988-efuse', 'mediatek,mt8173-efuse', 'mediatek,mt8183-efuse', 'mediatek,mt8192-efuse', 'mediatek,mt8195-efuse', 'mediatek,mt8516-efuse']\n\t'mediatek,mt8173-efuse' was expected\n\tfrom schema $id: http://devicetree.org/schemas/nvmem/mediatek,efuse.yaml",
+      "level": "error",
+      "line": null,
+      "message": "['mediatek,mt8163-efuse', 'mediatek,efuse'] is not valid under any of the given schemas",
+      "node": "/soc/efuse@10206000",
+      "nodename": "efuse@10206000",
+      "property_path": [
+        "compatible"
+      ],
+      "schema": "http://devicetree.org/schemas/nvmem/mediatek,efuse.yaml",
+      "schema_path": [
+        "properties",
+        "compatible",
+        "oneOf"
+      ],
+      "type": "validation"
+    },
+    {
+      "column": null,
+      "compatible": [
+        "mediatek,mt8163-efuse",
+        "mediatek,efuse"
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/efuse@10206000: failed to match any schema with compatible: ['mediatek,mt8163-efuse', 'mediatek,efuse']",
+      "level": "warning",
+      "line": null,
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-efuse', 'mediatek,efuse']",
+      "node": "/soc/efuse@10206000",
+      "nodename": "efuse@10206000",
+      "type": "unmatched"
+    }
+  ],
+  "added": []
+}

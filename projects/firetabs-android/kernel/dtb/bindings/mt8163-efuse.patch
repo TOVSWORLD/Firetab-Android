@@ -1,0 +1,10 @@
+--- a/nvmem/mediatek,efuse.yaml
++++ b/nvmem/mediatek,efuse.yaml
+@@ -46,6 +46,7 @@
+               - mediatek,mt7981-efuse
+               - mediatek,mt7986-efuse
+               - mediatek,mt7988-efuse
++              - mediatek,mt8163-efuse
+               - mediatek,mt8173-efuse
+               - mediatek,mt8183-efuse
+               - mediatek,mt8192-efuse

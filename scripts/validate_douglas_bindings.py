@@ -53,7 +53,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name', 'rdma-node-name'], default='baseline')
     parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
-    parser.add_argument('--extra-binding', choices=['mt8163-sysirq', 'mt8163-timer', 'mt8163-mmc', 'mt8163-uart-dma', 'mt8163-i2c', 'mt8163-spi', 'mt8163-auxadc', 'mt8163-rng', 'mt8163-keypad'], action='append', default=[], help='Additional opt-in locked binding proposals')
+    parser.add_argument('--extra-binding', choices=['mt8163-sysirq', 'mt8163-timer', 'mt8163-mmc', 'mt8163-uart-dma', 'mt8163-i2c', 'mt8163-spi', 'mt8163-auxadc', 'mt8163-rng', 'mt8163-keypad', 'mt8163-efuse'], action='append', default=[], help='Additional opt-in locked binding proposals')
     parser.add_argument('--repair-pmic-selector', action='store_true', help='Opt-in exact MT6323 sys-off selector proposal')
     parser.add_argument('--repair-gunyah-yaml', action='store_true', help='Opt-in hash-locked indentation repair; not schema qualification')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
