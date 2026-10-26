@@ -1765,3 +1765,14 @@ symbols observed. ARM object never executed. Native host synthetic-array unit
 executable passes;264hosttests pass. Source/header/object receipt retained.
 Repo/diff checks pass. Next C/Python vector equivalence then explicit owned entry/
 callback link; no transport/security/restore/log hardware qualification implied.
+
+## 2026-10-26 — Direct C/Python protocol vectors (#249 / #106)
+
+Merged #248 at passing b5f6c33e702f4a0e8184f85468f385a3a47bf5be,
+merge 6591aa94e794fa5645e6f9aa737a3cca1c30ff4a; #247 closed. Added native
+host runner and direct Python/C comparison:76sessions/171frames,64header mutations,
+full1080B read, read/truncation/budget boundaries and host response acceptance.
+All selected status/length/response bytes match;267hosttests pass. Source hashes/
+counts retained, no exhaustive/target ABI/runtime proof. Repository/diff pass.
+No ARM execution/device access. Next owned agent entry/context static link and
+explicit injected transport ABI, leaving physical security/restore/log gates open.
