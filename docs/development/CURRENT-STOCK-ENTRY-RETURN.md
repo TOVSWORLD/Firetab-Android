@@ -108,3 +108,25 @@ Next trace continue's downstream branch into the existing boot-image producer
 analysis and the filter's dynamic-list producers. This will distinguish stock
 boot continuation from any actual downloaded-image handoff without inferring
 semantics solely from conventional command names. Raw disassembly stays private.
+
+## Continue reaches the boot-labelled image producer
+
+The exact-LK [continue path report](../../evidence/continue-image-path/report.json)
+now ties the handler's zeroed global to the downstream mode selector. Private
+control-flow review follows its mode-zero table entry through a short branch
+into two calls with the `boot` label. The first call targets the same0x24770
+image-header producer audited in [existing evidence](../../evidence/lk-header-producer/report.json);
+that producer checks the Android boot-header structure. The second image-related
+callee is0x24ce8; its complete verification/loading effects need further review.
+
+This is concrete evidence that `continue` enters the boot-labelled producer
+path, rather than evidence of direct handoff from the fastboot download buffer.
+It does not establish all storage reads, final entry, signature acceptance or
+normal return for the actual tablet. The linked global interpretation remains
+under the same explicit static base assumption as the handler audit. No firmware
+code or physical command was executed; only metadata and window digests are public.
+
+Next inspect0x24770's image source and0x24ce8's verification/load boundary before
+making a definitive claim about partition versus downloaded-buffer boot. The
+filter's dynamic-policy producers remain separate unresolved work. Neither
+`download` plus `continue` nor a conventional command name is a qualified test.

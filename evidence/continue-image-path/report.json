@@ -1,0 +1,63 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "scope": "Selected static continue mode-zero path only",
+  "shared_selector_linked_address": "0x4bd7c3a0",
+  "mode_zero_table_target": 257870,
+  "image_label_references": [
+    {
+      "load_offset": "0x3ee46",
+      "add_pc_offset": "0x3ee50",
+      "literal_pool_offset": "0x3efb0",
+      "target_offset": "0x66754",
+      "text": "boot"
+    },
+    {
+      "load_offset": "0x3ee68",
+      "add_pc_offset": "0x3ee6a",
+      "literal_pool_offset": "0x3efb8",
+      "target_offset": "0x66754",
+      "text": "boot"
+    }
+  ],
+  "checked_calls": [
+    {
+      "offset": 257618,
+      "target": 149360
+    },
+    {
+      "offset": 257644,
+      "target": 150760
+    }
+  ],
+  "reviewed_windows": [
+    {
+      "start": 261520,
+      "end": 261604,
+      "sha256": "df36a2736931d30defcc97cf2ba722068109814d2e4ef984101d53781da2dae4"
+    },
+    {
+      "start": 256920,
+      "end": 256966,
+      "sha256": "0a2adae9067e059acae9f63d30e5ba0e4a5cce321b399ea4d30784b2dcf7df82"
+    },
+    {
+      "start": 256966,
+      "end": 256968,
+      "sha256": "8c2b3b72e69538ae52dc6366ba0b50c7cfb5ccd61f17dd98846b154855b1273a"
+    },
+    {
+      "start": 257870,
+      "end": 257876,
+      "sha256": "a316ea80b2268bfc733fcc3972d52f80a6de548a0f739058925b5fe476788d40"
+    },
+    {
+      "start": 257606,
+      "end": 257678,
+      "sha256": "3b17dcc7a633a2aae208e73eada770983269e0a19f7614c41407c8595083b01d"
+    }
+  ],
+  "downloaded_image_handoff_verified": false,
+  "signature_policy_resolved": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}
