@@ -110,3 +110,29 @@ capture path; observation protocol logging does not replace UART/persistent logs
 
 Next implement the fake-backend-tested adapter operation sequence. Physical
 execution remains outside automatic runs; no tablet action is requested now.
+
+## First implemented operation sequence: fake backend only
+
+`offline_observation_adapter.py` now validates an injected backend's active
+configuration/endpoint verdict, confirms interface claim, performs exactly the
+three observation queries, then releases its confirmed claim and disposes the
+backend. Command mapping is explicit input containing only those three names;
+no real protocol constants, USB imports or backend implementation are supplied.
+Every write must complete; an incorrect echo stops before a payload read.
+Every transfer carries a positive timeout capped at500ms. Any failure produces
+only an exception class, discards partial observation and performs cleanup.
+A release/dispose failure also discards an otherwise complete result.
+
+Three fake-backend tests verify the actual method trace and configuration, claim,
+short-write, bad-echo, short-read and cleanup faults (228 full-suite tests pass).
+No reset/configuration change/driver-detach method is available to this sequence.
+Backend `validate_active` remains an injected trust boundary, not implemented USB
+validation. A failed claim is assumed not acquired; a real backend must expose
+uncertain ownership and dispose safely rather than claim guaranteed cleanup.
+
+This is deliberately a partial implementation of the design: handshake and mode
+exchange, actual endpoint/backend validation, total worker supervision and native
+binding are absent. The5s collector budget is cooperative and cleanup calls are
+not preempted here. There is no live CLI. Next integrate the owned supervisor
+around this exact sequence using real stalled synthetic backend processes and
+validate timeout/cleanup reporting before reviewing a native binding.
