@@ -233,3 +233,47 @@ embedded diagnostics cannot close them. Next independent development is the
 cached UART source/driver contract and a precise physical-interface evidence
 request once that source contract is established. No tablet action is requested
 or authorized by this identity report.
+
+## UART source/diagnostic DT contract result
+
+Audited the exact reviewed primary-only DTB
+ef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43 against the
+pinned ACK driver and resolved diagnostic config. `evidence/uart-log-contract/`
+records source/config/DT hashes and source facts; no device transport was used.
+The serial0 alias resolves to enabled /soc/serial@11002000 with921600n8 options,
+mt6577 fallback, baud/bus clock names and DMA/pinctrl properties. These are
+properties of our donor-derived diagnostic DT, not proof of board routing.
+The corresponding legacy douglas source also enables uart0 at11002000; its
+console string is source intent, not observed wire framing.
+
+EARLYCON,8250,8250_CONSOLE and8250_MT6577 are already built in. **The reviewed
+DT's bootargs contain neither an explicit earlycon nor console request.** The
+resolved built-in CMDLINE is empty. This is a concrete configuration gap for an
+explicit early-console experiment; it is not proof no runtime console can ever
+appear, because runtime OF-console selection and loader-provided arguments are
+separate paths. The prior LK audit shows bootargs may be replaced, so adding a
+DT argument alone cannot establish its actual delivery. No argument/DT was
+changed or image packed by this audit.
+
+The ACK driver (8250_mtk.c lines664–676) maps its early path to MEM32/regshift2
+and generic8250 early setup. That small setup does not enable the runtime baud/
+bus clocks or establish physical pin routing. The normal probe separately
+requires clock/resource/interrupt setup (lines480–566); console-related source
+handling assumes firmware-initialized UART settings in relevant paths. Thus
+compiled-in support, schema-compatible fallback and enabled status alone do not
+qualify first-byte output. Early capture requires the correct actual UART left
+usable by firmware, a delivered activation request and a verified electrical
+connection. Runtime handoff requires the normal probe's providers as well.
+
+Two synthetic tests (162 total) verify alias/config assessment, unresolved-target
+rejection and that source support cannot promote physical qualification.
+Reproduce from the existing reviewed DT/tool cache with
+`python3 scripts/audit_uart_log_contract.py`; it reads and snapshots, never
+mutates the DT or contacts the tablet. No new downloads or dependencies.
+
+Next investigate authoritative douglas-specific pad/electrical evidence before
+proposing a physical UART connection. If unavailable, record the exact missing
+board evidence and continue the independent safe-entry/USB read-back source
+work. Do not ask the owner to guess pads or voltage, and do not present a source
+MMIO base as a wiring instruction. A first diagnostic still needs both a safe
+recoverable loading route and a complete log transport.
