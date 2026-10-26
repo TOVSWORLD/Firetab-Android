@@ -197,3 +197,26 @@ Do not use overflow behavior to evade the limit or alter firmware checks.
 Next investigate later integrity/security callees and the provider's backend
 assignment. A diagnostic package using this stock path must satisfy the combined
 extent constraint as well as all other unresolved loading/recovery requirements.
+
+## Later verification result has a separate failure path
+
+The [selected verification-boundary report](../../evidence/stock-verification-boundary/report.json)
+now resolves the path after the size check and image callback. On one selector
+branch, the loader invokes0x1cf0c. That wrapper forwards the image arguments into
+0x1ce4c, then returns whether any bits in mask0x9 are set in its result. A zero
+wrapper result reaches the explicit image-verification-failure diagnostic and
+returns signed-13 from the image-loading function. This is distinct from header
+magic checking and the earlier arithmetic range rejection.
+
+The underlying routine calls0x1cf24 twice with differing first arguments; its
+full result-bit meanings, key material and trusted-policy producers remain
+unresolved. The selector at0x205ec can choose another branch at0x24f20, so this
+selected trace is not a blanket proof that every installed mode enforces the same
+signature policy. Nor is that alternate branch an established unsigned-image
+route. Installed selector values, authorization and rollback semantics are not
+known from static code alone.
+
+No patch or bypass is proposed. Next identify the selector's input source and
+result-bit/key-selection semantics, using metadata-only receipts. Keep actual
+unsigned diagnostic acceptance false until the complete policy is understood
+and a recoverable owner test is qualified. No firmware or tablet was executed.

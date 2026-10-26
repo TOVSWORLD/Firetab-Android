@@ -1,0 +1,57 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "checked_calls": [
+    {
+      "offset": 151032,
+      "target": 132588
+    },
+    {
+      "offset": 151068,
+      "target": 118540
+    },
+    {
+      "offset": 118542,
+      "target": 118348
+    },
+    {
+      "offset": 118398,
+      "target": 118564
+    },
+    {
+      "offset": 118434,
+      "target": 118564
+    }
+  ],
+  "verification_result_mask": 9,
+  "wrapper_accepts_any_mask_bit": true,
+  "zero_wrapper_result_reaches_verification_failure": true,
+  "failure_return_signed": -13,
+  "selector_alternate_branch_offset": 151328,
+  "reviewed_windows": [
+    {
+      "start": 151032,
+      "end": 151094,
+      "sha256": "f1f14c8651b66e6f9daccfb25bfcaf6f6d343f66200692a5e9a072637f2085f8"
+    },
+    {
+      "start": 151488,
+      "end": 151502,
+      "sha256": "9890f80282ba8fa706f96fd719bd1dfe5338dce86d98e1d3e4c323b86cbbea6a"
+    },
+    {
+      "start": 118540,
+      "end": 118558,
+      "sha256": "d36b4f88c26f73c5e0a6f1642015eb87ef07c061e04bcfbf00f228a5b98c3dfa"
+    },
+    {
+      "start": 118348,
+      "end": 118508,
+      "sha256": "9367ce478e5f0534d7411a067e40e04e740e7613ab7c60c47479b3241dbd5513"
+    }
+  ],
+  "scope": "Selected static call/status mapping; not complete signature/key/rollback policy",
+  "trusted_keys_resolved": false,
+  "installed_selector_state_verified": false,
+  "unsigned_image_acceptance_verified": false,
+  "physical_test_ready": false
+}
