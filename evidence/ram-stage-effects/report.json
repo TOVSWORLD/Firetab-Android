@@ -1,0 +1,29 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "source_path": "mtkclient/Library/mtk_main.py",
+  "source_sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129",
+  "cmd_stage_lines": [
+    193,
+    289
+  ],
+  "plstage_reviewed_lines": [
+    537,
+    660
+  ],
+  "findings": {
+    "stage_calls_monolithic_initializer_and_crasher": true,
+    "stage_write_loop_has_no_total_deadline": true,
+    "stage_verification_mismatch_aborts_before_jump": false,
+    "plstage_can_patch_preloader_security_in_memory": true,
+    "close_is_proven_stock_return": false
+  },
+  "required_payloads": [
+    "generic_stage1_payload.bin",
+    "stage2.bin",
+    "pl.bin"
+  ],
+  "payload_code_effects_reviewed": false,
+  "helper_or_payload_executed": false,
+  "persistent_effects_excluded": false,
+  "physical_test_ready": false
+}
