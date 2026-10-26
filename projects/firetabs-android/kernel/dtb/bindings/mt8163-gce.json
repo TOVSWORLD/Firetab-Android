@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact fallback schema coverage only; no CMDQ/display/hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-gce.patch",
+  "patch_sha256": "525c1a7cc9799ce957cacb73d64925845c12e8252cfbedf5b8ced19b3d47ae7b",
+  "schema": "mailbox/mediatek,gce-mailbox.yaml",
+  "original_sha256": "b9258b1b6e82016002ff0cc3f3c5742e4c245828c9f66b84697e9e72c451ac21",
+  "proposed_sha256": "5de2d46c24d039a1cfe66e2eab0425ed53fb96cc2fc499e21654f20f4ed29a48"
+}

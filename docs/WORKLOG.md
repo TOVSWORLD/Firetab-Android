@@ -829,3 +829,15 @@ instruction/call/string/hash evidence plus126 passing offline tests and mutation
 argument negative controls. No PSCI-status preservation or physical boot claim,
 firmware/helper execution or tablet IO. Next: sanitized effective command-line/
 CPU-count diagnostic reporting, keeping loader/recovery/logging gates open.
+
+## 2026-10-25 — GCE fallback binding coverage (#102)
+
+While PR101 actual init/kernel VM validation runs, audited pinned GCE fallback
+pdata and cached legacy thread-count/security definitions. Added opt-in exact
+MT8163/MT8173 tuple coverage preserving other schema constraints. Seven actual
+processed-schema controls pass; full-corpus diagnostics56→54 (12validation and
+42unmatched), zero additions; overall still fails/exit1.127 offline tests pass
+on this independent branch; PR101's parser/runtime changes remain separate.
+Source hashes/delta retained. No CMDQ execution, DT/hardware enablement or device
+access. Merge after PR101 to avoid invalidating its expensive compile head, then
+reconcile appended WORKLOG and rerun inexpensive required checks.

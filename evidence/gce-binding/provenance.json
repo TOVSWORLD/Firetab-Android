@@ -1,0 +1,27 @@
+{
+  "ack_revision": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "driver_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mailbox/mtk-cmdq-mailbox.c",
+  "driver_sha256": "f786c5a6a39440846c487fb5d7bb1fbb3b86632d4f220235d7606be605afbc1e",
+  "fallback_match_line": 787,
+  "fallback_pdata_line": 742,
+  "fallback_pdata": {
+    "thread_nr": 16,
+    "shift": 0,
+    "control_by_sw": false,
+    "gce_num": 1
+  },
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "legacy_source_path": "drivers/misc/mediatek/cmdq/hv1/cmdq_def.h",
+  "legacy_sha256": "f7330180419045f13c7fb3d2a9159a1315bff70fd936cfc50e683ac933557ca4",
+  "legacy_common_thread_count": 16,
+  "donor_tuple_path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+  "donor_tuple_line": 460,
+  "unqualified": [
+    "event/subsystem mappings",
+    "secure thread allocation",
+    "register/power/clock behavior",
+    "actual CMDQ execution/display"
+  ],
+  "donor_revision": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "donor_tuple_sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629"
+}

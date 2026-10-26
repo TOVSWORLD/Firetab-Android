@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "compatible": [
+        "mediatek,mt8163-gce",
+        "mediatek,mt8173-gce"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-gce"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-gce",
+        "mediatek,mt8183-gce"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-gce",
+        "mediatek,mt8173-gce",
+        "extra"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt6795-gce",
+        "mediatek,mt8173-gce"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8173-gce"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8183-gce"
+      ],
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_other_constraints_preserved": true,
+  "passed": true
+}
