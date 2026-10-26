@@ -1,0 +1,16 @@
+{
+  "scope": "Explicit/standard host regular files only; not a whole-host inventory",
+  "candidates": [
+    {
+      "candidate": "homebrew-arm64",
+      "present": false
+    },
+    {
+      "candidate": "homebrew-intel",
+      "present": false
+    }
+  ],
+  "native_library_loaded": false,
+  "usb_enumerated": false,
+  "physical_test_ready": false
+}

@@ -94,3 +94,37 @@ USB. It should establish an explicit usable candidate path before any future
 helper adapter or install. Do not change global loader/security settings or
 install MacFUSE as a workaround. The helper itself remains unexecuted and
 unqualified for acquisition, entry, restoration and log capture.
+
+## Static native-library preflight implemented
+
+`python3 scripts/preflight_mac_usb_library.py` now checks only the two explicit
+standard Homebrew candidate files; it does not search devices or enumerate USB.
+Neither candidate exists on this host observation. That is a narrow filesystem
+result, not proof no native library exists elsewhere. An explicit `--library`
+argument can inspect another already available file. No library was installed
+or loaded by the implementation or tests.
+
+The parser accepts a generic arm64 Mach-O64 dylib slice, including FAT32/FAT64
+containers, and checks architecture table/slice bounds, alignment, overlaps,
+load-command bounds and one valid dylib identity command. The Apple SDK
+mach-o/loader.h, mach-o/fat.h and mach/machine.h constants/structures were read;
+header hashes are in evidence/mac-usb-preflight. x86-only/ELF/executable/truncated
+or structurally inconsistent candidates fail. This is a strict format subset,
+not a dynamic linker, code-signature checker, dependency validator or proof of
+libusb exports/API behavior. Other architectures in a fat file are not executed
+or semantically validated. A file can pass structure and still be unusable.
+
+Installation symlinks resolve to a final regular file before opening; device
+nodes/nonregular files are rejected. Inputs are capped at64MiB and their bytes
+are read/hash-checked only, never passed to a native loader. Trusted local
+directories are assumed; hostile concurrent replacement is outside scope.
+Output omits selected private paths and emits hashes/structural facts with all
+native-loading/USB/runtime readiness flags false. Three synthetic tests bring
+the suite to178 passing, including format rejection and symlink resolution.
+
+The next bounded dependency step is provenance/resource metadata for a native
+libusb artifact that could be kept in an isolated workspace rather than changing
+global Mac library/security state. Do not execute a firmware helper or instantiate
+a USB backend to test it. A later helper adapter must use an explicit reviewed
+library path instead of assuming a Linux-style filename. Actual libusb loading,
+USB reconnect, safe tablet entry and restoration remain separate unqualified gates.

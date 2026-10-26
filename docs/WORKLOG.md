@@ -1086,3 +1086,14 @@ PinnedhelperDarwinbranchhardcodesLinux-stylelibusb-1.0.so; resolutionunknown,
 standardHomebrewpathsabsent but notfullhostinventory. Nolibraryload/USBenum.
 Addedmetadataonlyplanner/twotests:175pass, nohelperexecution/securitychanges.
 Next purehostMach-O/pathpreflight on syntheticfiles before install/adapter.
+
+## 2026-10-26 — Host-only native USB library static preflight (#106)
+
+Merged PR124 exactcd9b9747679fe88c7837dc9794640bf68bc8dbe2 after all checks
+passed; base1bf092d. Implemented explicit regular-file ARM64 Mach-O dylib
+preflight with FAT32/64, bounds/alignment/overlap/load-command identity checks.
+Read local Apple SDK format definitions and retained hashes only. Three synthetic
+tests bring suite178pass. StandardHomebrewfilesabsent; not wholehostinventory.
+No native code loaded, backend/device instantiated or packages installed. No
+tablet IO/securitychanges/downloads. Next native libusb artifact provenance/
+resource metadata for possible isolated workspace staging, not system install.
