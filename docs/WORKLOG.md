@@ -1635,3 +1635,16 @@ no BSS clear; flat loading initialization remains unproved, not a shipped-binary
 failure claim. Metadata/source citations retained; no firmware/device execution.
 Repository/diff checks pass; existing 243-test baseline unchanged by prose/receipt.
 Next pinned sender padding/input/entry assumptions and initialization ownership.
+
+## 2026-10-26 — Sender initialization boundary (#227 / #106)
+
+Merged #226 after four checks passed at 0ed89e9e6f9ca0bcc86716baff679e4db7b71f82,
+merge e26e47b41f5d6545909d8d4826ac7a03831c09a4; #225 closed. Verified four
+cached sender source Git blobs against pinned 7cb40e727727dfe3faa065eefb29b16ed29bbdf1.
+Selected raw-file/shared preparation/kamakiri2 path has four-byte padding, no
+ELF/BSS size input; 1576 already aligned leaves the linked 24-byte zero tail
+unprovided by alignment. Insecure DA signature padding is not initialization
+proof. Final-word sentinel patching also needs an explicit owned image contract.
+Metadata only; no helper import/execution, download or device access. Repository/
+diff guards pass; existing 243-test baseline unchanged. Next owned host-only
+load-image initialization contract, keeping device loader/restore/log gates open.
