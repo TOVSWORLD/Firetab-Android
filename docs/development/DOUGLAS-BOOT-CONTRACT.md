@@ -869,3 +869,63 @@ error and its unmatched diagnostic disappear.12validation and42unmatched remain;
 overall wrapper still exits1. GCE schema doc validation is clean. Parent#27 and
 actual CMDQ/display support under#23 remain open. Neither a command queue nor
 physical hardware was accessed/executed.
+
+## Exact PL7 verification/recovery address audit (#104)
+
+Recovery work now takes priority over peripheral binding cleanup. Static analysis
+of the exact cached candidate preloader
+SHA256b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5
+finds a concrete incompatibility with blindly applying the older douglas
+reference patch addresses under the GFH-declared mapping:
+
+- Reference USB-descriptor site217420 is **a data literal** in this build. LDR at
+  2171d8 reads that exact word; ADD-PC at2171de resolves the diagnostic string
+  `wLength = %x`. Treating the word as an instruction would alter a string
+  reference, not establish the intended descriptor behavior.
+- Reference unsigned-DA site21b970 is CMP r5,0 inside a selected loop/tail block,
+  followed by a conditional branch, stack pop and tail branch. The old reference
+  comment does not establish a current DA-verifier entry there.
+- Reference TEE-loader site20a204 is ADD r1,pc near logging/epilogue on the checked
+  path; a TEE-loader entry identity there remains unverified.
+- Anti-rollback site201934 does have entry-like code and PC-relative anti-rollback
+  log strings, including failure to read block0. A checked caller20a7ce branches
+  to it conditionally on a mutable boot-parameter byte. This corroborates a
+  function role; it does **not** qualify changing it, explain its complete policy,
+  or prove which branch the installed device takes.
+
+The in-file mapping uses GFH declared base200d00, code201000..222c34. Actual
+loaded mapping, signatures and installed binary equivalence remain unverified.
+No blanket conclusion about exploitability follows from this small audit.
+Absence of the reference README's heuristic marker still does not prove that a
+particular vulnerability is fixed. It is now instruction-supported that the old
+reference address set cannot simply be assumed compatible with this candidate.
+No replacement addresses, patch/payload, downgrade or execution was produced.
+
+Reproduce the report and optional **non-loadable ET_REL** analysis object:
+
+```sh
+python3 scripts/audit_pl7_recovery.py \
+  --preloader out/ota-loader-inspection-659664620/preloader.bin \
+  --output out/pl7-recovery-report.json \
+  --analysis-object out/pl7-recovery-analysis.o
+xcrun llvm-objdump -d --triple=thumbv7-none-eabi --mattr=+trustzone \
+  --print-imm-hex --start-address=0x2171d8 --stop-address=0x2171e2 \
+  out/pl7-recovery-analysis.o
+```
+
+The analysis object's section VMA reflects only the declared mapping; entry and
+program-header table are zero. Never execute it. Selected bytes/disassembly,
+source-reference revision/hash, string/call checks and mutation controls are in
+`evidence/pl7-recovery-code/`. Full firmware and analysis object remain ignored.
+
+**Current recoverable-load blocker:** no compatible, verified load-and-restore
+route for this installed build has been established. The older software gate
+rejects its versions, and the newer reference assumes a vulnerable older
+preloader plus persistent setup. The present audit invalidates blind reuse of
+several reference address assumptions; it neither proves all alternative routes
+impossible nor makes a downgrade safe. Next recovery task is to establish a
+provenance-qualified older reference preloader/restore material and compare its
+actual verification layout and prerequisites, using bounded artifacts before
+considering any owner-operated physical procedure. If that material/entry route
+cannot be qualified, report the exact missing requirement to the owner. Do not
+substitute a compiling kernel or zero schema warnings for this gate.

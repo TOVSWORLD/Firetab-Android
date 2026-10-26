@@ -864,3 +864,17 @@ WORKLOG sections. Recovery work104 has started: declared PL7 mapping places an
 old USB-descriptor patch address in a referenced string-literal pool and another
 old entry in an interior block; exact trace/evidence is being prepared separately.
 No tablet/helper/firmware execution or hardware qualification.
+
+## 2026-10-25 — Recoverable loading priority / exact PL7 code (#104)
+
+Prioritized recovery over more schema cleanup. Exact cached PL7/GFH mapping shows
+old USB patch site217420 is a referenced string-literal word; old DA/TEE entry
+sites lie in selected interior blocks. ARB entry201934 corroborated by diagnostic
+strings and conditional caller20a7ce, not complete policy/compatibility. Retained
+bounded static bytes/disassembly/hash/call controls;134 offline tests pass.
+No replacement patches/payloads, helper/firmware execution, tablet IO or downgrade.
+Compatible load/restore route remains unqualified. Next recovery task: qualify
+older reference preloader/restore-material provenance and precise entry/restore
+prerequisites rather than reuse stale offsets or infer exploitability from a
+marker.100/102 completed with actual generic VM evidence and required checks;
+physical boot/recovery/hardware/app gates remain open.
