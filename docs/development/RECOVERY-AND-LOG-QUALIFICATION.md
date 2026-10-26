@@ -114,3 +114,47 @@ installing tools or downloading large payload sets. In parallel only where
 independent, derive the exact UART source/driver contract from cached sources;
 physical pad/electrical evidence remains a separate owner-assisted gate. Do not
 return to peripheral/schema cleanup while these recovery blockers remain open.
+
+## Download-agent selection provenance result
+
+The pinned MTKClient MT8163 `loader` field identifies the 600-byte security
+bootstrap payload, **not** the stage1/stage2 storage download agent. Bypass
+security uses that payload; DAconfig independently scans Loader for matching
+filenames. Confusing them would leave the actually executed storage agent
+unidentified. Git metadata establishes repository blob identity only; neither
+this payload nor any DA binary was downloaded or executed in this audit.
+
+At revision7cb40e727727dfe3faa065eefb29b16ed29bbdf1,
+[DAconfig](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/daconfig.py)
+lines104–112 recursively collect filename candidates and parse them in reverse
+lexical order. Lines207–218 choose the first matching DA code with permitted
+hardware/software versions (zero runtime version permits any); setup does not
+check subcode. A v6 record can also switch configured mode to XML. An explicit
+file alone still needs a recorded matching record and stage identities.
+
+The parser's duplicate filtering at line196 compares the incoming subcode to
+itself. This is a verified tautology, not a confirmed tablet compatibility
+failure. With equal hardware/software versions, distinct subcode records may
+be discarded by this filter. Selection cannot be called device-qualified merely
+because a filename or SoC code matches. Our AST audit records this fact without
+executing or publishing copied upstream helper code.
+
+The pinned Git tree has six default filename candidates totaling51,627,415 bytes.
+Their paths, sizes and Git blob SHA1s are in `evidence/recovery-agent/report.json`;
+these are not downloaded-content SHA256s, vendor signatures or compatibility
+proofs. No exact DA record/stage bytes for the actual device have been identified.
+The source/metadata read was bounded:9558 source bytes plus308770 Git-tree bytes.
+No full loader pack or dependencies were downloaded.
+
+Next resolve actual available DA records by capped metadata/header inspection,
+only if the remote supports bounded ranges. Identify candidate record versions,
+stage lengths and provenance before choosing a binary or running any tool. Stop
+instead of silently retrieving a full file when ranges are ignored. Runtime
+hardware/software/security facts and signature acceptance remain separate
+evidence; no tablet query is authorized by this document. Source UART analysis
+remains useful independent work if agent provenance needs unavailable material.
+
+Reproduce the syntax/metadata audit from ignored pinned caches with
+`python3 scripts/audit_recovery_agent_selection.py`; synthetic tests are included
+in `python3 -m unittest discover -s tests -q` (154 passing). Full Git-tree and
+source response hashes are in source-index.json; raw helper source stays ignored.

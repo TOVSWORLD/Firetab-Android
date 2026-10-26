@@ -1,0 +1,57 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "selection": {
+    "dedup_subcode_self_comparison_lines": [
+      196
+    ],
+    "setup_reads_subcode": false,
+    "setup_reads_hardware_version": true,
+    "setup_reads_software_version": true,
+    "actual_device_selection_verified": false,
+    "subcode_compatibility_failure_observed_on_device": false
+  },
+  "default_filename_candidates": [
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_2625.bin",
+      "sha": "ef198c4e026fa6cd8e42a08e6e724b532e63f1d2",
+      "size": 676531
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_7687.bin",
+      "sha": "1b39e78a0491503ebffd954c1dd4274872bd4393",
+      "size": 929796
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_iot.bin",
+      "sha": "32bb6d5582648e4213f1221a9bfe92027c27558c",
+      "size": 6396452
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_mt6590.bin",
+      "sha": "ec24e9d88c9383b9c031fa6273210415a5999212",
+      "size": 7612280
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "sha": "1ba72e61e2544ac99bbe630316693b6b9001c154",
+      "size": 22483280
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V6.bin",
+      "sha": "0e0463cce6740c483ef57bbb4ae764044fa2b691",
+      "size": 13529076
+    }
+  ],
+  "candidate_total_bytes": 51627415,
+  "security_bootstrap_payload_metadata": {
+    "path": "mtkclient/payloads/mt8163_payload.bin",
+    "sha": "34cd6b85a1a2c1ffa542ce66c8eeb8aa107b56a9",
+    "size": 600
+  },
+  "metadata_sha_kind": "Git blob SHA1, not downloaded-content SHA256 or vendor signature",
+  "candidate_binaries_downloaded": false,
+  "selected_da_binary_identified": false,
+  "vendor_signature_verified": false,
+  "physical_test_ready": false,
+  "script_sha256": "71d7bdafe322ffa98a03ca2c764dd7c0b56492be89bc17cacf39bdcf0e4d5fb5"
+}
