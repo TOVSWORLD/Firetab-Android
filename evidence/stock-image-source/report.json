@@ -1,0 +1,69 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "scope": "Selected named-table/device-callback paths only",
+  "checked_calls": [
+    {
+      "offset": 149370,
+      "target": 220584
+    },
+    {
+      "offset": 149386,
+      "target": 220224
+    },
+    {
+      "offset": 149420,
+      "target": 220224
+    },
+    {
+      "offset": 150772,
+      "target": 220584
+    },
+    {
+      "offset": 150788,
+      "target": 220224
+    },
+    {
+      "offset": 150814,
+      "target": 148672
+    }
+  ],
+  "name_lookup_special_cases": [
+    "PRELOADER",
+    "preloader"
+  ],
+  "header_callback_call_offset": 149470,
+  "image_callback_call_offset": 150894,
+  "callback_slot_bytes": 16,
+  "named_record_extent_bytes": 20,
+  "reviewed_windows": [
+    {
+      "start": 149360,
+      "end": 149486,
+      "sha256": "d376b7f94ac24265e67d8f2575e38125a6b0eac572c6434f3cbe27533b8179e0"
+    },
+    {
+      "start": 150760,
+      "end": 150896,
+      "sha256": "9fa635801b3059df0587f23c927a814c7c04d5fa2ebbecbb82b3b754ea1d1a88"
+    },
+    {
+      "start": 220100,
+      "end": 220196,
+      "sha256": "e35964500ea8e1000ac425ec63eaad787e66f6f8a535764223ba2fe540ed3d47"
+    },
+    {
+      "start": 220224,
+      "end": 220282,
+      "sha256": "cc8286e2912655d852d5ed369b3b2458291630f25de47deb3d11853101c3e9b7"
+    },
+    {
+      "start": 220584,
+      "end": 220614,
+      "sha256": "a1eb40ce3077f0b4ea998a5f977724717f6076617dcea67765e13ea12c34dd31"
+    }
+  ],
+  "callback_implementation_resolved": false,
+  "signature_policy_resolved": false,
+  "downloaded_image_handoff_verified": false,
+  "physical_test_ready": false
+}

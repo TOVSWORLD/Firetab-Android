@@ -1455,3 +1455,13 @@ selector; modezero tablecase reaches bootlabel calls24770(existingheaderproducer
 and24ce8. Ownaudit checksidentity/table/labels/calls; metadata/windowhashesonly.
 Notdownloadbufferhandoff orsignaturepolicyproof; actualimageorigin/loadboundary
 next.238tests/repository/diffpass; no firmware/helper/deviceexec/download.
+
+## 2026-10-26 — Stock image named-record/callback source (#106)
+
+Merged190 at passinga82e7a5d52f906818d25b4b2b1d7e350ce7f9681;189closed.
+Base817e42a. ExactLK trace: header/load functions shareobjectprovider35da8,
+bootlabel lookup35c40→20Bnamedtable search, recordoffset<<9 and callbackslot0x10.
+Supportsblock/partitionstyle source, callbackactualbackend/runtimeunresolved.
+Loadcallee invokes244c0; role/signaturepolicy unresolved. Owncheckedcalls and
+windowhashes publiconly;238tests/repository/diffpass. Next providerinit/244c0,
+no firmware/deviceexec/download. RAM diagnostic load remainsunqualified.
