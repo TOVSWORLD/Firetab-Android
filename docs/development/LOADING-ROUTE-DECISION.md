@@ -433,3 +433,32 @@ Next add a bounded host decoder for the marker and its image identity, using
 supplied synthetic snapshots only, and identify which loader can establish the
 caller ABI. Do not attach a device transport to this experiment from a successful
 compile/link result. Original-state restore and boot-log transport remain gates.
+
+## Supplied marker snapshots and actual callable link (#239)
+
+Both owned variants linked successfully in
+[Linux job 121871790870](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40408334717/job/121871790870).
+The loop image is 1064 bytes, SHA256
+`bcff63cef809b27760596e4fef6812eee4f87d6f08f09e67d2e40ace51f27a88`;
+the callable image is 1080 bytes, SHA256
+`da9b6db9e957624a75e1420605e311aeef15221d5b86ab65a7aea91f8e68a2c5`.
+The [receipt](../../evidence/owned-callable-link/report.json) records exact source,
+compiler, tested revision and image gates. Neither image was executed.
+
+`decode_diagnostic_marker.py` accepts only supplied immutable bytes: reviewed
+image identity, pristine before snapshot and exact-size after snapshot. It checks
+code/padding equality outside the marker/stack, accepts zero or the known marker,
+and reports the supplied transition plus stack-byte differences. Variant offsets
+are explicit for these owned layouts. CI now mutates a host copy of each linked
+image to exercise the decoder; those synthetic mutations are not execution.
+Tests cover both variants, wrong identity, changed before/code, unknown marker,
+wrong sizes/types and unchanged snapshots. The expected image hash must come
+from a separately reviewed build receipt; caller-supplied bytes/hashes do not
+prove acquisition origin, freshness, runtime execution or caller return.
+
+Next investigate an actual loader's ability to invoke and regain control from
+this callable ABI and acquire a bounded marker snapshot. A decoder cannot supply
+that transport. Existing upstream generic-stage readback is commented out in
+source, so assuming its host read request works would leave the central logging
+gap unresolved. Keep that source/protocol dependency ahead of new diagnostic
+features; physical security entry, safe RAM mapping and restore remain open.

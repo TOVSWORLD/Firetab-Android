@@ -6,6 +6,8 @@ on:
     paths:
       - diagnostic/entry/**
       - scripts/build_owned_entry_probe.py
+      - scripts/decode_diagnostic_marker.py
+      - tests/test_decode_diagnostic_marker.py
       - scripts/build_stage1_link_probe.py
       - scripts/inspect_stage1_elf.py
       - scripts/inspect_stage1_relocations.py
