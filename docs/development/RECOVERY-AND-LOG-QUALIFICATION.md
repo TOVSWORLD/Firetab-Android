@@ -432,3 +432,31 @@ failures; the full offline suite has210 passing tests. Actual capture, framing,
 timeout invalidation and integration with a supervised worker remain separate
 work. Next resolve the checksum's source evidence or explicitly reject that
 candidate integrity contract; do not silently invent an algorithm.
+
+## Ordered synthetic response-session integration
+
+`OfflineDramSession` in `scripts/offline_dram_session.py` collects the seven
+response events in the reviewed order and invokes the strict decoder only after
+all are present. Duplicates, reordered/malformed fields, unexpected replies and
+failed status invalidate the session and erase partial fields. Explicit abort
+models timeout/cancellation; an invalid or already consumed session cannot be
+reused. Three synthetic tests cover complete decoding, malformed event order
+and abort at every incomplete boundary (213 full-suite tests pass).
+
+This models received-field order only. It has no sender, transport, timer or
+helper binding; it cannot enforce native deadlines or prove the intervening
+host commands occurred. Integration must use the existing deadline reader and
+worker supervision and call abort on every interruption. No result authorizes
+stage transfer; this is an engineering guard against accepting partial evidence.
+
+A bounded search of the pinned cached DA Python sources for ENABLE_DRAM and
+its sending path found the legacy initializer plus its command declaration.
+The initializer logs the returned checksum without deriving/comparing it.
+The separate flash-write additive checksum is not evidence for this exchange.
+The DRAM checksum algorithm therefore remains unavailable from this reviewed
+source path; no algorithm is guessed or treated as verified. This does not prove
+that no specification or agent-side source exists elsewhere.
+
+Next consolidate the remaining physical entry/agent/restore/logging prerequisites
+into one explicit go/no-go checklist and identify the smallest owner-supplied
+evidence needed. More synthetic validation cannot qualify those physical gates.
