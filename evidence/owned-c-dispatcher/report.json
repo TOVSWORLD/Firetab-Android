@@ -1,0 +1,12 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -mthumb -std=c11 -Os -ffreestanding -fno-builtin -Wall -Wextra -Werror -c diagnostic/protocol/dispatcher.c -o out/owned-protocol/dispatcher.o",
+  "compile_exit_code": 0,
+  "source_sha256": "3ce7cbfb5e89813dea184b9846fa2ecf26efc9b070fba6197d11e1689e7be518",
+  "header_sha256": "a976dd2fc7f2bbeb90351cf42efb5f519f0e21d4846a2326b5ea3d5e3a91f516",
+  "object_sha256": "f0ba420ce5e3b2d43d3a09611b685fc1b6a1e1b9d742991a7c2fe1297fae69b4",
+  "undefined_symbols_observed": 0,
+  "native_host_synthetic_test_passed": true,
+  "arm_firmware_executed": false,
+  "transport_bound": false,
+  "physical_test_ready": false
+}
