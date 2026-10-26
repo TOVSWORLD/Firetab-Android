@@ -8,7 +8,11 @@ from array import array
 
 
 class InjectedPyUSBObservation:
-    def __init__(self, device, utilities, *, interface, endpoint_in, endpoint_out):
+    def __init__(self, device, utilities, *, interface, endpoint_in, endpoint_out,
+                 auto_detach_disabled=False, fresh_exclusive_device=False):
+        # Caller attestations, not runtime getters or permission to access devices.
+        if auto_detach_disabled is not True or fresh_exclusive_device is not True:
+            raise ValueError('Reviewed fresh/exclusive handle and disabled auto-detach required')
         if type(interface) is not int or not 0<=interface<=255:
             raise ValueError('Explicit interface required')
         if (type(endpoint_in) is not int or type(endpoint_out) is not int

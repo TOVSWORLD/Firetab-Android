@@ -1407,3 +1407,12 @@ loadcheck; didnotexecute. Darwin driverdetach/attach maywholedevicereenumerate;
 future auto-detachpolicy remains unqualified. Retainedsource links/metadata.
 237tests/repository/diffpass. Next explicit injectedauto-detach attestation and
 entry/return sourcework; no more nativecontextexecution underautomaticban.
+
+## 2026-10-26 — Explicit injected-handle prerequisites (#106)
+
+Merged180 at passing55075307cbe22a49f2d098d55a57e1c9ab53c704;179closed.
+Base5585602. Wrapper nowrejects omitted/false/truthynonboolean callerattestations
+for disabledautodetach and freshexclusiveobject beforeanyinjectedcall. One test/
+full238pass; fake integrations updated. Attestationnotruntimeinspection or
+permission; livefactorymissing. No device/native/helperexec/download. Next
+currentstock entry/return sourcealternatives; no more syntheticpolicylayers.
