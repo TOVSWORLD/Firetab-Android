@@ -1,0 +1,157 @@
+{
+  "scope": "Static selected paths only; no firmware/device execution",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "llvm_version": "Apple LLVM version 21.0.0",
+  "facts": {
+    "shared_got_payload_offset": "0x761f4",
+    "header_pointer_global_linked_address": "0x4bd841b0",
+    "header_pointer_value_available_in_file": false,
+    "header_magic_reference": {
+      "load_offset": "0x247e6",
+      "add_pc_offset": "0x247ec",
+      "literal_pool_offset": "0x24964",
+      "target_offset": "0x5e080",
+      "text": "ANDROID!"
+    },
+    "kernel_address_label_reference": {
+      "load_offset": "0x2482c",
+      "add_pc_offset": "0x24832",
+      "literal_pool_offset": "0x2497c",
+      "target_offset": "0x5e190",
+      "text": "[%s] Android Boot IMG Hdr - Kernel Address : 0x%08X\n"
+    },
+    "checked_calls": [
+      {
+        "offset": "0x247ee",
+        "target": "0x45d8c"
+      },
+      {
+        "offset": "0x3eda0",
+        "target": "0x3eb84"
+      },
+      {
+        "offset": "0x3e11c",
+        "target": "0x3f3f0"
+      },
+      {
+        "offset": "0x3f3fe",
+        "target": "0x3f364"
+      },
+      {
+        "offset": "0x3f3aa",
+        "target": "0x3f2b4"
+      },
+      {
+        "offset": "0x3f30a",
+        "target": "0x48ad8"
+      }
+    ],
+    "header_present_entry_path": "header +0xc -> r8 -> r0 at 0x3ed98 -> 0x3eb84 -> saved entry slot -> selected K64 SMC",
+    "decompression_destination_path": "global header pointer -> +0xc -> r1 at 0x3e11a -> adapter r2 -> inflate next_out",
+    "k64_header_address_alignment_bytes": 524288,
+    "k64_alignment_failure": "0x3e132 logs then loops at 0x3e146; rejects rather than rounds address",
+    "decompression_output_capacity_bytes": 29360128,
+    "staging_address_returned_by_0x2578c": "0x45000000",
+    "checked_entry_and_output_path_rounds_address": false,
+    "assumptions": [
+      "Standard ARM AAPCS callee-saved register preservation",
+      "Checked header-present and nonzero K64 branches selected",
+      "No intervening untraced code mutates header/global values"
+    ],
+    "unresolved": [
+      "Indirect storage callback and complete header validation/error propagation",
+      "All writes to header/global and alternative boot paths",
+      "Complete staging/decompression input length and appended DT handling",
+      "Secure monitor final transfer, physical placement and recovery"
+    ],
+    "whole_loader_compatibility_verified": false,
+    "runtime_boot_verified": false
+  },
+  "excerpts": [
+    {
+      "name": "header_publication",
+      "start": 149360,
+      "end": 149424,
+      "sha256": "ca12e83bc614c676964a12e3659b129e605190798feb5423084fc86b7a367eb5",
+      "text_sha256": "b2ccdca36ad2471c31538e40cfca8faf86d1ee3e69265b855477125d5eb2d91b"
+    },
+    {
+      "name": "header_magic_check",
+      "start": 149478,
+      "end": 149498,
+      "sha256": "e332c7972bf857b843c9ef107bf0fd63a9754323f91f703fc2927685b9c57c9b",
+      "text_sha256": "58aa4adc6257e28aa9384d61f0297066aa15f36313dacde7ea29b24a85ba07f7"
+    },
+    {
+      "name": "header_kernel_label",
+      "start": 149548,
+      "end": 149562,
+      "sha256": "24ac6d7fdb45f095d15834ce6964f1c4e1e2db747e418412cae8bd025ef588fe",
+      "text_sha256": "408dd6ef63c1faa64dee51b57631f63dbe100603897978e61c70b52cde20da46"
+    },
+    {
+      "name": "entry_header_load",
+      "start": 257242,
+      "end": 257260,
+      "sha256": "05b3650b73a5cb03cc9bb9a0d0d9a6413979e3cf02d8e382a1eb411fbb0ff05b",
+      "text_sha256": "fb508938123423bee5db4507f76f9b66132868eee2c1b590de3c730fcb63702f"
+    },
+    {
+      "name": "header_entry_forward",
+      "start": 257408,
+      "end": 257446,
+      "sha256": "d71e75affa4be6ed1943b7c51e43a5f28774640f4bdc8a499df45b40f7d3fb70",
+      "text_sha256": "010484516fc358d4112cd6a1af95e0d691a07b209d9280dd548bb8ac72f31795"
+    },
+    {
+      "name": "k64_alignment_gate",
+      "start": 253500,
+      "end": 253546,
+      "sha256": "042be90bc8455915fb5cc3e774651dea3e3cfa806fb2f1d72a285d82b0ca79c6",
+      "text_sha256": "c94f7f3928ca4f23223a08c2f783acdc3b384a0c24124d9e4b7d4c0d16ee64a7"
+    },
+    {
+      "name": "decompression_select",
+      "start": 253862,
+      "end": 253876,
+      "sha256": "b813a1a985d5e34fc939f829168bf0d3583e455f24d59aa9c0dbbd3ebf281f90",
+      "text_sha256": "f26e10e2bd523ca572c2d8782fae09bd2db201d8f8961c60a207a0c51bd4bb6e"
+    },
+    {
+      "name": "decompression_destination",
+      "start": 254218,
+      "end": 254280,
+      "sha256": "618a2ef488348571ed4e756b09c5c0e28adb9e2032080d1c8f00c6572ff4b1b8",
+      "text_sha256": "3cc267367359171ea389e790a3c41bf29d67101b0a273b856871d21fd533a83a"
+    },
+    {
+      "name": "gzip_argument_adapter",
+      "start": 259056,
+      "end": 259078,
+      "sha256": "8555f7fdf02c6a7d3323273c09f84fc3df5cda6497db353653f69880a603ad43",
+      "text_sha256": "7b72050ac028b50774a69229f474b3a1468a0474f9666738dc9c51efb76b9194"
+    },
+    {
+      "name": "inflate_arguments",
+      "start": 258740,
+      "end": 258832,
+      "sha256": "93d1edf214b1bd3b27faa8e034bacf1327efe4c1887d241f2bd5354a24546859",
+      "text_sha256": "b8046c81f4b7dc0a2d79f90a2f76aae7c55ccf56f2e6b006d2664124a9f01def"
+    },
+    {
+      "name": "gzip_header",
+      "start": 258916,
+      "end": 258992,
+      "sha256": "983ae9c31706e2a65126a7ec063e88f8e1cf71a4a84ac75ba94c8a49bc8c5e3a",
+      "text_sha256": "c85031ea7cd91cf07d50b5d4233060e99d228414b91414b262bb8efe167ac0c2"
+    },
+    {
+      "name": "staging_address",
+      "start": 153484,
+      "end": 153490,
+      "sha256": "8c8a17c603a79bb3d982f349bb350572f1bac5675c79e2b44a523b2d1cfda4d4",
+      "text_sha256": "5110d6114d8bd9ba695ca716138ed1f74db09480ba09697c25a98b8ba041e179"
+    }
+  ],
+  "script_sha256": "6fb4f59ccccc79f2e76303ecd1fb89c4d129730fdd70aac281e1b45491510193"
+}

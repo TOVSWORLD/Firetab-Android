@@ -1,0 +1,8 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   2578c: f04f 408a    	mov.w	r0, #0x45000000
+   25790: 4770         	bx	lr
