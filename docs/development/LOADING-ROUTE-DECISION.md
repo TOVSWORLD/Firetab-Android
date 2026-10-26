@@ -609,3 +609,27 @@ Next statically link agent and core with an owned stack-preserving entry wrapper
 assert layout and inspect undefined/relocation metadata in bounded Linux CI.
 Keep the transport ABI injected. Physical entry/placement, original-state restore
 and useful boot-log acquisition remain unresolved.
+
+## Stack-preserving agent entry/link probe (#253)
+
+The owned Thumb wrapper `diagnostic/protocol/entry.S` saves inherited SP in a
+scratch register, computes its image-relative 2KiB stack, switches SP before
+saving r4-r6/LR, passes the injected ABI pointer in r0 to `diagnostic_agent_run`,
+then restores callee state and original SP before branching through LR. Actual
+local assembly compilation and static ordering inspection passed; the
+[receipt](../../evidence/owned-agent-entry/report.json) retains hashes.
+The C ABI must preserve r4 across its calls; callbacks remain trusted ABI peers.
+
+A bounded Linux build now compiles wrapper/agent/core with preinstalled clang/LLD,
+links under an owned script and applies the existing image/relocation gates.
+Assertions constrain zero-based entry, aligned 2KiB stack and <=64KiB image.
+CI emits hashes/layout metadata only; actual link result is pending. No firmware
+is executed, uploaded or bound to a transport. This wrapper requires Thumb-state
+entry with valid caller LR and ABI pointer; it does not establish mode, MMU,
+interrupt masks, cache visibility or physical mapping. The allocated stack size
+is not a proved worst-case bound, particularly for injected callbacks.
+
+Next inspect the actual linked image/undefined-symbol result and quantify static
+stack requirements before proposing any transport callback binding. Partial I/O,
+callback deadlines, original-state restoration and real boot-log acquisition
+remain open requirements; a successful link will not close them.
