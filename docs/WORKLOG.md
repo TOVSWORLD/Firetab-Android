@@ -1141,3 +1141,14 @@ onerror. Fourend-to-endfake/hostfiletests:191testspass. Noactualhelperbinding
 constructed/executed, native/USB/tabletIO/install/download. Internalreadflash
 reselection stillrequires127guard; callbacksource/effects/protocoltimeouts remain
 unqualified. Next sourcechecksum/transporterror and timeoutreview.
+
+## 2026-10-26 — Transport deadline/checksum source contract (#106)
+
+Currentbasea04999f/healthyCI. Pinnedhelperfastreadpasses initialtimeout0; exact
+PyUSB1.3.1wheel58465BstaticZIPinspection confirmszero forwarded tolibusb, whose
+API specifiesunlimited. Conditionalhangrisk, noactualhangobserved. Reader
+checksumloggedbutalgorithm/comparisonunqualified; writeralgorithmnotassumed.
+Ownpacketcallbackreader enforcespositiveboundedtimeouts/exactlength/tailbuffer/
+monotonicdeadline and poisonsfailedstream. Fourfakeclock/packettests:195pass.
+Nohelper/nativeexec/USB/tabletIO/install. Cannotpreemptbrokennativecall; next
+quarantinedhostworker deadline supervision tested on syntheticprocesses only.
