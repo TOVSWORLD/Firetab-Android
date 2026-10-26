@@ -99,3 +99,37 @@ Audit memory/storage/MMIO/reboot handlers and entry prerequisites together. If
 payload source is unavailable, record that exact dependency rather than assuming
 that a RAM upload implies no persistent effects. Fixing the host transfer loop
 alone would not resolve these firmware and recovery gates.
+
+## Payload source/build provenance and first-stage protocol mismatch
+
+Fetched48202B of four exact-revision source/build files, verifying each Git blob
+identity and SHA256. [Public receipt](../../evidence/payload-source-provenance/source-index.json)
+contains metadata/links only; source stays in ignored cache. No payload binary,
+compiler dependency or full checkout was downloaded. No build/helper was run.
+
+The pinned [stage1 Makefile](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/Makefile)
+includes generic_stage1 and uses ARM Thumb/Cortex-A9 settings with a bare-metal
+GCC/linker script. That is first-stage protocol code, not an ARM64 Linux entry
+implementation. Its declared output directory differs from the packaged payload
+path; build metadata alone does not prove the shipped1000B artifact corresponds
+to the reviewed C source. Stage2 and pl binaries have tree metadata, but matching
+source/build recipes were not located in this non-truncated pinned tree. This
+is a repository-scoped finding, not proof sources do not exist elsewhere.
+
+The reviewed [generic first-stage C](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c)
+scans BootROM functions, can alter watchdog state and provides memory-write/jump
+and watchdog operations. Its read-back command block is commented out, while the
+previously reviewed host verifier can request that operation. That is a
+source-level protocol mismatch requiring binary/source equivalence or a matched
+rebuild before relying on verification. No observed device hang is claimed.
+Its jump is a function call with a simple argument, not a proved Linux DT/EL/CPU
+handoff. Its reboot command programs watchdog registers and waits indefinitely;
+it is not a validated stock-return procedure on douglas.
+
+The [stage2 host tool](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/stage2.py)
+connects/retries and sends a reboot request; this is not the firmware implementing
+that request. Next locate upstream stage2/pl source provenance, or treat those
+binaries as unavailable dependencies for the proposed auditable route. A minimal
+owned first-stage transfer path can be investigated separately, but must retain
+watchdog/entry/verified read-back and ARM64 handoff requirements. Do not execute
+these payloads to discover their missing behavior.
