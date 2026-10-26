@@ -1560,3 +1560,13 @@ watchdog/inmemorypatch/execution meansnotpersistencefreeproof. Payloadcodeeffect
 andstockreturnunknown. Retainedmetadata/sourcecitations only; no helper/payload
 exec ordownloads. Repo/diffpass, existing240baselineunchanged. Next pinnedpayload
 source/buildprovenance/effectaudit, notjusthostloopfix.
+
+## 2026-10-26 — Payload source/build provenance (#106)
+
+Merged212 at passing571ede648ce3f81879807ba9f83fd20384b57db3;211closed.
+Base1e6eb13. Fetched48202B fourpinnedsources/GitblobSHAverified, nobinaries/build.
+Stage1makeThumbA9/outputpath notshippedbinaryequivalence; Creadbackcasecommented
+whilehostrequestsit. Cwatchdogwrites/functionjump notrecoverableLinuxhandoff.
+Stage2/plsourcebuildrecipe notlocatedinnontruncatedtree, notglobalabsenceproof.
+Retainedmetadata only, guards pass/existing240baselineunchanged. Next upstream
+stage2/plsourceprovenance or markexactdependencymissing; no helper/payloadexec.

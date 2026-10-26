@@ -1,0 +1,56 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "total_bytes": 48202,
+  "files": [
+    {
+      "path": "src/stage1/Makefile",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/Makefile",
+      "bytes": 1816,
+      "git_blob_sha1": "878936a41c3f323961c644d1ceb9bc3e27f75555",
+      "sha256": "1c088538dafadb045f949c2b22d80788b4078affafa57c88f45e4a75e2fba0b1"
+    },
+    {
+      "path": "src/stage1/generic/generic_stage1.c",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c",
+      "bytes": 11066,
+      "git_blob_sha1": "dc854778fc7fa550988c9461e21b7cf029f690ad",
+      "sha256": "1593d6a391c9ecb36db4adc275630468fba572a6692ad0a89c9a23bc188dfb29"
+    },
+    {
+      "path": "src/stage1/common/common.c",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/common.c",
+      "bytes": 2596,
+      "git_blob_sha1": "fe7bed7c2e1d80c4b29f2d1fe1d9e79f664c04c9",
+      "sha256": "a712f67fde69ad2b19f7de11b1eddb2b3f00ac128a78b7bbb99dc80d9daddfdb"
+    },
+    {
+      "path": "stage2.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/stage2.py",
+      "bytes": 32724,
+      "git_blob_sha1": "adfd89fa12966e2dfc6caaed85af012a2b8af803",
+      "sha256": "851cf6cfb5c3188b5a3fbf57453db49805b276cc7881550b8fbeea35c2d58134"
+    }
+  ],
+  "tree_truncated": false,
+  "artifact_metadata": [
+    {
+      "path": "mtkclient/payloads/generic_stage1_payload.bin",
+      "size": 1000,
+      "sha": "b8cb02dfb77343776d2ecdebb2ba72fbc4bd7574"
+    },
+    {
+      "path": "mtkclient/payloads/stage2.bin",
+      "size": 15896,
+      "sha": "3e4fcbbd11f816c22aded4930bc90089e6ff3af7"
+    },
+    {
+      "path": "mtkclient/payloads/pl.bin",
+      "size": 18008,
+      "sha": "0fac9d3eba51163ca3602453f4ead6e0d9a47347"
+    }
+  ],
+  "scope": "Source/build provenance and selected source effects only; binaries not fetched or executed",
+  "source_to_shipped_binary_equivalence_verified": false,
+  "stage2_or_pl_source_build_recipe_located_in_pinned_tree": false,
+  "physical_test_ready": false
+}
