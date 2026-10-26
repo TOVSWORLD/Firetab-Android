@@ -891,3 +891,16 @@ publication of copied helper code; removed it and raw code windows from public
 changes, keeping only nonoperational summaries/metadata/hashes.106 remains open;
 next official older OTA/original attachment match plus entry/restore validation.
 No tablet/helper/firmware execution or physical changes.
+
+## 2026-10-25 — Official-hosted older component provenance matched (#106)
+
+Initial659658220 Amazon URL denied HEAD; retained status observations, no body.
+Located other pinned index records and probed actual Amazon-hosted build metadata
+before capped loader extraction.636558520 preloader+LK match older mirror hashes;
+657611720 retains older preloader/current LK;659662320 has same PL/LK as current.
+Read1356647body bytes total across three probes, no full~900MB OTA. Public reports
+contain properties/metadata/digests/range hashes only, no helper/firmware code.
+Added offline host/model/resource/digest verifier;141tests pass. Component source
+provenance resolved, not signatures/antirollback/helper authenticity or restore.
+106 remains open; next separate safe entry/backup escrow from persistent writes.
+No tablet/helper/firmware execution, downgrade, flashing or device changes.

@@ -1,0 +1,78 @@
+{
+  "scope": "Exact digest matches from model/build-checked Amazon-hosted ranges; no downgrade permission",
+  "response_body_bytes_total": 1356647,
+  "results": [
+    {
+      "official_host_url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/c0c2kwjXblLVGbvARgj8ZEo9TP/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659662320.bin",
+      "verified_metadata_build": "50.6.5.9_user_659662320",
+      "matches": {
+        "preloader.bin": {
+          "bytes": 139352,
+          "sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+          "matches_mirrored_candidate": false,
+          "matches_current_stock_candidate": true
+        },
+        "lk.bin": {
+          "bytes": 485552,
+          "sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+          "matches_mirrored_candidate": false,
+          "matches_current_stock_candidate": true
+        }
+      },
+      "response_body_bytes": 452321,
+      "full_ota_or_signature_verified": false,
+      "original_helper_archive_authenticity_verified": false,
+      "installed_antirollback_compatibility_verified": false,
+      "downgrade_or_recovery_ready": false,
+      "report_sha256": "3cdc72fad86981fa822073669c2ab8904680fb98b0b574390d616c21c2ae10dc"
+    },
+    {
+      "official_host_url": "https://fireos-tablet-src.s3.amazonaws.com/SdEEH3tly0EsVXcyJe0qYcASyq/update-kindle-50.6.5.7_user_657611720.bin",
+      "verified_metadata_build": "50.6.5.7_user_657611720",
+      "matches": {
+        "preloader.bin": {
+          "bytes": 138924,
+          "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d",
+          "matches_mirrored_candidate": true,
+          "matches_current_stock_candidate": false
+        },
+        "lk.bin": {
+          "bytes": 485552,
+          "sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+          "matches_mirrored_candidate": false,
+          "matches_current_stock_candidate": true
+        }
+      },
+      "response_body_bytes": 451950,
+      "full_ota_or_signature_verified": false,
+      "original_helper_archive_authenticity_verified": false,
+      "installed_antirollback_compatibility_verified": false,
+      "downgrade_or_recovery_ready": false,
+      "report_sha256": "a48fa328b5d30c2152534e6a107573c1c3c5bed151b5f296394d4cc0befc439e"
+    },
+    {
+      "official_host_url": "https://fireos-tablet-src.s3.amazonaws.com/fqt0doGd1liHKioAFObgRm6oGA/update-kindle-50.6.3.6_user_636558520.bin",
+      "verified_metadata_build": "50.6.3.6_user_636558520",
+      "matches": {
+        "preloader.bin": {
+          "bytes": 138924,
+          "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d",
+          "matches_mirrored_candidate": true,
+          "matches_current_stock_candidate": false
+        },
+        "lk.bin": {
+          "bytes": 485988,
+          "sha256": "7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056",
+          "matches_mirrored_candidate": true,
+          "matches_current_stock_candidate": false
+        }
+      },
+      "response_body_bytes": 452376,
+      "full_ota_or_signature_verified": false,
+      "original_helper_archive_authenticity_verified": false,
+      "installed_antirollback_compatibility_verified": false,
+      "downgrade_or_recovery_ready": false,
+      "report_sha256": "a7570785e91ac83826c2a698b66a7503983ec87ed4c15cf7176ac883efac86b3"
+    }
+  ]
+}
