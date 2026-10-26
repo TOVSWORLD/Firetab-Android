@@ -1,0 +1,17 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -c diagnostic/entry/callable.S -o out/owned-entry/callable.o",
+  "compile_exit_code": 0,
+  "source_sha256": "c4fb80c69272c372284516bf7f1f9d206801e0ec5087864dc1860b2b94c5df86",
+  "object_sha256": "d4c9a37263ee829c2c0569154ecbe35b6108a6c5605e5d478df33c4cd612d5df",
+  "static_observations": {
+    "saves_inherited_sp_before_reassignment": true,
+    "restores_sp_before_bx_lr": true,
+    "callee_saved_r4_to_r11_untouched": true,
+    "lr_untouched": true,
+    "marker_offset": 48,
+    "stack_top_offset": 1080
+  },
+  "runtime_return_verified": false,
+  "stock_return_verified": false,
+  "firmware_executed": false
+}

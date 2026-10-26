@@ -1695,3 +1695,16 @@ stack top1064. Linker assertions and bounded Linux CI added; actual link pending
 No execution/USB/device access or return/recovery claim. Repository/diff guards
 pass; unchanged 251-test baseline. Next actual Linux result and explicit caller/
 return ABI; memory marker has no qualified readback/log transport yet.
+
+## 2026-10-26 — Callable diagnostic leaf ABI (#237 / #106)
+
+Merged #236 at passing e70e2d2ba4a1c84022d500fd22dbbdcfdf28b5ab,
+merge a3aa8b6030840d6b27a90896bdeb3ec540d71ef4; #235 closed. Job
+121864827490/run40406304083 tested fc3b2535c692f313512eff8f709038b2b58f30e3:
+owned loop entry linked and passed host image gates. Receipt retained.
+Added separate callable leaf preserving inherited SP/LR/r4-r11, setting private
+stack before marker then restoring SP/bx LR; local object compile/static review
+passes, marker offset48/stack top1080. No execution, device access or stock-return
+claim. Linux builds both variants; callable result pending. Repository/diff guards
+pass, unchanged 251-test baseline. Next supplied-snapshot marker/identity decoder
+and actual loader caller-state qualification; restore/log gates remain open.

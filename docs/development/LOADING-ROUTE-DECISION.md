@@ -405,3 +405,31 @@ reader observes it, and a final loop cannot return to stock. Next inspect the
 actual Linux link and design an explicit caller-state/return ABI plus bounded
 host marker decoding before any physical loader proposal. Safe RAM placement,
 original restore and usable boot-log capture remain unresolved.
+
+## Callable entry ABI experiment (#237)
+
+The original owned loop entry now has an actual successful
+[Linux link receipt](../../evidence/owned-entry-link/report.json), from
+[job 121864827490](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40406304083/job/121864827490).
+It linked and passed the image/relocation gates without execution. The separate
+`diagnostic/entry/callable.S` experiment now provides a caller-return sequence:
+save inherited SP in r3, establish the private stack, write the marker, restore
+SP, set r0 to zero and branch through unchanged LR. r4-r11 are untouched;
+r0-r3 are scratch. No external calls or hardware access occurs. Local compile
+and static ordering inspection passed; the
+[receipt](../../evidence/owned-callable-compile/report.json) retains source/object
+hashes. Linux CI now builds both variants; callable link results remain pending.
+
+This ABI requires a caller that entered ARM state with a valid return LR and
+allows ordinary scratch-register clobbering. The caller must provide a writable,
+executable image mapping and a processor/interrupt context in which this leaf
+sequence is valid. The code does not change CPU mode, interrupt masks, MMU or
+cache state; it cannot recover from an invalid mapping or exception. Restoring
+SP and branching through LR is not a verified return to stock firmware: no
+qualified loader has established these preconditions or invoked it. The marker
+still has no qualified readback or visibility guarantee.
+
+Next add a bounded host decoder for the marker and its image identity, using
+supplied synthetic snapshots only, and identify which loader can establish the
+caller ABI. Do not attach a device transport to this experiment from a successful
+compile/link result. Original-state restore and boot-log transport remain gates.
