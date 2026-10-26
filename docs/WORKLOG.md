@@ -817,3 +817,15 @@ Source/hash guards and full semantic comparison/negative controls retained.
 Loader preservation, boot MPIDR, other firmware paths, donor RAM and physical
 boot remain unverified. No firmware packing/device/SMC/helper execution. Next:
 trace actual LK bootargs rewriting before treating the limits as effective.
+
+## 2026-10-25 — Actual LK chosen/bootargs replacement trace (#98)
+
+Exact cached LK static trace connects file-backed command buffer4bd74cb8 and
+header+40 format input to selected FDT bootargs write. Writer usesstrlen+1,
+resizes existing property, sets new length and copies new buffer; DT bootargs
+alone are not a preservation guarantee. Initial static150-byte buffer lacks
+diagnostic limits; runtime mutations/all boot modes remain unqualified. Retained
+instruction/call/string/hash evidence plus126 passing offline tests and mutation/
+argument negative controls. No PSCI-status preservation or physical boot claim,
+firmware/helper execution or tablet IO. Next: sanitized effective command-line/
+CPU-count diagnostic reporting, keeping loader/recovery/logging gates open.
