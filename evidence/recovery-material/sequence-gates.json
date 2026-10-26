@@ -52,6 +52,19 @@
         "reboot"
       ],
       "gate_passed": false
+    },
+    {
+      "name": "MTKClient candidate read-back",
+      "source_revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+      "entry": "BROM/preloader bootstrap with agent; actual entry and selected backend unverified",
+      "gate_passed": false,
+      "persistent_changes": "No named write/format methods reachable in audited legacy self.method closure; external protocol/agent effects unresolved",
+      "backup_gap": "Legacy read ignores failed eMMC region selection; supplied hashes cannot establish collector region identity",
+      "physical_action_ready": false,
+      "source_reports": [
+        "evidence/recovery-entry-escrow/report.json",
+        "evidence/recovery-bootstrap/report.json"
+      ]
     }
   ],
   "restore_requirements": [
@@ -68,9 +81,19 @@
   ],
   "material_unqualified": [
     "original XDA attachment match (HTTP403)",
-    "exact Amazon build/version of mirrored preloader",
     "current-build fastboot/BootROM entry and complete rollback/restore"
   ],
   "physical_action_ready": false,
-  "automatically_executed": false
+  "automatically_executed": false,
+  "component_identity_resolved": {
+    "report": "evidence/official-recovery-material/matches.json",
+    "older_preloader_and_lk_match_build": "50.6.3.6_user_636558520",
+    "qualification": "Component byte identity only; signature/rollback/restore remain unverified"
+  },
+  "offline_verifier_available": {
+    "script": "scripts/verify_offline_escrow.py",
+    "scope": "Host file lengths/digests and primary/final-LBA GPT integrity only",
+    "actual_device_escrow_validated": false,
+    "restore_qualified": false
+  }
 }
