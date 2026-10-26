@@ -1648,3 +1648,13 @@ proof. Final-word sentinel patching also needs an explicit owned image contract.
 Metadata only; no helper import/execution, download or device access. Repository/
 diff guards pass; existing 243-test baseline unchanged. Next owned host-only
 load-image initialization contract, keeping device loader/restore/log gates open.
+
+## 2026-10-26 — Owned zero-initialized host image constructor (#229 / #106)
+
+Merged #228 at passing b63984e2a9f8a227cd56a1dca8108a77a439d8d0,
+merge 35c76f8732b51e5c4249ea38a2764e37cd45565f; #227 closed. Added bounded
+owned PT_LOAD image construction: preserve file bytes, zero tails/gaps, reject
+overlap/nonzero-base/mismatched physical fields/>64KiB memory. No sentinel patch,
+execution or transport. Integrated metadata-only image hash/size into Linux probe.
+All 247 host tests pass; repository/diff guards pass. Actual CI image receipt
+pending; next relocation/entry assumptions, keeping physical recovery/log gates open.
