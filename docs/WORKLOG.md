@@ -1670,3 +1670,16 @@ Added section-table/REL/RELA/DYNAMIC rejection gate with malformed extent tests.
 251 host tests pass; repository/diff guards pass. No relocations is not runtime
 PIC proof. Pinned startup inherits stack/CPU state; main assumes BootROM mapping.
 Next actual CI section metadata and static address/entry review, not device access.
+
+## 2026-10-26 — Emitted address/stack dependency (#233 / #106)
+
+Merged #232 after five passing checks at 7af6da7fd59430eb1cb01fe270a7bbae1f6abc7a,
+merge 6629548e47b8a74dc4c9800ea46a7cbb9eb38e36; #231 closed. Linux job
+121842687478/run40399916804: ten sections, no nonempty relocation/dynamic
+sections, unchanged initialized image hash. Independently hash-verified cached
+Apple clang object; static objdump counts 31 REL32 and ten THM_CALL references.
+Main immediately reserves eight bytes and stores through inherited SP; not a
+maximum-stack or whole-image PIC proof. Local compiler/object differs from Linux.
+Retained metadata only; no raw code/disassembly or firmware/device execution.
+Repository/diff checks pass; unchanged 251-test baseline. Next owned image-relative
+stack/entry-marker diagnostic experiment, compile/inspect only, no upstream main.

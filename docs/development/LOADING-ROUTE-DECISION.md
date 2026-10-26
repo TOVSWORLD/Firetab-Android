@@ -351,3 +351,33 @@ cache state. No actual entry-state contract has yet been obtained from a
 qualified loader. Next inspect emitted address references/entry requirements
 statically before proposing an owned startup or relocation contract; stock
 restore and usable boot logs remain separate prerequisites.
+
+## Emitted address references and immediate stack dependence (#233)
+
+The [Linux relocation-gate job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40399916804/job/121842687478)
+passed: ten sections, zero nonempty relocation sections and zero nonempty dynamic
+sections. Its initialized host-image hash remains
+`fba4681457cdcf32a0a1541ff7a3dc429b35341ef97d1c1e05eddde40985e79e`.
+The [combined receipt](../../evidence/stage1-entry-address-review/report.json)
+retains exact CI checkout/head/merge and the separate local object review.
+
+Static `llvm-objdump -dr` inspection of the existing hash-verified Apple clang
+ARM object found 31 R_ARM_REL32 and ten R_ARM_THM_CALL references. These include
+relative references to globals and local calls, supporting position-relative
+code generation for those selected references. This object was built by Apple
+clang 21, while Linux used clang 18; it is not byte-equivalence evidence for the
+Linux image and does not prove every address reference is position independent.
+Raw disassembly stays in the ignored cache; only counts/hashes are published.
+
+More concretely, the local emitted main routine immediately reserves eight
+bytes from inherited SP and writes through that stack before establishing any
+owned stack. The pinned startup contains no SP assignment. Eight bytes is the
+initial local reservation, not maximum stack usage: calls, other paths and
+external BootROM routines need additional analysis. Merely zero-filling the
+1600-byte image therefore does not supply a safe execution context.
+
+Next implement a bounded diagnostic entry experiment with an explicit owned
+stack and observable entry marker, compiled and inspected only. Its stack must
+be image-relative and kept distinct from unqualified physical placement. It
+must not call the upstream hardware-scanning main or attach a USB loader until
+its CPU state, security entry, restore and log prerequisites are qualified.
