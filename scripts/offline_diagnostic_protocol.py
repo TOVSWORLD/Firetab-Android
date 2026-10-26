@@ -29,8 +29,8 @@ class OfflineDiagnosticProtocol:
                 raise ValueError('Read requires completed call and bounded image-relative range')
         else:
             raise ValueError('Unknown operation')
-        if self.sequence == 0xffffffff:
-            raise ValueError('Sequence exhausted')
+        if self.sequence >= 16:
+            raise ValueError('Sixteen-transaction session budget exhausted')
         self.sequence += 1
         self.pending = (operation, self.sequence, offset, length)
         return HEADER.pack(b'FTDQ', 1, operation, 0, self.sequence, offset, length)
