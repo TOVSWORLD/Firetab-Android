@@ -11,6 +11,7 @@ import subprocess
 import time
 
 from diagnostic_config import check, policy
+from measure_arm64_image import measure, bounded_file, MAX_IMAGE
 
 MARKERS = [b'FIRETABS_DIAGNOSTIC_INIT_V1', b'PROC_MOUNT_OK', b'SYSFS_MOUNT_OK',
            b'FILE /proc/version', b'FILE /proc/meminfo', b'FILE /proc/iomem',
@@ -41,7 +42,8 @@ def main():
     resolved = check(args.config.read_text(), policy())
     if 'CONFIG_SERIAL_AMBA_PL011_CONSOLE=y' not in args.config.read_text().splitlines():
         parser.error('Generic virt PL011 console must be built in')
-    kernel = args.kernel.read_bytes()
+    kernel = bounded_file(args.kernel, MAX_IMAGE)
+    sizing = measure(kernel, bounded_file(args.kernel.with_name('Image.gz'), MAX_IMAGE+65536))
     if len(kernel) < 64 or kernel[56:60] != b'ARMd':
         parser.error('Expected raw AArch64 Image')
     command = [args.qemu, '-machine', 'virt-8.2,gic-version=3', '-accel', 'tcg',
@@ -56,6 +58,7 @@ def main():
               'timeout_seconds': 120, 'idle_observation_seconds': 5, 'console_limit': LOG_LIMIT,
               'config_sha256': hashlib.sha256(args.config.read_bytes()).hexdigest(),
               'kernel_sha256': hashlib.sha256(kernel).hexdigest(),
+              'image_measurements': sizing,
               'initramfs_sha256': hashlib.sha256(args.initramfs.read_bytes()).hexdigest(),
               'tester_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'arm64_header': {'text_offset': struct.unpack_from('<Q', kernel, 8)[0],
