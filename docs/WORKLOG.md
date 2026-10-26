@@ -1039,3 +1039,15 @@ not validate memory handoff. Device FORCE profile remains uncompiled/unqualified
 Added key-only bounded audit/two tests:167 tests pass; no downloads/tablet IO.
 Next actual generic-only FORCE experiment using PL011 and contradictory incoming
 arguments, with existing resource gate (~0.3GiB/15GiB/7GiB/60min); no job started.
+
+## 2026-10-26 — Independent Mac CLI source dependency inventory (#106)
+
+PR121 genericcompile40279916842 remains running; did not alter its head or poll
+unchanged CI as the only work. On independent development-base branch audited
+67 pinned source modules,999718new source bytes under192KiB/file/2MiBtotal;
+Gitblob identities/SHA256 verified, no helper imports or execution. Found
+mandatory-source rootsCrypto/Cryptodome/colorama/serial/usb; Qt/FUSE imports
+guarded and example/deferred contexts separated, not a verified minimal install.
+No dependencies/security changes/device IO. Two new AST tests:169 tests on this
+branch (does not yet include pendingPR121's two added tests). Next metadata-only
+Mac dependency/backend resource plan; await genericbuild actual result separately.
