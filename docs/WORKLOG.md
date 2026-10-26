@@ -1061,3 +1061,17 @@ separate. Manualdispatchdefaultsnone; no deviceprofileautoapply. Two new tests
 bring suite169passing; shellsyntax/repository/diff guards pass. Actual compile/
 VM result pending new PR;119 remains open. Existingreportedresources unchanged.
 Next retain exact build/runtime hashes and result; physical gates stay open.
+
+## 2026-10-26 — Actual generic forced-argument proof passed (#119)
+
+Run40279916842/job121430735801 at710edcfdfa7c3f003ededf8e40643fde4707bbb1 passed
+in23m47s; QEMU5.93s. Incominglimits4/3 overridden: actualinit verdictsvalid1/0,
+oneonlineCPU/CPU0alone. PSCIstatusunavailable, separateprimarycontractfalse.
+Retained exactconfig (hashmatched reconstructedCI), kernel/initramfs/console
+digests and parsedrenderedverdicts in evidence/generic-forced-arguments. Raw
+consolehash CI-reported, not independently reconstructed from renderedjoblog;
+binariesnotarchived. Merged121 after all exactheadchecks, reconciled122worklog
+and merged122 atab314ea79b5531c83620afe173cd1688a4ed2fb4 afterchecks. Current
+suite173passing, retained verifier/repository/diffchecks pass.119scopeachieved;
+close after evidencePR validation.106/21/22 physicalgatesremainopen. Next Mac
+CLI wheel/nativeUSB resourceplan; no tablet IO/install/securitychanges.
