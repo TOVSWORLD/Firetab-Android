@@ -17,6 +17,7 @@ class InjectedPyUSBObservation:
         self.device=device;self.util=utilities;self.interface=interface
         self.ep_in=endpoint_in;self.ep_out=endpoint_out
         self.valid=False;self.claimed=False;self.release_failed=False;self.closed=False
+        self.claim_uncertain=False
 
     def validate_active(self, interface):
         if self.closed or interface!=self.interface:return False
@@ -36,9 +37,10 @@ class InjectedPyUSBObservation:
         return True
 
     def claim(self,interface):
-        if not self.valid or self.closed or self.claimed or interface!=self.interface:return False
+        if not self.valid or self.closed or self.claimed or self.claim_uncertain or interface!=self.interface:return False
+        self.claim_uncertain=True
         self.util.claim_interface(self.device,interface)
-        self.claimed=True
+        self.claimed=True;self.claim_uncertain=False
         return True
 
     def _io(self,timeout_ms):
@@ -75,4 +77,4 @@ class InjectedPyUSBObservation:
         if self.closed:return False
         self.closed=True;self.valid=False
         self.util.dispose_resources(self.device)
-        return not self.release_failed and not self.claimed
+        return not self.release_failed and not self.claimed and not self.claim_uncertain
