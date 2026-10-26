@@ -1,0 +1,28 @@
+{
+  "scope": "Source API contract plus synthetic callbacks only; no actual helper binding executed",
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "source_inputs": [
+    {
+      "path": "mtkclient/Library/DA/storage.py",
+      "sha256": "649fa13ab4354664cc99207fa36b46391a3f86868d977d8403f83120d8e83986",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/storage.py"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py"
+    }
+  ],
+  "ordinary_region_ids": {
+    "user": 8,
+    "boot1": 1,
+    "boot2": 2
+  },
+  "memory_mode_filename": "",
+  "maximum_chunk_bytes": 1048576,
+  "silent_clipping_permitted": false,
+  "actual_geometry_observed": false,
+  "source_ack_guard_must_be_integrated_before_live_use": true,
+  "protocol_checksum_verified": false,
+  "physical_test_ready": false
+}
