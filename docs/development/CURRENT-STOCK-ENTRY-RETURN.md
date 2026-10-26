@@ -130,3 +130,26 @@ Next inspect0x24770's image source and0x24ce8's verification/load boundary befor
 making a definitive claim about partition versus downloaded-buffer boot. The
 filter's dynamic-policy producers remain separate unresolved work. Neither
 `download` plus `continue` nor a conventional command name is a qualified test.
+
+## Named-record and device-callback image origin
+
+The [exact image-source report](../../evidence/stock-image-source/report.json)
+now checks that both header producer0x24770 and image-loading callee0x24ce8
+obtain an object from0x35da8 and resolve the supplied `boot` label through0x35c40.
+The latter special-cases preloader names, otherwise searches20-byte named table
+records and copies a matching record. Header reading shifts the record's first
+word by9 before invoking the object's callback at offset0x10; the image callee
+uses the same callback slot with offsets derived from that record/header.
+
+This supports a named block/partition-style source rather than direct reuse of
+the fastboot download buffer on the selected continue path. The callback's actual
+backend implementation remains unresolved, so no observed eMMC read or complete
+storage-origin proof is claimed. The table/provider can contain runtime state.
+The image callee also invokes0x244c0 before further loading; its semantics and
+later security-related calls require separate review. A header magic check is
+not cryptographic verification, and a successful source lookup is not acceptance.
+
+No physical command, memory read or firmware execution occurred. Next resolve
+the callback provider's initialization and0x244c0's role, distinguishing header
+validation, loading, signature policy and eventual kernel entry. Raw disassembly
+stays private; public artifacts contain offsets, call identities and hashes only.
