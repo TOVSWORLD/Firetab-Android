@@ -128,3 +128,7 @@ global Mac library/security state. Do not execute a firmware helper or instantia
 a USB backend to test it. A later helper adapter must use an explicit reviewed
 library path instead of assuming a Linux-style filename. Actual libusb loading,
 USB reconnect, safe tablet entry and restoration remain separate unqualified gates.
+
+A subsequent transport-source review fetched only the pinned58465-byte PyUSB
+wheel as a ZIP for static API inspection; it was not installed/imported. Other
+candidate wheels remain undownloaded. See evidence/transport-deadline-contract.

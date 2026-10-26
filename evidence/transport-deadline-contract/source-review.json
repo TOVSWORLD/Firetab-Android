@@ -1,0 +1,34 @@
+{
+  "scope": "Pinned source timeout/checksum review only; no native/helper/device execution",
+  "helper_revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "sources": [
+    {
+      "path": "mtkclient/Library/Connection/usblib.py",
+      "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py"
+    }
+  ],
+  "fast_read_initial_timeout_value": 0,
+  "initial_timeout_line": 530,
+  "fast_endpoint_call_line": 560,
+  "pyusb_endpoint_read_timeout_forwarding_line": 431,
+  "pyusb_explicit_zero_preserved_line": 1162,
+  "libusb_timeout_zero_semantics_source": "https://libusb.sourceforge.io/api-1.0/group__libusb__syncio.html",
+  "libusb_timeout_zero_means_unlimited": true,
+  "actual_hang_observed": false,
+  "legacy_read_checksum_logged_lines": [
+    1211,
+    1212,
+    1230,
+    1231
+  ],
+  "legacy_read_checksum_algorithm_verified": false,
+  "source_write_checksum_not_assumed_equivalent_to_read": true,
+  "hard_preemption_of_broken_native_callback_provided": false,
+  "physical_test_ready": false
+}
