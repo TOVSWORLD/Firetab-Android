@@ -1131,3 +1131,13 @@ chunks/hostdisk/exclusivecompletepublish+SHA; failuredoesnotpublishfinaloutput.
 Four fault-injectiontests:187tests pass; no realbinding/library/USB/tabletIO.
 Sourceandhostcontract complete; actual geometry/protocol/binding/restore open.
 Next sourcebinding mustrejectclipping and prove offsets/errorpropagation offline.
+
+## 2026-10-26 — Offline legacy read binding contract (#106)
+
+Currentbaseda9f342, allrecentCIhealthy. Added owncallbackadapter for explicit
+legacy/non-IoT/eMMC geometry, exactregionmapping/noclip, alignedboundedoffsets
+and memorymodeAPIkwargs. Checksreturnedbytes/length and invalidatesselection
+onerror. Fourend-to-endfake/hostfiletests:191testspass. Noactualhelperbinding
+constructed/executed, native/USB/tabletIO/install/download. Internalreadflash
+reselection stillrequires127guard; callbacksource/effects/protocoltimeouts remain
+unqualified. Next sourcechecksum/transporterror and timeoutreview.
