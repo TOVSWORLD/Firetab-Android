@@ -353,3 +353,33 @@ The inspector executes neither firmware nor upstream helper code. Two synthetic
 parser tests cover valid metadata and malformed bounds/tags/version;205 tests pass.
 Next qualify the source-level initialization response contract and fail-closed
 handling before considering any live binding. Physical gates remain open.
+
+## DRAM initialization response contract: source gaps
+
+Static review of the pinned [legacy branch, lines316–407](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py#L316-L407)
+finds four conditions that a future binding must address before it can accept
+a successful initialization. The [source receipt](../../evidence/dram-response-contract/source-review.json)
+records exact source identity; upstream code was neither copied nor executed.
+
+- The version reply handles ACK and NACK separately. An empty or unexpected
+  reply bypasses both branches and can reach the method's final True. This is
+  a control-flow finding, not an observed device failure. A binding must accept
+  only an exact expected reply and reject every other reply or transport error.
+- For format0x10, the agent-requested DRAM length is logged; the local data
+  length is sent independently, with no equality check. Current data is188B,
+  but the actual request is unknown. Require a separately reviewed length
+  agreement before transmitting data; a source comment is not an observation.
+- The returned two-byte checksum is logged without comparison. Its algorithm
+  remains unqualified; do not label data integrity verified from receipt alone.
+- A nonzero initialization status is rejected in the ACK branch. Subsequent
+  type, chip-select and size fields use indexing/unpack without explicit exact
+  length checks. Truncation may raise; it must invalidate the entire session,
+  never leave a reusable success state. Zero status and plausible geometry
+  would still be agent reports, not independently verified physical memory.
+
+This review establishes requirements only. No live adapter was installed or
+patched. The own exact-reader and supervised synthetic acquisition contracts
+address transport boundaries separately; they are not bound to this initializer.
+Next inspect the caller's propagation of False/exceptions and whether later
+stage loading is gated by a qualified initialization result. Entry/security,
+restoration and boot-log capture remain open under106.

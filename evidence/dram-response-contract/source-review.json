@@ -1,0 +1,19 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "source_path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+  "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+  "source_bytes": 59705,
+  "reviewed_lines": [
+    316,
+    407
+  ],
+  "findings": {
+    "unexpected_version_reply_can_reach_final_true": true,
+    "requested_length_compared_to_local_emi_length_in_v16_branch": false,
+    "returned_checksum_validated_in_reviewed_branch": false,
+    "zero_initialization_status_required_in_ack_branch": true,
+    "geometry_reads_have_explicit_exact_length_guards": false
+  },
+  "scope": "Static reviewed control flow only; no observed agent response or firmware execution",
+  "physical_test_ready": false
+}
