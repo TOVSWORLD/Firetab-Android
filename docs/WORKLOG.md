@@ -958,3 +958,16 @@ escrow, restore reachability, security-state, Mac/re-entry and log gates with
 precise missing evidence for UART, retained RAM and USB logging. No operation
 commands, package readiness or runtime claims. Next source task is DA selection/
 agent provenance, then source UART contract; no tablet access or new downloads.
+
+## 2026-10-26 — Candidate download-agent selection/provenance (#106)
+
+Merged PR112 exact eac4a371a4df30ab992403961cf9ee225abf1c02 after required checks
+passed; base2f5b708. Inspected9558B pinned source +308770B Git-tree metadata only.
+Separated600B security bootstrap from independently selected storage DA. Default
+selector scans six filename candidates51,627,415B total; no binaries downloaded.
+Found subcode deduplication self-comparison at daconfig:196 and no setup subcode
+check; actual device failure/selected record unverified. Recorded metadata/SHA1
+versus signature/SHA256 distinctions. AST-only tests bring suite to154 passing.
+Next bounded metadata/header inspection for DA records if range-supported, or
+independent cached UART contract; no helper execution/tablet access/dependencies.
+Recovery/restore/logging gates stay open.

@@ -1,0 +1,20 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "source_path": "mtkclient/Library/DA/daconfig.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/daconfig.py",
+      "bytes": 8921,
+      "sha256": "bb40fdd4661cbf45da209d1266c01ba4731a1f88bfb9111071c96b1bf66dd8d5"
+    },
+    {
+      "source_path": "mtkclient/config/payloads.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/payloads.py",
+      "bytes": 637,
+      "sha256": "0ddbe924cb9fe3f6a5361bc4dce9d7ddc37bea52fe153cf2ba8aa8484325e0c8"
+    }
+  ],
+  "tree_url": "https://api.github.com/repos/bkerler/mtkclient/git/trees/7cb40e727727dfe3faa065eefb29b16ed29bbdf1?recursive=1",
+  "tree_bytes": 308770,
+  "tree_sha256": "5b9da7eb05840427fe90aa7b8441ae529de7406e54cd878974528d56b598d890"
+}
