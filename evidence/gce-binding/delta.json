@@ -1,0 +1,93 @@
+{
+  "before": 56,
+  "after": 54,
+  "removed": [
+    {
+      "column": null,
+      "compatible": "mediatek,mt8163-gce",
+      "context": [
+        {
+          "message": "['mediatek,mt8163-gce', 'mediatek,mt8173-gce'] is too long",
+          "property_path": [
+            "compatible"
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "maxItems"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8163-gce' is not one of ['mediatek,mt6779-gce', 'mediatek,mt8173-gce', 'mediatek,mt8183-gce', 'mediatek,mt8186-gce', 'mediatek,mt8188-gce', 'mediatek,mt8192-gce', 'mediatek,mt8195-gce', 'mediatek,mt8196-gce']",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "items",
+            0,
+            "enum"
+          ]
+        },
+        {
+          "message": "'mediatek,mt6795-gce' was expected",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            1,
+            "items",
+            0,
+            "const"
+          ]
+        }
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: mailbox@10212000 (mediatek,mt8163-gce): compatible: 'oneOf' conditional failed, one must be fixed:\n\t['mediatek,mt8163-gce', 'mediatek,mt8173-gce'] is too long\n\t'mediatek,mt8163-gce' is not one of ['mediatek,mt6779-gce', 'mediatek,mt8173-gce', 'mediatek,mt8183-gce', 'mediatek,mt8186-gce', 'mediatek,mt8188-gce', 'mediatek,mt8192-gce', 'mediatek,mt8195-gce', 'mediatek,mt8196-gce']\n\t'mediatek,mt6795-gce' was expected\n\tfrom schema $id: http://devicetree.org/schemas/mailbox/mediatek,gce-mailbox.yaml",
+      "level": "error",
+      "line": null,
+      "message": "['mediatek,mt8163-gce', 'mediatek,mt8173-gce'] is not valid under any of the given schemas",
+      "node": "/soc/mailbox@10212000",
+      "nodename": "mailbox@10212000",
+      "property_path": [
+        "compatible"
+      ],
+      "schema": "http://devicetree.org/schemas/mailbox/mediatek,gce-mailbox.yaml",
+      "schema_path": [
+        "properties",
+        "compatible",
+        "oneOf"
+      ],
+      "type": "validation"
+    },
+    {
+      "column": null,
+      "compatible": [
+        "mediatek,mt8163-gce",
+        "mediatek,mt8173-gce"
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/mailbox@10212000: failed to match any schema with compatible: ['mediatek,mt8163-gce', 'mediatek,mt8173-gce']",
+      "level": "warning",
+      "line": null,
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-gce', 'mediatek,mt8173-gce']",
+      "node": "/soc/mailbox@10212000",
+      "nodename": "mailbox@10212000",
+      "type": "unmatched"
+    }
+  ],
+  "added": []
+}

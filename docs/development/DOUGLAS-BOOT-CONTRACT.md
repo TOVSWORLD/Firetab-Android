@@ -837,3 +837,35 @@ runtime/hardware passed. No boot image was packed. A next diagnostic-logging
 change should report these limited facts without publishing full command lines
 that might contain device identifiers. Until then, the compiled primary-only DT
 remains an offline experiment and its bootargs alone are insufficient evidence.
+
+## GCE mailbox exact fallback schema coverage (#102)
+
+Pinned donor mt8163.dtsi line460 declares MT8163/MT8173 GCE fallback with two
+mailbox cells, GCE clock and interrupt. ACK's cmdq driver line787 matches MT8173;
+its pdata at742 uses16threads, address shift0, control_by_sw=false and one GCE.
+The cached legacy common HV1 header also defines16threads. This is supporting
+source context, not proof of MT8163's complete event/subsystem/security mapping.
+The legacy header reserves secure-thread IDs12–14, so matching a thread count
+alone cannot qualify generic CMDQ use or secure/nonsecure allocation.
+
+The opt-in `mt8163-gce` schema proposal extends the existing MT6795/MT8173 tuple
+branch to admit MT8163 as first compatible with that same fallback. Single-string
+families and every other schema constraint are unchanged. Seven processed-schema
+controls reject missing/wrong/extra fallback and preserve existing tuples. No DT
+node, driver, clock or hardware status changed. Source URLs/hashes, proposed
+patch hashes, original/processed schemas and controls are retained under
+`evidence/gce-binding/`.
+
+Reproduce the efuse full-corpus command with one additional
+`--extra-binding mt8163-gce`, then run:
+
+```sh
+work/dtb-tool/venv/bin/python evidence/gce-binding/check-controls.py
+python3 -m unittest discover -s tests -q
+```
+
+Full-corpus diagnostics56→54, with zero additions: one GCE compatible validation
+error and its unmatched diagnostic disappear.12validation and42unmatched remain;
+overall wrapper still exits1. GCE schema doc validation is clean. Parent#27 and
+actual CMDQ/display support under#23 remain open. Neither a command queue nor
+physical hardware was accessed/executed.

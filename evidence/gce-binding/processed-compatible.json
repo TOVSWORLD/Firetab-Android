@@ -1,0 +1,39 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6779-gce",
+            "mediatek,mt8173-gce",
+            "mediatek,mt8183-gce",
+            "mediatek,mt8186-gce",
+            "mediatek,mt8188-gce",
+            "mediatek,mt8192-gce",
+            "mediatek,mt8195-gce",
+            "mediatek,mt8196-gce"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6795-gce",
+            "mediatek,mt8163-gce"
+          ]
+        },
+        {
+          "const": "mediatek,mt8173-gce"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}
