@@ -1,0 +1,60 @@
+{
+  "preloader_sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+  "script_sha256": "296c7a518512a7c7db70d0ada6295418ae30bc33b2ebaffa3199c75866aa57d6",
+  "facts": {
+    "scope": "Static GFH-declared mapping only; actual loaded mapping and physical recovery unverified",
+    "mapping": {
+      "format": "GFH v1 FILE_INFO",
+      "declared_load_base": 2100480,
+      "payload_offset": 768,
+      "payload_bytes": 138292,
+      "declared_code_start": 2101248,
+      "declared_code_end_exclusive": 2239540,
+      "signature_region_bytes": 292,
+      "maximum_file_bytes": 262144,
+      "signature_verified": false
+    },
+    "usb_literal_reference": {
+      "load_offset": "0x164d8",
+      "add_pc_offset": "0x164de",
+      "literal_pool_offset": "0x16720",
+      "target_offset": "0x20861",
+      "text": "       wLength = %x\n\n"
+    },
+    "antirollback_log_reference": {
+      "load_offset": "0xc34",
+      "add_pc_offset": "0xc3a",
+      "literal_pool_offset": "0xdf0",
+      "target_offset": "0x1be94",
+      "text": "[ANTI-ROLLBACK] Processing anti-rollback data\n\n"
+    },
+    "antirollback_failure_reference": {
+      "load_offset": "0xc50",
+      "add_pc_offset": "0xc52",
+      "literal_pool_offset": "0xdf8",
+      "target_offset": "0x1bec4",
+      "text": "[ANTI-ROLLBACK] Failed to read block 0\n"
+    },
+    "checked_arb_call": {
+      "site": "0x20a7ce",
+      "target": "0x201934",
+      "condition": "selected branch tests mutable boot-parameter byte against1"
+    },
+    "reference_site_classification": {
+      "0x217420": "data literal referenced by LDR at2171d8, not the descriptor instruction assumed by old reference",
+      "0x21b970": "CMP r5,0 inside selected loop/tail block; unsigned-DA verifier entry identity unverified",
+      "0x201934": "callable entry with anti-rollback log references; complete policy/compatibility unverified",
+      "0x20a204": "ADD r1,pc before logging/epilogue; TEE-loader entry identity unverified"
+    },
+    "reference_patch_set_qualified_for_current_preloader": false,
+    "marker_absence_proves_exploit_patched": false,
+    "missing_recovery_evidence": [
+      "Compatible build-specific loader route; old offsets cannot be reused blindly",
+      "Verified way to enter recovery and restore required state for this installed build",
+      "Validated recovery artifact/provenance and non-destructive test plan",
+      "Authorization for any later physical actions; none performed by this audit"
+    ],
+    "no_safe_nonpersistent_load_route_established": true,
+    "physical_boot_or_recovery_verified": false
+  }
+}
