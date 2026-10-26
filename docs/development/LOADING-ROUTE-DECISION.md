@@ -565,3 +565,22 @@ vectors directly with the Python contract, then integrate an owned entry context
 and statically link with explicit callback/transport requirements. No callback
 may be bound to live tablet access during automatic runs. Qualified security
 entry, safe physical placement, original restore and log acquisition remain open.
+
+## C/Python protocol response vectors (#249)
+
+The native host vector runner compares the C core against the Python dispatcher
+for 76 synthetic sessions/171 request frames: complete image read, 64 header
+mutations with sticky followups, read boundaries, truncated requests and the
+transaction budget. Status, response length and every returned byte match.
+Valid responses also pass the host-side protocol model and reconstruct the
+1080-byte synthetic image with its changed marker. The
+[receipt](../../evidence/diagnostic-protocol-vectors/report.json) records exact
+source hashes and counts; all 267 host tests pass. This is selected-vector
+agreement, not exhaustive equivalence, ARM execution, native/target ABI equality
+or actual call-return evidence. No device transport is used.
+
+Next statically link the owned C core with an explicit agent entry/context and
+injected transport ABI, keeping callback addresses and image bounds outside the
+wire protocol. Establish bounded framing/cleanup requirements before any live
+binding. Security entry, safe placement, original restore and usable boot-log
+capture remain unresolved regardless of these host protocol results.

@@ -1,0 +1,18 @@
+{
+  "command": "python3 -m unittest discover -s tests -q",
+  "tests_passed": 267,
+  "vector_sessions": 76,
+  "request_frames_compared": 171,
+  "header_mutation_cases": 64,
+  "comparison": "exact native-host-C status/length/response bytes versus Python model",
+  "source_sha256": {
+    "diagnostic/protocol/dispatcher.c": "3ce7cbfb5e89813dea184b9846fa2ecf26efc9b070fba6197d11e1689e7be518",
+    "scripts/offline_diagnostic_dispatcher.py": "07b91bcd11a734b0c905a64a66e6e3f26b04a4984f454965d650b51e052386a8",
+    "tests/native/diagnostic_vector_runner.c": "c5c61c40ae10c4b3e9bc22fbf7033cdfb82b4165bba3896a3009c230391c8188",
+    "tests/test_diagnostic_protocol_vectors.py": "898dbcadbfc7981d533e32edf4830d4020d46c1a633317bf1e4c89d27c2802ff"
+  },
+  "arm_firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false,
+  "exhaustive_equivalence_proven": false
+}
