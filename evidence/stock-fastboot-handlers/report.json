@@ -1,0 +1,51 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "scope": "Static selected handler/dispatcher paths only",
+  "linked_address_base_assumption": "0x4bd00000; not runtime placement proof",
+  "handlers": [
+    {
+      "label": "continue",
+      "pointer_slot_payload_offset": 484216,
+      "handler_payload_offset": 261520
+    },
+    {
+      "label": "reboot",
+      "pointer_slot_payload_offset": 484208,
+      "handler_payload_offset": 262160
+    },
+    {
+      "label": "reboot-bootloader",
+      "pointer_slot_payload_offset": 484512,
+      "handler_payload_offset": 262184
+    }
+  ],
+  "reviewed_windows": [
+    {
+      "start": 259964,
+      "end": 260138,
+      "sha256": "552da1583cbb35ff29d4e6db2612293dbdde190283f33490e796bd662f2550e1"
+    },
+    {
+      "start": 133208,
+      "end": 133428,
+      "sha256": "38d99e107cc991c3d7ed07374015eaaef4e919147dbeea21d7f2c26eebdb1c63"
+    },
+    {
+      "start": 261520,
+      "end": 261604,
+      "sha256": "df36a2736931d30defcc97cf2ba722068109814d2e4ef984101d53781da2dae4"
+    },
+    {
+      "start": 262160,
+      "end": 262210,
+      "sha256": "71a1a72bf7c8a0ecfb3e36aeeb3dbefa8238e9a36990189f03dd8390d71be4b4"
+    }
+  ],
+  "pre_dispatch_filter_call_offset": 259968,
+  "pre_dispatch_filter_target_offset": 133208,
+  "indirect_handler_call_offset": 260086,
+  "registration_flag_semantics_resolved": false,
+  "runtime_permission_verified": false,
+  "ram_boot_verified": false,
+  "physical_test_ready": false
+}

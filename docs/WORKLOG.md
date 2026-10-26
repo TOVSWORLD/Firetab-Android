@@ -1436,3 +1436,13 @@ Commoncallee storeslabel/length/flag/handler inlist. No bootlabel amongthose13;
 notwholeimageabsenceproof or runtimepermission. No firmware/helper/deviceexec.
 238tests/repository/diffpass. Next dispatcherflag and continue/reboothandler
 trace; RAMboot remainsunverified, rawwindows ignoredprivateonly.
+
+## 2026-10-26 — Stock dispatcher/filter and return-handler identities (#106)
+
+Merged186 at passing6b8ff1ae0094a8ef4b0d2644b9e675e04b3546c4;185closed.
+Base75ac7c6. ExactcachedLK pointerresolution identifiescontinue/reboot/rebootBL
+handlers usingexplicitlinkedbaseassumption. Privatedisassembly shows predispatch
+prefixfilter beforelistmatch/indirectcall; dynamicpolicy and +0xcfieldsemantics
+unresolved. Continuebranchesdownstream, notdownloadedkernelproof; returneffects
+unqualified. Metadata/windowhashes publiconly.238tests/repository/diffpass.
+Next continue-to-imageproducer and filterproducer trace; no firmware/deviceexec.

@@ -81,3 +81,30 @@ firmware was executed. Next trace the registration flag's dispatcher check and
 resolve the continue/reboot handler identities; determine whether they merely
 resume stock boot/reset and whether any path bypasses image verification. Keep
 RAM-boot capability false until a complete accepted handoff path is established.
+
+## Dispatcher and selected return-handler identities
+
+Own exact-hash pointer audit resolves the registration table's continue, reboot
+and reboot-bootloader handler pointers using the linked-address-base assumption
+0x4bd00000. This is static pointer interpretation, not actual LK placement proof.
+[Metadata-only report](../../evidence/stock-fastboot-handlers/report.json) retains
+pointer-slot/handler offsets and hashes of privately disassembled windows.
+
+The dispatcher first calls a separate command-prefix filter, before linked-list
+matching and the indirect handler call. That filter uses static and dynamically
+provided prefix lists. Its effective installed policy remains unknown; finding
+an entry in the registration list cannot establish command permission. The
+registration field at offset0xc is retained but its complete semantics are still
+unresolved: this review does not label it an unlock bypass or security flag.
+
+The resolved continue handler changes internal state, performs additional
+calls whose effects remain unqualified and branches into another LK path; it is not evidence that the downloaded
+RAM buffer becomes the kernel. Both reboot handlers reach a shared downstream
+routine; reboot-bootloader invokes an additional setup call first. Their full
+persistent/MMIO effects and successful normal-return behavior remain unqualified.
+No command was sent, and no zero-side-effect recovery exit is established.
+
+Next trace continue's downstream branch into the existing boot-image producer
+analysis and the filter's dynamic-list producers. This will distinguish stock
+boot continuation from any actual downloaded-image handoff without inferring
+semantics solely from conventional command names. Raw disassembly stays private.
