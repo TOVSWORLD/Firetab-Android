@@ -1,0 +1,38 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "sources": [
+    {
+      "path": "src/stage1/generic/generic_stage1.c",
+      "sha256": "1593d6a391c9ecb36db4adc275630468fba572a6692ad0a89c9a23bc188dfb29",
+      "reviewed_lines": [
+        281,
+        400
+      ]
+    },
+    {
+      "path": "mtkclient/Library/mtk_main.py",
+      "sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129",
+      "git_blob_sha1": "ab3cda283ef63be72f7ae1669bb6ea836af0fc1d",
+      "reviewed_lines": [
+        247,
+        290
+      ]
+    }
+  ],
+  "findings": {
+    "read_command_implemented_in_active_source": false,
+    "commented_read_handler_ack_active": false,
+    "host_expects_read_ack": true,
+    "call_return_resumes_command_loop_in_source": true,
+    "call_return_completion_ack_sent": false,
+    "host_expects_stage2_startup_ack": true,
+    "unknown_command_consumes_declared_read_arguments": false,
+    "invalid_magic_exits_to_final_infinite_loop": true,
+    "stock_return_qualified": false
+  },
+  "limits": {
+    "packaged_binary_equivalence_verified": false,
+    "firmware_executed": false,
+    "physical_test_ready": false
+  }
+}
