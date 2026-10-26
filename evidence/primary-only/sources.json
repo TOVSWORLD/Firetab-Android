@@ -1,0 +1,47 @@
+{
+  "ack_revision": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "records": [
+    {
+      "path": "evidence/primary-only/ack/init/main.c",
+      "source_path": "init/main.c",
+      "sha256": "07efd5caf2ca721818d4442ac132772e2b51771f1fafada05914bcd64ab14c83",
+      "bytes": 43767
+    },
+    {
+      "path": "evidence/primary-only/ack/kernel/smp.c",
+      "source_path": "kernel/smp.c",
+      "sha256": "8cf4aa44daad8d8552fa790843f66e380aabb5d09e77ded146112bcfa6f6de1e",
+      "bytes": 32182
+    },
+    {
+      "path": "evidence/primary-only/ack/arch/arm64/kernel/setup.c",
+      "source_path": "arch/arm64/kernel/setup.c",
+      "sha256": "c791dbe41dd33cbe3412b79a277e3539f22d7a5b2135f8d95090ef062a76c27a",
+      "bytes": 11605
+    },
+    {
+      "path": "evidence/primary-only/ack/arch/arm64/kernel/smp.c",
+      "source_path": "arch/arm64/kernel/smp.c",
+      "sha256": "9bdc8e6b111eacc78cbf042dd7e5186b0ec68f248af7e187fddd33390f7b166c",
+      "bytes": 31789
+    },
+    {
+      "path": "evidence/primary-only/ack/arch/arm64/include/asm/cpu_ops.h",
+      "source_path": "arch/arm64/include/asm/cpu_ops.h",
+      "sha256": "ee72bba2940275554f6c7fcd466695f0f16b89c3bba3fbca3e395340e5af066a",
+      "bytes": 1970
+    },
+    {
+      "path": "evidence/primary-only/ack/arch/arm64/include/asm/smp_plat.h",
+      "source_path": "arch/arm64/include/asm/smp_plat.h",
+      "sha256": "9aa9d3f7151f1e1bb814b47ebe01c4403312cb44f047a84bff076e8e02ecf63b",
+      "bytes": 824
+    },
+    {
+      "path": "evidence/boot-contract/ack/drivers/firmware/psci/psci.c",
+      "source_path": "drivers/firmware/psci/psci.c",
+      "sha256": "3e097697618c4af475bc3442aea6cd58ea33cc9d92e1d0c876e95a31d6f9466e",
+      "bytes": 20251
+    }
+  ]
+}

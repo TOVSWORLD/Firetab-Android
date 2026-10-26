@@ -1,0 +1,9 @@
+/* Isolated source experiment: not a physical boot configuration. */
+/ {
+	psci {
+		status = "disabled";
+	};
+	chosen {
+		bootargs = "nr_cpus=1 maxcpus=0";
+	};
+};

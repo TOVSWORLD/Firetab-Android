@@ -1,0 +1,88 @@
+{
+  "scope": "DT compilation/semantic comparison only; not an assembled firmware or hardware test",
+  "base_dtb_sha256": "c1824152e3684da0d4d0748ad99c5724fd948c63f02bb4a051e286c6150297ff",
+  "artifact": {
+    "format_version": 17,
+    "bytes": 26324,
+    "sha256": "ef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43"
+  },
+  "facts": {
+    "nodes_compared": 186,
+    "original_property_count": 880,
+    "original_properties_preserved": true,
+    "added_properties": [
+      "/psci/status=disabled",
+      "/chosen/bootargs=nr_cpus=1 maxcpus=0"
+    ],
+    "secondary_cpu_nodes_deleted": false,
+    "runtime_command_line_verified": false,
+    "firmware_calls_globally_proven_absent": false,
+    "boot_verified": false
+  },
+  "source_audit": {
+    "anchors": [
+      {
+        "source_path": "drivers/firmware/psci/psci.c",
+        "line": 819,
+        "anchor": "if (!np || !of_device_is_available(np))"
+      },
+      {
+        "source_path": "arch/arm64/kernel/setup.c",
+        "line": 300,
+        "anchor": "parse_early_param();"
+      },
+      {
+        "source_path": "arch/arm64/kernel/setup.c",
+        "line": 354,
+        "anchor": "psci_dt_init();"
+      },
+      {
+        "source_path": "arch/arm64/kernel/setup.c",
+        "line": 360,
+        "anchor": "init_bootcpu_ops();"
+      },
+      {
+        "source_path": "arch/arm64/include/asm/cpu_ops.h",
+        "line": 54,
+        "anchor": "init_cpu_ops(0);"
+      },
+      {
+        "source_path": "arch/arm64/kernel/smp.c",
+        "line": 770,
+        "anchor": "for (i = 1; i < nr_cpu_ids; i++)"
+      },
+      {
+        "source_path": "arch/arm64/kernel/smp.c",
+        "line": 796,
+        "anchor": "if (max_cpus == 0)"
+      },
+      {
+        "source_path": "kernel/smp.c",
+        "line": 966,
+        "anchor": "early_param(\"nr_cpus\", nrcpus);"
+      },
+      {
+        "source_path": "kernel/smp.c",
+        "line": 1001,
+        "anchor": "bringup_nonboot_cpus(setup_max_cpus);"
+      }
+    ],
+    "diagnostic_config_sha256": "f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed",
+    "maxcpus_1_suppresses_psci_dt_init": false,
+    "nr_cpus_1_limits_secondary_setup_loop": true,
+    "maxcpus_0_skips_secondary_prepare_loop": true,
+    "disabled_psci_node_guard": "See pinned drivers/firmware/psci/psci.c psci_dt_init availability check",
+    "assumptions": [
+      "Effective command line retained by loader",
+      "Boot CPU matches donor MPIDR0",
+      "ACPI remains disabled by diagnostic policy"
+    ],
+    "not_proven": [
+      "Other firmware services/RSI/driver calls",
+      "Loader preservation of DT/bootargs",
+      "Primary entry, clocks, interrupts, RAM, logging and recovery"
+    ]
+  },
+  "source_sha256": "4f5961981a8af8008ac6aaa3f22db4b3ad50450fb0bb5bfe8bfd44160af3aac0",
+  "script_sha256": "31abf9aad34aeafb447ed658b68c5cf08777dfce106f7bb079f24738d6d9f479"
+}

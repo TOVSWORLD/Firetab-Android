@@ -1,0 +1,14 @@
+{
+  "scope": "Opt-in compiled DT only; no physical placement/firmware/boot qualification",
+  "base_experiment": "rdma-node-name",
+  "base_dtb_sha256": "c1824152e3684da0d4d0748ad99c5724fd948c63f02bb4a051e286c6150297ff",
+  "base_preprocessed_sha256": "4ecdc9459a0c191df6395c05a1e082b81355c3ecc4810eaa96013a0a9a5f41da",
+  "append_sha256": "f07116fd621c255df27bea9b7e8b04ff516aeb5ed275d21bce67cc849da47919",
+  "required_command_line": "nr_cpus=1 maxcpus=0",
+  "runtime_command_line_verified": false,
+  "expected_artifact": {
+    "format_version": 17,
+    "bytes": 26324,
+    "sha256": "ef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43"
+  }
+}
