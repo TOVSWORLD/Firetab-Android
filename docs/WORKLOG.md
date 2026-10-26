@@ -983,3 +983,14 @@ not runtime-selected/qualified. Recorded stage lengths/signature-tail sizes and
 range hashes, not target addresses. Four new tests including ignored-range/
 pre-request budget failures:158 tests pass. Next bounded stage-identity probe
 ~320KiB, static/hash only; actual entry/restore/logging remain open.
+
+## 2026-10-26 — Original V5 stage identities (#106)
+
+Merged PR114 exact1c344dc397dc7fe597066d1435e94bc3294f5b66 after required checks
+passed; base2f3983c. Read320224B exact stage ranges +22383B extension source.
+Original stage/code/signature-tail SHA256s retained, binary/helper bytes ignored.
+No signature validation, execution, emulation or patches. AST review confirms
+conditional extension/hash transformation before upload, so original digests
+do not establish future uploaded identity. Added pinned bounded-cache repro
+verifier and two synthetic tests:160 tests pass. Next cached UART source/driver
+contract; entry/agent effects/restore and physical logging remain unqualified.
