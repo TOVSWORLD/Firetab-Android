@@ -1336,3 +1336,13 @@ allowlist. Explicitly distinguishes hostfailureexit from device recovery; no
 entry/return qualified. Next fakebackend-tested actual adapter operationsequence,
 not more synthetic Boolean layers. No new tests for prose; existing225pass and
 repository/diff guards. No helper/native/device execution or downloads.
+
+## 2026-10-26 — Owned observation adapter operation sequence (#106)
+
+Merged166 at passing8ecbf6948cf53171b77aebf6e40a2981244c90cc;165closed/Done.
+Base35d3e18. Implemented exact fakebackend validate/claim/threequery/release/
+dispose sequence, completewrites/echo-beforepayload/exactfields, cleanupfailure
+rejectsresult. Threefault/trace tests/full228pass. No nativebackend or protocol
+constants/liveCLI; mode/handshake/worker supervision not integrated. No tablet/
+helper/nativeexec/download. Next realstalledsyntheticprocess supervision around
+this sequence; cleanup/ownership remain explicit backend trust boundaries.
