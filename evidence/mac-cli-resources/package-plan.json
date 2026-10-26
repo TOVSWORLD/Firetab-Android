@@ -1,0 +1,75 @@
+{
+  "scope": "Candidate package/resource metadata, not an installation lock",
+  "packages": [
+    {
+      "package": "pycryptodome",
+      "version": "3.24.1",
+      "filename": "pycryptodome-3.24.1-cp37-abi3-macosx_10_9_universal2.whl",
+      "bytes": 2474271,
+      "url": "https://files.pythonhosted.org/packages/9f/08/014128274efca5bc18ae7e4e4f5c593d1fd6d43b77bf7492b233589cef79/pycryptodome-3.24.1-cp37-abi3-macosx_10_9_universal2.whl",
+      "sha256": "558b9233ff2afb42f92115ae9b4414d08c0e567790619e878cf72947d7c38a11",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+      "requires_dist": null,
+      "wheel_downloaded": false,
+      "runtime_compatibility_verified": false
+    },
+    {
+      "package": "pycryptodomex",
+      "version": "3.24.1",
+      "filename": "pycryptodomex-3.24.1-cp37-abi3-macosx_10_9_universal2.whl",
+      "bytes": 2477923,
+      "url": "https://files.pythonhosted.org/packages/bf/ae/48679004ab908818326a62c35586b51ccd6ba0e3a03d0ae637cd13e8df99/pycryptodomex-3.24.1-cp37-abi3-macosx_10_9_universal2.whl",
+      "sha256": "9bb353c764c144a9fc03302ef3763ad0c3e75bc7ca41f445cc98455f36da6c59",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+      "requires_dist": null,
+      "wheel_downloaded": false,
+      "runtime_compatibility_verified": false
+    },
+    {
+      "package": "colorama",
+      "version": "0.4.6",
+      "filename": "colorama-0.4.6-py2.py3-none-any.whl",
+      "bytes": 25335,
+      "url": "https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl",
+      "sha256": "4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6",
+      "requires_python": "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7",
+      "requires_dist": null,
+      "wheel_downloaded": false,
+      "runtime_compatibility_verified": false
+    },
+    {
+      "package": "pyserial",
+      "version": "3.5",
+      "filename": "pyserial-3.5-py2.py3-none-any.whl",
+      "bytes": 90585,
+      "url": "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl",
+      "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0",
+      "requires_python": null,
+      "requires_dist": [
+        "hidapi; extra == 'cp2110'"
+      ],
+      "wheel_downloaded": false,
+      "runtime_compatibility_verified": false
+    },
+    {
+      "package": "pyusb",
+      "version": "1.3.1",
+      "filename": "pyusb-1.3.1-py3-none-any.whl",
+      "bytes": 58465,
+      "url": "https://files.pythonhosted.org/packages/28/b8/27e6312e86408a44fe16bd28ee12dd98608b39f7e7e57884a24e8f29b573/pyusb-1.3.1-py3-none-any.whl",
+      "sha256": "bf9b754557af4717fe80c2b07cc2b923a9151f5c08d17bdb5345dac09d6a0430",
+      "requires_python": ">=3.9.0",
+      "requires_dist": null,
+      "wheel_downloaded": false,
+      "runtime_compatibility_verified": false
+    }
+  ],
+  "candidate_wheel_download_bytes": 5126579,
+  "metadata_body_bytes": 115387,
+  "native_usb_backend_included": false,
+  "native_backend_download_bytes_known": false,
+  "expanded_install_disk_bytes_known": false,
+  "installation_performed": false,
+  "mac_cli_verified": false,
+  "physical_test_ready": false
+}

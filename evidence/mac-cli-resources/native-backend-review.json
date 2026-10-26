@@ -1,0 +1,18 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "source_path": "mtkclient/Library/Connection/usblib.py",
+  "source_sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986",
+  "forced_library_name": "libusb-1.0.so",
+  "get_backend_call_lines": [
+    135
+  ],
+  "darwin_in_same_platform_branch": true,
+  "standard_homebrew_dylib_locations_present": [
+    false,
+    false
+  ],
+  "whole_host_library_inventory_performed": false,
+  "native_library_loaded": false,
+  "usb_enumeration_performed": false,
+  "actual_library_resolution_failure_observed": false
+}

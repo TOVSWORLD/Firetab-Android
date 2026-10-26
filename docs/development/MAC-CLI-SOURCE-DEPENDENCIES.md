@@ -52,3 +52,45 @@ library is required on this Mac and what an offline-only validation could test
 without importing/instantiating the firmware helper or enumerating the tablet.
 Entry/bootstrap, selected-agent effects, region identity, restoration and logs
 remain separately unqualified. Do not run the CLI as a dependency test.
+
+## Candidate resource plan and native discovery gap
+
+Version-specific official PyPI metadata now pins five candidate wheels totaling
+5,126,579 bytes (~4.89MiB): pycryptodome3.24.1, pycryptodomex3.24.1,
+colorama0.4.6, pyserial3.5 and pyusb1.3.1. Each filename, byte count, download URL
+and advertised SHA256 is retained in evidence/mac-cli-resources/package-plan.json.
+No wheel was downloaded, installed or imported. Metadata consumed115387 bytes;
+an initial full-history response exceeded a1MiB cap and was stopped, then
+replaced with capped version-specific queries. No full-history metadata retained.
+
+[PyCryptodome's current documentation](https://pypi.org/project/pycryptodome/)
+states that4.x uses Crypto only and no longer releases pycryptodomex. This
+candidate deliberately keeps the matched3.24.1 pair for the helper's two existing
+namespaces, rather than assuming a major-version API migration is covered.
+[PyCryptodomex3.24.1](https://pypi.org/project/pycryptodomex/3.24.1/) supplies
+Cryptodome; this is a compatibility investigation pin, not a recommendation to
+ignore future maintenance/security changes. Dependency adoption needs a review.
+
+Local pip26.2.2's wheel-tag calculation accepts all five candidate tags for this
+GIL-enabled Darwin arm64 Python3.15.1. That establishes tag compatibility only,
+not package runtime/API compatibility. No resolver install or package execution
+was used. The base metadata lists only pyserial's optional cp2110/hidapi extra;
+that extra is not selected by this plan. Expanded installation space and native
+USB backend download requirements are still unmeasured; this is not a complete
+installation budget or a ready lockfile.
+
+[PyUSB](https://pypi.org/project/pyusb/1.3.1/) separately requires a native USB
+backend. The pinned helper's Connection/usblib.py:135 groups Darwin with Linux
+and supplies a fixed Linux-style libusb-1.0.so name to libusb1's finder. A normal
+Darwin dylib path therefore is not automatically established by this source
+branch. An alias or other installation might resolve it; no runtime failure is
+claimed without testing. The two standard Homebrew libusb dylib paths checked
+here were absent. That narrow file check is not a whole-host library inventory.
+No native library was loaded and no USB backend or device was instantiated.
+
+Next implement a pure host-side library-path/architecture preflight that can be
+tested on synthetic Mach-O headers without loading native code or enumerating
+USB. It should establish an explicit usable candidate path before any future
+helper adapter or install. Do not change global loader/security settings or
+install MacFUSE as a workaround. The helper itself remains unexecuted and
+unqualified for acquisition, entry, restoration and log capture.
