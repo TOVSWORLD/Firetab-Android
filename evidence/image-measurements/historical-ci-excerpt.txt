@@ -1,0 +1,4 @@
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T12:41:25.3089305Z 08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909  /home/runner/work/Firetab-Android/Firetab-Android/work/ack-baseline/output/arch/arm64/boot/Image
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T12:41:25.3102932Z  28576256 /home/runner/work/Firetab-Android/Firetab-Android/work/ack-baseline/output/arch/arm64/boot/Image
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T12:41:24.9971697Z b15d40b14345c5588c751481010f3d3bb1ef9e6cef1b99d5b656465f0e55faaf  /home/runner/work/Firetab-Android/Firetab-Android/work/ack-baseline/output/arch/arm64/boot/Image.gz
+compile	Preflight and compile generic ARM64 baseline	2026-10-25T12:41:24.9980835Z 9187924 /home/runner/work/Firetab-Android/Firetab-Android/work/ack-baseline/output/arch/arm64/boot/Image.gz

@@ -757,3 +757,27 @@ overall still fails, as expected.113 offline tests pass on this branch (PR89
 measurement tests remain on that separate pending branch). No hardware DT/node
 status change, device access or hardware claims. Parent27 remains open; next
 independent binding candidate is efuse fallback coverage after source inspection.
+## 2026-10-25 — Actual modern Image length evidence (#88)
+
+Recovered original generic run40193403656 size/hash lines from1.47MB CI log:
+Image28576256bytes, gzip9187924bytes, rawSHA08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909.
+Raw file fits selected28MiB output capacity with783872bytes margin; declared
+runtime image_size is separately28MiB. Historical binaries remain absent, so no
+new historical gzip round trip claimed. Added bounded single-member measurement
+and exact Image comparison to existing diagnostic build/VM reports;115 offline
+tests pass. Integration CI uses existing reported kernel resource gate. No tablet
+IO, firmware assembly or physical destination. Recovery/entry alignment and
+secure-monitor qualification still block a user test package.
+
+## 2026-10-25 — Measurement integration validated; ordered PR merges
+
+PR89 headb1f3c1fc2652f249db744f8997021ea7d7649fdb passed all required checks and
+actual compile/QEMU run40250576526 (24m2s CI job). New rawSHA16c9e5e6947231070888dcba5467b79df20ef6eee060edd86b36ec6fd336bcb3,
+28576256bytes; gzip9187928bytes, round trip verified; capacity margin783872bytes.
+QEMU markers/read-only proc/sysfs reads and5s idle passed in5.94s. Retained exact
+report plus full1.47MB log hash in evidence/image-measurements/validated-runtime-result.json.
+Build hash differs from historical output; no bit-identical rebuild claim.
+PR89 merged; issue88 closed. Merged development into keypad PR91, explicitly
+preserving both appended WORKLOG sections, then added this validation evidence.
+Tablet boot/hardware/app stages remain untested. Next merge91 after refreshed
+required checks; independent efuse scope92 remains queued.
