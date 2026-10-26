@@ -1274,3 +1274,14 @@ Own six-byte zero-status offline decoder preserves missing/error as exception,
 never bootstrap permission. Two synthetic tests/full215pass; metadata-only
 source receipt, no helper/device execution/download. Next bounded handshake
 source effects and observation-only adapter feasibility; physical gates open.
+
+## 2026-10-26 — USB handshake/connect effect boundary (#106)
+
+Merged154 at passing0a9a89c6bff43873a8d30b8e44dc88d42150fe4a;153closed.
+Base859273e. Static exact-source review: active line-control/sync, conditional
+write without explicit timeout, no default total deadline, connect configuration/
+driver/interface effects; close can request reset. Metadata-only source receipt
+and acceptance contract retained. No existing drop-in CLI qualified as minimal
+observation. No helper/native/device execution or download. Existing215tests and
+repository/diff guards pass; no tests merely repeating prose. Next owned bounded
+synthetic observation orchestration, live binding still separately gated.

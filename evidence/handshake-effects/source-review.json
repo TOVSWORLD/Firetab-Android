@@ -1,0 +1,19 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "mtkclient/Library/Port.py",
+      "sha256": "f1febf33a0e6a9eb57392804166ea975384ce0ad3925ca2e9561462f786a3720"
+    },
+    {
+      "path": "mtkclient/Library/Connection/usblib.py",
+      "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986"
+    }
+  ],
+  "reviewed_scope": "USB connect, handshake and close source effects only",
+  "default_handshake_has_total_deadline": false,
+  "all_handshake_endpoint_writes_have_explicit_timeout": false,
+  "usb_configuration_and_interface_effects_possible": true,
+  "device_access_performed": false,
+  "physical_test_ready": false
+}
