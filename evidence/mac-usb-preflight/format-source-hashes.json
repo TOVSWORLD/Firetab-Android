@@ -1,0 +1,20 @@
+{
+  "scope": "Local Apple SDK format constants/structures read only; no header code redistributed",
+  "files": [
+    {
+      "sdk_header": "mach-o/loader.h",
+      "bytes": 74809,
+      "sha256": "5862aeb7fbf183453080bc887c0d502fe25a86ff5bd81291bbcc408bd7fe6e74"
+    },
+    {
+      "sdk_header": "mach-o/fat.h",
+      "bytes": 3323,
+      "sha256": "19925cdb5fed9b5b7981b05420856f65b99abb54bca34ea95e0e581da8cc580f"
+    },
+    {
+      "sdk_header": "mach/machine.h",
+      "bytes": 18584,
+      "sha256": "00d57dcf5a8332ba5a759b447f8305b3ef8bf15a9025c142af04e13c2a5b14f5"
+    }
+  ]
+}
