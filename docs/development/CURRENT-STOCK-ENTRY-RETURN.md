@@ -176,3 +176,24 @@ No patch, image repack or firmware execution was attempted. Next trace the lengt
 global's assignments and the later actual integrity/security checks; compare
 against exact diagnostic image sizes only when those bytes are available. Safe
 placement, stock acceptance and recoverable first load remain unqualified.
+
+## Resolved: 16MiB check covers a combined page-rounded extent
+
+The header producer's assignment and the early check's input resolve to the same
+linked global. Private arithmetic review shows, for normal non-overflow inputs,
+`page_size * (ceil(kernel_size/page_size) + ceil(ramdisk_size/page_size) + 2)`.
+Thus the previous diagnostic's wording is misleading if read as a kernel-only
+budget: ramdisk and two extra pages also count on this selected path.
+
+Own `audit_stock_checked_length.py` models only that reviewed arithmetic,
+rejecting unsupported/overflow cases. It verifies exact LK and cached stock boot
+hashes. The [stock result](../../evidence/stock-checked-length/report.json) uses
+kernel7191666B, ramdisk1492335B and2048B pages, producing8689664B, below16MiB.
+Two boundary tests distinguish combined extent from kernel-only size (240 tests).
+No diagnostic image acceptance is inferred; other header fields, full placement,
+cryptographic checks and any alternate producer paths remain outside this model.
+Do not use overflow behavior to evade the limit or alter firmware checks.
+
+Next investigate later integrity/security callees and the provider's backend
+assignment. A diagnostic package using this stock path must satisfy the combined
+extent constraint as well as all other unresolved loading/recovery requirements.
