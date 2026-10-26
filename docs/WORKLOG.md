@@ -1039,3 +1039,14 @@ not validate memory handoff. Device FORCE profile remains uncompiled/unqualified
 Added key-only bounded audit/two tests:167 tests pass; no downloads/tablet IO.
 Next actual generic-only FORCE experiment using PL011 and contradictory incoming
 arguments, with existing resource gate (~0.3GiB/15GiB/7GiB/60min); no job started.
+
+## 2026-10-26 — Generic forced argument runtime experiment implemented (#119)
+
+Merged PR120 exact7746edbb800d048b983549e39c4637f4ad998f44 after required checks
+passed; based39fc2e. Implemented explicit generic-force profile in gatedbuilder
+and PL011-only prelaunch checker; PR VM test injects contrarynr_cpus4/maxcpus3
+and requires actual sanitizedvalid1/0 verdicts. PSCI/primary contract stays
+separate. Manualdispatchdefaultsnone; no deviceprofileautoapply. Two new tests
+bring suite169passing; shellsyntax/repository/diff guards pass. Actual compile/
+VM result pending new PR;119 remains open. Existingreportedresources unchanged.
+Next retain exact build/runtime hashes and result; physical gates stay open.

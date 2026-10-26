@@ -4,6 +4,9 @@ set -euo pipefail
 readonly revision=d9318bdb4c34e8b2d997b4f67ced56b120b22b87
 readonly mode="${1:-generic}"
 [[ "$mode" = generic || "$mode" = clocks || "$mode" = clocks-pinctrl || "$mode" = providers || "$mode" = diagnostic ]] || exit 2
+readonly argument_profile="${ARGUMENT_PROFILE:-none}"
+[[ "$argument_profile" = none || "$argument_profile" = generic-force ]] || exit 2
+[[ "$argument_profile" = none || "$mode" = diagnostic ]] || exit 2
 readonly root="$PWD/work/ack-baseline"
 [ "$(uname -s)" = Linux ] || { echo 'A Linux build host is required'; exit 2; }
 for tool in git make clang-18 ld.lld-18 llvm-ar-18 bison flex bc openssl pahole; do
@@ -56,8 +59,14 @@ if [ "$mode" != generic ]; then
   fi
   if [ "$mode" = diagnostic ]; then
     python3 scripts/diagnostic_config.py apply "$output/.config" --source "$root/source"
+    if [ "$argument_profile" = generic-force ]; then
+      python3 scripts/check_diagnostic_commandline.py "$output/.config" --apply --source "$root/source" --profile generic-force
+    fi
   fi
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 olddefconfig
+  if [ "$argument_profile" = generic-force ]; then
+    python3 scripts/check_diagnostic_commandline.py "$output/.config" --profile generic-force
+  fi
   if [ "$mode" = diagnostic ]; then
     if ! python3 scripts/diagnostic_config.py check "$output/.config"; then
       cat "$output/.config" # Retain rejected resolved config in logs.
