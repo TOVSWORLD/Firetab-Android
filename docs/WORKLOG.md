@@ -1598,3 +1598,16 @@ clang/lldonly,5min/1GiB/16KiBsourcecap, metadataonlylogs/noartifactupload/noexec
 Actualsourceinputs11628B. Repo/diffguards pass; actualCIlink outcome pending,
 existing240testbaseline unchanged. Next inspect exacthead joblogs/fixactualbuild
 error orretainlinkedELFmetadata, neverequatewithboot/handoff.
+
+## 2026-10-26 — Linux first-stage link succeeded; retain exact CI receipt (#106)
+
+PR #220 merged after five passing checks at head
+6d33a5543136c807798f0f8845d3ea7a7a6ddb09, merge
+5256cb0c1a15a5271e0fd2a801d6a3e1cd9d2e5b. Run 40386637095 / job
+121796533606 actually tested synthetic merge 15abe7c2eeb22554802ce3105321c883a75d9e1c.
+clang/LLD 18.1.3 compiled and linked 11,628 source bytes with three warnings;
+68,672-byte ELF SHA256 1508a0dd3979548cca178ee9f15c7492fd9a4a080ee8118ca884dfef8e7bae48.
+Retained sanitized metadata, not raw logs or ELF. Entry zero is not a physical
+load address. No installs, firmware execution or device access. Next: bounded
+ELF layout/entry metadata, then transport protocol and restore/logging gates;
+no boot/recovery/hardware issue closed from a successful link.
