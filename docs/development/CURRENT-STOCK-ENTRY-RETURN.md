@@ -243,3 +243,24 @@ for example, bits0x10/0x20 alone do not satisfy it. Full result semantics still
 need review before labelling success modes or trusted key slots. Next trace the
 retrieval callback registration and validator's actual key/signature calls,
 without exporting key material, credentials or raw firmware windows.
+
+## Unlock record undergoes limited-unlock signature validation
+
+The [exact validator-boundary receipt](../../evidence/unlock-validator-boundary/report.json)
+resolves the diagnostic function label to Amazon's limited-unlock verifier. The
+selected path requires a256-byte signature extent, calls a transformation whose
+result must be256 bytes, and identifies transformation failure as RSA decryption
+failure. A subsequent verification call must return exactly1 for its success
+branch. These are checked call sites plus private instruction/diagnostic review,
+not execution of the cryptography or a supplied credential.
+
+This is stronger evidence that the alternate selector does not simply trust an
+arbitrary nonempty unlock record. Full cryptographic algorithm parameters, key
+origin, signed message, identifier binding and trusted-key selection remain
+unresolved. No key bytes, unlock token, household/device identifier or raw firmware
+window is published, and no credential generation or loader patch is attempted.
+Do not describe this path as an available unlock service or authorized entry route.
+
+Next resolve the record-retrieval callback's registration/backing-store path.
+Keep bootloader entry, actual installed acceptance and recoverable return open;
+learning a verifier's structure does not establish access to a valid token.
