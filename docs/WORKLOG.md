@@ -1540,3 +1540,13 @@ unobserved. Containerstaticmagictag notauthentication. Fulloriginalbothbootregio
 required beyonduserGPT/genericimages; no newrecordread.240tests/repository/diff
 pass. Next loadingalternatives affectedareas/RAMonly route decision, no more
 credentialanalysisneeded forpreservation; physicalentry/return/loggingopen.
+
+## 2026-10-26 — Loading route ranking and next RAM-stage scope (#106)
+
+208GraphQLmergefailed504/502; confirmedopen, RESTexacthead817c021575967e324450b07e93601fe0cf1bfa93
+merge succeeded8f4d5ba70ab9f458db3fb1a1a6754e49a0b86d87;207closed. Base8f4d5ba.
+Selectedinvestigation: observationfirst/separatelyreviewedRAMbootstrap, notworking
+route. Stockdownload+continue notprovenRAMboot; persistentarchivedchain deferred
+forrestoregaps. Consolidatedstorage/logrequirements; next pinnedstage/plstage
+actualeffect/exit trace, no morehostpolicywrappers. Repo/diffguards pass, existing
+240testbaseline unchanged. No tablet/helper/firmwareexec/download.
