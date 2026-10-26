@@ -1,0 +1,104 @@
+{
+  "linux_link_receipt": {
+    "source_revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+    "source_bytes": 11628,
+    "compiled": true,
+    "linked": true,
+    "firmware_executed": false,
+    "physical_test_ready": false,
+    "compiler_version": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+    "linker_version": "Ubuntu LLD 18.1.3 (compatible with GNU linkers)",
+    "warning_count": 3,
+    "elf_layout": {
+      "entry": 0,
+      "entry_executable_file_coverage": true,
+      "load_segments": [
+        {
+          "offset": 65536,
+          "virtual_address": 0,
+          "physical_address_field": 0,
+          "file_bytes": 1456,
+          "memory_bytes": 1456,
+          "flags": 5,
+          "alignment": 65536
+        },
+        {
+          "offset": 66992,
+          "virtual_address": 1456,
+          "physical_address_field": 1456,
+          "file_bytes": 110,
+          "memory_bytes": 110,
+          "flags": 4,
+          "alignment": 65536
+        },
+        {
+          "offset": 67104,
+          "virtual_address": 1568,
+          "physical_address_field": 1568,
+          "file_bytes": 8,
+          "memory_bytes": 32,
+          "flags": 6,
+          "alignment": 65536
+        }
+      ],
+      "runtime_placement_verified": false,
+      "flat_transport_payload_verified": false
+    },
+    "host_image": {
+      "relocation_metadata": {
+        "section_count": 10,
+        "nonempty_relocation_sections": 0,
+        "nonempty_dynamic_sections": 0,
+        "runtime_position_independence_verified": false
+      },
+      "image_bytes": 1600,
+      "image_sha256": "fba4681457cdcf32a0a1541ff7a3dc429b35341ef97d1c1e05eddde40985e79e",
+      "entry_offset": 0,
+      "segment_zero_fill_bytes": 24,
+      "gap_zero_fill_bytes": 2,
+      "source_elf_sha256": "1508a0dd3979548cca178ee9f15c7492fd9a4a080ee8118ca884dfef8e7bae48",
+      "purpose": "host-only load-layout construction",
+      "firmware_executed": false,
+      "runtime_relocation_verified": false,
+      "physical_placement_verified": false,
+      "transport_binding_verified": false,
+      "physical_test_ready": false
+    },
+    "elf_bytes": 68672,
+    "elf_sha256": "1508a0dd3979548cca178ee9f15c7492fd9a4a080ee8118ca884dfef8e7bae48",
+    "entry": 0,
+    "source_sha256": {
+      "src/stage1/generic/generic_stage1.c": "1593d6a391c9ecb36db4adc275630468fba572a6692ad0a89c9a23bc188dfb29",
+      "src/stage1/common/start.S": "54ee05a78cfa7b05a45de9d84648105035f43eab8ba06d6261ad3174e79b9d1d",
+      "src/stage1/common/generic.ld": "945d9b6dd2b7f1e0506d3f225bc3607f961f4b1441a0e6f5a09498e09df40d7c"
+    },
+    "shipped_binary_equivalence_verified": false,
+    "linux_handoff_verified": false,
+    "ci": {
+      "job_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40399916804/job/121842687478",
+      "tested_merge": "74aee604fcc8ae06bcaf8f0f4f6247fa495d1b12",
+      "pr_head": "7af6da7fd59430eb1cb01fe270a7bbae1f6abc7a",
+      "development_merge": "6629548e47b8a74dc4c9800ea46a7cbb9eb38e36"
+    }
+  },
+  "local_object_review": {
+    "object_sha256": "0b4aa4469cae1a731febd8098a075e75b1cce74460903b7fb8c3294f005a4ca3",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "command": "xcrun llvm-objdump -dr --triple=thumbv7-none-eabi out/ram-stage-source/generic_stage1-clang.o",
+    "relocation_type_counts": {
+      "R_ARM_REL32": 31,
+      "R_ARM_THM_CALL": 10
+    },
+    "main_initial_stack_decrement_bytes": 8,
+    "stack_store_observed_before_stack_initialization": true,
+    "maximum_stack_usage_proven": false,
+    "same_as_linux_object_verified": false,
+    "raw_disassembly_published": false
+  },
+  "qualification": {
+    "relative_reference_examples_are_whole_image_pic_proof": false,
+    "inherited_stack_bounds_verified": false,
+    "firmware_executed": false,
+    "physical_test_ready": false
+  }
+}
