@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from check_diagnostic_commandline import check, EXPECTED, REQUIRED
+from check_diagnostic_commandline import check, EXPECTED, REQUIRED, GENERIC_EXPECTED
 
 
 class DiagnosticCommandLineTests(unittest.TestCase):
@@ -22,3 +22,11 @@ class DiagnosticCommandLineTests(unittest.TestCase):
                      self.config().replace('SERIAL_8250_MT6577=y','SERIAL_8250_MT6577=m'),
                      self.config()+'\nCONFIG_CMDLINE_FORCE=y']:
             with self.assertRaises(ValueError):check(text)
+
+    def test_generic_profile_requires_pl011_and_rejects_device_mmio_policy(self):
+        config=self.config().replace(EXPECTED,GENERIC_EXPECTED)
+        with self.assertRaises(ValueError):check(config,'generic-force')
+        config+='\nCONFIG_SERIAL_AMBA_PL011_CONSOLE=y'
+        self.assertEqual(check(config,'generic-force')['profile'],'generic-force')
+        with self.assertRaises(ValueError):check(config,'device')
+        with self.assertRaises(ValueError):check(self.config(),'generic-force')

@@ -48,3 +48,28 @@ the prior generic QEMU result does not cover this profile. Then prove effective
 arguments through the existing sanitized init reporter and live kernel console.
 No new compile/download/paid job was started for this PR. Tests use config text
 only and cannot establish the kernel-source semantics or runtime execution.
+
+## Generic mechanism experiment (#119)
+
+The build helper now accepts ARGUMENT_PROFILE=generic-force only in diagnostic
+mode. This separate profile uses QEMU PL011 (ttyAMA0), not the device UART
+address. It retains generic initramfs/earlycon/panic parameters plus unique
+nr_cpus=1/maxcpus=0. Kernel config tooling applies it before olddefconfig and a
+resolved-config check runs before compilation. Manual workflow dispatch defaults
+to argument_profile=none; compile-triggering PR smoke tests select generic-force
+so the changed mechanism receives actual runtime coverage. The device profile
+is never applied automatically.
+
+The VM receives deliberately conflicting nr_cpus=4/maxcpus=3 in its incoming
+arguments. --force-argument-test verifies the resolved generic profile before
+launch and requires the actual sanitized init verdicts to report both intended
+limits valid. One online CPU alone cannot pass. PSCI status and primary-only
+contract remain separately reported; generic virt need not disable PSCI and
+therefore this proof is not a primary-only firmware-call qualification.
+
+This is a new compile/runtime experiment, not covered by prior QEMU evidence.
+Expected existing resource gate:~0.3GiB source fetch (postfetch hard cap3GiB),
+15GiB free disk,7GiB host RAM,60-minute CI timeout,512MiB VM,120-second VM limit.
+Prior compile took~24minutes. No paid host or tablet operation is involved.
+Exact source/config/Image/initramfs/console hashes are emitted in CI/report.
+Keep119 open until the actual compiled run passes and its evidence is retained.

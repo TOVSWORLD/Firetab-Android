@@ -1051,3 +1051,13 @@ guarded and example/deferred contexts separated, not a verified minimal install.
 No dependencies/security changes/device IO. Two new AST tests:169 tests on this
 branch (does not yet include pendingPR121's two added tests). Next metadata-only
 Mac dependency/backend resource plan; await genericbuild actual result separately.
+## 2026-10-26 — Generic forced argument runtime experiment implemented (#119)
+
+Merged PR120 exact7746edbb800d048b983549e39c4637f4ad998f44 after required checks
+passed; based39fc2e. Implemented explicit generic-force profile in gatedbuilder
+and PL011-only prelaunch checker; PR VM test injects contrarynr_cpus4/maxcpus3
+and requires actual sanitizedvalid1/0 verdicts. PSCI/primary contract stays
+separate. Manualdispatchdefaultsnone; no deviceprofileautoapply. Two new tests
+bring suite169passing; shellsyntax/repository/diff guards pass. Actual compile/
+VM result pending new PR;119 remains open. Existingreportedresources unchanged.
+Next retain exact build/runtime hashes and result; physical gates stay open.
