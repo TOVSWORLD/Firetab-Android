@@ -287,3 +287,26 @@ Next trace the container's loader at0x3c370 and its initialization callers to
 establish backing-store provenance. Keep this separate from device security-state
 collection: no proposed observation command needs to retrieve unlock credentials.
 No tablet access, firmware execution or persistent change occurred.
+
+## Container loader reaches a selected block-read path
+
+The [exact container-read receipt](../../evidence/record-container-read/report.json)
+connects initialization to0x3c370, then0x3aefc. Its reviewed arguments specify
+controller0, start block0, count30 and selector2. The wrapper invokes a selector
+routine then a block-reading routine. The selector adjusts the low three bits
+of a configuration byte through register index179 and reads back state. This
+supports an eMMC hardware-region interpretation, but actual region identity and
+contents have not been observed. The full controller/card setup remains separate.
+
+A material limitation is that the wrapper does not branch on the selector's
+return before issuing the read. Its final success/failure is based on the block
+read's status. Therefore even this stock source trace cannot be used as proof
+that an acquired container came from the intended region after selection fails.
+Our independent escrow collector's acknowledged-region requirement still applies;
+this is not a proposed method for collecting backups or credentials.
+
+The loader normalizes wrapper failure, and initialization can fail before record
+registration. No stored record, security key or per-device blob was extracted.
+Next resolve controller/region mapping and the container validation identity from
+primary source definitions, then assess what this adds to restore prerequisites.
+Do not extend this into a device read or a write/selection helper execution.
