@@ -1,0 +1,13 @@
+{
+  "scope": "Static exact-file initial LK buffer; not runtime command line",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "initial_buffer_sha256": "c09fc1b9944bbe4d71bd59b43dd79e19965fbce275876bbce74145a1e3fba10b",
+  "allowlisted_initial_console_tokens": [
+    "console=tty0",
+    "console=ttyS0,921600n1",
+    "console=ttyMT3,921600n1",
+    "earlycon=uart8250,mmio32,0x11002000"
+  ],
+  "actual_kernel_commandline_verified": false,
+  "physical_test_ready": false
+}
