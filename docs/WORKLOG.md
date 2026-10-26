@@ -1163,3 +1163,15 @@ passed1.499s/fullsuite199pass. Noactualhelper/nativeUSB/devicecallbackbinding.
 NotOSsandbox or devicerecoveryproof; parentvalidator/logging/nativekillbehavior
 stillrequirequalificationbeforeliveuse. Next synthetic-only session integration
 of hostcontracts with explicitcomponentprovenance, no bootstrap/devicecallback.
+
+## 2026-10-26 — Synthetic-only acquisition session integration (#106)
+
+Currentbase3cf0710/healthyCI. Joined ownpacketdeadline, legacyAPIbinding, host
+capture, worker supervision and hash/GPTverifier in built-in syntheticmodesonly.
+No arbitraryworker/module/device/native/bootstrappathinput. Generated73728B
+fixtures; source/component/reference-metadata digests gateparentvalidation.
+Threeintegrationscenario tests bring suite202pass; faults reject/no completed
+regionfiles, success staysquarantined. SharedownGPTfixture refactored from tests.
+Physical-route planning question asked (USB-only vsownerhardwareaccess); no
+physicalactionrequested and independentwork continues. Next retainedCLIscenario
+results at exact committed source; all live/recovery/logging flags remainfalse.
