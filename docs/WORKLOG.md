@@ -829,3 +829,14 @@ instruction/call/string/hash evidence plus126 passing offline tests and mutation
 argument negative controls. No PSCI-status preservation or physical boot claim,
 firmware/helper execution or tablet IO. Next: sanitized effective command-line/
 CPU-count diagnostic reporting, keeping loader/recovery/logging gates open.
+
+## 2026-10-25 — Sanitized CPU-contract init reporting (#100, runtime pending)
+
+Implemented bounded private cmdline/CPU-online/live-DT status reads in minimal
+init with allowlisted verdict-only output. Added shared C parsers exercised by
+native host tests and distinct generic-observer/primary-contract evidence checks.
+130offline tests and local AArch64 object compile with Werror pass. Builder
+records header/source hashes; linked initramfs and generic VM integration remain
+pending existing gated CI. No raw private argument emission, tablet/device access
+or firmware assembly. Do not close100 until actual init/runtime integration is
+validated. Recovery, usable physical logging and loader contract remain open.

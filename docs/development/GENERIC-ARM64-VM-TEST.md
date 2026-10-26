@@ -144,3 +144,41 @@ required markers plus5seconds idle passed (5.94seconds total observation).
 report, script/input hashes and full downloaded CI-log hash. This new build's
 hash differs from the historical build; deterministic compression of one input
 does not establish a bit-identical kernel rebuild. No tablet was accessed.
+
+## Sanitized effective CPU-contract reporting (#100)
+
+Diagnostic init now privately reads bounded `/proc/cmdline`, CPU online set and
+live-DT `/psci/status`. It emits only fixed allowlisted verdicts, online count and
+whether CPU0 alone is online. It never emits those raw input buffers. The new
+block is bracketed by FIRETABS_CPU_CONTRACT_V1 / FIRETABS_CPU_CONTRACT_END.
+
+The two argument verdicts distinguish missing, valid, conflicting, duplicated,
+malformed and unavailable input. Unique nr_cpus=1 and maxcpus=0 are required for
+a future primary-only observation. Quotes/control characters and input above
+4096bytes fail closed. CPU-list parsing accepts ordered disjoint ranges and
+rejects malformed/overlapping/out-of-range lists; PSCI status is reported
+separately as disabled, enabled, unavailable or unrecognized.
+
+The generic QEMU test requires a complete sanitized block but remains an
+**observer**: its ordinary generic command line lacks the douglas primary-only
+limits and it is expected not to meet that contract. `cpu_contract_report` has a
+separate require_primary mode for later evidence checking; it requires both
+argument verdicts, CPU0 alone online and disabled live-DT PSCI status. Even then,
+its result never declares douglas hardware/recovery/boot qualification.
+
+Host tests compile and execute the same pure C parsers used by init, including
+synthetic private identifiers, conflicting/duplicate tokens, bounds and CPU-list
+negative cases. No input text is returned by those parsers. A local Apple Clang
+AArch64 object compile passes -Wall/-Wextra/-Werror; its exact command/hash are in
+`evidence/sanitized-cpu-report/local-result.json`. Linked initramfs and VM behavior
+remain pending until actual integration CI completes. The source/header hashes
+are now retained in the initramfs builder report.
+
+This reporting change triggers the existing kernel/initramfs/QEMU CI experiment
+under the previously reported resource gate (~0.3GiB source transfer,15GiBdisk,
+7GiBRAM,60-minute timeout; prior job24minutes). No new dependency or paid resource
+is needed. No tablet is accessed. Raw kernel consoles can themselves include
+kernel-generated full command lines: sanitize separately before any future
+physical-device log publication. The new init block does not make an arbitrary
+complete console private. The controlled generic VM command line contains no
+device/household identifiers.
