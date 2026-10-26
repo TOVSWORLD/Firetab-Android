@@ -918,3 +918,18 @@ Retained source hashes/line summaries only, with helpers ignored locally.
 No payload/dependency install, helper execution, tablet access or firmware changes.
 106 remains open: next audit legacy DA/bootstrap side effects and minimal Mac
 CLI requirements, then independent escrow/restore/log qualification.
+
+## 2026-10-25 — Legacy backup selection/bootstrap audit (#106)
+
+PR109 merged only after all four exact-head required checks passed; new base
+102cb12 (full revision available in Git). Read111117B across six pinned source
+files, no payloads or installs. Added source-hash-checked AST method closure and
+regression tests:145 offline tests pass. Legacy upload/read closures do not
+reach named write/format methods, but external protocol/agents remain unaudited.
+Found a concrete escrow failure path: readflash ignores failed partition-select
+acknowledgement and can proceed against an unconfirmed region. Dynamic DA mode
+can override the configured legacy choice. FUSE imports have guarded fallbacks;
+complete minimal Mac CLI import closure remains unverified. No tablet access.
+106 stays open. Next offline deliverable: fail-closed escrow geometry/hash/GPT
+validation with synthetic fixtures; safe entry, restoration and usable physical
+boot-log capture still unqualified.

@@ -1099,3 +1099,47 @@ checks with `python3 -m unittest discover -s tests -q`. Neither imports or
 executes archived/candidate helpers. Public evidence contains metadata, hashes
 and nonoperational call-site summaries only. Next task: audit the candidate
 legacy DA/bootstrap call chain and define a minimal Mac dependency/resource plan.
+
+### Candidate bootstrap/backend audit: a backup-selection failure gate
+
+At the same MTKClient revision, MT8163 requests LEGACY in brom_config, but
+DAloader.set_da (lines230–252) may select XFLASH from runtime capability/version
+or XML from a v6 loader. The actual tablet backend is unobserved. The legacy
+branch audit therefore establishes a candidate path, not the selected path.
+
+`evidence/recovery-bootstrap/` pins six additional source files (111117 bytes
+total). The AST-only analyzer follows same-file self.method calls from legacy
+upload_da and readflash. Neither closure reaches the named storage-write/format
+methods; the report explicitly retains unresolved external calls. This cannot
+prove the binary DA, security payload, MMIO or protocol operations have no
+persistent effects. Upload includes stage1 execution, stage2 configuration,
+RAM-agent transfer and possible USB speed reconnect. Stage2 configuration has
+MT8163-specific protocol fields; their effects are not established from names.
+The RAM agent/payload binaries have not been fetched or executed.
+
+**New source-verified backup integrity blocker:** legacy readflash line1141
+discards sdmmc_switch_part's Boolean return. The selector (lines963–972) returns
+False on missing acknowledgements. A subsequent read could therefore proceed
+without successful selection of the requested eMMC region. This is a failure
+path inferred from source, not an observed tablet failure. A boot-region filename
+or successful host-file write cannot qualify region identity. Any later adapter
+must stop on failed selection, record independently verified geometry/region,
+and reject short reads. Do not use the unmodified candidate as a trusted escrow
+collector on the strength of its read command name.
+
+Dependency findings are also scoped: mtk.py imports mtk_main without a direct
+Qt import; gui_utils has no direct Qt import. The handler and mtkdafs guard their
+mfusepy imports with ImportError fallbacks. That supports investigating a CLI
+without FUSE, not a complete import-closure proof. Installed-but-broken FUSE may
+raise exceptions other than ImportError. Daloader eagerly imports other backend
+modules even for legacy devices. No minimal dependency list is yet validated;
+full requirements include GUI/emulation/native packages. Nothing was installed
+and no Mac security setting was changed.
+
+Reproduce with `python3 scripts/audit_recovery_bootstrap.py` using the pinned
+ignored cache, then `python3 -m unittest discover -s tests -q` (145 tests).
+Only our analyzer/tests and source metadata/call summaries are published.
+Next independent work: a fail-closed offline escrow verifier for region geometry,
+exact byte lengths, hashes and independent primary/secondary GPT CRCs, while
+entry/bootstrap and binary-agent provenance remain explicit physical-test gates.
+This verifier can be developed/tested entirely on synthetic host files.
