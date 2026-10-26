@@ -1386,3 +1386,14 @@ beforeutilitycall, neverclear onexception/retry, disposal cannotclaimcleanup.
 Full237tests/repository/diff pass. Fakeobjects only/no native/deviceexec. Next
 host-only candidate nativeABIprobe effectreview, no context/enumeration/device
 operations; physical entry/return/bootlogging gatesremainopen.
+
+## 2026-10-26 — Executed host-only libusb version ABI probe (#106)
+
+Merged176 at passing360723491ef218ad501e7091cbdafab543293f31;175closed.
+Base95dd962. Exactcandidate noinitsection/LC_ROUTINES found in staticinspection;
+tagged getversion returnsconstantstructure. Own hash-gated absolute-path ctypes
+load+getversion only, bounded10s subprocess completed:1.0.30/nano12037. Retained
+JSON, no contextinit/enumeration/open calls, installs/relocation/securitychanges.
+This is first actual candidate native-load proof, not PyUSB/backend/deviceproof.
+Existing237tests/repository/diff pass; probe not added to platform-independentCI.
+Next PyUSB init/context boundary review before any backendexecution.
