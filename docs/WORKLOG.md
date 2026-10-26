@@ -904,3 +904,17 @@ Added offline host/model/resource/digest verifier;141tests pass. Component sourc
 provenance resolved, not signatures/antirollback/helper authenticity or restore.
 106 remains open; next separate safe entry/backup escrow from persistent writes.
 No tablet/helper/firmware execution, downgrade, flashing or device changes.
+
+## 2026-10-25 — Recovery entry/escrow source audit (#106)
+
+Merged PR108 after exact-head required checks passed (reran stale validation
+job); development base03da5d38e477fc79ca7506512bc3d3dcb7191b34. Added AST-only
+source audit and two regression tests:143 offline tests pass. Old minimal route
+is not backup-first; conditional early writes and dropped size bound recorded.
+Located pinned MTKClient MT8163/douglas configuration and Mac documentation as
+a possible independent read-back alternative. Read APIs alone do not qualify
+bootstrap/indirect persistence behavior; duplicate GPT filenames reuse data.
+Retained source hashes/line summaries only, with helpers ignored locally.
+No payload/dependency install, helper execution, tablet access or firmware changes.
+106 remains open: next audit legacy DA/bootstrap side effects and minimal Mac
+CLI requirements, then independent escrow/restore/log qualification.

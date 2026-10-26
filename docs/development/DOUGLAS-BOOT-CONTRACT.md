@@ -1052,3 +1052,50 @@ backup-before-write escrow and a complete failure/restore path for GPT/boot0/
 RPMB/boot-chain changes. Issue106 remains open. Next inspect whether the entry
 and backup stage can be separated from persistent changes, without executing
 helpers or accessing the tablet. No downgrade, flashing or physical test is ready.
+
+## Recovery entry and independent escrow audit (#106)
+
+Status: **not ready for a tablet test**. Component provenance is now matched
+to Amazon-hosted firmware (PR108); entry, backup and restoration remain separate
+open gates. The old archive's minimal mode is not a backup-only operation.
+
+The AST-only report in `evidence/recovery-entry-escrow/report.json` records
+call sites without copying helper code. Its pinned archive main source hash is
+`0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5`.
+Main has persistent operations at lines169/172 and later, no explicit dump call,
+and a conditional fix16/fix32 path through switch_user that can reach storage
+writes before the later main-path GPT inspection. The flash wrapper drops its
+requested size bound. The /proc host assumption also prevents assuming the old
+launcher runs unchanged on macOS. These are source findings, not device tests.
+
+A distinct candidate for independent read-back is MTKClient revision
+`7cb40e727727dfe3faa065eefb29b16ed29bbdf1`. Its
+[MT8163 configuration](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/brom_config.py#L2264)
+explicitly references douglas, and its install documentation covers macOS and
+Apple Silicon. This is evidence to investigate that route, not proof of support
+for this tablet's installed security state or a RAM-only kernel-loading path.
+Only eight bounded source/doc files were fetched; no payload, dependency install
+or USB operation was performed. Hashes, sizes and exact URLs are in source-index.
+
+The candidate handler's read entry points call readflash. configure_da contains
+no direct storage write call among the audited API names, but invokes bootstrap,
+RAM-agent upload and host-state persistence. Indirect backend and payload effects
+have not been audited; globally persistence-free behavior is **not established**.
+The host state may contain identity data and must stay private. In da_rl, the
+same data object is written to gpt.bin and gpt_backup.bin (lines420–426); two
+filenames do not establish an independently read secondary GPT.
+
+Before selecting this route, audit bootstrap and legacy backend side effects,
+then define independent boot-region and user-region escrow, raw secondary GPT
+header/table CRC validation, verified matching restore components, and explicit
+antirollback/RPMB constraints. A storage backup alone cannot promise recovery
+of security-state changes. Qualify safe entry, USB reconnect and usable log
+capture separately. Do not install macFUSE or lower Mac security based solely
+on general install instructions; determine minimal CLI requirements first.
+
+Reproduce source analysis from the ignored pinned cache with
+`python3 scripts/audit_recovery_entry_escrow.py`; run its synthetic regression
+checks with `python3 -m unittest discover -s tests -q`. Neither imports or
+executes archived/candidate helpers. Public evidence contains metadata, hashes
+and nonoperational call-site summaries only. Next task: audit the candidate
+legacy DA/bootstrap call chain and define a minimal Mac dependency/resource plan.
