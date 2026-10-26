@@ -1028,3 +1028,14 @@ paths and strict resolved-config checker/two tests:165 tests pass. Rechecked
 exactLK hash and allowlisted initialconsole/earlycon tokens: staticLK already
 requests UART0 earlycon, not runtime proof. No compile/firmware/tablet execution.
 Next audit firmware arguments discarded by FORCE before any gated build.
+
+## 2026-10-26 — Forced argument discard constraint inventory (#106/#21)
+
+Merged PR118 exact430133d624dc67d1bc92566573d715e4071356b3 after required checks
+passed; base0c3e265. Hash-checked stockbootheader/LKinitial/twoappendedDTs expose
+seven static keys, with no actual runtime cmdline available. Classified replacement
+versus unresolved initrd/vmalloc/bootopt/platform effects; source ordering does
+not validate memory handoff. Device FORCE profile remains uncompiled/unqualified.
+Added key-only bounded audit/two tests:167 tests pass; no downloads/tablet IO.
+Next actual generic-only FORCE experiment using PL011 and contradictory incoming
+arguments, with existing resource gate (~0.3GiB/15GiB/7GiB/60min); no job started.
