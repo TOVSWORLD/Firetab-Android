@@ -1530,3 +1530,13 @@ selector modifieslow3bit/configindex179 thenblockread. Wrapperdoesnotcheck
 selectorreturn beforeread; sourcepathnotactualregionproof. Metadata/windowhashes
 only;240tests/repository/diffpass. Next primaryregionmapping/containervalidation
 identity and restoreimplication; no record/device read/helperexec/download.
+
+## 2026-10-26 — Boot-region mapping and original-state restore scope (#106)
+
+Merged206 at passing843dc2f5b7754d6af8d93d0180fdecd35570b2f6;205closed.
+Baseb3e6d57. Linuxv6.18primaryMMC definitions/core mapaccess2 tosecondbootarea,
+Linuxboot1/projectescrowboot2, distinctRPMB3. Staticinferenceonly/selectionstill
+unobserved. Containerstaticmagictag notauthentication. Fulloriginalbothbootregions
+required beyonduserGPT/genericimages; no newrecordread.240tests/repository/diff
+pass. Next loadingalternatives affectedareas/RAMonly route decision, no more
+credentialanalysisneeded forpreservation; physicalentry/return/loggingopen.

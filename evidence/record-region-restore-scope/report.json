@@ -1,0 +1,18 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "intended_access_selector": 2,
+  "intended_emmc_area": "second boot hardware region",
+  "linux_block_suffix": "boot1",
+  "escrow_region_name": "boot2",
+  "rpmb_access_selector": 3,
+  "mapping_is_static_inference_not_observed_selection": true,
+  "container_magic_reference_offset": 307496,
+  "container_identity_window_sha256": "f5fd135d5ba14c1d5df73bb1538b29a1d5ee91eef44e9798519755d35b20c7c0",
+  "sources": [
+    "https://github.com/torvalds/linux/blob/v6.18/include/linux/mmc/mmc.h",
+    "https://github.com/torvalds/linux/blob/v6.18/drivers/mmc/core/mmc.c#L425-L437"
+  ],
+  "actual_region_contents_acquired": false,
+  "restore_qualified": false,
+  "physical_test_ready": false
+}
