@@ -106,3 +106,41 @@ not prove protocol mode or entry reachability. A future observation-only adapter
 needs separately reviewed bounded handshake and explicit query failure handling,
 without calling the monolithic initializer. No runnable physical collection plan
 is qualified yet; no new tablet action is requested.
+
+## USB handshake effect boundary
+
+The pinned [Port handshake](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Port.py#L147-L230)
+is an active protocol exchange. It sets line coding/control state, sends sync
+traffic, reads echoes and may drain input between retries. Although the main
+exchange supplies per-call timeouts, the preliminary write on one product-ID
+branch omits an explicit timeout. Its backend default is not a reviewed total
+session bound. `handshake(maxtries=None)` has no attempt cap; even finite attempts
+do not by themselves impose a wall-clock deadline on all underlying operations.
+A previously connected transport also skips the while body and returns False.
+Do not interpret these Boolean results as a reliable mode/security observation.
+
+The pinned [USB connect path](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py#L325-L448)
+can set configuration, select a fallback backend, detach a kernel driver and
+claim interfaces. It is not descriptor-only observation. Some interface-claim
+errors are ignored; a returned connected state alone does not establish exclusive
+ownership or validated endpoints. Actual macOS effects remain untested.
+[Close](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py#L449-L475)
+may attach a driver and dispose resources; reset=True additionally requests a
+USB device reset. Calling close without reset is not proof that the whole prior
+session left firmware unchanged. No reset/close was executed in this review.
+
+[Metadata source receipt](../../evidence/handshake-effects/source-review.json)
+pins both files. A bounded observation-only implementation must explicitly choose
+backend/interface/endpoints, document configuration/control-line changes, bound
+every read/write and total worker lifetime, validate the mode independently and
+stop on claim/query failure. It must exclude full initializer, fallback MMIO,
+authentication, watchdog/reset, payload and storage paths. The existing owned
+worker supervisor is a host containment component, not proof of physical undo.
+
+**Route decision:** no reviewed drop-in candidate CLI currently satisfies this
+minimal observation contract. Building an owned callback-only orchestration can
+be done offline, but binding it to USB still requires a separate exact-effects
+review and owner test plan. Pending hardware access preference remains relevant
+to entry/log options; it is not replaced by this source review. Next prepare the
+owned observation orchestration with synthetic callbacks and no command bytes,
+then review the exact live binding separately. Do not run helper discovery/init.
