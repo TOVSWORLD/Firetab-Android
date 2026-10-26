@@ -1231,3 +1231,14 @@ Reviewed wrapper propagation; no claim of outer cleanup or observed execution.
 Two synthetic AST tests, full207tests/repository/diff checks. No helper imports,
 firmware/device access or downloads. Next owned offline initialization-evidence
 state gate; bare Boolean cannot establish qualified stage-transfer readiness.
+
+## 2026-10-26 — Offline initialization response decoder (#106)
+
+Merged146 at passing exact502f407e5edd589f8f12d2569b60e818a77aaa21;145
+closed. Base746d195. Implemented own field decoder rejecting unknown replies,
+all field-size faults, length disagreement, nonzero status and zero reported RAM.
+No transport/sender; successful decode never authorizes stage transfer or claims
+checksum/geometry/provenance qualification. This is not yet an ordered state
+gate or wire parser. Three synthetic tests/full210pass; repository/diff guards
+run. No helper/firmware execution, tablet access or downloads. Next checksum
+source evidence, then ordered capture/session invalidation before live binding.
