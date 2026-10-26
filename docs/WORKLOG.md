@@ -1346,3 +1346,13 @@ rejectsresult. Threefault/trace tests/full228pass. No nativebackend or protocol
 constants/liveCLI; mode/handshake/worker supervision not integrated. No tablet/
 helper/nativeexec/download. Next realstalledsyntheticprocess supervision around
 this sequence; cleanup/ownership remain explicit backend trust boundaries.
+
+## 2026-10-26 — Supervised observation adapter integration (#106)
+
+Merged168 at passing4f9760753ca30d1020d238a850f6704851ae57b7;167closed.
+Base1708182. Spawned owned adapter with synthetic successful, blockedwrite and
+blockedrelease backends;1s supervisor reaps/rejects both realstalledchildren.
+Parent validates success/sourcehashes; retained3CLIreports, twointegrationtests/
+full230pass. No arbitraryworker/native/device input. Processdeath notcleanup/
+recoveryproof. Next actual PyUSB binding implementation review and hostnative
+load prerequisites, no enumeration; no downloads/helper/tablet execution.
