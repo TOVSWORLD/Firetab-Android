@@ -1,0 +1,27 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "path": "mtkclient/Library/mtk_preloader.py",
+  "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68",
+  "reviewed_lines": [
+    [
+      142,
+      260
+    ],
+    [
+      675,
+      707
+    ],
+    [
+      880,
+      883
+    ],
+    [
+      928,
+      931
+    ]
+  ],
+  "unsupported_target_config_returns_disabled_flags": true,
+  "skipwdt_is_complete_passive_observation_mode": false,
+  "helper_executed": false,
+  "physical_test_ready": false
+}
