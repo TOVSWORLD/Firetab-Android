@@ -77,6 +77,7 @@ def main():
     artifacts = {'init': data, 'initramfs.cpio.gz': packed}
     report = {'scope': 'Isolated diagnostic userspace compilation, not a boot image or device test',
               'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+              'cpu_contract_header_sha256': hashlib.sha256(SOURCE.with_name('cpu_contract.h').read_bytes()).hexdigest(),
               'compiler': subprocess.check_output([args.clang, '--version'], text=True).splitlines()[0],
               'command': [x.replace(str(ROOT), '<workspace>') for x in command],
               'elf': inspection, 'archive_entries': [x[0] for x in entries],

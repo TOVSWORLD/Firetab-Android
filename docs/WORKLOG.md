@@ -841,3 +841,26 @@ on this independent branch; PR101's parser/runtime changes remain separate.
 Source hashes/delta retained. No CMDQ execution, DT/hardware enablement or device
 access. Merge after PR101 to avoid invalidating its expensive compile head, then
 reconcile appended WORKLOG and rerun inexpensive required checks.
+## 2026-10-25 — Sanitized CPU-contract init reporting (#100, runtime pending)
+
+Implemented bounded private cmdline/CPU-online/live-DT status reads in minimal
+init with allowlisted verdict-only output. Added shared C parsers exercised by
+native host tests and distinct generic-observer/primary-contract evidence checks.
+130offline tests and local AArch64 object compile with Werror pass. Builder
+records header/source hashes; linked initramfs and generic VM integration remain
+pending existing gated CI. No raw private argument emission, tablet/device access
+or firmware assembly. Do not close100 until actual init/runtime integration is
+validated. Recovery, usable physical logging and loader contract remain open.
+
+## 2026-10-25 — Actual sanitized CPU init integration passed
+
+PR101 head84c0392393eacf9dfef2b1d4e6b17d6bcc9c017b passed compile/initramfs/QEMU
+run40259254917 in23m55s. Actual verdicts: both limits missing (expected generic
+command line), one online CPU/CPU0 alone, PSCI status unavailable. Generic
+observation passes; primary-only contract remains false. Retained exact runtime
+report/artifact/log hashes in evidence/sanitized-cpu-report/generic-runtime-result.json.
+PR101 merged/100 closed. Reconciled GCE PR103 against development preserving both
+WORKLOG sections. Recovery work104 has started: declared PL7 mapping places an
+old USB-descriptor patch address in a referenced string-literal pool and another
+old entry in an interior block; exact trace/evidence is being prepared separately.
+No tablet/helper/firmware execution or hardware qualification.

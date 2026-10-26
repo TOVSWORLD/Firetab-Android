@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import selectors
 import struct
@@ -20,13 +21,52 @@ FATAL = [b'Kernel panic - not syncing', b'Internal error: Oops', b'\nUNAVAILABLE
 LOG_LIMIT = 2*1024*1024
 
 
+
+def cpu_contract_report(data, require_primary=False):
+    checked = data.replace(b'\r\n', b'\n')
+    begin, end = b'FIRETABS_CPU_CONTRACT_V1\n', b'FIRETABS_CPU_CONTRACT_END\n'
+    if end not in checked:
+        return None
+    if checked.count(begin) != 1 or checked.count(end) != 1:
+        raise ValueError('Duplicated/missing sanitized CPU contract block')
+    block = checked.split(begin, 1)[1].split(end, 1)[0]
+    allowed = {'LIMIT_NR_CPUS': {'missing', 'valid', 'conflict', 'duplicate', 'malformed', 'unavailable'},
+               'LIMIT_MAXCPUS': {'missing', 'valid', 'conflict', 'duplicate', 'malformed', 'unavailable'},
+               'ONLINE_BOOT_CPU_ONLY': {'yes', 'no'},
+               'PSCI_DT_STATUS': {'disabled', 'enabled', 'unavailable', 'unrecognized'}}
+    values = {}
+    for raw in block.splitlines():
+        try:
+            key, value = raw.decode('ascii').split('=', 1)
+        except (ValueError, UnicodeError):
+            raise ValueError('Malformed sanitized CPU contract') from None
+        if key in values or key not in {*allowed, 'ONLINE_CPUS'}:
+            raise ValueError('Unexpected sanitized CPU contract field')
+        if key == 'ONLINE_CPUS':
+            if value != 'unavailable' and (not re.fullmatch(r'[1-9][0-9]{0,3}', value) or int(value) > 4096):
+                raise ValueError('Invalid sanitized CPU count')
+        elif value not in allowed[key]:
+            raise ValueError('Invalid sanitized CPU verdict')
+        values[key] = value
+    if set(values) != {*allowed, 'ONLINE_CPUS'}:
+        raise ValueError('Incomplete sanitized CPU contract')
+    primary = (values['LIMIT_NR_CPUS'] == values['LIMIT_MAXCPUS'] == 'valid' and
+               values['ONLINE_CPUS'] == '1' and values['ONLINE_BOOT_CPU_ONLY'] == 'yes' and
+               values['PSCI_DT_STATUS'] == 'disabled')
+    if require_primary and not primary:
+        raise ValueError('Primary-only runtime observations do not meet contract')
+    return {'verdicts': values, 'primary_only_contract_observed': primary,
+            'scope': 'Separate sanitized observations; not loader/recovery or tablet hardware qualification',
+            'douglas_boot_qualified': False}
+
+
 def transcript_ready(data):
     # Serial consoles may translate LF to CRLF. Preserve raw log hashes, but
     # normalize line endings when interpreting exact diagnostic error lines.
     checked = data.replace(b'\r\n', b'\n')
     if any(marker in checked for marker in FATAL):
         raise ValueError('Guest kernel panic/Oops or diagnostic read failure')
-    return all(marker in data for marker in MARKERS) and data.count(b'END_FILE') >= 4
+    return all(marker in data for marker in MARKERS) and data.count(b'END_FILE') >= 4 and cpu_contract_report(data) is not None
 
 
 def main():
@@ -100,6 +140,7 @@ def main():
             process.wait(timeout=5)
         raw = bytes(data[:LOG_LIMIT])
         (args.output/'console.log').write_bytes(raw)
+        report['cpu_contract'] = cpu_contract_report(raw) if report['passed'] else None
         report.update(console_bytes=len(raw), console_sha256=hashlib.sha256(raw).hexdigest(),
                       host_stopped_qemu=True, required_markers=[x.decode() for x in MARKERS],
                       elapsed_seconds=round(time.monotonic()-began, 2))

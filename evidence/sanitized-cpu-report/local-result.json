@@ -1,0 +1,31 @@
+{
+  "scope": "Native pure-parser tests and local AArch64 object compilation; no init/VM/tablet execution yet",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "compile_command": [
+    "clang",
+    "--target=aarch64-linux-gnu",
+    "-c",
+    "-Os",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-mgeneral-regs-only",
+    "projects/firetabs-android/diagnostic/init.c",
+    "-o",
+    "out/cpu-report/init.o"
+  ],
+  "object_sha256": "047722c8f005023dbb53dcc4ada353d93f0bd6256a5744c0bb637dd60aa12d60",
+  "object_bytes": 8448,
+  "parser_tests": "tests/test_cpu_contract_parsers.py; executes only pure C parsing wrappers on host",
+  "offline_tests_passed": 130,
+  "sources": {
+    "projects/firetabs-android/diagnostic/init.c": "c371372906ad3d32594000041042a2301d54ca2ce46c5b05add40bf2905bf63b",
+    "projects/firetabs-android/diagnostic/cpu_contract.h": "9b7feede7391391dd61956ec3bec3f2d56d5dae0710df5fe61f43a9967db0e3b"
+  },
+  "linked_initramfs_verified": false,
+  "generic_runtime_verified": false,
+  "tablet_boot_verified": false
+}
