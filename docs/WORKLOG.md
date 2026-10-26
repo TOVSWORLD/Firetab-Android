@@ -1108,3 +1108,15 @@ Appledependencies and unrelocatedHomebrewidentityplaceholder, not runtimeproof.
 Own boundedreproextractor/tworejectiontests:180tests pass. Binary/helperbytes
 ignored; nonativecode/helperexecution/install/USBenum/tabletaccess/securitychange.
 Next explicitpinnedlibrary +readack adaptercontract with syntheticofflinechecks.
+
+## 2026-10-26 — Offline host readback safeguards (#127/#106)
+
+Merged PR126 exact409afcb67a07d55f4f1658c5d9c4a222a4312f23 after allchecks
+passed; base74f9429. OwnASTtransformer prepares explicitpinnedDarwinlibrary
+lookup and exactTrue acknowledgement guard before legacyread; original caches
+unchanged, modifiedhelpertext only ignored.review.txt. Actualpinnedinputs
+transformed/ASTvalidated, neverimported/executed. Threesyntheticfixtures test
+no-read-on-failure and platformselection/source-drift:183tests pass. No native
+load/USBenum/deviceIO/download/install/securitychange.127 tracks only offline
+sourcehardening;106 physicalgatesopen. Next read-only invocationallowlist and
+acquisitionprecondition policy independent of broad upstreamdispatcher.

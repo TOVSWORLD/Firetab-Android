@@ -1,0 +1,25 @@
+{
+  "scope": "Offline host source-review transformations only; not a runnable helper package",
+  "source_revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "library_sha256": "95c5d6ec5e955b5fb83253963805a0e25a6b1253e9c4e217eaad68e31bb04f4a",
+  "review_texts": [
+    {
+      "source_path": "mtkclient/Library/Connection/usblib.py",
+      "original_sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986",
+      "review_text_sha256": "e5db27625f30b6b7d3c7a9247881e8a6d5979c7bb69298bebe0dcf7aa64025cf"
+    },
+    {
+      "source_path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "original_sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+      "review_text_sha256": "03b86837c46555adde44ae4630f1a2829a463251c563cc8f197c54a0acf41b99"
+    }
+  ],
+  "darwin_explicit_library_path_prepared": true,
+  "strict_read_region_ack_guard_prepared": true,
+  "upstream_helper_imported_or_executed": false,
+  "native_code_loaded": false,
+  "usb_enumerated": false,
+  "actual_readback_verified": false,
+  "bootstrap_effects_qualified": false,
+  "physical_test_ready": false
+}
