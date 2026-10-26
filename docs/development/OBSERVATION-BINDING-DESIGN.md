@@ -238,3 +238,30 @@ library and invokes no enumeration/context/device operations. Inspect the exact
 initialization effects before executing that probe. This is a dependency check,
 not device access or route qualification. Physical entry/handshake/return and
 usable boot logs remain unqualified.
+
+## Executed host-only native version probe
+
+The exact staged arm64 candidate SHA256
+`95c5d6ec5e955b5fb83253963805a0e25a6b1253e9c4e217eaad68e31bb04f4a`
+loaded successfully on this Mac. Own `probe_libusb_version_only.py` verifies
+regular-file length/hash, loads that absolute private path and invokes only
+libusb_get_version with an explicit no-argument/four-uint16 result ABI. It reads
+no string pointers. A10s parent subprocess bound was used; it completed normally.
+[Retained output](../../evidence/libusb-version-probe/result.json) reports
+1.0.30, nano12037. No context initialization, enumeration or device-open API was
+called. No package/system install, relocation or security change was performed.
+
+Pre-execution static inspection found no __mod_init_func section or LC_ROUTINES
+command in this exact candidate, only its previously reviewed Apple dependencies.
+This is bounded inspection, not a proof about all system dependency initialization.
+The tagged [libusb implementation](https://github.com/libusb/libusb/blob/v1.0.30/libusb/core.c#L2922-L2930)
+returns its constant version structure; it does not initialize the USB backend.
+Library identity was verified against the staged bottle, while complete binary
+reproducibility/signature validation remains outside this probe.
+
+This resolves loadability and one narrow native ABI call. It does not qualify
+PyUSB initialization (which may initialize a context), full API compatibility,
+interface ownership, endpoint IO or tablet entry/recovery. Do not run backend
+initialization merely as the next dependency check while the tablet-access ban
+is in force. Next review PyUSB backend initialization to distinguish symbol setup
+from context creation and device enumeration before any such execution.

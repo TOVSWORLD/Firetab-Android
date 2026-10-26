@@ -1,0 +1,15 @@
+{
+  "candidate_sha256": "95c5d6ec5e955b5fb83253963805a0e25a6b1253e9c4e217eaad68e31bb04f4a",
+  "numeric_version": [
+    1,
+    0,
+    30,
+    12037
+  ],
+  "native_library_loaded": true,
+  "version_call_completed": true,
+  "context_initialized": false,
+  "device_enumeration_called": false,
+  "device_open_called": false,
+  "physical_test_ready": false
+}
