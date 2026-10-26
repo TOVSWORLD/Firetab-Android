@@ -275,3 +275,32 @@ establish whether it supplies this memory initialization or requires a separate
 owned startup implementation. No flat payload was generated or executed by this
 layout investigation. Recovery, physical RAM placement and log capture remain
 open gates regardless of footprint size.
+
+## Sender initialization source boundary (#227)
+
+Cached source identities were verified against the pinned Git tree; the
+[metadata receipt](../../evidence/stage1-sender-initialization/report.json)
+records hashes and selected review ranges. No helper was imported or executed.
+[PLTools file reading](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/pltools.py#L70-L80)
+passes raw file bytes, with no ELF program-header or BSS interpretation.
+[Shared preparation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/exploit_handler.py#L50-L108)
+can patch the final two words based on sentinel values, pads to four bytes and,
+for the insecure DA branch, appends a separate 256-byte signature tail. The
+security/exploit branch requests preparation without that signature tail.
+The selected
+[kamakiri2 sender](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Exploit/kamakiri2.py#L63-L78)
+passes the supplied byte count to its write operation. These selected paths
+contain no memory-size/BSS input; this is not an audit of every backend.
+
+For the linked probe, a hypothetical flat image ending at 1576 is already
+four-byte aligned, so that alignment adds zero bytes and does not supply the
+24-byte zero-fill tail needed to reach 1600. We have not generated or transferred
+that image. The DA branch's signature tail is protocol data, not proof of an
+ELF loader's initialization semantics or accepted device memory layout. The
+shipped 1000-byte payload is still not equivalent to this clang-built probe.
+
+The next implementation should own its entry/initialization contract and test
+zero-tail construction entirely on the host, before selecting a device loader.
+It must also avoid blindly applying the upstream final-word patch convention to
+a differently linked image. Such a host image contract cannot qualify security
+entry, physical RAM placement, recovery or boot logs by itself.

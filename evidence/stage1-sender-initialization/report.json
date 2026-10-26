@@ -1,0 +1,69 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "mtkclient/Library/pltools.py",
+      "bytes": 8456,
+      "git_blob_sha1": "45de982f7649f588a487859957ca9a6200df4e18",
+      "sha256": "0ffe210ab5ce1871483639543c8b0cb17363a57318d7bdcb2e94001793f92089",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/pltools.py"
+    },
+    {
+      "path": "mtkclient/Library/exploit_handler.py",
+      "bytes": 7117,
+      "git_blob_sha1": "082b3ce1e5fe8b16a19053dc5281ee5329afa4b2",
+      "sha256": "8e127fcaa04f35d13685e9c475f1e05871a2faaa21956c443c6d43c7b9b93134",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/exploit_handler.py"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiri2.py",
+      "bytes": 11312,
+      "git_blob_sha1": "080f3fdf5a245a3c62bf309684dbd5d7696aadd1",
+      "sha256": "b5d0031c713a18d34b25eb1c6d63d470597e128a00ec85d56f74fbb3322b4693",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Exploit/kamakiri2.py"
+    },
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "bytes": 47053,
+      "git_blob_sha1": "c7434697b14253aefe15c74c739c4832484cee97",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py"
+    }
+  ],
+  "reviewed_ranges": {
+    "pltools.py": [
+      70,
+      80
+    ],
+    "exploit_handler.py": [
+      50,
+      108
+    ],
+    "kamakiri2.py": [
+      63,
+      78
+    ],
+    "mtk_preloader.py": [
+      1090,
+      1125
+    ]
+  },
+  "scope": "Selected file reader, shared payload preparation, kamakiri2 byte sender and insecure DA branch; not every exploit backend",
+  "findings": {
+    "input_is_raw_file_not_elf_loader": true,
+    "shared_padding_alignment_bytes": 4,
+    "shared_secure_branch_bss_size_input": false,
+    "insecure_da_signature_tail_bytes": 256,
+    "signature_tail_proves_bss_initialization": false,
+    "runtime_placement_verified": false,
+    "firmware_executed": false,
+    "physical_test_ready": false
+  },
+  "linked_probe_example": {
+    "file_backed_end": 1576,
+    "four_byte_aligned_end": 1576,
+    "memory_end": 1600,
+    "zero_fill_tail_bytes": 24,
+    "packaged_binary_equivalence_verified": false
+  }
+}
