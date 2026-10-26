@@ -1264,3 +1264,13 @@ acceptance and synthetic scope from physical gates. Pending hardware preference
 is the only current owner input; no repeated request/action. Next minimal
 mode/security collection effect review, static only. No tablet/helper execution,
 downloads or new low-value tests; existing213tests/repository/diff guards pass.
+
+## 2026-10-26 — Minimal observation source effects (#106)
+
+Merged152 at passing4bfc7088a3ff2468643128905037758789c95de0;151closed/Done.
+Basea12ecfa. Pinned initializer review: skipwdt/display are not passive-mode
+contracts; unsupported target-config echo returns all securityflagsFalse.
+Own six-byte zero-status offline decoder preserves missing/error as exception,
+never bootstrap permission. Two synthetic tests/full215pass; metadata-only
+source receipt, no helper/device execution/download. Next bounded handshake
+source effects and observation-only adapter feasibility; physical gates open.

@@ -80,3 +80,29 @@ necessary protocol reads from bootstrap/watchdog/reset actions, and determine
 whether a bounded observation can avoid them. If it cannot, document that limit
 and the concrete proposed effects for later owner review. Further synthetic test
 counts cannot close the six physical evidence requirements above.
+
+## Minimal observation source-effect review
+
+Pinned [initialization lines142–260](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L142-L260)
+shows `skipwdt` suppresses one conditional watchdog-disable call, not the whole
+initialization sequence. It still handshakes, can fall back to memory reads,
+queries versions/identifiers, mutates host settings and may authenticate under
+configuration. `display=False` is not a side-effect suppression contract. Neither
+option is accepted as a passive observation recipe. Entry itself remains unknown.
+
+The [target-config query](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L675-L707)
+returns all security flags False when its command echo is unsupported. That
+means unsupported evidence can look like disabled SBC/SLA/DAA. This is a source
+finding, not observed device behavior. A collector must preserve unknown/failure
+instead of using this default as bootstrap authorization. The method also accepts
+status values through0xff; the meaning of nonzero statuses is not established
+here. The own offline decoder requires zero status and an exact six-byte supplied
+reply, reports only the three flag bits and always denies bootstrap readiness.
+No transport/helper is bound or executed. Unknown higher bits are surfaced.
+
+[Source receipt](../../evidence/minimal-observation-effects/source-review.json)
+records the exact cached file. Hardware getters have fixed unpack sizes but do
+not prove protocol mode or entry reachability. A future observation-only adapter
+needs separately reviewed bounded handshake and explicit query failure handling,
+without calling the monolithic initializer. No runnable physical collection plan
+is qualified yet; no new tablet action is requested.
