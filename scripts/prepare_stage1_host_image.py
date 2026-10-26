@@ -2,10 +2,12 @@
 """Construct a bounded host-only PT_LOAD image; no execution or transport binding."""
 import hashlib
 from inspect_stage1_elf import inspect_elf
+from inspect_stage1_relocations import inspect_relocations
 
 
 def prepare_host_image(data):
     layout = inspect_elf(data)
+    relocation_metadata = inspect_relocations(data)
     segments = sorted(layout['load_segments'], key=lambda s: s['virtual_address'])
     end = max(s['virtual_address'] + s['memory_bytes'] for s in segments)
     if segments[0]['virtual_address'] != 0 or not 0 < end <= 65536:
@@ -23,7 +25,7 @@ def prepare_host_image(data):
         start, offset, count = segment['virtual_address'], segment['offset'], segment['file_bytes']
         image[start:start + count] = data[offset:offset + count]
     result = bytes(image)
-    receipt = dict(image_bytes=end, image_sha256=hashlib.sha256(result).hexdigest(),
+    receipt = dict(relocation_metadata=relocation_metadata, image_bytes=end, image_sha256=hashlib.sha256(result).hexdigest(),
                    entry_offset=layout['entry'],
                    segment_zero_fill_bytes=sum(s['memory_bytes'] - s['file_bytes'] for s in segments),
                    gap_zero_fill_bytes=end - sum(s['memory_bytes'] for s in segments),
