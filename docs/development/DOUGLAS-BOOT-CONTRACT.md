@@ -996,3 +996,59 @@ original attachment, then qualify entry/restore prerequisites. No physical test
 package/action is ready. Automatic approval review rejected publishing copied
 third-party helper scripts; they remain local. Public evidence was reduced to
 summaries, metadata and hashes instead.
+
+## Amazon-hosted recovery component matches (#106)
+
+The older mirror's two boot-chain component hashes now have independent
+Amazon-hosted, model/build-checked byte matches. Community index labels were used
+only to locate URLs; each successful probe checked actual target.build.prop for
+Amazon/KFDOWI/douglas/MT8163 and the exact incremental build before extraction.
+
+- Build50.6.3.6_user_636558520: preloader138924B SHA
+  `cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d`
+  and LK485988B SHA
+  `7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056`
+  both match the mirrored recovery candidates byte-for-byte by SHA256.
+- Build50.6.5.7_user_657611720: the same older preloader, but LK already matches
+  the current candidate SHA4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08.
+- Build50.6.5.9_user_659662320 (community UI label5.7.0.0): both preloader and LK
+  match current659664620 candidates. Moving between those two OS builds would
+  therefore not change these loader bytes.
+
+The originally selected659658220 URL returned HTTP403, including its canonical
+bucket region; it provided no loader bytes. Other older index records remained
+available. Reports and status observations are in
+`evidence/official-recovery-material/`; no helper scripts or firmware code are
+published. Exact source URLs and range hashes are retained there.
+
+The three successful probes read1356647response bytes total under a2MiB cap per
+probe. Their OTA containers are approximately884–908MB each; none was fully
+downloaded. Only model/build properties plus preloader/LK entries were inspected.
+CRC/range/TLS provenance is not full-OTA signature verification, installed-device
+identity, antirollback compatibility or downgrade permission. The original
+helper archive as a whole is still not authenticated by this component match.
+
+Reproduction uses existing probe_stock_ota.py loader mode and the URL/build pairs
+from the retained reports. Example for the matching pair:
+
+```sh
+python3 scripts/probe_stock_ota.py --download --loader-images \
+  --expected-build 50.6.3.6_user_636558520 \
+  --url https://fireos-tablet-src.s3.amazonaws.com/fqt0doGd1liHKioAFObgRm6oGA/update-kindle-50.6.3.6_user_636558520.bin \
+  --output out/recovery-official-636558520-reproduction
+python3 scripts/verify_recovery_material_match.py \
+  --report evidence/official-recovery-material/636558520.json \
+  --expected-build 50.6.3.6_user_636558520
+```
+
+The new offline verifier rejects wrong hosts, models/builds, inconsistent range
+budgets and inflated qualification claims.141 offline tests pass, including the
+exact older pair match and distinct intermediate/current component cases.
+
+**Resolved:** these two candidate binaries have traceable Amazon-served
+model/build matches; they are no longer identified solely by a third-party ZIP.
+**Still open:** current-build entry into a usable loader, trusted helper behavior,
+backup-before-write escrow and a complete failure/restore path for GPT/boot0/
+RPMB/boot-chain changes. Issue106 remains open. Next inspect whether the entry
+and backup stage can be separated from persistent changes, without executing
+helpers or accessing the tablet. No downgrade, flashing or physical test is ready.

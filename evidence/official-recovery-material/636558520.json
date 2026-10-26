@@ -1,0 +1,107 @@
+{
+  "scope": "Partial OTA inspection; ZIP CRC is not signature/full-package authentication",
+  "identity": {
+    "ro.build.version.incremental": [
+      "50.6.3.6_user_636558520"
+    ],
+    "ro.build.version.fireos": [
+      "5.3.6.8",
+      "5.3.6.8"
+    ],
+    "ro.build.version.sdk": [
+      "22"
+    ],
+    "ro.build.version.release": [
+      "5.1.1"
+    ],
+    "ro.product.model": [
+      "KFDOWI"
+    ],
+    "ro.product.name": [
+      "douglas"
+    ],
+    "ro.product.device": [
+      "douglas"
+    ],
+    "ro.product.manufacturer": [
+      "Amazon"
+    ],
+    "ro.board.platform": [
+      "mt8163"
+    ],
+    "ro.build.fingerprint": [
+      "Amazon/douglas/douglas:5.1.1/LVY48F/50.6.3.6_user_636558520:user/release-keys"
+    ]
+  },
+  "douglas_identity_matched": true,
+  "properties_sha256": "59af9bdc5511b0896fae396719e919024eb7882932fe937f651e213ccf68a8e0",
+  "url": "https://fireos-tablet-src.s3.amazonaws.com/fqt0doGd1liHKioAFObgRm6oGA/update-kindle-50.6.3.6_user_636558520.bin",
+  "response_body_bytes": 452376,
+  "response_body_budget": 2097152,
+  "ranges": [
+    {
+      "offset": 883624407,
+      "bytes": 65557,
+      "sha256": "8944c64486fe563a56398b965eff6610a90adbb3f794e6eda15421a46aa06872"
+    },
+    {
+      "offset": 877,
+      "bytes": 30,
+      "sha256": "a40c00fc0e60cfb6037a36a63087c956b9d8e7c7673961ed04f490bc1e2c5b68"
+    },
+    {
+      "offset": 907,
+      "bytes": 45,
+      "sha256": "c2594341f8c34f51a2026020dd980b7880c17e5dff70f681c29cf7abcd9b954d"
+    },
+    {
+      "offset": 952,
+      "bytes": 2920,
+      "sha256": "db2988faeac9f5cab130c8eddc524b5908e070d19e6c80b6cd1652cb8eab075e"
+    },
+    {
+      "offset": 9260010,
+      "bytes": 30,
+      "sha256": "e5abbc2a2339b07dc386571fd5441b6dc7f53d69e8faa2d658d900be4b7dcb5f"
+    },
+    {
+      "offset": 9260040,
+      "bytes": 20,
+      "sha256": "bf9f89ddd5d271b35aa06481035a2d965f907804a26b46b9eefd3852cf85ddd4"
+    },
+    {
+      "offset": 9260060,
+      "bytes": 88889,
+      "sha256": "9bf09bed41a206a4cb0a4c10b2a2a005b6f48585d689b6f841ebbdfc556e0017"
+    },
+    {
+      "offset": 8965109,
+      "bytes": 30,
+      "sha256": "5043259f5abdc4f87786783db8f5e4a689f4de778d22d06cb9057ab2e061f580"
+    },
+    {
+      "offset": 8965139,
+      "bytes": 13,
+      "sha256": "061f42ed9bd7b8a7faa566ff0b52ea3c9eb327409e35dfbcdb59287f88b97a77"
+    },
+    {
+      "offset": 8965152,
+      "bytes": 294842,
+      "sha256": "fc5c7e62e23ad724ffa91acfe1c340dcf039c4ee2dff8122ecd5d5f30241c069"
+    }
+  ],
+  "full_package_downloaded": false,
+  "signature_verified": false,
+  "installed_build_matched": false,
+  "hardware_tested": false,
+  "loader_images": {
+    "preloader.bin": {
+      "bytes": 138924,
+      "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d"
+    },
+    "lk.bin": {
+      "bytes": 485988,
+      "sha256": "7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056"
+    }
+  }
+}
