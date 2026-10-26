@@ -1253,3 +1253,14 @@ USB/helperbinding; all readiness/authorization flags remainfalse. Bounded cached
 DA source search leaves DRAM checksum algorithm unknown; write checksum not
 assumed applicable. No downloads or physical access. Next consolidated physical
 prerequisite checklist/smallest owner evidence, not more synthetic qualification.
+
+## 2026-10-26 — Consolidated physical recovery decision (#106)
+
+Merged150 at passing exact7c8ea7291c8a4551968994afc028c7d14d360d5a;149
+closed/projectDone. Based65dab3. Added one ordered NO-GO decision checklist
+covering starting-state/entry, agent/RAM, readback origin, independent restore,
+failure logs and exact package. Distinguished data-source resolution from live
+acceptance and synthetic scope from physical gates. Pending hardware preference
+is the only current owner input; no repeated request/action. Next minimal
+mode/security collection effect review, static only. No tablet/helper execution,
+downloads or new low-value tests; existing213tests/repository/diff guards pass.
