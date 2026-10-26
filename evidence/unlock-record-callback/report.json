@@ -1,0 +1,31 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "callback_global_payload_relative": 507928,
+  "registration_pointer_slot_payload_offset": 484288,
+  "callback_handler_payload_offset": 2740,
+  "registration_branch_conditional": true,
+  "record_data_offset_bytes": 28,
+  "record_length_field_offset_bytes": 16,
+  "copy_extent_is_minimum_of_record_and_requested": true,
+  "reviewed_windows": [
+    {
+      "start": 932,
+      "end": 958,
+      "sha256": "f491246b585fd322a660b5dc63395976de2cc44d3485478621d0e55cd0ec549a"
+    },
+    {
+      "start": 1244,
+      "end": 1270,
+      "sha256": "72ab25b1127bf8df8440540898ce0adc36e8b94d01599bad38ff75e6e726ec0c"
+    },
+    {
+      "start": 2740,
+      "end": 2862,
+      "sha256": "586ef3333c885acedebd1df4a08dee52371a7245dbef1a890c3a998b004a8cab"
+    }
+  ],
+  "scope": "Selected static registration and in-memory named-record reader only",
+  "backing_store_origin_resolved": false,
+  "installed_record_retrieved": false,
+  "physical_test_ready": false
+}

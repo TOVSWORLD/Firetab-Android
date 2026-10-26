@@ -264,3 +264,26 @@ Do not describe this path as an available unlock service or authorized entry rou
 Next resolve the record-retrieval callback's registration/backing-store path.
 Keep bootloader entry, actual installed acceptance and recoverable return open;
 learning a verifier's structure does not establish access to a valid token.
+
+## Conditional callback registration resolves to a named-record reader
+
+The [exact callback receipt](../../evidence/unlock-record-callback/report.json)
+connects the getter's callback global to a conditional initialization assignment.
+The assigned Thumb handler resolves to payload offset0xab4 under the existing
+linked-base assumption. Private instruction review shows it validates a supplied
+in-memory container, walks named variable-length records and copies the minimum
+of requested and stored length from the matching record's data area. Missing
+container/name/output cases have failure paths. No actual container was read.
+
+This narrows retrieval from an opaque callback to an in-memory record lookup,
+but does not yet identify the on-storage partition or source that populated that
+container. The registration depends on an initialization branch; it is not
+established that the observed tablet took that branch. Reported lookup success
+also does not certify the stored record has the full requested length; subsequent
+signature validation is a separate boundary. No stored credential or key material
+is included in the public metadata.
+
+Next trace the container's loader at0x3c370 and its initialization callers to
+establish backing-store provenance. Keep this separate from device security-state
+collection: no proposed observation command needs to retrieve unlock credentials.
+No tablet access, firmware execution or persistent change occurred.

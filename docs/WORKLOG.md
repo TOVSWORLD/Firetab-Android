@@ -1512,3 +1512,12 @@ branches reviewed. Owncalls/windowmetadata only; no key/token export/execution.
 Fullparameters/message/keyorigin unresolved, noavailableunlockrouteclaim.
 240tests/repository/diffpass. Next retrievalcallbackregistration/backingstore;
 no firmware/device/helperexec/download.
+
+## 2026-10-26 — Unlock-record callback registration (#106)
+
+Merged202 at passingfd5e9675ff574190fd445ae3484b43057d80a115;201closed.
+Base1d304fb. ExactLK conditionalregistration resolvesgetterglobal to callbackab4,
+which walks in-memorynamedrecords/copiesmin(stored,requested). Backingstore and
+actualinstalledbranch unresolved; no actualrecord retrieved. Metadata/windowhash
+receipt,240tests/repository/diffpass. Next containerloader3c370/callers; no
+credentialexport/firmware/deviceexec/download.
