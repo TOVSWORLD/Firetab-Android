@@ -933,3 +933,17 @@ complete minimal Mac CLI import closure remains unverified. No tablet access.
 106 stays open. Next offline deliverable: fail-closed escrow geometry/hash/GPT
 validation with synthetic fixtures; safe entry, restoration and usable physical
 boot-log capture still unqualified.
+
+## 2026-10-26 — Offline escrow verifier (#106)
+
+Merged PR110 exact head02df4b85ab6e8c5f0d69147b535448ef3a79443d after all four
+required checks passed; basea8940c6. Implemented regular-file-only three-region
+length/SHA verification plus GPT headers/arrays from actual primary/final-LBA
+locations, CRCs, reciprocal geometry, partition bounds/overlap and consistency.
+Caps metadata memory; no device protocols or restore actions. Seven synthetic
+tests bring suite to152 passing, repository guard/diff check pass. Qualification
+flags stay false even on valid files: collection region identity, restoration
+and physical-test readiness are not established by checksums. UEFI2.11chapter5
+is the format reference. No new downloads, installs or tablet access.
+Next: define precise restore/boot-log evidence checklist and resolve safe entry/
+agent provenance; do not close106 or any physical gate on synthetic tests.
