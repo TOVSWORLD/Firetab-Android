@@ -781,3 +781,14 @@ PR89 merged; issue88 closed. Merged development into keypad PR91, explicitly
 preserving both appended WORKLOG sections, then added this validation evidence.
 Tablet boot/hardware/app stages remain untested. Next merge91 after refreshed
 required checks; independent efuse scope92 remains queued.
+
+## 2026-10-25 — Generic efuse compatible and calibration constraints (#92)
+
+Audited cached pinned ACK generic efuse driver against donor calibration cell.
+Generic match has no MT8186 speedbin postprocessing; legacy fixed cells enabled.
+Added opt-in exact tuple proposal preserving all other constraints. Nine actual
+processed-schema controls pass; full-corpus diagnostics58→56 (13validation and
+43unmatched), zero additions. Overall validation remains failed/exit1;117 offline
+tests pass. Source/patch/schema hashes and complete delta retained. No calibration
+correctness, efuse IO or hardware support claimed. Parent27 remains open. Next:
+return to21's secure-monitor/CPU handoff source contract before more display work.

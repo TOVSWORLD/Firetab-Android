@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact generic efuse compatible coverage; calibration/hardware unqualified",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-efuse.patch",
+  "patch_sha256": "10e01417495123c9c27db070418d0de284c316e6d2e07eaece133400dd559883",
+  "schema": "nvmem/mediatek,efuse.yaml",
+  "original_sha256": "2eeab62cdc238ce0333f11fccea55d721cb019dcc2e01c2c3f6dff9dbac0619d",
+  "proposed_sha256": "507cc4fef9b1d2e4e97fc6d0f5212fa0d64a3ff8f73563935ea436607ac27088"
+}
