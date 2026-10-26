@@ -1484,3 +1484,12 @@ page*(ceil(kernel/page)+ceil(ramdisk/page)+2), normalnonoverflowcase. Ownbounded
 model+exactstockboothash:7191666/1492335/2048→8689664B, underlimit. Two boundary
 modeltests/full240pass; notfullplacement/signature/diagnosticacceptanceproof.
 No firmwarepatch/repack/deviceexec. Next latersecuritychecks/providerassignment.
+
+## 2026-10-26 — Later stock verification failure boundary (#106)
+
+Merged196 at passinge61385edaee0158e7e380d425c3028bc6acc1ba1;195closed.
+Base00574ed. ExactLK selectedpath calls1cf0c→1ce4c; wrapper mapsresult&9 tobool,
+zero→explicitverifyfailure/-13. Underlyingroutine calls1cf24twice; resultbits/
+keys unresolved.205ecselector alternatebranch preventsblanketpolicyclaim.
+Owncall/reference/windowhash receipt;240tests/repository/diffpass. Next selector
+input/resultbit/keyselection semantics; no patch/bypass/firmware/deviceexec.
