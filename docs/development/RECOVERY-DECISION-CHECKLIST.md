@@ -193,3 +193,22 @@ version bytes, exact echo semantics and session freshness need qualification.
 reviewed files. No helper was imported or executed. Next add a fresh explicit
 mode-evidence result to the offline contract, preserving unknown rather than
 reusing mutable helper state; no live mode query is authorized by these notes.
+
+## Fresh mode-reply evidence, with no mode promotion
+
+`offline_mode_evidence.decode_mode_reply` now returns a new independent result
+for each explicit supplied one-byte query/reply pair. A matching reply records
+only the pinned source's BROM-echo candidate. A different reply stays unknown;
+it is not automatically classified as preloader. Missing or extra data raises,
+and no previous result or mutable helper configuration is consulted. Even an
+echo leaves mode/provenance/authorization false. Two synthetic tests cover
+successive echo/non-echo isolation and missing/malformed evidence (223 tests).
+
+This deliberately does not add a fourth query to the existing observation
+collector: no actual command/transport contract or safe physical entry has been
+qualified. It can later classify a separately reviewed fresh capture without
+promoting a stale `is_brom` flag. No helper execution or tablet operation occurred.
+The remaining useful step is an end-to-end synthetic observation package joining
+exact frames, fresh mode reply and deadline/session checks, with a manifest of
+owned source hashes. After that, live entry and electrical/logging facts remain
+external requirements, rather than more Boolean-policy extensions.

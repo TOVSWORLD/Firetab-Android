@@ -1305,3 +1305,13 @@ setsTrue without clearing oldTrue on other reply. Own supplied-frame validator
 requires exact echo/payload, two synthetic tests/full221pass. Zero fourthword
 is explicit conservative policy, not full protocolspec. No helper/deviceexec or
 download. Next fresh mode-evidence contract, preserving unknown and sessionorigin.
+
+## 2026-10-26 — Fresh mode-reply evidence (#106)
+
+Merged160 at passing88afb1b6280f7d50570ffb2ceab7af6362e1055a;159closed/Done.
+Base806124b. Own supplied-query/reply classifier has fresh independent results,
+non-echo staysunknown, missing/malformed raises; echoonlysourcecandidate, never
+modeproof/bootstrapauthorization. Two synthetic tests/full223pass. No actual
+query constants/USB/helper imports or tablet access. Next integrate existing
+observation/frame/mode components in synthetic-only runnable host package with
+source manifest; physical facts cannot be replaced by more policy extensions.
