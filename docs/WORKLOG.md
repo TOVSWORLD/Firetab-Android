@@ -1502,3 +1502,13 @@ thenvalidator2080c→2062c; callbackstore/keys unresolved. No recordvalue retrie
 Resultmask9 excludesbits10/20alone; no arbitrarynonzerostatusacceptedclaim.
 Ownmetadata/call/windowreceipt,240tests/repository/diffpass. Next callback
 registration/keysignaturecalls; no credentialmaterial/firmware/deviceexec.
+
+## 2026-10-26 — Limited-unlock verifier boundary (#106)
+
+Merged200 at passing10f1784ad4cff9841ed6dd1634a36851e6cf2282;199closed.
+Base93a0601. ExactLK diagnosticsidentifylimitedunlock/RSA
+transformfailure; signature/transformextent256B and subsequentverifyreturn==1
+branches reviewed. Owncalls/windowmetadata only; no key/token export/execution.
+Fullparameters/message/keyorigin unresolved, noavailableunlockrouteclaim.
+240tests/repository/diffpass. Next retrievalcallbackregistration/backingstore;
+no firmware/device/helperexec/download.

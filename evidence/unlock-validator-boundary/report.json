@@ -1,0 +1,51 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "diagnostic_function_label": "amzn_verify_limited_unlock",
+  "checked_calls": [
+    {
+      "offset": 132676,
+      "target": 135040
+    },
+    {
+      "offset": 132730,
+      "target": 31504
+    },
+    {
+      "offset": 132760,
+      "target": 70712
+    },
+    {
+      "offset": 132828,
+      "target": 79276
+    },
+    {
+      "offset": 132856,
+      "target": 134964
+    }
+  ],
+  "reviewed_signature_extent_bytes": 256,
+  "reviewed_transform_result_required_bytes": 256,
+  "diagnostic_identifies_rsa_decryption": true,
+  "verification_success_result_checked_equals_one": true,
+  "reviewed_windows": [
+    {
+      "start": 132652,
+      "end": 132776,
+      "sha256": "cc5837f344c86e409e6a12105928d9b43c1dc577fb61cc4da2edc0cfb9a4ec7b"
+    },
+    {
+      "start": 132788,
+      "end": 132872,
+      "sha256": "60978e2714a650cffeee311d6a73718c10d85eb257aeae61d8af194f3ef80e2d"
+    },
+    {
+      "start": 132940,
+      "end": 132984,
+      "sha256": "9074bbb4bc9f06ab70897a99f8e31c4923eea39facbd07d7faa4bcc7f73d7519"
+    }
+  ],
+  "scope": "Selected static limited-unlock validation only; no input/key export or execution",
+  "key_provenance_resolved": false,
+  "credential_available": false,
+  "physical_test_ready": false
+}
