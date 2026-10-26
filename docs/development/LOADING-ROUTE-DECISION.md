@@ -244,3 +244,34 @@ tables/extents and alignment. Actual layout values await the new Linux CI run;
 the earlier successful link receipt predates this stronger check. Neither this
 parser nor a passing result qualifies flat payload extraction, readback protocol,
 RAM placement, return to stock or boot-log availability.
+
+## Observed footprint and initialization prerequisite (#225)
+
+[Linux layout job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40390989927/job/121811611547)
+passed the stronger gate at tested merge
+`9e33f04f31493384f5e654d394a2e504ac22249a`. The ELF hash matches the prior
+build. Its 68,672-byte container contains three load segments: executable bytes
+at virtual [0,1456), read-only bytes at [1456,1566), and writable file bytes at
+[1568,1576) with a memory extent ending at 1600. Entry zero is covered by the
+executable segment. The [receipt](../../evidence/stage1-elf-layout/report.json)
+retains exact offsets, flags, alignment and hashes. These are linked coordinates,
+not hardware addresses or an authorized memory reservation.
+
+This reveals a concrete loader prerequisite: the last segment requires 24 bytes
+of zero-filled memory beyond its file bytes. The inspected
+[startup source](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/start.S)
+only switches ARM to Thumb before falling into the linked main routine; it
+contains no BSS-clearing loop. The pinned
+[Makefile](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/Makefile)
+uses objcopy to form a flat binary, while the
+[linker script](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/generic.ld)
+places BSS after data. A flat byte sender does not by itself establish ELF
+zero-fill semantics. This is an unqualified initialization requirement, not
+proof that the shipped payload fails: its bytes/build and actual loader state
+have not been matched.
+
+Next inspect the pinned sender's exact input/padding and entry assumptions to
+establish whether it supplies this memory initialization or requires a separate
+owned startup implementation. No flat payload was generated or executed by this
+layout investigation. Recovery, physical RAM placement and log capture remain
+open gates regardless of footprint size.

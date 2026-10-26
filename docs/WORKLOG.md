@@ -1623,3 +1623,15 @@ no firmware execution, sections/disassembly or device access. All 243 host tests
 repository guard and diff check pass. Actual Linux layout result pending CI.
 Next retain actual segment metadata, then resolve flat transport/source protocol
 compatibility; restore and logging remain separate open gates.
+
+## 2026-10-26 — Actual load footprint and zero-fill prerequisite (#225 / #106)
+
+Merged #224 at passing head 26a73eafd347f8245ba604ae80f83261aedda240,
+merge 0e15409e9110313b001968f523b5fbc9cf81ab6e; #223 closed. Run
+40390989927 / job 121811611547 tested 9e33f04f31493384f5e654d394a2e504ac22249a.
+Three PT_LOAD segments cover executable entry zero; virtual end 1600, file-backed
+end 1576, 24-byte zero-fill tail. Same ELF SHA256 as prior receipt. Startup has
+no BSS clear; flat loading initialization remains unproved, not a shipped-binary
+failure claim. Metadata/source citations retained; no firmware/device execution.
+Repository/diff checks pass; existing 243-test baseline unchanged by prose/receipt.
+Next pinned sender padding/input/entry assumptions and initialization ownership.
