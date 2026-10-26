@@ -929,3 +929,70 @@ actual verification layout and prerequisites, using bounded artifacts before
 considering any owner-operated physical procedure. If that material/entry route
 cannot be qualified, report the exact missing requirement to the owner. Do not
 substitute a compiling kernel or zero schema warnings for this gate.
+
+## Older recovery material found; qualification remains open (#106)
+
+A pinned [third-party mirror](https://github.com/ryanfortner/FireHD8-2017/tree/91f93505eee47d6848dc6e161f29011503106a33)
+contains a22329263-byte recovery archive. Repository metadata dates its last file
+change to1268cbba968ef654f7b69026cf9a1981848ba913 (2022-06-16). This establishes
+mirror provenance, not original-author authenticity or Amazon build identity.
+The [original XDA thread](https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/)
+returns HTTP403; no authoritative attachment hash was obtained.
+
+Only519984response bytes were fetched:65557for directory discovery and454427for
+selected entries. The full archive was not downloaded. The reproducible probe
+caps bodies at2MiB and selected entries at1MiB, validates CRC/DEFLATE/bounds and
+known binary hashes, and never imports/executes archived content. Large brick
+images, TEE/TWRP and host executables were not extracted. All binaries/helper
+text stay in ignored local output; public evidence contains metadata/hashes and
+nonoperational findings, not copied recovery scripts or firmware code windows.
+
+Selected older preloader138924bytes has SHA256
+`cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d`;
+LK485988bytes has SHA256
+`7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056`.
+Older/current GFH mappings share base200d00; selected site hashes differ. The
+older candidate contains the heuristic marker; current does not. Neither this
+nor age/filename establishes exploitability, newer-reference patch compatibility,
+installed boot-chain compatibility or a safe downgrade. Original Amazon build
+and signature/antirollback identity remain unverified.
+
+Reproduce bounded local inspection and hash-only comparison (no tablet access):
+
+```sh
+python3 scripts/probe_reference_recovery.py --fetch --output out/reference-recovery-reproduction
+python3 scripts/compare_recovery_preloaders.py \
+  --older out/reference-recovery-reproduction/preloader.bin \
+  --current out/ota-loader-inspection-659664620/preloader.bin \
+  --output out/reference-recovery-comparison.json
+```
+
+Static helper-source review establishes these candidate-route gates, not an
+execution procedure:
+
+- Rooted setup checks maxPL6/LK2/TEE259; actual7/3/262 exceed them. Its newer-version
+  route makes boot-chain changes before the later normal-path GPT backup.
+- The alternate stock-fastboot entry makes a persistent change and assumes a
+  subsequent BootROM transition. Success and restoration on this build are
+  unverified; its large image was not inspected.
+- BootROM minimal mode still changes GPT, boot0, RPMB, boot/recovery and MISC. It
+  assumes other boot-chain components were already changed. It is not RAM-only.
+- Final setup changes recovery/MISC and erases userdata. No complete pre-change
+  escrow or verified original RPMB restoration was identified in inspected code.
+
+`sequence-gates.json` separates these prerequisites and persistent states. A
+qualified procedure needs original boot0/GPT/relevant partition/data backups,
+verified handling of original RPMB state, trusted compatible recovery artifacts,
+and a demonstrated failure-path entry/restore route. A stock OTA alone does not
+establish all those per-device restoration steps.
+
+Mac/dock compatibility remains untested. The archived launcher chooses its host
+binary by64-bit uname rather than OS/CPU ABI; the host binary was not downloaded
+or executed. No tablet enumeration, USB handshake, helper, firmware, flash,
+downgrade or wipe occurred.
+
+Issue106 stays open. Next seek an official older OTA/range match or authoritative
+original attachment, then qualify entry/restore prerequisites. No physical test
+package/action is ready. Automatic approval review rejected publishing copied
+third-party helper scripts; they remain local. Public evidence was reduced to
+summaries, metadata and hashes instead.

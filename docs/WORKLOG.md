@@ -878,3 +878,16 @@ older reference preloader/restore-material provenance and precise entry/restore
 prerequisites rather than reuse stale offsets or infer exploitability from a
 marker.100/102 completed with actual generic VM evidence and required checks;
 physical boot/recovery/hardware/app gates remain open.
+
+## 2026-10-25 — Reference material located, recovery not qualified (#106)
+
+Located pinned mirror22.3MB archive; fetched only519984response bytes using strict
+ranges. Older preloader138924B/SHAcefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d
+and LK485988B hashes retained; binaries ignored. Original author/Amazon-build
+identity unverified (XDA403). Minimal mode still changes persistent GPT/boot0/
+RPMB/boot/recovery/MISC; complete escrow/restore not established. Added bounded
+probe and hash-only comparison;138offline tests pass. Approval review rejected
+publication of copied helper code; removed it and raw code windows from public
+changes, keeping only nonoperational summaries/metadata/hashes.106 remains open;
+next official older OTA/original attachment match plus entry/restore validation.
+No tablet/helper/firmware execution or physical changes.
