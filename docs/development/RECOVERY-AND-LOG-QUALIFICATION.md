@@ -413,3 +413,22 @@ exact replies, reviewed length agreement, complete zero-status geometry report
 and separately qualified integrity handling. It must invalidate on timeout or
 malformed response. Test with synthetic events only; no live callbacks until
 entry, agent selection, RAM placement, restore and logging gates are resolved.
+
+## Owned offline initialization-response decoder
+
+`scripts/offline_dram_evidence.py` now decodes an explicitly delimited response
+field mapping without a transport, helper import or stage sender. It requires
+an explicit single-byte expected ACK, all seven exact-size fields, requested
+length equal to the bounded local EMI length, zero status and nonzero reported
+RAM size. Missing/extra fields, unknown replies and truncated/oversized values
+raise errors. This is a decoder, not a wire framing parser or ordered session
+state machine: the caller supplies field boundaries and their origin is unknown.
+
+Even a complete response returns stage-transfer authorization false. The checksum
+algorithm is still unknown, geometry is merely agent-reported, and no provenance
+or physical readiness is inferred. There is no opt-in flag to promote these
+claims. Three synthetic tests cover every field's size faults and semantic
+failures; the full offline suite has210 passing tests. Actual capture, framing,
+timeout invalidation and integration with a supervised worker remain separate
+work. Next resolve the checksum's source evidence or explicitly reject that
+candidate integrity contract; do not silently invent an algorithm.
