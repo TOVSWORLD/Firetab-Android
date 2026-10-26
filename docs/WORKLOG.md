@@ -1097,3 +1097,14 @@ tests bring suite178pass. StandardHomebrewfilesabsent; not wholehostinventory.
 No native code loaded, backend/device instantiated or packages installed. No
 tablet IO/securitychanges/downloads. Next native libusb artifact provenance/
 resource metadata for possible isolated workspace staging, not system install.
+
+## 2026-10-26 — Real native libusb candidate identified/statically inspected (#106)
+
+Currentdev269b24b/healthyCI. OfficialHomebrewmetadata4810B pins1.0.30 arm64
+golden_gate for observedMac27. HEADbudget191568B then boundedprivateartifact
+fetch matchedSHA. Selecteddylib162720B/SHA95c5d6ec5e955b5fb83253963805a0e25a6b1253e9c4e217eaad68e31bb04f4a
+passesrealMach-Opreflight; seven requirednmexportnamespresent. Staticotool has
+Appledependencies and unrelocatedHomebrewidentityplaceholder, not runtimeproof.
+Own boundedreproextractor/tworejectiontests:180tests pass. Binary/helperbytes
+ignored; nonativecode/helperexecution/install/USBenum/tabletaccess/securitychange.
+Next explicitpinnedlibrary +readack adaptercontract with syntheticofflinechecks.

@@ -1,0 +1,34 @@
+{
+  "bottle_sha256": "b462926c2314b5bb7d1a6721f9a3cf7336a4166ba67024b4bbd0226de457132a",
+  "bottle_bytes": 191568,
+  "selected_member": "libusb/1.0.30/lib/libusb-1.0.0.dylib",
+  "artifact_staged_in_ignored_workspace": true,
+  "static_library": {
+    "architecture": "arm64",
+    "filetype": "dylib",
+    "load_commands": 20,
+    "slice_bytes": 162720,
+    "header_structure_valid": true,
+    "file_bytes": 162720,
+    "sha256": "95c5d6ec5e955b5fb83253963805a0e25a6b1253e9c4e217eaad68e31bb04f4a",
+    "native_code_loaded": false,
+    "libusb_exports_verified": false,
+    "dependency_loading_verified": false,
+    "usb_enumerated": false,
+    "physical_test_ready": false
+  },
+  "required_static_symbol_names_present": {
+    "libusb_init": true,
+    "libusb_exit": true,
+    "libusb_get_device_list": true,
+    "libusb_free_device_list": true,
+    "libusb_open": true,
+    "libusb_control_transfer": true,
+    "libusb_bulk_transfer": true
+  },
+  "native_code_loaded": false,
+  "system_install_performed": false,
+  "usb_enumerated": false,
+  "signature_or_runtime_abi_verified": false,
+  "physical_test_ready": false
+}
