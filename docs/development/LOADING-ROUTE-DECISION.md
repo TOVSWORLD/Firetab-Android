@@ -68,3 +68,34 @@ Sources: [route inventory](../../evidence/recovery-material/sequence-gates.json)
 [current-stock analysis](CURRENT-STOCK-ENTRY-RETURN.md),
 [host binding limits](OBSERVATION-BINDING-DESIGN.md),
 [pinned stage usage](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/README-USAGE.md#L363-L406).
+
+## Pinned stage/plstage review: unmodified helper is not a qualified RAM loader
+
+At the pinned revision, [cmd_stage](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_main.py#L193-L291)
+calls the monolithic initializer and crasher before uploading its first payload.
+Its second-stage write loop advances only when a write succeeds, without a total
+deadline or abort after failed writes. A bad transfer marker is logged; optional
+read-back mismatch writes a host file and logs an error but does not return before
+the later execution-transfer request. Therefore requesting verification does not
+make this exact helper fail closed. These are conditional source findings, not
+observed failures or executed transitions on the tablet.
+
+[plstage](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_main.py#L537-L660)
+can invoke security bypass, watchdog handling, preloader extraction/patching and
+RAM execution depending on configuration. A custom preloader path can be patched
+in memory. This is distinct from writing it to flash, but the resulting executed
+firmware's indirect effects remain unreviewed. No persistence-free claim follows.
+The code's USB close/host exit is not an established return to stock operation.
+
+The [metadata receipt](../../evidence/ram-stage-effects/report.json) verifies
+exact cached source identity. Required stage payload code/effects are not reviewed
+by this host-method analysis. No payload was downloaded or executed, no helper was
+imported, and no firmware patch was produced. Keep the route as an investigation,
+not a drop-in test procedure. A Linux/ARM64 handoff is still a separate contract.
+
+Next locate pinned payload source/build provenance for generic stage1, stage2 and
+preloader-stage before deciding which can form a minimal RAM-only trampoline.
+Audit memory/storage/MMIO/reboot handlers and entry prerequisites together. If
+payload source is unavailable, record that exact dependency rather than assuming
+that a RAM upload implies no persistent effects. Fixing the host transfer loop
+alone would not resolve these firmware and recovery gates.

@@ -1550,3 +1550,13 @@ route. Stockdownload+continue notprovenRAMboot; persistentarchivedchain deferred
 forrestoregaps. Consolidatedstorage/logrequirements; next pinnedstage/plstage
 actualeffect/exit trace, no morehostpolicywrappers. Repo/diffguards pass, existing
 240testbaseline unchanged. No tablet/helper/firmwareexec/download.
+
+## 2026-10-26 — Pinned RAM stage/plstage effects and exit (#106)
+
+Merged210 at passing46d7a74b0e5ae800c29dc560a2f3e5d1a4d57bab;209closed.
+Basea7504c5. Verifiedcachedmtk_mainSHA; stage invokesinit/crasher, writefailureloop
+unbounded, marker/readbackmismatchnotabortbeforejump. Plstageconditionalbypass/
+watchdog/inmemorypatch/execution meansnotpersistencefreeproof. Payloadcodeeffects
+andstockreturnunknown. Retainedmetadata/sourcecitations only; no helper/payload
+exec ordownloads. Repo/diffpass, existing240baselineunchanged. Next pinnedpayload
+source/buildprovenance/effectaudit, notjusthostloopfix.
