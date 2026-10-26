@@ -1366,3 +1366,13 @@ returnsarray, disposeignores some releaseerrors. Retainedmetadata and binding
 requirements; no package/native import or enumeration. Existing230tests and
 repository/diffguards pass; no tests for prose-only review. Next fakePyUSBtested
 wrapper with explicit ownership/bytes/timeouts/release outcome; no live readiness.
+
+## 2026-10-26 — Injected PyUSB-shaped wrapper (#106)
+
+Merged172 at passingb8ca77b2d7f0153f82590c968316b05c6371a7fe;171closed.
+Base097ded7. Own wrapper validates explicitinterface/unique bulkendpoints/alt0,
+claim, boundedIO/arraytobytes and sticky releasefailure acrossdispose. Fourfake
+objecttests/full234pass; no USB/native imports/discovery/actualhandles. Supplied
+fresh/exclusive objects remain trustboundary, notruntimeproof. Next join wrapper
+and adapter with fake-device uncertainclaim/cleanup fault tests; nativeABI later
+withoutenumeration. No tablet/helper/nativeexec/download.

@@ -190,3 +190,27 @@ selected-interface/endpoint metadata, strict timeout/bytes handling and separate
 release/dispose outcomes. Actual native handle acquisition, alternate-setting
 verification and exact live endpoint ownership stay unqualified until reviewed.
 No runtime dependency install or physical operation is needed for that work.
+
+## Injected PyUSB-shaped wrapper implementation
+
+`injected_pyusb_observation.py` now implements the backend methods against an
+explicitly supplied device and utility object, importing no USB/native package.
+It checks the active configuration's selected interface, rejects alternate
+settings on that interface, requires globally unique selected bulk endpoint
+addresses and bounded packet sizes, and claims only the explicit interface.
+Read/write use only those endpoints with positive timeouts at most500ms and
+64-byte bounds. Read arrays are length-checked then converted to bytes. Explicit
+release failures remain sticky even if resource disposal later succeeds.
+
+Four fake-object tests cover explicit IO/cleanup, ambiguous descriptors and
+alternates, release failure, ownership/timeout and short-read faults;234 full-suite
+tests pass. This is an implementation against the reviewed public API shape,
+not a native runtime qualification. It does not discover/select devices, load a
+backend, change configuration/alternate settings or detach drivers. The supplied
+objects and fresh/exclusive device ownership remain caller trust boundaries.
+No actual handle, interface, protocol command or tablet was accessed.
+
+Next join this wrapper to the owned adapter in a fake-device integration test,
+including uncertain claim/cleanup failures. Native-load ABI testing can then be
+prepared separately without enumeration. Entry/handshake/mode and failure return
+still require a concrete owner-reviewed route before physical use.
