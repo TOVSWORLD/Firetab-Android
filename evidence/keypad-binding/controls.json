@@ -1,0 +1,53 @@
+{
+  "cases": [
+    {
+      "compatible": [
+        "mediatek,mt8163-keypad",
+        "mediatek,mt6779-keypad"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-keypad"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-keypad",
+        "mediatek,wrong"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-keypad",
+        "mediatek,mt6779-keypad",
+        "extra"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8183-keypad",
+        "mediatek,mt6779-keypad"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt6779-keypad"
+      ],
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_other_constraints_preserved": true,
+  "passed": true
+}

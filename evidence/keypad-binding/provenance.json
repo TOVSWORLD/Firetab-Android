@@ -1,0 +1,9 @@
+{
+  "driver_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/input/keyboard/mt6779-keypad.c",
+  "driver_sha256": "8b12c7c30b50c21e6c193088b96d15bf481ce844e564b465ed0684ccc5460826",
+  "donor_dt_path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+  "donor_dt_sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+  "driver_match_line": 243,
+  "donor_tuple_line": 416,
+  "donor_node_disabled": true
+}

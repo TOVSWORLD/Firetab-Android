@@ -597,3 +597,41 @@ equality does not establish a tight decompression-output limit or blocker. The
 modern actual output-length/memory-footprint comparison is the next bounded task.
 Loader execution, complete header mutation and transform paths, recovery and
 physical boot remain open under#21.
+
+## Keypad compatible coverage experiment (#90)
+
+The pinned donor mt8163.dtsi lines415–421 declare the disabled keypad node with
+`mediatek,mt8163-keypad`, `mediatek,mt6779-keypad` and clock-name `kpd`.
+Pinned ACK driver `drivers/input/keyboard/mt6779-keypad.c` line243 matches the
+fallback; it parses matrix-keypad properties and debounce at runtime. The donor
+fallback declaration is evidence for a local schema proposal, not proof of
+register/interrupt/wakeup compatibility. No node status or hardware DT changed.
+
+The opt-in `mt8163-keypad` proposal adds only that first compatible to the
+existing exact two-string fallback branch. Original/proposed hashes and patch
+are locked in `projects/firetabs-android/kernel/dtb/bindings/mt8163-keypad.json`.
+`evidence/keypad-binding/` retains original/proposed schema, selected driver source
+with URL/hash, real processed compatible schema and six accepted/rejected tuple
+controls. Missing/wrong/extra fallback is rejected; existing tuples remain valid;
+all other schema constraints are unchanged. This is not an upstream binding.
+
+Reproduce with the existing cached corpus/tools and DTB:
+
+```sh
+python3 scripts/validate_douglas_bindings.py \
+  --experiment rdma-node-name --binding-profile mt8163-uart-proposed \
+  --repair-gunyah-yaml --repair-pmic-selector \
+  --extra-binding mt8163-sysirq --extra-binding mt8163-timer \
+  --extra-binding mt8163-mmc --extra-binding mt8163-uart-dma \
+  --extra-binding mt8163-i2c --extra-binding mt8163-spi \
+  --extra-binding mt8163-auxadc --extra-binding mt8163-rng \
+  --extra-binding mt8163-keypad
+work/dtb-tool/venv/bin/python evidence/keypad-binding/check-controls.py
+```
+
+Full-corpus diagnostics fall from60 to58: the keypad compatible validation error
+and its unmatched-node diagnostic disappear, with **no new diagnostics**.
+14validation errors and44unmatched nodes remain; wrapper exits1 as required.
+The keypad schema's doc validation is clean. The preexisting Gunyah schema
+semantic warning remains visible. Parent#27 stays open. The driver source fetch
+was bounded128KiB encoded; no dependency/build/device operation was added.

@@ -134,3 +134,13 @@ Its previously reported resource gate remains roughly0.3GiB Git transfer,
 15GiBfree disk,7GiBhost RAM and60-minute timeout (prior compile about23minutes).
 The measurement tool itself needs no downloads or paid service. No tablet or
 firmware-loader execution is involved.
+
+The measurement integration subsequently passed actual compile/QEMU run40250576526
+at projectb1f3c1fc2652f249db744f8997021ea7d7649fdb. New Image SHA256
+`16c9e5e6947231070888dcba5467b79df20ef6eee060edd86b36ec6fd336bcb3`
+has the same28576256-byte length; gzip9187928bytes decoded exactly to it. All
+required markers plus5seconds idle passed (5.94seconds total observation).
+`evidence/image-measurements/validated-runtime-result.json` records the actual
+report, script/input hashes and full downloaded CI-log hash. This new build's
+hash differs from the historical build; deterministic compression of one input
+does not establish a bit-identical kernel rebuild. No tablet was accessed.

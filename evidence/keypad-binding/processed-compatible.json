@@ -1,0 +1,33 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "const": "mediatek,mt6779-keypad"
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6873-keypad",
+            "mediatek,mt8163-keypad",
+            "mediatek,mt8183-keypad",
+            "mediatek,mt8365-keypad",
+            "mediatek,mt8516-keypad"
+          ]
+        },
+        {
+          "const": "mediatek,mt6779-keypad"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}
