@@ -1,0 +1,37 @@
+{
+  "scope": "Reviewed public DT and source/config contract only",
+  "dtb_sha256": "ef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43",
+  "config_sha256": "f5da34605d2ebc5f279269e59d56027acfefbfb346819d945c7dd7a6c3209eed",
+  "driver_source": {
+    "path": "evidence/console-storage/ack/drivers/tty/serial/8250/8250_mtk.c",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/tty/serial/8250/8250_mtk.c?format=TEXT",
+    "sha256": "9ed47647ccf4c2cada2b09d61d088b04cbc80b92f9455673b41fd645e5dfe821",
+    "bytes": 18626
+  },
+  "facts": {
+    "stdout_target": "/soc/serial@11002000",
+    "stdout_options": "921600n8",
+    "uart_status": "okay",
+    "mt6577_driver_fallback_present": true,
+    "driver_config": {
+      "SERIAL_EARLYCON": "y",
+      "SERIAL_8250": "y",
+      "SERIAL_8250_CONSOLE": "y",
+      "SERIAL_8250_MT6577": "y"
+    },
+    "all_required_driver_symbols_builtin": true,
+    "explicit_earlycon_request_in_dt": false,
+    "explicit_console_request_in_dt": false,
+    "clock_names": [
+      "baud",
+      "bus"
+    ],
+    "dma_property_present": true,
+    "pin_control_property_present": true,
+    "loader_preserves_dt_or_args_verified": false,
+    "firmware_uart_initialized_verified": false,
+    "physical_pad_voltage_routing_verified": false,
+    "usable_log_path_qualified": false
+  },
+  "script_sha256": "071cd094754f6b5ca9c0015e8f1e5a93d5ad4a88d68182d590d02f3deee401b2"
+}

@@ -994,3 +994,15 @@ conditional extension/hash transformation before upload, so original digests
 do not establish future uploaded identity. Added pinned bounded-cache repro
 verifier and two synthetic tests:160 tests pass. Next cached UART source/driver
 contract; entry/agent effects/restore and physical logging remain unqualified.
+
+## 2026-10-26 — UART first-log source/DT/config contract (#106/#22)
+
+Merged PR115 exact3709268020f9a36a3eb35491707b6f259373ee1d after required checks
+passed; base4d83c96. Audited reviewed primary-onlyDTB against cached driver/config:
+enabledUART0/11002000/stdout921600n8/fallback and built-in drivers present, but
+no explicit earlycon/console in DT args and built-inCMDLINE empty. Actual loader
+argument delivery remains unverified. Early driver setup does not establish
+clock/pin initialization; normal probe has separate provider requirements.
+Added source/DT audit +two tests:162 passing, no DT mutation/download/device IO.
+Next authoritative douglas pad/electrical evidence search, then safe entry/log
+transport qualification. No physical wiring action requested.
