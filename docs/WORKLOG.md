@@ -1580,3 +1580,12 @@ bundledclang ARMThumbA9 objectcompile succeeded0 with3nonprototypewarnings;
 source/compiler/command/objecthashreceipt retained. Nolink/GCCequivalence/runtime
 claim, no installs/downloads/deviceexec. Repo/diffpass,240baselineunchanged.
 Next pinnedstartup/linker feasibility before any dependencydownload.
+
+## 2026-10-26 — Actual startup assembly/link feasibility (#106)
+
+Merged216 at passing989878ac1bce506bcff3b04960dd327b3a4c9add;215closed.
+Based171d40.562Bverifiedpinnedstart/linksourcefetched. Actualclangstartupcompile0;
+actualELFlink1 AppleldrejectsGNUoptions. CheckedPATH/xcrun/standardprefixes no
+ELFlinker; notwholehostabsence. Receipt hashes/error retained, nolinkedpayload/
+firmwareexec/install. Next existingLinuxCI smallprobe5min/1GiB/noinstall/16KiB
+sourcecap, beforeanytoolchaindownload. Repo/diffpass,240baselineunchanged.
