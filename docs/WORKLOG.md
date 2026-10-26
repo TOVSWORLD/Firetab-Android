@@ -792,3 +792,16 @@ processed-schema controls pass; full-corpus diagnostics58→56 (13validation and
 tests pass. Source/patch/schema hashes and complete delta retained. No calibration
 correctness, efuse IO or hardware support claimed. Parent27 remains open. Next:
 return to21's secure-monitor/CPU handoff source contract before more display work.
+
+## 2026-10-25 — CPU startup / monitor source contract (#94)
+
+Compared cached legacy mt-boot/PSCI and ACK CPU ops plus stock/donor DT contracts.
+Legacy wrapper adds host-side MTCMOS power sequencing after PSCI; ACK DT table
+has no mt-boot method. ACK still supports explicit legacy PSCI IDs, so old DT
+format alone is not a hard blocker. Donor v0.2 ARM64 CPU_ON C4000003 differs from
+stock explicit84000003; monitor acceptance remains unknown. LK primary82000200
+is separate. Source hashes/line anchors and mutation controls retained. Legacy
+reference not binary-matched to stock. Proposed primary-only diagnostic limit
+requires boot-CPU path audit; no device/SMC/firmware execution. Next bounded task:
+trace boot-CPU versus secondary setup and maxcpus=1 effects before choosing DT
+CPU changes. Physical recovery/logging and hardware/runtime gates remain open.
