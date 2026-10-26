@@ -1570,3 +1570,13 @@ whilehostrequestsit. Cwatchdogwrites/functionjump notrecoverableLinuxhandoff.
 Stage2/plsourcebuildrecipe notlocatedinnontruncatedtree, notglobalabsenceproof.
 Retainedmetadata only, guards pass/existing240baselineunchanged. Next upstream
 stage2/plsourceprovenance or markexactdependencymissing; no helper/payloadexec.
+
+## 2026-10-26 — Stage2 source search and actual stage1 object compile (#106)
+
+Merged214 at passing0fd013834bfab5ce5c0a109ec00513db76e55447;213closed.
+Base4ea3f81. BoundedprimaryGitHubhistory/searchfound no stage2/static recipe;
+packagedbinaryhistoryinitial65d8c4a noted, notuniversalabsenceproof. Actual
+bundledclang ARMThumbA9 objectcompile succeeded0 with3nonprototypewarnings;
+source/compiler/command/objecthashreceipt retained. Nolink/GCCequivalence/runtime
+claim, no installs/downloads/deviceexec. Repo/diffpass,240baselineunchanged.
+Next pinnedstartup/linker feasibility before any dependencydownload.

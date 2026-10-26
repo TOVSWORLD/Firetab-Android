@@ -133,3 +133,28 @@ binaries as unavailable dependencies for the proposed auditable route. A minimal
 owned first-stage transfer path can be investigated separately, but must retain
 watchdog/entry/verified read-back and ARM64 handoff requirements. Do not execute
 these payloads to discover their missing behavior.
+
+## Upstream source search and actual stage1 object compilation
+
+A bounded primary GitHub search checked upstream history for src/stage2 and
+src/stage2_static and repository/code-search leads. No matching source recipe
+was established. The packaged stage2 binary history lead is
+[initial-release commit65d8c4a](https://github.com/bkerler/mtkclient/commit/65d8c4aa8912e5f5d152466362c78ab1fbbfcd47).
+This does not supply a reproducible payload source/build mapping. Search failure
+is not proof of universal absence; stage2/pl remain unaudited dependencies for
+this route. Do not substitute an unrelated fork's binary without provenance.
+
+Useful local development result: the exact generic_stage1 C source **compiled
+to an ARM ELF object on this Mac** using bundled Apple clang, without installing
+a toolchain or downloading anything. The [object probe receipt](../../evidence/stage1-object-probe/report.json)
+retains compiler version, exact command, source/object hashes and size. Three
+non-prototype warnings occurred. This is an alternative compiler object probe,
+not the upstream GCC build, a linked payload or shipped-binary equivalence.
+No object/firmware was executed, packaged or offered for physical testing.
+
+Next complete a bounded reproducible link-tool feasibility check using pinned
+startup/linker sources, reporting any missing linker before downloads. If that
+works, compare the rebuilt first-stage protocol with its host using static
+analysis. The missing stage2/pl source and actual entry/return/logging requirements
+still block an auditable complete diagnostic loader; compiling first-stage C
+alone does not remove them.
