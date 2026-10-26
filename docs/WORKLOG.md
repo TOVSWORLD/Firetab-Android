@@ -1196,3 +1196,15 @@ Getterunpack mayraise before caller sentinelbranch; versionzero not a provenDA
 compatibility.203existingtests/repository/diffguards pass; no new tests for
 metadata glue, nohelper/native/deviceexec/download. Hardwarepreferencepending
 without assumption. Next exactcachedPL7 EMI-format source/data inspection only.
+
+## 2026-10-26 — Current-stock EMI data dependency (#106)
+
+At development base316c9a4, inspected cached official currentPL7 and olderPL
+without execution or downloads. Both contain identical188-byte EMI format0x10
+data (digest4daa46c2...ae97); pinned helper has an explicit format0x10 branch.
+Own bounded GFH/footer inspector emits metadata/digests only; two synthetic tests
+bring suite205pass. Initial repository check rejected a symbolic base argument;
+rerun with resolved exact SHA. No agent ACK/status/geometry or installed binary
+equivalence observed. No old-preloader flash needed merely to source this data;
+bootstrap/security/restore/logging still unqualified. Next initialization response
+contract; pending hardware preference does not block this static work.

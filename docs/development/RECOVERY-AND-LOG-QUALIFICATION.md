@@ -328,3 +328,28 @@ runtime or physical readiness. Static current LK already contains a matching
 earlycon token; previous DT-only absence was not final command-line evidence.
 Next resolve discarded firmware constraints and use a separately gated compile
 only after that profile review. Board electrical/recovery gates remain open.
+
+## Current-stock DRAM initialization data source
+
+The bounded offline inspector `scripts/inspect_preloader_emi.py` finds the same
+188-byte EMI data in cached official current build659664620 (PL7) and older
+build636558520 preloaders. Both use EMI format16 (0x10), unrelated to Android
+version numbering. The data SHA256 is
+`4daa46c2e26ed49f94da66088b59f7a8bcdcb2998fd0f0338c3bf5d47cceae97`.
+Full input identities, offsets and nonqualification flags are retained in
+[evidence](../../evidence/current-preloader-emi/report.json); no raw data is published.
+
+The pinned [extraction implementation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/daconfig.py#L120-L147)
+locates this data using the declared signature boundary and loader-info footer.
+The [legacy initialization branch](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py#L345-L391)
+includes format0x10, exchanges a length, sends EMI and reads initialization status
+and reported memory geometry. Those protocol responses have not been observed.
+
+This resolves the data-source dependency: obtaining this identical configuration
+does not itself require flashing the older preloader. It does not resolve entry,
+security/bootstrap compatibility, agent acceptance, installed-image equivalence,
+actual RAM geometry or recovery. Do not use another board's fallback configuration.
+The inspector executes neither firmware nor upstream helper code. Two synthetic
+parser tests cover valid metadata and malformed bounds/tags/version;205 tests pass.
+Next qualify the source-level initialization response contract and fail-closed
+handling before considering any live binding. Physical gates remain open.
