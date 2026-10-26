@@ -1475,3 +1475,12 @@ limit. Thisisnotcryptographicverifier. Metadata/windowhashes ownreceipt, runtime
 lengthproducer/completepredicate unresolved, nouniversalhardwarelimitclaim.
 238tests/repository/diffpass. Next lengthglobalassignments/latersecuritychecks;
 no firmwarepatch/repack/deviceexec/download.
+
+## 2026-10-26 — Resolved stock checked-length producer (#106)
+
+Merged194 at passing26802fcf9d26270712b7871cb5e8e662eebdfa0a;193closed.
+Base1b92dd6. ExactLK producer/consumerglobalidentity resolves16MiB input to
+page*(ceil(kernel/page)+ceil(ramdisk/page)+2), normalnonoverflowcase. Ownbounded
+model+exactstockboothash:7191666/1492335/2048→8689664B, underlimit. Two boundary
+modeltests/full240pass; notfullplacement/signature/diagnosticacceptanceproof.
+No firmwarepatch/repack/deviceexec. Next latersecuritychecks/providerassignment.

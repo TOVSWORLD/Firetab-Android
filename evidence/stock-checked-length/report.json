@@ -1,0 +1,13 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "boot_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "shared_length_global_linked_address": "0x4bd7c3e8",
+  "header_kernel_bytes": 7191666,
+  "header_ramdisk_bytes": 1492335,
+  "header_page_bytes": 2048,
+  "modeled_checked_extent_bytes": 8689664,
+  "within_reviewed_16mib_length_check": true,
+  "model_scope": "Selected normal arithmetic only; not full placement/signature/acceptance model",
+  "producer_window_sha256": "8f3d8747c5a55f731e55a8290d06f5196c08dfbc40f87a491f85df524431eff3",
+  "physical_test_ready": false
+}
