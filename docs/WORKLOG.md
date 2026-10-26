@@ -725,3 +725,13 @@ Exact offsets/bytes, PC-relative references, disassembly and hashes retained.
 r5 lineage, upstream header/decompression producer and monitor behavior remain
 unverified. Non-loadable static-analysis object only;106 tests pass. Next#21
 trace entry-slot producer. No code/firmware execution, new download or tablet IO.
+
+## 2026-10-25 — Header entry/decompression producer (#84)
+
+Exact cached LK static trace joins three GOT references to header-pointer global
+4bd841b0. Selected header+0xc supplies entry and gzip output; K64 checks512KiB
+alignment and loops on failure; decompression call supplies28MiB capacity. Modern
+diagnostic image_size equals that capacity (no margin, not success/failure proof).
+Selected bytes/disassembly/hashes and mutation negative controls retained. No
+firmware execution, downloads or tablet IO. Next: staging/input length and DT
+handling before considering any test package; recovery remains unqualified.

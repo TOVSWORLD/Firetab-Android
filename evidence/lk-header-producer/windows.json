@@ -1,0 +1,74 @@
+[
+  {
+    "name": "header_publication",
+    "start": 149360,
+    "end": 149424,
+    "sha256": "ca12e83bc614c676964a12e3659b129e605190798feb5423084fc86b7a367eb5"
+  },
+  {
+    "name": "header_magic_check",
+    "start": 149478,
+    "end": 149498,
+    "sha256": "e332c7972bf857b843c9ef107bf0fd63a9754323f91f703fc2927685b9c57c9b"
+  },
+  {
+    "name": "header_kernel_label",
+    "start": 149548,
+    "end": 149562,
+    "sha256": "24ac6d7fdb45f095d15834ce6964f1c4e1e2db747e418412cae8bd025ef588fe"
+  },
+  {
+    "name": "entry_header_load",
+    "start": 257242,
+    "end": 257260,
+    "sha256": "05b3650b73a5cb03cc9bb9a0d0d9a6413979e3cf02d8e382a1eb411fbb0ff05b"
+  },
+  {
+    "name": "header_entry_forward",
+    "start": 257408,
+    "end": 257446,
+    "sha256": "d71e75affa4be6ed1943b7c51e43a5f28774640f4bdc8a499df45b40f7d3fb70"
+  },
+  {
+    "name": "k64_alignment_gate",
+    "start": 253500,
+    "end": 253546,
+    "sha256": "042be90bc8455915fb5cc3e774651dea3e3cfa806fb2f1d72a285d82b0ca79c6"
+  },
+  {
+    "name": "decompression_select",
+    "start": 253862,
+    "end": 253876,
+    "sha256": "b813a1a985d5e34fc939f829168bf0d3583e455f24d59aa9c0dbbd3ebf281f90"
+  },
+  {
+    "name": "decompression_destination",
+    "start": 254218,
+    "end": 254280,
+    "sha256": "618a2ef488348571ed4e756b09c5c0e28adb9e2032080d1c8f00c6572ff4b1b8"
+  },
+  {
+    "name": "gzip_argument_adapter",
+    "start": 259056,
+    "end": 259078,
+    "sha256": "8555f7fdf02c6a7d3323273c09f84fc3df5cda6497db353653f69880a603ad43"
+  },
+  {
+    "name": "inflate_arguments",
+    "start": 258740,
+    "end": 258832,
+    "sha256": "93d1edf214b1bd3b27faa8e034bacf1327efe4c1887d241f2bd5354a24546859"
+  },
+  {
+    "name": "gzip_header",
+    "start": 258916,
+    "end": 258992,
+    "sha256": "983ae9c31706e2a65126a7ec063e88f8e1cf71a4a84ac75ba94c8a49bc8c5e3a"
+  },
+  {
+    "name": "staging_address",
+    "start": 153484,
+    "end": 153490,
+    "sha256": "8c8a17c603a79bb3d982f349bb350572f1bac5675c79e2b44a523b2d1cfda4d4"
+  }
+]

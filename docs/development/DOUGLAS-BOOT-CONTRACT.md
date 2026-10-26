@@ -464,3 +464,65 @@ flags. No firmware/helper instruction ran and no tablet was accessed. Next#21
 work: trace the producer of the saved entry slot and its decompression/header
 inputs. Preserve the current static conclusions without promoting them to a
 physical boot or recovery result.
+
+## Exact LK header producer and decompression destination (#84)
+
+The build-matched LK SHA256 remains
+`4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08`.
+This static trace follows selected header-present/K64 branches; it does not
+execute firmware or establish a tablet boot/recovery method. Offsets below refer
+to the payload after the 512-byte MTK prefix. Reproduce with cached bytes:
+
+```sh
+python3 scripts/trace_lk_header_producer.py \
+  --lk out/ota-loader-inspection-659664620/lk.bin \
+  --output out/lk-header-producer-reproduction
+python3 -m unittest discover -s tests -q
+```
+
+Selected instruction bytes, decoded windows, string references and hashes are in
+`evidence/lk-header-producer/`. The analysis object stays ignored in `out/` and is
+ET_REL without an entry point or program headers. Apple LLVM21 decodes Thumb;
+full firmware binaries are not published.
+
+Three PC-relative table-base calculations (literal/add-PC pairs
+24958/2477e, 3ef54/3ebb0, 3e994/3de30) resolve payload offset761f4. Each function
+uses table index248; that table word contains linked address4bd841b0, the mutable
+header-pointer global. This global is outside the file-backed payload. Its
+runtime contents are unavailable; the table word is not a captured header.
+
+At247aa the parser publishes its allocated header pointer. The read callback is
+indirect. At247ee it compares eight bytes against the PC-relative `ANDROID!`
+string, then branches on a nonzero result. The function logs header+0xc with the
+literal `Android Boot IMG Hdr - Kernel Address`. Publication precedes validation;
+this audit does not establish error propagation for every caller or every write
+to this mutable object.
+
+On the checked header-present caller branch,3ed86 loads header+0xc into r8;
+3ed98 moves r8 into r0 and3eda0 calls3eb84. Combined with#82, this connects the
+header kernel address to the saved entry slot and selected K64 SMC argument.
+Standard ARM AAPCS callee-saved register preservation is assumed. Neither this
+short producer sequence nor the checked downstream forwarding wrapper rounds
+that address. This is not a whole-program proof that no other path can modify it.
+
+The K64 gate at3de5e loads header+0xc, extracts its low19bits and rejects a nonzero
+value. Its failure branch3e132 logs then loops at3e146. Thus this gate requires
+**512KiB alignment**, not2MiB, and rejects rather than fixes misalignment. The
+modern ARM64 Image's independent placement requirement still applies.
+
+For the selected decompression call at3e11c, r1 is loaded from the same header
+object's+0xc; r3 is explicitly1c00000 (**28MiB**). Adapter3f3f0 moves the output
+pointer into r2 and calls the gzip-header parser3f364. That parser calls3f2b4;
+the latter saves r2/r3 then assigns them to the inflate output-pointer and
+capacity slots at3f2f8/3f2fe. This connects decompression destination and selected
+entry to the same header field, subject to intervening mutable-state assumptions.
+Function2578c returns45000000, the staging-address input to the checked load
+calls; its returned constant alone does not prove the complete storage path.
+
+The existing generic diagnostic Image declares image_size29360128, exactly the
+observed28MiB decompression capacity. That equality proves no margin and is not
+proof of compressed-byte output size, overflow, success or board compatibility.
+We have not selected a physical destination. Remaining work: trace staging/input
+length and appended-DT handling, enumerate relevant header mutations, qualify
+secure-monitor behavior and find a recoverable loader/log procedure. Parent#21,
+physical boot, hardware support and Android/app runtime gates remain open.
