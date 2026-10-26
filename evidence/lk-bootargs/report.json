@@ -1,0 +1,94 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "script_sha256": "62cfe7776ea2f79e3841d3210ed65208967f724d80b5f81d26c861960a091505",
+  "facts": {
+    "scope": "Selected exact-build static paths only; not whole-loader emulation",
+    "initial_file_backed_command_buffer": {
+      "linked_address": "0x4bd74cb8",
+      "bytes_before_nul": 150,
+      "sha256_before_nul": "c09fc1b9944bbe4d71bd59b43dd79e19965fbce275876bbce74145a1e3fba10b",
+      "argument_keys": [
+        "console",
+        "console",
+        "console",
+        "earlycon",
+        "root",
+        "vmalloc",
+        "androidboot.hardware"
+      ],
+      "diagnostic_limits_present": false
+    },
+    "references": [
+      {
+        "load": "0x3ed20",
+        "add": "0x3ed28",
+        "pool": "0x3ef80",
+        "target": "0x6626c",
+        "text": "%s %s"
+      },
+      {
+        "load": "0x3e0da",
+        "add": "0x3e0e0",
+        "pool": "0x3e9e0",
+        "target": "0x65ad8",
+        "text": "/chosen"
+      },
+      {
+        "load": "0x3e5cc",
+        "add": "0x3e5da",
+        "pool": "0x3eaac",
+        "target": "0x65eb4",
+        "text": "bootargs"
+      }
+    ],
+    "calls": [
+      {
+        "offset": "0x3ed2a",
+        "target": "0x459e4"
+      },
+      {
+        "offset": "0x3eda0",
+        "target": "0x3eb84"
+      },
+      {
+        "offset": "0x3e0e2",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x3e5c8",
+        "target": "0x45d58"
+      },
+      {
+        "offset": "0x3e5dc",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x46954",
+        "target": "0x464ac"
+      },
+      {
+        "offset": "0x46974",
+        "target": "0x468b4"
+      },
+      {
+        "offset": "0x4699e",
+        "target": "0x45a58"
+      }
+    ],
+    "header_input": "header+0x40 passed with current command buffer to %s %s formatting helper at3ed2a",
+    "handoff_buffer": "r4 -> r2 at3ed92; callee r2 -> r6 at3de28",
+    "bootargs_write": "chosen node; r3=current command buffer; length=strlen(buffer)+1",
+    "existing_property_branch": "resize data, replace big-endian length, copy new buffer from r9 into property data",
+    "checked_writer_preserves_existing_dt_bootargs_by_itself": false,
+    "failure_path": "nonzero property-write result branches3e100, returns0; immediate wrapper loops",
+    "dt_only_limits_sufficiently_preserved_by_loader": false,
+    "unknowns": [
+      "Initial command buffer construction/global mutations and all boot modes",
+      "Complete formatter and header validation/error lineage",
+      "All FDT helper mutations to PSCI status/CPU fields",
+      "Installed loader equivalence and actual effective command line"
+    ],
+    "packaging_contract": "Require diagnostic tokens in final loader output and later Kernel command line log; validate unique values; separately verify resulting PSCI status and online CPUs",
+    "runtime_boot_verified": false
+  }
+}

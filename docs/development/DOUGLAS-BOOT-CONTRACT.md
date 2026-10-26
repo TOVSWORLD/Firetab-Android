@@ -777,3 +777,63 @@ requests suspend/off, but its QEMU execution does not qualify this DT on douglas
 Next bounded task is to trace LK's chosen/bootargs mutation so a future packaging
 contract can require and verify these limits. Primary entry, recovery and usable
 logging remain separate blockers under#21.
+
+## Exact LK bootargs writer trace (#98)
+
+The opt-in DT's chosen bootargs cannot be assumed to survive the checked stock LK
+route. Exact-hash static analysis finds a **replacement write**, not an append
+to the existing FDT property's contents:
+
+- At3ecdc the caller obtains its command buffer through the shared GOT. The
+  table word identifies linked4bd74cb8. Its initial file-backed string is150bytes
+  (SHA256c09fc1b9944bbe4d71bd59b43dd79e19965fbce275876bbce74145a1e3fba10b),
+  contains console/earlycon/root/vmalloc/androidboot.hardware keys, and lacks the
+  diagnostic limits. Runtime mutations of this buffer remain possible.
+- At3ed22 it supplies header+0x40 to a formatting helper with `%s %s`, current
+  buffer as both destination and first string, header string as second. This is
+  a concrete header-input route; complete formatter behavior/initialization and
+  all boot modes have not been emulated.
+- At3ed92 the resulting buffer is passed asr2; the FDT callee saves incomingr2 in
+  r6. The selected chosen lookup at3e0e2 uses literal `/chosen` and saves its
+  result as the node argument.
+- At3e5c8 a checked byte-loop computes the command buffer's strlen;3e5d0 adds1
+  for NUL. The call at3e5dc passes FDT pointer, chosen node, literal `bootargs`,
+  current buffer and that new length to property writer46930.
+- The existing-property branch resizes its data area, overwrites its big-endian
+  length at46994, and passes the new buffer/length to the copy helper at4699e.
+  It does not concatenate the old property's contents at this write site.
+  Nonzero write result branches3e100 and returns0; the immediate handoff wrapper
+  loops after return rather than establishing a successful kernel transition.
+
+This trace covers selected instruction-supported dataflow; it is not a global
+proof about every FDT helper or command-buffer mutation. In particular PSCI
+status and CPU-field preservation across all helpers remain **unverified**. We
+have not identified a physical bypass/recovery method. No code, helper or
+firmware was executed. Instruction windows use known instruction boundaries;
+Thumb32 second halfwords must not be treated as independent instructions.
+
+Reproduce from cached exact LK (binary remains ignored) with:
+
+```sh
+python3 scripts/trace_lk_bootargs.py \
+  --lk out/ota-loader-inspection-659664620/lk.bin \
+  --output out/lk-bootargs-reproduction.json
+python3 -m unittest discover -s tests -q
+```
+
+`evidence/lk-bootargs/` retains selected bytes, bounded disassembly, hashes,
+PC-relative string references and exact call targets. Recreate excerpts using
+`trace_lk_handoff.py`'s non-loadable analysis object plus each window's ARM/Thumb
+mode/start/end; normalize its pathname to `<analysis-only.o>` for text hashes.
+Neither `nr_cpus` nor `maxcpus` occurs literally in this LK payload; absence is
+not proof it cannot carry those tokens through a supplied header string.
+
+Future packaging/log contract: require unique `nr_cpus=1` and `maxcpus=0` in the
+**final loader-generated** command line, then verify the kernel's effective
+command-line log and one online CPU separately from PSCI-node status. The helper
+`required_limits` rejects missing/conflicting/duplicate values and conservative
+quoting/control-character cases; passing this string check alone never marks
+runtime/hardware passed. No boot image was packed. A next diagnostic-logging
+change should report these limited facts without publishing full command lines
+that might contain device identifiers. Until then, the compiled primary-only DT
+remains an offline experiment and its bootargs alone are insufficient evidence.
