@@ -1,0 +1,234 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "scope": "Header/table metadata only; no agent stage code",
+  "body_bytes": 36080,
+  "containers": [
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_2625.bin",
+      "container_bytes": 676531,
+      "git_blob_sha1": "ef198c4e026fa6cd8e42a08e6e724b532e63f1d2",
+      "v6_header": false,
+      "record_count": 11,
+      "record_width": 220,
+      "mt8163_records": []
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_7687.bin",
+      "container_bytes": 929796,
+      "git_blob_sha1": "1b39e78a0491503ebffd954c1dd4274872bd4393",
+      "v6_header": false,
+      "record_count": 16,
+      "record_width": 220,
+      "mt8163_records": []
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_iot.bin",
+      "container_bytes": 6396452,
+      "git_blob_sha1": "32bb6d5582648e4213f1221a9bfe92027c27558c",
+      "v6_header": false,
+      "record_count": 48,
+      "record_width": 220,
+      "mt8163_records": []
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_mt6590.bin",
+      "container_bytes": 7612280,
+      "git_blob_sha1": "ec24e9d88c9383b9c031fa6273210415a5999212",
+      "v6_header": false,
+      "record_count": 27,
+      "record_width": 220,
+      "mt8163_records": [
+        {
+          "record_index": 19,
+          "hardware_subcode": 0,
+          "hardware_version": 51712,
+          "software_version": 0,
+          "pagesize": 4096,
+          "entry_region_index": 0,
+          "regions": [
+            {
+              "index": 0,
+              "file_offset": 4518272,
+              "bytes": 624,
+              "signature_bytes": 0
+            },
+            {
+              "index": 1,
+              "file_offset": 4518896,
+              "bytes": 72552,
+              "signature_bytes": 256
+            },
+            {
+              "index": 2,
+              "file_offset": 4591448,
+              "bytes": 260920,
+              "signature_bytes": 256
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "container_bytes": 22483280,
+      "git_blob_sha1": "1ba72e61e2544ac99bbe630316693b6b9001c154",
+      "v6_header": false,
+      "record_count": 50,
+      "record_width": 220,
+      "mt8163_records": [
+        {
+          "record_index": 40,
+          "hardware_subcode": 0,
+          "hardware_version": 51712,
+          "software_version": 0,
+          "pagesize": 4096,
+          "entry_region_index": 0,
+          "regions": [
+            {
+              "index": 0,
+              "file_offset": 17836544,
+              "bytes": 624,
+              "signature_bytes": 0
+            },
+            {
+              "index": 1,
+              "file_offset": 17837176,
+              "bytes": 65352,
+              "signature_bytes": 256
+            },
+            {
+              "index": 2,
+              "file_offset": 17902536,
+              "bytes": 254872,
+              "signature_bytes": 256
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V6.bin",
+      "container_bytes": 13529076,
+      "git_blob_sha1": "0e0463cce6740c483ef57bbb4ae764044fa2b691",
+      "v6_header": true,
+      "record_count": 9,
+      "record_width": 220,
+      "mt8163_records": []
+    }
+  ],
+  "range_receipts": [
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_2625.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "d8469889178c78bfb5b6abba0134f432dfc0308a3e7ae25c4ae1049a856e4ad1"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_2625.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_2625.bin",
+      "offset": 108,
+      "bytes": 2420,
+      "sha256": "003371d2c4170c4289fb03268207c7b90d93184a47ad17827f88820671d44a8d"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_7687.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "a5e48d3ba3e92d11f5e460935490e4b3ba626e14a5e829eb70c81f39cd880176"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_7687.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_7687.bin",
+      "offset": 108,
+      "bytes": 3520,
+      "sha256": "df8ae5cc68b54aaef585dfc44b1d53773dd8e886995158daa7cfe27b58153e30"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_iot.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "dbd7cd4f1c05ab7867bf6136da68872ebd2319f82e93d5652214b74662169884"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_iot.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_iot.bin",
+      "offset": 108,
+      "bytes": 10560,
+      "sha256": "bb690155093279542fe8a8289161626977144dd89f792a0f5a35689e4242eada"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_mt6590.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "f2b3072b7afc7dd0adf39d8a0549f419823bd9199a41e52bdef2f1ad99a776fd"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_mt6590.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_AllInOne_DA_mt6590.bin",
+      "offset": 108,
+      "bytes": 5940,
+      "sha256": "5e1cb2dfd4f2c98085d5e9dc16d74d887d9f8593bdede059af70bda9664e4018"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "1815d55b093acd46b05075e16f7e0ac3c2c81974178403f9a57e5074761b45d9"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "offset": 108,
+      "bytes": 11000,
+      "sha256": "32d86c4df188123af3e3d96249aafb7e84f0c109d6234ad3e852560c84d9a7be"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V6.bin",
+      "offset": 0,
+      "bytes": 108,
+      "sha256": "fe199c1fe50b6a8d93552468ff0afd4885d95d7a486bcc2c879da953db9d7369"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V6.bin",
+      "offset": 324,
+      "bytes": 2,
+      "sha256": "96a296d224f285c67bee93c30f8a309157f0daa35dc5b87e410b78630a09cfc7"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V6.bin",
+      "offset": 108,
+      "bytes": 1980,
+      "sha256": "8ea005aa5b99cd8311f8248a7e5746d5793d1cfe2bbaf8205611b8b267e4bace"
+    }
+  ],
+  "full_container_digest_verified": false,
+  "vendor_signature_verified": false,
+  "actual_device_record_selected": false,
+  "physical_test_ready": false,
+  "script_sha256": "c753626e779154f17d34272a2e07aa366d4f70a4eacd0297a63201867abff929"
+}
