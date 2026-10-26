@@ -947,3 +947,14 @@ and physical-test readiness are not established by checksums. UEFI2.11chapter5
 is the format reference. No new downloads, installs or tablet access.
 Next: define precise restore/boot-log evidence checklist and resolve safe entry/
 agent provenance; do not close106 or any physical gate on synthetic tests.
+
+## 2026-10-26 — Restore and first-log acceptance plan (#106/#21/#22)
+
+Merged PR111 exact c6417a293f3f8483bc3224b1294f7696af63758b after all required
+checks passed. Reconciled stale sequence inventory: older Amazon component byte
+identity is resolved; signature/rollback/restore are not. Added modern read-back
+candidate and offline verifier limits. Defined ordered entry/agent, acknowledged
+escrow, restore reachability, security-state, Mac/re-entry and log gates with
+precise missing evidence for UART, retained RAM and USB logging. No operation
+commands, package readiness or runtime claims. Next source task is DA selection/
+agent provenance, then source UART contract; no tablet access or new downloads.

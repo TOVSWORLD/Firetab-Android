@@ -1147,3 +1147,6 @@ This verifier can be developed/tested entirely on synthetic host files.
 The first offline escrow verifier is now implemented; usage, limits and explicit
 nonqualification flags are in [OFFLINE-ESCROW-VERIFICATION.md](OFFLINE-ESCROW-VERIFICATION.md).
 Its synthetic success is not an actual backup or a qualified restore path.
+
+The ordered restore/first-log acceptance evidence and current route decision are
+tracked in [RECOVERY-AND-LOG-QUALIFICATION.md](RECOVERY-AND-LOG-QUALIFICATION.md).
