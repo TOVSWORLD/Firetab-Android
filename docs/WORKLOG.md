@@ -1753,3 +1753,15 @@ validation and fail-sticky callback/replay/reentrancy handling. Both ends bounde
 to16transactions. Synthetic CALL+five READs retrieves1080B;263hosttests pass.
 Repository/diff pass; no device/transport/ARM execution. Next owned freestanding C
 dispatcher compile/static review and vector comparison, not physical loader binding.
+
+## 2026-10-26 — Owned C dispatcher core (#247 / #106)
+
+Merged #246 after four checks passed at 4c5edbfa80b4f06f2cb89d5c812cb84369035f4f,
+merge af4261e2556bf3fa5c2aace70b94690abc2ed718; #245 closed. Implemented
+owned freestanding C bounded CALL/READ core with injected callbacks, capacity/
+order/range checks,16transaction budget and error invalidation/zero published
+response length. Actual ARM compile with -Wall/-Wextra/-Werror passes, no undefined
+symbols observed. ARM object never executed. Native host synthetic-array unit
+executable passes;264hosttests pass. Source/header/object receipt retained.
+Repo/diff checks pass. Next C/Python vector equivalence then explicit owned entry/
+callback link; no transport/security/restore/log hardware qualification implied.

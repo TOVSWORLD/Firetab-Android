@@ -538,3 +538,30 @@ entry or return. Next implement the same bounded request dispatcher in owned
 freestanding C, compile for ARM only and compare protocol vectors on the host
 without executing firmware. Original-state restore and log acquisition remain
 separate unresolved requirements.
+
+## Owned freestanding C dispatcher core (#247)
+
+`diagnostic/protocol/dispatcher.c` implements the owned bounded frame contract
+with injected fixed-slot call/read callbacks and no entry, transport, USB, MMIO
+or memory-map binding. It validates header/order/range/output capacity before
+callbacks, limits sessions to sixteen transactions and publishes completion only
+after successful callback return. Read callbacks must return the exact requested
+count; errors invalidate the context and publish zero response bytes. Callers
+must supply separate valid request/response/context storage, zero-initialize the
+context and discard any output bytes after errors. Callback memory safety and
+bounded completion remain caller obligations; this core cannot preempt callbacks.
+
+Actual ARM Thumb/Cortex-A9 object compilation passed with warnings-as-errors;
+static symbols showed no undefined dependencies. The
+[receipt](../../evidence/owned-c-dispatcher/report.json) retains source/header/
+object hashes and exact compile command. The ARM object was not executed.
+Separately, a native host C unit executable uses synthetic arrays/callbacks to
+exercise call completion, a full 1080-byte read, replay/order/capacity/short-read
+and session-budget rejection. It does not use hardware, firmware or device I/O.
+The repository host suite now has 264 passing tests.
+
+This is a protocol core, not a bootable agent. Next compare native C response
+vectors directly with the Python contract, then integrate an owned entry context
+and statically link with explicit callback/transport requirements. No callback
+may be bound to live tablet access during automatic runs. Qualified security
+entry, safe physical placement, original restore and log acquisition remain open.
