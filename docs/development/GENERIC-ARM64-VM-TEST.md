@@ -79,3 +79,58 @@ This completes only issue #49 generic execution. Issue #21 remains open for
 installed-build identity, runtime RAM/DT fixups, CPU/loader contract and a qualified
 recoverable boot/log route. The VM result does not select physical load addresses
 or validate a douglas DT, SMP, MT8163 drivers, Android, graphics or applications.
+
+## Image file length versus runtime memory requirement (#88)
+
+`measure_arm64_image.py` now measures diagnostic build outputs before QEMU and
+records the same measurements inside the runtime report. Diagnostic builds emit
+`work/ack-baseline/image-size-report.json` to the CI log. Reproduce after the
+existing build (no new source/dependency required by this tool):
+
+```sh
+python3 scripts/measure_arm64_image.py \
+  --image work/ack-baseline/output/arch/arm64/boot/Image \
+  --gzip work/ack-baseline/output/arch/arm64/boot/Image.gz \
+  --output out/image-size-report.json
+```
+
+The gzip must be a single zero-timestamp member without optional filename/extra
+headers, decode completely and match the raw Image exactly. The build generates
+it with `gzip -n -9`. Lengths/hashes and gzip header bytes are measured, not
+inferred from ARM64 header image_size. Compressed bytes, decoded file bytes,
+declared runtime memory, text_offset and2MiB placement-base alignment remain
+separate. No appended DT or physical destination is supplied by this tool.
+Capacity comparison is diagnostic evidence rather than a firmware compatibility
+check. Tests cover exact28MiB output and one byte above it, malformed/truncated
+headers, wrong payload, extra gzip members and nonzero timestamps.
+
+The original QEMU run retained useful size lines in its downloadable log even
+though no binary artifacts remain. Run40193403656/job121169023632 at project
+2fc0da6d65371783c13bfd800b3a1630f7fa3511 records:
+
+- Raw Image28576256bytes, SHA256
+  `08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909`.
+- Deterministic gzip9187924bytes, SHA256
+  `b15d40b14345c5588c751481010f3d3bb1ef9e6cef1b99d5b656465f0e55faaf`.
+- ARM64 declared image_size29360128bytes, as recorded by that generic VM test.
+
+Thus the raw file is783872bytes below the selected LK28MiB output capacity. This
+removes the suspected output-size blocker for **that exact historical Image**;
+it does not qualify compression integration, DT assembly, memory placement,
+secure monitor or tablet boot. The old stock address still fails the modern
+Image's independent base-alignment requirement. New builds must be measured
+again. The historical gzip round trip was not rerun without its binary.
+
+Selected raw CI lines and hashes are in `evidence/image-measurements/`. The full
+1471670-byte log was downloaded read-only, hashed and kept outside the repo:
+
+```sh
+env -u GH_TOKEN -u GITHUB_TOKEN gh run view 40193403656 \
+  --repo TOVSWORLD/Firetab-Android --log > /tmp/firetabs-qemu40193403656.log
+```
+
+Integration changes trigger the existing diagnostic CI compile/QEMU experiment.
+Its previously reported resource gate remains roughly0.3GiB Git transfer,
+15GiBfree disk,7GiBhost RAM and60-minute timeout (prior compile about23minutes).
+The measurement tool itself needs no downloads or paid service. No tablet or
+firmware-loader execution is involved.

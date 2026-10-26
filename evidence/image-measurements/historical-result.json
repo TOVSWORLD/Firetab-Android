@@ -1,0 +1,30 @@
+{
+  "scope": "Historical build log measurements; binary not retained locally; gzip round trip not rerun",
+  "ci_run": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40193403656",
+  "ci_job": 121169023632,
+  "project_commit": "2fc0da6d65371783c13bfd800b3a1630f7fa3511",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "full_downloaded_log_sha256": "a376eb71bbe0bf4d6d0bedfb879b97cf0eb097a05f2b57e1e385ad199bae1867",
+  "full_log_bytes": 1471670,
+  "excerpt_sha256": "6273fd27c9d4133b1e051dd3548ee3ee61bf9b91029a4474cdb9d1cae97873dd",
+  "artifacts": {
+    "Image": {
+      "sha256": "08df8a73166bf5bd3a0fefdd9394d8f5d54b2822255e728c2c3873f2e1c56909",
+      "bytes": 28576256
+    },
+    "Image.gz": {
+      "sha256": "b15d40b14345c5588c751481010f3d3bb1ef9e6cef1b99d5b656465f0e55faaf",
+      "bytes": 9187924
+    }
+  },
+  "header_image_size": 29360128,
+  "header_text_offset": 0,
+  "lk_output_capacity_bytes": 29360128,
+  "decoded_file_fits_selected_lk_capacity": true,
+  "output_capacity_margin_bytes": 783872,
+  "declared_runtime_bytes_beyond_file": 783872,
+  "gzip_generation": "gzip -n -9 -c Image (build_ack_baseline.sh at project_commit)",
+  "gzip_round_trip_verified_this_audit": false,
+  "appended_dt_bytes": null,
+  "physical_boot_verified": false
+}

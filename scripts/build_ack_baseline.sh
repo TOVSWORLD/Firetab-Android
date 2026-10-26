@@ -83,6 +83,7 @@ fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" Image vmlinux
 if [ "$mode" = diagnostic ]; then
   gzip -n -9 -c "$output/arch/arm64/boot/Image" > "$output/arch/arm64/boot/Image.gz"
+  python3 scripts/measure_arm64_image.py --image "$output/arch/arm64/boot/Image" --gzip "$output/arch/arm64/boot/Image.gz" --output "$root/image-size-report.json"
   sha256sum "$output/arch/arm64/boot/Image.gz"
   wc -c "$output/arch/arm64/boot/Image.gz"
 fi
