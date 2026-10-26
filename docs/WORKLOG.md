@@ -805,3 +805,15 @@ reference not binary-matched to stock. Proposed primary-only diagnostic limit
 requires boot-CPU path audit; no device/SMC/firmware execution. Next bounded task:
 trace boot-CPU versus secondary setup and maxcpus=1 effects before choosing DT
 CPU changes. Physical recovery/logging and hardware/runtime gates remain open.
+
+## 2026-10-25 — Isolated primary-only DT/source experiment (#96)
+
+Traced pinned setup_arch early parsing→PSCI discovery→boot-CPU ops/enumeration.
+maxcpus=1 alone still probes PSCI and prepares secondaries. Added opt-in compiled
+DT-only experiment: PSCI node disabled, chosen nr_cpus=1 maxcpus=0; preserves all
+186nodes/880original properties and default experiments. Compiles cleanly to
+26324bytes/SHAef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43.
+Source/hash guards and full semantic comparison/negative controls retained.
+Loader preservation, boot MPIDR, other firmware paths, donor RAM and physical
+boot remain unverified. No firmware packing/device/SMC/helper execution. Next:
+trace actual LK bootargs rewriting before treating the limits as effective.

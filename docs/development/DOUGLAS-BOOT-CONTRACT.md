@@ -725,3 +725,55 @@ initialization to ensure this limit actually avoids unsupported callbacks, then
 qualify a recovery route before proposing a physical test. Multicore support
 requires validated monitor behavior or an adapted, bounded MT8163 power sequence;
 that work remains under#21 rather than being declared solved by this audit.
+
+## Opt-in primary-only DT experiment (#96)
+
+Pinned ACK setup_arch parses early arguments, then calls psci_dt_init, then
+initializes boot-CPU operations and enumerates CPUs. **maxcpus=1 does not suppress
+PSCI discovery**. smp_prepare_cpus only skips secondary preparation atmaxcpus=0;
+otherwise it visits possible secondaries even when only one will later activate.
+The nr_cpus early argument is a distinct hard limit on nr_cpu_ids, which bounds
+the secondary setup loop. Boot-CPU operations select an operations table; this
+step itself does not call CPU_ON. These source anchors/hashes are retained in
+`evidence/primary-only/` and checked by the experiment script.
+
+An isolated DT experiment adds exactly two properties to the reviewed RDMA DT:
+
+- `/psci/status = "disabled"`: pinned psci_dt_init returns ENODEV before invoking
+  its compatible-selected init function when that node is unavailable.
+- `/chosen/bootargs = "nr_cpus=1 maxcpus=0"`: limits secondary setup and skips
+  secondary preparation/bring-up if these are the effective early arguments.
+
+All186nodes and original880properties are preserved, including CPU declarations,
+RAM, addresses, clocks, interrupts and board identity. This avoids dangling CPU
+phandles in PMU affinity/topology/thermal maps. It is a compiled **DT-only source
+experiment**, not an assembled firmware or a global proof that no SMC occurs.
+Other firmware services/RSI and driver paths have not been exhausted. No physical
+load address was chosen. The donor512MiB RAM declaration remains unqualified for
+this tablet; the experiment must not be used as a physical test package.
+
+Reproduce with existing cached tools; neither command accesses the tablet:
+
+```sh
+python3 scripts/build_douglas_dtb.py --experiment rdma-node-name
+python3 scripts/build_primary_only_dtb.py --output out/primary-only-reproduction
+python3 -m unittest discover -s tests -q
+```
+
+The primary-only script verifies the base DTB, preprocessed-source and appended
+DTS hashes; compiles using pinned DTC1.8.1 without diagnostics; then checks every
+node/property against precisely those two additions. Negative controls reject
+changed RAM, missing PSCI disable or a weaker command line. Default DT experiment
+choices and full-board source files are unchanged. The experiment's DTB is26324
+bytes, SHA256`ef23af15f7136613a98b450f3d1db7c860f581024d194e88e2ef8c3116f2eb43`.
+No full binding-validation or hardware pass is implied.
+
+This approach assumes the boot CPU matches donor MPIDR0, ACPI remains disabled
+by diagnostic policy, and the loader preserves the intended DT/command line.
+Those are not runtime facts. In particular LK may rewrite chosen/bootargs;
+source-level constraints cannot be treated as effective until that mutation is
+traced or later captured. The existing diagnostic init neither hotplugs CPUs nor
+requests suspend/off, but its QEMU execution does not qualify this DT on douglas.
+Next bounded task is to trace LK's chosen/bootargs mutation so a future packaging
+contract can require and verify these limits. Primary entry, recovery and usable
+logging remain separate blockers under#21.
