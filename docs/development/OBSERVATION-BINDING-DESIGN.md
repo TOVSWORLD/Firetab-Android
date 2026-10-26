@@ -136,3 +136,23 @@ binding are absent. The5s collector budget is cooperative and cleanup calls are
 not preempted here. There is no live CLI. Next integrate the owned supervisor
 around this exact sequence using real stalled synthetic backend processes and
 validate timeout/cleanup reporting before reviewing a native binding.
+
+## Supervised adapter integration: actual synthetic processes
+
+Run `python3 scripts/synthetic_supervised_observation.py --mode success`,
+`--mode io-stall` and `--mode cleanup-stall`. This built-in-only CLI runs the
+owned adapter in a spawned child with a1s parent deadline. The success output
+is parent-validated against six owned source hashes; stalled write and stalled
+release callbacks are real blocked synthetic processes, terminated/reaped and
+rejected. Unlike the earlier fake-clock case, these exercise process supervision.
+[Retained reports](../../evidence/supervised-observation/success.json) and sibling
+fault reports record timings and hashes. Two integration tests bring the suite
+to230; all three CLI cases were executed locally.
+
+No external workers/native libraries/device inputs are accepted by this CLI.
+This proves host handling of these synthetic stalls, not termination guarantees
+for every native/OS state. In particular, killing a worker during interface
+release does not establish actual device/interface cleanup or recovery. Output
+remains unqualified and private temporary quarantine is removed after validation.
+Next review the actual PyUSB backend binding implementation and its host-only
+native-load dependencies; no physical enumeration is authorized by this package.
