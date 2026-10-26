@@ -1416,3 +1416,13 @@ for disabledautodetach and freshexclusiveobject beforeanyinjectedcall. One test/
 full238pass; fake integrations updated. Attestationnotruntimeinspection or
 permission; livefactorymissing. No device/native/helperexec/download. Next
 currentstock entry/return sourcealternatives; no more syntheticpolicylayers.
+
+## 2026-10-26 — Current-stock entry/return route refresh (#106)
+
+Merged182 at passingdfbd0e28d6b604bd4b760660f6e8a96bb84d268f;181closed.
+Basee9bad40. Refreshed primary guide at91f93505: author5.7.0.0/Linux route
+intentionallybricks then modifiesboot/security; notpassiveentry or exactcurrent
+returnproof. XDA502/pmOSredirect inaccessible, notnegativecompatibilityproof.
+Recorded candidate-specific missingevidence and next cachedcurrentLK fastboot
+handler/bootverification review. No tests added for researchprose; existing238
+suite/repository/diffpass. No tablet/helperexec or firmwaredownloads.
