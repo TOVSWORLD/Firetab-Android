@@ -667,3 +667,61 @@ unmatched-node diagnostic disappear, with zero new diagnostics.13validation and
 43unmatched diagnostics remain. Wrapper exits1; overall validation still fails.
 The efuse schema's doc validation is clean. Parent#27 and all thermal/calibration
 hardware gates remain open. No DT data or status was changed.
+
+## CPU startup / secure-monitor contract source audit (#94)
+
+The stock candidate's pre_evt/hvt DTs declare CPU method `mt-boot` and
+`arm,psci`/`smc`, with explicit CPU_ON ID84000003. The modern donor DT instead
+declares CPU method `psci` and `arm,psci-0.2`. These declarations select different
+kernel paths; neither establishes installed monitor behavior.
+
+Pinned legacy reference e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74 registers
+`mt_cpu_psci_ops` under CONFIG_MTK_PSCI. Its `mt-boot` wrapper:
+
+- Prepares SPM MTCMOS when preparing CPU1, then delegates generic PSCI prepare.
+- Calls generic PSCI cpu_boot, returns on error, then performs host-side
+  `spm_mtcmos_ctrl_cpu(cpu, STA_POWER_ON, 1)`.
+- Delegates CPU-off/die and adds host-side MTCMOS power-down in its kill path.
+
+The retained mtcmos.c routes CPUs0–3 to register-level power functions. For
+example its CPU1 power-on path sets PWR_ON/PWR_ON_2ND and polls power/L1 status.
+Those polls have no timeout in the selected source. Blindly copying/executing the
+old routine would not qualify its modern clock/power/locking dependencies.
+This legacy source is a reference and **has not been matched to the installed
+stock kernel binary**; it explains a source-level compatibility gap rather than
+proving the exact installed implementation.
+
+Pinned ACK d9318bdb4c34e8b2d997b4f67ced56b120b22b87's DT CPU operations table
+contains spin-table and generic PSCI, without `mt-boot`. Thus the stock CPU method
+is unsupported by this table as-is. Its generic secondary boot calls PSCI with
+the secondary_entry physical address; it contains no equivalent MT8163 wrapper.
+Changing only the enable-method string does not reproduce the reference power
+sequence. Whether the installed monitor itself supplies that sequence is unknown.
+
+ACK still supports `arm,psci` explicit v0.1 DT function IDs; an old PSCI DT format
+is therefore **not itself a hard blocker**. The modern donor's v0.2 path queries
+firmware version and, on ARM64, selects CPU_ON C4000003. The stock DT's explicit
+84000003 is a32-bit calling-convention ID; that difference does not prove that
+the monitor rejects the64-bit ID. LK's primary boot transition82000200 is a
+separate service, and supplies no evidence about PSCI CPU_ON support.
+
+`evidence/cpu-startup-contract/sources.json` locks source bytes/revisions and
+`report.json` supplies exact line anchors, distinct call IDs and explicit unknowns.
+New files are cached legacy MTCMOS source and one bounded ACK UAPI header fetch;
+all other sources and stock DT evidence were already retained. Reproduce without
+network/device operations:
+
+```sh
+python3 scripts/audit_cpu_startup_contract.py
+python3 -m unittest discover -s tests -q
+```
+
+Conservative future diagnostic scope is primary CPU only (`maxcpus=1`, no CPU
+hotplug, idle, suspend or power-off). This is a proposed limit, not an assembled
+or tested tablet configuration. It removes secondary startup from an initial
+experiment's scope, but does not solve primary entry, monitor setup, recoverable
+loading or logging. A follow-up should trace modern boot-CPU versus secondary
+initialization to ensure this limit actually avoids unsupported callbacks, then
+qualify a recovery route before proposing a physical test. Multicore support
+requires validated monitor behavior or an adapted, bounded MT8163 power sequence;
+that work remains under#21 rather than being declared solved by this audit.

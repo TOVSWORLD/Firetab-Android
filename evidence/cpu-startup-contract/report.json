@@ -1,0 +1,89 @@
+{
+  "scope": "Static reference-source comparison; no firmware/device execution",
+  "source_anchors": [
+    {
+      "source": "legacy_mt_boot",
+      "line": 98,
+      "anchor": ".name = \"mt-boot\""
+    },
+    {
+      "source": "legacy_mt_boot",
+      "line": 45,
+      "anchor": "return spm_mtcmos_ctrl_cpu(cpu, STA_POWER_ON, 1);"
+    },
+    {
+      "source": "legacy_mt_boot",
+      "line": 33,
+      "anchor": "spm_mtcmos_cpu_init();"
+    },
+    {
+      "source": "legacy_mt_boot",
+      "line": 67,
+      "anchor": "return !spm_mtcmos_ctrl_cpu(cpu, STA_POWER_DOWN, 1);"
+    },
+    {
+      "source": "ack_ops",
+      "line": 25,
+      "anchor": "dt_supported_cpu_ops[]"
+    },
+    {
+      "source": "ack_psci",
+      "line": 758,
+      "anchor": "Using PSCI v0.1 Function IDs from DT"
+    },
+    {
+      "source": "ack_psci",
+      "line": 239,
+      "anchor": "return __psci_cpu_on(psci_0_1_function_ids.cpu_on, cpuid, entry_point);"
+    },
+    {
+      "source": "ack_psci",
+      "line": 244,
+      "anchor": "return __psci_cpu_on(PSCI_FN_NATIVE(0_2, CPU_ON), cpuid, entry_point);"
+    },
+    {
+      "source": "ack_cpu_psci",
+      "line": 42,
+      "anchor": "psci_ops.cpu_on(cpu_logical_map(cpu), pa_secondary_entry)"
+    },
+    {
+      "source": "legacy_power",
+      "line": 94,
+      "anchor": "return (*spm_cpu_mtcmos_ctrl_funcs[cpu]) (state, chkWfiBeforePdn);"
+    }
+  ],
+  "stock_dt_contracts": [
+    {
+      "variant": "pre_evt",
+      "cpu_method": "mt-boot",
+      "psci_compatible": "arm,psci",
+      "cpu_on_id": "0x84000003"
+    },
+    {
+      "variant": "hvt",
+      "cpu_method": "mt-boot",
+      "psci_compatible": "arm,psci",
+      "cpu_on_id": "0x84000003"
+    }
+  ],
+  "ack_supports_mt_boot_method": false,
+  "legacy_secondary_sequence": [
+    "generic PSCI cpu_boot",
+    "return on error",
+    "host-side SPM MTCMOS power-on"
+  ],
+  "ack_generic_secondary_sequence": [
+    "PSCI CPU_ON with secondary_entry address"
+  ],
+  "ack_legacy_psci_ids_supported": true,
+  "ack_arm64_psci_v02_cpu_on_id": "0xc4000003",
+  "stock_explicit_cpu_on_id": "0x84000003",
+  "lk_primary_transition_smc_id": "0x82000200",
+  "installed_monitor_supports_donor_v02_and_64bit_call": null,
+  "legacy_reference_matches_installed_kernel_binary": false,
+  "conservative_future_diagnostic_scope": "primary CPU only; maxcpus=1, no CPU hotplug/suspend/off; not an assembled/tested configuration",
+  "primary_entry_verified": false,
+  "secondary_cpu_boot_verified": false,
+  "suspend_off_verified": false,
+  "physical_boot_verified": false
+}
