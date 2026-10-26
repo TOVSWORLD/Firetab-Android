@@ -26,6 +26,17 @@
       "baud",
       "bus"
     ],
+    "resolved_default_soc_pinmux": [
+      {
+        "soc_gpio_index": 79,
+        "mux_function": 1
+      },
+      {
+        "soc_gpio_index": 80,
+        "mux_function": 1
+      }
+    ],
+    "soc_pin_indices_are_pcb_pad_numbers": false,
     "dma_property_present": true,
     "pin_control_property_present": true,
     "loader_preserves_dt_or_args_verified": false,
@@ -33,5 +44,5 @@
     "physical_pad_voltage_routing_verified": false,
     "usable_log_path_qualified": false
   },
-  "script_sha256": "071cd094754f6b5ca9c0015e8f1e5a93d5ad4a88d68182d590d02f3deee401b2"
+  "script_sha256": "8e744c8186851cb4d257946b646e80614d80b7cf58acc2cc19f23deef0095479"
 }

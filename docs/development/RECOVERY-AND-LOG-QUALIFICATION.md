@@ -277,3 +277,42 @@ board evidence and continue the independent safe-entry/USB read-back source
 work. Do not ask the owner to guess pads or voltage, and do not present a source
 MMIO base as a wiring instruction. A first diagnostic still needs both a safe
 recoverable loading route and a complete log transport.
+
+## UART pinmux resolved; PCB/electrical evidence still missing
+
+The reviewed diagnostic DT's UART pinctrl-0 resolves through its actual phandle
+to /soc/pinctrl@1000b000/uart0-pins/pins. Decoded values select SoC GPIO79 and80,
+both mux function1. Cached legacy MT8163 source sets UART0 RX to the GPIO79
+URXD0 function and TX to GPIO80 UTXD0. The legacy driver/header also defines a
+swapped function2, and the pin-function header has alternate UART0 functions on
+other GPIOs. Thus port identity alone would not establish the pinmux; this audit
+follows the actual compiled DT reference. Source hashes and decoded facts are
+retained; no pinctrl write or DT modification was performed.
+
+These numbers are **SoC GPIO indices, not accessible PCB pad numbers**. No board
+test point, connector location, signal voltage, safe adapter setting or measured
+waveform has been established. Do not wire an adapter based on GPIO79/80 or
+assume a voltage from another MediaTek board.
+
+A bounded public evidence search on2026-10-26 did not establish a douglas-specific
+pad/electrical map. Searches covered douglas/KFDOWI/2017 UART, RX/TX and voltage.
+The original [XDA unlock thread](https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/)
+returned403; the [postmarketOS device page](https://wiki.postmarketos.org/wiki/Amazon_Fire_HD_8_2017_(amazon-douglas))
+redirect could not be read by the web tool. Those access failures are not proof
+that relevant evidence does not exist. General model/regulatory indexes and
+other Fire generations are not accepted as wiring/electrical evidence. No
+physical opening, measurement or connection is requested at this stage.
+
+The precise missing UART evidence is a traceable board-revision-specific mapping
+from routed UART0 signals to accessible points plus established electrical
+levels/routing and a validated capture path. Source-level routing analysis is
+complete for the reviewed DT; physical qualification remains blocked on that
+board evidence. Record it once rather than repeating a negative search each run.
+Continue independent recoverable-loading work and resolve early-console request
+delivery through the loader. An optional host-only logging DT experiment can be
+prepared later, but cannot qualify argument delivery or the physical transport.
+
+The audit now rejects unresolved/ambiguous pin-control phandles. The additional
+regression test brings the offline suite to163 passing. Run
+`python3 scripts/audit_uart_log_contract.py` to regenerate source/DT findings
+from the existing pinned cache. No new downloads, installs or tablet access.
