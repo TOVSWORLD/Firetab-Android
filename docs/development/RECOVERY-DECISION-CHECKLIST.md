@@ -144,3 +144,22 @@ review and owner test plan. Pending hardware access preference remains relevant
 to entry/log options; it is not replaced by this source review. Next prepare the
 owned observation orchestration with synthetic callbacks and no command bytes,
 then review the exact live binding separately. Do not run helper discovery/init.
+
+## Owned observation orchestration, offline only
+
+`scripts/offline_observation_session.py` now invokes exactly three symbolic
+query callbacks: hardware code, hardware versions and target configuration.
+It requires exact reply sizes and zero version/security statuses. A shared
+positive budget is checked before/after each call and each callback gets a
+positive bounded timeout. Failures invalidate the session with no retry,
+fallback memory read, initializer, reset or bootstrap call. No USB command bytes,
+backend, handshake, native imports or live callback are included.
+
+Four synthetic tests cover query order/timeouts, every short reply boundary,
+late callback and failed version status;219 tests pass. The budget is cooperative,
+not native-call preemption. Live use would require the separately tested worker
+supervisor and an exact effects-reviewed binding. Hardware words and security
+flags are reported data; mode/provenance/bootstrap readiness stay false. This
+cannot establish BootROM mode or reachability from the currently running OS.
+Next review the exact getter response/status and command framing contract against
+the pinned source before implementing any live binding. No tablet action asked.

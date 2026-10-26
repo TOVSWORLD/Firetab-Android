@@ -1285,3 +1285,13 @@ and acceptance contract retained. No existing drop-in CLI qualified as minimal
 observation. No helper/native/device execution or download. Existing215tests and
 repository/diff guards pass; no tests merely repeating prose. Next owned bounded
 synthetic observation orchestration, live binding still separately gated.
+
+## 2026-10-26 — Offline bounded observation orchestration (#106)
+
+Merged156 at passingef73e1e3fa37cf8f3d190d9d854996505d305ff0;155closed/Done.
+Basee5fec79. Implemented own three-symbolic-query callback session with exact
+length/zero-status checks, positive shared budget/percalltimeout, no retries or
+fallbacks and sticky failure. No USB commands/backend/handshake/helper binding.
+Four synthetic tests/full219pass; native preemption remains supervisor scope.
+No physical mode/provenance/authorization inferred. Next source framing/status
+review before exact live binding; recovery/logging gates remain open.
