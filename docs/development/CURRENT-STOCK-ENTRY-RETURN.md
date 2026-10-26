@@ -310,3 +310,34 @@ registration. No stored record, security key or per-device blob was extracted.
 Next resolve controller/region mapping and the container validation identity from
 primary source definitions, then assess what this adds to restore prerequisites.
 Do not extend this into a device read or a write/selection helper execution.
+
+## Primary-source region mapping and restore consequence
+
+Linux v6.18 [MMC definitions](https://github.com/torvalds/linux/blob/v6.18/include/linux/mmc/mmc.h)
+identify register179 as partition configuration, access mask7, first boot-area
+access1 and RPMB access3. Its [boot-region creation](https://github.com/torvalds/linux/blob/v6.18/drivers/mmc/core/mmc.c#L425-L437)
+uses first-boot access plus index for the two hardware boot regions. Combined
+with the exact LK selector trace, access2 therefore identifies the intended
+second boot hardware area, distinct from RPMB. This is a static inference, not
+observed selection success; the unchecked selector-return limitation still holds.
+
+Naming matters: this project's escrow `boot2` means the second hardware boot
+region, typically Linux suffix `boot1`; Linux `boot0` is the first hardware boot
+region. Do not map filename suffixes directly to protocol access values. The
+[scope receipt](../../evidence/record-region-restore-scope/report.json) records
+the interpretation. The selected container validator checks a static magic
+reference; that tag alone neither authenticates contents nor establishes all
+records/versions. No actual container was acquired.
+
+Restore implication: a generic preloader/boot partition image or user-region GPT
+backup does not cover this intended record store. Preserve both original full
+hardware boot regions privately with independently qualified region identity
+before any later change could affect them. Do not replace this area with another
+tablet's image or publish its raw contents. This adds a concrete reason to the
+existing escrow scope, not a restoration procedure or permission to read/write.
+RPMB/key/counter/fuse recovery remains an additional unresolved requirement.
+
+Next consolidate which proposed loading alternatives touch these areas versus
+RAM only, using the already pinned helper/stock evidence; select the least invasive
+plausible route with explicit entry and failure-return prerequisites. No further
+credential analysis is needed merely to qualify original-state preservation.
