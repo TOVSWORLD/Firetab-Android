@@ -1208,3 +1208,15 @@ rerun with resolved exact SHA. No agent ACK/status/geometry or installed binary
 equivalence observed. No old-preloader flash needed merely to source this data;
 bootstrap/security/restore/logging still unqualified. Next initialization response
 contract; pending hardware preference does not block this static work.
+
+## 2026-10-26 — DRAM response control-flow review (#106)
+
+Merged142 at exact8ff2b60307b64cd0e173aece0e13a277f44c894d after allfour
+requiredchecks passed;141completed/projectDone. Base75a66c9. Static pinned
+legacy initializer review finds unexpected/empty versionreply can fallthrough
+toTrue, no format0x10 requested/local lengthcomparison, checksumloggedonly,
+and unguarded geometryfieldreads. Retained metadata receipt/source citations
+and failclosed acceptance requirements; no upstreamcode copied/executed,
+physicalIO/downloads, or runtime success claim. Next caller propagation/stage
+loading gate review. Existing205tests remain the validation suite; no test
+added merely to repeat source-review prose.
