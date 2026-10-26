@@ -158,3 +158,31 @@ works, compare the rebuilt first-stage protocol with its host using static
 analysis. The missing stage2/pl source and actual entry/return/logging requirements
 still block an auditable complete diagnostic loader; compiling first-stage C
 alone does not remove them.
+
+## Local link feasibility: startup assembles, ELF linker is missing
+
+Fetched only562B of pinned startup/linker source, verified against Git blob/SHA256
+identities. Startup assembly compiled successfully to an ARM object with bundled
+clang. The attempted link failed with exit1: the selected Apple linker rejected
+GNU/ELF options (`-Bstatic`, `-EL`, `--build-id=none`, `-T`, `--target2=rel`).
+`arm-none-eabi-gcc` was absent from PATH and `ld.lld` was absent from PATH/xcrun
+and the checked standard package prefixes. This is a bounded tool inventory,
+not a whole-disk proof that no compatible linker exists.
+
+The [retained receipt](../../evidence/stage1-link-feasibility/report.json)
+contains source/startup-object hashes and the exact diagnostic. No linked payload
+was created or executed. No compiler/toolchain install, large download or paid
+resource was started. Reproduce from the existing ignored source cache:
+
+```sh
+xcrun clang --target=arm-none-eabi -c out/ram-stage-source/src/stage1/common/start.S -o out/ram-stage-source/start-clang.o
+xcrun clang --target=arm-none-eabi -nostdlib -Wl,--build-id=none -Wl,-T,out/ram-stage-source/src/stage1/common/generic.ld out/ram-stage-source/generic_stage1-clang.o out/ram-stage-source/start-clang.o -o out/ram-stage-source/stage1-link-probe.elf
+```
+
+Next use an existing Linux CI runner for a small standalone build probe after
+checking preinstalled clang/lld availability. Proposed job limits:5minutes,
+1GiB free disk, no Android/kernel checkout, no dependency installation and at
+most16KiB pinned source inputs. Publish metadata/hashes only, not firmware. If
+the linker is absent there too, report exact package/archive requirements before
+any toolchain download. Successful linking would still not establish shipped
+binary equivalence, ARM64 handoff, safe execution or recovery.

@@ -1,0 +1,33 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "src/stage1/common/start.S",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/start.S",
+      "bytes": 98,
+      "git_blob_sha1": "fc966450dfe956a220a79d73290283fcd76a9f3f",
+      "sha256": "54ee05a78cfa7b05a45de9d84648105035f43eab8ba06d6261ad3174e79b9d1d"
+    },
+    {
+      "path": "src/stage1/common/generic.ld",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/generic.ld",
+      "bytes": 464,
+      "git_blob_sha1": "54edf17ade3e5d39a971e9458a7956cb72011ab8",
+      "sha256": "945d9b6dd2b7f1e0506d3f225bc3607f961f4b1441a0e6f5a09498e09df40d7c"
+    }
+  ],
+  "startup_assembly_compile_exit_code": 0,
+  "startup_object_sha256": "56ec0a435d5989a97e64f98bfe8a60efad86a3e57d5e3759709acb58a28519f0",
+  "startup_object_bytes": 440,
+  "link_exit_code": 1,
+  "linker_diagnostic": "ld: unknown options: -Bstatic -EL --build-id=none -T --target2=rel",
+  "failure_class": "Apple Mach-O linker selected for ARM ELF target; compatible ELF linker unavailable in checked paths",
+  "checked_tools": {
+    "arm_none_eabi_gcc_on_path": false,
+    "ld_lld_on_path_or_xcrun": false
+  },
+  "linked_payload_created": false,
+  "firmware_executed": false,
+  "dependency_installed": false,
+  "physical_test_ready": false
+}
