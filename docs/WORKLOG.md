@@ -1152,3 +1152,14 @@ Ownpacketcallbackreader enforcespositiveboundedtimeouts/exactlength/tailbuffer/
 monotonicdeadline and poisonsfailedstream. Fourfakeclock/packettests:195pass.
 Nohelper/nativeexec/USB/tabletIO/install. Cannotpreemptbrokennativecall; next
 quarantinedhostworker deadline supervision tested on syntheticprocesses only.
+
+## 2026-10-26 — Owned synthetic worker deadline supervision (#106)
+
+Currentbase7cbc67b/healthyCI. Ownspawnedsupervisor usesprivatequarantine/fixed
+completionbytes/parentvalidation, deadlines<=30s and boundedterminate/kill of
+ownedworkeronly. Real synthetic stalledchild ignoresSIGTERM then killed/reaped;
+partialoutputunaccepted/removed; successremainsquarantined. Fourfocusedtests
+passed1.499s/fullsuite199pass. Noactualhelper/nativeUSB/devicecallbackbinding.
+NotOSsandbox or devicerecoveryproof; parentvalidator/logging/nativekillbehavior
+stillrequirequalificationbeforeliveuse. Next synthetic-only session integration
+of hostcontracts with explicitcomponentprovenance, no bootstrap/devicecallback.
