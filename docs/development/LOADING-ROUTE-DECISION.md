@@ -491,3 +491,30 @@ to this unqualified host route. Next implement a small owned, bounded host-only
 call/read transaction specification with explicit completion and exact read
 lengths, then establish a matching auditable agent implementation before physical
 entry qualification. This leaves original-state restore and log transport open.
+
+## Owned offline call/read specification (#243)
+
+`offline_diagnostic_protocol.py` defines an owned, incompatible-with-upstream
+byte protocol and state model. It has no USB/backend imports, firmware agent,
+acquisition or execution. Requests use 16-byte little-endian headers:
+`<4sBBHIHH>` = magic, version, operation, reserved/status, sequence, offset,
+length. Request magic is FTDQ; response magic FTDR; version is one. CALL=1 has
+zero offset/length and targets only a prequalified fixed slot, never an arbitrary
+address. Its explicit matching zero-status completion must arrive before READ=2.
+Reads are relative to a fixed 1080-byte callable image, at most 256 bytes each;
+responses must echo operation, sequence and range with exactly the stated bytes.
+
+A session permits one pending transaction and one completed CALL. Malformed,
+nonzero-status, replayed or mismatched responses poison it. `abandon()` records
+partial I/O/timeout and prohibits reuse. This model supplies no clock, deadline,
+I/O cancellation or agent implementation; a future transport must establish
+those separately. Sequence echoes are transaction matching, not authentication
+or physical freshness proof. Matching completion bytes are not evidence that a
+real call returned until a separately qualified agent supplies them.
+
+Synthetic tests cover completion-before-read, bounds, unknown operations,
+status/length/replay rejection and abandoned sessions. Next implement the matching
+owned command dispatcher against injected host-only callbacks and then compile
+an agent for static inspection. Do not graft this format onto the existing
+upstream generic stage; security entry, RAM placement, original-state restore and
+usable boot-log acquisition remain open physical gates.

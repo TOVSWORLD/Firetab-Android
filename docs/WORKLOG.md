@@ -1732,3 +1732,14 @@ Retained metadata/citations only, not packaged-binary/runtime claims. No helper/
 firmware/device execution. Repo/diff pass; unchanged 255-test baseline. Next owned
 bounded call/read specification and matching auditable agent, not upstream host
 binding; restore/security/physical log gates stay open.
+
+## 2026-10-26 — Owned offline call/read specification (#243 / #106)
+
+Merged #242 at passing a9636d7287679aeaf37cfc5daf18fa3c1ec04ed0,
+merge 20a0fd9f26b583239048ba8d05223742a6e41594; #241 source scope closed.
+Implemented owned 16-byte version/sequence/status/range wire model, fixed-slot
+single CALL explicit completion, <=256B READ within1080B, exact response lengths,
+fail-sticky replay/error/abandon handling. No transport/agent/clock/execution.
+259 host tests pass; repo/diff guards pass. Next matching injected host-only
+command dispatcher, then statically compiled agent. Physical entry/restore/log
+transport remain open; this is no upstream-compatible or runtime proof.
