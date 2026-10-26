@@ -1325,3 +1325,14 @@ retained outputs/sourceSHA256 manifests. Faults stop firstquery/no accepted
 results; late usesfakeclock, notnativepreemptionproof. Twointegrationtests/full
 225pass. Next concrete live-binding design/effects/recoveryexit review, not more
 syntheticreadinesslayers. Physical gatesopen; no tablet action/download/nativeexec.
+
+## 2026-10-26 — Concrete minimal observation binding design (#106)
+
+Merged164 at passinge0e4c213c9426cf8974610bd7d7310b94ef87c29;163closed.
+Base710913c. Defined owned narrow binding instead of full initializer: unique
+selection/activeconfig/claimonly, fixedqueryscope, fullwrites/exactreads, proposed
+500ms/10s budgets, no fallback/reset/driver changes, cleanupuncertainty and public
+allowlist. Explicitly distinguishes hostfailureexit from device recovery; no
+entry/return qualified. Next fakebackend-tested actual adapter operationsequence,
+not more synthetic Boolean layers. No new tests for prose; existing225pass and
+repository/diff guards. No helper/native/device execution or downloads.
