@@ -1,0 +1,135 @@
+{
+  "scope": "Static source facts and possible alternative only; no device/helper/payload execution",
+  "archive": {
+    "main_persistent_operation_sites": [
+      {
+        "callee": "flash_data",
+        "line": 169
+      },
+      {
+        "callee": "flash_data",
+        "line": 172
+      },
+      {
+        "callee": "flash_data",
+        "line": 197
+      },
+      {
+        "callee": "dev.rpmb_write",
+        "line": 201
+      },
+      {
+        "callee": "flash_binary",
+        "line": 214
+      },
+      {
+        "callee": "flash_binary",
+        "line": 215
+      },
+      {
+        "callee": "flash_binary",
+        "line": 220
+      },
+      {
+        "callee": "flash_binary",
+        "line": 225
+      },
+      {
+        "callee": "flash_binary",
+        "line": 230
+      },
+      {
+        "callee": "flash_binary",
+        "line": 231
+      },
+      {
+        "callee": "flash_binary",
+        "line": 234
+      },
+      {
+        "callee": "flash_binary",
+        "line": 235
+      },
+      {
+        "callee": "flash_binary",
+        "line": 247
+      },
+      {
+        "callee": "flash_binary",
+        "line": 248
+      }
+    ],
+    "main_explicit_dump_calls": [],
+    "complete_backup_before_first_write_established": false,
+    "conditional_early_write_path": [
+      "main",
+      "switch_user",
+      "flash_binary",
+      "flash_data",
+      "device storage write"
+    ],
+    "conditional_early_write_modes": [
+      "fix16",
+      "fix32"
+    ],
+    "flash_helper_forwards_requested_size_limit": false,
+    "linux_proc_assumption": true,
+    "minimal_mode_is_read_only": false,
+    "ram_payload_entry_and_mmio_safety_verified": false
+  },
+  "modern_candidate": {
+    "dedicated_soc_config": {
+      "name": "MT8163",
+      "dacode_matches_mt8163": true,
+      "dedicated_loader_reference_present": true,
+      "line": 2264
+    },
+    "read_entry_paths": {
+      "da_read": [
+        {
+          "callee": "self.mtk.daloader.readflash",
+          "line": 348
+        },
+        {
+          "callee": "self.mtk.daloader.readflash",
+          "line": 368
+        },
+        {
+          "callee": "self.mtk.daloader.readflash",
+          "line": 396
+        }
+      ],
+      "da_rf": [
+        {
+          "callee": "self.mtk.daloader.readflash",
+          "line": 493
+        }
+      ],
+      "da_rl": [
+        {
+          "callee": "self.mtk.daloader.readflash",
+          "line": 439
+        }
+      ]
+    },
+    "configure_da_direct_storage_write_calls": [],
+    "configure_da_requires_bootstrap_and_ram_agent": true,
+    "configure_da_host_state_write_present": true,
+    "bootstrap_indirect_effects_audited": false,
+    "all_read_operations_globally_persistence_free": false,
+    "gpt_backup_filename_lines": [
+      291,
+      424
+    ],
+    "gpt_backup_independent_capture_verified": false,
+    "gpt_same_data_write_observed": true,
+    "gpt_backup_observation": "Do not assume independently captured secondary GPT from a backup filename; validate raw secondary header/CRC separately",
+    "macos_documentation_present": true,
+    "apple_silicon_documentation_present": true,
+    "macos_runtime_or_device_support_verified": false,
+    "dependencies_installed": false
+  },
+  "qualification": "NOT_READY: entry/bootstrap, independent escrow, restore and host USB behavior remain unverified",
+  "physical_test_ready": false,
+  "script_sha256": "df510e6147f0d2ef33845d4fe1fac2ce13bc550ec8365f0a5a2991e8bdbf4498"
+}

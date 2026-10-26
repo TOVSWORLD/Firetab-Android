@@ -1,0 +1,55 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "source_path": "README-INSTALL.md",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/README-INSTALL.md",
+      "bytes": 6226,
+      "sha256": "febedcd1058ce488c645e2f3322f94da420ff4353a98b3aeeaa69862955270c4"
+    },
+    {
+      "source_path": "README-USAGE.md",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/README-USAGE.md",
+      "bytes": 9262,
+      "sha256": "f575e2106446916c171b59d4ec7dcb625f332295938ca9cb84908249599ceb65"
+    },
+    {
+      "source_path": "mtkclient/config/brom_config.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/brom_config.py",
+      "bytes": 97421,
+      "sha256": "a8d94deac4fb3d485e7ed9fcc17aa9fca14f19307c1dea5daf429cf7a1e1de63"
+    },
+    {
+      "source_path": "mtkclient/Library/mtk_main.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_main.py",
+      "bytes": 34387,
+      "sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129"
+    },
+    {
+      "source_path": "mtkclient/Library/DA/mtk_daloader.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/mtk_daloader.py",
+      "bytes": 24484,
+      "sha256": "79b80aea02831c9891e3a491613f6ce023f9a6d2ed13ead407d7d75b4bbcb713"
+    },
+    {
+      "source_path": "requirements.txt",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/requirements.txt",
+      "bytes": 144,
+      "sha256": "ce564c45392a3cccb84dc70694ad5e97b3dd1646f3a7907ab5ca8f5e6c3aa95e"
+    },
+    {
+      "source_path": "mtkclient/Library/DA/mtk_da_handler.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/mtk_da_handler.py",
+      "bytes": 77807,
+      "sha256": "c598db162410590a8e16f51e49120e5b08cb1ad423bde2b658fba115fc16156c"
+    },
+    {
+      "source_path": "pyproject.toml",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/pyproject.toml",
+      "bytes": 1680,
+      "sha256": "6af14393b9e85263a486c8cd70067a442587f64e274cb85a00baa3ac69a43954"
+    }
+  ],
+  "scope": "Source hashes/URLs only; no third-party helper code/payload published or executed",
+  "archived_main_sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5"
+}
