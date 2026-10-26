@@ -1,0 +1,58 @@
+{
+  "scope": "Known static sources only; no argument values published",
+  "sources": [
+    {
+      "source": "stock boot header",
+      "keys": [
+        "bootopt"
+      ],
+      "source_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363"
+    },
+    {
+      "source": "initial LK buffer",
+      "keys": [
+        "console",
+        "console",
+        "console",
+        "earlycon",
+        "root",
+        "vmalloc",
+        "androidboot.hardware"
+      ],
+      "source_sha256": "c09fc1b9944bbe4d71bd59b43dd79e19965fbce275876bbce74145a1e3fba10b"
+    },
+    {
+      "source": "stock appended DT 0",
+      "keys": [
+        "console",
+        "root",
+        "initrd"
+      ],
+      "source_sha256": "176c96a8f36c44d00340b428eab0a9cc0ca7e8f20b79d4903a24eb003d718498"
+    },
+    {
+      "source": "stock appended DT 1",
+      "keys": [
+        "console",
+        "root",
+        "initrd"
+      ],
+      "source_sha256": "887392afe3b005b9324f0797f124153ed846649b0ebdba86f2018f1caf6c9da1"
+    }
+  ],
+  "union_keys": [
+    "androidboot.hardware",
+    "bootopt",
+    "console",
+    "earlycon",
+    "initrd",
+    "root",
+    "vmalloc"
+  ],
+  "stock_runtime_cmdline_available": false,
+  "all_loader_mutations_audited": false,
+  "discarded_arguments_fully_qualified": false,
+  "device_profile_build_recommended": false,
+  "physical_test_ready": false,
+  "script_sha256": "bbd8c1b61cf1dc44329d1956dea2d33c7a5e76c9341be52d7383d8b8dd568c0d"
+}
