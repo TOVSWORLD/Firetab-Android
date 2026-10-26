@@ -220,3 +220,26 @@ No patch or bypass is proposed. Next identify the selector's input source and
 result-bit/key-selection semantics, using metadata-only receipts. Keep actual
 unsigned diagnostic acceptance false until the complete policy is understood
 and a recoverable owner test is qualified. No firmware or tablet was executed.
+
+## Selector input is an unlock-code record, not a fixed compile-time choice
+
+The [exact selector-input receipt](../../evidence/stock-selector-input/report.json)
+resolves0x205ec's field-name reference to `unlock_code`. It requests up to256B
+through0x3a4, which dispatches a runtime callback and returns an error if that
+callback is absent. A successful retrieval passes the buffer into0x2080c, a
+wrapper around0x2062c's validation path. The selector converts the validator's
+result into its branch decision. No input value or credential bytes were read.
+
+This narrows the earlier alternate-path uncertainty: its selector depends on
+retrieved and validated unlock-record state, rather than merely a command string
+or host flag. The retrieval callback's installed backing store and the complete
+validation algorithm/key selection remain unresolved. It is not evidence that
+setting a record, choosing fastboot or sending an arbitrary code enables a path.
+No such modification is proposed.
+
+The underlying verification-result code also incorporates this selector into
+additional result bits. The outer mask0x9 does not accept every nonzero status;
+for example, bits0x10/0x20 alone do not satisfy it. Full result semantics still
+need review before labelling success modes or trusted key slots. Next trace the
+retrieval callback registration and validator's actual key/signature calls,
+without exporting key material, credentials or raw firmware windows.

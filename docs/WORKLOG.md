@@ -1493,3 +1493,12 @@ zero→explicitverifyfailure/-13. Underlyingroutine calls1cf24twice; resultbits/
 keys unresolved.205ecselector alternatebranch preventsblanketpolicyclaim.
 Owncall/reference/windowhash receipt;240tests/repository/diffpass. Next selector
 input/resultbit/keyselection semantics; no patch/bypass/firmware/deviceexec.
+
+## 2026-10-26 — Stock selector unlock-record input (#106)
+
+Merged198 at passingfd6e2e203d0a942baad7ba82939d0145ca4d0349;197closed.
+Base8762510. ExactLK205ec requests256B unlock_coderecord via3a4runtimecallback,
+thenvalidator2080c→2062c; callbackstore/keys unresolved. No recordvalue retrieved.
+Resultmask9 excludesbits10/20alone; no arbitrarynonzerostatusacceptedclaim.
+Ownmetadata/call/windowreceipt,240tests/repository/diffpass. Next callback
+registration/keysignaturecalls; no credentialmaterial/firmware/deviceexec.

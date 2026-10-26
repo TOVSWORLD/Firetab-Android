@@ -1,0 +1,51 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "selector_input_field_name": "unlock_code",
+  "requested_input_buffer_bytes": 256,
+  "checked_calls": [
+    {
+      "offset": 132614,
+      "target": 932
+    },
+    {
+      "offset": 132632,
+      "target": 133132
+    },
+    {
+      "offset": 118460,
+      "target": 132588
+    },
+    {
+      "offset": 118494,
+      "target": 132588
+    }
+  ],
+  "retrieval_uses_runtime_callback": true,
+  "retrieval_storage_origin_resolved": false,
+  "installed_input_value_retrieved": false,
+  "validation_algorithm_resolved": false,
+  "reviewed_windows": [
+    {
+      "start": 132588,
+      "end": 132648,
+      "sha256": "fa73deecf5a69c9c7ed7ecabe8cf238fd51fdb68f8743ef760fb994f0a1bc495"
+    },
+    {
+      "start": 133132,
+      "end": 133140,
+      "sha256": "cc49ee92181e713ff09450fdbea91b1ba99900c73fad30b736eb5639b9504275"
+    },
+    {
+      "start": 932,
+      "end": 958,
+      "sha256": "f491246b585fd322a660b5dc63395976de2cc44d3485478621d0e55cd0ec549a"
+    },
+    {
+      "start": 118442,
+      "end": 118508,
+      "sha256": "e9625a390ca1dce122fe4db9011fa226915c9330b34ddb769f13a95a34ea5cd9"
+    }
+  ],
+  "scope": "Static field-name/call boundary only; no credential bytes or execution",
+  "physical_test_ready": false
+}
