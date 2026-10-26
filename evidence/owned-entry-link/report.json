@@ -1,0 +1,42 @@
+{
+  "sources": {
+    "diagnostic/entry/entry.S": "aa7951c35bbf4aef3f04701d2da0da468c270f3a13e6471f9fef8286883fda80",
+    "diagnostic/entry/entry.ld": "8717d2e65843cf0257420de34f9793a1c043961f66dd622200ed043ff8f2324c"
+  },
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "linker": "Ubuntu LLD 18.1.3 (compatible with GNU linkers)",
+  "elf_sha256": "31b5bf548b758d75ef13e18d1a5dbeeaf2394c827c8fb58899b4307db274af56",
+  "host_image": {
+    "relocation_metadata": {
+      "section_count": 6,
+      "nonempty_relocation_sections": 0,
+      "nonempty_dynamic_sections": 0,
+      "runtime_position_independence_verified": false
+    },
+    "image_bytes": 1064,
+    "image_sha256": "bcff63cef809b27760596e4fef6812eee4f87d6f08f09e67d2e40ace51f27a88",
+    "entry_offset": 0,
+    "segment_zero_fill_bytes": 0,
+    "gap_zero_fill_bytes": 0,
+    "source_elf_sha256": "31b5bf548b758d75ef13e18d1a5dbeeaf2394c827c8fb58899b4307db274af56",
+    "purpose": "host-only load-layout construction",
+    "firmware_executed": false,
+    "runtime_relocation_verified": false,
+    "physical_placement_verified": false,
+    "transport_binding_verified": false,
+    "physical_test_ready": false
+  },
+  "stack_bytes": 1024,
+  "marker_value": "0x46544b31",
+  "marker_observed_at_runtime": false,
+  "firmware_executed": false,
+  "stock_return_implemented": false,
+  "log_transport_implemented": false,
+  "physical_test_ready": false,
+  "ci": {
+    "job_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40406304083/job/121864827490",
+    "head": "e70e2d2ba4a1c84022d500fd22dbbdcfdf28b5ab",
+    "tested_merge": "fc3b2535c692f313512eff8f709038b2b58f30e3",
+    "development_merge": "a3aa8b6030840d6b27a90896bdeb3ec540d71ef4"
+  }
+}
