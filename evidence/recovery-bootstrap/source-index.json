@@ -1,0 +1,41 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "source_path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "bytes": 59705,
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f"
+    },
+    {
+      "source_path": "mtkclient/Library/mtk_class.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_class.py",
+      "bytes": 9328,
+      "sha256": "3970b42c3f39e8d5d284ea2f29b6840e8fcf05f9f1cb6edb831f60704bff1f6f"
+    },
+    {
+      "source_path": "mtkclient/Library/gui_utils.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/gui_utils.py",
+      "bytes": 12001,
+      "sha256": "11777a65a7d2ceef7dfa8e619b13c60843b101f723d88f4b41ee015cefcbc711"
+    },
+    {
+      "source_path": "mtkclient/Library/partition.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/partition.py",
+      "bytes": 9462,
+      "sha256": "ecb848d1cf90244641354c3a9ad06ea1a40f829d12c32c7c39c0e44222c40a4a"
+    },
+    {
+      "source_path": "mtk.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtk.py",
+      "bytes": 17196,
+      "sha256": "b68f13e078770097c13a484f517212c77fc7f8aa26f6b83b2187a9005b29e556"
+    },
+    {
+      "source_path": "mtkclient/Library/Filesystem/mtkdafs.py",
+      "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Filesystem/mtkdafs.py",
+      "bytes": 3425,
+      "sha256": "eaf750718ceeb5ae695d6c6fdae2a024ba2031080c2f8de614dc8c534e17c981"
+    }
+  ]
+}

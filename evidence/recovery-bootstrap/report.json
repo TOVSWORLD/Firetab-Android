@@ -1,0 +1,1354 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "legacy_upload": {
+    "root": "upload_da",
+    "same_file_reachable_methods": [
+      "brom_send",
+      "check_usb_cmd",
+      "cmd_nwdm_info",
+      "mt2523_handshake",
+      "read_flash_info",
+      "read_flash_info_iot",
+      "read_flash_info_iot_2523",
+      "set_speed_iot",
+      "set_stage2_config",
+      "set_usb_cmd",
+      "upload_da",
+      "upload_da1"
+    ],
+    "external_calls_not_resolved": [
+      "ConfigInfoIoT",
+      "EmmcInfoIoT",
+      "Legacy_ConfigInfo",
+      "Legacy_EmmcInfo",
+      "Legacy_NandInfo2",
+      "Legacy_NandInfo32",
+      "Legacy_NandInfo64",
+      "Legacy_NorInfo",
+      "Legacy_SdcInfo",
+      "NandInfoIoT",
+      "NorInfoIoT",
+      "NorInfoIoT2523",
+      "PassInfo",
+      "b''.join",
+      "bootldr.read",
+      "bootldr.seek",
+      "emmcids.append",
+      "hex",
+      "hexlify",
+      "hexlify(ackval).decode",
+      "hexlify(buffer).decode",
+      "hexlify(draminfo).decode",
+      "hexlify(info).decode",
+      "int.from_bytes",
+      "int.to_bytes",
+      "len",
+      "nand_ids.append",
+      "nandids.append",
+      "open",
+      "os.path.basename",
+      "os.path.join",
+      "os.walk",
+      "pack",
+      "pg.done",
+      "pg.update",
+      "print",
+      "progress",
+      "range",
+      "repr",
+      "rf.read",
+      "self.config.bmtsettings",
+      "self.config.set_da_config",
+      "self.config.set_gui_status",
+      "self.config.tr",
+      "self.daconfig.extract_emi",
+      "self.debug",
+      "self.eh.status",
+      "self.error",
+      "self.info",
+      "self.mtk.daloader.compute_hash_pos",
+      "self.mtk.daloader.fix_hash",
+      "self.mtk.daloader.lft.patch_da2",
+      "self.mtk.port.cdc.connect",
+      "self.mtk.port.cdc.set_fast_mode",
+      "self.mtk.port.cdc.set_line_coding",
+      "self.mtk.port.close",
+      "self.mtk.preloader.jump_da",
+      "self.mtk.preloader.send_da",
+      "self.mtk.preloader.send_env_prepare",
+      "self.pathconfig.get_loader_path",
+      "self.rdword",
+      "self.rword",
+      "self.usbread",
+      "self.usbwrite",
+      "str",
+      "sys.exit",
+      "sys.stdout.flush",
+      "time.sleep",
+      "unpack"
+    ],
+    "reachable_storage_write_methods": [],
+    "scope": "Syntactic same-file self.method closure only; not a device-effect proof"
+  },
+  "legacy_read": {
+    "root": "readflash",
+    "same_file_reachable_methods": [
+      "check_usb_cmd",
+      "readflash",
+      "sdmmc_switch_part"
+    ],
+    "external_calls_not_resolved": [
+      "Queue",
+      "Thread",
+      "buffer.extend",
+      "bytearray",
+      "bytes",
+      "exit",
+      "hex",
+      "len",
+      "pack",
+      "pg.done",
+      "pg.update",
+      "progress",
+      "rq.put",
+      "self.daconfig.legacy_storage.partitiontype_and_size",
+      "self.debug",
+      "self.error",
+      "self.mtk.port.cdc.set_fast_mode",
+      "self.usbread",
+      "self.usbwrite",
+      "unpack",
+      "worker.join",
+      "worker.start"
+    ],
+    "reachable_storage_write_methods": [],
+    "scope": "Syntactic same-file self.method closure only; not a device-effect proof"
+  },
+  "partition_switch": {
+    "discarded_switch_result_lines": [
+      1141
+    ],
+    "switch_can_return_false": true,
+    "wrong_region_read_possible_if_selection_fails": true,
+    "failure_observed_on_device": false,
+    "backup_region_identity_qualified": false
+  },
+  "bootstrap_upload_external_calls": [
+    {
+      "callee": "self.error",
+      "line": 559
+    },
+    {
+      "callee": "self.info",
+      "line": 562
+    },
+    {
+      "callee": "os.path.basename",
+      "line": 562
+    },
+    {
+      "callee": "open",
+      "line": 563
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 569
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 570
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 574
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 575
+    },
+    {
+      "callee": "self.mtk.daloader.compute_hash_pos",
+      "line": 577
+    },
+    {
+      "callee": "self.mtk.daloader.lft.patch_da2",
+      "line": 580
+    },
+    {
+      "callee": "self.mtk.daloader.fix_hash",
+      "line": 582
+    },
+    {
+      "callee": "self.mtk.preloader.send_da",
+      "line": 596
+    },
+    {
+      "callee": "self.mtk.preloader.jump_da",
+      "line": 597
+    },
+    {
+      "callee": "self.usbread",
+      "line": 598
+    },
+    {
+      "callee": "self.error",
+      "line": 600
+    },
+    {
+      "callee": "self.info",
+      "line": 603
+    },
+    {
+      "callee": "self.info",
+      "line": 609
+    },
+    {
+      "callee": "unpack",
+      "line": 610
+    },
+    {
+      "callee": "self.usbread",
+      "line": 610
+    },
+    {
+      "callee": "self.debug",
+      "line": 611
+    },
+    {
+      "callee": "hex",
+      "line": 611
+    },
+    {
+      "callee": "unpack",
+      "line": 612
+    },
+    {
+      "callee": "self.usbread",
+      "line": 612
+    },
+    {
+      "callee": "range",
+      "line": 614
+    },
+    {
+      "callee": "unpack",
+      "line": 615
+    },
+    {
+      "callee": "self.usbread",
+      "line": 615
+    },
+    {
+      "callee": "nandids.append",
+      "line": 616
+    },
+    {
+      "callee": "self.info",
+      "line": 617
+    },
+    {
+      "callee": "unpack",
+      "line": 618
+    },
+    {
+      "callee": "self.usbread",
+      "line": 618
+    },
+    {
+      "callee": "self.debug",
+      "line": 619
+    },
+    {
+      "callee": "hex",
+      "line": 619
+    },
+    {
+      "callee": "range",
+      "line": 621
+    },
+    {
+      "callee": "unpack",
+      "line": 622
+    },
+    {
+      "callee": "self.usbread",
+      "line": 622
+    },
+    {
+      "callee": "emmcids.append",
+      "line": 623
+    },
+    {
+      "callee": "len",
+      "line": 625
+    },
+    {
+      "callee": "len",
+      "line": 627
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 632
+    },
+    {
+      "callee": "self.usbread",
+      "line": 633
+    },
+    {
+      "callee": "self.usbread",
+      "line": 634
+    },
+    {
+      "callee": "self.usbread",
+      "line": 635
+    },
+    {
+      "callee": "self.info",
+      "line": 636
+    },
+    {
+      "callee": "hexlify(ackval).decode",
+      "line": 636
+    },
+    {
+      "callee": "hexlify",
+      "line": 636
+    },
+    {
+      "callee": "self.info",
+      "line": 637
+    },
+    {
+      "callee": "self.set_stage2_config",
+      "line": 638
+    },
+    {
+      "callee": "self.info",
+      "line": 639
+    },
+    {
+      "callee": "self.brom_send",
+      "line": 641
+    },
+    {
+      "callee": "self.read_flash_info",
+      "line": 642
+    },
+    {
+      "callee": "self.info",
+      "line": 652
+    },
+    {
+      "callee": "self.check_usb_cmd",
+      "line": 653
+    },
+    {
+      "callee": "self.info",
+      "line": 655
+    },
+    {
+      "callee": "self.config.set_gui_status",
+      "line": 656
+    },
+    {
+      "callee": "self.config.tr",
+      "line": 656
+    },
+    {
+      "callee": "self.set_usb_cmd",
+      "line": 657
+    },
+    {
+      "callee": "self.mtk.port.close",
+      "line": 658
+    },
+    {
+      "callee": "time.sleep",
+      "line": 659
+    },
+    {
+      "callee": "self.mtk.port.cdc.connect",
+      "line": 660
+    },
+    {
+      "callee": "self.info",
+      "line": 661
+    },
+    {
+      "callee": "time.sleep",
+      "line": 662
+    },
+    {
+      "callee": "self.check_usb_cmd",
+      "line": 663
+    },
+    {
+      "callee": "self.info",
+      "line": 664
+    },
+    {
+      "callee": "self.config.set_gui_status",
+      "line": 665
+    },
+    {
+      "callee": "self.config.tr",
+      "line": 665
+    },
+    {
+      "callee": "self.mtk.port.cdc.set_fast_mode",
+      "line": 666
+    },
+    {
+      "callee": "self.error",
+      "line": 673
+    },
+    {
+      "callee": "open",
+      "line": 676
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 681
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 682
+    },
+    {
+      "callee": "self.mtk.preloader.send_env_prepare",
+      "line": 683
+    },
+    {
+      "callee": "self.info",
+      "line": 685
+    },
+    {
+      "callee": "os.path.basename",
+      "line": 685
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 692
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 693
+    },
+    {
+      "callee": "self.mtk.preloader.send_da",
+      "line": 694
+    },
+    {
+      "callee": "self.mtk.preloader.jump_da",
+      "line": 696
+    },
+    {
+      "callee": "self.usbread",
+      "line": 697
+    },
+    {
+      "callee": "self.error",
+      "line": 699
+    },
+    {
+      "callee": "self.info",
+      "line": 702
+    },
+    {
+      "callee": "self.mt2523_handshake",
+      "line": 703
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 704
+    },
+    {
+      "callee": "self.usbread",
+      "line": 705
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 707
+    },
+    {
+      "callee": "self.usbread",
+      "line": 708
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 710
+    },
+    {
+      "callee": "b''.join",
+      "line": 711
+    },
+    {
+      "callee": "int.to_bytes",
+      "line": 711
+    },
+    {
+      "callee": "self.rword",
+      "line": 711
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 715
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 716
+    },
+    {
+      "callee": "range",
+      "line": 718
+    },
+    {
+      "callee": "len",
+      "line": 718
+    },
+    {
+      "callee": "len",
+      "line": 720
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 721
+    },
+    {
+      "callee": "int.to_bytes",
+      "line": 721
+    },
+    {
+      "callee": "self.usbread",
+      "line": 722
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 724
+    },
+    {
+      "callee": "self.rdword",
+      "line": 725
+    },
+    {
+      "callee": "self.read_flash_info_iot_2523",
+      "line": 727
+    },
+    {
+      "callee": "self.usbread",
+      "line": 728
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 730
+    },
+    {
+      "callee": "self.cmd_nwdm_info",
+      "line": 731
+    },
+    {
+      "callee": "print",
+      "line": 733
+    },
+    {
+      "callee": "sys.stdout.flush",
+      "line": 734
+    },
+    {
+      "callee": "print",
+      "line": 737
+    },
+    {
+      "callee": "sys.stdout.flush",
+      "line": 738
+    },
+    {
+      "callee": "self.info",
+      "line": 743
+    },
+    {
+      "callee": "os.path.basename",
+      "line": 743
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 750
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 751
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 757
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 758
+    },
+    {
+      "callee": "bootldr.seek",
+      "line": 762
+    },
+    {
+      "callee": "bootldr.read",
+      "line": 763
+    },
+    {
+      "callee": "self.mtk.preloader.send_da",
+      "line": 764
+    },
+    {
+      "callee": "self.mtk.preloader.send_da",
+      "line": 765
+    },
+    {
+      "callee": "self.error",
+      "line": 766
+    },
+    {
+      "callee": "self.error",
+      "line": 769
+    },
+    {
+      "callee": "self.mtk.preloader.jump_da",
+      "line": 771
+    },
+    {
+      "callee": "self.usbread",
+      "line": 772
+    },
+    {
+      "callee": "self.error",
+      "line": 774
+    },
+    {
+      "callee": "self.info",
+      "line": 777
+    },
+    {
+      "callee": "self.usbread",
+      "line": 781
+    },
+    {
+      "callee": "self.usbread",
+      "line": 783
+    },
+    {
+      "callee": "self.usbread",
+      "line": 785
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 787
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 789
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 791
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 793
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 795
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 797
+    },
+    {
+      "callee": "int.to_bytes",
+      "line": 797
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 799
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 801
+    },
+    {
+      "callee": "self.usbread",
+      "line": 802
+    },
+    {
+      "callee": "self.error",
+      "line": 804
+    },
+    {
+      "callee": "len",
+      "line": 806
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 811
+    },
+    {
+      "callee": "self.usbread",
+      "line": 816
+    },
+    {
+      "callee": "self.error",
+      "line": 820
+    },
+    {
+      "callee": "self.usbread",
+      "line": 823
+    },
+    {
+      "callee": "self.error",
+      "line": 825
+    },
+    {
+      "callee": "self.usbread",
+      "line": 827
+    },
+    {
+      "callee": "self.error",
+      "line": 829
+    },
+    {
+      "callee": "self.usbread",
+      "line": 834
+    },
+    {
+      "callee": "time.sleep",
+      "line": 836
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 838
+    },
+    {
+      "callee": "int.from_bytes",
+      "line": 842
+    },
+    {
+      "callee": "self.usbread",
+      "line": 842
+    },
+    {
+      "callee": "time.sleep",
+      "line": 845
+    },
+    {
+      "callee": "time.sleep",
+      "line": 846
+    },
+    {
+      "callee": "self.read_flash_info_iot",
+      "line": 847
+    },
+    {
+      "callee": "self.set_speed_iot",
+      "line": 864
+    },
+    {
+      "callee": "self.error",
+      "line": 866
+    }
+  ],
+  "stage2_configuration_external_calls": [
+    {
+      "callee": "self.config.set_da_config",
+      "line": 230
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 231
+    },
+    {
+      "callee": "pack",
+      "line": 231
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 232
+    },
+    {
+      "callee": "pack",
+      "line": 232
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 234
+    },
+    {
+      "callee": "pack",
+      "line": 234
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 236
+    },
+    {
+      "callee": "pack",
+      "line": 236
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 238
+    },
+    {
+      "callee": "pack",
+      "line": 238
+    },
+    {
+      "callee": "self.config.bmtsettings",
+      "line": 239
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 240
+    },
+    {
+      "callee": "pack",
+      "line": 240
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 241
+    },
+    {
+      "callee": "pack",
+      "line": 241
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 244
+    },
+    {
+      "callee": "pack",
+      "line": 244
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 248
+    },
+    {
+      "callee": "pack",
+      "line": 248
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 251
+    },
+    {
+      "callee": "pack",
+      "line": 251
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 253
+    },
+    {
+      "callee": "pack",
+      "line": 253
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 257
+    },
+    {
+      "callee": "pack",
+      "line": 257
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 261
+    },
+    {
+      "callee": "pack",
+      "line": 261
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 263
+    },
+    {
+      "callee": "pack",
+      "line": 263
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 265
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 272
+    },
+    {
+      "callee": "pack",
+      "line": 272
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 275
+    },
+    {
+      "callee": "pack",
+      "line": 275
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 278
+    },
+    {
+      "callee": "pack",
+      "line": 278
+    },
+    {
+      "callee": "time.sleep",
+      "line": 279
+    },
+    {
+      "callee": "self.usbread",
+      "line": 280
+    },
+    {
+      "callee": "len",
+      "line": 281
+    },
+    {
+      "callee": "self.error",
+      "line": 282
+    },
+    {
+      "callee": "int.from_bytes",
+      "line": 284
+    },
+    {
+      "callee": "self.usbread",
+      "line": 287
+    },
+    {
+      "callee": "self.usbread",
+      "line": 288
+    },
+    {
+      "callee": "self.usbread",
+      "line": 289
+    },
+    {
+      "callee": "self.usbread",
+      "line": 290
+    },
+    {
+      "callee": "self.usbread",
+      "line": 291
+    },
+    {
+      "callee": "self.error",
+      "line": 295
+    },
+    {
+      "callee": "self.eh.status",
+      "line": 295
+    },
+    {
+      "callee": "self.usbread",
+      "line": 298
+    },
+    {
+      "callee": "self.usbread",
+      "line": 300
+    },
+    {
+      "callee": "self.info",
+      "line": 304
+    },
+    {
+      "callee": "hexlify(draminfo).decode",
+      "line": 304
+    },
+    {
+      "callee": "hexlify",
+      "line": 304
+    },
+    {
+      "callee": "os.walk",
+      "line": 307
+    },
+    {
+      "callee": "os.path.join",
+      "line": 307
+    },
+    {
+      "callee": "self.pathconfig.get_loader_path",
+      "line": 307
+    },
+    {
+      "callee": "open",
+      "line": 309
+    },
+    {
+      "callee": "os.path.join",
+      "line": 309
+    },
+    {
+      "callee": "rf.read",
+      "line": 310
+    },
+    {
+      "callee": "os.path.join",
+      "line": 312
+    },
+    {
+      "callee": "print",
+      "line": 313
+    },
+    {
+      "callee": "self.daconfig.extract_emi",
+      "line": 314
+    },
+    {
+      "callee": "self.usbread",
+      "line": 319
+    },
+    {
+      "callee": "len",
+      "line": 320
+    },
+    {
+      "callee": "self.error",
+      "line": 321
+    },
+    {
+      "callee": "int.from_bytes",
+      "line": 323
+    },
+    {
+      "callee": "self.error",
+      "line": 325
+    },
+    {
+      "callee": "self.eh.status",
+      "line": 325
+    },
+    {
+      "callee": "unpack",
+      "line": 328
+    },
+    {
+      "callee": "self.usbread",
+      "line": 328
+    },
+    {
+      "callee": "self.info",
+      "line": 329
+    },
+    {
+      "callee": "range",
+      "line": 331
+    },
+    {
+      "callee": "nand_ids.append",
+      "line": 332
+    },
+    {
+      "callee": "unpack",
+      "line": 332
+    },
+    {
+      "callee": "self.usbread",
+      "line": 332
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 334
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 336
+    },
+    {
+      "callee": "pack",
+      "line": 336
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 338
+    },
+    {
+      "callee": "pack",
+      "line": 338
+    },
+    {
+      "callee": "self.usbread",
+      "line": 339
+    },
+    {
+      "callee": "self.error",
+      "line": 341
+    },
+    {
+      "callee": "sys.exit",
+      "line": 342
+    },
+    {
+      "callee": "self.info",
+      "line": 344
+    },
+    {
+      "callee": "hex",
+      "line": 344
+    },
+    {
+      "callee": "unpack",
+      "line": 346
+    },
+    {
+      "callee": "self.usbread",
+      "line": 346
+    },
+    {
+      "callee": "self.info",
+      "line": 347
+    },
+    {
+      "callee": "hex",
+      "line": 347
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 348
+    },
+    {
+      "callee": "len",
+      "line": 349
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 351
+    },
+    {
+      "callee": "pack",
+      "line": 351
+    },
+    {
+      "callee": "self.usbread",
+      "line": 353
+    },
+    {
+      "callee": "self.info",
+      "line": 354
+    },
+    {
+      "callee": "hexlify(info).decode",
+      "line": 354
+    },
+    {
+      "callee": "hexlify",
+      "line": 354
+    },
+    {
+      "callee": "unpack",
+      "line": 355
+    },
+    {
+      "callee": "self.usbread",
+      "line": 355
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 356
+    },
+    {
+      "callee": "unpack",
+      "line": 358
+    },
+    {
+      "callee": "self.usbread",
+      "line": 358
+    },
+    {
+      "callee": "self.info",
+      "line": 359
+    },
+    {
+      "callee": "hex",
+      "line": 359
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 360
+    },
+    {
+      "callee": "pack",
+      "line": 362
+    },
+    {
+      "callee": "unpack",
+      "line": 364
+    },
+    {
+      "callee": "self.usbread",
+      "line": 364
+    },
+    {
+      "callee": "self.info",
+      "line": 365
+    },
+    {
+      "callee": "hex",
+      "line": 365
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 366
+    },
+    {
+      "callee": "len",
+      "line": 367
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 369
+    },
+    {
+      "callee": "pack",
+      "line": 369
+    },
+    {
+      "callee": "self.error",
+      "line": 371
+    },
+    {
+      "callee": "self.mtk.port.close",
+      "line": 372
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 374
+    },
+    {
+      "callee": "unpack",
+      "line": 375
+    },
+    {
+      "callee": "self.usbread",
+      "line": 375
+    },
+    {
+      "callee": "self.info",
+      "line": 376
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 377
+    },
+    {
+      "callee": "self.usbwrite",
+      "line": 378
+    },
+    {
+      "callee": "pack",
+      "line": 378
+    },
+    {
+      "callee": "unpack",
+      "line": 379
+    },
+    {
+      "callee": "self.usbread",
+      "line": 379
+    },
+    {
+      "callee": "self.info",
+      "line": 380
+    },
+    {
+      "callee": "self.error",
+      "line": 382
+    },
+    {
+      "callee": "self.eh.status",
+      "line": 382
+    },
+    {
+      "callee": "self.mtk.port.close",
+      "line": 383
+    },
+    {
+      "callee": "self.usbread",
+      "line": 385
+    },
+    {
+      "callee": "self.info",
+      "line": 386
+    },
+    {
+      "callee": "hex",
+      "line": 386
+    },
+    {
+      "callee": "self.usbread",
+      "line": 387
+    },
+    {
+      "callee": "self.info",
+      "line": 388
+    },
+    {
+      "callee": "hex",
+      "line": 388
+    },
+    {
+      "callee": "unpack",
+      "line": 389
+    },
+    {
+      "callee": "self.usbread",
+      "line": 389
+    },
+    {
+      "callee": "self.info",
+      "line": 390
+    },
+    {
+      "callee": "hex",
+      "line": 390
+    },
+    {
+      "callee": "self.usbread",
+      "line": 392
+    },
+    {
+      "callee": "self.usbread",
+      "line": 394
+    },
+    {
+      "callee": "self.usbread",
+      "line": 396
+    },
+    {
+      "callee": "self.usbread",
+      "line": 398
+    },
+    {
+      "callee": "self.usbread",
+      "line": 400
+    },
+    {
+      "callee": "self.error",
+      "line": 402
+    },
+    {
+      "callee": "self.mtk.port.close",
+      "line": 403
+    }
+  ],
+  "agent_binary_or_payload_audited": false,
+  "backend_selected_on_actual_device_verified": false,
+  "globally_persistence_free_verified": false,
+  "mac_cli_import_closure_complete": false,
+  "physical_test_ready": false,
+  "script_sha256": "8ead8f860b953f789bcc6348b23f33c5c75f7a5cb387afcca6a83586d4305574"
+}
