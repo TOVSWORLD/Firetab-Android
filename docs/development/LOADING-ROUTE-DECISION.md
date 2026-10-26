@@ -304,3 +304,21 @@ zero-tail construction entirely on the host, before selecting a device loader.
 It must also avoid blindly applying the upstream final-word patch convention to
 a differently linked image. Such a host image contract cannot qualify security
 entry, physical RAM placement, recovery or boot logs by itself.
+
+## Owned host image construction (#229)
+
+`prepare_stage1_host_image.py` constructs an in-memory image from validated
+PT_LOAD file bytes and zero-initializes memory tails and gaps. It accepts only
+zero-based layouts up to 64KiB with matching physical/virtual address fields,
+rejects overlapping memory extents, preserves input bytes and does no upstream
+sentinel patching. Synthetic tests cover preserved bytes, zero tails/gaps and
+rejected layouts. The Linux build probe now emits its image size/hash and
+initialization counts, without saving/uploading that image or executing it.
+
+This is a host layout construction contract, not a selected physical loader.
+Actual probe-image measurements await CI. Position independence/relocations,
+CPU/cache state, safe physical placement, security entry, transport compatibility,
+stock restoration and useful logs are not established by this constructor.
+No device command or helper execution path is attached to it. Next inspect the
+actual CI image receipt, then qualify relocation and entry assumptions before
+any physical loading proposal.
