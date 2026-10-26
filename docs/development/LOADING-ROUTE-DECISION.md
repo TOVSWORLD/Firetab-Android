@@ -462,3 +462,32 @@ that transport. Existing upstream generic-stage readback is commented out in
 source, so assuming its host read request works would leave the central logging
 gap unresolved. Keep that source/protocol dependency ahead of new diagnostic
 features; physical security entry, safe RAM mapping and restore remain open.
+
+## Loader return/readback protocol incompatibilities (#241)
+
+The hash-verified pinned
+[generic-stage command loop](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L281-L400)
+invokes its supplied jump target as a C function. If that function returns,
+control breaks out of the switch and resumes the command loop. It emits no
+call-completion ACK. The existing
+[host stage command](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_main.py#L247-L290)
+waits instead for a stage2 startup ACK after jumping. Our callable leaf only
+writes memory and returns; it cannot satisfy that host expectation. A C return
+to a command loop also does not return to stock firmware.
+
+Readback has two distinct source mismatches. The read handler is entirely
+commented out; unknown commands fall through without consuming an address or
+length. Sending the host's read request would leave those words to be interpreted
+as the next command-loop magic, potentially exiting into the final infinite
+loop. Separately, even the commented read handler has its completion ACK
+commented out while the host expects one. Merely enabling the read block would
+not by itself make that host transaction compatible. These are source-level
+inferences, not observations of the packaged binary or tablet.
+
+The [receipt](../../evidence/loader-return-readback-gap/report.json) retains source
+hashes/ranges and explicit limits. No helpers were imported, no firmware ran,
+and no read/jump request was sent. Do not attach the owned leaf or marker decoder
+to this unqualified host route. Next implement a small owned, bounded host-only
+call/read transaction specification with explicit completion and exact read
+lengths, then establish a matching auditable agent implementation before physical
+entry qualification. This leaves original-state restore and log transport open.

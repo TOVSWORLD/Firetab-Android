@@ -1719,3 +1719,16 @@ padding checks and explicit no-runtime/freshness/return claims. 255 host tests p
 repository/diff pass. CI synthetic mutation against linked images pending; no
 firmware/device execution. Next real loader callable-return/readback source path,
 not more marker features; restore/security/log transport gates remain unresolved.
+
+## 2026-10-26 — Concrete loader return/readback incompatibilities (#241 / #106)
+
+Merged #240 at passing 93bfda82c60fc0670e9b1a424804c1a0ef58bc1c,
+merge 9c6fa17c874a6f803eee1ae6ac01b835ded49072; #239 closed. Verified cached
+pinned stage C/host source identities. C callable return resumes command loop
+without ACK while host awaits stage2 startup ACK. Active source lacks read;
+unknown read command leaves address/length as next magic, which can reach final
+infinite loop. Even commented read handler omits completion ACK expected by host.
+Retained metadata/citations only, not packaged-binary/runtime claims. No helper/
+firmware/device execution. Repo/diff pass; unchanged 255-test baseline. Next owned
+bounded call/read specification and matching auditable agent, not upstream host
+binding; restore/security/physical log gates stay open.
