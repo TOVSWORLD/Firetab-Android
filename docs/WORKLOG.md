@@ -1611,3 +1611,15 @@ Retained sanitized metadata, not raw logs or ELF. Entry zero is not a physical
 load address. No installs, firmware execution or device access. Next: bounded
 ELF layout/entry metadata, then transport protocol and restore/logging gates;
 no boot/recovery/hardware issue closed from a successful link.
+
+## 2026-10-26 — Add first-stage ELF load-layout gate (#223 / #106)
+
+Merged #222 after all four exact-head checks passed at
+92e77e8b5f4adeb4f2de94a19aef8820d8e59778, merge
+465de695de5f7df18e9f7859c899fc4942b0de22; #221 closed.
+Added owned bounded ELF parser and build-probe integration to validate PT_LOAD
+extents/alignment and file-backed executable entry coverage. Metadata only;
+no firmware execution, sections/disassembly or device access. All 243 host tests,
+repository guard and diff check pass. Actual Linux layout result pending CI.
+Next retain actual segment metadata, then resolve flat transport/source protocol
+compatibility; restore and logging remain separate open gates.

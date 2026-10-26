@@ -228,3 +228,19 @@ flat transport payload, equivalence to the packaged 1,000-byte binary, the
 readback protocol, safe RAM placement, ARM64 handoff, stock return or boot-log
 capture. Recovery issue #106 remains open until those applicable gates have
 actual evidence; this result supplies no physical test authorization.
+
+## ELF load-layout gate (#223)
+
+The build probe now calls our static `inspect_stage1_elf.py` parser before
+reporting link success. It validates bounded ELF32 ARM headers, program-table
+bounds, PT_LOAD file/memory extents and alignment, and requires the entry
+(with the ARM Thumb-state bit removed) to fall within executable file-backed
+bytes. An entry only in zero-filled memory fails. CI emits load-segment metadata
+without code bytes or disassembly. Physical-address fields are reported as ELF
+fields, not verified hardware placements. Sections are not analyzed by this gate.
+
+Synthetic tests cover a Thumb entry, BSS extent, non-executable entry, malformed
+tables/extents and alignment. Actual layout values await the new Linux CI run;
+the earlier successful link receipt predates this stronger check. Neither this
+parser nor a passing result qualifies flat payload extraction, readback protocol,
+RAM placement, return to stock or boot-log availability.

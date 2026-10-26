@@ -5,6 +5,8 @@ on:
     branches: [development]
     paths:
       - scripts/build_stage1_link_probe.py
+      - scripts/inspect_stage1_elf.py
+      - tests/test_inspect_stage1_elf.py
       - .github/workflows/stage1-link-probe.yml
 permissions:
   contents: read
