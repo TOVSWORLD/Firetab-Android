@@ -716,3 +716,12 @@ address sentinel, so old4bd00000base is unverified. Strict hash/bounds parser an
 source-based hypothetical patch windows retained with compatibility=false. Old
 helper donor binaries absent in pinned git.102 tests pass. Next#21 stock LK
 control-flow analysis using existing LLVM, no new dependency or device operation.
+
+## 2026-10-25 — Actual LK K64/secure-monitor instruction trace (#82)
+
+Startup instructions substantiate linked4bd00000base. Checked Thumb chain passes
+entry-slot/current-r5/0/1 through K64-labelled wrapper to ARM SMC#0 service82000200.
+Exact offsets/bytes, PC-relative references, disassembly and hashes retained.
+r5 lineage, upstream header/decompression producer and monitor behavior remain
+unverified. Non-loadable static-analysis object only;106 tests pass. Next#21
+trace entry-slot producer. No code/firmware execution, new download or tablet IO.

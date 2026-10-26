@@ -412,3 +412,55 @@ If complete flow cannot be established statically, record the exact missing
 branch/assumption before proposing any physical test; do not treat string/literal
 hits as control-flow proof. Existing native tools are available, but no payload
 was built and no firmware instruction executed in this scope.
+
+## Stock LK instruction trace — issue #82
+
+The exact build's startup code now substantiates a linked base of0x4bd00000:
+ARM payload offset0 branches to0x24; offsets0x40–0x6c compare the current image
+base with literal0x4bd00000, copy toward the linked range when different, and
+branch via literal0x4bd00080. This replaces the earlier source-only base assumption
+with actual startup-instruction evidence. It does not prove a physical loader
+runs this startup path or make legacy patch addresses compatible.
+
+A bounded mixed ARM/Thumb trace establishes an actual K64-associated secure-monitor
+call path. Offsets below are relative to the512-byte-stripped LK payload; file
+offsets are512 higher, linked addresses are0x4bd00000 higher if startup executes
+at its linked base:
+
+- Thumb call0x3eb90 targets0x3de1c. That function saves incoming r0 at stack+0x28;
+  a PC-relative reference in the function resolves to boot_linux_fdt.
+- At0x3e738, the checked nonzero-flag path reaches0x3e73c: reload r0 from stack+0x28,
+  move current r5 into r1, set r2=0/r3=1, and call0x3ddd0. r5 is modified elsewhere
+  in this function; complete lineage of that argument is not yet proven.
+- The forwarding wrapper resolves a PC-relative log reference to
+  “[LK]jump to K64”, restores its four incoming arguments, then BLX at0x3ddec
+  enters ARM code0x3c8e0. Standard callee-saved-register behavior is assumed for
+  the intervening logging call; its implementation was not fully traced.
+- ARM0x3c8e0–0x3c8f4 shifts arguments: r1 receives the entry-slot value, r2 the
+  second wrapper argument, r3=0/r4=1. r0 loads literal0x82000200, then executes
+  SMC#0. This proves the selected call-site/request structure statically; the
+  secure monitor handler, exception-level setup and final AArch64 jump are not
+  established by this LK-only trace.
+
+The selected wrapper does not realign the entry value it forwards. The earlier
+producer of that value, header handling and decompression destination still need
+tracing before concluding the entire loader ignores the modern Image header.
+The40080000/text_offset0 mismatch therefore remains conditional.
+
+Reproduce with `python3 scripts/trace_lk_handoff.py --lk
+out/ota-loader-inspection-659664620/lk.bin --output out/lk-handoff-replay` (one shell
+command, fresh output). Existing LLVM objdump21 performs static decoding only.
+The tool builds an ignored ET_REL analysis object with no entry/program headers;
+it is not a firmware image, never executed and not redistributed. Only five
+bounded disassembly excerpts, selected anchor bytes and hash-bearing report are
+committed under evidence/lk-handoff. Instruction anchors/call targets are checked
+independently of tool text. ARM and Thumb ranges are explicit; literal pools are
+not treated as executable instructions. Preliminary broad linear decoding was
+not accepted as control-flow proof.
+
+106 tests pass, covering signed/cross-state branch targets, non-loadable object
+headers, changed-instruction refusal and explicit unverified lineage/monitor/boot
+flags. No firmware/helper instruction ran and no tablet was accessed. Next#21
+work: trace the producer of the saved entry slot and its decompression/header
+inputs. Preserve the current static conclusions without promoting them to a
+physical boot or recovery result.

@@ -1,0 +1,91 @@
+{
+  "scope": "Static ARM/Thumb instruction evidence only; firmware never executed",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "llvm_version": "Apple LLVM version 21.0.0",
+  "analysis_object_type": "ET_REL; no entry/program headers",
+  "facts": {
+    "linked_base_from_startup_literal": "0x4bd00000",
+    "relocation_copy_end_literal": "0x4bd765ac",
+    "relocation_target_literal": "0x4bd00080",
+    "checked_calls": [
+      {
+        "payload_offset": "0x3eb90",
+        "target_offset": "0x3de1c"
+      },
+      {
+        "payload_offset": "0x3e744",
+        "target_offset": "0x3ddd0"
+      },
+      {
+        "payload_offset": "0x3ddec",
+        "target_offset": "0x3c8e0"
+      }
+    ],
+    "k64_log_reference": {
+      "load_offset": "0x3dddc",
+      "add_pc_offset": "0x3ddde",
+      "literal_pool_offset": "0x3ddfc",
+      "target_offset": "0x65900",
+      "text": "\n[LK]jump to K64 0x%x\n"
+    },
+    "fdt_label_reference": {
+      "load_offset": "0x3e96c",
+      "add_pc_offset": "0x3e970",
+      "literal_pool_offset": "0x3eb80",
+      "target_offset": "0x656f0",
+      "text": "boot_linux_fdt"
+    },
+    "smc_offset": "0x3c8f4",
+    "smc_function_id": "0x82000200",
+    "smc_registers_on_checked_path": {
+      "r0": "0x82000200",
+      "r1": "stack slot +0x28, saved incoming r0; earlier producer not yet traced",
+      "r2": "r5 at selected call site; complete lineage unresolved",
+      "r3": 0,
+      "r4": 1
+    },
+    "checked_wrapper_adjusts_entry_alignment": false,
+    "complete_parameter_lineage_verified": false,
+    "upstream_header_decompression_flow_complete": false,
+    "secure_monitor_behavior_verified": false,
+    "runtime_boot_verified": false
+  },
+  "excerpts": [
+    {
+      "name": "startup",
+      "mode": "armv7",
+      "payload_start": "0x0",
+      "payload_end": "0x70",
+      "sha256": "533c0222e34d74b13e65f687f5972ad7b85d9fc40235a7d4266abe3b6a04171a"
+    },
+    {
+      "name": "save_parameters",
+      "mode": "thumbv7",
+      "payload_start": "0x3de1c",
+      "payload_end": "0x3de32",
+      "sha256": "6f5c264cbba7bf353080dba7ef97d6a8433c65bf23d8c54f83afa5d0ef5a9c50"
+    },
+    {
+      "name": "k64_select_and_call",
+      "mode": "thumbv7",
+      "payload_start": "0x3e732",
+      "payload_end": "0x3e74a",
+      "sha256": "6b485f64b54c024dc6f1b1c480cda54b99c6741b74b217229e57c244ee3329d3"
+    },
+    {
+      "name": "forwarding_wrapper",
+      "mode": "thumbv7",
+      "payload_start": "0x3ddd0",
+      "payload_end": "0x3ddfa",
+      "sha256": "7a2963ce570539d8e4cb210a6af8151d478650b4339a5687e033997616d0ddd0"
+    },
+    {
+      "name": "smc_transition",
+      "mode": "armv7",
+      "payload_start": "0x3c8e0",
+      "payload_end": "0x3c8fc",
+      "sha256": "deb13deca0e3937082e94e0d6ac3329cfd06a4bf0a1e002f6a46eedd7db90161"
+    }
+  ],
+  "script_sha256": "98aad0d70f508624cc32107103d1204fd7b0c8438ef06619e9089f4d9dc656a6"
+}
