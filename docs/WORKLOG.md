@@ -1295,3 +1295,13 @@ fallbacks and sticky failure. No USB commands/backend/handshake/helper binding.
 Four synthetic tests/full219pass; native preemption remains supervisor scope.
 No physical mode/provenance/authorization inferred. Next source framing/status
 review before exact live binding; recovery/logging gates remain open.
+
+## 2026-10-26 — Getter framing and fresh-mode evidence (#106)
+
+Merged158 at passing80b0bca0fee31edf297c634ccc6d6da77b7f761d;157closed/Done.
+Base9632f64. Reviewed query echo/payload framing; source wrapper indexes echo
+without exact-length guard. Mode query separate from three-query session and
+setsTrue without clearing oldTrue on other reply. Own supplied-frame validator
+requires exact echo/payload, two synthetic tests/full221pass. Zero fourthword
+is explicit conservative policy, not full protocolspec. No helper/deviceexec or
+download. Next fresh mode-evidence contract, preserving unknown and sessionorigin.

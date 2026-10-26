@@ -163,3 +163,33 @@ flags are reported data; mode/provenance/bootstrap readiness stay false. This
 cannot establish BootROM mode or reachability from the currently running OS.
 Next review the exact getter response/status and command framing contract against
 the pinned source before implementing any live binding. No tablet action asked.
+
+## Getter framing and mode inference
+
+The pinned [getter aliases](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L136-L140)
+use Port echo/mtk_cmd and backend reads. Hardware code uses a four-byte payload;
+hardware versions use eight bytes unpacked into four big-endian words. The
+initializer consumes the first three version words without checking the fourth;
+our offline session deliberately requires the fourth word zero as a stricter
+acceptance policy, not as a proved complete protocol specification.
+
+[mtk_cmd](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Port.py#L232-L256)
+writes a command, reads its echo and indexes the response before an explicit
+length check. An empty reply may raise. The direct target-config getter instead
+uses echo plus a six-byte payload. A future binding must enforce exact echo,
+exact payload, write completion and positive deadlines independently; calling
+these methods does not satisfy the owned observation contract automatically.
+The own `offline_query_frame.py` validates supplied echo/payload fields with
+synthetic tests. It contains no protocol command values or transport.
+
+[Mode detection](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L657-L673)
+uses a separate bootloader-version query: a particular echo sets is_brom True.
+Its other branch does not explicitly clear a previously True value. Reused config
+must not be treated as a fresh mode observation. A USB product ID, hardware code
+or three-query session alone cannot supply this missing mode evidence. Returned
+version bytes, exact echo semantics and session freshness need qualification.
+
+[Source receipt](../../evidence/observation-framing/source-review.json) pins the
+reviewed files. No helper was imported or executed. Next add a fresh explicit
+mode-evidence result to the offline contract, preserving unknown rather than
+reusing mutable helper state; no live mode query is authorized by these notes.

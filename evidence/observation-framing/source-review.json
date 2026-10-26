@@ -1,0 +1,20 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68"
+    },
+    {
+      "path": "mtkclient/Library/Port.py",
+      "sha256": "f1febf33a0e6a9eb57392804166ea975384ce0ad3925ca2e9561462f786a3720"
+    },
+    {
+      "path": "mtkclient/Library/Connection/devicehandler.py",
+      "sha256": "cc37749b17a5ba7377ad8fdb81e01567baf3f61ac3ce1f5f4c5b6e1cbb2fef92"
+    }
+  ],
+  "scope": "Getter framing and mode inference source review only",
+  "live_binding_implemented": false,
+  "physical_test_ready": false
+}
