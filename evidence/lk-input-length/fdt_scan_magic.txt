@@ -1,0 +1,31 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   3deb2: e005         	b	0x3dec0 <.text+0x3dec0> @ imm = #0xa
+   3deb4: 455c         	cmp	r4, r11
+   3deb6: d05e         	beq	0x3df76 <.text+0x3df76> @ imm = #0xbc
+   3deb8: 3c01         	subs	r4, #0x1
+   3deba: 3701         	adds	r7, #0x1
+   3debc: 454c         	cmp	r4, r9
+   3debe: d065         	beq	0x3df8c <.text+0x3df8c> @ imm = #0xca
+   3dec0: 78e3         	ldrb	r3, [r4, #0x3]
+   3dec2: 2bed         	cmp	r3, #0xed
+   3dec4: d1f6         	bne	0x3deb4 <.text+0x3deb4> @ imm = #-0x14
+   3dec6: 78a3         	ldrb	r3, [r4, #0x2]
+   3dec8: 2bfe         	cmp	r3, #0xfe
+   3deca: d1f3         	bne	0x3deb4 <.text+0x3deb4> @ imm = #-0x1a
+   3decc: 7863         	ldrb	r3, [r4, #0x1]
+   3dece: 2b0d         	cmp	r3, #0xd
+   3ded0: d1f0         	bne	0x3deb4 <.text+0x3deb4> @ imm = #-0x20
+   3ded2: 7823         	ldrb	r3, [r4]
+   3ded4: 2bd0         	cmp	r3, #0xd0
+   3ded6: d1ed         	bne	0x3deb4 <.text+0x3deb4> @ imm = #-0x26
+   3ded8: 1cfb         	adds	r3, r7, #0x3
+   3deda: 4628         	mov	r0, r5
+   3dedc: f023 0303    	bic	r3, r3, #0x3
+   3dee0: 4621         	mov	r1, r4
+   3dee2: 461a         	mov	r2, r3
+   3dee4: 9308         	str	r3, [sp, #0x20]

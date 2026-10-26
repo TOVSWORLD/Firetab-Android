@@ -1,0 +1,90 @@
+[
+  {
+    "name": "mtk_prefix_parser",
+    "start": 149196,
+    "end": 149230,
+    "hex": "70b541f288630a68c5f688030c4605469a4220d101f108002022294621f078fb18bb",
+    "sha256": "203f1ad357cac51d48f2e7dcd542c74853b65829a7ce5ea484af21010ee519e5",
+    "disassembly_sha256": "12319bfd090989dbc4b8a44d78e10c30d0eb7c73dc0a75a24cfdfeb817f0436b"
+  },
+  {
+    "name": "mtk_size_return",
+    "start": 149278,
+    "end": 149282,
+    "hex": "606870bd",
+    "sha256": "c52ae94c1429a110982db7d000ca09609a373752d4d2d44eff10637a0aa4d8f7",
+    "disassembly_sha256": "034fddd896ba09bb7c37c40b212e3d05523123f9e946517895fcddb192dbcab6"
+  },
+  {
+    "name": "staging_input",
+    "start": 150768,
+    "end": 150772,
+    "hex": "05460e46",
+    "sha256": "d38ed2f332f4da539e2120df8de79be8fb055b3606e81d68c3cc1e031a81f2fe",
+    "disassembly_sha256": "1e265fd8397bb1317373c369659dce8dc47f65396550577ffe2d53869778035e"
+  },
+  {
+    "name": "kernel_prefix_read",
+    "start": 150824,
+    "end": 150942,
+    "hex": "b2494ff4007c0023b14857f801a07844daf800104c6a2246dbf80040cdf81cc0ecfb0423cde9042320f050fbddf81cc040460096dde90423cdf804c0dbf808100291d8f810108847a24831467844fff7a9fca14bfb581860013000f0ff809f48a6f50076784420f031fb9d4bfb581a68a2f500721a60",
+    "sha256": "f5a9bf8aa4c06bb3029507197460b4723f636712bfe8d32d76d23e2e64989290",
+    "disassembly_sha256": "b1a74e9624fa6da68a3167b03ff476bbc0b62467ba10df0d4b9573bc2e0180fc"
+  },
+  {
+    "name": "storage_read",
+    "start": 150982,
+    "end": 151022,
+    "hex": "daf800204046dde90445d9f80030526a00960193a41a65f10005cdf808b022462b46d8f810108847",
+    "sha256": "3eb8a27f5be443743ee79c9d7a5328b06ef4d99b5c86c4b0749708eae2688acd",
+    "disassembly_sha256": "6d590f7909729e6cf0bbf56433fecf2bcfa985e22ba3cccbce350038f417f45e"
+  },
+  {
+    "name": "staging_callers",
+    "start": 257524,
+    "end": 257544,
+    "hex": "e6f7cafc014668487844e5f773ff0028bff669af",
+    "sha256": "d04ddc9552d21998e081a8358174a2a41f57ed89818f801960d97ebb6283d83a",
+    "disassembly_sha256": "ad35837c6b5ade3e033b101e2fbe119e1e93b6e1e115bfb2b37a1630cc1a50c4"
+  },
+  {
+    "name": "fdt_scan_initial",
+    "start": 253524,
+    "end": 253582,
+    "hex": "136822689f6804972ab1d968c1f31203002b40f06481049c049f4c44002f00f06981dff828cba4f5af2bdff8247b0bf1ff3b0b96fc44cdf834c0",
+    "sha256": "3f2aa93841a8f1eb875d1d6bb3fe69a658444322bb8a4f0f9475d37b4e7b2390",
+    "disassembly_sha256": "55900ed74225aa4804559e6ba9b893515f630176c99a7fa59ed03fbde60dd826"
+  },
+  {
+    "name": "fdt_scan_magic",
+    "start": 253618,
+    "end": 253670,
+    "hex": "05e05c455ed0013c01374c4565d0e378ed2bf6d1a378fe2bf3d163780d2bf0d12378d02bedd1fb1c284623f0030321461a460893",
+    "sha256": "df804425779c8d5e079133fc5e29dde9d572bf3165243acdac8448b28f0306f7",
+    "disassembly_sha256": "cb56b316a5baf7d8ad576fddc59f40fc2d746ba94d08d85337c5ca374acdbd55"
+  },
+  {
+    "name": "fdt_input_length",
+    "start": 253836,
+    "end": 253876,
+    "hex": "dff8202afb1c0b9e23f0030358f802200592049c9c4200f0d880e41a0494099f3b68002b40f0ab80",
+    "sha256": "e264ec372a3d11d17e575c6dd3b3d242d3cd7f5b874e62fd292348b64d3c8204",
+    "disassembly_sha256": "66ba740d56f8cfadfbb27520a2115dc8cccd5420cd36ae7ebe225380e99c497b"
+  },
+  {
+    "name": "fdt_match_path",
+    "start": 254306,
+    "end": 254324,
+    "hex": "dff8940807990b9e784406f0f0fd089b14e7",
+    "sha256": "1dd0a6f2c0affc3e86aee17daa8ca14fa4d7440778f3424d951c2303856f0d42",
+    "disassembly_sha256": "4c13c89acde63081b595c11438e9957b766f31996c3e30c02fbbe79f089ff8e1"
+  },
+  {
+    "name": "inflate_capacity_and_result",
+    "start": 258786,
+    "end": 258878,
+    "hex": "3b68aa44dff86ce068461a4a04215d1bcdf800a0fe44cdf80c807a44cdf810900195cdf820e0099209f0e5fb01280ad1039b6846c8eb03033b600af08afc30460eb0bde8f08701460c48784405f00ffd68460af07efc4ff0ff30f1e7",
+    "sha256": "8e2beeeb01c8b8e2af697e66dc0cf9bf85fb21a4b9255d3e1e7152df3a65c729",
+    "disassembly_sha256": "770344dacccedc04ee3864ad5f8853bd08a5f49c5d03132ffa08bf17b8c2aa7a"
+  }
+]

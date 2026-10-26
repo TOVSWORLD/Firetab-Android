@@ -1,0 +1,60 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "facts": {
+    "scope": "Selected static paths and conditional arithmetic; not a loader emulator or tablet test",
+    "staging_base": "0x45000000",
+    "mtk_present_branch_read_destination": "0x44fffe00 (staging base minus512)",
+    "mtk_prefix_bytes": 512,
+    "read_callback_and_security_transform_verified": false,
+    "scan_initial_size_source": "header+8 saved at3de58/3de5a; not automatically gzip-member size",
+    "scan_start": "staging base plus header size; prefix-shift can place this512 bytes beyond component payload",
+    "fdt_match_cases": [
+      {
+        "scan_distance_bytes": 165430,
+        "rounded_suffix_bytes": 165432,
+        "selected_inflate_input_bytes": 7026234,
+        "hypothetical_matched_dt_index": 0,
+        "includes_complete_gzip_member": false,
+        "bytes_beyond_gzip_end": -2
+      },
+      {
+        "scan_distance_bytes": 83153,
+        "rounded_suffix_bytes": 83156,
+        "selected_inflate_input_bytes": 7108510,
+        "hypothetical_matched_dt_index": 1,
+        "includes_complete_gzip_member": true,
+        "bytes_beyond_gzip_end": 82274
+      }
+    ],
+    "actual_dt_selection_verified": false,
+    "stock_gzip_bytes": 7026236,
+    "stock_gzip_output_bytes": 16584856,
+    "stock_output_capacity_bytes": 29360128,
+    "stock_output_capacity_margin_bytes": 12775272,
+    "capacity_applies_to": "inflate output next_out/avail_out; compressed input uses a separate length",
+    "inflate_success_test": "return1 at3f30e; output byte count replaces length via next_out minus original destination at3f316/3f31a",
+    "modern_image_size_is_gzip_output_length": false,
+    "modern_actual_gzip_output_bytes": null,
+    "remaining_limits": [
+      "Mutable header and all writers not exhaustively enumerated",
+      "Indirect read and security transform1cf0c not qualified",
+      "FDT version match, alternate branches and secure monitor not runtime verified"
+    ],
+    "boot_verified": false
+  },
+  "inputs": [
+    {
+      "path": "evidence/stock-ota-probe/boot-inspection.json",
+      "sha256": "14b04ceab18b5a8358f84ab33baf821c5a13b34ab8440d5757f4d9442df5a96e"
+    },
+    {
+      "path": "evidence/stock-dtb/candidate-report.json",
+      "sha256": "1a2287bc6251e627a966972bed71836452adbe81e6d2a8241c1d0976872a3350"
+    },
+    {
+      "path": "evidence/lk-input-length/windows.json",
+      "sha256": "6c9abdafac93311c35b8f71f59229231337ed661210a9c03d1a8fe7e7b301398"
+    }
+  ],
+  "script_sha256": "8860c49254b1666e0f46402ec3c1a73831368111516340fc79e3b27ddd6b6c25"
+}

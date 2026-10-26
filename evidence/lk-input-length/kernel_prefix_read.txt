@@ -1,0 +1,47 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   24d28: 49b2         	ldr	r1, [pc, #0x2c8]        @ 0x24ff4 <.text+0x24ff4>
+   24d2a: f44f 7c00    	mov.w	r12, #0x200
+   24d2e: 2300         	movs	r3, #0x0
+   24d30: 48b1         	ldr	r0, [pc, #0x2c4]        @ 0x24ff8 <.text+0x24ff8>
+   24d32: f857 a001    	ldr.w	r10, [r7, r1]
+   24d36: 4478         	add	r0, pc
+   24d38: f8da 1000    	ldr.w	r1, [r10]
+   24d3c: 6a4c         	ldr	r4, [r1, #0x24]
+   24d3e: 4622         	mov	r2, r4
+   24d40: f8db 4000    	ldr.w	r4, [r11]
+   24d44: f8cd c01c    	str.w	r12, [sp, #0x1c]
+   24d48: fbec 2304    	umlal	r2, r3, r12, r4
+   24d4c: e9cd 2304    	strd	r2, r3, [sp, #16]
+   24d50: f020 fb50    	bl	0x453f4 <.text+0x453f4> @ imm = #0x206a0
+   24d54: f8dd c01c    	ldr.w	r12, [sp, #0x1c]
+   24d58: 4640         	mov	r0, r8
+   24d5a: 9600         	str	r6, [sp]
+   24d5c: e9dd 2304    	ldrd	r2, r3, [sp, #16]
+   24d60: f8cd c004    	str.w	r12, [sp, #0x4]
+   24d64: f8db 1008    	ldr.w	r1, [r11, #0x8]
+   24d68: 9102         	str	r1, [sp, #0x8]
+   24d6a: f8d8 1010    	ldr.w	r1, [r8, #0x10]
+   24d6e: 4788         	blx	r1
+   24d70: 48a2         	ldr	r0, [pc, #0x288]        @ 0x24ffc <.text+0x24ffc>
+   24d72: 4631         	mov	r1, r6
+   24d74: 4478         	add	r0, pc
+   24d76: f7ff fca9    	bl	0x246cc <.text+0x246cc> @ imm = #-0x6ae
+   24d7a: 4ba1         	ldr	r3, [pc, #0x284]        @ 0x25000 <.text+0x25000>
+   24d7c: 58fb         	ldr	r3, [r7, r3]
+   24d7e: 6018         	str	r0, [r3]
+   24d80: 3001         	adds	r0, #0x1
+   24d82: f000 80ff    	beq.w	0x24f84 <.text+0x24f84> @ imm = #0x1fe
+   24d86: 489f         	ldr	r0, [pc, #0x27c]        @ 0x25004 <.text+0x25004>
+   24d88: f5a6 7600    	sub.w	r6, r6, #0x200
+   24d8c: 4478         	add	r0, pc
+   24d8e: f020 fb31    	bl	0x453f4 <.text+0x453f4> @ imm = #0x20662
+   24d92: 4b9d         	ldr	r3, [pc, #0x274]        @ 0x25008 <.text+0x25008>
+   24d94: 58fb         	ldr	r3, [r7, r3]
+   24d96: 681a         	ldr	r2, [r3]
+   24d98: f5a2 7200    	sub.w	r2, r2, #0x200
+   24d9c: 601a         	str	r2, [r3]
