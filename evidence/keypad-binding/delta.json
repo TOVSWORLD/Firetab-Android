@@ -1,0 +1,93 @@
+{
+  "before": 60,
+  "after": 58,
+  "removed": [
+    {
+      "column": null,
+      "compatible": "mediatek,mt8163-keypad",
+      "context": [
+        {
+          "message": "['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad'] is too long",
+          "property_path": [
+            "compatible"
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "maxItems"
+          ]
+        },
+        {
+          "message": "'mediatek,mt6779-keypad' was expected",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            0,
+            "items",
+            0,
+            "const"
+          ]
+        },
+        {
+          "message": "'mediatek,mt8163-keypad' is not one of ['mediatek,mt6873-keypad', 'mediatek,mt8183-keypad', 'mediatek,mt8365-keypad', 'mediatek,mt8516-keypad']",
+          "property_path": [
+            "compatible",
+            0
+          ],
+          "schema": null,
+          "schema_path": [
+            "properties",
+            "compatible",
+            "oneOf",
+            1,
+            "items",
+            0,
+            "enum"
+          ]
+        }
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: keyboard@10010000 (mediatek,mt8163-keypad): compatible: 'oneOf' conditional failed, one must be fixed:\n\t['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad'] is too long\n\t'mediatek,mt6779-keypad' was expected\n\t'mediatek,mt8163-keypad' is not one of ['mediatek,mt6873-keypad', 'mediatek,mt8183-keypad', 'mediatek,mt8365-keypad', 'mediatek,mt8516-keypad']\n\tfrom schema $id: http://devicetree.org/schemas/input/mediatek,mt6779-keypad.yaml",
+      "level": "error",
+      "line": null,
+      "message": "['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad'] is not valid under any of the given schemas",
+      "node": "/soc/keyboard@10010000",
+      "nodename": "keyboard@10010000",
+      "property_path": [
+        "compatible"
+      ],
+      "schema": "http://devicetree.org/schemas/input/mediatek,mt6779-keypad.yaml",
+      "schema_path": [
+        "properties",
+        "compatible",
+        "oneOf"
+      ],
+      "type": "validation"
+    },
+    {
+      "column": null,
+      "compatible": [
+        "mediatek,mt8163-keypad",
+        "mediatek,mt6779-keypad"
+      ],
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/keyboard@10010000: failed to match any schema with compatible: ['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad']",
+      "level": "warning",
+      "line": null,
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-keypad', 'mediatek,mt6779-keypad']",
+      "node": "/soc/keyboard@10010000",
+      "nodename": "keyboard@10010000",
+      "type": "unmatched"
+    }
+  ],
+  "added": []
+}

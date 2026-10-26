@@ -746,3 +746,14 @@ capacity. Clarified image_size is runtime memory requirement, not decoded file
 length; modern actual byte length remains unmeasured here. No device/firmware
 execution/download. Next: measure cached modern Image output versus reserved
 runtime footprint; recovery and physical boot remain unqualified.
+
+## 2026-10-25 — Exact keypad fallback schema coverage (#90)
+
+While PR89's generic compile runs, independently validated cached donor keypad
+fallback against pinned ACK driver/schema. Added opt-in single-enum binding
+proposal with hashes and six processed-schema positive/negative controls.
+Full-corpus diagnostic count60→58 (14validation/44unmatched), zero new diagnostics;
+overall still fails, as expected.113 offline tests pass on this branch (PR89
+measurement tests remain on that separate pending branch). No hardware DT/node
+status change, device access or hardware claims. Parent27 remains open; next
+independent binding candidate is efuse fallback coverage after source inspection.

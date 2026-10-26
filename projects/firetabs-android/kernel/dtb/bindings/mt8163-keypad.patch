@@ -1,0 +1,10 @@
+--- a/input/mediatek,mt6779-keypad.yaml
++++ b/input/mediatek,mt6779-keypad.yaml
+@@ -26,6 +26,7 @@
+       - items:
+           - enum:
+               - mediatek,mt6873-keypad
++              - mediatek,mt8163-keypad
+               - mediatek,mt8183-keypad
+               - mediatek,mt8365-keypad
+               - mediatek,mt8516-keypad

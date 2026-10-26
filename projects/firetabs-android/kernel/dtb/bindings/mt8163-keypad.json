@@ -1,0 +1,9 @@
+{
+  "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-keypad.patch",
+  "patch_sha256": "d5e097cef2d40d89e621242b9cc3f161981310cb269b7a16d44724bab1f9d600",
+  "schema": "input/mediatek,mt6779-keypad.yaml",
+  "original_sha256": "8fcd9af89028d9e7a5a34714ba39b5d45a787260c3e14db3168bb86696adc577",
+  "proposed_sha256": "2634ad42f68123326def6ca9e5191637cfdc63c064f77e4954cef9f48d979672"
+}
