@@ -1,0 +1,213 @@
+{
+  "scope": "Read-only third-party mirrored archive selection; original author/build identity unverified",
+  "url": "https://raw.githubusercontent.com/ryanfortner/FireHD8-2017/91f93505eee47d6848dc6e161f29011503106a33/amonet-douglas.zip",
+  "archive_bytes": 22329263,
+  "etag": "\"17fd024a05f24b05d42503aade64db6fa67fc224cc8704da5eb27169116a7592\"",
+  "response_body_budget": 2097152,
+  "response_body_bytes": 454427,
+  "ranges": [
+    {
+      "offset": 22263706,
+      "bytes": 65557,
+      "sha256": "9e5d289412305ed074628d9b357c17e057d8d60eb5c18e2c4f9021cc2c8e4ac4"
+    },
+    {
+      "offset": 21791397,
+      "bytes": 30,
+      "sha256": "c912134e7baa9c9088a6a270658be48bc81f7d83b2a9f61a59efe5baba8a3507"
+    },
+    {
+      "offset": 21791427,
+      "bytes": 52,
+      "sha256": "3b17b156016c32025885901026eae79539e7854ee56396a21d948b4e9918986e"
+    },
+    {
+      "offset": 21791479,
+      "bytes": 88774,
+      "sha256": "eff69c33446b122a59c2641af705c22e93d51b81ce1e2a52a7ff48039da96b84"
+    },
+    {
+      "offset": 5363293,
+      "bytes": 30,
+      "sha256": "eb8e7d98b3e1f351fc84523cbe53ccb60ca83d9be5e5f250978d5c6aeb154abf"
+    },
+    {
+      "offset": 5363323,
+      "bytes": 45,
+      "sha256": "144b0102236c849799ec9edbae2f3546442490e5eff0c25a3ef53a19b7d6990e"
+    },
+    {
+      "offset": 5363368,
+      "bytes": 295866,
+      "sha256": "d47e2eb74d0b1dcd2da787cf32ed2926a704a83a750376251643f730d147e9c9"
+    },
+    {
+      "offset": 10913,
+      "bytes": 30,
+      "sha256": "0fd07bcfe7fc7bf71f92393b1642d7813c319b66039af36954a96856a037579c"
+    },
+    {
+      "offset": 10943,
+      "bytes": 44,
+      "sha256": "6014cf1f6fa5db5600bdc6ff577c2e60a751d4f8afd8c6e3b176fe00deb8c1f8"
+    },
+    {
+      "offset": 10987,
+      "bytes": 1097,
+      "sha256": "327aff4db44b0f0de2699de6b4eb187e8dd802a431d327a5ab3cef184ec27440"
+    },
+    {
+      "offset": 65,
+      "bytes": 30,
+      "sha256": "adddf05c0ef7831179e279ff74f3e56543453dbdd57a9d6d6042d685fad19eaf"
+    },
+    {
+      "offset": 95,
+      "bytes": 48,
+      "sha256": "7797bf367c9381219a60516632f56055f5cf7a7addba21352e3d4844c3c8f98d"
+    },
+    {
+      "offset": 143,
+      "bytes": 283,
+      "sha256": "601d5dc0cef9b61cfa1cb710c5d27eea863c65bcde65127f840f09be758293f7"
+    },
+    {
+      "offset": 2943,
+      "bytes": 30,
+      "sha256": "162f72863fe65ca4273dc96b2ba512a37abb5813a5eafcf574af74845b855d2b"
+    },
+    {
+      "offset": 2973,
+      "bytes": 50,
+      "sha256": "f7067b40305127ca898af9b1760dc8dbaa45ab883780685b4ead0320242f57bd"
+    },
+    {
+      "offset": 3023,
+      "bytes": 2461,
+      "sha256": "ba1c01eda6dceeae1a712a38a7bdf0cd4eeebe9a98115dda4e63ebb776a4c8f3"
+    }
+  ],
+  "files": [
+    {
+      "name": "amonet/bin/preloader.bin",
+      "bytes": 138924,
+      "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d",
+      "zip_entry": {
+        "name": "amonet/bin/preloader.bin",
+        "flags": 0,
+        "method": 8,
+        "crc32": 1853402525,
+        "compressed_bytes": 88774,
+        "uncompressed_bytes": 138924,
+        "offset": 21791397
+      }
+    },
+    {
+      "name": "amonet/bin/lk.bin",
+      "bytes": 485988,
+      "sha256": "7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056",
+      "zip_entry": {
+        "name": "amonet/bin/lk.bin",
+        "flags": 0,
+        "method": 8,
+        "crc32": 3623594281,
+        "compressed_bytes": 295866,
+        "uncompressed_bytes": 485988,
+        "offset": 5363293
+      }
+    },
+    {
+      "name": "amonet/step-1.sh",
+      "bytes": 2986,
+      "sha256": "dcfdcdf8d3347422094f226f8b88603f2a243a92838b96800fc743a94c0a0252",
+      "zip_entry": {
+        "name": "amonet/step-1.sh",
+        "flags": 0,
+        "method": 8,
+        "crc32": 2584324031,
+        "compressed_bytes": 985,
+        "uncompressed_bytes": 2986,
+        "offset": 22324152
+      }
+    },
+    {
+      "name": "amonet/step-2.sh",
+      "bytes": 4011,
+      "sha256": "7c227419952c7fcb8eee5cc79afef3ed119cf56a2ee56daba6951ad73c93a4b9",
+      "zip_entry": {
+        "name": "amonet/step-2.sh",
+        "flags": 0,
+        "method": 8,
+        "crc32": 1578207435,
+        "compressed_bytes": 1097,
+        "uncompressed_bytes": 4011,
+        "offset": 10913
+      }
+    },
+    {
+      "name": "amonet/fastboot-step.sh",
+      "bytes": 327,
+      "sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99",
+      "zip_entry": {
+        "name": "amonet/fastboot-step.sh",
+        "flags": 0,
+        "method": 8,
+        "crc32": 2167911001,
+        "compressed_bytes": 187,
+        "uncompressed_bytes": 327,
+        "offset": 22325345
+      }
+    },
+    {
+      "name": "amonet/brick-9820.sh",
+      "bytes": 461,
+      "sha256": "26da6d7f38c7c02f1334d3947fb575635627d7d91bfc08c797e428f5a908b3fb",
+      "zip_entry": {
+        "name": "amonet/brick-9820.sh",
+        "flags": 0,
+        "method": 8,
+        "crc32": 907710079,
+        "compressed_bytes": 283,
+        "uncompressed_bytes": 461,
+        "offset": 65
+      }
+    },
+    {
+      "name": "amonet/bootrom-step-minimal.sh",
+      "bytes": 62,
+      "sha256": "551c11bf2add877b62e655e5c908ccb59da568e3b03a3a6e57fbd4e51a175cd8",
+      "zip_entry": {
+        "name": "amonet/bootrom-step-minimal.sh",
+        "flags": 0,
+        "method": 0,
+        "crc32": 4240835132,
+        "compressed_bytes": 62,
+        "uncompressed_bytes": 62,
+        "offset": 22324002
+      }
+    },
+    {
+      "name": "amonet/modules/main.py",
+      "bytes": 8336,
+      "sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5",
+      "zip_entry": {
+        "name": "amonet/modules/main.py",
+        "flags": 0,
+        "method": 8,
+        "crc32": 1044714825,
+        "compressed_bytes": 2461,
+        "uncompressed_bytes": 8336,
+        "offset": 2943
+      }
+    }
+  ],
+  "firmware_or_helpers_executed": false,
+  "mirror_repository_commit": "91f93505eee47d6848dc6e161f29011503106a33",
+  "git_blob_sha1": "d500ddff3db1914d8166ec104be036f0d11965d7",
+  "original_author_archive_match_verified": false,
+  "amazon_build_identity_verified": false,
+  "initial_directory_probe_body_bytes": 65557,
+  "total_exploratory_response_body_bytes": 519984,
+  "archive_last_file_change_commit": "1268cbba968ef654f7b69026cf9a1981848ba913",
+  "archive_last_file_change_date": "2022-06-16T22:08:46Z"
+}

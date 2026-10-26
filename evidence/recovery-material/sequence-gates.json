@@ -1,0 +1,76 @@
+{
+  "scope": "Inventory only; not instructions or permission to execute",
+  "routes": [
+    {
+      "name": "rooted step1 path",
+      "entry": "ADB plus working root; version gate maxPL6/LK2/TEE259",
+      "installed_versions": [
+        7,
+        3,
+        262
+      ],
+      "gate_passed": false,
+      "persistent_changes": [
+        "boot0 headers and preloader copies",
+        "LK",
+        "TEE1",
+        "TEE2",
+        "normal-path GPT and recovery wipe commands"
+      ],
+      "backup_gap": "new-version/brick branch writes before later normal-path GPT backup"
+    },
+    {
+      "name": "brick-9820 alternative",
+      "entry": "stock fastboot candidate exploit; exact-build success and restore unverified",
+      "persistent_changes": [
+        "crafted flash brick image clears preloader according to script"
+      ],
+      "gate_passed": false,
+      "material_inspected": "script and archive metadata only;114295752-byte brick image not extracted"
+    },
+    {
+      "name": "BootROM minimal",
+      "entry": "BootROM access already obtained; assumes LK/TEE previously flashed",
+      "persistent_changes": [
+        "primary/backup GPT",
+        "boot0 header",
+        "RPMB zeroing",
+        "boot/recovery payload injection",
+        "MISC",
+        "boot0 header restoration"
+      ],
+      "gate_passed": false,
+      "backup_gap": "no complete pre-change escrow or verified original RPMB restore route identified"
+    },
+    {
+      "name": "fastboot final",
+      "entry": "already modified fastboot",
+      "persistent_changes": [
+        "recovery_x flash",
+        "userdata erase",
+        "MISC flash",
+        "reboot"
+      ],
+      "gate_passed": false
+    }
+  ],
+  "restore_requirements": [
+    "original per-device full boot0 and partition layout plus backup GPT",
+    "relevant boot-chain/boot/recovery/MISC and owner data backups before first write",
+    "qualified treatment of original RPMB state; source zeroing is not a restore guarantee",
+    "original-author/Amazon-build identity and signature/antirollback compatibility for any downgrade",
+    "verified failure-path return to BootROM/recovery and host USB reconnection"
+  ],
+  "host_constraints": [
+    "archived brick script selects binary by64-bit uname rather than OS/CPU ABI",
+    "packaged fastboot binary was not downloaded/executed/qualified for this Mac",
+    "BootROM entry and reconnect through dock untested; no tablet enumeration/access performed"
+  ],
+  "material_unqualified": [
+    "original XDA attachment match (HTTP403)",
+    "exact Amazon build/version of mirrored preloader",
+    "current-build fastboot/BootROM entry and complete rollback/restore"
+  ],
+  "physical_action_ready": false,
+  "automatically_executed": false
+}
