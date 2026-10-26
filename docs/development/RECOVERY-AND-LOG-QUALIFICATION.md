@@ -383,3 +383,33 @@ address transport boundaries separately; they are not bound to this initializer.
 Next inspect the caller's propagation of False/exceptions and whether later
 stage loading is gated by a qualified initialization result. Entry/security,
 restoration and boot-log capture remain open under106.
+
+## Initializer-to-stage transfer propagation
+
+The own AST audit `scripts/audit_dram_caller_gate.py` pins the reviewed source
+identity and verifies every `brom_send` call in `upload_da1` is contained within
+the initializer's truthy branch. The [retained report](../../evidence/dram-caller-gate/report.json)
+locates the gate at638 and transfer at641. The
+[pinned caller](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py#L638-L678)
+returns False when initialization returns False. There are no local try handlers
+in this method: exceptions propagate out of this scope rather than reaching
+its normal success return. This is not proof of cleanup in outer layers.
+
+The unexpected-version-reply fallthrough identified above is consequential:
+it produces True from initialization, so this caller can proceed to stage2
+transfer without the successful DRAM status/geometry exchange. The caller does
+not independently validate that exchange. This remains a conditional source
+path; no such reply or transfer was observed on the tablet.
+
+The [legacy wrapper](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py#L885-L899)
+returns the upload success through a truthiness check. The
+[generic dispatcher](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/mtk_daloader.py#L315-L319)
+sets up configuration/extracts EMI/selects the agent and returns its upload
+result. Neither cited wrapper repairs the missing initializer evidence.
+
+Required next implementation is an owned offline initialization-evidence
+state gate that cannot authorize stage transfer from a bare Boolean: require
+exact replies, reviewed length agreement, complete zero-status geometry report
+and separately qualified integrity handling. It must invalidate on timeout or
+malformed response. Test with synthetic events only; no live callbacks until
+entry, agent selection, RAM placement, restore and logging gates are resolved.

@@ -1220,3 +1220,14 @@ and failclosed acceptance requirements; no upstreamcode copied/executed,
 physicalIO/downloads, or runtime success claim. Next caller propagation/stage
 loading gate review. Existing205tests remain the validation suite; no test
 added merely to repeat source-review prose.
+
+## 2026-10-26 — DRAM caller stage-transfer gate (#106)
+
+Merged144 after four exact-head77eb9a2700a81cfab6ddbb9ee4a853645c83a562
+checks passed;143completed/projectDone. Base0ed87d3. Own pinned AST containment
+audit proves reviewed upload_da1 stage transfer sits under truthy initializer
+branch; False blocks it, no local try handlers, unexpected-reply True can pass.
+Reviewed wrapper propagation; no claim of outer cleanup or observed execution.
+Two synthetic AST tests, full207tests/repository/diff checks. No helper imports,
+firmware/device access or downloads. Next owned offline initialization-evidence
+state gate; bare Boolean cannot establish qualified stage-transfer readiness.

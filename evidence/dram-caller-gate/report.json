@@ -1,0 +1,14 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "source_path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+  "source_sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+  "initializer_gate_line": 638,
+  "stage_transfer_lines": [
+    641
+  ],
+  "all_stage_transfers_in_truthy_initializer_branch": true,
+  "caller_requires_literal_true": false,
+  "local_try_handlers_in_upload_da1": 0,
+  "scope": "AST containment only; no protocol or runtime qualification",
+  "physical_test_ready": false
+}
