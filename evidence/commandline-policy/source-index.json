@@ -1,0 +1,23 @@
+{
+  "revision": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "files": [
+    {
+      "path": "drivers/of/fdt.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/of/fdt.c?format=TEXT",
+      "bytes": 34343,
+      "sha256": "45e6943870c8bf294270ebf050a6bc4441020c0efbde66acc23c42dac5883adb"
+    },
+    {
+      "path": "drivers/tty/serial/earlycon.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/tty/serial/earlycon.c?format=TEXT",
+      "bytes": 8962,
+      "sha256": "422b3f312515f2f10a14c09baaee54fc9c04d324d40d3b67f24887aa99782d5d"
+    },
+    {
+      "path": "drivers/tty/serial/8250/8250_early.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/tty/serial/8250/8250_early.c?format=TEXT",
+      "bytes": 5950,
+      "sha256": "7463b2c065c10913417e4c5b2dca30b445ebaadecb608a8ea3c0ab7258840aac"
+    }
+  ]
+}

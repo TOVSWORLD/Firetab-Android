@@ -316,3 +316,15 @@ The audit now rejects unresolved/ambiguous pin-control phandles. The additional
 regression test brings the offline suite to163 passing. Run
 `python3 scripts/audit_uart_log_contract.py` to regenerate source/DT findings
 from the existing pinned cache. No new downloads, installs or tablet access.
+
+## Kernel-side alternative for argument delivery
+
+An opt-in [forced diagnostic command-line experiment](../../projects/firetabs-android/experiments/commandline-force/README.md)
+now supplies a source-supported alternative to LK preserving diagnostic DT args.
+It is not compiled or selected by default. FORCE avoids loader argument conflicts
+on the audited chosen-node path but discards all incoming args, so firmware
+constraints must be audited before use. Its config checker cannot promote
+runtime or physical readiness. Static current LK already contains a matching
+earlycon token; previous DT-only absence was not final command-line evidence.
+Next resolve discarded firmware constraints and use a separately gated compile
+only after that profile review. Board electrical/recovery gates remain open.

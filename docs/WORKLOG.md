@@ -1017,3 +1017,14 @@ Bounded publicsearch found no established douglas pad/voltage map; XDA403 and
 pmOS redirect inaccessible, not proof evidence absent. No physical request.
 UART wiring gate now precisely documented; move to independent loader/earlycon
 request-delivery work rather than repeating the search. No tablet IO/DT mutation.
+
+## 2026-10-26 — Kernel-side diagnostic argument-delivery experiment (#106/#21)
+
+Merged PR117 exact62522656df4963e9ae4f369364f04c54ce94d316 after required checks
+passed; basefce7371. Read49,255B pinned ACK source only. FORCE source path can
+bypass LK bootargs replacement if chosen exists; no-chosen path and discarded
+firmware args remain constraints. Added opt-in fragment outside default compile
+paths and strict resolved-config checker/two tests:165 tests pass. Rechecked
+exactLK hash and allowlisted initialconsole/earlycon tokens: staticLK already
+requests UART0 earlycon, not runtime proof. No compile/firmware/tablet execution.
+Next audit firmware arguments discarded by FORCE before any gated build.
