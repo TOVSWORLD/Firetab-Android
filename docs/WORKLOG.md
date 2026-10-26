@@ -1708,3 +1708,14 @@ passes, marker offset48/stack top1080. No execution, device access or stock-retu
 claim. Linux builds both variants; callable result pending. Repository/diff guards
 pass, unchanged 251-test baseline. Next supplied-snapshot marker/identity decoder
 and actual loader caller-state qualification; restore/log gates remain open.
+
+## 2026-10-26 — Supplied marker decoder and callable link evidence (#239 / #106)
+
+Merged #238 after five passing checks at 4414763af2346435eb7c57112dff6eb4bf08883a,
+merge 16cb3a9f6b32f3d0fd923c38215cec688d44b724; #237 closed. Linux job
+121871790870/run40408334717 linked loop1064B and callable1080B, receipt/hashes
+retained. Added bounded supplied-snapshot identity/marker decoder, immutable code/
+padding checks and explicit no-runtime/freshness/return claims. 255 host tests pass;
+repository/diff pass. CI synthetic mutation against linked images pending; no
+firmware/device execution. Next real loader callable-return/readback source path,
+not more marker features; restore/security/log transport gates remain unresolved.

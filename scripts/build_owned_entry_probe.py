@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import subprocess
 from prepare_stage1_host_image import prepare_host_image
+from decode_diagnostic_marker import decode_marker, LAYOUTS, MARKER
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,8 +28,13 @@ def build_variant(name):
                 [linker, '-m', 'armelf', '--build-id=none', '-T', str(script), str(obj), '-o', str(elf)]]
     for command in commands:
         subprocess.run(command, check=True, capture_output=True, timeout=30)
-    _, image = prepare_host_image(elf.read_bytes())
-    report = dict(variant=name, sources={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in [source, script]},
+    image_bytes, image = prepare_host_image(elf.read_bytes())
+    marker_offset, _, _ = LAYOUTS[name]
+    synthetic_after = bytearray(image_bytes)
+    synthetic_after[marker_offset:marker_offset + 4] = MARKER
+    synthetic_decode = decode_marker(image_bytes, image_bytes, bytes(synthetic_after),
+        variant=name, expected_image_sha256=image['image_sha256'])
+    report = dict(variant=name, synthetic_marker_decode=synthetic_decode, sources={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in [source, script]},
                   compiler=subprocess.check_output([clang, '--version'], text=True, timeout=10).splitlines()[0],
                   linker=subprocess.check_output([linker, '--version'], text=True, timeout=10).splitlines()[0],
                   elf_sha256=hashlib.sha256(elf.read_bytes()).hexdigest(), host_image=image,
