@@ -1075,3 +1075,14 @@ and merged122 atab314ea79b5531c83620afe173cd1688a4ed2fb4 afterchecks. Current
 suite173passing, retained verifier/repository/diffchecks pass.119scopeachieved;
 close after evidencePR validation.106/21/22 physicalgatesremainopen. Next Mac
 CLI wheel/nativeUSB resourceplan; no tablet IO/install/securitychanges.
+
+## 2026-10-26 — Mac candidate wheel budget and USB discovery review (#106)
+
+Currentdev299842c, allrecentCIhealthy. Version-specificPyPImetadata115387B pins
+fivecandidatewheels5,126,579B; no wheelsdownloaded/installed. Fullhistoryquery
+abortedat1MiBcap. LocalpiptagsonDarwinarm64/Python3.15.1acceptcandidate tags,
+not runtime/APIproof. Matched3.24.1cryptonamespaces avoid unaudited4.xmigration.
+PinnedhelperDarwinbranchhardcodesLinux-stylelibusb-1.0.so; resolutionunknown,
+standardHomebrewpathsabsent but notfullhostinventory. Nolibraryload/USBenum.
+Addedmetadataonlyplanner/twotests:175pass, nohelperexecution/securitychanges.
+Next purehostMach-O/pathpreflight on syntheticfiles before install/adapter.
