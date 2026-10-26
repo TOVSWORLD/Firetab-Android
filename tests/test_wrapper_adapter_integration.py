@@ -30,7 +30,8 @@ def integrate(fault=None):
             raise RuntimeError('synthetic uncertain claim')
         util.claim_interface=uncertain_claim
     if fault=='release':util.fail=True
-    backend=InjectedPyUSBObservation(device,util,interface=0,endpoint_in=0x81,endpoint_out=1)
+    backend=InjectedPyUSBObservation(device,util,interface=0,endpoint_in=0x81,endpoint_out=1,
+        auto_detach_disabled=True,fresh_exclusive_device=True)
     adapter=OfflineObservationAdapter(backend,interface=0,commands={
         'hardware_code':b'H','hardware_versions':b'V','target_config':b'S'})
     return adapter.collect(),device,util,backend

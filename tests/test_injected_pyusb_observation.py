@@ -32,7 +32,8 @@ class Utilities:
 
 def make():
     device=Device();util=Utilities()
-    return device,util,InjectedPyUSBObservation(device,util,interface=0,endpoint_in=0x81,endpoint_out=1)
+    return device,util,InjectedPyUSBObservation(device,util,interface=0,endpoint_in=0x81,endpoint_out=1,
+        auto_detach_disabled=True,fresh_exclusive_device=True)
 
 
 class InjectedWrapperTests(unittest.TestCase):
@@ -65,3 +66,14 @@ class InjectedWrapperTests(unittest.TestCase):
         with self.assertRaises(ValueError):subject.read(1,timeout_ms=0)
         device.read=lambda *args,**kwargs:array('B')
         with self.assertRaises(ValueError):subject.read(1,timeout_ms=1)
+
+
+class HandlePolicyTests(unittest.TestCase):
+    def test_missing_or_truthy_nonboolean_attestations_reject_without_calls(self):
+        for detach,fresh in [(False,True),(True,False),(1,True),(True,1),(None,None)]:
+            device=Device();util=Utilities()
+            with self.assertRaises(ValueError):
+                InjectedPyUSBObservation(device,util,interface=0,endpoint_in=0x81,endpoint_out=1,
+                    auto_detach_disabled=detach,fresh_exclusive_device=fresh)
+            self.assertEqual(device.calls,[])
+            self.assertEqual(util.calls,[])

@@ -292,3 +292,24 @@ ownership contract to reject unreviewed auto-detach state and record that it is
 an attestation, not a runtime getter. Continue source work on exact entry/return
 options; native backend construction requires a separately authorized device
 observation phase and cannot proceed during automatic no-access runs.
+
+## Injected-handle caller prerequisites are now mandatory
+
+The injected wrapper now refuses construction unless the caller explicitly
+attests both disabled auto-detach and a fresh exclusively owned device object.
+Omitted, false and merely truthy non-Boolean inputs are rejected before any
+injected method call. Existing fake integrations explicitly satisfy their fake
+object contract; a new test checks rejection without calls (238 total tests).
+
+These inputs are caller attestations, not runtime inspection or authorization.
+No native getter/handle factory is implemented, and no supplied object becomes
+qualified merely by setting them True. A later live factory must establish and
+record the facts rather than passing constants to bypass this contract. The
+wrapper does not call a detach setter or acquire a handle to discover its state.
+This closes the previously implicit caller-policy gap, not actual USB ownership.
+
+Further native initialization would scan devices and remains outside automatic
+runs. Next source task returns to current-stock entry/return alternatives: locate
+an exact build-compatible starting state and a non-destructive failure exit.
+Avoid expanding synthetic policy layers while those physical prerequisites are
+unknown. The existing owner hardware-access preference remains pending.
