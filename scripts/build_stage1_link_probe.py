@@ -7,6 +7,7 @@ import shutil
 import struct
 import subprocess
 import urllib.request
+from inspect_stage1_elf import inspect_elf
 ROOT=Path(__file__).resolve().parents[1]
 
 
@@ -60,6 +61,7 @@ def main():
     data=elf.read_bytes()
     if len(data)>1024*1024 or data[:6]!=b'\x7fELF\x01\x01' or struct.unpack_from('<HH',data,16)!=(2,40):
         raise ValueError('Expected bounded ARM executable ELF')
+    report['elf_layout'] = inspect_elf(data)
     report.update(linked=True,elf_bytes=len(data),elf_sha256=hashlib.sha256(data).hexdigest(),
         entry=struct.unpack_from('<I',data,24)[0],source_sha256={x['path']:x['sha256'] for x in inputs},
         shipped_binary_equivalence_verified=False,linux_handoff_verified=False)
