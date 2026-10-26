@@ -57,3 +57,27 @@ availability as static evidence only. Determine whether a RAM-only boot path
 exists before planning a physical command. Do not publish raw firmware windows
 or infer acceptance from command-name strings alone. A concrete owner test must
 state what can change and how stock operation is restored after its failure.
+
+## Exact stock LK registration-region result
+
+Own `audit_stock_fastboot_registration.py` verifies cached current LK SHA256
+`4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08`,
+then resolves Thumb literal/PC references and calls in the reviewed registration
+region. Private llvm-objdump inspection of the common callee shows allocation
+and linked-list insertion of label, length, flag and handler fields. This is
+stronger evidence than string presence alone, but does not establish reachability
+or permission under this tablet's actual security state.
+
+The [metadata-only report](../../evidence/stock-fastboot-registration/report.json)
+records13 label/call pairs and hashes of reviewed windows. They include getvar,
+download, flash, erase, continue, reboot and OEM operations. No `boot` label was
+resolved at these13 selected registrations. That is a bounded-region finding,
+not proof that the complete binary has no alternate RAM-loading path. A separate
+`boot` string reference appears elsewhere and may concern a partition rather
+than a command; it is not accepted as RAM-boot evidence.
+
+Raw firmware/disassembly stays under ignored out/. No physical command or
+firmware was executed. Next trace the registration flag's dispatcher check and
+resolve the continue/reboot handler identities; determine whether they merely
+resume stock boot/reset and whether any path bypasses image verification. Keep
+RAM-boot capability false until a complete accepted handoff path is established.

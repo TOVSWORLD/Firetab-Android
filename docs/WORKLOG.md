@@ -1426,3 +1426,13 @@ returnproof. XDA502/pmOSredirect inaccessible, notnegativecompatibilityproof.
 Recorded candidate-specific missingevidence and next cachedcurrentLK fastboot
 handler/bootverification review. No tests added for researchprose; existing238
 suite/repository/diffpass. No tablet/helperexec or firmwaredownloads.
+
+## 2026-10-26 — Exact stock LK fastboot registrations (#106)
+
+Merged184 at passingb1cd9cb55efee138ce7ff40a6d78911f94809ffb;183closed.
+Basef8de804. Actual staticllvm inspection+own Thumbreference/call decoder resolves
+13selectedregistrationlabels in exactcurrentLK, with hashes/offsets onlypublic.
+Commoncallee storeslabel/length/flag/handler inlist. No bootlabel amongthose13;
+notwholeimageabsenceproof or runtimepermission. No firmware/helper/deviceexec.
+238tests/repository/diffpass. Next dispatcherflag and continue/reboothandler
+trace; RAMboot remainsunverified, rawwindows ignoredprivateonly.
