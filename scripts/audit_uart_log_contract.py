@@ -14,6 +14,28 @@ def string(raw):
     return bytes(int(x,16) for x in raw.split()).rstrip(b'\0').decode('ascii')
 
 
+
+def cells(raw):
+    data=bytes(int(x,16) for x in raw.split())
+    if len(data)%4:
+        raise ValueError('Malformed DT cells')
+    return [int.from_bytes(data[i:i+4],'big') for i in range(0,len(data),4)]
+
+
+def pinmux(nodes, uart):
+    result=[]
+    for ref in cells(uart.get('pinctrl-0','')):
+        matches=[path for path,props in nodes.items() if cells(props.get('phandle',''))==[ref]]
+        if len(matches)!=1:
+            raise ValueError('Pin-control phandle unresolved or ambiguous')
+        group=matches[0]
+        for path,props in nodes.items():
+            if path==group or path.startswith(group+'/'):
+                for value in cells(props.get('pinmux','')):
+                    result.append({'soc_gpio_index':value>>8,'mux_function':value&255})
+    return result
+
+
 def assess(nodes, config):
     chosen=nodes.get('/chosen',{})
     stdout=string(chosen.get('stdout-path',''))
@@ -33,6 +55,8 @@ def assess(nodes, config):
         'explicit_earlycon_request_in_dt':any(x=='earlycon' or x.startswith('earlycon=') for x in args),
         'explicit_console_request_in_dt':any(x.startswith('console=') for x in args),
         'clock_names':string(uart.get('clock-names','')).split('\0'),
+        'resolved_default_soc_pinmux':pinmux(nodes,uart),
+        'soc_pin_indices_are_pcb_pad_numbers':False,
         'dma_property_present':'dmas' in uart,'pin_control_property_present':'pinctrl-0' in uart,
         'loader_preserves_dt_or_args_verified':False,'firmware_uart_initialized_verified':False,
         'physical_pad_voltage_routing_verified':False,'usable_log_path_qualified':False}

@@ -1,0 +1,20 @@
+{
+  "scope": "SoC function identities only; no PCB pad or voltage qualification",
+  "files": [
+    {
+      "path": "evidence/kernel-audit/legacy/arch/arm64/boot/dts/mt8163.dtsi",
+      "bytes": 48528,
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1"
+    },
+    {
+      "path": "evidence/pinctrl-port/legacy/drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "bytes": 34314,
+      "sha256": "4620dc9f80d2f6bbeb65718c9ccefbfa5d942a2b912cf820fa679f9d29ada6f6"
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "bytes": 43672,
+      "sha256": "870564d41f8905c8c955ab4c3e57547a889f598fca24f8bff7272811e4f83106"
+    }
+  ]
+}

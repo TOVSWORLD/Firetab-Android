@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from audit_uart_log_contract import assess, REQUIRED
+from audit_uart_log_contract import assess, REQUIRED, pinmux
 
 
 def encode(value):return ' '.join(format(x,'x') for x in value.encode()+b'\0')
@@ -29,3 +29,11 @@ class UartLogContractTests(unittest.TestCase):
         self.assertTrue(result['explicit_earlycon_request_in_dt'])
         self.assertEqual(result['uart_status'],'disabled')
         self.assertFalse(result['loader_preserves_dt_or_args_verified'])
+
+    def test_pinmux_resolves_phandles_and_rejects_ambiguous_identity(self):
+        nodes={'/pins':{'phandle':'0 0 0 18'},
+               '/pins/group':{'pinmux':'0 0 4f 1 0 0 50 1'}}
+        self.assertEqual(pinmux(nodes,{'pinctrl-0':'0 0 0 18'}),[
+            {'soc_gpio_index':79,'mux_function':1},{'soc_gpio_index':80,'mux_function':1}])
+        nodes['/alias']={'phandle':'0 0 0 18'}
+        with self.assertRaises(ValueError):pinmux(nodes,{'pinctrl-0':'0 0 0 18'})

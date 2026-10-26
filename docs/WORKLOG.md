@@ -1006,3 +1006,14 @@ clock/pin initialization; normal probe has separate provider requirements.
 Added source/DT audit +two tests:162 passing, no DT mutation/download/device IO.
 Next authoritative douglas pad/electrical evidence search, then safe entry/log
 transport qualification. No physical wiring action requested.
+
+## 2026-10-26 — UART actual pinmux and physical evidence boundary (#106/#22)
+
+Merged PR116 exact1be8f8bf2c8c8cf0449794d81305f3bc70572d85 after required checks
+passed; base9c6c620. Followed actual reviewedDT phandle toGPIO79/80 function1,
+consistent with cached UART0RX/TX source. Added ambiguous-reference rejection/
+test and source hashes:163 offline tests pass. SoC indices are not PCB pads.
+Bounded publicsearch found no established douglas pad/voltage map; XDA403 and
+pmOS redirect inaccessible, not proof evidence absent. No physical request.
+UART wiring gate now precisely documented; move to independent loader/earlycon
+request-delivery work rather than repeating the search. No tablet IO/DT mutation.
