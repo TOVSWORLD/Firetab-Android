@@ -158,3 +158,40 @@ Reproduce the syntax/metadata audit from ignored pinned caches with
 `python3 scripts/audit_recovery_agent_selection.py`; synthetic tests are included
 in `python3 -m unittest discover -s tests -q` (154 passing). Full Git-tree and
 source response hashes are in source-index.json; raw helper source stays ignored.
+
+## Bounded DA record inventory result
+
+Exact HTTP206 header/table ranges work at the pinned raw GitHub URLs. The
+reproducible probe read36,080 bytes across all six containers (plus an initial
+108-byte range-support probe), instead of51.6MB. It aborts before reading a
+non206/wrong-range response, caps requests at512KiB and total metadata at3MiB,
+and never requests stage code. The parsed record and range hashes are in
+`evidence/recovery-agent-records/report.json`. Four parser/network-policy tests
+bring the offline suite to158 passing.
+
+Only two containers declare MT8163 records: MTK_DA_V5 record40 and
+MTK_AllInOne_DA_mt6590 record19. Both declare hardware version0xCA00, software
+version0, subcode0 and three regions. V5's stage1/stage2 declared lengths are
+65,352/254,872 bytes; the mt6590 container declares72,552/260,920 bytes. Each
+of these stages declares a256-byte signature tail; presence/length does not
+verify its signature or acceptance. Record page size4096 is DA metadata, not
+evidence of the tablet's raw logical sector size.
+
+Under the audited default reverse-filename scan and version checks, V5 is the
+first eligible matching record if runtime hwver permits0xCA00 (or is0), swver
+permits0, and no explicit loader overrides the inventory. V6 has no MT8163
+record in this pinned tree. This narrows the likely default container/stages;
+actual runtime selection and backend capabilities remain unobserved. Pinning
+repository files alone does not establish vendor provenance, stage-content
+digests, signature validity or a safe bootstrap.
+
+Next bounded work can hash and statically identify just the two candidate V5
+stages (~320KiB total) after preserving their declared extents; never execute
+them. Avoid retrieving the whole container. Agent side effects and current
+security acceptance remain unqualified independently of identity. No physical
+operation, loading address or test package is authorized by this inventory.
+
+Reproduce metadata only with
+`python3 scripts/probe_recovery_agent_records.py --download-metadata` (network
+required; stdout is the metadata report). Cache/report changes should be reviewed
+against the pinned source and exact range receipts before any later stage probe.

@@ -971,3 +971,15 @@ versus signature/SHA256 distinctions. AST-only tests bring suite to154 passing.
 Next bounded metadata/header inspection for DA records if range-supported, or
 independent cached UART contract; no helper execution/tablet access/dependencies.
 Recovery/restore/logging gates stay open.
+
+## 2026-10-26 — Exact candidate DA record metadata (#106)
+
+Merged PR113 exact6fd9fa468bf54fe62ad39becf2fef0872b4b6486 after all required
+checks passed; base5f82131. HTTP206-only bounded probe read36,080B container
+headers/tables plus108B initial support check; no stage code/full pack. Two
+MT8163 records found: V5index40 and mt6590index19, bothHW0xCA00/SW0/subcode0.
+V5 expected first eligible default under audited version/order assumptions,
+not runtime-selected/qualified. Recorded stage lengths/signature-tail sizes and
+range hashes, not target addresses. Four new tests including ignored-range/
+pre-request budget failures:158 tests pass. Next bounded stage-identity probe
+~320KiB, static/hash only; actual entry/restore/logging remain open.
