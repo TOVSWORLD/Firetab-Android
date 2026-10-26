@@ -381,3 +381,27 @@ stack and observable entry marker, compiled and inspected only. Its stack must
 be image-relative and kept distinct from unqualified physical placement. It
 must not call the upstream hardware-scanning main or attach a USB loader until
 its CPU state, security entry, restore and log prerequisites are qualified.
+
+## Owned diagnostic entry experiment (#235)
+
+`diagnostic/entry/entry.S` is our compile-only ARMv7 experiment. It computes its
+own image base, assigns SP to an eight-byte-aligned in-image 1KiB stack, writes
+`0x46544b31` to an in-image marker and loops. It has no external calls, peripheral
+access, USB binding or upstream main. It clobbers registers/SP and deliberately
+does not implement return; it is not a recoverable test package.
+
+Actual local Apple clang compilation succeeded. Static object inspection shows
+SP assignment before the marker store; the marker is at offset 36 and stack top
+at 1064. The [compile receipt](../../evidence/owned-entry-compile/report.json)
+retains hashes and observations. The linker script asserts zero entry, stack
+alignment/size and marker separation. Linux CI now compiles/links the owned
+source and runs the existing bounded image/relocation gates, printing metadata
+only. Actual Linux link/image result is pending; no binary execution occurs.
+
+The experiment assumes ARM instruction-state entry and readable/writable/executable
+mapping for the image, including its stack. It changes no exception mode, MMU,
+cache or interrupt state. The memory marker is not yet a log channel: no qualified
+reader observes it, and a final loop cannot return to stock. Next inspect the
+actual Linux link and design an explicit caller-state/return ABI plus bounded
+host marker decoding before any physical loader proposal. Safe RAM placement,
+original restore and usable boot-log capture remain unresolved.

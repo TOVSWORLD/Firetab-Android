@@ -1,0 +1,17 @@
+{
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -c diagnostic/entry/entry.S -o out/owned-entry/entry.o",
+  "compile_exit_code": 0,
+  "object_sha256": "217a7aa3c172c4ba1b63c2b40f566ba41a70bcc6343190ce147107c14f35662b",
+  "source_sha256": "aa7951c35bbf4aef3f04701d2da0da468c270f3a13e6471f9fef8286883fda80",
+  "static_observations": {
+    "stack_assignment_precedes_marker_store": true,
+    "stack_offset_bytes": 1064,
+    "marker_offset_bytes": 36,
+    "stack_bytes": 1024,
+    "external_calls": 0
+  },
+  "linux_link_pending": true,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

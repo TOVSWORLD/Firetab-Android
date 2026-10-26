@@ -1683,3 +1683,15 @@ maximum-stack or whole-image PIC proof. Local compiler/object differs from Linux
 Retained metadata only; no raw code/disassembly or firmware/device execution.
 Repository/diff checks pass; unchanged 251-test baseline. Next owned image-relative
 stack/entry-marker diagnostic experiment, compile/inspect only, no upstream main.
+
+## 2026-10-26 — Owned stack/marker diagnostic entry (#235 / #106)
+
+Merged #234 at passing be5e8653b002c90b5eafe6c8bdb140a1dca9d71f,
+merge cd4e46560e93e49cd8b75b811661e28e3ebacf29; #233 closed. Implemented
+owned ARMv7 entry with image-relative 1KiB stack, in-image marker and final loop,
+no upstream main/external calls/peripherals. Actual Apple clang object compile
+passes; static inspection SP assignment precedes marker store, marker offset36,
+stack top1064. Linker assertions and bounded Linux CI added; actual link pending.
+No execution/USB/device access or return/recovery claim. Repository/diff guards
+pass; unchanged 251-test baseline. Next actual Linux result and explicit caller/
+return ABI; memory marker has no qualified readback/log transport yet.

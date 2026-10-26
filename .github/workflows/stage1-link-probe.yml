@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [development]
     paths:
+      - diagnostic/entry/**
+      - scripts/build_owned_entry_probe.py
       - scripts/build_stage1_link_probe.py
       - scripts/inspect_stage1_elf.py
       - scripts/inspect_stage1_relocations.py
@@ -27,3 +29,5 @@ jobs:
           persist-credentials: false
       - name: Compile and link with preinstalled tools only
         run: python3 scripts/build_stage1_link_probe.py
+      - name: Compile and link owned diagnostic entry without execution
+        run: python3 scripts/build_owned_entry_probe.py
