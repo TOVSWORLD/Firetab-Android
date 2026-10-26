@@ -1,0 +1,129 @@
+{
+  "scope": "Selected pinned source paths only; no whole-bootstrap side-effect qualification",
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "sources": [
+    {
+      "path": "mtkclient/Library/mtk_class.py",
+      "sha256": "3970b42c3f39e8d5d284ea2f29b6840e8fcf05f9f1cb6edb831f60704bff1f6f",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_class.py"
+    },
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py"
+    },
+    {
+      "path": "mtkclient/Library/pltools.py",
+      "sha256": "0ffe210ab5ce1871483639543c8b0cb17363a57318d7bdcb2e94001793f92089",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/pltools.py"
+    },
+    {
+      "path": "mtkclient/config/mtk_config.py",
+      "sha256": "9111889fb719d1989e1a10e7997994971d3d5381a813f689ae59cd4b0f872ddc",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/mtk_config.py"
+    },
+    {
+      "path": "mtkclient/config/brom_config.py",
+      "sha256": "a8d94deac4fb3d485e7ed9fcc17aa9fca14f19307c1dea5daf429cf7a1e1de63",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/brom_config.py"
+    }
+  ],
+  "selected_call_sites": {
+    "crasher": [
+      {
+        "callee": "plt.crash",
+        "line": 174
+      },
+      {
+        "callee": "rmtk.preloader.init",
+        "line": 180
+      },
+      {
+        "callee": "plt.crash",
+        "line": 185
+      },
+      {
+        "callee": "rmtk.preloader.init",
+        "line": 191
+      }
+    ],
+    "bypass_security": [
+      {
+        "callee": "self.crasher",
+        "line": 198
+      },
+      {
+        "callee": "plt.runpayload",
+        "line": 207
+      }
+    ],
+    "preloader_init": [
+      {
+        "callee": "os.remove",
+        "line": 147
+      },
+      {
+        "callee": "self.setreg_disablewatchdogtimer",
+        "line": 211
+      },
+      {
+        "callee": "self.get_target_config",
+        "line": 214
+      },
+      {
+        "callee": "self.get_hw_sw_ver",
+        "line": 224
+      },
+      {
+        "callee": "self.get_meid",
+        "line": 237
+      },
+      {
+        "callee": "self.config.hwparam.writesetting",
+        "line": 243
+      },
+      {
+        "callee": "self.get_socid",
+        "line": 248
+      },
+      {
+        "callee": "self.config.hwparam.writesetting",
+        "line": 254
+      }
+    ],
+    "reset_to_brom": [
+      {
+        "callee": "self.write32",
+        "line": 478
+      },
+      {
+        "callee": "self.write32",
+        "line": 479
+      },
+      {
+        "callee": "self.write32",
+        "line": 480
+      },
+      {
+        "callee": "self.write32",
+        "line": 481
+      }
+    ],
+    "crash_delegate": [
+      {
+        "callee": "self.exploit.crash",
+        "line": 123
+      }
+    ]
+  },
+  "crasher_entry_condition": "self.config.enforcecrash or self.config.meid is None or (not self.config.is_brom)",
+  "watchdog_call_condition": "not skipwdt and (not self.config.chipconfig.has64bit)",
+  "crasher_terminal_return_is_brom_assertion": false,
+  "preloader_initialization_is_passive_usb_enumeration": false,
+  "host_identifier_logs_require_separate_sanitization": true,
+  "globally_persistence_free_bootstrap_verified": false,
+  "usb_only_transition_verified_for_installed_state": false,
+  "hardware_access_mandatory_proven": false,
+  "physical_test_ready": false,
+  "script_sha256": "4dd783ce68c25cbf51ba1d5c473d6cd3264521545d01461a9dbdf3b86dd0d915"
+}

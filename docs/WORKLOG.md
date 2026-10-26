@@ -1185,3 +1185,14 @@ and resultJSON retained; no rawdevice/helper/nativeinputs used. Retainedproof
 test brings suite203pass.137 covers syntheticintegration only;106 physical
 gatesopen. Physical-route planning question remains unanswered; no inference
 of permission or USB-only constraint, no tablet action.
+
+## 2026-10-26 — Candidate entry-transition source boundary (#106)
+
+Currentbase0f81de3/healthyCI. Pinnedfive-moduleASTaudit records crasher condition/
+delegation/reinit, no terminalBROMassert, bootstrapRAMpath, conditionalwatchdog
+and resetregisterwrites, hostidentifier/settings effects. Initialization is not
+passiveenumeration; no whole-firmwarepersistencefree/USB-only success inferred.
+Getterunpack mayraise before caller sentinelbranch; versionzero not a provenDA
+compatibility.203existingtests/repository/diffguards pass; no new tests for
+metadata glue, nohelper/native/deviceexec/download. Hardwarepreferencepending
+without assumption. Next exactcachedPL7 EMI-format source/data inspection only.
