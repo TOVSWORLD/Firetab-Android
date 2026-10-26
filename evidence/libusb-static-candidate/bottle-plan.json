@@ -1,0 +1,14 @@
+{
+  "version": "1.0.30",
+  "target": "arm64_golden_gate",
+  "url": "https://ghcr.io/v2/homebrew/core/libusb/blobs/sha256:b462926c2314b5bb7d1a6721f9a3cf7336a4166ba67024b4bbd0226de457132a",
+  "sha256": "b462926c2314b5bb7d1a6721f9a3cf7336a4166ba67024b4bbd0226de457132a",
+  "download_bytes": 191568,
+  "response_status": 200,
+  "runtime_dependencies": [],
+  "homebrew_tap_revision": "4ab4b9e29a06b5dd83d8359048eecbbf2e2e5fae",
+  "formula_source_path": "Formula/lib/libusb.rb",
+  "formula_source_sha256": "513c20f992711ced872639a391fbb0b3194e397ffddc4968b9f9b1e4f03b48ee",
+  "native_code_loaded": false,
+  "artifact_downloaded": false
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Static otool metadata only; no dynamic loading",
+  "install_name": "@@HOMEBREW_PREFIX@@/opt/libusb/lib/libusb-1.0.0.dylib",
+  "dependency_install_names": [
+    "/usr/lib/libobjc.A.dylib",
+    "/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit",
+    "/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation",
+    "/System/Library/Frameworks/Security.framework/Versions/A/Security",
+    "/usr/lib/libSystem.B.dylib"
+  ],
+  "homebrew_placeholder_in_install_name": true,
+  "homebrew_relocation_performed": false,
+  "dependencies_loaded_or_resolved": false,
+  "runtime_abi_qualified": false
+}
