@@ -1163,3 +1163,25 @@ passed1.499s/fullsuite199pass. Noactualhelper/nativeUSB/devicecallbackbinding.
 NotOSsandbox or devicerecoveryproof; parentvalidator/logging/nativekillbehavior
 stillrequirequalificationbeforeliveuse. Next synthetic-only session integration
 of hostcontracts with explicitcomponentprovenance, no bootstrap/devicecallback.
+
+## 2026-10-26 — Synthetic-only acquisition session integration (#106)
+
+Currentbase3cf0710/healthyCI. Joined ownpacketdeadline, legacyAPIbinding, host
+capture, worker supervision and hash/GPTverifier in built-in syntheticmodesonly.
+No arbitraryworker/module/device/native/bootstrappathinput. Generated73728B
+fixtures; source/component/reference-metadata digests gateparentvalidation.
+Threeintegrationscenario tests bring suite202pass; faults reject/no completed
+regionfiles, success staysquarantined. SharedownGPTfixture refactored from tests.
+Physical-route planning question asked (USB-only vsownerhardwareaccess); no
+physicalactionrequested and independentwork continues. Next retainedCLIscenario
+results at exact committed source; all live/recovery/logging flags remainfalse.
+
+## 2026-10-26 — Executed synthetic session scenarios retained (#137/#106)
+
+At clean sourcee2b62d49840d7a162023dee83f845b2e2cc5051e, CLI success0.075s
+validated threehostfixturecaptures/hashes/bothGPTs; short0.067s rejected; stall
+1.006s timedout/reaped with noacceptedcapture. Exactcomponent/reference hashes
+and resultJSON retained; no rawdevice/helper/nativeinputs used. Retainedproof
+test brings suite203pass.137 covers syntheticintegration only;106 physical
+gatesopen. Physical-route planning question remains unanswered; no inference
+of permission or USB-only constraint, no tablet action.

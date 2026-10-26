@@ -1,0 +1,48 @@
+{
+  "scope": "Synthetic-only end-to-end host integration; no native/helper/device transport",
+  "mode": "short",
+  "scenario_passed": true,
+  "host_session_accepted": false,
+  "supervision": {
+    "worker_completed": false,
+    "parent_validation_passed": false,
+    "timed_out": false,
+    "terminate_requested": false,
+    "kill_requested": false,
+    "worker_reaped": true,
+    "output_published": false,
+    "device_recovery_verified": false,
+    "physical_test_ready": false,
+    "failure": "worker_failed_or_no_completion",
+    "elapsed_seconds": 0.067
+  },
+  "provenance": {
+    "components": {
+      "synthetic_acquisition_session.py": "a66595fec12d89e9c3f6fc57f1706aefd75a9a84aede948408796bc221451a58",
+      "synthetic_escrow_fixture.py": "bf8a56b2a50cec5c0f27305ac9f8d9a9e324d8ac8c56bfed7adbdd7ed8cf6ee7",
+      "offline_deadline_reader.py": "6e92f84c74a9391117bb38c5bf06356828709c0bb196c4e76c5fd9f8791b77e9",
+      "offline_escrow_capture.py": "d7fea3a771d0886e270ffe8ae20d5a8f598f97fefb837e5f9c2c2c97cb7cea10",
+      "offline_legacy_read_binding.py": "83d8e7e9aa462e3ebaf35bfdaadc31d09f3dadf9092f7a432776c45e3bd1860f",
+      "offline_worker_supervisor.py": "113715e4d13d4a1b2216cb811fc27d5e7041ce1f94f1a383bb5de24999b5a54f",
+      "verify_offline_escrow.py": "ef35788eccd33d805d9f4c1eee143d6edc10555e9ef1d04a3844788c4d79dee0"
+    },
+    "reference_metadata": {
+      "evidence/offline-readback-adapter/report.json": "80d0610cab494423962de5b3b516051e9d0f510e700800c237dc0b7c8c84fa33",
+      "evidence/offline-read-binding/contract.json": "9bb98bc4e069405e8085b4f64f072f2ddbd0c5161ba7610b0349db4c321d8b20",
+      "evidence/libusb-static-candidate/static-result.json": "3858faab0f08a9e6931fb5503e12bca09c18233c0263666ee048ff827fec9208"
+    }
+  },
+  "validated_capture_metadata": {},
+  "project_revision": "e2b62d49840d7a162023dee83f845b2e2cc5051e",
+  "working_tree_clean": true,
+  "synthetic_fixture_bytes": 73728,
+  "quarantine_retained": false,
+  "helper_code_executed": false,
+  "native_code_loaded": false,
+  "device_accessed": false,
+  "bootstrap_executed": false,
+  "protocol_checksum_verified": false,
+  "live_binding_qualified": false,
+  "restore_qualified": false,
+  "physical_test_ready": false
+}
