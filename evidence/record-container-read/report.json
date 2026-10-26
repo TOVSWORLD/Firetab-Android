@@ -1,0 +1,69 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "checked_calls": [
+    {
+      "offset": 1008,
+      "target": 246640
+    },
+    {
+      "offset": 246656,
+      "target": 241404
+    },
+    {
+      "offset": 241416,
+      "target": 241276
+    },
+    {
+      "offset": 241428,
+      "target": 237756
+    },
+    {
+      "offset": 241370,
+      "target": 236264
+    },
+    {
+      "offset": 241382,
+      "target": 236440
+    }
+  ],
+  "reviewed_loader_arguments": {
+    "controller": 0,
+    "start_block": 0,
+    "block_count": 30,
+    "selector": 2
+  },
+  "selector_register_index": 179,
+  "selector_low_bits_mask": 7,
+  "wrapper_checks_selector_return_before_read": false,
+  "reviewed_windows": [
+    {
+      "start": 992,
+      "end": 1026,
+      "sha256": "001a5ec0005d2f3e7cb198a453392be900e1af028183de16d45994c4c64d14d7"
+    },
+    {
+      "start": 246640,
+      "end": 246678,
+      "sha256": "3374833ec5ba44a17898ed453083274f7e117091da3cef5080ca6e0324bfc2d9"
+    },
+    {
+      "start": 241404,
+      "end": 241444,
+      "sha256": "8ed3008d3383ed0b3661d445a511c29e8a1a8389934d0c606a0d09fa772296bf"
+    },
+    {
+      "start": 241276,
+      "end": 241404,
+      "sha256": "cc911d4e1359179ba89fe2efe22118173cdb4cd3254ce29d519b4f0a8a11cf84"
+    },
+    {
+      "start": 237756,
+      "end": 237860,
+      "sha256": "5761d5ec9dfcd7ffb7d32146b7b66428151941bce0def71458576c278f6f1500"
+    }
+  ],
+  "scope": "Static argument/call/selector path only; exact hardware region and contents unobserved",
+  "actual_region_identity_verified": false,
+  "record_contents_read": false,
+  "physical_test_ready": false
+}

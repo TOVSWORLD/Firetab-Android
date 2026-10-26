@@ -1521,3 +1521,12 @@ which walks in-memorynamedrecords/copiesmin(stored,requested). Backingstore and
 actualinstalledbranch unresolved; no actualrecord retrieved. Metadata/windowhash
 receipt,240tests/repository/diffpass. Next containerloader3c370/callers; no
 credentialexport/firmware/deviceexec/download.
+
+## 2026-10-26 — Record container selected block-read provenance (#106)
+
+Merged204 at passing39920fee4dab612fff16cf54ea9142d52fce361f;203closed.
+Base4a2e630. ExactLK init→3c370→3aefc argscontroller0/block0/count30/selector2;
+selector modifieslow3bit/configindex179 thenblockread. Wrapperdoesnotcheck
+selectorreturn beforeread; sourcepathnotactualregionproof. Metadata/windowhashes
+only;240tests/repository/diffpass. Next primaryregionmapping/containervalidation
+identity and restoreimplication; no record/device read/helperexec/download.
