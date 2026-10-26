@@ -1,0 +1,50 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "container_path": "mtkclient/Loader/MTK_DA_V5.bin",
+  "record_index": 40,
+  "scope": "Original stages only; no execution or patch application",
+  "stages": [
+    {
+      "stage": 1,
+      "file_offset": 17837176,
+      "bytes": 65352,
+      "sha256": "662bae417999c33930bcd68d7e7b41af6da0c1da0cf776b9202b3fb5e8c16915",
+      "declared_signature_bytes": 256,
+      "declared_signature_sha256": "f91430ec6b000d3ab8f92f01fded4c9b1bfe2fb477c820371c6ffcc8be41dd65",
+      "declared_code_sha256": "6611427ac0201517761e5edeffcbfeefcad2d56c55ad0d1faaedd4bf3ab27480"
+    },
+    {
+      "stage": 2,
+      "file_offset": 17902536,
+      "bytes": 254872,
+      "sha256": "af41a0bdd7162c272f317fb9960977d2e62c0829a9f4d7a60b7c7720e24a6c35",
+      "declared_signature_bytes": 256,
+      "declared_signature_sha256": "9744437741a984778d0a31c29a9603c7556a0c2430b7021b68b30abd75e8c0d5",
+      "declared_code_sha256": "9210099e5a498e4251f70b3824e78f4058a1747a32ae8557f568ad25bb227fe3"
+    }
+  ],
+  "extension_source": {
+    "path": "mtkclient/Library/DA/legacy/extension/legacy.py",
+    "url": "https://raw.githubusercontent.com/bkerler/mtkclient/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/extension/legacy.py",
+    "bytes": 22383,
+    "sha256": "bd9104051bea173b865ab83b14b12ade042bd8cd2d6d853d0f7fe38fa15c9819"
+  },
+  "body_bytes": 320224,
+  "range_receipts": [
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "offset": 17837176,
+      "bytes": 65352,
+      "sha256": "662bae417999c33930bcd68d7e7b41af6da0c1da0cf776b9202b3fb5e8c16915"
+    },
+    {
+      "path": "mtkclient/Loader/MTK_DA_V5.bin",
+      "offset": 17902536,
+      "bytes": 254872,
+      "sha256": "af41a0bdd7162c272f317fb9960977d2e62c0829a9f4d7a60b7c7720e24a6c35"
+    }
+  ],
+  "vendor_signature_verified": false,
+  "uploaded_stage_identity_verified": false,
+  "physical_test_ready": false
+}

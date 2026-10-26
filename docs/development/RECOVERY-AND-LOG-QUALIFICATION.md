@@ -195,3 +195,41 @@ Reproduce metadata only with
 `python3 scripts/probe_recovery_agent_records.py --download-metadata` (network
 required; stdout is the metadata report). Cache/report changes should be reviewed
 against the pinned source and exact range receipts before any later stage probe.
+
+## Original V5 stages identified; uploaded identity still open
+
+Read only the declared V5 record40 stage1/stage2 extents:320224 bytes total.
+Cached binaries remain ignored/private and were never executed, emulated or
+patched. `evidence/recovery-stage-identity/report.json` records exact ranges,
+whole-stage SHA256 and separately hashed declared code/signature portions.
+Stage1 SHA256 is662bae417999c33930bcd68d7e7b41af6da0c1da0cf776b9202b3fb5e8c16915;
+stage2 isaf41a0bdd7162c272f317fb9960977d2e62c0829a9f4d7a60b7c7720e24a6c35.
+These pin original bytes at the selected URL/extents; full-container Git blob
+verification and vendor signature validation have not been performed.
+
+The audited legacy uploader (dalegacy_lib.py lines576–608 at the same pinned
+revision) conditionally passes stage2 through the extension patcher and updates
+stage1's matching hash before sending/jumping to stages. Thus original file
+hashes alone cannot identify what an eventual invocation uploads. This audit
+parsed the extension source as AST only; no patch functions were invoked and
+no modified stage was generated. Its source hash and nonoperational call-site
+summary are retained. The patcher operates on byte buffers; this does not prove
+the eventual binary agent/bootstrap has no persistent effects. Other extension
+commands include storage modifications and key handling and must not be invoked
+as incidental discovery steps.
+
+Reproduce the original identity checks with
+`python3 scripts/verify_recovery_stage_identity.py`. If the ignored cache is
+absent, `--download-original-stages` retrieves only the pinned320224 stage bytes
+and22383-byte extension source under bounded reads, verifies expected SHA256
+before caching, and still never imports/executes the helper or stages. Published
+files contain only our verifier/tests and metadata/call summaries. Two new
+synthetic tests (160 total) check digest boundaries and parse-without-execution.
+
+The binary identity subtask is now bounded and complete for these original
+candidate extents. Safe entry, actual uploaded identity, security acceptance,
+indirect storage effects and restore are unresolved; guessing from names or
+embedded diagnostics cannot close them. Next independent development is the
+cached UART source/driver contract and a precise physical-interface evidence
+request once that source contract is established. No tablet action is requested
+or authorized by this identity report.
