@@ -44,3 +44,13 @@ false. It is a host integration self-test, not a tablet diagnostic package.
 Next checkpoint is choosing the physical-route constraint (USB-only versus
 owner-performed hardware access) while independent source work continues. No
 opening, connection, reboot, unlock or flash is requested by this self-test.
+
+## Retained executed scenarios
+
+All three CLI cases ran at clean committed source
+e2b62d49840d7a162023dee83f845b2e2cc5051e. Success completed/validated in0.075s;
+short data was rejected in0.067s; a stalled callback timed out and its worker
+was reaped in1.006s. All named scenarios passed their distinct expected outcome.
+The success report retains three exact capture hashes and the verified primary/
+secondary GPT checks. Fault reports retain no accepted capture metadata. These
+are executed host process/session results, not observed device behavior.
