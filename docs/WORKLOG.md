@@ -1465,3 +1465,13 @@ Supportsblock/partitionstyle source, callbackactualbackend/runtimeunresolved.
 Loadcallee invokes244c0; role/signaturepolicy unresolved. Owncheckedcalls and
 windowhashes publiconly;238tests/repository/diffpass. Next providerinit/244c0,
 no firmware/deviceexec/download. RAM diagnostic load remainsunqualified.
+
+## 2026-10-26 — Early stock image range/size check (#106)
+
+Merged192 at passing099defba6d64231168232c3ac444c28eeeb20a84;191closed.
+Base9980a04. StaticexactLK244c0 rejects start+lengthcarry and length>16MiB,
+thenfurtherplacementchecks; caller rejectsnonzero. Diagnosticlabels kernel-size
+limit. Thisisnotcryptographicverifier. Metadata/windowhashes ownreceipt, runtime
+lengthproducer/completepredicate unresolved, nouniversalhardwarelimitclaim.
+238tests/repository/diffpass. Next lengthglobalassignments/latersecuritychecks;
+no firmwarepatch/repack/deviceexec/download.

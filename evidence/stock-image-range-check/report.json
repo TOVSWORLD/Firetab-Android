@@ -1,0 +1,27 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "check_offset": 148672,
+  "caller_offset": 150814,
+  "diagnostic_reference_offset": 384472,
+  "reviewed_length_limit_bytes": 16777216,
+  "length_limit_unsigned_strictly_greater_rejected": true,
+  "unsigned_address_addition_carry_rejected": true,
+  "check_is_cryptographic_verifier": false,
+  "caller_rejects_nonzero_check_result": true,
+  "complete_range_policy_modeled": false,
+  "length_global_producer_resolved": false,
+  "reviewed_windows": [
+    {
+      "start": 148672,
+      "end": 148764,
+      "sha256": "1a5f7b6c2616d1065c5767f0a6298f8dfb95bcc96a5a50c5a169eb221561d890"
+    },
+    {
+      "start": 150800,
+      "end": 150824,
+      "sha256": "c617ddce312647e1af68e1a595e9a5c6371616b998c896cc624f037d50622ab3"
+    }
+  ],
+  "scope": "Manual static instruction review plus hash/call/reference checks; no firmware execution",
+  "physical_test_ready": false
+}

@@ -153,3 +153,26 @@ No physical command, memory read or firmware execution occurred. Next resolve
 the callback provider's initialization and0x244c0's role, distinguishing header
 validation, loading, signature policy and eventual kernel entry. Raw disassembly
 stays private; public artifacts contain offsets, call identities and hashes only.
+
+## Early check is range/size validation, not signature verification
+
+Private exact-LK instruction review resolves0x244c0 as an arithmetic range/size
+check. It rejects carry from unsigned start+length and a length strictly greater
+than0x1000000 (16MiB), then applies further placement comparisons. Its caller
+passes destination minus0x800 plus a runtime length global and rejects a nonzero
+result. A diagnostic reference explicitly describes a kernel-size limit.
+[Metadata/window-hash receipt](../../evidence/stock-image-range-check/report.json)
+retains these findings without raw code or disassembly.
+
+This removes a classification uncertainty: that early call is not cryptographic
+signature verification. It also identifies a potential modern-kernel packaging
+constraint on this stock path. The runtime length global's complete producer and
+relationship to compressed kernel bytes, MTK prefix and image/header sizes still
+need tracing. Do not label16MiB a universal hardware/RAM limit or assume it is
+Android-version-specific. A differently implemented loader can have a different
+contract. The complete placement predicate is not modeled or qualified here.
+
+No patch, image repack or firmware execution was attempted. Next trace the length
+global's assignments and the later actual integrity/security checks; compare
+against exact diagnostic image sizes only when those bytes are available. Safe
+placement, stock acceptance and recoverable first load remain unqualified.
