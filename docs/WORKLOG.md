@@ -735,3 +735,14 @@ diagnostic image_size equals that capacity (no margin, not success/failure proof
 Selected bytes/disassembly/hashes and mutation negative controls retained. No
 firmware execution, downloads or tablet IO. Next: staging/input length and DT
 handling before considering any test package; recovery remains unqualified.
+
+## 2026-10-25 — Selected LK compressed input/DT sizing (#86)
+
+Retained exact LK instruction windows connect staging45000000, prefix-present
+read adjustment-512, backward FDT scan/suffix rounding and separate inflate
+input/output lengths. Conditional stock DT-match arithmetic retained without
+claiming actual selection. Stock gzip output16584856 leaves12775272 of28MiB
+capacity. Clarified image_size is runtime memory requirement, not decoded file
+length; modern actual byte length remains unmeasured here. No device/firmware
+execution/download. Next: measure cached modern Image output versus reserved
+runtime footprint; recovery and physical boot remain unqualified.

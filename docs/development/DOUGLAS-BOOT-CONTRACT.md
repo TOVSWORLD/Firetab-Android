@@ -526,3 +526,74 @@ We have not selected a physical destination. Remaining work: trace staging/input
 length and appended-DT handling, enumerate relevant header mutations, qualify
 secure-monitor behavior and find a recoverable loader/log procedure. Parent#21,
 physical boot, hardware support and Android/app runtime gates remain open.
+
+## Selected compressed-input and appended-DT audit (#86)
+
+Reproduction uses the same exact-hash cached LK as#84:
+
+```sh
+python3 scripts/audit_lk_input_length.py \
+  --lk out/ota-loader-inspection-659664620/lk.bin \
+  --output out/lk-input-length-reproduction
+```
+
+`evidence/lk-input-length/windows.json` records selected raw instruction windows,
+byte hashes and decoded-text hashes. Reproduce each text window using the
+non-loadable analysis object from `trace_lk_header_producer.py` and:
+
+```sh
+xcrun llvm-objdump -d --triple=thumbv7-none-eabi --mattr=+trustzone \
+  --print-imm-hex --start-address=0x3f2e2 --stop-address=0x3f33e \
+  out/lk-header-producer-reproduction/analysis-only.o
+```
+
+Use each window's start/end for the other excerpts. Object pathname is normalized
+to `<analysis-only.o>` in retained text. Firmware remains unexecuted.
+
+The selected call sequence3edf4..3edfe obtains45000000 from2578c and passes it as
+r1 to24ce8, where r6 receives it. The prefix parser246cc checks58881688 and a
+32-byte name comparison, returning the word atprefix+4 on its accepted path.
+After the initial512-byte read,24d88 subtracts512 from the destination on the
+prefix-present branch. The subsequent indirect read at24dec receives this
+adjusted destination and its separate length from a mutable size global.
+This places the prefix below staging, leaving the gzip bytes at45000000 if the
+read/transform paths behave as expected. Their indirect callback and security
+transform1cf0c have not been qualified; other branches reread a wider interval.
+No header kernel-address write was encountered in the selected snippets; this
+is not an exhaustive alias/write inventory.
+
+The FDT function saves header+8 as its initial size at3de58/3de5a, adds it to the
+staging base at3de6e, and scans backwards for d00dfeed. On its selected match
+route,3e170 retrieves the scan distance rounded **up** to four bytes;3dfa6
+subtracts that value from the saved input size. The alignment acts on the suffix
+length, not the output address. The unchanged initial-size value is therefore
+not automatically the gzip-member length. This trace does not execute the
+version-selection logic or prove which candidate is selected at runtime.
+
+Conditional arithmetic using the already-inspected stock layout illustrates why
+that distinction matters. Header kernel_size7191666 includes512-byte MTK prefix,
+gzip7026236 and two DTBs. If the hvt DT atcomponent offset7109025 is matched with
+those header values unchanged, the selected input length is7108510:82274bytes
+past the gzip-member end. If the first DT is matched instead, the result is
+7026234, two bytes short of the full gzip member. Neither case is a boot verdict:
+the checked wrapper skips gzip headers and invokes raw DEFLATE; a full gzip
+trailer is not the same requirement as a complete raw DEFLATE stream. Mutable
+header/transform behavior can also change these inputs. These scenarios are
+explicitly conditional and must not be substituted for captured runtime state.
+
+At3f2f8/3f2fe, output pointer and **28MiB output capacity** occupy separate inflate
+slots from compressed input pointer/length. A return value1 is required at3f30e;
+3f316/3f31a writes `next_out-original_destination` back as produced-byte count.
+Thus28MiB bounds decoded bytes rather than compressed file size or appended DT.
+The cached stock gzip expands to16584856bytes, leaving12775272bytes of this
+capacity. Its ARM64 declared image_size is18681856, demonstrating that declared
+memory requirements and gzip output bytes differ.
+
+**Clarification to#84:** modern declared image_size equals28MiB, so there is no
+margin in that *declared memory requirement comparison*. We have not measured
+the modern Image file/gzip output length in this audit. It can be smaller because
+zero-initialized runtime memory need not be stored in the file. Consequently the
+equality does not establish a tight decompression-output limit or blocker. The
+modern actual output-length/memory-footprint comparison is the next bounded task.
+Loader execution, complete header mutation and transform paths, recovery and
+physical boot remain open under#21.

@@ -1,0 +1,8 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   2471e: 6860         	ldr	r0, [r4, #0x4]
+   24720: bd70         	pop	{r4, r5, r6, pc}
