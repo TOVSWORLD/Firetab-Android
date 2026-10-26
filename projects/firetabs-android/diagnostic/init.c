@@ -1,4 +1,5 @@
 /* Isolated AArch64 PID 1 experiment. No libc, block-device or reboot interface. */
+#include "cpu_contract.h"
 typedef unsigned long usize;
 static long call6(long n, long a, long b, long c, long d, long e, long f)
 {
@@ -44,6 +45,49 @@ static void dump(const char *path)
     call6(57, fd, 0, 0, 0, 0, 0);
     say("\nEND_FILE\n");
 }
+/* Private evidence stays in this buffer and is never passed to output(). */
+static long read_private(const char *path, char *buffer)
+{
+    long fd = call6(56, -100, (long)path, 0, 0, 0, 0);
+    usize used = 0;
+    if (fd < 0) return -1;
+    while (used < 4097) {
+        long n = call6(63, fd, (long)(buffer+used), 4097-used, 0, 0, 0);
+        if (n == -4) continue;
+        if (n < 0) { used = 4097; break; }
+        if (!n) break;
+        used += n;
+    }
+    call6(57, fd, 0, 0, 0, 0, 0);
+    return used > 4096 ? -1 : (long)used;
+}
+static void cpu_contract(void)
+{
+    char buffer[4097];
+    const char *states[] = {"missing", "valid", "conflict", "duplicate", "malformed"};
+    long n = read_private("/proc/cmdline", buffer);
+    say("FIRETABS_CPU_CONTRACT_V1\nLIMIT_NR_CPUS=");
+    say(n < 0 ? "unavailable" : states[parse_limit(buffer, n, "nr_cpus", "nr_cpus=1")]);
+    say("\nLIMIT_MAXCPUS=");
+    say(n < 0 ? "unavailable" : states[parse_limit(buffer, n, "maxcpus", "maxcpus=0")]);
+    n = read_private("/sys/devices/system/cpu/online", buffer);
+    int only = 0, count = n < 0 ? -1 : parse_online(buffer, n, &only);
+    say("\nONLINE_CPUS=");
+    if (count < 0) say("unavailable");
+    else {
+        char digits[5]; usize used = 0;
+        do { digits[used++] = '0'+count%10; count /= 10; } while (count);
+        while (used) output(digits+--used, 1);
+    }
+    say(only ? "\nONLINE_BOOT_CPU_ONLY=yes" : "\nONLINE_BOOT_CPU_ONLY=no");
+    n = read_private("/sys/firmware/devicetree/base/psci/status", buffer);
+    say("\nPSCI_DT_STATUS=");
+    if (n < 0) say("unavailable");
+    else if (equal_bytes(buffer, n, "disabled") || (n == 9 && buffer[8] == 0 && equal_bytes(buffer, 8, "disabled"))) say("disabled");
+    else if ((n == 5 && buffer[4] == 0 && equal_bytes(buffer, 4, "okay")) || (n == 3 && buffer[2] == 0 && equal_bytes(buffer, 2, "ok"))) say("enabled");
+    else say("unrecognized");
+    say("\nFIRETABS_CPU_CONTRACT_END\n");
+}
 __attribute__((noreturn)) void _start(void)
 {
     long fd = call6(56, -100, (long)"/dev/console", 257, 0, 0, 0);
@@ -58,6 +102,7 @@ __attribute__((noreturn)) void _start(void)
     dump("/proc/meminfo");
     dump("/proc/iomem");
     dump("/proc/uptime");
+    cpu_contract();
     say("FIRETABS_DIAGNOSTIC_IDLE\n");
     for (;;) {
         const long delay[2] = {60, 0};

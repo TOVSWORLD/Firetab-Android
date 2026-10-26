@@ -9,7 +9,7 @@ import install_qemu_for_ci as dependencies
 
 class GenericVMChecks(unittest.TestCase):
     def complete(self):
-        return b'\n'.join(guest.MARKERS) + b'\nEND_FILE'*4
+        return b'\n'.join(guest.MARKERS) + b'\nEND_FILE'*4 + b'\nFIRETABS_CPU_CONTRACT_V1\nLIMIT_NR_CPUS=missing\nLIMIT_MAXCPUS=missing\nONLINE_CPUS=1\nONLINE_BOOT_CPU_ONLY=yes\nPSCI_DT_STATUS=unavailable\nFIRETABS_CPU_CONTRACT_END\n'
 
     def test_all_markers_and_completed_reads_are_required(self):
         self.assertTrue(guest.transcript_ready(self.complete()))
