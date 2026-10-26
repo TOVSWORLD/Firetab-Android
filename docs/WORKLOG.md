@@ -1743,3 +1743,13 @@ fail-sticky replay/error/abandon handling. No transport/agent/clock/execution.
 259 host tests pass; repo/diff guards pass. Next matching injected host-only
 command dispatcher, then statically compiled agent. Physical entry/restore/log
 transport remain open; this is no upstream-compatible or runtime proof.
+
+## 2026-10-26 — Matching injected host dispatcher (#245 / #106)
+
+Merged #244 at passing d8df40151c8706743f5f38ab6b2bc7d5c6e2812c,
+merge 6e41374167c046caeb1816109f7ef000c8e76a75; #243 closed. Implemented
+owned host-only dispatcher, fixed-slot callback completion/exact reads, pre-callback
+validation and fail-sticky callback/replay/reentrancy handling. Both ends bounded
+to16transactions. Synthetic CALL+five READs retrieves1080B;263hosttests pass.
+Repository/diff pass; no device/transport/ARM execution. Next owned freestanding C
+dispatcher compile/static review and vector comparison, not physical loader binding.

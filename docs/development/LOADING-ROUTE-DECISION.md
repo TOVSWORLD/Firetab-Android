@@ -518,3 +518,23 @@ owned command dispatcher against injected host-only callbacks and then compile
 an agent for static inspection. Do not graft this format onto the existing
 upstream generic stage; security entry, RAM placement, original-state restore and
 usable boot-log acquisition remain open physical gates.
+
+## Matching host-only dispatcher (#245)
+
+`offline_diagnostic_dispatcher.py` validates complete supplied request frames
+before invoking injected synthetic callbacks. CALL completion is constructed
+only after the fixed-slot callback returns integer zero; READ completion requires
+exact immutable bytes. Invalid headers, ordering, ranges, callback failures,
+replays and reentrancy poison the dispatcher. Both host and dispatcher now limit
+a session to sixteen transactions, enough for one CALL plus five <=256-byte
+reads covering the 1080-byte image. Neither provides a clock or cancellation.
+
+The integration test changes a synthetic memory marker in a Python callback,
+then reads the full synthetic image through matching framed completions. It also
+tests failures before callbacks, short reads, replays, budget exhaustion and
+reentrancy. This is host model execution, not ARM firmware or device execution.
+There is no physical callback/backend/transport binding and no proof of loader
+entry or return. Next implement the same bounded request dispatcher in owned
+freestanding C, compile for ARM only and compare protocol vectors on the host
+without executing firmware. Original-state restore and log acquisition remain
+separate unresolved requirements.
