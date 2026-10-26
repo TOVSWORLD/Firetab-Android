@@ -214,3 +214,27 @@ Next join this wrapper to the owned adapter in a fake-device integration test,
 including uncertain claim/cleanup failures. Native-load ABI testing can then be
 prepared separately without enumeration. Entry/handshake/mode and failure return
 still require a concrete owner-reviewed route before physical use.
+
+## Wrapper-to-adapter integration and uncertain claim ownership
+
+Three integration tests now run `OfflineObservationAdapter` through the injected
+wrapper and fake PyUSB-shaped device/utilities. Full synthetic replies arrive as
+arrays and are converted/decoded; the actual trace uses only the selected OUT/IN
+endpoint addresses. Short writes, mismatched echoes and short reads stop after
+the first query and release/dispose the owned interface. Bad echoes cause no
+payload read. These tests join the implementation layers rather than duplicating
+their validators;237 tests pass in the full suite.
+
+The integration exposed a cleanup reporting gap: if claim_interface raises after
+an uncertain native operation, a later successful dispose cannot prove no claim
+occurred. The wrapper now marks claim uncertainty before calling that operation,
+clears it only on confirmed success, rejects retry and reports cleanup false
+through disposal after a claim exception. No unconfirmed manual release is
+attempted by the adapter. Explicit release failures likewise remain failures.
+This preserves uncertainty; it cannot determine what a real OS/backend did.
+
+Next prepare a host-only native ABI probe that loads only the pinned candidate
+library and invokes no enumeration/context/device operations. Inspect the exact
+initialization effects before executing that probe. This is a dependency check,
+not device access or route qualification. Physical entry/handshake/return and
+usable boot logs remain unqualified.

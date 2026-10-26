@@ -1376,3 +1376,13 @@ objecttests/full234pass; no USB/native imports/discovery/actualhandles. Supplied
 fresh/exclusive objects remain trustboundary, notruntimeproof. Next join wrapper
 and adapter with fake-device uncertainclaim/cleanup fault tests; nativeABI later
 withoutenumeration. No tablet/helper/nativeexec/download.
+
+## 2026-10-26 — Wrapper/adapter integration and uncertain claims (#106)
+
+Merged174 at passing04e793a25136a182705c324b6bde13c1d2f8d976;173closed.
+Base099b002. Threeactual-layer integration tests validate selectedendpointIO/
+arrayconversion and stop-onfault cleanup. Fixed uncertainclaim reporting: mark
+beforeutilitycall, neverclear onexception/retry, disposal cannotclaimcleanup.
+Full237tests/repository/diff pass. Fakeobjects only/no native/deviceexec. Next
+host-only candidate nativeABIprobe effectreview, no context/enumeration/device
+operations; physical entry/return/bootlogging gatesremainopen.
