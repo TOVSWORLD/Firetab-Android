@@ -19,3 +19,16 @@ class NativeDispatcherTests(unittest.TestCase):
                 str(root/'tests/native/diagnostic_dispatcher_test.c'), '-o', str(executable)],
                 check=True, capture_output=True, timeout=30)
             subprocess.run([str(executable)], check=True, capture_output=True, timeout=5)
+
+    def test_agent_loop_with_synthetic_framing_callbacks(self):
+        compiler = shutil.which('cc')
+        if compiler is None:
+            self.skipTest('Host C compiler unavailable')
+        root = pathlib.Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as folder:
+            executable = pathlib.Path(folder) / 'host-agent-test'
+            subprocess.run([compiler, '-std=c11', '-Wall', '-Wextra', '-Werror',
+                '-I', str(root/'diagnostic/protocol'), str(root/'diagnostic/protocol/dispatcher.c'),
+                str(root/'diagnostic/protocol/agent.c'), str(root/'tests/native/diagnostic_agent_test.c'),
+                '-o', str(executable)], check=True, capture_output=True, timeout=30)
+            subprocess.run([str(executable)], check=True, capture_output=True, timeout=5)

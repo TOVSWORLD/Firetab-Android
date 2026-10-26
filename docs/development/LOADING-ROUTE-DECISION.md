@@ -584,3 +584,28 @@ injected transport ABI, keeping callback addresses and image bounds outside the
 wire protocol. Establish bounded framing/cleanup requirements before any live
 binding. Security entry, safe placement, original restore and usable boot-log
 capture remain unresolved regardless of these host protocol results.
+
+## Callable agent context and framing ABI (#251)
+
+`diagnostic/protocol/agent.c` wraps the core in a callable loop with a versioned,
+caller-supplied ABI: transaction count, receive/send, fixed-slot call/read and
+opaque context. No callback pointer or address comes from wire data. It validates
+version one, 1..16 transactions and nonnull callbacks, initializes local protocol
+state, requires exactly 16 received bytes and exactly the completed response
+length sent. Any short/error aborts without retrying the call or receiving a new
+frame. The declared count lets a caller end after the planned transactions.
+
+Actual ARM object compile passed with warnings-as-errors and one expected
+unresolved symbol, `diagnostic_dispatch`. The
+[receipt](../../evidence/owned-agent-context/report.json) retains source/object
+hashes. Native host synthetic framing tests cover six transactions, short receive,
+partial send and invalid ABI/count; all 268 host tests pass. No ARM code executes.
+This is not yet a linked boot entry: the caller still supplies valid stack/CPU/
+memory context and bounded callbacks. The loop has no clock, cancellation,
+transport cleanup, hardware binding or exception recovery. A partial send after
+a call leaves completion uncertain and must never cause an automatic retry.
+
+Next statically link agent and core with an owned stack-preserving entry wrapper,
+assert layout and inspect undefined/relocation metadata in bounded Linux CI.
+Keep the transport ABI injected. Physical entry/placement, original-state restore
+and useful boot-log acquisition remain unresolved.

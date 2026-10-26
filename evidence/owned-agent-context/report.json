@@ -1,0 +1,17 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -mthumb -std=c11 -Os -ffreestanding -fno-builtin -fPIE -Wall -Wextra -Werror -c diagnostic/protocol/agent.c -o out/owned-protocol/agent.o",
+  "compile_exit_code": 0,
+  "source_sha256": {
+    "diagnostic/protocol/agent.c": "235719dae3fbd305700bf162a8b81bdfd68310ba58f71f299fc9f58593530cb5",
+    "diagnostic/protocol/agent.h": "f0bc14496eeddd11e0adf6538a8202a8fb7782b54bb740858f35b37876ffb0e3"
+  },
+  "object_sha256": "51f2b46102e0f6ffdc9531dcb68a241428490014fc463071ede47ad0dd871e74",
+  "undefined_symbols_observed": [
+    "diagnostic_dispatch"
+  ],
+  "native_host_synthetic_tests_passed": true,
+  "host_test_count": 268,
+  "arm_firmware_executed": false,
+  "transport_bound": false,
+  "physical_test_ready": false
+}
