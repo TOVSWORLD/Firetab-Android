@@ -186,3 +186,18 @@ most16KiB pinned source inputs. Publish metadata/hashes only, not firmware. If
 the linker is absent there too, report exact package/archive requirements before
 any toolchain download. Successful linking would still not establish shipped
 binary equivalence, ARM64 handoff, safe execution or recovery.
+
+## Standalone Linux CI compile/link probe
+
+`build_stage1_link_probe.py` and the stage1-link-probe workflow now implement the
+bounded Linux alternative: preinstalled clang/lld only,1GiB free-disk preflight,
+five-minute job limit, three pinned sources totaling11628B, per-download and
+compiler timeouts. No package install, Android checkout, binary download or
+firmware execution occurs. Missing tools fail with an explicit dependency result.
+
+The driver compiles C/startup, links using the pinned script and checks that the
+result is a bounded ARM ELF executable. CI prints source/tool/output hashes and
+qualification limits; raw payload objects remain unuploaded in the runner's out/.
+A successful link is still not a loadable-device package, GCC/shipped equivalence
+or ARM64 Linux handoff. Run status must be recorded separately before claiming
+this new probe succeeds. Existing kernel baseline workflows are unaffected.

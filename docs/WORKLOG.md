@@ -1589,3 +1589,12 @@ actualELFlink1 AppleldrejectsGNUoptions. CheckedPATH/xcrun/standardprefixes no
 ELFlinker; notwholehostabsence. Receipt hashes/error retained, nolinkedpayload/
 firmwareexec/install. Next existingLinuxCI smallprobe5min/1GiB/noinstall/16KiB
 sourcecap, beforeanytoolchaindownload. Repo/diffpass,240baselineunchanged.
+
+## 2026-10-26 — Bounded standalone stage1 CI link probe (#106)
+
+Merged218 at passing2cc28bae282e24d206cc91e4ec4d423fc61f23a2;217closed.
+Base96d85e4. Added ownpinnedsource compile/link driver and PRCI: preinstalled
+clang/lldonly,5min/1GiB/16KiBsourcecap, metadataonlylogs/noartifactupload/noexec.
+Actualsourceinputs11628B. Repo/diffguards pass; actualCIlink outcome pending,
+existing240testbaseline unchanged. Next inspect exacthead joblogs/fixactualbuild
+error orretainlinkedELFmetadata, neverequatewithboot/handoff.
