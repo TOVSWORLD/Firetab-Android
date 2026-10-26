@@ -1143,3 +1143,7 @@ Next independent work: a fail-closed offline escrow verifier for region geometry
 exact byte lengths, hashes and independent primary/secondary GPT CRCs, while
 entry/bootstrap and binary-agent provenance remain explicit physical-test gates.
 This verifier can be developed/tested entirely on synthetic host files.
+
+The first offline escrow verifier is now implemented; usage, limits and explicit
+nonqualification flags are in [OFFLINE-ESCROW-VERIFICATION.md](OFFLINE-ESCROW-VERIFICATION.md).
+Its synthetic success is not an actual backup or a qualified restore path.
