@@ -1356,3 +1356,13 @@ Parent validates success/sourcehashes; retained3CLIreports, twointegrationtests/
 full230pass. No arbitraryworker/native/device input. Processdeath notcleanup/
 recoveryproof. Next actual PyUSB binding implementation review and hostnative
 load prerequisites, no enumeration; no downloads/helper/tablet execution.
+
+## 2026-10-26 — PyUSB binding hidden-effects review (#106)
+
+Merged170 at passing3f56ef9d45aacba9fc23c5a94ecc6bdc8bc37c35;169closed.
+Base3b225d4. Reverified cachedPyUSB1.3.1source hashes. DeviceIO implicitlyclaims
+endpointinterface, altsettingcachedefaults0, activeconfigcache notfresh, read
+returnsarray, disposeignores some releaseerrors. Retainedmetadata and binding
+requirements; no package/native import or enumeration. Existing230tests and
+repository/diffguards pass; no tests for prose-only review. Next fakePyUSBtested
+wrapper with explicit ownership/bytes/timeouts/release outcome; no live readiness.

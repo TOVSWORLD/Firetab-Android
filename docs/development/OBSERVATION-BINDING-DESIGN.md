@@ -156,3 +156,37 @@ release does not establish actual device/interface cleanup or recovery. Output
 remains unqualified and private temporary quarantine is removed after validation.
 Next review the actual PyUSB backend binding implementation and its host-only
 native-load dependencies; no physical enumeration is authorized by this package.
+
+## Pinned PyUSB binding review: effects below the adapter
+
+The cached PyUSB1.3.1 wheel and two reviewed modules were reverified against
+[retained source identities](../../evidence/pyusb-binding-effects/source-review.json).
+Source links: [core.py](https://github.com/pyusb/pyusb/blob/v1.3.1/usb/core.py)
+and [libusb1 backend](https://github.com/pyusb/pyusb/blob/v1.3.1/usb/backend/libusb1.py).
+This review imported neither package nor native library and enumerated nothing.
+
+- Device.read/write call ResourceManager.setup_request, which resolves an endpoint
+  and implicitly managed-claims its containing interface. Explicitly claiming one
+  interface is insufficient if the later endpoint resolves to another. The binding
+  must constrain both endpoint ownership and the interface actually used by IO.
+- Endpoint resolution selects cached alternate settings, defaulting to zero.
+  That cache is not a fresh device alternate-setting observation. Reject ambiguous
+  alternatives; do not call set_interface_altsetting merely to make lookup work.
+- get_active_configuration opens a handle and queries configuration on first use;
+  it can subsequently return a cached configuration. A fresh owned device/worker
+  avoids treating a previous session's cache as current evidence. Opening the
+  handle is an effect even though this path does not call set_configuration.
+- Device.read(size) returns an array, not bytes. The binding must make a bounded
+  bytes conversion and validate the resulting length. Passing the array directly
+  to our strict decoder correctly fails; loosening the decoder is unnecessary.
+- dispose releases tracked interfaces but ignores some USBError release failures.
+  Successful dispose therefore cannot alone certify confirmed release. Record
+  explicit release success separately and preserve any failure even if dispose
+  later returns normally. A closed handle is not proof of firmware recovery.
+
+These findings prevent simply wrapping Device.read/write and returning True from
+validate_active/dispose. Next implement a fake-PyUSB-tested wrapper with explicit
+selected-interface/endpoint metadata, strict timeout/bytes handling and separate
+release/dispose outcomes. Actual native handle acquisition, alternate-setting
+verification and exact live endpoint ownership stay unqualified until reviewed.
+No runtime dependency install or physical operation is needed for that work.
