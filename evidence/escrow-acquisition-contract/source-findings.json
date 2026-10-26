@@ -1,0 +1,45 @@
+{
+  "scope": "Static source findings; no helper execution or observed tablet failure",
+  "sources": [
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/legacy/dalegacy_lib.py"
+    },
+    {
+      "path": "mtkclient/Library/DA/storage.py",
+      "sha256": "649fa13ab4354664cc99207fa36b46391a3f86868d977d8403f83120d8e83986",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/DA/storage.py"
+    },
+    {
+      "path": "mtkclient/Library/thread_handling.py",
+      "sha256": "dbd5112304917eea2b813d660cd0be7fbb4d84d4d2afaf430ace2616a465d22d",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/thread_handling.py"
+    },
+    {
+      "path": "mtkclient/Library/Connection/usblib.py",
+      "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986",
+      "url": "https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py"
+    }
+  ],
+  "in_memory_remaining_expression_reversed_lines": [
+    1229
+  ],
+  "file_mode_advances_requested_size_lines": [
+    1209
+  ],
+  "writer_join_lines": [
+    1219
+  ],
+  "in_memory_example": {
+    "requested_bytes": 2097152,
+    "first_full_packet_bytes": 1048576,
+    "remaining_expression_value": -1048576,
+    "loop_continues": false
+  },
+  "writer_errors_propagated_to_reader_established": false,
+  "protocol_checksum_validation_established": false,
+  "runtime_failure_observed": false,
+  "physical_test_ready": false,
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1"
+}

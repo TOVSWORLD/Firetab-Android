@@ -1120,3 +1120,14 @@ no-read-on-failure and platformselection/source-drift:183tests pass. No native
 load/USBenum/deviceIO/download/install/securitychange.127 tracks only offline
 sourcehardening;106 physicalgatesopen. Next read-only invocationallowlist and
 acquisitionprecondition policy independent of broad upstreamdispatcher.
+
+## 2026-10-26 — Transport-neutral acquisition integrity implementation (#106)
+
+Currentbase4e33613, recentCIhealthy. Cachedlegacyread audit found reversed
+remaining arithmetic1229, requested-sizeadvance1209, join/success1219 and locally
+caughtwritererrors; geometrycanclip. Sourcehashes/arithmetic retained, nohelper
+execution. Owncallback-onlyhostcapture enforces acknowledgedregion/exactbounded
+chunks/hostdisk/exclusivecompletepublish+SHA; failuredoesnotpublishfinaloutput.
+Four fault-injectiontests:187tests pass; no realbinding/library/USB/tabletIO.
+Sourceandhostcontract complete; actual geometry/protocol/binding/restore open.
+Next sourcebinding mustrejectclipping and prove offsets/errorpropagation offline.
