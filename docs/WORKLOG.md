@@ -1242,3 +1242,14 @@ checksum/geometry/provenance qualification. This is not yet an ordered state
 gate or wire parser. Three synthetic tests/full210pass; repository/diff guards
 run. No helper/firmware execution, tablet access or downloads. Next checksum
 source evidence, then ordered capture/session invalidation before live binding.
+
+## 2026-10-26 — Ordered offline DRAM response session (#106)
+
+Merged148 at exactcdc6220120e86688f28eb920df1d005b1de35e28 afterfour
+checks passed;147closed. Base7f1bbd0. Own response-event collector rejects
+reorder/duplicate/partial/error events, clears data and permanently invalidates
+aborted/consumed sessions. Three synthetic tests/full213pass. No sender/timer/
+USB/helperbinding; all readiness/authorization flags remainfalse. Bounded cached
+DA source search leaves DRAM checksum algorithm unknown; write checksum not
+assumed applicable. No downloads or physical access. Next consolidated physical
+prerequisite checklist/smallest owner evidence, not more synthetic qualification.
