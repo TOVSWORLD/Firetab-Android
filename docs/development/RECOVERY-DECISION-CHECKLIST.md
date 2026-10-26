@@ -212,3 +212,27 @@ The remaining useful step is an end-to-end synthetic observation package joining
 exact frames, fresh mode reply and deadline/session checks, with a manifest of
 owned source hashes. After that, live entry and electrical/logging facts remain
 external requirements, rather than more Boolean-policy extensions.
+
+## Runnable synthetic observation package
+
+Run `python3 scripts/synthetic_observation_package.py --mode success`, then
+`--mode bad-echo` and `--mode late`. These built-in scenarios join the owned
+frame validator, observation collector, security decoder and fresh mode decoder.
+Commands/replies are invented fixture symbols, not device protocol values.
+No arbitrary callback, helper path or device option is accepted by this CLI.
+
+[Retained scenario output](../../evidence/synthetic-observation-package/success.json)
+and its sibling fault reports include SHA256 for all five owned components.
+Success decodes all three synthetic queries; bad echo and simulated late return
+stop at the first query, discard results and invalidate the session. The late
+case advances a fake clock: it does not demonstrate native-call preemption.
+Two integration tests bring the suite to225. All scenarios were run locally;
+no native library/helper/device was loaded and no downloads were needed.
+
+This closes offline component integration only. The next engineering task is
+an explicit live-binding design review listing required protocol framing,
+interface/control effects, process lifetime and logging output allowlist. Do
+not add another synthetic readiness layer or call the package a tablet test.
+Physical entry, actual security state, restore reachability and UART/log retrieval
+are still unknown; an owner test cannot be scheduled until its concrete effects
+and recovery exit are reviewable.

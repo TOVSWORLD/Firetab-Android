@@ -1,0 +1,25 @@
+{
+  "synthetic_only": true,
+  "scenario": "bad-echo",
+  "scenario_passed": true,
+  "observation_decoded": false,
+  "session_state": "invalid",
+  "error_class": "ValueError",
+  "symbolic_queries": [
+    "hardware_code"
+  ],
+  "simulated_seconds": 0.01,
+  "observation": null,
+  "mode_evidence": null,
+  "source_sha256": {
+    "synthetic_observation_package.py": "5abe5b78ce910c6e2620d395097412d00af981860281fae308b729d43970ca02",
+    "offline_observation_session.py": "ecb1f0a26f3158ec9c3e7483d7553d47020631d43f269aa942e76f00388eae4f",
+    "offline_query_frame.py": "4a271c0e2f0e84fffbb3353e50bc5b779dc6321a2eb21557b6d13779a66cea22",
+    "offline_mode_evidence.py": "1e2c2beba03c995ad4a0baaae19f4f688b75240dceeda0d8e85a183c53e0d1d0",
+    "offline_security_observation.py": "e7d9eb7576e07fae25889eca324c2b408f14d526f30ebc17c40f0194e19ccd9c"
+  },
+  "native_code_loaded": false,
+  "device_access_performed": false,
+  "bootstrap_authorized": false,
+  "physical_test_ready": false
+}

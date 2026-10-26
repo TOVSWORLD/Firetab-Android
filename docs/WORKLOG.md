@@ -1315,3 +1315,13 @@ modeproof/bootstrapauthorization. Two synthetic tests/full223pass. No actual
 query constants/USB/helper imports or tablet access. Next integrate existing
 observation/frame/mode components in synthetic-only runnable host package with
 source manifest; physical facts cannot be replaced by more policy extensions.
+
+## 2026-10-26 — Runnable synthetic observation integration (#106)
+
+Merged162 at passing6308fc4ecded6140d12241b1b4475dc964268b86;161closed/Done.
+Base3d222dd. Joined fiveownedcomponents in synthetic-only CLI with invented
+symbols and no device/helperinput. Executed success/bad-echo/late scenarios;
+retained outputs/sourceSHA256 manifests. Faults stop firstquery/no accepted
+results; late usesfakeclock, notnativepreemptionproof. Twointegrationtests/full
+225pass. Next concrete live-binding design/effects/recoveryexit review, not more
+syntheticreadinesslayers. Physical gatesopen; no tablet action/download/nativeexec.
