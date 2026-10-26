@@ -201,3 +201,30 @@ qualification limits; raw payload objects remain unuploaded in the runner's out/
 A successful link is still not a loadable-device package, GCC/shipped equivalence
 or ARM64 Linux handoff. Run status must be recorded separately before claiming
 this new probe succeeds. Existing kernel baseline workflows are unaffected.
+
+## Observed Linux link result
+
+The [standalone CI job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40386637095/job/121796533606)
+compiled and linked successfully using preinstalled clang/LLD 18.1.3. The three
+hash-verified inputs total 11,628 bytes; compilation emitted three warnings.
+The resulting ARM ELF was 68,672 bytes, SHA256
+`1508a0dd3979548cca178ee9f15c7492fd9a4a080ee8118ca884dfef8e7bae48`.
+Its entry value zero is relative to the linker script, not a qualified physical
+load address. This establishes a working Linux build path for the inspected
+first-stage source, resolving the Mac ELF-linker limitation for this probe.
+
+The [metadata receipt](../../evidence/stage1-linux-link/report.json) records the
+PR head, base and actual synthetic merge checkout separately. The job executed
+`python3 scripts/build_stage1_link_probe.py`; its exact compile/link arguments
+are retained in that script at tested merge
+`15abe7c2eeb22554802ce3105321c883a75d9e1c`. PR #220 merged as
+`5256cb0c1a15a5271e0fd2a801d6a3e1cd9d2e5b` after all five checks passed.
+Only metadata is retained here: the runner ELF was not uploaded or recovered.
+No firmware ran and no tablet was accessed.
+
+Next inspect ELF load segments, executable entry coverage and section layout
+through bounded metadata from another build. Linking alone does not prove a
+flat transport payload, equivalence to the packaged 1,000-byte binary, the
+readback protocol, safe RAM placement, ARM64 handoff, stock return or boot-log
+capture. Recovery issue #106 remains open until those applicable gates have
+actual evidence; this result supplies no physical test authorization.
