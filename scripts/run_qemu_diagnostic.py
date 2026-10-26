@@ -12,6 +12,7 @@ import subprocess
 import time
 
 from diagnostic_config import check, policy
+from check_diagnostic_commandline import check as argument_policy_check
 from measure_arm64_image import measure, bounded_file, MAX_IMAGE
 
 MARKERS = [b'FIRETABS_DIAGNOSTIC_INIT_V1', b'PROC_MOUNT_OK', b'SYSFS_MOUNT_OK',
@@ -60,6 +61,16 @@ def cpu_contract_report(data, require_primary=False):
             'douglas_boot_qualified': False}
 
 
+
+def forced_argument_result(data):
+    report=cpu_contract_report(data)
+    if report is None or any(report['verdicts'][key]!='valid' for key in ('LIMIT_NR_CPUS','LIMIT_MAXCPUS')):
+        raise ValueError('Forced arguments did not override conflicting incoming limits')
+    return {'forced_limits_observed':True,'incoming_limits':'nr_cpus=4 maxcpus=3',
+            'scope':'Generic kernel argument selection only; PSCI status is separately reported',
+            'physical_test_ready':False}
+
+
 def transcript_ready(data):
     # Serial consoles may translate LF to CRLF. Preserve raw log hashes, but
     # normalize line endings when interpreting exact diagnostic error lines.
@@ -76,12 +87,15 @@ def main():
     parser.add_argument('--initramfs', type=Path, required=True)
     parser.add_argument('--qemu', default='qemu-system-aarch64')
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--force-argument-test',action='store_true')
     args = parser.parse_args()
     if args.output.exists():
         parser.error('Fresh output required')
     resolved = check(args.config.read_text(), policy())
     if 'CONFIG_SERIAL_AMBA_PL011_CONSOLE=y' not in args.config.read_text().splitlines():
         parser.error('Generic virt PL011 console must be built in')
+    if args.force_argument_test:
+        argument_policy_check(args.config.read_text(),'generic-force')
     kernel = bounded_file(args.kernel, MAX_IMAGE)
     sizing = measure(kernel, bounded_file(args.kernel.with_name('Image.gz'), MAX_IMAGE+65536))
     if len(kernel) < 64 or kernel[56:60] != b'ARMd':
@@ -91,6 +105,8 @@ def main():
                '-display', 'none', '-monitor', 'none', '-serial', 'stdio', '-nic', 'none',
                '-no-reboot', '-kernel', str(args.kernel), '-initrd', str(args.initramfs),
                '-append', 'console=ttyAMA0 earlycon rdinit=/init panic=-1']
+    if args.force_argument_test:
+        command[-1] += ' nr_cpus=4 maxcpus=3'
     args.output.mkdir(parents=True)
     report = {'scope': 'Generic QEMU virt userspace execution only; douglas boot/hardware untested',
               'qemu_version': subprocess.check_output([args.qemu, '--version'], text=True).splitlines()[0],
@@ -122,6 +138,8 @@ def main():
                     if len(data) > LOG_LIMIT:
                         raise ValueError('Console limit exceeded')
                 if transcript_ready(data):
+                    if args.force_argument_test:
+                        report['forced_argument_test'] = forced_argument_result(data)
                     if ready is None:
                         ready = time.monotonic()
                     if time.monotonic()-ready >= 5:

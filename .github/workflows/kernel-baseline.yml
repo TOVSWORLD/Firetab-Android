@@ -7,6 +7,11 @@ on:
         type: choice
         options: [clocks, clocks-pinctrl, providers, diagnostic]
         default: diagnostic
+      argument_profile:
+        description: Generic-only forced argument selection (diagnostic mode)
+        type: choice
+        options: [none, generic-force]
+        default: none
       emulated_boot:
         description: Run bounded generic ARM64 virt userspace test (diagnostic mode only)
         type: boolean
@@ -18,6 +23,7 @@ on:
       - scripts/apply_clock_port.py
       - scripts/build_ack_baseline.sh
       - scripts/diagnostic_config.py
+      - scripts/check_diagnostic_commandline.py
       - scripts/run_qemu_diagnostic.py
       - scripts/install_qemu_for_ci.py
       - scripts/build_diagnostic_initramfs.py
@@ -48,10 +54,15 @@ jobs:
       - name: Preflight and compile generic ARM64 baseline
         env:
           BUILD_MODE: ${{ inputs.mode || 'diagnostic' }}
+          ARGUMENT_PROFILE: ${{ github.event_name == 'pull_request' && 'generic-force' || inputs.argument_profile || 'none' }}
         run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"
 
       - name: Generic QEMU virt diagnostic userspace smoke test
         if: github.event_name == 'pull_request' || inputs.emulated_boot
+        env:
+          ARGUMENT_PROFILE: ${{ github.event_name == 'pull_request' && 'generic-force' || inputs.argument_profile || 'none' }}
         run: |
           python3 scripts/build_diagnostic_initramfs.py
-          python3 scripts/run_qemu_diagnostic.py --kernel work/ack-baseline/output/arch/arm64/boot/Image --config work/ack-baseline/output/.config --initramfs out/diagnostic-initramfs/initramfs.cpio.gz --output out/qemu-diagnostic
+          force_option=()
+          if [ "$ARGUMENT_PROFILE" = generic-force ]; then force_option=(--force-argument-test); fi
+          python3 scripts/run_qemu_diagnostic.py --kernel work/ack-baseline/output/arch/arm64/boot/Image --config work/ack-baseline/output/.config --initramfs out/diagnostic-initramfs/initramfs.cpio.gz --output out/qemu-diagnostic "${force_option[@]}"

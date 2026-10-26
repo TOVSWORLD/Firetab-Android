@@ -34,3 +34,12 @@ class GenericVMChecks(unittest.TestCase):
         for plan in [f"'https://example/a' a {dependencies.LIMIT+1} hash", "'https://example/a' a unknown hash"]:
             with self.assertRaises(ValueError):
                 dependencies.package_bytes(plan)
+
+    def test_forced_arguments_need_actual_verdicts_not_just_cpu_count(self):
+        with self.assertRaises(ValueError):guest.forced_argument_result(self.complete())
+        good=self.complete().replace(b'LIMIT_NR_CPUS=missing',b'LIMIT_NR_CPUS=valid').replace(
+            b'LIMIT_MAXCPUS=missing',b'LIMIT_MAXCPUS=valid')
+        self.assertTrue(guest.forced_argument_result(good)['forced_limits_observed'])
+        self.assertFalse(guest.cpu_contract_report(good)['primary_only_contract_observed'])
+        with self.assertRaises(ValueError):
+            guest.forced_argument_result(good.replace(b'LIMIT_MAXCPUS=valid',b'LIMIT_MAXCPUS=conflict'))
