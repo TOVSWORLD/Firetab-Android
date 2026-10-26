@@ -1,0 +1,89 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "build": "659664620",
+  "payload_offset": 512,
+  "scope": "Selected registration region only; no whole-image absence or runtime acceptance claim",
+  "registration_function_offset": 259156,
+  "entries": [
+    {
+      "command_label": "getvar:",
+      "label_load_offset": 260476,
+      "registration_call_offset": 260482
+    },
+    {
+      "command_label": "oem flags",
+      "label_load_offset": 260520,
+      "registration_call_offset": 260526
+    },
+    {
+      "command_label": "signature",
+      "label_load_offset": 260534,
+      "registration_call_offset": 260540
+    },
+    {
+      "command_label": "flash:",
+      "label_load_offset": 260548,
+      "registration_call_offset": 260554
+    },
+    {
+      "command_label": "erase:",
+      "label_load_offset": 260562,
+      "registration_call_offset": 260568
+    },
+    {
+      "command_label": "dump:",
+      "label_load_offset": 260576,
+      "registration_call_offset": 260582
+    },
+    {
+      "command_label": "continue",
+      "label_load_offset": 260590,
+      "registration_call_offset": 260596
+    },
+    {
+      "command_label": "reboot",
+      "label_load_offset": 260604,
+      "registration_call_offset": 260610
+    },
+    {
+      "command_label": "reboot-bootloader",
+      "label_load_offset": 260618,
+      "registration_call_offset": 260624
+    },
+    {
+      "command_label": "download:",
+      "label_load_offset": 260758,
+      "registration_call_offset": 260764
+    },
+    {
+      "command_label": "oem relock",
+      "label_load_offset": 260798,
+      "registration_call_offset": 260806
+    },
+    {
+      "command_label": "oem p2u",
+      "label_load_offset": 260814,
+      "registration_call_offset": 260822
+    },
+    {
+      "command_label": "oem off-mode-charge",
+      "label_load_offset": 260830,
+      "registration_call_offset": 260836
+    }
+  ],
+  "reviewed_windows": [
+    {
+      "start": 259156,
+      "end": 259210,
+      "sha256": "46a5bf5673b016417975c8e21ab4fe9989d1084f01773426445917349c093c66"
+    },
+    {
+      "start": 260472,
+      "end": 260840,
+      "sha256": "ae3a403ec892295647ac1a81787b25ead08d3dcde5f2335d5706edd8bbcea4df"
+    }
+  ],
+  "ram_boot_verified": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}
