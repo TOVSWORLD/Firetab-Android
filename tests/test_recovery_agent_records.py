@@ -38,7 +38,7 @@ class AgentRecordTests(unittest.TestCase):
             status=200
             headers={}
             def __enter__(self):return self
-            def __exit__(self,*args):pass
+            def __exit__(self,*args):return False
             def read(self,*args):raise AssertionError('Full body must not be read')
         with patch('urllib.request.urlopen',return_value=Response()):
             with self.assertRaises(ValueError):Ranges().read({'path':'unused','size':1000},0,108)
