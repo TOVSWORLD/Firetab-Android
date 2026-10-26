@@ -1776,3 +1776,14 @@ All selected status/length/response bytes match;267hosttests pass. Source hashes
 counts retained, no exhaustive/target ABI/runtime proof. Repository/diff pass.
 No ARM execution/device access. Next owned agent entry/context static link and
 explicit injected transport ABI, leaving physical security/restore/log gates open.
+
+## 2026-10-26 — Callable agent context/framing ABI (#251 / #106)
+
+Merged #250 at passing aa55a900f61187e299b7af3a3adb7a51d1267fac,
+merge 68e31eac2a328cda3f18427ea0a2668de2f315a4; #249 closed. Added owned
+agent loop with versioned injected callbacks/count1..16, exact receive/send,
+initialized local context and abort/no retry after partial completion. Native
+host tests pass;268hosttests total. Actual ARM object compile passes with one
+expected undefined diagnostic_dispatch, source/object hashes retained. No ARM
+execution/device transport. Repository/diff pass. Next static agent+core link with
+stack-preserving entry; callback deadlines/cleanup and physical restore/log gates open.
