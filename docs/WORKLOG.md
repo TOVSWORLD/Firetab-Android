@@ -1397,3 +1397,13 @@ JSON, no contextinit/enumeration/open calls, installs/relocation/securitychanges
 This is first actual candidate native-load proof, not PyUSB/backend/deviceproof.
 Existing237tests/repository/diff pass; probe not added to platform-independentCI.
 Next PyUSB init/context boundary review before any backendexecution.
+
+## 2026-10-26 — Native context/device-scan boundary (#106)
+
+Merged178 at passingd227bf9062fef133ac35e08704000713682c5c54;177closed.
+Base5a0d7e5. PinnedPyUSB get_backend constructsLibUSB/callsinit; upstreamtag
+libusbDarwin init callsdevicescan. Therefore backendconstruction nothostonly
+loadcheck; didnotexecute. Darwin driverdetach/attach maywholedevicereenumerate;
+future auto-detachpolicy remains unqualified. Retainedsource links/metadata.
+237tests/repository/diffpass. Next explicit injectedauto-detach attestation and
+entry/return sourcework; no more nativecontextexecution underautomaticban.

@@ -1,0 +1,16 @@
+{
+  "pyusb_version": "1.3.1",
+  "backend_sha256": "ea13c99dbe9667904ad1d3f364a147cf75bfdf98111b3426ceec20d055f3203d",
+  "pyusb_get_backend_constructs_context": true,
+  "libusb_tag": "v1.0.30",
+  "darwin_init_scans_devices": true,
+  "context_initialization_executed": false,
+  "backend_initialization_executed": false,
+  "physical_test_ready": false,
+  "sources": [
+    "https://github.com/pyusb/pyusb/blob/v1.3.1/usb/backend/libusb1.py#L716-L733",
+    "https://github.com/pyusb/pyusb/blob/v1.3.1/usb/backend/libusb1.py#L961-L978",
+    "https://github.com/libusb/libusb/blob/v1.0.30/libusb/core.c#L2547-L2553",
+    "https://github.com/libusb/libusb/blob/v1.0.30/libusb/os/darwin_usb.c#L850-L873"
+  ]
+}

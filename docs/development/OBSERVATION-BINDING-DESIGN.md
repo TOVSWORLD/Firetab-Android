@@ -265,3 +265,30 @@ interface ownership, endpoint IO or tablet entry/recovery. Do not run backend
 initialization merely as the next dependency check while the tablet-access ban
 is in force. Next review PyUSB backend initialization to distinguish symbol setup
 from context creation and device enumeration before any such execution.
+
+## Context initialization is outside the no-enumeration probe
+
+Pinned PyUSB1.3.1 [get_backend](https://github.com/pyusb/pyusb/blob/v1.3.1/usb/backend/libusb1.py#L961-L978)
+loads symbols and constructs [_LibUSB](https://github.com/pyusb/pyusb/blob/v1.3.1/usb/backend/libusb1.py#L716-L733),
+whose constructor calls libusb_init. It is not merely a symbol/load compatibility
+check. The [libusb core](https://github.com/libusb/libusb/blob/v1.0.30/libusb/core.c#L2547-L2553)
+then invokes platform initialization. The tagged
+[Darwin initializer](https://github.com/libusb/libusb/blob/v1.0.30/libusb/os/darwin_usb.c#L850-L873)
+returns through darwin_scan_devices. Thus normal PyUSB backend construction can
+scan connected devices even without an explicit enumerate_devices call. It was
+not executed. The successful version-only probe remains the current native limit.
+
+The Darwin source also shows driver detach/attach can
+[reenumerate the whole device](https://github.com/libusb/libusb/blob/v1.0.30/libusb/os/darwin_usb.c#L2649-L2720);
+interface-scoped API names must not be mistaken for isolated interface effects.
+The proposed wrapper omits these operations. A future supplied device must also
+have independently established auto-detach policy; omitting explicit detach in
+our wrapper alone cannot prove the native handle has it disabled.
+
+[Review receipt](../../evidence/backend-init-boundary/report.json) records pinned
+PyUSB identity and upstream tagged source links. No new runtime package, context
+or device operation was performed. Next improve the wrapper's explicit injected
+ownership contract to reject unreviewed auto-detach state and record that it is
+an attestation, not a runtime getter. Continue source work on exact entry/return
+options; native backend construction requires a separately authorized device
+observation phase and cannot proceed during automatic no-access runs.
