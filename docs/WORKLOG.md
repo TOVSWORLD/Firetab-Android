@@ -1446,3 +1446,12 @@ prefixfilter beforelistmatch/indirectcall; dynamicpolicy and +0xcfieldsemantics
 unresolved. Continuebranchesdownstream, notdownloadedkernelproof; returneffects
 unqualified. Metadata/windowhashes publiconly.238tests/repository/diffpass.
 Next continue-to-imageproducer and filterproducer trace; no firmware/deviceexec.
+
+## 2026-10-26 — Continue reaches boot-labelled header producer (#106)
+
+Merged188 at passing590c2f272420f63c08f3e892b55891b2d15a0ac6;187closed.
+Base24bf365. StaticexactLK trace matchescontinue-clearedglobal to downstream
+selector; modezero tablecase reaches bootlabel calls24770(existingheaderproducer)
+and24ce8. Ownaudit checksidentity/table/labels/calls; metadata/windowhashesonly.
+Notdownloadbufferhandoff orsignaturepolicyproof; actualimageorigin/loadboundary
+next.238tests/repository/diffpass; no firmware/helper/deviceexec/download.
