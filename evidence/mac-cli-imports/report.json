@@ -1,0 +1,712 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "scope": "All syntactic imports, including deferred/optional branches; no upstream execution",
+  "new_source_body_bytes": 0,
+  "modules": [
+    {
+      "path": "mtk.py",
+      "bytes": 17196,
+      "sha256": "b68f13e078770097c13a484f517212c77fc7f8aa26f6b83b2187a9005b29e556"
+    },
+    {
+      "path": "mtkclient/Library/Auth/sla.py",
+      "bytes": 1011,
+      "sha256": "f73dc399b7eaca0597298e9b59433b98496edcfec07302fa44c01cbca7be1565"
+    },
+    {
+      "path": "mtkclient/Library/Auth/sla_keys.py",
+      "bytes": 83157,
+      "sha256": "be7ab831dcd982da00f238bd3a8248f1cab92eb5a3231e6b7ad1c33ec6a180ba"
+    },
+    {
+      "path": "mtkclient/Library/Connection/devicehandler.py",
+      "bytes": 4951,
+      "sha256": "cc37749b17a5ba7377ad8fdb81e01567baf3f61ac3ce1f5f4c5b6e1cbb2fef92"
+    },
+    {
+      "path": "mtkclient/Library/Connection/seriallib.py",
+      "bytes": 11038,
+      "sha256": "d94d908d4e6dc46988cde6b39f092723c973101c027f4d0fc51a3be0fbb34f7f"
+    },
+    {
+      "path": "mtkclient/Library/Connection/usblib.py",
+      "bytes": 35522,
+      "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986"
+    },
+    {
+      "path": "mtkclient/Library/DA/daconfig.py",
+      "bytes": 8921,
+      "sha256": "bb40fdd4661cbf45da209d1266c01ba4731a1f88bfb9111071c96b1bf66dd8d5"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_flash_param.py",
+      "bytes": 8625,
+      "sha256": "3630acbbb97f8ed6f834e46e230024e97fb58cb6dd0d432bc9e3bdf2f5f85d16"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_iot_flash_param.py",
+      "bytes": 9089,
+      "sha256": "56d3a2d0c014434720b38a4e7157ce57350bcd14e891bc05984366a3f523e84b"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_lib.py",
+      "bytes": 59705,
+      "sha256": "e93acdf7067a787e2e376f31c9df1328ca4757f8f8db5df212e058d5da50b86f"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/dalegacy_param.py",
+      "bytes": 4669,
+      "sha256": "1e35c6552ca4158339888d064a90426ad43feab3cfa7f3000faed3c559e9d131"
+    },
+    {
+      "path": "mtkclient/Library/DA/legacy/extension/legacy.py",
+      "bytes": 22383,
+      "sha256": "bd9104051bea173b865ab83b14b12ade042bd8cd2d6d853d0f7fe38fa15c9819"
+    },
+    {
+      "path": "mtkclient/Library/DA/mtk_da_handler.py",
+      "bytes": 77807,
+      "sha256": "c598db162410590a8e16f51e49120e5b08cb1ad423bde2b658fba115fc16156c"
+    },
+    {
+      "path": "mtkclient/Library/DA/mtk_daloader.py",
+      "bytes": 24484,
+      "sha256": "79b80aea02831c9891e3a491613f6ce023f9a6d2ed13ead407d7d75b4bbcb713"
+    },
+    {
+      "path": "mtkclient/Library/DA/storage.py",
+      "bytes": 14404,
+      "sha256": "649fa13ab4354664cc99207fa36b46391a3f86868d977d8403f83120d8e83986"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/extension/xflash.py",
+      "bytes": 48959,
+      "sha256": "e658e722358f71b43ba28499e4c46aa4ae2908d781adbb19869e6b6ebdf71554"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_flash_param.py",
+      "bytes": 510,
+      "sha256": "61ca73349d5c33550fd687e47b9cdbdd81eeafcc9685333de54fd59412660a7b"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_lib.py",
+      "bytes": 54247,
+      "sha256": "aed9f30be371249e4432b2ca7a5b802565a5ff286339b75b4aaee0f5cd743460"
+    },
+    {
+      "path": "mtkclient/Library/DA/xflash/xflash_param.py",
+      "bytes": 2275,
+      "sha256": "df6a9bfe087d0f6f3f3bee071a6aac659a44e3de3c7979bf53a0f1cee77bfa29"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/extension/v6.py",
+      "bytes": 73328,
+      "sha256": "85d91b1659edf00ce644d1406273f8b33cebad8cedcc8ac6341a500e8875f034"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_cmd.py",
+      "bytes": 23257,
+      "sha256": "734699a8f0dd6b95279d33510363d52d731ed45617e8324364d36205c788915b"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "bytes": 46811,
+      "sha256": "de0bb70c31754e3a96dbb9777446379052b07ce44b95b1b352a53900b44aae83"
+    },
+    {
+      "path": "mtkclient/Library/DA/xmlflash/xml_param.py",
+      "bytes": 617,
+      "sha256": "5e308e0db78f8eb4a9663de7e0a77925d4b57649bac7b76843ab1847f2b6000e"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/amonet.py",
+      "bytes": 4381,
+      "sha256": "f2a29d71020a6cfa89b5ee9c1461dc4bb21a705cc78321e45042e94869264a32"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/carbonara.py",
+      "bytes": 4896,
+      "sha256": "66f26449702abfca779a48a24ef0fd13f1f0dfb10445f902f92ed8c61e1aa50c"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/aarch_tools.py",
+      "bytes": 11144,
+      "sha256": "b233481d3b7861383f0eb9d41468a0653aa06f613bd0ee1c3b3a427fe09ca125"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/arch.py",
+      "bytes": 3803,
+      "sha256": "a9cee08724757634825dc48bb0c10f0b035a0d2e83272d4b0eeb4e50692ed36b"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/exptools/arm_tools.py",
+      "bytes": 16482,
+      "sha256": "207356cf9a575e008609bd24979cfb8b0fae487a8a004e0c06c90f9cc14f23d2"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/hashimoto.py",
+      "bytes": 3562,
+      "sha256": "0be4b3d93db008cb7f39b59a290c5bc4d5801ffb0481fefbe97cadf29e8bcfcf"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/heapbait.py",
+      "bytes": 36779,
+      "sha256": "8e73361cf481d343a1c22c8ce06733d7eb2ae74c08c9da76f41990c44ebaeeca"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiri.py",
+      "bytes": 6703,
+      "sha256": "1fdffb0e9469b702070390490ccbcb6643320ea01a397ae2961386af9059498b"
+    },
+    {
+      "path": "mtkclient/Library/Exploit/kamakiri2.py",
+      "bytes": 11312,
+      "sha256": "b5d0031c713a18d34b25eb1c6d63d470597e128a00ec85d56f74fbb3322b4693"
+    },
+    {
+      "path": "mtkclient/Library/Filesystem/mtkdafs.py",
+      "bytes": 3425,
+      "sha256": "eaf750718ceeb5ae695d6c6fdae2a024ba2031080c2f8de614dc8c534e17c981"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/__init__.py",
+      "bytes": 3370,
+      "sha256": "ce758f7a0ba5a8dca23f1b029d80153fa55e16466bac65348b7e3f4c9688b357"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/cqdma.py",
+      "bytes": 4450,
+      "sha256": "d978579ff17b7221206c575edc86bbfb8b0aefb5c9d8255e840203b30ff3fb67"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto.py",
+      "bytes": 8349,
+      "sha256": "95c01ba2e24217dbc057efdb2cf8e01e6acbaf0e3102b0c78ebd8407cee00793"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_dxcc.py",
+      "bytes": 64648,
+      "sha256": "9edf449ccf2c2c2b261374f5bdf4559cb92b902ea2bb4a084591e288b2fc4026"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_gcpu.py",
+      "bytes": 27796,
+      "sha256": "13e1aa990a5cf6723345271f234cc76da8789be23b75e91081a33bf8fdb2eb32"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_sej.py",
+      "bytes": 42236,
+      "sha256": "4e3bd5c20a106ca2525b02e3f974a34e5cb1a4b0f0abc00f599710f6cece7f90"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/hwcrypto_ssr.py",
+      "bytes": 56915,
+      "sha256": "ae30e17e05a7d775d27d1c09b470f5c58041c019d4e81ebff9a3afcc5c4de02d"
+    },
+    {
+      "path": "mtkclient/Library/Hardware/seccfg.py",
+      "bytes": 17801,
+      "sha256": "1bbe49f9fd05cc1788f5b38d523d0c062f8199d2a2ec3b7ca1a0882892e755ab"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/__init__.py",
+      "bytes": 6354,
+      "sha256": "858e9ea05c6504c45cf0af5d50a64a9ee13af002e54a614c87eb936ebfb9dc1b"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/bpi.py",
+      "bytes": 3836,
+      "sha256": "815f1e8d97873b67cac95fdc3bcb7b0baa66dc7461d7e629dac82dd883dc05ce"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/gpt.py",
+      "bytes": 13402,
+      "sha256": "dda999bf88177c25fb877883f2ff8a54b63ea0cad5e77ef87aab4183ad960271"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/mbr.py",
+      "bytes": 12779,
+      "sha256": "2be2dfd00d6f0f3f9d89bfaf446e68b3f93abb076e359dad86176942588387e1"
+    },
+    {
+      "path": "mtkclient/Library/Partitions/pmt.py",
+      "bytes": 5747,
+      "sha256": "ce080d841d9e0d7d2c3b35eb1636740a499190b237c8bcd6b5e920dcfa97ade4"
+    },
+    {
+      "path": "mtkclient/Library/Port.py",
+      "bytes": 10267,
+      "sha256": "f1febf33a0e6a9eb57392804166ea975384ce0ad3925ca2e9561462f786a3720"
+    },
+    {
+      "path": "mtkclient/Library/cryptutils.py",
+      "bytes": 20261,
+      "sha256": "e431e7145fd3acf62d26f3e66a23adf0bafa6fac64aae4f265f93a448268c836"
+    },
+    {
+      "path": "mtkclient/Library/error.py",
+      "bytes": 39518,
+      "sha256": "24f08602308a54905c140ee794bf32ef08301ecae24ccc378e8fa7b6c05bcc33"
+    },
+    {
+      "path": "mtkclient/Library/exploit_handler.py",
+      "bytes": 7117,
+      "sha256": "8e127fcaa04f35d13685e9c475f1e05871a2faaa21956c443c6d43c7b9b93134"
+    },
+    {
+      "path": "mtkclient/Library/gui_utils.py",
+      "bytes": 12001,
+      "sha256": "11777a65a7d2ceef7dfa8e619b13c60843b101f723d88f4b41ee015cefcbc711"
+    },
+    {
+      "path": "mtkclient/Library/meta.py",
+      "bytes": 9919,
+      "sha256": "75d3446c7b154adb2358b5cace54a99c32be8e41666a858fa8460538be7b400d"
+    },
+    {
+      "path": "mtkclient/Library/mtk_class.py",
+      "bytes": 9328,
+      "sha256": "3970b42c3f39e8d5d284ea2f29b6840e8fcf05f9f1cb6edb831f60704bff1f6f"
+    },
+    {
+      "path": "mtkclient/Library/mtk_crypto.py",
+      "bytes": 31621,
+      "sha256": "045cd30a5629d8f512236d36ca94ebec2af9740aa8a1575655c3d70fd5532232"
+    },
+    {
+      "path": "mtkclient/Library/mtk_main.py",
+      "bytes": 34387,
+      "sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129"
+    },
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "bytes": 47053,
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68"
+    },
+    {
+      "path": "mtkclient/Library/partition.py",
+      "bytes": 9462,
+      "sha256": "ecb848d1cf90244641354c3a9ad06ea1a40f829d12c32c7c39c0e44222c40a4a"
+    },
+    {
+      "path": "mtkclient/Library/pltools.py",
+      "bytes": 8456,
+      "sha256": "0ffe210ab5ce1871483639543c8b0cb17363a57318d7bdcb2e94001793f92089"
+    },
+    {
+      "path": "mtkclient/Library/realtime.py",
+      "bytes": 5145,
+      "sha256": "c61b074ca2f1d0ac0a2212c6688d1fd785e39040dd7cb31c60a168923e3d1400"
+    },
+    {
+      "path": "mtkclient/Library/settings.py",
+      "bytes": 1718,
+      "sha256": "c62ce17400066823f6bee4958af8c916e1a4c4f456958a5541f8628bc5a3fbaa"
+    },
+    {
+      "path": "mtkclient/Library/thread_handling.py",
+      "bytes": 657,
+      "sha256": "dbd5112304917eea2b813d660cd0be7fbb4d84d4d2afaf430ace2616a465d22d"
+    },
+    {
+      "path": "mtkclient/Library/utils.py",
+      "bytes": 17767,
+      "sha256": "c5a2196a37341d97b5626fa9c16a7e3b42cec36980beef36cee163a5e46dc8fa"
+    },
+    {
+      "path": "mtkclient/config/brom_config.py",
+      "bytes": 97421,
+      "sha256": "a8d94deac4fb3d485e7ed9fcc17aa9fca14f19307c1dea5daf429cf7a1e1de63"
+    },
+    {
+      "path": "mtkclient/config/devicedb.py",
+      "bytes": 135,
+      "sha256": "51ff1481696784c5eca04df1d4205d61241d144b27dd54c559aa311433965b74"
+    },
+    {
+      "path": "mtkclient/config/mtk_config.py",
+      "bytes": 9880,
+      "sha256": "9111889fb719d1989e1a10e7997994971d3d5381a813f689ae59cd4b0f872ddc"
+    },
+    {
+      "path": "mtkclient/config/payloads.py",
+      "bytes": 637,
+      "sha256": "0ddbe924cb9fe3f6a5361bc4dce9d7ddc37bea52fe153cf2ba8aa8484325e0c8"
+    },
+    {
+      "path": "mtkclient/config/usb_ids.py",
+      "bytes": 989,
+      "sha256": "97ef51836b4045c8aa205232d343602187ab765299794926df7d0315cd585b52"
+    }
+  ],
+  "third_party_import_sites": [
+    {
+      "source_path": "mtkclient/Library/gui_utils.py",
+      "module": "colorama",
+      "line": 14,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/mtk_da_handler.py",
+      "module": "mfusepy",
+      "line": 18,
+      "importerror_guard": true,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Filesystem/mtkdafs.py",
+      "module": "mfusepy",
+      "line": 12,
+      "importerror_guard": true,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/utils.py",
+      "module": "capstone",
+      "line": 17,
+      "importerror_guard": true,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/utils.py",
+      "module": "keystone",
+      "line": 21,
+      "importerror_guard": true,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/mtk_crypto.py",
+      "module": "Cryptodome.Cipher",
+      "line": 9,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/mtk_crypto.py",
+      "module": "Cryptodome.PublicKey",
+      "line": 12,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/mtk_crypto.py",
+      "module": "Cryptodome.Util.number",
+      "line": 13,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/config/mtk_config.py",
+      "module": "PySide6.QtCore",
+      "line": 7,
+      "importerror_guard": true,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/seriallib.py",
+      "module": "serial",
+      "line": 10,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/seriallib.py",
+      "module": "serial.tools.list_ports",
+      "line": 11,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/usblib.py",
+      "module": "usb.core",
+      "line": 8,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/usblib.py",
+      "module": "usb.util",
+      "line": 9,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/usblib.py",
+      "module": "usb.backend.libusb0",
+      "line": 14,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Connection/usblib.py",
+      "module": "usb.backend.libusb1",
+      "line": 15,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/hwcrypto.py",
+      "module": "Cryptodome.Cipher",
+      "line": 7,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/cryptutils.py",
+      "module": "Cryptodome.Cipher",
+      "line": 6,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/cryptutils.py",
+      "module": "Cryptodome.Util",
+      "line": 7,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/cryptutils.py",
+      "module": "Cryptodome.Hash",
+      "line": 8,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/cryptutils.py",
+      "module": "Cryptodome.Util.number",
+      "line": 9,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/hwcrypto_dxcc.py",
+      "module": "Cryptodome.Util.number",
+      "line": 10,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/hwcrypto_dxcc.py",
+      "module": "Cryptodome.Cipher",
+      "line": 11,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/hwcrypto_dxcc.py",
+      "module": "Cryptodome.Util",
+      "line": 12,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/hwcrypto_ssr.py",
+      "module": "Crypto.Util.number",
+      "line": 15,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/extension/v6.py",
+      "module": "Cryptodome.Cipher",
+      "line": 9,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Hardware/seccfg.py",
+      "module": "hwcrypto",
+      "line": 394,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": true
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xflash/extension/xflash.py",
+      "module": "Cryptodome.Cipher",
+      "line": 6,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xflash/xflash_lib.py",
+      "module": "Cryptodome.Util.number",
+      "line": 12,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Auth/sla_keys.py",
+      "module": "Cryptodome.PublicKey",
+      "line": 1,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Auth/sla_keys.py",
+      "module": "Cryptodome.Util.number",
+      "line": 2,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Auth/sla.py",
+      "module": "Cryptodome.Hash",
+      "line": 5,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Auth/sla.py",
+      "module": "Cryptodome.Util.number",
+      "line": 6,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/Auth/sla.py",
+      "module": "Cryptodome.Cipher",
+      "line": 7,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "module": "Cryptodome.Util.number",
+      "line": 12,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "module": "Cryptodome.Cipher",
+      "line": 13,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "module": "Cryptodome.Hash",
+      "line": 14,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "module": "Cryptodome.PublicKey",
+      "line": 15,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    },
+    {
+      "source_path": "mtkclient/Library/DA/xmlflash/xml_lib.py",
+      "module": "Cryptodome.Util.number",
+      "line": 16,
+      "importerror_guard": false,
+      "deferred_scope": false,
+      "relative": false,
+      "main_guard": false
+    }
+  ],
+  "third_party_roots": [
+    "Crypto",
+    "Cryptodome",
+    "PySide6",
+    "capstone",
+    "colorama",
+    "hwcrypto",
+    "keystone",
+    "mfusepy",
+    "serial",
+    "usb"
+  ],
+  "nondeferred_unguarded_external_roots": [
+    "Crypto",
+    "Cryptodome",
+    "colorama",
+    "serial",
+    "usb"
+  ],
+  "python_stdlib_classifier_version": "3.15",
+  "unresolved": [],
+  "dynamic_imports_and_runtime_paths_fully_audited": false,
+  "minimal_installation_verified": false,
+  "mac_runtime_verified": false,
+  "tablet_accessed": false,
+  "source_acquisition_body_bytes": 999718
+}
