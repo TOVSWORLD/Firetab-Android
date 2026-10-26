@@ -1658,3 +1658,15 @@ overlap/nonzero-base/mismatched physical fields/>64KiB memory. No sentinel patch
 execution or transport. Integrated metadata-only image hash/size into Linux probe.
 All 247 host tests pass; repository/diff guards pass. Actual CI image receipt
 pending; next relocation/entry assumptions, keeping physical recovery/log gates open.
+
+## 2026-10-26 — Host image receipt and relocation gate (#231 / #106)
+
+Merged #230 after five passing checks at b22b1a4bc3ba2b65bf37bc9c8846e825224a7709,
+merge ef7a1678e1b254d80b2b60698f662a658ef99669; #229 closed. Job
+121834928446/run40397672319 actually constructed 1600-byte host image SHA256
+fba4681457cdcf32a0a1541ff7a3dc429b35341ef97d1c1e05eddde40985e79e,
+24 tail zeros plus two gap zeros. Metadata retained, no binary upload/execution.
+Added section-table/REL/RELA/DYNAMIC rejection gate with malformed extent tests.
+251 host tests pass; repository/diff guards pass. No relocations is not runtime
+PIC proof. Pinned startup inherits stack/CPU state; main assumes BootROM mapping.
+Next actual CI section metadata and static address/entry review, not device access.

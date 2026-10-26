@@ -7,6 +7,9 @@ from prepare_stage1_host_image import prepare_host_image
 class HostImageTests(unittest.TestCase):
     def source(self):
         data = fixture()
+        data.extend(bytes(40))
+        struct.pack_into('<I', data, 32, 128)
+        struct.pack_into('<HH', data, 46, 40, 1)
         struct.pack_into('<I', data, 24, 1)
         struct.pack_into('<II', data, 60, 0, 0)
         data[96:112] = bytes(range(1, 17))

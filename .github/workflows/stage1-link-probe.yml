@@ -6,6 +6,8 @@ on:
     paths:
       - scripts/build_stage1_link_probe.py
       - scripts/inspect_stage1_elf.py
+      - scripts/inspect_stage1_relocations.py
+      - tests/test_inspect_stage1_relocations.py
       - scripts/prepare_stage1_host_image.py
       - tests/test_prepare_stage1_host_image.py
       - tests/test_inspect_stage1_elf.py

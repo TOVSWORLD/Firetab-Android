@@ -322,3 +322,32 @@ stock restoration and useful logs are not established by this constructor.
 No device command or helper execution path is attached to it. Next inspect the
 actual CI image receipt, then qualify relocation and entry assumptions before
 any physical loading proposal.
+
+## Actual host image and relocation/entry boundary (#231)
+
+The [Linux image job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40397672319/job/121834928446)
+constructed a 1600-byte host image, SHA256
+`fba4681457cdcf32a0a1541ff7a3dc429b35341ef97d1c1e05eddde40985e79e`,
+including 24 segment-tail zeros and two gap zeros. The
+[receipt](../../evidence/stage1-host-image/report.json) records the actual tested
+revision and source ELF hash. Image bytes were not uploaded or retained locally.
+This resolves host construction only, not device loading.
+
+The constructor now additionally requires a bounded ordinary ELF section table
+and rejects nonempty REL, RELA or DYNAMIC sections and malformed file extents or
+relocation record layouts. CI emits counts only. A stripped image without a
+section table fails this host gate. Absence of relocation records is not proof
+of position independence: already-resolved absolute addresses can remain in
+machine code or data. Actual section-gate results await the new CI run.
+
+The pinned [startup](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/common/start.S)
+sets neither a stack nor a CPU exception level/mode; it switches instruction
+state and falls into the linked main routine. Thus the current source relies
+on inherited stack and processor state. The
+[main routine](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L176-L198)
+also reads the BootROM mapping at zero and scans it. A successful host constructor
+cannot establish those runtime mappings, memory permissions, stack bounds or
+cache state. No actual entry-state contract has yet been obtained from a
+qualified loader. Next inspect emitted address references/entry requirements
+statically before proposing an owned startup or relocation contract; stock
+restore and usable boot logs remain separate prerequisites.
