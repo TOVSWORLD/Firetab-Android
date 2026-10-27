@@ -1,0 +1,50 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "path": "mtkclient/Library/exploit_handler.py",
+  "git_blob_sha1": "082b3ce1e5fe8b16a19053dc5281ee5329afa4b2",
+  "sha256": "8e127fcaa04f35d13685e9c475f1e05871a2faaa21956c443c6d43c7b9b93134",
+  "reviewed_lines": [
+    146,
+    177
+  ],
+  "active_call_inventory": [
+    {
+      "line": 150,
+      "callee": "self.mtk.preloader.send_da"
+    },
+    {
+      "line": 152,
+      "callee": "self.mtk.preloader.read32"
+    },
+    {
+      "line": 155,
+      "callee": "self.mtk.preloader.send_da"
+    },
+    {
+      "line": 156,
+      "callee": "self.mtk.preloader.jump_da"
+    },
+    {
+      "line": 158,
+      "callee": "self.mtk.preloader.reset_to_brom"
+    }
+  ],
+  "mode_effect_classes": {
+    "0": "DA upload request with fixed zero data at low address; no execution command in selected branch",
+    "1": "target low-address memory read intended as crash attempt; not passive observation qualification",
+    "2": "DA upload followed by execution request at low address",
+    "3": "explicit reset-to-BootROM request; absent from automatic range(0,3) loop"
+  },
+  "exceptions_suppressed": true,
+  "explicit_transition_success_return": false,
+  "automatic_modes": [
+    0,
+    1,
+    2
+  ],
+  "qualified_starting_state_match": false,
+  "failed_attempt_stock_exit_qualified": false,
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

@@ -1946,3 +1946,14 @@ removed stale host-test count from checklist. Build/config/boot/hardware/apps
 kept separate. Repo/diff pass; unchanged276hosttests. No firmware/device execution.
 Next current-build initial-entry/return alternatives, not more marker/synthetic
 features. Existing hardware-vsUSB planning choice pending, no repeat/newphysicalask.
+
+## 2026-10-27 — Actual initial-entry crash effects (#281 / #106)
+
+Merged #280 at passing1f2fd2e6aa0a971bfb9b92773d5b753e07ec8369,
+merge4875efc50528a7129563ada8dcc63db799c01c11; #279 closed. Reviewed actual
+pinned crash implementation beyond prior delegate audit, verified blob and AST
+call inventory. Modes0upload/1lowread/2upload+execute; explicit3reset absent from
+default0..2loop. Exceptions swallowed/no positive transition result. Metadata
+only, no payload code publication/helper import/device execution. Repo/diff pass,
+unchanged276tests. Next explicit reset effect/return source assumptions, not mode
+execution; current-build entry/failed-exit/restore/log gates remain open.
