@@ -32,7 +32,8 @@ It does not make this sequence suitable for the first observation or backup.
   crash/reset/bootstrap behavior; that is not passive observation. Exact entry
   on this build and interrupted-attempt return are unverified. The owned minimal
   collector intentionally omits those transitions and cannot create reachability.
-- **Hardware BootROM entry:** owner preference is pending; no traceable current
+- **Hardware BootROM entry:** owner accepts hardware access if needed for planning;
+  no traceable current
   board-specific point/electrical/entry-and-return procedure is qualified. Generic
   MediaTek advice or another Fire generation does not fill that gap. No opening,
   shorting, cable operation or measurement is requested.
@@ -409,3 +410,30 @@ alone is not proof of current command acceptance or an arbitrary RAM-loading pat
 Next qualify the backend against cached platform source identity and distinguish
 its hardware register channel from storage writes. Keep real entry/exit,
 original-state restore and usable physical logs as separate untested gates.
+
+
+## Hardware route planning accepted (2026-10-27, #291)
+
+The owner explicitly accepts hardware access if needed. This resolves the route
+preference, not board identification, a pad assignment, voltage, safe entry or
+restore. No case opening, cable change, shorting, measurement or tablet command
+is requested by this update. Automatic runs retain their no-device-access rule.
+
+The existing UART source evidence supplies SoC GPIO79/80 function1 and UART0's
+source register contract; it does not map those GPIO numbers to accessible PCB
+pads. Before an owner procedure can be concrete, obtain traceable same-generation
+board/revision evidence for pad geometry, ground/reference, voltage and routing,
+and separate any BootROM-entry contact from UART transmit/receive. No pin or
+contact should be inferred from another Fire generation or an unlabeled image.
+
+A bounded primary-source refresh found the original douglas
+[XDA thread](https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/)
+but retrieval again returned HTTP502. This is a source-access failure, not proof
+that hardware entry is impossible. The pinned public GitHub guide already
+reviewed remains an intentional-brick route, not board/electrical qualification.
+No large download, helper or tablet operation occurred.
+
+Next source task: locate revision-identifiable douglas board/UART evidence and
+qualify its provenance before proposing any owner action. Continue independent
+cached register-backend analysis if that source remains inaccessible. The pending
+work is exact physical evidence, not another request for hardware-route preference.
