@@ -48,14 +48,19 @@ The public FCC index request returned HTTP403 and was not inspected; that access
 failure does not prove missing documentation. The existing firsthand cover-only
 account still does not establish our board revision or electrical isolation.
 
-The owner has been asked only whether internal-board photos or PCB revision
-records already exist from an earlier opening. No new opening, connection,
-measurement or probing is requested. Existing records could resolve board matching
-without another physical step; any later sharing must omit serial/barcode and
-household information. Do not infer a connector technique or voltage from a
-similar model. The [source-gap receipt](../../evidence/board-isolation-evidence-gap/report.json)
-records this exact missing information and source limits.
+On 2026-10-27 the owner confirmed there are no existing internal-board photos or
+PCB revision records. This question is resolved; do not ask it again. Hardware
+access remains acceptable for planning, but no specific opening, isolation,
+connection or measurement has been authorized or qualified. The existing
+[source-gap receipt](../../evidence/board-isolation-evidence-gap/report.json)
+records the earlier source limits; this owner answer supersedes its pending-question
+state. Do not infer connector technique or UART voltage from a similar model.
 
+Next independently qualify exact-generation mechanical/isolation evidence and
+prepare a reviewable inspection proposal with explicit scope and stop conditions.
+Do not present electrical contacts, shorts or mode changes as identification steps.
+If adequate evidence remains unavailable, state that specific source blocker;
+absence of old photos is no longer a reason to wait for the owner.
 Until board identity/isolation evidence is qualified, keep a physical inspection
 proposal incomplete and continue independent source work. Initial security,
 recoverable entry/exit, original-state restoration and usable real logs remain

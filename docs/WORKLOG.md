@@ -2197,3 +2197,12 @@ retrieval and board/UART prerequisites through #323. Existing owner board-record
 question remains pending; no new physical request. No runtime gate closed.
 Documentation-only repository/diff checks; next evidence provenance before any
 concrete physical proposal, not additional marker/count work.
+
+## 2026-10-27 — Owner board-record answer
+
+Owner confirms no existing internal-board photos or PCB revision records. Removed
+pending-question dependency from current hardware plan/checklist. Hardware planning
+remains allowed, but no specific physical action is qualified/authorized. Next
+source-qualify exact-generation mechanical/isolation evidence for a reviewable
+inspection proposal; do not wait for absent photos or repeat the question. No
+physical/runtime gate closed. Documentation repository/diff checks only.
