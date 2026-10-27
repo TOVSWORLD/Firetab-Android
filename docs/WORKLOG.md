@@ -2296,3 +2296,16 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   GPT rather than complete original escrow, and no selected-script post-write
   readback. Reboot request is not observed recovery. Original ZIP identity and
   independent failure-return remain unresolved. No tablet access occurred.
+
+## 2026-10-27 — GPT return preservation boundary (#346)
+
+- Baseline63d946a742d0ff1d44f9c857925755bdbbe9fceb after PR360 merged with
+  all five exact-head checks successful.
+- Read pinned modules/gpt.py ranges82–112,147–174,222–240,271–273,305–318;
+  SHA256bef85112cecc80a96b72d47688ebd90951524c923a2ad74d9fbb7d92fd7c8fa7.
+  No vendor code imported/executed. Metadata receipt records reconstruction
+  assumptions, compacted empty slots and lack of original-sector comparison.
+- Approved original attachment normal GET: curl --fail --location --max-time30
+  --max-filesize19000000 to ignored out/recovery-originals: HTTP403, no saved
+  ZIP. Browser/client bypass not attempted. Next original archive acquisition
+  and independently reachable restore; no hardware/runtime gate closed.

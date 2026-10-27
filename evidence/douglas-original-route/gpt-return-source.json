@@ -1,0 +1,49 @@
+{
+  "scope": "Static cached GPT reconstruction implementation; no helper import or execution",
+  "source_repository": "https://github.com/chaosmaster/amonet",
+  "source_revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+  "path": "modules/gpt.py",
+  "sha256": "bef85112cecc80a96b72d47688ebd90951524c923a2ad74d9fbb7d92fd7c8fa7",
+  "findings": [
+    {
+      "lines": [
+        82,
+        112
+      ],
+      "finding": "Parses entries into a compact list, skipping entries with end LBA zero; original empty slot positions are not retained in that list."
+    },
+    {
+      "lines": [
+        147,
+        174
+      ],
+      "finding": "Generates a new protective MBR and fixed-format GPT headers/table (512-byte sectors,128 entries of128 bytes,first usable LBA34); CRC regeneration establishes internal consistency, not original byte identity."
+    },
+    {
+      "lines": [
+        222,
+        240
+      ],
+      "finding": "Requires userdata at third-from-last compact entry, extends its end to header last usable LBA, clears last two entries and conditionally renames boot_x/recovery_x. It does not compare an independently acquired original map."
+    },
+    {
+      "lines": [
+        271,
+        273
+      ],
+      "finding": "Emits backup-table start offset as input last usable LBA plus1; source alone does not validate that against actual disk geometry."
+    },
+    {
+      "lines": [
+        305,
+        318
+      ],
+      "finding": "Reparses regenerated primary output, then writes local primary/backup files. This is not device readback or a comparison with original pre-change sectors."
+    }
+  ],
+  "original_gpt_byte_identity_verified": false,
+  "actual_geometry_verified": false,
+  "original_archive_identity_verified": false,
+  "device_accessed": false,
+  "helpers_executed": false
+}
