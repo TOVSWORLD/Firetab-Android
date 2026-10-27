@@ -1922,3 +1922,14 @@ counts. Native newline assertion caught literal-length error; fixed with sizeof
 literal before publication. Actual ARM compile and275hosttests pass. Linux links
 logging code into both variants; no automatic UART calls/mapping. Receipt retained,
 repo/diff pass. Next actual linked exports/layout; physical UART/entry/restore/logs open.
+
+## 2026-10-27 — Explicit logged agent outcomes (#277 / #106)
+
+Merged #276 at passingd1205173f064dbae3a300d3afd557c42fe864b7b,
+merge938de492c81b1b5e096e00dceb482feb4f3c0171; #275 closed. Retained actual
+marker-enabled link receipt. Added explicit opt-in logged runner, sharedpollbudget,
+shortENTRY prevents agent, result preserves agent/partialexit outcome. Default
+entry never autoUART/mapsphysicaladdress. Actual ARM compile/full276hosttests pass;
+affected native tests rerun for exit-readiness-loss after agent completion. Repo/
+diff pass. No firmware/physicalMMIO/device access. Next actual link and remaining
+entry/restore/capture evidence inventory, not more logging features.
