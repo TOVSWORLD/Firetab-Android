@@ -1,0 +1,51 @@
+{
+  "source_sha256": {
+    "diagnostic/protocol/entry.S": "aa28cf92cf9401626f5d1fb18573faaf0ce91e07fa4f5649a914f2ed627eb978",
+    "diagnostic/protocol/agent.c": "235719dae3fbd305700bf162a8b81bdfd68310ba58f71f299fc9f58593530cb5",
+    "diagnostic/protocol/dispatcher.c": "3ce7cbfb5e89813dea184b9846fa2ecf26efc9b070fba6197d11e1689e7be518",
+    "diagnostic/protocol/agent.ld": "45b9c3ff500b0737a21f5b729591f73a1b68ad5c9e8ef20a803839b11904bdc4",
+    "diagnostic/protocol/agent.h": "f0bc14496eeddd11e0adf6538a8202a8fb7782b54bb740858f35b37876ffb0e3",
+    "diagnostic/protocol/dispatcher.h": "a976dd2fc7f2bbeb90351cf42efb5f519f0e21d4846a2326b5ea3d5e3a91f516"
+  },
+  "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+  "linker": "Ubuntu LLD 18.1.3 (compatible with GNU linkers)",
+  "elf_sha256": "40a238b2565c7d2590c195a48b83b5b91568ce73bbdb2bf8d3fe11d9aaee6778",
+  "host_image": {
+    "relocation_metadata": {
+      "section_count": 6,
+      "nonempty_relocation_sections": 0,
+      "nonempty_dynamic_sections": 0,
+      "runtime_position_independence_verified": false
+    },
+    "image_bytes": 2608,
+    "image_sha256": "d47572bcdfda9dcd9d66e7f07046f5903a1c3e647a2bec3d7a742d3a93c4d590",
+    "entry_offset": 1,
+    "segment_zero_fill_bytes": 0,
+    "gap_zero_fill_bytes": 4,
+    "source_elf_sha256": "40a238b2565c7d2590c195a48b83b5b91568ce73bbdb2bf8d3fe11d9aaee6778",
+    "purpose": "host-only load-layout construction",
+    "firmware_executed": false,
+    "runtime_relocation_verified": false,
+    "physical_placement_verified": false,
+    "transport_binding_verified": false,
+    "physical_test_ready": false
+  },
+  "stack_bytes": 2048,
+  "compiler_static_frames": {
+    "diagnostic_agent_run": 360,
+    "diagnostic_dispatch": 40
+  },
+  "owned_frame_sum_with_wrapper_bytes": 416,
+  "remaining_before_callbacks_interrupts_bytes": 1632,
+  "maximum_callback_stack_usage_verified": false,
+  "caller_return_verified": false,
+  "transport_bound": false,
+  "firmware_executed": false,
+  "physical_test_ready": false,
+  "ci": {
+    "job_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40426169089/job/121932357873",
+    "head": "b67e5fa6379727e871e3f384d05fc5ad712f72a8",
+    "tested_merge": "387863c110dc6ad42ea7d05b2415b0c72fbf0e79",
+    "development_merge": "6f1cac28444daa9e601ffacce25292f0a3ab6c04"
+  }
+}
