@@ -618,3 +618,29 @@ their original values. Therefore this script is an OS/root-dependent return
 candidate, not the independent failure recovery required by #346. Next match
 the original archive and audit its complete restore contents; separately resolve
 a recovery path that survives the proposed failure. Keep both tasks open.
+
+## GPT reconstruction is not original-sector restoration (#346)
+
+The cached `modules/gpt.py` audit now closes the earlier selected-source gap
+about how the return script derives GPT outputs. At pinned Git revision
+`2d8a4e6f73d9dab42d313c9cd751802b23ea7d31`, it drops empty entries from the
+parsed list and regenerates a protective MBR, fixed-format headers and a table
+of 128 entries of 128 bytes. Original empty-slot positions and arbitrary original
+MBR/header bytes are not preserved by that representation. CRC checks and
+reparsing establish generated structure consistency, not pre-change byte identity.
+Exact hash and ranges: [GPT source receipt](../../evidence/douglas-original-route/gpt-return-source.json).
+
+The unpatch operation assumes userdata is third from the end of the compact
+list, expands it to the header's last usable LBA, clears the last two entries,
+and conditionally renames boot_x/recovery_x. It does not compare a separately
+acquired original partition map. The generated backup offset derives from the
+input header; source inspection does not confirm the actual unit's geometry.
+These observations do not prove the intended supported layout fails, but they
+exclude treating this tool as an arbitrary-layout original-sector restorer.
+
+Acceptance remains either independently verified original-sector restoration
+or an explicit owner-approved weaker return target and test-unit loss limits.
+Neither has been demonstrated. A normal bounded GET of the published original
+attachment also returned HTTP403 after the earlier browser failure; no archive
+was saved. Original ZIP matching still requires accessible original attachments.
+No helper code was imported, run or modified, and no tablet was accessed.
