@@ -1856,3 +1856,14 @@ cleanup stalls reaped/rejected1.003/1.005/1.004s.274hosttests pass; metadata
 receipt retained, no firmware/device/native backend execution. Repo/diff pass.
 Forced stop is not device cleanup/undo. Next concrete initial loader/return
 qualification dependency check, not more host simulation; restore/log gates open.
+
+## 2026-10-27 — Concrete initial loader ABI gap (#265 / #106)
+
+Merged #264 at passing76fcb8cf0333ed6336e749938bee851081e20b5e,
+mergeea74b9006a558842edf17bc14490e509aa434669; #263 closed. Verified cached
+loader sources. Generic jump(0) cannot supply owned agent's required IO context;
+native null-context rejection regression passes. Thumb entry differs from byte
+base; direct JUMP_DA host address/status does not prove firmware register/LR ABI.
+274hosttests/repo/diff pass. Source receipt/checklist retain concrete initialbridge
+blocker, no runtime gates closed. No firmware/device execution. Next source-backed
+initial bridge design, not more host framing; original restore/log channel open.

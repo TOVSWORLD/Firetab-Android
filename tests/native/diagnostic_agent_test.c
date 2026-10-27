@@ -25,6 +25,7 @@ static int read_image(void *p,uint16_t offset,uint16_t n,uint8_t *r) {
     (void)p;(void)offset;memset(r,0,n);return n;
 }
 int main(void) {
+    assert(diagnostic_agent_run(0)==-1);
     struct fixture f={0};
     struct diagnostic_agent_io io={1,6,receive,send,call,read_image,&f};
     assert(diagnostic_agent_run(&io)==0 && f.receive_count==6 && f.send_count==6 && f.calls==1);

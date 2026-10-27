@@ -236,3 +236,13 @@ not add another synthetic readiness layer or call the package a tablet test.
 Physical entry, actual security state, restore reachability and UART/log retrieval
 are still unknown; an owner test cannot be scheduled until its concrete effects
 and recovery exit are reviewable.
+
+## Owned agent initial invocation gate
+
+The owned agent now links and has supervised synthetic host framing, but the
+pinned generic jump passes zero where the owned agent requires its nonnull IO
+context. Direct JUMP_DA's host address/status exchange does not establish a
+firmware register/return ABI. See
+[initial loader ABI evidence](../../evidence/initial-loader-abi-gap/report.json).
+Require a separately qualified bridge supplying context, Thumb entry, safe memory
+and bounded callbacks before any physical proposal; this gate is still open.
