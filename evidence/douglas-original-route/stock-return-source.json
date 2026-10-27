@@ -1,0 +1,66 @@
+{
+  "scope": "Cached Git source inspection, not original ZIP identity or runtime recovery proof",
+  "source_repository": "https://github.com/chaosmaster/amonet",
+  "source_revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+  "sources": [
+    {
+      "path": "return-to-stock.sh",
+      "sha256": "8c8ed5651d5fad0edc9bf2bea0fbf333e6940c2dcb2378f1307855170f7e21ee"
+    },
+    {
+      "path": "functions.inc",
+      "sha256": "3a960a202ac118d4ca04faef612d38dcc2828ef124941c916c2b37ad2036f276"
+    }
+  ],
+  "findings": [
+    {
+      "source": "return-to-stock.sh",
+      "lines": [
+        5,
+        18
+      ],
+      "finding": "Requires reachable ADB, product property and root before recovery writes; not a standalone BootROM rescue."
+    },
+    {
+      "source": "functions.inc",
+      "lines": [
+        1,
+        19
+      ],
+      "finding": "Root fallback retries without an attempt/deadline bound; helper availability and current-build root success are not established."
+    },
+    {
+      "source": "return-to-stock.sh",
+      "lines": [
+        39,
+        51
+      ],
+      "finding": "Reads current first 34 sectors then unpatches that GPT; not acquisition of the pre-change full user or boot regions."
+    },
+    {
+      "source": "return-to-stock.sh",
+      "lines": [
+        54,
+        69
+      ],
+      "finding": "Writes packaged recovery then primary GPT, conditionally backup GPT when local offset exceeds threshold; no post-write readback/hash check appears in this selected script."
+    },
+    {
+      "source": "return-to-stock.sh",
+      "lines": [
+        74,
+        75
+      ],
+      "finding": "Requests reboot to Amazon Recovery; command issuance does not prove recovery entry or sideload compatibility."
+    }
+  ],
+  "limits": {
+    "original_zip_match_verified": false,
+    "imported_gpt_transform_audited_here": false,
+    "original_user_boot_region_restore_verified": false,
+    "rpmb_restore_verified": false,
+    "bounded_failure_exit_verified": false,
+    "device_accessed": false,
+    "helpers_executed": false
+  }
+}

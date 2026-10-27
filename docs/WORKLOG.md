@@ -2285,3 +2285,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   found in the approved output/download/temp locations checked. Approval is no
   longer the blocker. Next: original package identity and preservation decision;
   do not treat cached mirror hashes as original attachment verification.
+
+## 2026-10-27 — stock-return reachability audit (#346 / #347)
+
+- PR359 passed all five checks and merged to development.
+- Read cached return-to-stock.sh and functions.inc at Git revision
+  2d8a4e6f73d9dab42d313c9cd751802b23ea7d31 using nl/rg and SHA256; no
+  source/import/helper execution. Retained metadata-only source receipt.
+- Found ADB/root dependency, unbounded root fallback, reconstruction from current
+  GPT rather than complete original escrow, and no selected-script post-write
+  readback. Reboot request is not observed recovery. Original ZIP identity and
+  independent failure-return remain unresolved. No tablet access occurred.

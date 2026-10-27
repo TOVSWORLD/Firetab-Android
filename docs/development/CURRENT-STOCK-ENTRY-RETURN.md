@@ -592,3 +592,29 @@ change to the preservation requirement, not something automation can assume.
 The Fire7 cannot stand in for a douglas test unit. First reconcile original
 package identity and host preflight; then present the complete proposed effects
 for review. No write, reset, wipe, helper or payload execution is approved here.
+
+## Cached stock-return reachability audit (#346 / #347)
+
+Static inspection of the cached chaosmaster/amonet Git revision
+`2d8a4e6f73d9dab42d313c9cd751802b23ea7d31` identifies a separate dependency
+from the full-stage loading path. Its return-to-stock script waits for ADB,
+checks the product property, then obtains root before writing recovery or GPT.
+It cannot be assumed reachable after loss of Android/ADB/root. The sourced root
+fallback has an unbounded retry loop; it is not a qualified timeout/failure exit.
+No helper was executed or imported. Exact hashes and ranges are in the
+[source receipt](../../evidence/douglas-original-route/stock-return-source.json).
+
+The script reads the current first 34 sectors and derives an unpatched GPT;
+it does not acquire the original full user or both boot regions. It writes a
+packaged recovery image, primary GPT and conditionally the generated backup GPT
+using a local offset threshold. No post-write byte/hash readback appears in this
+selected script. The imported GPT transformation was not audited in this scope.
+There is no RPMB restoration in the selected script; this observation does not
+claim exhaustive behavior of imported code or the unavailable original ZIP.
+
+Its final reboot request is not proof that Amazon Recovery is reachable, that
+an exact stock image is accepted, or that security state and user data return to
+their original values. Therefore this script is an OS/root-dependent return
+candidate, not the independent failure recovery required by #346. Next match
+the original archive and audit its complete restore contents; separately resolve
+a recovery path that survives the proposed failure. Keep both tasks open.
