@@ -2206,3 +2206,26 @@ remains allowed, but no specific physical action is qualified/authorized. Next
 source-qualify exact-generation mechanical/isolation evidence for a reviewable
 inspection proposal; do not wait for absent photos or repeat the question. No
 physical/runtime gate closed. Documentation repository/diff checks only.
+
+## 2026-10-27 — Epic/Feature/Phase/Task beta delivery baseline (#343)
+
+Reparented existing open scopes without closing hardware/runtime gates; created
+concrete recovery, platform and QA admission phases/tasks. Added both boards'
+Level/Delivery state fields and a Beta1 QA-admission milestone without invented
+dates. Historical closed cards are reversibly archived, issues retained. Published
+projects/delivery-plan.json and roadmap/workflow. Every PR now requires a real
+Updates/Refs/Closes issue reference; parser rejection tests cover template examples,
+missing issues and PR substitutions. Existing open PR descriptions linked to issues.
+Main release policy remains unchanged. No device action or runtime pass.
+
+Verified all41 native hierarchy nodes/parents; both boards now expose hierarchy,
+phase gates, ready tasks and blocked tasks. Archived137 historical closed cards.
+PR linkage check passed in actual GitHub run40525664117; added it to development
+and main required checks, preserving strict mode and existing contexts. Issue forms
+and checked-in taxonomy now support Epic/Feature/Phase/Task. All runtime gates stay
+open; no beta date fabricated. Source audit history and linked PRs remain accessible.
+
+Added phase352/tasks353–354 for the existing first-party license hold and exact
+beta redistribution/source-obligation review. These are blocked policy inputs,
+not permissions inferred from CI. Total current delivery map44 nodes; Android
+and optional Crestron QA gates remain separate.

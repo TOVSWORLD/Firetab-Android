@@ -50,7 +50,7 @@ def main():
     for label in taxonomy['labels']:
         require(re.fullmatch('[0-9a-f]{6}', label['color']) and label['description'], 'Invalid label metadata')
     templates = list((ROOT/'.github/ISSUE_TEMPLATE').glob('*.yml'))
-    require(len(templates) == 8, 'Expected seven issue forms and config')
+    require(len(templates) == 10, 'Expected nine issue forms and config')
     for path in templates:
         # These files intentionally use JSON, a YAML-compatible syntax GitHub accepts.
         form = json.loads(path.read_text())
