@@ -1,0 +1,16 @@
+{
+  "source_sha256": "c50a32edeff8fccd192af9798a4522268a971ec0e7fd9fc8ee33490c32302603",
+  "object_sha256": "6a38f95ae0d7a63b3b43fc0276ff55c511b05dec8bf02c884178e7f9f8a345aa",
+  "arm_compile_exit_code": 0,
+  "markers": {
+    "entry": "FTD1 ENTRY\n",
+    "return": "FTD1 RETURN\n",
+    "error": "FTD1 ERROR\n"
+  },
+  "dynamic_data_supported": false,
+  "native_synthetic_tests_passed": true,
+  "linux_link_pending": true,
+  "automatic_uart_calls_added": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

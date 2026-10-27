@@ -1912,3 +1912,13 @@ passes; native fake-register tests/275hosttests pass. Source/object receipt
 retained; repo/diff pass. No ARM firmware/physicalMMIO/device execution. Pollcount
 is not time/fault bound, queuedbytes notcapturedlogs. Next sanitized fixed markers
 and compile-only integration, physical entry/restore/UART hardware gates still open.
+
+## 2026-10-27 — Fixed sanitized UART markers (#275 / #106)
+
+Merged #274 at passingd43b036230f1c5aa97d42111782dc3b9b1fa6bea,
+merge451cc67c93545ad3404c5cfd14c2b3770b5a3a89; #273 closed. Added enum-only
+ENTRY/RETURN/ERROR fixed lines, no dynamic data, unknown marker rejection/partial
+counts. Native newline assertion caught literal-length error; fixed with sizeof
+literal before publication. Actual ARM compile and275hosttests pass. Linux links
+logging code into both variants; no automatic UART calls/mapping. Receipt retained,
+repo/diff pass. Next actual linked exports/layout; physical UART/entry/restore/logs open.

@@ -14,6 +14,6 @@ class NativeUARTTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             executable=pathlib.Path(folder)/'synthetic-uart'
             subprocess.run([cc,'-std=c11','-Wall','-Wextra','-Werror','-I',str(root/'diagnostic/logging'),
-                str(root/'diagnostic/logging/uart.c'),str(root/'tests/native/diagnostic_uart_test.c'),
+                str(root/'diagnostic/logging/uart.c'),str(root/'diagnostic/logging/marker.c'),str(root/'tests/native/diagnostic_uart_test.c'),
                 '-o',str(executable)],check=True,capture_output=True,timeout=30)
             subprocess.run([str(executable)],check=True,capture_output=True,timeout=5)

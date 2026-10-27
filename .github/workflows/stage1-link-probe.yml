@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [development]
     paths:
+      - diagnostic/logging/**
       - diagnostic/protocol/**
       - scripts/build_owned_agent_probe.py
       - diagnostic/entry/**

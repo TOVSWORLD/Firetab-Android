@@ -894,3 +894,27 @@ Next define the fixed sanitized entry/failure marker format and integrate this
 core only into a compile-only diagnostic variant. Initial loader security and
 return, qualified mapping, UART initialization/routing/electrical access, original
 restore and actual log capture remain open; do not wire the tablet automatically.
+
+## Fixed sanitized UART markers and compile-only linkage (#275)
+
+`diagnostic/logging/marker.c` exposes only fixed newline-terminated literals:
+`FTD1 ENTRY`, `FTD1 RETURN`, `FTD1 ERROR`. It accepts an enum, not caller text,
+addresses, identifiers or memory dumps. Exact lengths derive from literal sizes;
+unknown markers fail without UART output. The emitter returns the underlying
+queued count, so partial lines remain partial and are never retried automatically.
+
+Actual ARM compilation and native synthetic-register tests pass, including exact
+literal/newline lengths, invalid marker and partial output; all 275 host tests
+pass. The [receipt](../../evidence/sanitized-uart-markers/report.json) retains
+source/object hashes and marker vocabulary. An initial literal-length error was
+caught by the newline assertion and corrected before publication.
+Linux CI now links the UART/marker routines into both owned agent variants and
+includes their static frames conservatively. Actual new link results are pending.
+No entry path automatically calls UART and no mapping/address is bound.
+
+The marker names describe intended diagnostic stages, not measured boot/return.
+Next inspect linked exports/layout and define how a separately qualified entry
+may explicitly request markers with a known UART mapping. Physical initialization,
+exclusive ownership, electrical/pad routing, actual capture, initial security
+entry and original-state restore remain open. Linking a marker function does not
+produce usable real boot logs or a recovery procedure.

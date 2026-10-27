@@ -19,6 +19,7 @@ def build_variant(entry_source):
         raise ValueError('Fresh output and 1GiB free disk required')
     output.mkdir(parents=True)
     sources = [ROOT/'diagnostic/protocol'/name for name in [entry_source+'.S','agent.c','dispatcher.c']]
+    sources += [ROOT/'diagnostic/logging'/name for name in ['uart.c','marker.c']]
     objects = []
     for source in sources:
         obj=output/(source.name+'.o')
@@ -45,7 +46,7 @@ def build_variant(entry_source):
                     '-o',str(elf)],check=True,capture_output=True,timeout=30)
     _,image=prepare_host_image(elf.read_bytes())
     report=dict(entry_variant=entry_source, embedded_callbacks_bound=False, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
-                for p in sources+[script,ROOT/'diagnostic/protocol/agent.h',ROOT/'diagnostic/protocol/dispatcher.h']},
+                for p in sources+[script,ROOT/'diagnostic/protocol/agent.h',ROOT/'diagnostic/protocol/dispatcher.h',ROOT/'diagnostic/logging/uart.h',ROOT/'diagnostic/logging/marker.h']},
                 compiler=subprocess.check_output([clang,'--version'],text=True,timeout=10).splitlines()[0],
                 linker=subprocess.check_output([ld,'--version'],text=True,timeout=10).splitlines()[0],
                 elf_sha256=hashlib.sha256(elf.read_bytes()).hexdigest(),host_image=image,
