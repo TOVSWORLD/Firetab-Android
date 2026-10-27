@@ -813,3 +813,31 @@ Next inspect the actual bridge link/layout, then qualify a source-backed method
 for installing the callback/context values and returning from initial execution.
 Do not populate callback fields from guessed BootROM addresses or execute helpers.
 Original-state restoration and a bounded physical log channel remain prerequisites.
+
+## Actual bridge link and BootROM callback ABI rejection (#269)
+
+The [Linux bridge job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40435462898/job/121962950955)
+linked the ARM bridge image at 2664 bytes, SHA256
+`d95c2fef63f30e5c891dfd9d50934e693a717a7f985cfdddcbf50d1e7dbbcdb7`.
+Owned static frames plus wrapper total 424 bytes; callback/interrupt requirements
+remain unknown. The [receipt](../../evidence/bootrom-callback-abi/report.json)
+retains exact tested revisions, both image variants and callback source review.
+Embedded callbacks remain zero and no image executes.
+
+The pinned [get/put declarations and calls](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L4-L35)
+use buffer/length arguments without an opaque context. The owned receive/send ABI
+passes opaque first. Directly installing those discovered function pointers would
+therefore shift the arguments rather than adapt them. The
+[write handler](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L309-L318)
+treats get_data zero as success status, whereas our callback requires an exact
+positive byte count. A native host regression confirms zero returned for a
+16-byte receive is rejected before any call/send. `send_dword` ignores put_data's
+return, so its source supplies no delivery-count convention to normalize safely.
+Neither path supplies a proved deadline/cleanup contract.
+
+These are source usage observations, not verified BootROM implementations or
+physical function addresses. No callback fields were populated. Next investigate
+the actual get/put implementation provenance or an alternative owned transport;
+writing adapters around guessed return semantics would hide the remaining gap.
+The bridge's build success does not establish initial security entry, physical
+mapping, original-state restore or usable real logs.

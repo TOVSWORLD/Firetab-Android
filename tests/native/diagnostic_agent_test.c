@@ -13,7 +13,7 @@ static int receive(void *p,uint8_t *q,size_t n) {
     assert(n==16);memset(q,0,n);memcpy(q,"FTDQ",4);q[4]=1;
     q[5]=(uint8_t)(sequence==1?1:2);q[8]=(uint8_t)sequence;
     if(sequence>1)q[14]=4;
-    return f->short_receive?15:16;
+    return f->short_receive?(f->short_receive==2?0:15):16;
 }
 static int send(void *p,const uint8_t *r,size_t n) {
     struct fixture *f=p;f->send_count++;
@@ -33,6 +33,8 @@ int main(void) {
     assert(diagnostic_agent_run(&io)==0 && f.receive_count==6 && f.send_count==6 && f.calls==1);
     memset(&f,0,sizeof(f));f.short_receive=1;
     assert(diagnostic_agent_run(&io)==-1 && f.calls==0 && f.send_count==0 && f.receive_count==1);
+    memset(&f,0,sizeof(f));f.short_receive=2;
+    assert(diagnostic_agent_run(&io)==-1 && f.calls==0 && f.send_count==0);
     memset(&f,0,sizeof(f));f.short_send=1;
     assert(diagnostic_agent_run(&io)==-1 && f.calls==1 && f.send_count==1 && f.receive_count==1);
     memset(&f,0,sizeof(f));io.transactions=17;
