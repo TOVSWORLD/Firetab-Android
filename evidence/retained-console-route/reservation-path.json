@@ -1,0 +1,79 @@
+{
+  "scope": "Pinned legacy source control-flow only; no installed reservation proof",
+  "source_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "sources": [
+    {
+      "path": "drivers/of/fdt.c",
+      "sha256": "a9601e23cb0b2ae65d6f1241ed2904a1e4a2b0d79071988ce37a7f20dcf4df18",
+      "reviewed_ranges": [
+        [
+          432,
+          478
+        ],
+        [
+          550,
+          572
+        ],
+        [
+          1002,
+          1007
+        ]
+      ]
+    },
+    {
+      "path": "drivers/of/of_reserved_mem.c",
+      "sha256": "d83e3754ddd7a3f595c03265f785543989b82c135bb861171fe70274c14c8fee",
+      "reviewed_ranges": [
+        [
+          186,
+          204
+        ],
+        [
+          210,
+          231
+        ]
+      ]
+    },
+    {
+      "path": "arch/arm64/mm/init.c",
+      "sha256": "3297fbf0639cc86108fe4c24ba8b2a1fdc5a4785c9de9f35d0861108c6ec3a2d",
+      "reviewed_ranges": [
+        [
+          145,
+          163
+        ]
+      ]
+    },
+    {
+      "path": "drivers/misc/mediatek/ram_console/mtk_ram_console.c",
+      "sha256": "cc57dd6936a85f40fb59ded3ee45f66db7ee9dc6dbc415b1c4049591ac66779e",
+      "reviewed_ranges": [
+        [
+          691,
+          703
+        ]
+      ]
+    },
+    {
+      "path": "arch/arm64/boot/dts/mt8163.dtsi",
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1",
+      "reviewed_ranges": [
+        [
+          113,
+          117
+        ]
+      ]
+    }
+  ],
+  "findings": [
+    "The static ram-console declaration has no no-map property; generic default reservation uses memblock_reserve rather than memblock_remove.",
+    "The first fixed-reg node is saved even after early reservation failure, allowing later compatible callback invocation.",
+    "The console callback logs base/size and returns zero without allocation or reservation-status validation.",
+    "The generic initialized-node message follows callback return zero; it is not independent proof of successful memory reservation."
+  ],
+  "arm64_override_found_in_reviewed_arch_tree": false,
+  "inspected_files_match_cached_git_revision": true,
+  "runtime_reservation_verified": false,
+  "reset_retention_verified": false,
+  "device_accessed": false
+}
