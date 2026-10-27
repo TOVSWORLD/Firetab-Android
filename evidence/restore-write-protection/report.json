@@ -1,0 +1,61 @@
+{
+  "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "sources": [
+    {
+      "path": "drivers/mmc/card/block.c",
+      "sha256": "d409e137a7d4ec70df8f2d42e4e52ec5605c6ff93f39811d44a4429e4c46f3f9",
+      "reviewed_ranges": [
+        [
+          205,
+          300
+        ],
+        [
+          715,
+          741
+        ],
+        [
+          2838,
+          2867
+        ]
+      ],
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/mmc/card/block.c"
+    },
+    {
+      "path": "drivers/mmc/core/mmc.c",
+      "sha256": "815b33ac9a3d4d92efd9970f99a71346a0ffc6dc7bf9ce343fd9c427c28bc30f",
+      "reviewed_ranges": [
+        [
+          473,
+          480
+        ],
+        [
+          1703,
+          1713
+        ]
+      ],
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/mmc/core/mmc.c"
+    },
+    {
+      "path": "include/linux/mmc/mmc.h",
+      "sha256": "74867dca2f3f6729726678853fc25cc5588275cf3ebb3a46b7b0278886aeb762",
+      "reviewed_ranges": [
+        [
+          288,
+          350
+        ]
+      ],
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/include/linux/mmc/mmc.h"
+    }
+  ],
+  "findings": {
+    "force_ro": "Host disk flag setter, not a card write-protection unlock operation",
+    "power_ro_lock": "Source sets card BOOT_WP power protection, logs errors but returns input count",
+    "partition_switch": "Updates cached selection only after mmc_switch reports success; no independent readback here",
+    "initial_user_selection": "Initialization tolerates EBADMSG from default-user selection"
+  },
+  "installed_binary_match_verified": false,
+  "actual_card_protection_known": false,
+  "restore_writability_verified": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

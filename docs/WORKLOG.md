@@ -2155,3 +2155,14 @@ Three tests cover valid pairs, privacy, partial/reordered/repeated/corrupted mar
 and the size cap; full 293 host tests pass. No physical acquisition, serial port,
 helper or firmware execution. Next board-specific acquisition and restore
 provenance remain open under #106; existing board-record question pending.
+
+## 2026-10-27 — Source-level writable restore prerequisites (#315)
+
+At cached kernel e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74, inspected exact git
+objects for MMC block/core/header definitions. Retained whole-source SHA256 and
+reviewed ranges in evidence/restore-write-protection/report.json. Host force_ro is
+not a card unlock; power-lock setter can return input count despite logged switch
+failure; cached partition selection is not independent readback, and initial
+user selection tolerates EBADMSG. Matching backup bytes therefore leave writable
+post-failure restoration unqualified. No device/sysfs/helper/firmware operation.
+Next actual board/capture/restore provenance under #106; existing question pending.

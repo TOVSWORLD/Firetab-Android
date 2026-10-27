@@ -142,3 +142,31 @@ metadata; all 287 host tests pass. Supplied geometry consistency is not device
 origin, fresh acquisition, acknowledged region selection or independent reads.
 No metadata was collected or selector/transport bound. Original-state acquisition,
 RTC/RPMB state and reachable post-failure restoration remain open.
+
+## Write protection and selection are separate restore prerequisites (#315)
+
+The cached kernel revision's [source receipt](../../evidence/restore-write-protection/report.json)
+separates three states that matching dump files cannot establish. This source has
+not been matched to the installed binary; none of these states was acquired.
+
+- `force_ro_store` changes the host disk read-only flag, still honoring the driver's
+  `read_only` value. It does not clear card boot write protection. A host flag
+  observation therefore cannot establish card-level writable restore.
+- Card boot protection comes from EXT_CSD BOOT_WP. The separate power-lock path
+  sets power protection using a card switch, changes cached/host state only on
+  success, and logs failure while still returning the input byte count. A successful
+  sysfs write count alone would not prove that card operation succeeded. Its show
+  path uses cached flags, not a fresh card read. Permanent and power protection
+  are distinguished in source; no operation to alter either is proposed here.
+- The block partition switch preserves the other configuration bits and updates
+  cached selection after reported switch success, without independent readback
+  in this function. Initialization's default-user switch explicitly tolerates
+  EBADMSG. Neither cached selection nor a filename establishes actual selected
+  region or successful restoration.
+
+A future qualified restore route needs evidence of original card configuration,
+actual protection/selection, error propagation, exact region extents, readback and
+reachability after failure. Power-cycle behavior, security/rollback state and
+original RTC/RPMB remain separate. This is source analysis, not instructions to
+change sysfs, card state or power. Existing offline geometry verification is
+unchanged and intentionally does not claim writable restore.
