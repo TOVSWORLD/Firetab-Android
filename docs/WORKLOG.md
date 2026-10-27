@@ -2045,3 +2045,13 @@ ordinary branch omitsmarker then watchdogAPIreset. Not runningkernelidentity or
 wholepathstatefree proof. Metadata/primarylinks retained; repo/diff pass,
 unchanged276tests. No reboot/helper/firmware/device operations. Next minimal
 mode/return evidence plan for hardware-acceptable route; physicalgates open.
+
+## 2026-10-27 — Hardware identification evidence plan (#299 / #106)
+
+Merged #298 at passinge8e2c7907c7a798071d071d2ba8c0be460d085a1,
+merge available in repository history. Located firsthand exact-generation/KFDOWI
+cover account and iFixit7thgen identification category; neither qualifies PCBpads/
+voltage/entry. Added staged model/PCB/electrical/mode-return/log evidence plan,
+explicit missing batteryisolation and sanitization. No photos copied or physical
+steps/request/device access. Repo/diff pass; unchanged276tests. Next same-generation
+internal board/battery-isolation provenance before concrete owner inspection proposal.
