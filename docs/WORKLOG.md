@@ -2224,3 +2224,8 @@ PR linkage check passed in actual GitHub run40525664117; added it to development
 and main required checks, preserving strict mode and existing contexts. Issue forms
 and checked-in taxonomy now support Epic/Feature/Phase/Task. All runtime gates stay
 open; no beta date fabricated. Source audit history and linked PRs remain accessible.
+
+Added phase352/tasks353–354 for the existing first-party license hold and exact
+beta redistribution/source-obligation review. These are blocked policy inputs,
+not permissions inferred from CI. Total current delivery map44 nodes; Android
+and optional Crestron QA gates remain separate.

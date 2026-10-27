@@ -246,6 +246,24 @@
       "level": "task",
       "parent": 344,
       "title": "[Task] Demonstrate real boot-log capture and retrieval"
+    },
+    "distribution": {
+      "number": 352,
+      "level": "phase",
+      "parent": 8,
+      "title": "[Phase] Resolve beta licensing and distribution prerequisites"
+    },
+    "license": {
+      "number": 353,
+      "level": "task",
+      "parent": 352,
+      "title": "[Task] Record owner first-party license decision"
+    },
+    "rights": {
+      "number": 354,
+      "level": "task",
+      "parent": 352,
+      "title": "[Task] Review beta artifact redistribution and source obligations"
     }
   }
 }
