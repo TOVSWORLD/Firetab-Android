@@ -83,3 +83,6 @@ Every PR updates or closes a real issue. Follow the
 A blocked task records its exact missing input and moves out of the active lane.
 Hardware planning is acceptable; no specific tablet action is authorized by this
 roadmap. Main remains development-to-main releases only.
+
+The [Beta QA matrix](../development/BETA-QA-MATRIX.md) separates mandatory
+admission smoke from the later QA campaign; every runtime case starts NOT RUN.
