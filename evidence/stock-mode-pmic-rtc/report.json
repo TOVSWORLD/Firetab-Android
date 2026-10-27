@@ -1,0 +1,67 @@
+{
+  "kernel_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "files": [
+    {
+      "path": "arch/arm64/boot/dts/mt8163.dtsi",
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1",
+      "bytes": 48528,
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/arch/arm64/boot/dts/mt8163.dtsi"
+    },
+    {
+      "path": "drivers/misc/mediatek/pmic_wrap/mt8163/pwrap_hal.h",
+      "sha256": "b4dc2be8e10d4dd6cb950c50a64b058a37c923602053badfacaae0ed8d318177",
+      "bytes": 22517,
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/pmic_wrap/mt8163/pwrap_hal.h"
+    },
+    {
+      "path": "drivers/misc/mediatek/pmic_wrap/mt8163/pwrap_hal.c",
+      "sha256": "70766c750628223705ffe450de354d2eeb378ff1cb9c2fbe30fd00b09adfff1e",
+      "bytes": 50752,
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/pmic_wrap/mt8163/pwrap_hal.c"
+    },
+    {
+      "path": "drivers/misc/mediatek/include/mt-plat/mt8163/include/mach/mt_rtc_hw.h",
+      "sha256": "167fd8e550981fdf9c2a361bc4d7ea9c619a7de35330f6977085f9fe0e597c36",
+      "bytes": 9071,
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/include/mt-plat/mt8163/include/mach/mt_rtc_hw.h"
+    },
+    {
+      "path": "drivers/misc/mediatek/include/mt-plat/mt8163/include/mach/mtk_rtc_hal.h",
+      "sha256": "cf8d39b6f3b32c412c04c66d49db992b01c34d1567e4652be9da2ae45a3682ec",
+      "bytes": 1662,
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/include/mt-plat/mt8163/include/mach/mtk_rtc_hal.h"
+    }
+  ],
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "reviewed_lk_window": {
+    "start": 158152,
+    "end": 158344,
+    "sha256": "f61fed87ef29677fdc49d0ee95c2de38f3fad7ff101b95ed2c1b976207cf0c92"
+  },
+  "cross_source_matches": {
+    "DT_PMIC_wrapper_base": "0x1000d000",
+    "WACS2_CMD_offset": "0xa0",
+    "WACS2_RDATA_offset": "0xa4",
+    "WACS2_VLDCLR_offset": "0xa8",
+    "command_encoding": "(write << 31) | ((address >> 1) << 16) | data",
+    "RTC_base": "0x8000",
+    "mode_selector_matches_RTC_PDN1": "0x802c",
+    "mode_bit_matches_RTC_PDN1_FAST_BOOT": 13,
+    "commit_selector_matches_RTC_WRTGR": "0x803c",
+    "poll_selector_matches_RTC_BBPU": "0x8000",
+    "poll_bit_matches_RTC_BBPU_CBUSY": 6
+  },
+  "interpretation": "Selected LK access strongly matches MT8163 PMIC-wrapper WACS2 with RTC-domain fastboot flag; source alignment, not exact firmware source provenance",
+  "limits": {
+    "kernel_source_binary_matched_to_LK": false,
+    "physical_board_revision_identified": false,
+    "RTC_retention_and_restore_verified": false,
+    "runtime_command_permission_verified": false,
+    "stock_return_verified": false,
+    "original_restore_verified": false
+  },
+  "board_source_search": "No revision-qualified UART pad/electrical evidence found in bounded primary search; cross-model material excluded",
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}
