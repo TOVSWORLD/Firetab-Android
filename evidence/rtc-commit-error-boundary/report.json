@@ -1,0 +1,42 @@
+{
+  "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "files": [
+    {
+      "path": "drivers/misc/mediatek/rtc/mtk_rtc_hal_common.c",
+      "sha256": "538828a6e8e4e36711a416a9db53901c66b3219cb2d89caddfa4a15ecee9f3ae",
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/rtc/mtk_rtc_hal_common.c"
+    },
+    {
+      "path": "drivers/misc/mediatek/rtc/mt6323/mtk_rtc_hal.c",
+      "sha256": "006f235774f0cd1c03cf648036192f89988a12ea301f5bd8e08e205eb6f27359",
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/rtc/mt6323/mtk_rtc_hal.c"
+    }
+  ],
+  "selected_ranges": {
+    "rtc_common": [
+      35,
+      60
+    ],
+    "mt6323_mode": [
+      268,
+      285
+    ]
+  },
+  "findings": {
+    "rtc_read_initializes_output_zero": true,
+    "rtc_read_propagates_pwrap_status": false,
+    "rtc_write_propagates_pwrap_status": false,
+    "rtc_busy_wait_has_local_deadline": false,
+    "RTC_commit_write_then_busy_poll": true,
+    "kernel_fast_boot_flag_matches_stock_review": true
+  },
+  "inferences": {
+    "lower_layer_error_may_look_like_zero_or_busy_clear": true,
+    "source_alignment_is_exact_LK_provenance": false,
+    "ordinary_partition_escrow_proves_RTC_restore": false
+  },
+  "RTC_retention_across_power_verified": false,
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

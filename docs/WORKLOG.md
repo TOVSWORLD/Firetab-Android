@@ -2024,3 +2024,14 @@ WRTGR and BBPUbusybit6 allmatch. Strong sourcealignment, not exactbinaryprovenan
 retention/restore proof. Hashes/source links retained; repo/diff pass, unchanged
 276tests. No downloads/helper/firmware/device execution; unrelated sourcechanges
 untouched. Next RTC commit/error/retention source behavior and exact evidence needs.
+
+## 2026-10-27 — RTC commit/error and restore boundary (#295 / #106)
+
+Merged #294 at passing6fca2deff8439aab4a30410c86b250fa5099f70e,
+merge4f5aae0e6b3ea0ebfb95fb86396142c5f8fd0f57; #293 closed. Verified RTC
+source bytes against pinned Gitobjects: zero-initread discards pwrapstatus, void
+write, unboundedCBUSY commitpoll, matchingFASTBOOTflag. Lowererror-aszero is
+inference, notdeviceobservation; user/bootescrow doesnotprove RTCrestore. Metadata/
+primarylinks retained; repo/diff pass, unchanged276tests. No firmware/device access.
+Next least-state-change return/entry evidence needs; RTCretention/originalrestore/
+security/real logs remainopen.

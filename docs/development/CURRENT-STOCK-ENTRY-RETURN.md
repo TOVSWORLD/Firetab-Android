@@ -463,3 +463,26 @@ is acceptable for planning, but a board-specific procedure is not ready. Next
 inspect RTC commit/error/retention source behavior and identify precisely what
 an eventual owner-reviewed evidence collection would need, while keeping initial
 entry, stock return, original-region restore and physical logs separate.
+
+## RTC commit/error and restore boundary (#295)
+
+Pinned cached RTC source strengthens the selected-LK interpretation: rtc_read
+initializes data to zero and discards pwrap_read status; rtc_write returns no
+pwrap_write status; rtc_write_trigger writes the trigger then polls CBUSY without
+a local deadline. The MT6323 mode helper uses the same FAST_BOOT flag. Exact
+primary source links, hashes and ranges are in the
+[receipt](../../evidence/rtc-commit-error-boundary/report.json), verified against
+committed Git objects. This is still source alignment, not exact LK provenance.
+
+Inference: a lower-layer read error can be hidden as zero/clear, while a busy
+value can keep the selected polling path waiting. A software return or observed
+zero alone is therefore insufficient commit/clear evidence. Actual device error
+behavior, power/reset retention and restoration have not been demonstrated.
+Ordinary user/boot partition images do not by themselves prove RTC-domain state
+restoration; that is a separate state artifact and reachable restore mechanism.
+No RTC register was accessed and no helper/firmware executed.
+
+Next source task: separate plain stock return from mode-changing entry and list
+the exact original-state evidence each requires, minimizing additional state
+changes. Keep RTC retention/restore, original partition restoration, initial
+security and usable physical logs open rather than treating reset as rollback.
