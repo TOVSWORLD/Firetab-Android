@@ -1979,3 +1979,14 @@ terminal selfloop; no observedreset/stockreturn. Retained hashes/offsets/manual
 metadata with own hash-gated audit script, no raw windows/disassembly published.
 Repo/diff pass; unchanged276tests. No command/firmware/device execution. Next
 extra bootloader helper state effects; original restore/log/entry gates open.
+
+## 2026-10-27 — Bootloader mode flag and commit wait (#287 / #106)
+
+Merged #286 at passing4156915238590dafd41d34a9d7c12c304a94dc16,
+mergede8c4e996777750542827889a0af75f864638b5b; #285 closed. Exact LK selected
+helper288e8 read-modify-writes802c/bit2000 then284e8writes803c/polls8000bit40
+without local bound; access status unchecked. Read/write wrappers share269c8,
+physicalbackend/persistence unknown. Plain reboot selected handler omits helper;
+narrower sourcecandidate, not observedreturn. Metadata-only own hashgated audit,
+repo/diff pass, unchanged276tests. No commands/firmware/device execution. Next
+backend and flagconsume/clear path; restore/log/initialentry gates stayopen.

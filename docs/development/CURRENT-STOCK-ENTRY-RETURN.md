@@ -363,3 +363,27 @@ restoration of any changed state remain untested. Resetting cannot substitute
 for restoring storage/security state or prove a RAM-only loading command exists.
 Next resolve the bootloader variant's extra state helper and compare which route
 can request stock return with the fewest additional effects, using static evidence.
+
+## Bootloader-mode extra state and polling (#287)
+
+The selected extra helper at payload `0x288e8` reads selector `0x802c`, sets bit
+`0x2000` for argument one (clears it for zero), writes the result and invokes
+`0x284e8`. The latter writes selector `0x803c`, then repeatedly reads selector
+`0x8000` until bit `0x40` clears, with no iteration/time bound in that selected
+loop. Read/write wrappers converge on shared backend `0x269c8`; its physical
+identity and persistence semantics are not yet qualified. Access results are
+not checked in these selected helpers. These are static decoded effects, not
+an observed device transaction or proof of which state survives reset.
+
+The [hash-gated metadata receipt](../../evidence/stock-bootloader-mode-state/report.json)
+retains exact LK/window hashes and limits; private disassembly stays untracked.
+Plain reboot's selected handler does not call this extra mode helper, whereas
+reboot-bootloader does. Thus plain reboot is the narrower source-level return
+candidate; neither command's current permissions or actual return is proven.
+Reboot-bootloader adds mode-state and potentially unbounded wait dependencies,
+so it must not be treated as a neutral equivalent of plain reboot.
+
+Next identify the shared register backend and mode-flag consumption/clear path
+from cached stock evidence, without commands or firmware execution. Initial
+reachability, actual stock operation after failure, original-state restoration
+and usable logs remain independent open gates.
