@@ -2145,3 +2145,13 @@ or captured UART output. No firmware or tablet execution occurred.
 
 Next: original acquisition/restore provenance and board-specific logging
 qualification under #106; existing board-record question remains pending.
+
+## 2026-10-27 — Offline fixed-marker transcript reader (#313)
+
+After #312 merged as 926a8aefe592e97b03e27a4498251ce40393000a, added a regular
+host-file-only, 1 MiB capped reader for exact complete ENTRY/RETURN or ENTRY/ERROR
+lines. Rejects ambiguous sequence qualification and never echoes raw transcript.
+Three tests cover valid pairs, privacy, partial/reordered/repeated/corrupted markers
+and the size cap; full 293 host tests pass. No physical acquisition, serial port,
+helper or firmware execution. Next board-specific acquisition and restore
+provenance remain open under #106; existing board-record question pending.
