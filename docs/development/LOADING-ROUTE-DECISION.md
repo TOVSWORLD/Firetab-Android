@@ -715,3 +715,27 @@ including partial-send uncertainty and explicit disposal outcomes. That is still
 host verification; BootROM-side callback deadlines/cleanup and initial security
 entry remain separate blockers. Original-state restore and real log acquisition
 are not supplied by this source review.
+
+## Injected framed host capture (#261)
+
+`injected_diagnostic_capture.py` integrates the owned protocol with an explicitly
+injected exact-count backend. It validates/claims, sends one CALL without retry,
+checks each exact response header before payload reads and retrieves the 1080-byte
+image in five bounded requests with <=64-byte native reads. I/O arguments are
+positive and capped at 500ms within a cooperative five-second monotonic session.
+Partial-send, framing or time failures invalidate the capture. Release/dispose
+are attempted before publication, including a claim that returns late; cleanup
+failure discards the snapshot. Cleanup is still attempted after deadline.
+
+Synthetic tests run this through the existing injected PyUSB-shaped wrapper and
+owned Python dispatcher, covering full capture, partial-send uncertainty, late
+write, late claim and failed release. All 272 host tests pass. No USB library is
+imported and no actual device/backend is bound. These callbacks can block native
+code: the cooperative clock cannot preempt them or guarantee cleanup completion.
+A failed/partial CALL may have run, so it is never retried automatically.
+
+Next put this complete framed session inside the existing owned process supervisor
+and test actual synthetic stalls, while retaining cleanup uncertainty on forced
+termination. Parent validation must reject incomplete/late captures. Device-side
+callbacks, security entry, placement, original-state restore and real boot logs
+remain unqualified; host framing success cannot establish them.
