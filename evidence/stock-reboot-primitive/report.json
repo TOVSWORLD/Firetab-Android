@@ -1,0 +1,36 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "scope": "Selected manually decoded exact-stock Thumb windows",
+  "windows": [
+    {
+      "start": 262160,
+      "end": 262210,
+      "sha256": "71a1a72bf7c8a0ecfb3e36aeeb3dbefa8238e9a36990189f03dd8390d71be4b4"
+    },
+    {
+      "start": 164880,
+      "end": 164952,
+      "sha256": "1fbcf97f2f9ca387e8a67392dd29572297fbbb394d7659562a512836fbf2216e"
+    },
+    {
+      "start": 166120,
+      "end": 166176,
+      "sha256": "3faac5c16437d57cc723f93bd73420ed8c27a363d7c74ce5542d1fac59303570"
+    }
+  ],
+  "reboot_handler_tail_target": 164880,
+  "reboot_bootloader_tail_target": 164880,
+  "reboot_bootloader_extra_call": 166120,
+  "common_reset_argument": 1,
+  "reset_primitive_mmio_writes": true,
+  "reset_primitive_calls_wait_helper": true,
+  "wait_helper_time_units_verified": false,
+  "reset_primitive_terminal_self_loop": true,
+  "bootloader_extra_state_effects_fully_resolved": false,
+  "runtime_command_permission_verified": false,
+  "reset_completion_observed": false,
+  "original_state_restoration_verified": false,
+  "ram_boot_verified": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

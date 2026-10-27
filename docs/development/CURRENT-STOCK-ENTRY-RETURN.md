@@ -341,3 +341,25 @@ Next consolidate which proposed loading alternatives touch these areas versus
 RAM only, using the already pinned helper/stock evidence; select the least invasive
 plausible route with explicit entry and failure-return prerequisites. No further
 credential analysis is needed merely to qualify original-state preservation.
+
+## Selected stock reboot primitive (2026-10-27, #285)
+
+The exact current LK's selected reboot and reboot-bootloader handlers both reach
+the reset primitive at payload offset `0x28410` with argument one. The bootloader
+variant additionally calls `0x288e8` first; that helper's complete state effects
+are not yet resolved. The common primitive writes watchdog-related MMIO, calls
+a wait helper, writes the final control register and enters a terminal self-loop.
+The wait helper's units and actual reset completion are unverified. If hardware
+does not reset as intended, this selected path does not simply return to caller.
+
+The [metadata receipt](../../evidence/stock-reboot-primitive/report.json) retains
+exact LK/window hashes, offsets and limits. Raw code/disassembly remains private.
+The owned audit script checks exact binary identity before emitting this manual
+review metadata. No firmware was executed and no fastboot command was issued.
+
+This supports a stock reset-request path, not a qualified recovery procedure:
+command reachability/filter acceptance, actual transition back to stock and
+restoration of any changed state remain untested. Resetting cannot substitute
+for restoring storage/security state or prove a RAM-only loading command exists.
+Next resolve the bootloader variant's extra state helper and compare which route
+can request stock return with the fewest additional effects, using static evidence.

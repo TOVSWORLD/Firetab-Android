@@ -1968,3 +1968,14 @@ encoding. MT8163 record has misc_lock, actualinstalledstate match unproved.
 Metadata/sourcecitations only; no helper/deviceexecution. Repo/diff pass;
 unchanged276tests. Next stock mode/return alternative avoidingflagmutation,
 keeping physical observation/restore/log gates open.
+
+## 2026-10-27 — Stock reboot common primitive (#285 / #106)
+
+Merged #284 at passing8f329e0842d5cf3ff6c37aac211cb8abec3a3199,
+merge407219243cf842f91e01b9a9426b18baf0b8d26d; #283 closed. Exact current LK
+static windows show reboot/bootloader handlers tail to28410 argument1, latter
+extra helper288e8. Common primitive MMIO/wait-helper/final-control write then
+terminal selfloop; no observedreset/stockreturn. Retained hashes/offsets/manual
+metadata with own hash-gated audit script, no raw windows/disassembly published.
+Repo/diff pass; unchanged276tests. No command/firmware/device execution. Next
+extra bootloader helper state effects; original restore/log/entry gates open.
