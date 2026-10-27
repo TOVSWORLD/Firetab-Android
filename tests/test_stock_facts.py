@@ -66,6 +66,21 @@ class StockFacts(unittest.TestCase):
             if record['name'] in ['/proc/iomem', '/proc/cmdline', 'uname -r', 'uname -m']:
                 self.assertFalse(record['available'])
 
+    def test_partinfo_metadata_or_denial_never_requests_raw_blocks(self):
+        for answer in [module.Result(0, b'Name Start Size\nlk 0x100000 0x80000\n'),
+                       module.Result(0, b'cat: /proc/partinfo: Permission denied SECRET')]:
+            fake = FakeReader()
+            def reader(args):
+                if args == ['shell', 'cat', '/proc/partinfo']:
+                    fake.calls.append(args)
+                    return answer
+                return fake(args)
+            result = module.collect(reader)
+            record = next(x for x in result['records'] if x['name'] == '/proc/partinfo')
+            self.assertEqual(record['available'], answer.stdout.startswith(b'Name '))
+            self.assertNotIn('SECRET', str(result))
+            self.assertFalse(any('/dev/block' in a or a == 'su' for call in fake.calls for a in call))
+
     def test_refuses_wrong_device_before_other_reads(self):
         reader = FakeReader(model='OTHER', device='other')
         with self.assertRaises(ValueError):

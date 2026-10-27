@@ -2403,3 +2403,15 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   demonstrated. Next exact selection/geometry and reachable return/log evidence.
 - Validation:304 host tests pass; community/link, repository guard against exact
   baseline and staged whitespace checks pass. No runtime test was performed.
+
+## 2026-10-27 — source-qualified minimal partition metadata (#347)
+
+- CI healthy, open dependency PR11 only. Located cached proc partinfo source at
+  pinnede0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74. Read-only0444 file reports
+  names/start/size; source synthetic pgpt/sgpt rows are not raw backup GPT proof.
+- Added partinfo to existing owner-run bounded metadata collector; no live run.
+  Injected reader test covers available output and legacy zero-exit denial,
+  absence of raw block reads or su fallback. Source receipt retains hashes/ranges.
+- Prepared exact targeted read for separate owner review; actual availability and
+  permission still unverified. Next approved supplied layout record, not another
+  automatic device query. No tablet/helper/firmware activity occurred.

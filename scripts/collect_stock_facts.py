@@ -15,7 +15,7 @@ PROPERTIES = ('ro.product.manufacturer', 'ro.product.model', 'ro.product.device'
               'ro.hardware', 'ro.board.platform', 'ro.bootmode',
               'ro.build.version.fireos', 'ro.boot.pl_version', 'ro.boot.lk_version',
               'ro.boot.tee_version')
-PROC_FILES = ('version', 'meminfo', 'iomem', 'partitions')
+PROC_FILES = ('version', 'meminfo', 'iomem', 'partitions', 'partinfo')
 CMDLINE_KEYS = {'console', 'earlycon', 'bootopt', 'mem', 'maxcpus', 'nr_cpus',
                 'androidboot.hardware', 'androidboot.bootloader',
                 'androidboot.verifiedbootstate', 'androidboot.unlocked_kernel'}
