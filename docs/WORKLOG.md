@@ -1878,3 +1878,15 @@ regression rejects before activity. Actual local assembly and ARM C layout-asser
 compilation pass;274hosttests pass. CI links both variants; bridge result pending.
 Repo/diff pass; no firmware/helper/device execution or callback patching. Next
 actual link/context installation source qualification; initial security/restore/logs open.
+
+## 2026-10-27 — Actual ARM bridge and callback ABI mismatch (#269 / #106)
+
+Merged #268 at passingd6565b24ea9873945c2bf72328249a8c7264e9e6,
+mergeabb283349c889946bd6ae74d9708b0d412bd69d3; #267 closed. Linux job
+121962950955/run40435462898 linked bridge2664B SHA256
+d95c2fef63f30e5c891dfd9d50934e693a717a7f985cfdddcbf50d1e7dbbcdb7,
+owned stack424B. Pinned source get/put lacks opaque argument, get used as zero
+success while owned callbacks require counts, put return ignored. Direct pointer
+binding rejected. Native zero-count regression/274tests pass; repo/diff pass.
+No firmware/device/pointer installation. Next implementation provenance/alternative
+transport source, not guessed adapters; security/restore/real logs still open.
