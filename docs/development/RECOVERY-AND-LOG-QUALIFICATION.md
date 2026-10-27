@@ -476,3 +476,32 @@ It proves neither device origin/freshness nor executed agent, drained UART outpu
 stock return, kernel boot or restore. Even an ERROR pair only reports marker text.
 Existing board identity, electrical level, entry/exit and original-state restore
 gates stay open. No owner collection action is requested by this parser.
+
+## Cached douglas retained-console route (#317)
+
+The pinned kernel's ARM64 douglas defconfig enables MTK RAM console using DRAM.
+This is a configured source candidate, not an installed-config match or an observed
+retained log. Exact source hashes and ranges are in the
+[receipt](../../evidence/retained-console-route/report.json). Its configured region
+must not be reused as a proposed load address; actual memory ownership and cross-boot
+retention remain unverified.
+
+The DRAM initialization branch maps the configured region. Initialization checks
+signature/size, can clear an invalid-signature buffer, copies the old region into
+allocated host-kernel memory, then resets the current Linux log area. The printk
+console registration is conditional on CONFIG_PSTORE being absent; the read path
+has a separate CONFIG_PSTORE_CONSOLE branch. The symbol combinations must be
+established for the actual binary rather than inferred from the feature name.
+
+Late initialization creates `last_kmsg` only if the old-valid flag permits it.
+Readout uses the old snapshot, validates header/layout and may fall back to raw
+buffer output on corruption. That fallback can include sensitive data and is not
+sanitized boot evidence. No raw buffer was acquired or published here.
+
+This route requires a surviving agreed memory region across the relevant failure,
+a compatible writer/layout, a later kernel reaching initialization, allocation and
+proc creation, and an authorized retrieval path. It cannot presently replace
+first-byte UART capture or qualify logs from a kernel that never reached a writer.
+Reboot/power retention, recovery accessibility and freshness are untested. No proc
+read, reboot, memory access or device operation is requested. Next resolve actual
+configuration/layout and retention evidence before selecting this as a capture route.
