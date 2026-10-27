@@ -2166,3 +2166,13 @@ failure; cached partition selection is not independent readback, and initial
 user selection tolerates EBADMSG. Matching backup bytes therefore leave writable
 post-failure restoration unqualified. No device/sysfs/helper/firmware operation.
 Next actual board/capture/restore provenance under #106; existing question pending.
+
+## 2026-10-27 — Retained-console source route (#317)
+
+Inspected cached kernel e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74 exact git objects:
+ARM64 douglas config enables DRAM MTK RAM console; old-buffer copy and conditional
+last_kmsg late-init form a possible retrieval chain. Stored source hashes/ranges.
+Signature/size reset, allocation, conditional pstore branches and raw fallback
+prevent treating this as proven retention or sanitized first-byte logs. No installed
+binary match, cross-boot observation or device acquisition. Next actual config,
+layout/retention and accessible recovery retrieval remain open under #106.
