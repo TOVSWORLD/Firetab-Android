@@ -1,0 +1,337 @@
+{
+  "stock_return_recovery": {
+    "scope": "Read-only component layout; no signature, firmware identity, load-address, DT or boot qualification",
+    "bytes": 9277440,
+    "sha256": "f850f6b3580911def460b787a897f02f7fe2d7292217f26bf347c3a2dc1833b1",
+    "header_layout": "v0 or legacy zero-dt-size; indistinguishable here",
+    "page_size": 2048,
+    "tags_address": 1207959552,
+    "os_version_word": 0,
+    "components": [
+      {
+        "name": "kernel",
+        "offset": 2048,
+        "bytes": 7182381,
+        "load_address": 1074266112,
+        "padded_end": 7186432,
+        "sha256": "7596d67e87a451184c0c384210936e0548b75f75260b49575a2cb3dc44c417a6",
+        "identification": "unknown kernel payload"
+      },
+      {
+        "name": "ramdisk",
+        "offset": 7186432,
+        "bytes": 2088546,
+        "load_address": 1140850688,
+        "padded_end": 9275392,
+        "sha256": "0e0b5cfa381779e1ee8db6c242682ae2261ff54d4f6c5d561f152094fa72b957",
+        "identification": "not inspected"
+      },
+      {
+        "name": "second",
+        "offset": 9275392,
+        "bytes": 0,
+        "load_address": 1089470464,
+        "padded_end": 9275392,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identification": "not inspected"
+      }
+    ],
+    "unclassified_trailing_bytes": 2048,
+    "partition_bytes": null,
+    "fits_supplied_partition": null,
+    "signature_verified": false,
+    "bootable": "not determined"
+  },
+  "amonet-douglas-return-to-stock.zip": {
+    "sha256": "a9f8d3df1f42c1e135820024bd1020386bc6c2abd7c08a60fcdc17dc898dd370",
+    "bytes": 9132032,
+    "entries": [
+      {
+        "name": "amonet/bin/recovery.img",
+        "bytes": 9277440,
+        "sha256": "f850f6b3580911def460b787a897f02f7fe2d7292217f26bf347c3a2dc1833b1"
+      },
+      {
+        "name": "amonet/return-to-stock.sh",
+        "bytes": 2073,
+        "sha256": "8c8ed5651d5fad0edc9bf2bea0fbf333e6940c2dcb2378f1307855170f7e21ee"
+      }
+    ]
+  },
+  "twrp": {
+    "scope": "Read-only component layout; no signature, firmware identity, load-address, DT or boot qualification",
+    "bytes": 13512704,
+    "sha256": "77889e8de3d48412bd29665d539c7559c0984ae7e46664581874b752484169af",
+    "header_layout": "v0 or legacy zero-dt-size; indistinguishable here",
+    "page_size": 2048,
+    "tags_address": 1207959552,
+    "os_version_word": 0,
+    "components": [
+      {
+        "name": "kernel",
+        "offset": 2048,
+        "bytes": 7182381,
+        "load_address": 1074266112,
+        "padded_end": 7186432,
+        "sha256": "7596d67e87a451184c0c384210936e0548b75f75260b49575a2cb3dc44c417a6",
+        "identification": "unknown kernel payload"
+      },
+      {
+        "name": "ramdisk",
+        "offset": 7186432,
+        "bytes": 6325077,
+        "load_address": 1128792064,
+        "padded_end": 13512704,
+        "sha256": "9e212095c1a00a5ee0952fdf3d519b9c8d88e80615f72a787a7ab47fb5b852fd",
+        "identification": "not inspected"
+      },
+      {
+        "name": "second",
+        "offset": 13512704,
+        "bytes": 0,
+        "load_address": 1089470464,
+        "padded_end": 13512704,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identification": "not inspected"
+      }
+    ],
+    "unclassified_trailing_bytes": 0,
+    "partition_bytes": null,
+    "fits_supplied_partition": null,
+    "signature_verified": false,
+    "bootable": "not determined"
+  },
+  "amonet-douglas-v1.2.zip": {
+    "sha256": "6647dd0b5b9d2c04a2f167f6ccc7a2cfbcaa6f1f93f8251c7a39455db77119b2",
+    "bytes": 17930182,
+    "entries": [
+      {
+        "name": "amonet/functions.inc",
+        "bytes": 1221,
+        "sha256": "3a960a202ac118d4ca04faef612d38dcc2828ef124941c916c2b37ad2036f276"
+      },
+      {
+        "name": "amonet/step-1.sh",
+        "bytes": 2986,
+        "sha256": "dcfdcdf8d3347422094f226f8b88603f2a243a92838b96800fc743a94c0a0252"
+      },
+      {
+        "name": "amonet/brom-payload/build/payload.bin",
+        "bytes": 18568,
+        "sha256": "80a45e7f4a9c88bb26dc361ce547c4cc0267a96330a39eeb1a8382c764bfc30c"
+      },
+      {
+        "name": "amonet/bin/tz.img",
+        "bytes": 3307008,
+        "sha256": "dc0bbd4dec52b96c74e57c6439d093963dfce048e67d22d717b6654629e41cac"
+      },
+      {
+        "name": "amonet/bin/preloader.hdr1",
+        "bytes": 2048,
+        "sha256": "e86ae322a97975e75cb3ec7dca89ea4ac24639c1ecdcc3f45fe1bd509fc0c0ff"
+      },
+      {
+        "name": "amonet/bin/preloader.bin",
+        "bytes": 138924,
+        "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d"
+      },
+      {
+        "name": "amonet/bin/minisu.img",
+        "bytes": 1048576,
+        "sha256": "ccb1ca61cfec93fa31c4097bc26dc681e007669c4e1b2a4eebfb52c03e084750"
+      },
+      {
+        "name": "amonet/bin/busybox",
+        "bytes": 587368,
+        "sha256": "9595efda6a4f0a20a928f6f12cc553052685ffa3065cfba0302c2bf6f42ca0b8"
+      },
+      {
+        "name": "amonet/bin/lk.bin",
+        "bytes": 485988,
+        "sha256": "7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056"
+      },
+      {
+        "name": "amonet/bin/boot.hdr",
+        "bytes": 4096,
+        "sha256": "12d881348acb2e9c2c7b42988125524c648d5948b1bdb677ee6c9d4e9e8d28c5"
+      },
+      {
+        "name": "amonet/bin/preloader.hdr0",
+        "bytes": 2048,
+        "sha256": "114f4cbdb58c110168df273be2508b6efa36e2ef432f2255ed4f67ba35e97262"
+      },
+      {
+        "name": "amonet/bin/twrp.img",
+        "bytes": 13512704,
+        "sha256": "77889e8de3d48412bd29665d539c7559c0984ae7e46664581874b752484169af"
+      },
+      {
+        "name": "amonet/bin/boot-recovery.bin",
+        "bytes": 14,
+        "sha256": "91c4ed26e830783303b227f5943556445be1b964fae0601fdd544165f8df8912"
+      },
+      {
+        "name": "amonet/bin/boot.payload",
+        "bytes": 492132,
+        "sha256": "e10fdf770a5be2c2adc3cce0d03b8e296eac3b31e18ebdce5b56dc5491f4e7e8"
+      },
+      {
+        "name": "amonet/boot-fastboot.sh",
+        "bytes": 69,
+        "sha256": "bc27cb0f070ad13620ae6601525aea1edff83cdced7add285117639713ef5f57"
+      },
+      {
+        "name": "amonet/boot-recovery.sh",
+        "bytes": 69,
+        "sha256": "ad7d62eb9c4ba323cd1e1604b4f3ce0a26fe58ead60b81321a240976f9bb667f"
+      },
+      {
+        "name": "amonet/bootrom-step.sh",
+        "bytes": 54,
+        "sha256": "c7c93a2aff2b17bb2cd9fd1a90fcea7ac22699986f14c445d434668e56126799"
+      },
+      {
+        "name": "amonet/step-2.sh",
+        "bytes": 4011,
+        "sha256": "7c227419952c7fcb8eee5cc79afef3ed119cf56a2ee56daba6951ad73c93a4b9"
+      },
+      {
+        "name": "amonet/bootrom-step-minimal.sh",
+        "bytes": 62,
+        "sha256": "551c11bf2add877b62e655e5c908ccb59da568e3b03a3a6e57fbd4e51a175cd8"
+      },
+      {
+        "name": "amonet/modules/handshake2.py",
+        "bytes": 431,
+        "sha256": "057db6e4051c0b241b4835d41db4f740d50c228abf9d342217746e1761a2653e"
+      },
+      {
+        "name": "amonet/modules/logger.py",
+        "bytes": 176,
+        "sha256": "6edcab194d402f24805538ab5f16f4331eff6de6bbc5cd760baad7f34961e69d"
+      },
+      {
+        "name": "amonet/modules/load_payload.py",
+        "bytes": 5104,
+        "sha256": "8ee47575e6fd500fd93ddfc0625c3f148f627f3220f9ba08c1ca61cde83e7014"
+      },
+      {
+        "name": "amonet/modules/handshake.py",
+        "bytes": 291,
+        "sha256": "7fe3147ba76d464678da495a7fecff2385ed83cb5800f1b8ef8accce74adbbcf"
+      },
+      {
+        "name": "amonet/modules/gpt.py",
+        "bytes": 12430,
+        "sha256": "bef85112cecc80a96b72d47688ebd90951524c923a2ad74d9fbb7d92fd7c8fa7"
+      },
+      {
+        "name": "amonet/modules/common.py",
+        "bytes": 6747,
+        "sha256": "672d56ba73009b0993ff2aa3b79d2547ae7dd24ed0358eb7e84888e534bf952c"
+      },
+      {
+        "name": "amonet/modules/main.py",
+        "bytes": 8336,
+        "sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5"
+      },
+      {
+        "name": "amonet/fastboot-step.sh",
+        "bytes": 327,
+        "sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99"
+      }
+    ]
+  },
+  "brick-douglas.zip": {
+    "sha256": "ba017f1c4fc2f003924912a9099d18c94dd82401a2ad12881b7e7e158a4bc06b",
+    "bytes": 4399395,
+    "entries": [
+      {
+        "name": "amonet/bin/brick-9820.img",
+        "bytes": 114295752,
+        "sha256": "696b23feaea9f862620ccbdcb793629543d8f8d12415029061f9dfe3a82d7a14"
+      },
+      {
+        "name": "amonet/bin/fastboot",
+        "bytes": 7314048,
+        "sha256": "cb3d13b850143da85eb4b2099462514894459213da93d03d6ff4782d927d6e20"
+      },
+      {
+        "name": "amonet/bin/brick.img",
+        "bytes": 114780260,
+        "sha256": "4c1da396748eb3a899553469a4c45a9b792e964853537410d85b66ac5022acc9"
+      },
+      {
+        "name": "amonet/bin/fastboot32",
+        "bytes": 7050644,
+        "sha256": "8912e9926cfc45503ad960866501305a684462b1dd1a44c5d82b1f075d6dd8c1"
+      },
+      {
+        "name": "amonet/brick-9820.sh",
+        "bytes": 461,
+        "sha256": "26da6d7f38c7c02f1334d3947fb575635627d7d91bfc08c797e428f5a908b3fb"
+      },
+      {
+        "name": "amonet/brick.sh",
+        "bytes": 456,
+        "sha256": "12040666b7b02e397ada72a50655f580ea8c39c0fb7eda3ef1ac159d6e3f1325"
+      }
+    ]
+  },
+  "local_decompressed_bytes": 272362922,
+  "installed_stock_boot_kernel_sha256": "1bc3d2ed848a576259f4a04bb01b1206e5ddc60480b20d4e2567b524504b5e1e",
+  "scope": "Original-post Chrome attachment retrieval and bounded offline content audit; not author signature or runtime compatibility",
+  "source_urls": {
+    "amonet-douglas-v1.2.zip": "https://xdaforums.com/attachments/amonet-douglas-v1-2-zip.4845269/",
+    "brick-douglas.zip": "https://xdaforums.com/attachments/brick-douglas-zip.4825253/",
+    "amonet-douglas-return-to-stock.zip": "https://xdaforums.com/attachments/amonet-douglas-return-to-stock-zip.4812857/"
+  },
+  "inspection_limits": {
+    "combined_archive_bytes": 31461609,
+    "combined_archive_cap": 32505856,
+    "per_entry_uncompressed_cap": 134217728,
+    "aggregate_local_decompression_cap": 314572800,
+    "stream_chunk_bytes": 1048576
+  },
+  "findings": [
+    {
+      "file": "brick-douglas.zip:amonet/brick.sh and brick-9820.sh",
+      "lines": [
+        18,
+        20
+      ],
+      "finding": "Bundled guidance says minimal stage; later maintainer full-stage correction must be reconciled, not ignored."
+    },
+    {
+      "file": "amonet-douglas-v1.2.zip:amonet/modules/main.py",
+      "lines": [
+        52,
+        58
+      ],
+      "finding": "flash_binary discards caller max_size and passes zero to flash_data; supplied partition-size arguments are not enforced by this function."
+    },
+    {
+      "file": "amonet-douglas-v1.2.zip:amonet/modules/common.py",
+      "lines": [
+        217,
+        223
+      ],
+      "finding": "emmc_switch sends selector without a response/ack check in this method."
+    },
+    {
+      "file": "amonet-douglas-return-to-stock.zip",
+      "finding": "Contains recovery.img and return-to-stock.sh only; external v1.2 functions/GPT tool and reachable ADB/root required. Not a full standalone restore set."
+    }
+  ],
+  "status": {
+    "all_eight_prior_mirror_entries_equal": true,
+    "whole_archive_author_signature_verified": false,
+    "stock_return_kernel_equals_current_stock_boot_kernel": false,
+    "original_state_restore_qualified": false,
+    "failure_exit_observed": false,
+    "boot_logs_captured": false,
+    "physical_trial_ready": false,
+    "firmware_or_helpers_executed": false,
+    "device_accessed": false
+  }
+}
