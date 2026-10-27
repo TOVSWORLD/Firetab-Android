@@ -1,0 +1,15 @@
+{
+  "scope":"Bounded same-generation mechanical/isolation source review",
+  "sources":[
+    {"url":"https://www.ifixit.com/products/amazon-fire-hd-8-7th-gen-replacement-battery","type":"supplier primary compatibility/specification page","same_generation_compatibility_claim":true,"exact_board_isolation_procedure":false,"UART_logic_level_proof":false},
+    {"url":"https://fcc.report/FCC-ID/2AIP4-4639","outcome":"HTTP403; not inspected","absence_or_incompatibility_proof":false},
+    {"url":"https://sakue.com/archives/821","type":"previously reviewed firsthand cover-only account","board_revision_or_electrical_qualification":false}
+  ],
+  "excluded":"Mixed-generation third-party battery manuals do not qualify an exact-board connector or isolation procedure",
+  "required_owner_information":"Whether existing internal-board photos or PCB revision records already exist; no opening/connection requested",
+  "question_sent":true,
+  "owner_reply_received":false,
+  "specific_physical_action_requested":false,
+  "device_accessed":false,
+  "physical_test_ready":false
+}

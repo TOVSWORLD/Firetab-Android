@@ -2055,3 +2055,14 @@ voltage/entry. Added staged model/PCB/electrical/mode-return/log evidence plan,
 explicit missing batteryisolation and sanitization. No photos copied or physical
 steps/request/device access. Repo/diff pass; unchanged276tests. Next same-generation
 internal board/battery-isolation provenance before concrete owner inspection proposal.
+
+## 2026-10-27 — Exact-board isolation gap and existing-record question (#301 / #106)
+
+Merged #300 at passing21f6cad9b692c9396daada45d8de16df30197007;
+#299 closed. Source review: same-generation supplier battery compatibility does
+not qualify connector isolation/UART voltage; mixed-generation manuals excluded.
+FCCindex403 not inspected/absenceproof. Asked owner whether existing internal-board
+photos/revision records exist, explicitly no opening/connection. Source-gap receipt
+retained; repo/diff pass, unchanged276tests. No device/helper/firmware access.
+Next use existingrecords ifavailable; independent sourcework otherwise, no guessed
+physical procedure or gateclosure.
