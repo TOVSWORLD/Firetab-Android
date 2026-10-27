@@ -1,0 +1,22 @@
+{
+  "failed_ci": {
+    "job_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40470154989/job/122075066145",
+    "head": "41fb9974b93df73a608eb54e63cc9431060575f2",
+    "failure": "Normalized owned-agent load bytes or relative entry depend on link base"
+  },
+  "separate_local_object_review": {
+    "compiler": "Apple clang21 ARM Thumb",
+    "before_object_sha256": "6a38f95ae0d7a63b3b43fc0276ff55c511b05dec8bf02c884178e7f9f8a345aa",
+    "before_absolute_pointer_relocations": 3,
+    "before_section": ".data.rel.ro",
+    "after_object_sha256": "6f04e24ee6a61ff00f3946188275817b5dce7dcaf65e1d2ecf4ce648b9694915",
+    "after_absolute_pointer_relocations_observed": 0,
+    "after_source_sha256": "b83c13b4da7b9aff14a7df61d2e43887b6a378b0fe466bd84b2334eef72a0c7a",
+    "same_as_linux_object_verified": false
+  },
+  "fix": "Replace switch-derived pointer selection with fixed-stride character storage and scalar length table",
+  "host_tests_passed": 290,
+  "fixed_linux_comparison_pending": true,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

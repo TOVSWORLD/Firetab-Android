@@ -1012,3 +1012,25 @@ those specific link-time address assumptions, not prove arbitrary runtime
 relocation, safe mapping, cache/interrupt state, callbacks, initial security entry
 or stock return. Next inspect the exact CI comparison and retain its source/
 image revisions; original acquisition/restore and physical logs remain open.
+
+## Link-base comparison caught marker pointer-table dependence (#311)
+
+The [first actual Linux comparison](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40470154989/job/122075066145)
+failed at PR head `41fb9974b93df73a608eb54e63cc9431060575f2`: normalized load
+bytes/relative entry were not equal. The check was kept strict; #312 remains
+unmerged pending its corrected result. This is a build-address failure, not a
+physical tablet failure.
+
+Separate inspection of the cached Apple clang marker object found three ABS32
+relocations in a compiler-generated pointer table. A relocation-free linked ELF
+had already resolved those addresses, hiding this dependence from the earlier
+section check. Replaced switch-based pointer selection with fixed-stride character
+storage and a scalar length table. Actual local ARM recompilation now shows no
+ABS32 entries in that marker object; all 290 host tests pass, preserving exact
+marker text. Local and Linux objects are not claimed byte-equivalent. The
+[receipt](../../evidence/link-base-marker-fix/report.json) records the failed job,
+object/source hashes and pending Linux confirmation.
+
+Next require both actual direct/bridge comparisons to pass before merging #312.
+No physical load address, arbitrary runtime relocation, entry/restore or log
+capture is qualified by this fix. No firmware/device execution occurred.

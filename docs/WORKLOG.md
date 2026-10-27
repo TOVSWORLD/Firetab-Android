@@ -2118,3 +2118,14 @@ synthetic10000000, compare normalized validated loadbytes/relativeentry/state.
 Three newcomparator tests/full290hosttests pass; actualLinuxcomparison pending.
 Repo/diff pass. No execution/physicalplacement proposal; two-baseagreement would
 not prove arbitraryruntimePIC/MMU/cache/callback/restore/log safety.
+
+## 2026-10-27 — Actual two-base failure and marker fix (#311 / #312)
+
+Run40470154989/job122075066145 failed comparison at head
+41fb9974b93df73a608eb54e63cc9431060575f2; #312 notmerged. Separate local marker
+object revealed3ABS32 pointertable relocations; linkedELFsection absence had not
+proved baseindependence. Replaced switchpointerselection with fixedstride chars/
+scalar lengths. Actual local ARM recompilation shows0ABS32 markerentries;
+290hosttests pass. Retained failure/object/source metadata; Linuxconfirmation
+pending. Repo/diff pass. No firmware/device execution. Next exacthead CI both
+variants, no weakened comparison or runtime/restore claim.
