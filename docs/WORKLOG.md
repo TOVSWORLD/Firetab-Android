@@ -1933,3 +1933,16 @@ entry never autoUART/mapsphysicaladdress. Actual ARM compile/full276hosttests pa
 affected native tests rerun for exit-readiness-loss after agent completion. Repo/
 diff pass. No firmware/physicalMMIO/device access. Next actual link and remaining
 entry/restore/capture evidence inventory, not more logging features.
+
+## 2026-10-27 — Integrated build versus physical readiness (#279 / #106)
+
+Merged #278 at passinga3f3e843b5fd7bc149b4bad17d0af06405362055,
+mergebba9892d6d4703f584ed0d3212f62cc726d0d409; #277 closed. Linux job
+121986688898/run40442747715 linked direct3024B SHA256
+3cc9853fc3d2ea082b67dcb8f62918e38f77570224e41185a030f2e1ebfe6f2c,
+bridge3072B SHA256970f453dc8a6c802c899e0b341e6070ac4390cbe4ace1abb60e97df3405cfe9a.
+Retained exact source/tested revision and six source-cited open physical gates;
+removed stale host-test count from checklist. Build/config/boot/hardware/apps
+kept separate. Repo/diff pass; unchanged276hosttests. No firmware/device execution.
+Next current-build initial-entry/return alternatives, not more marker/synthetic
+features. Existing hardware-vsUSB planning choice pending, no repeat/newphysicalask.

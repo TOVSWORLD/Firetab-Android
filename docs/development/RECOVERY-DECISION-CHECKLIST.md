@@ -1,8 +1,8 @@
 # Douglas: decision before the first physical diagnostic load
 
 **Decision: NO-GO for loading.** This is an evidence checklist, not a procedure
-for operating the tablet. Parent issue106 remains open. A compiled kernel and
-213 passing host tests do not establish a recoverable physical test.
+for operating the tablet. Parent issue106 remains open. Compiled kernel/agent images and passing host tests do not establish a
+recoverable physical test.
 
 ## The proposed route and its alternatives
 
@@ -246,3 +246,21 @@ firmware register/return ABI. See
 [initial loader ABI evidence](../../evidence/initial-loader-abi-gap/report.json).
 Require a separately qualified bridge supplying context, Thumb entry, safe memory
 and bounded callbacks before any physical proposal; this gate is still open.
+
+
+## Current integrated build boundary (2026-10-27)
+
+The owned agent, context bridge and opt-in sanitized UART logging now link in
+Linux CI. [Exact build/gate receipt](../../evidence/recovery-readiness-boundary/report.json)
+records the tested revision, source hashes, 3024-byte direct image and 3072-byte
+ARM bridge image. These are host-built images, not qualified physical packages.
+The six source-cited physical gates remain open: initial entry/exit, callback
+semantics/restoration, physical memory contract, original-state restore, real log
+capture and exact owner test/recovery instructions. Boot, hardware and app tests
+have not occurred. Keep parent #106 open; close only bounded completed child scopes.
+
+Further host test counts and marker features are not the next milestone. The
+next investigation must address current-build initial-entry alternatives and
+reachable return/restore, using cached sources and explicit effect inventories.
+The existing hardware-access versus USB-only planning choice remains pending;
+no new physical action or permission is inferred from this build receipt.
