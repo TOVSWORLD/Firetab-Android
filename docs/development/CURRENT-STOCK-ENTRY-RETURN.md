@@ -486,3 +486,27 @@ Next source task: separate plain stock return from mode-changing entry and list
 the exact original-state evidence each requires, minimizing additional state
 changes. Keep RTC retention/restore, original partition restoration, initial
 security and usable physical logs open rather than treating reset as rollback.
+
+## OS ordinary versus named boot-mode restart source (#297)
+
+Pinned cached `arch_reset` explicitly calls RTC markers for bootloader and
+recovery command strings before its watchdog software-reset path. Its ordinary
+unmatched-command branch sets the reset argument without calling those RTC
+markers in the selected function. The
+[receipt](../../evidence/os-reboot-state-effects/report.json) provides primary
+links/ranges and source hashes verified against committed Git objects. This
+supports the same least-additional-mode-state distinction as the LK handlers.
+It is not proof that the running stock kernel uses these exact source bytes or
+that the complete reset path changes no other state. Configuration gates and
+successful watchdog API acquisition also matter.
+
+Consequently, OS reboot-to-bootloader/recovery should be classified as named
+mode-state operations, not equivalent to an ordinary restart or passive USB
+observation. No reboot command was issued. A qualified owner plan would still
+need actual mode/permission evidence, known original RTC state where relevant,
+a reachable ordinary-return route and independent logs. Neither source branch
+proves a bootloader accepts an unsigned diagnostic image or restores prior state.
+
+Next consolidate the smallest separately reviewable mode/return evidence plan
+for the hardware-acceptable route, using these effect distinctions. No physical
+step is requested until the exact board/interface and failure exit are qualified.
