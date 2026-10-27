@@ -1890,3 +1890,14 @@ success while owned callbacks require counts, put return ignored. Direct pointer
 binding rejected. Native zero-count regression/274tests pass; repo/diff pass.
 No firmware/device/pointer installation. Next implementation provenance/alternative
 transport source, not guessed adapters; security/restore/real logs still open.
+
+## 2026-10-27 — Callback provenance and dispatch repair (#271 / #106)
+
+Merged #270 at passingb51257a6125b9255df6be2184e7d93b5b8c87d08,
+merge0d14b4a47c78922bc66224f57166a2e6332c0b38; #269 closed. Bounded cached
+complete-tree inventory found no actual get/put ROM bodies, notglobalabsence.
+Selected source discovery extracts runtime pointers and repairs USB dispatch slot
+without saving prior slot in that block: additional return dependency, not passive
+lookup. Source/tree metadata retained; no helper/ROM/device execution/acquisition.
+Repo/diff pass; unchanged274tests. Next independent bounded UART logging source/
+compile task using known register contract, hardware qualification still open.
