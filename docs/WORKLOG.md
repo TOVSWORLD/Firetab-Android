@@ -1901,3 +1901,14 @@ without saving prior slot in that block: additional return dependency, not passi
 lookup. Source/tree metadata retained; no helper/ROM/device execution/acquisition.
 Repo/diff pass; unchanged274tests. Next independent bounded UART logging source/
 compile task using known register contract, hardware qualification still open.
+
+## 2026-10-27 — Bounded independent UART log core (#273 / #106)
+
+Merged #272 at passing3705c215aee1a82c5eac69964a3daaf1a8a8384d,
+merge0a52854aa4dc9652a644d191e5485d243dec840d; #271 source scope closed.
+Implemented owned <=64B UART polling core, shared<=4096status reads, actual partial
+counts, DLAB guard, no configuration/reset/physical mapping. Actual ARM compile
+passes; native fake-register tests/275hosttests pass. Source/object receipt
+retained; repo/diff pass. No ARM firmware/physicalMMIO/device execution. Pollcount
+is not time/fault bound, queuedbytes notcapturedlogs. Next sanitized fixed markers
+and compile-only integration, physical entry/restore/UART hardware gates still open.
