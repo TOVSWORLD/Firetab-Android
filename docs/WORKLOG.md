@@ -2077,3 +2077,13 @@ not original user/bothbootregions/device-specific boot2records or RTC/RPMBrestor
 Coverage receipt retains sizes/hashes/limits, no newdownloads/physicalreads.
 Repo/diff pass, unchanged276tests. Next exact original-region provenance/restore
 requirements, use existingboardrecords ifprovided; no runtimegates closed.
+
+## 2026-10-27 — Two-set offline escrow consistency (#305 / #106)
+
+Merged #304 at passing86e47ed9fa1befd4a2435e55cc5d055ff16fa832,
+merge5ecb7d2f2590b0e86876c51228dee26231760b71; #303 closed. Added actual
+host two-set verifier reusing length/hash/GPT validation, six distinctinodes,
+filechange/geometry/digest mismatch rejection, sanitized output. Synthetic tests
+cover agreement/alias/differentvalidhash/GPT/symlink. No actual captures/device
+reads or independence/RTC/RPMB/restore proof. Repo/diff checks pass. Existingboard
+question pending withoutrepeat; next acquisitionprovenance/regionselection evidence.
