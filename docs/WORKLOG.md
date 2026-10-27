@@ -1787,3 +1787,14 @@ host tests pass;268hosttests total. Actual ARM object compile passes with one
 expected undefined diagnostic_dispatch, source/object hashes retained. No ARM
 execution/device transport. Repository/diff pass. Next static agent+core link with
 stack-preserving entry; callback deadlines/cleanup and physical restore/log gates open.
+
+## 2026-10-26 — Owned agent stack-preserving entry/link probe (#253 / #106)
+
+Merged #252 at passing 538c758d5e609b20de1efb23a3b85c3165690a41,
+merge e60a1ac378a433306577ebc93b6eeecf2cd4d08d; #251 closed. Added Thumb
+wrapper preserving SP/r4-r6/LR and r0 ABI pointer, private2KiB stack before push/
+C call, restore-before-return. Actual local wrapper compile/static review passes.
+Bounded Linux wrapper+agent+core link/image/relocation probe added; result pending.
+Source/object hashes retained, no firmware execution or transport/device access.
+Repository/diff pass; unchanged268testbaseline. Next actual link and static stack
+requirements; callback deadlines/cleanup/security/physical restore/log gates open.

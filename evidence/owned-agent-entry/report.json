@@ -1,0 +1,16 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -mthumb -c diagnostic/protocol/entry.S -o out/owned-protocol/entry.o",
+  "compile_exit_code": 0,
+  "source_sha256": "aa28cf92cf9401626f5d1fb18573faaf0ce91e07fa4f5649a914f2ed627eb978",
+  "object_sha256": "965e0d13fc4da32ba7cc842c64bdef72b7ba47e74ca3a01eba6c9c61b071fbef",
+  "static_observations": {
+    "assigns_private_sp_before_push": true,
+    "preserves_r4_r5_r6_lr_on_private_stack": true,
+    "restores_original_sp_before_bx_lr": true,
+    "abi_pointer_r0_preserved_until_agent_call": true,
+    "private_stack_bytes": 2048
+  },
+  "linux_link_pending": true,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}
