@@ -673,3 +673,87 @@ and sanitization review. Supplied roles are positional labels, not authenticated
 package identities. No real originals were available for this implementation;
 synthetic ZIP tests establish host-tool behavior only. Original-author matching,
 restore and physical-test readiness remain false even on successful inspection.
+
+## Original-package review and owner decision boundary (#347 / #346)
+
+**Disposition: package acquisition and selected identity comparison complete;
+physical trial is not ready.** Normal Chrome attachment clicks retrieved the
+three files from the original author post. The prominent legacy attachment.php
+link returned404 and the automated download API timed out; neither failure meant
+the canonical attachments were unavailable. The owner need not download them.
+Actual combined size is31,461,609bytes, below the approved31MiB cap.
+[The complete metadata receipt](../../evidence/douglas-original-route/original-package-review.json)
+records source URLs, archive/entry hashes, component layout and inspection caps.
+No archive code was imported or executed, and no payload was loaded.
+
+All eight previously selected mirror entries match the originals byte-for-byte.
+The original full launcher matches the separately inspected launcher, and the
+original functions.inc, GPT tool and return-to-stock script match the cached Git
+source audits. This resolves the original-versus-mirror selected-content question;
+it does not authenticate an author signature or demonstrate this installed build.
+All non-directory entries were streamed through SHA256/ZIP CRC verification under
+128MiB per-entry and300MiB aggregate local decompression caps; none was extracted
+for execution. Highly compressed brick images are about114MB each when decoded,
+so compressed download size is not their device write extent.
+
+### Effects and coverage presented for review
+
+1. **Initial entry:** separate brick launchers send a packaged opaque brick image
+   through bundled fastboot. Both then print minimal-stage guidance. The later
+   [maintainer correction](https://xdaforums.com/posts/90490714/) requires the full
+   stage for that separate-brick route. Do not follow the old bundled continuation
+   in isolation or substitute a helper based on a similar filename. The opaque
+   brick image's full device effects are not proved by its launcher command.
+2. **BootROM bootstrap:** Python performs crypto/MMIO operations, disables caches
+   and range checks, uploads a binary payload and transfers control. Static Python
+   inspection is not proof of all native payload effects, RAM ownership or a
+   bounded failure exit. No such sequence has run on this unit.
+3. **Full storage stage:** conditional GPT writes precede later boot/RPMB checks;
+   boot0 header changes and RPMB clearing are followed by preloader copies, tee1,
+   LK, boot/recovery payload and MISC changes, header replacement and reboot.
+   Final fastboot installs recovery_x, erases userdata and requests recovery.
+   This is destructive and non-atomic. The rooted alternative also writes tee2;
+   do not combine its effects or prerequisites with the selected full-stage path.
+4. **Write-size limitation:** original main.py52–58 accepts max_size but passes
+   zero to the lower write routine. Its partition-size arguments therefore do
+   not enforce the advertised bound at this call. Exact padded component/write
+   extents and actual partition geometry must be checked independently before
+   any future execution; no upstream helper was patched. Original common.py's
+   region switch method sends a selector without an acknowledgement check in
+   that method. Neither observation proves an actual bad write occurred.
+5. **Return package:** the original stock-return ZIP contains only a9,277,440-byte
+   recovery image and the2,073-byte return script. It relies on the other archive's
+   functions/GPT code, reachable ADB and root. It reconstructs GPT from current
+   sectors and installs packaged recovery; it supplies no original preloader,
+   LK, TEE, boot-region, userdata or RPMB backup/restore. It is not independent
+   rescue after loss of Android/ADB/root.
+6. **Recovery identity:** stock-return recovery and TWRP carry the same kernel
+   component hash, which differs from the cached current-stock boot kernel.
+   This does not identify an exact recovery build or prove incompatibility, but
+   excludes calling it a hash-matched current-stock kernel. The recovery has
+   2,048 trailing bytes unclassified by our header parser; no signature acceptance
+   or exact firmware provenance is inferred from them. A compatible complete stock
+   installation package and reachable installation mechanism remain prerequisites.
+
+### Failure boundaries and acceptance remaining
+
+Before any write, stop unless exact unit/build identity, package hashes, power,
+host/session access, selected route, full effect inventory and independent log
+capture/return are qualified. This review is a planning boundary, not an executable
+operator procedure. After a possible persistent mutation, a timeout or disconnect
+cannot be interpreted as no change: stop the session, preserve the host transcript,
+and do not automatically retry another stage or run the stock-return script.
+That script requires working dependencies the failure may have removed.
+
+For preservation, either establish independently acquired original user/both boot
+region escrow plus reachable compatible restore and explicit security-state limits,
+or obtain a separate owner decision accepting a designated test unit's data/security
+state loss and a weaker return target. The second choice still requires a credible
+failure recovery/log route; consent alone does not validate the mechanism. There
+is no existing complete original-state rollback for the described sequence.
+
+Remaining acceptance is therefore concrete: exact current-build entry/failure exit,
+complete binary/write extent and geometry review, reachable restore after the chosen
+failure, and fresh attributable boot logs with retrieval. Hardware fallback remains
+unit-specific and separately authorized. #346/#347/#348 stay open; no generic
+compilation result, archive match or source review closes these physical gates.

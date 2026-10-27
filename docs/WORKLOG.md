@@ -2363,3 +2363,24 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - python3 -m unittest discover -s tests -q:302 pass; repository guard against
   current development and whitespace check pass. Next approved supplied legacy
   buffers, not live acquisition; original ZIP intake remains blocked on files.
+
+## 2026-10-27 — original package restore review (#347 / #346)
+
+- Base0cd1594 current development; open dependency PR11 only, latest CI healthy.
+- Original post attachments acquired through normal Chrome clicks, combined
+  31,461,609bytes within approved31MiB cap; ignored ZIPs preserved locally.
+  All eight prior selected mirror comparisons equal; launcher and cached
+  functions/GPT/return script hashes match. No archive helper import/execution.
+- Ran owned inspect_recovery_originals.py with pinned mirror receipt; streamed
+  all non-directory entries through SHA256/ZIP CRC with128MiB per-entry and
+  300MiB aggregate local caps (actual272,362,922bytes),1MiB chunks. Own
+  inspect_boot_image.inspect parsed supplied recovery/TWRP bytes without execution.
+  Exact hashes/layout/source URLs in original-package-review.json.
+- Reviewed original launchers, main/common/load_payload and return dependencies.
+  Found stale minimal-stage continuation, discarded write-size bound and
+  unacknowledged selector method; opaque payload effects remain unproved.
+- Original return package is recovery+script only, not full-state rollback.
+  Packaged recovery kernel differs from current-stock boot kernel. Recorded
+  reviewable effects, failure stop boundaries and remaining owner/physical gates.
+  Next actual write geometry/binary and independent return/log qualification;
+  no tablet/firmware/helper action occurred.
