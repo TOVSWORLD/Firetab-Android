@@ -2309,3 +2309,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   --max-filesize19000000 to ignored out/recovery-originals: HTTP403, no saved
   ZIP. Browser/client bypass not attempted. Next original archive acquisition
   and independently reachable restore; no hardware/runtime gate closed.
+
+## 2026-10-27 — offline original-archive intake (#347)
+
+- Baseline7ab0e8de7f264729f028c1af8f868596fe157968 after PR361 passed all
+  five exact-head checks and merged. Original archive directory remains empty.
+- Added owned scripts/inspect_recovery_originals.py: local files only, combined
+  31MiB cap, selected-content limits, SHA256/receipt comparison, missing entries
+  and unverified origin/restore flags. No extraction, helper import or execution.
+- Script SHA256: 8e3b67da0e91aabb518201f0f832e9069ed8e325019e9085e65d8b4b56064034.
+- python3 -m unittest discover -s tests -q:299 tests passed, including hostile
+  path/canonical duplication, compressed oversized selected entry, input symlink,
+  combined budget and synthetic identity/non-execution cases. Repository guard
+  against the exact baseline and git diff --check passed. Real originals remain
+  unavailable; next run intake and original provenance review when supplied.
