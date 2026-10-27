@@ -1834,3 +1834,14 @@ RX and mayattach kernel driver0. Direct agent/host binding rejected; metadata/
 source citations retained. No import/backend/device access. Repo/diff pass,
 unchanged268tests. Next owned exact-count injected host framed transaction
 integration, not upstream binding; BootROM-side timing/security/restore/logs open.
+
+## 2026-10-27 — Injected framed host capture (#261 / #106)
+
+Merged #260 at passing6b5061874d30e18e1bed25faa9724e966a39b5b2,
+mergea8430a0a7130d5371dc84bad95a70862d4c0e7e4; #259 source scope closed.
+Integrated CALL+1080B framed READs with injected exact-count backend, cooperative
+5s/positive<=500ms I/O, header-before-payload checks and no partial-send retry.
+Release/dispose gate publication, late-claim cleanup regression included.
+272hosttests pass; repo/diff pass. No USB import/native backend/device access.
+Clock cannot preempt blocking callbacks; next existing supervisor integration with
+actual synthetic stalls and parent validation. Physical entry/restore/logs open.
