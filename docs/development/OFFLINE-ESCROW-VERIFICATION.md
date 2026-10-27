@@ -84,3 +84,25 @@ recovery escrow. Before any physical proposal, require independently consistent
 original region evidence, provenance/geometry validation and a separately
 qualified restoration path for the specific intended changes. No device read,
 flash, register operation or helper execution occurred in this inventory.
+
+## Two-set consistency check (#305)
+
+`compare_offline_escrow.py first.json second.json` verifies two explicitly supplied
+host-file manifests using the existing length/SHA256/GPT checks. It requires all
+six region files to have distinct host inode identities, checks file metadata
+around validation and requires matching logical geometry, lengths and digests
+for corresponding regions. Shared hardlinks/symlinks, changed files, corrupt GPT
+or individually valid but disagreeing captures fail. Output excludes paths,
+GUIDs, partition names and identifier data.
+
+Four synthetic tests cover agreement without provenance claims, cross-set
+hardlinks, differing bytes with valid individual hashes, corrupt GPT and symlinks.
+Agreement is necessary consistency evidence, not proof that two actual device
+acquisitions occurred: copies can use separate inodes. Region origin, original
+state, RTC/RPMB, independent transport and a post-failure restore mechanism remain
+unverified. The checker never acquires data or accesses a device; only tiny
+synthetic host files were used for development.
+
+Before eventual owner evidence collection, define acquisition provenance and
+acknowledged hardware-region selection separately. Do not use this checker to
+turn official component copies into original-state escrow or to authorize writes.
