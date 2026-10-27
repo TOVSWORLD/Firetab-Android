@@ -2012,3 +2012,15 @@ voltage/entry-return/restore/log evidence separately from GPIO source. Primary
 original XDA retrieval502, not incompatibilityproof; no images/helper/bigdownloads.
 Repo/diff pass; unchanged276tests. Next traceable same-revision board/UART source,
 then independent cached backend investigation if source inaccessible.
+
+## 2026-10-27 — PMIC-wrapper/RTC mode backend identity (#293 / #106)
+
+Merged #292 at passing335697c980d5b99bc16ed6edcf72259382ba7751,
+merge8f3e3c72f286dc146c8d762286b92194ccc27de1; #291 closed. Bounded board
+source search did not qualify PCBpads/electrical info; crossmodel claims excluded.
+Independent cached platform task: verified five relevant files against pinned
+Gitobjects; WACS2 base/offset/encoding matches selectedLK, RTC PDN1/FASTBOOTbit13,
+WRTGR and BBPUbusybit6 allmatch. Strong sourcealignment, not exactbinaryprovenance/
+retention/restore proof. Hashes/source links retained; repo/diff pass, unchanged
+276tests. No downloads/helper/firmware/device execution; unrelated sourcechanges
+untouched. Next RTC commit/error/retention source behavior and exact evidence needs.

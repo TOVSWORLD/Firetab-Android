@@ -437,3 +437,29 @@ Next source task: locate revision-identifiable douglas board/UART evidence and
 qualify its provenance before proposing any owner action. Continue independent
 cached register-backend analysis if that source remains inaccessible. The pending
 work is exact physical evidence, not another request for hardware-route preference.
+
+## PMIC wrapper / RTC identity supported by cached source (#293)
+
+The selected LK backend now strongly matches MT8163 PMIC-wrapper WACS2: its MMIO
+base/command/status/clear locations and packed write/address/data encoding agree
+with pinned cached platform source. That source's RTC definitions also match
+all four selected mode details: selector `0x802c` is RTC_PDN1, bit13 FAST_BOOT;
+`0x803c` is RTC_WRTGR; selector `0x8000` is RTC_BBPU with busy bit6. Thus the
+extra reboot-bootloader state is supported as an RTC-domain fastboot flag through
+the PMIC channel, rather than an eMMC partition write in this selected path.
+
+The [receipt](../../evidence/stock-mode-pmic-rtc/report.json) links each primary
+source at kernel revision `e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74`, hashes
+files verified against their committed Git objects and hashes the exact LK
+window. Unrelated pre-existing source-checkout changes were left untouched.
+This is cross-source alignment, not exact LK source/binary provenance. Actual
+RTC retention across power/reset, write completion, flag clearing and original
+state restoration remain untested. It does not prove a storage-free whole command
+or authorize any register access.
+
+A bounded board/UART primary-source search still supplied no revision-qualified
+pad/electrical evidence; other-generation material was excluded. Hardware access
+is acceptable for planning, but a board-specific procedure is not ready. Next
+inspect RTC commit/error/retention source behavior and identify precisely what
+an eventual owner-reviewed evidence collection would need, while keeping initial
+entry, stock return, original-region restore and physical logs separate.
