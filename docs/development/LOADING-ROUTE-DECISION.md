@@ -995,3 +995,20 @@ automatic work. Next investigate the source-backed stock boot-mode/return path
 that could avoid this flag mutation, and explicitly record where a physical
 mode observation would be required. Initial security, original-state restore and
 real log capture remain open; no reset or tablet access occurred.
+
+## Two synthetic link-base comparison (#311)
+
+While exact-board information remains pending, an independent loading prerequisite
+can be checked more strongly than absence of relocation records. The Linux probe
+now links each owned agent variant at zero and at synthetic base `0x10000000`,
+then compares normalized bounded PT_LOAD contents and relative entry/state. These
+are compiler/linker inputs, not proposed physical addresses. The comparator
+rejects changed load bytes, ambiguous extents, wrong bases or entry-state changes.
+No firmware executes and no binary is uploaded.
+
+Three synthetic comparator tests pass; all 290 host tests pass. Actual Linux
+comparison results are pending. Equal bytes at two link bases would support
+those specific link-time address assumptions, not prove arbitrary runtime
+relocation, safe mapping, cache/interrupt state, callbacks, initial security entry
+or stock return. Next inspect the exact CI comparison and retain its source/
+image revisions; original acquisition/restore and physical logs remain open.

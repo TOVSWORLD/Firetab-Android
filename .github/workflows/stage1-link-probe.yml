@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [development]
     paths:
+      - scripts/compare_owned_link_bases.py
+      - tests/test_compare_owned_link_bases.py
       - diagnostic/logging/**
       - diagnostic/protocol/**
       - scripts/build_owned_agent_probe.py

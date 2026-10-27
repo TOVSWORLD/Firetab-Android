@@ -2108,3 +2108,13 @@ matchingwrongsize copies reject. Three newsynthetictests/full287hosttests pass;
 repo/diff pass. Output geometryconsistency only, no origin/selection/independence/
 restore claim or rawmetadata. No device/metadata acquisition. Existingboardquestion
 pending withoutrepeat; next actual acquisitionprovenance/restore entry remainsopen.
+
+## 2026-10-27 — Two synthetic owned-agent link bases (#311 / #106)
+
+Merged #310 at passing20fc3ab74acf91a42c1374cf9fea11a422cfe879,
+mergecf1fd5782ed0e2e1840e30833adb8a451b873695; #309 closed. Independentloading
+work while boardrecordanswerpending: compile-only bothownedvariants atzero and
+synthetic10000000, compare normalized validated loadbytes/relativeentry/state.
+Three newcomparator tests/full290hosttests pass; actualLinuxcomparison pending.
+Repo/diff pass. No execution/physicalplacement proposal; two-baseagreement would
+not prove arbitraryruntimePIC/MMU/cache/callback/restore/log safety.
