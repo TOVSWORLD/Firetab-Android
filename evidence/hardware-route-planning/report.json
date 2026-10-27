@@ -1,0 +1,20 @@
+{
+  "owner_planning_choice": "Hardware access acceptable if needed",
+  "choice_date": "2026-10-27",
+  "specific_physical_action_requested": false,
+  "automatic_device_access_authorized": false,
+  "qualified": {
+    "same_revision_board_identity": false,
+    "pcb_uart_pad_mapping": false,
+    "voltage_and_reference": false,
+    "bootrom_entry_contact_and_return": false,
+    "original_state_restore": false,
+    "real_log_capture": false
+  },
+  "existing_source": "evidence/uart-log-contract/report.json",
+  "primary_source_refresh": {
+    "url": "https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/",
+    "outcome": "HTTP502; unavailable, not impossibility evidence"
+  },
+  "physical_test_ready": false
+}

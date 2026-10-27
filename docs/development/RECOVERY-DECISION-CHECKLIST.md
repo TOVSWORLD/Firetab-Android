@@ -15,8 +15,8 @@ state before a complete recoverable escrow is established.
 - **USB-only route:** current-build entry, security state, agent selection and
   return after failure are unknown. An OS connection or a source configuration
   entry does not prove BootROM access. No USB-only transition is established.
-- **Owner hardware access route:** a planning preference is pending. Permission
-  to open the case would not establish a safe short/test point, board revision,
+- **Owner hardware access route:** owner accepts hardware access if needed
+  for planning (2026-10-27). This does not establish a safe short/test point, board revision,
   voltage or UART connection. Those need independent evidence before action.
 - **Existing modified recovery/fastboot:** no such installed state is established
   on this stock tablet. Instructions requiring it cannot serve as the initial
@@ -69,8 +69,8 @@ Details and source links: [recovery/log qualification](RECOVERY-AND-LOG-QUALIFIC
 
 ## Smallest owner input and independent next work
 
-The only pending owner input now is the already-asked planning choice: hardware
-access acceptable or USB-only. No case opening, measurement, USB command or
+The owner answered the planning choice on 2026-10-27: hardware access is
+acceptable if needed. Do not ask this choice again. No case opening, measurement, USB command or
 other tablet operation is requested by this checklist. Do not ask for an
 unreviewed mode/security probe just because those facts are missing.
 
@@ -140,8 +140,8 @@ worker supervisor is a host containment component, not proof of physical undo.
 **Route decision:** no reviewed drop-in candidate CLI currently satisfies this
 minimal observation contract. Building an owned callback-only orchestration can
 be done offline, but binding it to USB still requires a separate exact-effects
-review and owner test plan. Pending hardware access preference remains relevant
-to entry/log options; it is not replaced by this source review. Next prepare the
+review and owner test plan. Hardware access is acceptable for planning; exact board and electrical evidence
+are still required for entry/log options. Next prepare the
 owned observation orchestration with synthetic callbacks and no command bytes,
 then review the exact live binding separately. Do not run helper discovery/init.
 
@@ -262,5 +262,5 @@ have not occurred. Keep parent #106 open; close only bounded completed child sco
 Further host test counts and marker features are not the next milestone. The
 next investigation must address current-build initial-entry alternatives and
 reachable return/restore, using cached sources and explicit effect inventories.
-The existing hardware-access versus USB-only planning choice remains pending;
-no new physical action or permission is inferred from this build receipt.
+Hardware access is acceptable if needed for planning; no specific physical
+action is authorized or requested by this build receipt.

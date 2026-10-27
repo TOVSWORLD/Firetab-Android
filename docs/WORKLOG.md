@@ -2001,3 +2001,14 @@ unchecked; actualresetretention/clearunobserved. BackendprefixusesMMIO, identity
 stillunknown. Own hashgated metadataaudit/repo/diff pass, unchanged276tests.
 No commands/firmware/device execution/rawdisassembly publication. Next cached
 platform backendidentity; physicalentry/return/restore/log gates remainopen.
+
+## 2026-10-27 — Hardware route planning choice resolved (#291 / #106)
+
+Merged #290 at passing1ea50ba3d397ece6e20e5d85a6d9af4cd69132ba,
+merge75dbc4db1bfacc29b64f03b3659038f51a043ee9; #289 closed. Owner accepts
+hardware access if needed for planning. Updated stale current preference gates;
+no action/automatic-device authorization inferred. Scoped board revision/PCBpads/
+voltage/entry-return/restore/log evidence separately from GPIO source. Primary
+original XDA retrieval502, not incompatibilityproof; no images/helper/bigdownloads.
+Repo/diff pass; unchanged276tests. Next traceable same-revision board/UART source,
+then independent cached backend investigation if source inaccessible.
