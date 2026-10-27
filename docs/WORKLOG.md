@@ -2066,3 +2066,14 @@ photos/revision records exist, explicitly no opening/connection. Source-gap rece
 retained; repo/diff pass, unchanged276tests. No device/helper/firmware access.
 Next use existingrecords ifavailable; independent sourcework otherwise, no guessed
 physical procedure or gateclosure.
+
+## 2026-10-27 — Cached official restore coverage (#303 / #106)
+
+Merged #302 at passingb55ab72dc484a84404ce54a2bf9687a6e281b0e6,
+mergeb8b8092d83ec64b6bb510c1e0ac129a506fd1497; #301 source scope closed,
+existing-board-record answer stillpending withoutrepeat. Independentrestoretask:
+rehash buildchecked cachedOTAindex/boot/preloader/LK; packagedcomponents/headers
+not original user/bothbootregions/device-specific boot2records or RTC/RPMBrestore.
+Coverage receipt retains sizes/hashes/limits, no newdownloads/physicalreads.
+Repo/diff pass, unchanged276tests. Next exact original-region provenance/restore
+requirements, use existingboardrecords ifprovided; no runtimegates closed.
