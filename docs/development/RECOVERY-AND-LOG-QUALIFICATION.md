@@ -584,3 +584,28 @@ pair (zero of each in the16,584,856-byte decoded Image, SHA256
 Thus the usual embedded-config extraction did not resolve the installed backend
 symbol combinations. That negative search is not proof that logging is disabled.
 Task348 remains blocked on exact backend/retention and actual safe retrieval.
+
+## Reservation callback is not allocation evidence (#348)
+
+The pinned legacy kernel reserves fixed DT regions through the generic early
+FDT scan. Its ram-console declaration has no `no-map` property, so the reviewed
+default path calls memblock_reserve; the later compatible console callback only
+prints the base/size and returns success. ARM64 memory initialization calls the
+scan before later DMA reservation. The inspected files match cached Git revision
+`e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74`; unrelated existing source-tree
+changes were left untouched. Exact hashes/ranges are in the
+[reservation path receipt](../../evidence/retained-console-route/reservation-path.json).
+
+A consequential failure path remains: the generic fixed-reg scanner saves the
+first node even if reservation fails. Later reserved-memory initialization can
+therefore invoke the console callback and print an initialized-node message
+without that callback establishing successful reservation. A range banner or
+compatible-node initialization alone must not qualify memory ownership. This is
+source control flow, not an observed failure on the tablet.
+
+The static legacy config and cached HVT candidate both declare a2MiB console
+region at0x44400000 inside the observed usable bank. Agreement is a useful
+consistency check, not permission to load an image there. Qualification still
+needs the effective loader-preserved DT, actual reservation result/memblock map,
+writer initialization and retention/readout across the intended failure. No
+memory probe, reboot, UART or device operation was performed or authorized.

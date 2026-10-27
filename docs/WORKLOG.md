@@ -2335,3 +2335,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - New sanitized lifecycle receipt records hashes/ranges and all runtime flags
   false. No ramdisk execution, helper execution, raw log read or tablet access.
   Next exact backend/retention/access evidence; physical task348 remains open.
+
+## 2026-10-27 — retained-console reservation proof (#348)
+
+- Inspected pinned legacy generic FDT reservation and ram-console callback paths;
+  verified the five inspected files have no working-tree diff despite unrelated
+  preexisting case-collision changes elsewhere. Exact source hashes/ranges in
+  evidence/retained-console-route/reservation-path.json.
+- Fixed-reg first node remains saved on reservation failure; logging-only console
+  callback can return success later. Callback/init banners cannot independently
+  prove successful reservation. No runtime failure inferred or gate closed.
+- Prior static config/candidate-region comparison receipt retained privately at
+  out/stock-log-config/reservation-crosscheck.json. Original archives still absent.
+  Next actual reservation/retention evidence and original package verification;
+  no helper/firmware/device execution or source-tree mutation occurred.
