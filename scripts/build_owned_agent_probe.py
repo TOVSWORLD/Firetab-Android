@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import subprocess
 from prepare_stage1_host_image import prepare_host_image
+from compare_owned_link_bases import compare_link_bases
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -45,7 +46,12 @@ def build_variant(entry_source):
     subprocess.run([ld,'-m','armelf','--build-id=none','-T',str(script),*[str(o) for o in objects],
                     '-o',str(elf)],check=True,capture_output=True,timeout=30)
     _,image=prepare_host_image(elf.read_bytes())
-    report=dict(entry_variant=entry_source, embedded_callbacks_bound=False, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+    shifted=output/'agent-synthetic-shift.elf'
+    subprocess.run([ld,'-m','armelf','--build-id=none','--defsym=DIAGNOSTIC_LINK_BASE=0x10000000',
+                    '-T',str(script),*[str(o) for o in objects],'-o',str(shifted)],
+                   check=True,capture_output=True,timeout=30)
+    base_comparison=compare_link_bases(elf.read_bytes(),shifted.read_bytes(),second_base=0x10000000)
+    report=dict(link_base_comparison=base_comparison,entry_variant=entry_source, embedded_callbacks_bound=False, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in sources+[script,ROOT/'diagnostic/protocol/agent.h',ROOT/'diagnostic/protocol/dispatcher.h',ROOT/'diagnostic/logging/uart.h',ROOT/'diagnostic/logging/marker.h',ROOT/'diagnostic/logging/logged_agent.h']},
                 compiler=subprocess.check_output([clang,'--version'],text=True,timeout=10).splitlines()[0],
                 linker=subprocess.check_output([ld,'--version'],text=True,timeout=10).splitlines()[0],

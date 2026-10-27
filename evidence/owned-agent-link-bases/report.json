@@ -1,0 +1,148 @@
+{
+  "variants": [
+    {
+      "link_base_comparison": {
+        "synthetic_second_link_base": 268435456,
+        "normalized_load_bytes_equal": true,
+        "normalized_image_bytes": 3000,
+        "normalized_image_sha256": "9ff8658b6473d8880056588778343df417192142483571f6bd0939fd63fb4023",
+        "relative_entry_offset": 0,
+        "thumb_entry": true,
+        "arbitrary_runtime_relocation_verified": false,
+        "physical_placement_verified": false,
+        "firmware_executed": false,
+        "physical_test_ready": false
+      },
+      "entry_variant": "entry",
+      "embedded_callbacks_bound": false,
+      "source_sha256": {
+        "diagnostic/protocol/entry.S": "aa28cf92cf9401626f5d1fb18573faaf0ce91e07fa4f5649a914f2ed627eb978",
+        "diagnostic/protocol/agent.c": "821c47dffd92e7bc858ebbaf1bef99c9af1fa39483a37bd079ef3790051ff443",
+        "diagnostic/protocol/dispatcher.c": "3ce7cbfb5e89813dea184b9846fa2ecf26efc9b070fba6197d11e1689e7be518",
+        "diagnostic/logging/uart.c": "5c708ece4f0f705559f6f4e0940c479103cca3c2a761c9b4d34dcb4f4d6566ac",
+        "diagnostic/logging/marker.c": "b83c13b4da7b9aff14a7df61d2e43887b6a378b0fe466bd84b2334eef72a0c7a",
+        "diagnostic/logging/logged_agent.c": "e1b4a9adc6ff441470b41171e45f507574716cbafffec36e32841eacc44f547c",
+        "diagnostic/protocol/agent.ld": "8f34530007995cb6aee6246eedce9c8a1bbe049232edef5358ce0d1eb9a53cdb",
+        "diagnostic/protocol/agent.h": "a91fa1ab687b38e2321b06272f68b15f849b32d257eb77d52d0e8a275df180f3",
+        "diagnostic/protocol/dispatcher.h": "a976dd2fc7f2bbeb90351cf42efb5f519f0e21d4846a2326b5ea3d5e3a91f516",
+        "diagnostic/logging/uart.h": "4261dbefe5df82caeb99cad7aba075034ec4ab9e4968f7bf53061f256430040b",
+        "diagnostic/logging/marker.h": "f54202571187a865a886850ae8614944b773d81d3ae7cd41fb99f992898e37fc",
+        "diagnostic/logging/logged_agent.h": "c7f2875f6916206716b675c36f07389e60540e38bf804b7b3b63abff68888e44"
+      },
+      "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+      "linker": "Ubuntu LLD 18.1.3 (compatible with GNU linkers)",
+      "elf_sha256": "5a1dab0963df98f5df776fabd0b38bcd20d18029598d7e806a21ef36d1705e4f",
+      "host_image": {
+        "relocation_metadata": {
+          "section_count": 7,
+          "nonempty_relocation_sections": 0,
+          "nonempty_dynamic_sections": 0,
+          "runtime_position_independence_verified": false
+        },
+        "image_bytes": 3000,
+        "image_sha256": "9ff8658b6473d8880056588778343df417192142483571f6bd0939fd63fb4023",
+        "entry_offset": 1,
+        "segment_zero_fill_bytes": 0,
+        "gap_zero_fill_bytes": 6,
+        "source_elf_sha256": "5a1dab0963df98f5df776fabd0b38bcd20d18029598d7e806a21ef36d1705e4f",
+        "purpose": "host-only load-layout construction",
+        "firmware_executed": false,
+        "runtime_relocation_verified": false,
+        "physical_placement_verified": false,
+        "transport_binding_verified": false,
+        "physical_test_ready": false
+      },
+      "stack_bytes": 2048,
+      "compiler_static_frames": {
+        "diagnostic_agent_run": 368,
+        "diagnostic_dispatch": 40,
+        "diagnostic_uart_emit": 16,
+        "diagnostic_marker_text": 0,
+        "diagnostic_uart_marker": 0,
+        "diagnostic_logged_run": 32
+      },
+      "owned_frame_sum_with_wrapper_bytes": 472,
+      "remaining_before_callbacks_interrupts_bytes": 1576,
+      "maximum_callback_stack_usage_verified": false,
+      "caller_return_verified": false,
+      "transport_bound": false,
+      "firmware_executed": false,
+      "physical_test_ready": false
+    },
+    {
+      "link_base_comparison": {
+        "synthetic_second_link_base": 268435456,
+        "normalized_load_bytes_equal": true,
+        "normalized_image_bytes": 3040,
+        "normalized_image_sha256": "81e3bf334d62191b3ba3fa17f1c34e9f5813b0c027faa2e46269c2cedf136652",
+        "relative_entry_offset": 0,
+        "thumb_entry": false,
+        "arbitrary_runtime_relocation_verified": false,
+        "physical_placement_verified": false,
+        "firmware_executed": false,
+        "physical_test_ready": false
+      },
+      "entry_variant": "bridge",
+      "embedded_callbacks_bound": false,
+      "source_sha256": {
+        "diagnostic/protocol/bridge.S": "5f4f23444d97774d6efbcd77bb96cf608944c6ac3cf6f6d005c5f65fb3e983ba",
+        "diagnostic/protocol/agent.c": "821c47dffd92e7bc858ebbaf1bef99c9af1fa39483a37bd079ef3790051ff443",
+        "diagnostic/protocol/dispatcher.c": "3ce7cbfb5e89813dea184b9846fa2ecf26efc9b070fba6197d11e1689e7be518",
+        "diagnostic/logging/uart.c": "5c708ece4f0f705559f6f4e0940c479103cca3c2a761c9b4d34dcb4f4d6566ac",
+        "diagnostic/logging/marker.c": "b83c13b4da7b9aff14a7df61d2e43887b6a378b0fe466bd84b2334eef72a0c7a",
+        "diagnostic/logging/logged_agent.c": "e1b4a9adc6ff441470b41171e45f507574716cbafffec36e32841eacc44f547c",
+        "diagnostic/protocol/agent.ld": "8f34530007995cb6aee6246eedce9c8a1bbe049232edef5358ce0d1eb9a53cdb",
+        "diagnostic/protocol/agent.h": "a91fa1ab687b38e2321b06272f68b15f849b32d257eb77d52d0e8a275df180f3",
+        "diagnostic/protocol/dispatcher.h": "a976dd2fc7f2bbeb90351cf42efb5f519f0e21d4846a2326b5ea3d5e3a91f516",
+        "diagnostic/logging/uart.h": "4261dbefe5df82caeb99cad7aba075034ec4ab9e4968f7bf53061f256430040b",
+        "diagnostic/logging/marker.h": "f54202571187a865a886850ae8614944b773d81d3ae7cd41fb99f992898e37fc",
+        "diagnostic/logging/logged_agent.h": "c7f2875f6916206716b675c36f07389e60540e38bf804b7b3b63abff68888e44"
+      },
+      "compiler": "Ubuntu clang version 18.1.3 (1ubuntu1)",
+      "linker": "Ubuntu LLD 18.1.3 (compatible with GNU linkers)",
+      "elf_sha256": "d385417705944647e510cd7fd4549c894e2a4c975fd2f7da345c813ea89a8613",
+      "host_image": {
+        "relocation_metadata": {
+          "section_count": 8,
+          "nonempty_relocation_sections": 0,
+          "nonempty_dynamic_sections": 0,
+          "runtime_position_independence_verified": false
+        },
+        "image_bytes": 3040,
+        "image_sha256": "81e3bf334d62191b3ba3fa17f1c34e9f5813b0c027faa2e46269c2cedf136652",
+        "entry_offset": 0,
+        "segment_zero_fill_bytes": 0,
+        "gap_zero_fill_bytes": 2,
+        "source_elf_sha256": "d385417705944647e510cd7fd4549c894e2a4c975fd2f7da345c813ea89a8613",
+        "purpose": "host-only load-layout construction",
+        "firmware_executed": false,
+        "runtime_relocation_verified": false,
+        "physical_placement_verified": false,
+        "transport_binding_verified": false,
+        "physical_test_ready": false
+      },
+      "stack_bytes": 2048,
+      "compiler_static_frames": {
+        "diagnostic_agent_run": 368,
+        "diagnostic_dispatch": 40,
+        "diagnostic_uart_emit": 16,
+        "diagnostic_marker_text": 0,
+        "diagnostic_uart_marker": 0,
+        "diagnostic_logged_run": 32
+      },
+      "owned_frame_sum_with_wrapper_bytes": 472,
+      "remaining_before_callbacks_interrupts_bytes": 1576,
+      "maximum_callback_stack_usage_verified": false,
+      "caller_return_verified": false,
+      "transport_bound": false,
+      "firmware_executed": false,
+      "physical_test_ready": false
+    }
+  ],
+  "ci": {
+    "job_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40471752722/job/122080264532",
+    "head": "722f52846a9e1aafba65206c82f291af115fdceb",
+    "tested_merge": "0c7a7b78b76dfcc5f15102046e82322b5f1a3644",
+    "command": "python3 scripts/build_owned_agent_probe.py"
+  }
+}

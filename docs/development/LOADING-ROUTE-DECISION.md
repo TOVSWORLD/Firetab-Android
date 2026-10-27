@@ -995,3 +995,58 @@ automatic work. Next investigate the source-backed stock boot-mode/return path
 that could avoid this flag mutation, and explicitly record where a physical
 mode observation would be required. Initial security, original-state restore and
 real log capture remain open; no reset or tablet access occurred.
+
+## Two synthetic link-base comparison (#311)
+
+While exact-board information remains pending, an independent loading prerequisite
+can be checked more strongly than absence of relocation records. The Linux probe
+now links each owned agent variant at zero and at synthetic base `0x10000000`,
+then compares normalized bounded PT_LOAD contents and relative entry/state. These
+are compiler/linker inputs, not proposed physical addresses. The comparator
+rejects changed load bytes, ambiguous extents, wrong bases or entry-state changes.
+No firmware executes and no binary is uploaded.
+
+Three synthetic comparator tests pass; all 290 host tests pass. Actual Linux
+comparison results are pending. Equal bytes at two link bases would support
+those specific link-time address assumptions, not prove arbitrary runtime
+relocation, safe mapping, cache/interrupt state, callbacks, initial security entry
+or stock return. Next inspect the exact CI comparison and retain its source/
+image revisions; original acquisition/restore and physical logs remain open.
+
+## Link-base comparison caught marker pointer-table dependence (#311)
+
+The [first actual Linux comparison](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40470154989/job/122075066145)
+failed at PR head `41fb9974b93df73a608eb54e63cc9431060575f2`: normalized load
+bytes/relative entry were not equal. The check was kept strict; #312 remains
+unmerged pending its corrected result. This is a build-address failure, not a
+physical tablet failure.
+
+Separate inspection of the cached Apple clang marker object found three ABS32
+relocations in a compiler-generated pointer table. A relocation-free linked ELF
+had already resolved those addresses, hiding this dependence from the earlier
+section check. Replaced switch-based pointer selection with fixed-stride character
+storage and a scalar length table. Actual local ARM recompilation now shows no
+ABS32 entries in that marker object; all 290 host tests pass, preserving exact
+marker text. Local and Linux objects are not claimed byte-equivalent. The
+[receipt](../../evidence/link-base-marker-fix/report.json) records the failed job,
+object/source hashes and pending Linux confirmation.
+
+Next require both actual direct/bridge comparisons to pass before merging #312.
+No physical load address, arbitrary runtime relocation, entry/restore or log
+capture is qualified by this fix. No firmware/device execution occurred.
+
+## 2026-10-27 — Corrected Linux two-base result (#311 / #312)
+
+Actual Linux job 40471752722/122080264532 passed at source head
+`722f52846a9e1aafba65206c82f291af115fdceb`, tested merge
+`0c7a7b78b76dfcc5f15102046e82322b5f1a3644`. Direct (3000 bytes) and bridge
+(3040 bytes) have equal normalized load bytes at zero and synthetic `0x10000000`,
+with unchanged relative entry and ARM/Thumb state. Exact image/source hashes,
+tool versions and stack analysis are retained in
+`evidence/owned-agent-link-bases/report.json`. This confirms the pointer-table
+fix for these two linked bases; it does not prove arbitrary runtime relocation,
+physical mapping, callback binding, security entry, original-state restoration
+or captured UART output. No firmware or tablet execution occurred.
+
+Next: original acquisition/restore provenance and board-specific logging
+qualification under #106; existing board-record question remains pending.

@@ -2108,3 +2108,40 @@ matchingwrongsize copies reject. Three newsynthetictests/full287hosttests pass;
 repo/diff pass. Output geometryconsistency only, no origin/selection/independence/
 restore claim or rawmetadata. No device/metadata acquisition. Existingboardquestion
 pending withoutrepeat; next actual acquisitionprovenance/restore entry remainsopen.
+
+## 2026-10-27 — Two synthetic owned-agent link bases (#311 / #106)
+
+Merged #310 at passing20fc3ab74acf91a42c1374cf9fea11a422cfe879,
+mergecf1fd5782ed0e2e1840e30833adb8a451b873695; #309 closed. Independentloading
+work while boardrecordanswerpending: compile-only bothownedvariants atzero and
+synthetic10000000, compare normalized validated loadbytes/relativeentry/state.
+Three newcomparator tests/full290hosttests pass; actualLinuxcomparison pending.
+Repo/diff pass. No execution/physicalplacement proposal; two-baseagreement would
+not prove arbitraryruntimePIC/MMU/cache/callback/restore/log safety.
+
+## 2026-10-27 — Actual two-base failure and marker fix (#311 / #312)
+
+Run40470154989/job122075066145 failed comparison at head
+41fb9974b93df73a608eb54e63cc9431060575f2; #312 notmerged. Separate local marker
+object revealed3ABS32 pointertable relocations; linkedELFsection absence had not
+proved baseindependence. Replaced switchpointerselection with fixedstride chars/
+scalar lengths. Actual local ARM recompilation shows0ABS32 markerentries;
+290hosttests pass. Retained failure/object/source metadata; Linuxconfirmation
+pending. Repo/diff pass. No firmware/device execution. Next exacthead CI both
+variants, no weakened comparison or runtime/restore claim.
+
+## 2026-10-27 — Corrected Linux two-base result (#311 / #312)
+
+Actual Linux job 40471752722/122080264532 passed at source head
+`722f52846a9e1aafba65206c82f291af115fdceb`, tested merge
+`0c7a7b78b76dfcc5f15102046e82322b5f1a3644`. Direct (3000 bytes) and bridge
+(3040 bytes) have equal normalized load bytes at zero and synthetic `0x10000000`,
+with unchanged relative entry and ARM/Thumb state. Exact image/source hashes,
+tool versions and stack analysis are retained in
+`evidence/owned-agent-link-bases/report.json`. This confirms the pointer-table
+fix for these two linked bases; it does not prove arbitrary runtime relocation,
+physical mapping, callback binding, security entry, original-state restoration
+or captured UART output. No firmware or tablet execution occurred.
+
+Next: original acquisition/restore provenance and board-specific logging
+qualification under #106; existing board-record question remains pending.
