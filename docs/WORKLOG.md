@@ -2187,3 +2187,13 @@ douglas init declares removing the copy. Actual action ordering/access/log survi
 unverified. No raw upstream files/logs published and no execution/device access.
 Next lifecycle and authorized retrieval evidence, independent of retained-memory
 qualification. Repository/diff checks applied; no code changed.
+
+## 2026-10-27 — Central recovery handoff (#324)
+
+Corrected the checklist's stale 3024/3072-byte pre-marker-fix image reference to
+explicitly supersede it with #312's 3000/3040-byte two-base receipt. Consolidated
+source evidence and missing configuration, memory/retention, writable restore,
+retrieval and board/UART prerequisites through #323. Existing owner board-record
+question remains pending; no new physical request. No runtime gate closed.
+Documentation-only repository/diff checks; next evidence provenance before any
+concrete physical proposal, not additional marker/count work.
