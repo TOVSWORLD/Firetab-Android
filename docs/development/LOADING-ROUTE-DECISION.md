@@ -970,3 +970,28 @@ runs free of these requests. Next inspect the explicit reset implementation's
 exact register/effect/return assumptions as a separate source task, then compare
 it with installed-state evidence; do not run it to discover compatibility.
 Original-state restore and usable physical logs remain independent prerequisites.
+
+## Explicit reset-to-BootROM configures flags, not a proved transition (#283)
+
+The pinned [reset_to_brom implementation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L457-L482)
+performs four target-register writes: unlock configuration, set reset-control,
+relock, then write download-mode flags. It does not read/save the old values,
+check write return values, trigger a reset explicitly within this function or
+return a positive transition result. Its timeout-zero default encodes the value
+the source describes as no timeout; it is not a bounded host-operation deadline.
+The [receipt](../../evidence/reset-flag-source-effects/report.json) retains verified
+source hashes, active-call inventory and selected ranges without executing code.
+
+The pinned [MT8163 record](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/config/brom_config.py#L2264-L2288)
+does contain a misc-lock register setting, so this is not simply a missing-field
+case for that source record. A configured record does not establish the actual
+connected protocol identity, current firmware permissions, register semantics,
+reset behavior or recovery after partial writes. The enclosing crash routine
+suppresses exceptions; its name cannot turn flag preparation into observed entry.
+
+This candidate adds unresolved state restoration and reset-trigger requirements
+rather than supplying a qualified USB-only transition. Do not execute it during
+automatic work. Next investigate the source-backed stock boot-mode/return path
+that could avoid this flag mutation, and explicitly record where a physical
+mode observation would be required. Initial security, original-state restore and
+real log capture remain open; no reset or tablet access occurred.
