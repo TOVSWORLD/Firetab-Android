@@ -1,0 +1,38 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "path": "mtkclient/Library/Connection/usblib.py",
+  "git_blob_sha1": "54357deec02098a874c1762043a2a7a486c71f66",
+  "sha256": "721d83047f70702413dcef76c0a63b90bfa38abf5146699b4726dceee4816986",
+  "reviewed_lines": {
+    "close": [
+      449,
+      475
+    ],
+    "write": [
+      477,
+      515
+    ],
+    "read": [
+      522,
+      606
+    ],
+    "usbwrite": [
+      671,
+      680
+    ]
+  },
+  "findings": {
+    "write_returns_byte_count": false,
+    "zero_count_write_has_progress_bound": false,
+    "write_has_explicit_per_call_timeout": false,
+    "read_fast_initial_timeout_argument": 0,
+    "read_nonfast_uses_backend_default_timeout": true,
+    "read_has_monotonic_total_deadline": false,
+    "close_reset_false_may_attach_kernel_driver_zero": true,
+    "close_can_discard_buffered_rx": true,
+    "agent_callback_direct_binding_qualified": false
+  },
+  "helper_imported": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}
