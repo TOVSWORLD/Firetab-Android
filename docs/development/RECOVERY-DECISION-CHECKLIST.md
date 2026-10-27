@@ -252,8 +252,12 @@ and bounded callbacks before any physical proposal; this gate is still open.
 
 The owned agent, context bridge and opt-in sanitized UART logging now link in
 Linux CI. [Exact build/gate receipt](../../evidence/recovery-readiness-boundary/report.json)
-records the tested revision, source hashes, 3024-byte direct image and 3072-byte
-ARM bridge image. These are host-built images, not qualified physical packages.
+records an earlier build. It is superseded for image selection by the
+[two-base receipt](../../evidence/owned-agent-link-bases/report.json): the corrected
+3000-byte direct and 3040-byte bridge images agree at two synthetic link bases.
+The older images contained the address-dependent marker pointer table caught by
+#311/#312; do not select them from the earlier receipt. This remains a build
+check, not arbitrary runtime relocation or a qualified physical package.
 The six source-cited physical gates remain open: initial entry/exit, callback
 semantics/restoration, physical memory contract, original-state restore, real log
 capture and exact owner test/recovery instructions. Boot, hardware and app tests
@@ -264,3 +268,34 @@ next investigation must address current-build initial-entry alternatives and
 reachable return/restore, using cached sources and explicit effect inventories.
 Hardware access is acceptable if needed for planning; no specific physical
 action is authorized or requested by this build receipt.
+
+
+## Recovery evidence handoff after #323
+
+The central decision remains **NO-GO**. Source and host-file progress does not
+supply the missing physical observations. Carry these specific gates forward:
+
+- Loading: exact current-build initial security entry, caller/callback semantics,
+  actual memory ownership and reachable failure exit remain unqualified. Neither
+  synthetic link-base agreement nor source address declarations selects placement.
+- Restore: two matching offline capture sets and supplied geometry can check bytes,
+  not original acquisition or writable post-failure recovery. #315 distinguishes
+  host read-only flags, card protection and actual region selection/readback.
+  Original RTC/RPMB/security state is outside ordinary image coverage.
+- Retained logs: #317 identifies a configured DRAM-console candidate; #319 shows
+  initialized-node output alone does not prove reservation success. #320 found no
+  standard embedded configuration in the exact packaged kernel. Obtain build-matched
+  resolved configuration and runtime ownership/retention evidence before selection.
+- Retrieval: #321 records restricted packaged permissions; #323 resolves declared
+  removal-before-copy ordering and possible repeated copying. Neither filename
+  presence nor policy declarations proves fresh readable logs or authorized access.
+- UART: exact PCB identity, isolation, pads, signaling level and captured output
+  remain unqualified. Hardware planning is allowed, but no physical action is
+  authorized by that preference. The existing question about already-held board
+  photos/revision records is pending; do not repeat it or request opening here.
+
+Next useful evidence is an existing exact-board record or build-matched configuration/
+sanitized prior runtime record with provenance. Do not substitute more marker features
+or host test totals for these gates. Preserve the existing owner question and review
+any supplied evidence before proposing a concrete bounded inspection/capture step.
+No loading, configuration, boot, hardware or app-reliability runtime gate is closed.
