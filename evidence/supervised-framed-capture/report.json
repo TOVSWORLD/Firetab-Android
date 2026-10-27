@@ -1,0 +1,120 @@
+{
+  "command": "python3 scripts/synthetic_supervised_diagnostic.py --mode MODE",
+  "results": [
+    {
+      "synthetic_only": true,
+      "scenario": "success",
+      "scenario_passed": true,
+      "supervisor": {
+        "worker_completed": true,
+        "parent_validation_passed": true,
+        "timed_out": false,
+        "terminate_requested": false,
+        "kill_requested": false,
+        "worker_reaped": true,
+        "output_published": false,
+        "device_recovery_verified": false,
+        "physical_test_ready": false,
+        "elapsed_seconds": 0.06
+      },
+      "source_sha256": {
+        "synthetic_supervised_diagnostic.py": "48a5fc81899aae65c39d5ff37db6c8e5d13b6bc948f481e52d208e98ab72de5d",
+        "injected_diagnostic_capture.py": "8b638436e7929e9af9358b0e15c53bae43d3247d2108c5c8d2e388d8e16af2a1",
+        "offline_diagnostic_dispatcher.py": "07b91bcd11a734b0c905a64a66e6e3f26b04a4984f454965d650b51e052386a8",
+        "offline_diagnostic_protocol.py": "3ca527650acc1e2974767df39376ce4d5660eaf541417bfaba13492ec664c639",
+        "offline_worker_supervisor.py": "113715e4d13d4a1b2216cb811fc27d5e7041ce1f94f1a383bb5de24999b5a54f"
+      },
+      "forced_stop_confirms_device_cleanup": false,
+      "firmware_executed": false,
+      "device_accessed": false,
+      "physical_test_ready": false
+    },
+    {
+      "synthetic_only": true,
+      "scenario": "write-stall",
+      "scenario_passed": true,
+      "supervisor": {
+        "worker_completed": false,
+        "parent_validation_passed": false,
+        "timed_out": true,
+        "terminate_requested": true,
+        "kill_requested": false,
+        "worker_reaped": true,
+        "output_published": false,
+        "device_recovery_verified": false,
+        "physical_test_ready": false,
+        "failure": "worker_deadline",
+        "elapsed_seconds": 1.003
+      },
+      "source_sha256": {
+        "synthetic_supervised_diagnostic.py": "48a5fc81899aae65c39d5ff37db6c8e5d13b6bc948f481e52d208e98ab72de5d",
+        "injected_diagnostic_capture.py": "8b638436e7929e9af9358b0e15c53bae43d3247d2108c5c8d2e388d8e16af2a1",
+        "offline_diagnostic_dispatcher.py": "07b91bcd11a734b0c905a64a66e6e3f26b04a4984f454965d650b51e052386a8",
+        "offline_diagnostic_protocol.py": "3ca527650acc1e2974767df39376ce4d5660eaf541417bfaba13492ec664c639",
+        "offline_worker_supervisor.py": "113715e4d13d4a1b2216cb811fc27d5e7041ce1f94f1a383bb5de24999b5a54f"
+      },
+      "forced_stop_confirms_device_cleanup": false,
+      "firmware_executed": false,
+      "device_accessed": false,
+      "physical_test_ready": false
+    },
+    {
+      "synthetic_only": true,
+      "scenario": "read-stall",
+      "scenario_passed": true,
+      "supervisor": {
+        "worker_completed": false,
+        "parent_validation_passed": false,
+        "timed_out": true,
+        "terminate_requested": true,
+        "kill_requested": false,
+        "worker_reaped": true,
+        "output_published": false,
+        "device_recovery_verified": false,
+        "physical_test_ready": false,
+        "failure": "worker_deadline",
+        "elapsed_seconds": 1.005
+      },
+      "source_sha256": {
+        "synthetic_supervised_diagnostic.py": "48a5fc81899aae65c39d5ff37db6c8e5d13b6bc948f481e52d208e98ab72de5d",
+        "injected_diagnostic_capture.py": "8b638436e7929e9af9358b0e15c53bae43d3247d2108c5c8d2e388d8e16af2a1",
+        "offline_diagnostic_dispatcher.py": "07b91bcd11a734b0c905a64a66e6e3f26b04a4984f454965d650b51e052386a8",
+        "offline_diagnostic_protocol.py": "3ca527650acc1e2974767df39376ce4d5660eaf541417bfaba13492ec664c639",
+        "offline_worker_supervisor.py": "113715e4d13d4a1b2216cb811fc27d5e7041ce1f94f1a383bb5de24999b5a54f"
+      },
+      "forced_stop_confirms_device_cleanup": false,
+      "firmware_executed": false,
+      "device_accessed": false,
+      "physical_test_ready": false
+    },
+    {
+      "synthetic_only": true,
+      "scenario": "cleanup-stall",
+      "scenario_passed": true,
+      "supervisor": {
+        "worker_completed": false,
+        "parent_validation_passed": false,
+        "timed_out": true,
+        "terminate_requested": true,
+        "kill_requested": false,
+        "worker_reaped": true,
+        "output_published": false,
+        "device_recovery_verified": false,
+        "physical_test_ready": false,
+        "failure": "worker_deadline",
+        "elapsed_seconds": 1.004
+      },
+      "source_sha256": {
+        "synthetic_supervised_diagnostic.py": "48a5fc81899aae65c39d5ff37db6c8e5d13b6bc948f481e52d208e98ab72de5d",
+        "injected_diagnostic_capture.py": "8b638436e7929e9af9358b0e15c53bae43d3247d2108c5c8d2e388d8e16af2a1",
+        "offline_diagnostic_dispatcher.py": "07b91bcd11a734b0c905a64a66e6e3f26b04a4984f454965d650b51e052386a8",
+        "offline_diagnostic_protocol.py": "3ca527650acc1e2974767df39376ce4d5660eaf541417bfaba13492ec664c639",
+        "offline_worker_supervisor.py": "113715e4d13d4a1b2216cb811fc27d5e7041ce1f94f1a383bb5de24999b5a54f"
+      },
+      "forced_stop_confirms_device_cleanup": false,
+      "firmware_executed": false,
+      "device_accessed": false,
+      "physical_test_ready": false
+    }
+  ]
+}
