@@ -2323,3 +2323,15 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   combined budget and synthetic identity/non-execution cases. Repository guard
   against the exact baseline and git diff --check passed. Real originals remain
   unavailable; next run intake and original provenance review when supplied.
+
+## 2026-10-27 — packaged retained-log lifecycle (#348)
+
+- Reparsed cached stock boot SHA2568982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363;
+  bounded gzip/newc walk under16MiB, decoded cpio2,917,376bytes. Own inspection
+  command retained at ignored out/stock-log-lifecycle/inspect.py and report.json.
+- Matched packaged file hashes to prior stock-log-access receipt. Assigned each
+  declaration to its actual on-trigger: removal post-fs, copy post-fs-data.
+  Traced packaged import declarations; no runtime property/event order inferred.
+- New sanitized lifecycle receipt records hashes/ranges and all runtime flags
+  false. No ramdisk execution, helper execution, raw log read or tablet access.
+  Next exact backend/retention/access evidence; physical task348 remains open.

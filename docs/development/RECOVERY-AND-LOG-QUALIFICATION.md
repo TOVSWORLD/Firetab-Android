@@ -553,3 +553,34 @@ init/data availability, file lifecycle and provenance without changing permissio
 or weakening policy. No device read, chmod, mount, reboot or init execution occurred.
 Next establish actual lifecycle/access evidence from existing sanitized records;
 the kernel configuration/retention and board UART gates remain open.
+
+## Packaged retained-log action lifecycle (#348)
+
+A bounded reinspection of the same hash-matched stock ramdisk separates the
+previously ambiguous copy/removal declarations. The douglas removal of the
+copied `SYSTEM_LAST_KMSG` is in `post-fs`; the generic copy from `/proc/last_kmsg`
+is in `post-fs-data`, followed by mode0600/system ownership. These are different
+triggers, so the earlier observation of both commands does not establish that
+the copied file is deleted after collection. Conversely, trigger declarations
+do not prove the actual event order, action success or accessibility on this unit.
+
+The packaged import declarations link the hardware-selected init file to project
+init and then douglas init. The initial import depends on `ro.hardware`; no active
+property or import execution was observed. Exact component/file hashes, line
+ranges and trigger assignments are in the [lifecycle receipt](../../evidence/stock-log-access/lifecycle.json).
+No raw ramdisk content or captured user logs are published.
+
+For a future separately approved retrieval, distinguish stale copied data from a
+fresh proc snapshot and a newly successful post-fs-data copy. A boot that fails
+before data initialization may never create a new copied file. A subsequent boot
+may remove an older copy during post-fs. Neither a missing file nor a present
+file alone establishes the failed kernel's progress or log freshness. Collection
+still needs a permitted identity, a surviving backend and an attributable boot
+record. No permission changes, reboot, log read or device access is authorized.
+
+The cached decoded stock kernel also has no standard IKCFG_ST/IKCFG_ED marker
+pair (zero of each in the16,584,856-byte decoded Image, SHA256
+`43b5e6440ad70a6622e3d4ee9cb92f3207d45707e54a16697430036080f2f6e0`).
+Thus the usual embedded-config extraction did not resolve the installed backend
+symbol combinations. That negative search is not proof that logging is disabled.
+Task348 remains blocked on exact backend/retention and actual safe retrieval.

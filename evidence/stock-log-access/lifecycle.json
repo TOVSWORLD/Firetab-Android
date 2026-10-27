@@ -1,0 +1,85 @@
+{
+  "boot_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "ramdisk_sha256": "2fbdceb228be3312a549ae13f415dac9699539686ebb6b099bd480fc362c304c",
+  "cpio_bytes": 2917376,
+  "cpio_sha256": "bfac91d45d2f66dd9f3d8cf0291fb03da4e662b7649198a940f86b21598bcd54",
+  "decompression_cap": 16777216,
+  "scope": "Static packaged init action/import declarations; not runtime order or success",
+  "sources": [
+    {
+      "path": "init.douglas.rc",
+      "sha256": "2accaf9e756c14db7040c4162fdbcf9640e8bbf8ce92098863dce08b4bcdc35e"
+    },
+    {
+      "path": "init.mt8163.rc",
+      "sha256": "6ea0e4d8090aee9e1d868e040943ba1712c0e3d1891fea1bc0d47bdaf3981e34"
+    },
+    {
+      "path": "init.project.rc",
+      "sha256": "a75f4cd86b75d790fa1e3064152947b848b9a6a7cbcb2e01529f57003f371769"
+    },
+    {
+      "path": "init.rc",
+      "sha256": "e930fa5d7fc651dfcec0f3995edfecc084646496cf0b76bdc944e65cedcb7758"
+    }
+  ],
+  "declarations": [
+    {
+      "path": "init.rc",
+      "line": 18,
+      "trigger": null,
+      "finding": "Imports hardware-property-selected init file; actual runtime property/import success not observed"
+    },
+    {
+      "path": "init.mt8163.rc",
+      "line": 3,
+      "trigger": null,
+      "finding": "Imports project init"
+    },
+    {
+      "path": "init.project.rc",
+      "line": 7,
+      "trigger": null,
+      "finding": "Imports douglas init"
+    },
+    {
+      "path": "init.rc",
+      "lines": [
+        177,
+        179
+      ],
+      "trigger": "init",
+      "finding": "Declares pstore mount and console ownership/mode"
+    },
+    {
+      "path": "init.rc",
+      "lines": [
+        243,
+        244
+      ],
+      "trigger": "post-fs",
+      "finding": "Declares last_kmsg ownership/mode"
+    },
+    {
+      "path": "init.douglas.rc",
+      "line": 24,
+      "trigger": "post-fs",
+      "finding": "Declares removal of copied SYSTEM_LAST_KMSG"
+    },
+    {
+      "path": "init.rc",
+      "lines": [
+        279,
+        281
+      ],
+      "trigger": "post-fs-data",
+      "finding": "Declares copy from proc last_kmsg then0600 system ownership"
+    }
+  ],
+  "runtime_order_verified": false,
+  "copy_success_verified": false,
+  "log_freshness_verified": false,
+  "retrieval_qualified": false,
+  "device_accessed": false,
+  "ramdisk_executed": false
+}
