@@ -106,3 +106,22 @@ synthetic host files were used for development.
 Before eventual owner evidence collection, define acquisition provenance and
 acknowledged hardware-region selection separately. Do not use this checker to
 turn official component copies into original-state escrow or to authorize writes.
+
+## Supplied eMMC geometry decoder (#307)
+
+`decode_offline_emmc_geometry.decode_geometry` accepts exactly 512 supplied
+EXT_CSD bytes for reviewed revisions 6..8. It derives user bytes from little-endian
+SEC_COUNT in 512-byte units, independently of the current 512/4096 data-sector
+size, and both hardware boot regions from BOOT_MULT times 128KiB. Reviewed caps
+are 64GiB user/32MiB per boot region. Zero/unsupported/malformed values fail.
+The [primary source receipt](../../evidence/offline-emmc-geometry/sources.json)
+records committed source hashes, definitions and kernel decoding ranges.
+
+The decoder reports the supplied access bits and distinguishes ordinary user/
+boot access from RPMB/other access. Project boot1/boot2 map to Linux boot0/boot1;
+it sends no selector. Four synthetic tests cover capacities, 4096-sector unit
+handling, RPMB classification and malformed fields; all 284 host tests pass.
+No actual EXT_CSD was collected. Supplied values cannot prove device origin,
+acknowledged selection, independent acquisition or restoration, and every such
+qualification flag remains false. This supplies a future evidence decoder,
+not a memory-read or collection procedure.

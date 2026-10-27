@@ -2087,3 +2087,14 @@ filechange/geometry/digest mismatch rejection, sanitized output. Synthetic tests
 cover agreement/alias/differentvalidhash/GPT/symlink. No actual captures/device
 reads or independence/RTC/RPMB/restore proof. Repo/diff checks pass. Existingboard
 question pending withoutrepeat; next acquisitionprovenance/regionselection evidence.
+
+## 2026-10-27 — Supplied eMMC geometry decoder (#307 / #106)
+
+Merged #306 at passing3daeb6ff5a899e808d85a4b038b867a80bf2db38,
+merge8ce664a5a0bddc8050f09c49bf399eed9a11c250; #305 closed. Added actual
+supplied512B EXT_CSD geometrydecoder, revisions6..8, SEC_COUNT512Bunits independent
+ofsector-size and BOOT_MULT128KiB, project/Linuxregion mapping/accessclassification.
+Verified cached source Gitobjects/receipt, four synthetic tests/full284pass.
+Repo/diff pass. No metadata/device acquisition/selector/helper execution; origin/
+selection/independence/restore remainfalse. Existingboardrecord question pending;
+next integrate suppliedgeometry into explicit escrow evidence validation, no physicalbinding.
