@@ -739,3 +739,27 @@ and test actual synthetic stalls, while retaining cleanup uncertainty on forced
 termination. Parent validation must reject incomplete/late captures. Device-side
 callbacks, security entry, placement, original-state restore and real boot logs
 remain unqualified; host framing success cannot establish them.
+
+## Supervised framed synthetic capture (#263)
+
+`synthetic_supervised_diagnostic.py` runs the complete injected framed capture
+inside the existing spawned-worker supervisor. Its only inputs are built-in
+synthetic scenarios; it has no device/backend/helper binding. Parent validation
+requires regular bounded files, exact 1080-byte expected synthetic contents,
+snapshot hash and current source identities. Even accepted bytes stay quarantined
+and are removed by this scenario runner; no backup or diagnostic package is
+published.
+
+The [measured receipt](../../evidence/supervised-framed-capture/report.json)
+records success in 0.060s and actual write/read/cleanup stalls rejected and reaped
+in 1.003/1.005/1.004s respectively, under a one-second worker deadline. All 274
+host tests pass. These are real host process stalls with synthetic callbacks,
+not simulated clock advances or tablet tests. Forced termination cannot confirm
+USB/device cleanup, undo a CALL or make a retry safe. The success validator is
+specific to known synthetic bytes, not a general device evidence validator.
+
+Next consolidate the owned agent image, host framing and supervision requirements
+into a concrete loader-entry/return dependency check. Physical use still lacks
+qualified initial security entry, safe mapping/callback setup, original-state
+restore and a real bounded log/readback channel. Do not substitute more host
+simulation for those gates or infer them from successful process supervision.

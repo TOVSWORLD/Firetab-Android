@@ -1845,3 +1845,14 @@ Release/dispose gate publication, late-claim cleanup regression included.
 272hosttests pass; repo/diff pass. No USB import/native backend/device access.
 Clock cannot preempt blocking callbacks; next existing supervisor integration with
 actual synthetic stalls and parent validation. Physical entry/restore/logs open.
+
+## 2026-10-27 — Real spawned synthetic framed stalls (#263 / #106)
+
+Merged #262 at passing ccb3b4cc66b5e9d7809298d44bb1a8c0814c213f,
+merge e5945736869131be7957199166a56eea889e7524; #261 closed. Integrated
+complete framed synthetic capture with existing supervisor and parent exact
+snapshot/hash/source validation. Actual measured success0.060s; write/read/
+cleanup stalls reaped/rejected1.003/1.005/1.004s.274hosttests pass; metadata
+receipt retained, no firmware/device/native backend execution. Repo/diff pass.
+Forced stop is not device cleanup/undo. Next concrete initial loader/return
+qualification dependency check, not more host simulation; restore/log gates open.
