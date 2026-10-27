@@ -866,3 +866,31 @@ polling/output design from the existing UART0 register contract, compile/static
 inspection only. Pin routing/electrical access, runtime clocks and actual log
 capture remain hardware gates. Original-state restore and initial security entry
 remain open regardless of the logging alternative.
+
+## Bounded UART logging core, no physical binding (#273)
+
+`diagnostic/logging/uart.c` is an owned independent log-output core for a caller-
+supplied, qualified 32-bit regshift-two UART mapping. It accepts at most 64 bytes
+and a shared budget of at most 4096 status polls, returning the actual queued
+count, including partial/zero progress. It checks the divisor-latch alias bit
+before output and does not program baud, pinmux, clocks, interrupts or reset.
+No physical UART address is selected or accessed by the build/test workflow.
+The [retained driver source](../../evidence/console-storage/ack/drivers/tty/serial/8250/8250_mtk.c)
+uses MEM32/regshift two; the existing
+[UART contract](../../evidence/uart-log-contract/report.json) retains the DT,
+clock/pin source evidence and unresolved hardware gates.
+
+Actual ARM compilation passed with warnings-as-errors. Native tests use only a
+six-word synthetic register array: ready/not-ready, shared budget/partial count,
+divisor alias and invalid inputs. All 275 host tests pass; the
+[receipt](../../evidence/bounded-uart-log-core/report.json) records hashes and
+limits. No ARM firmware or physical MMIO executes. A poll-count bound is not a
+wall-clock bound: individual MMIO accesses can fault/stall. Queued bytes do not
+prove transmitter drain, electrical output or captured logs. Exclusive UART
+ownership/stable register mode is a caller prerequisite; the guard cannot defeat
+concurrent reconfiguration.
+
+Next define the fixed sanitized entry/failure marker format and integrate this
+core only into a compile-only diagnostic variant. Initial loader security and
+return, qualified mapping, UART initialization/routing/electrical access, original
+restore and actual log capture remain open; do not wire the tablet automatically.

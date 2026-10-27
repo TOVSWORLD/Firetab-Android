@@ -1,0 +1,14 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -mthumb -std=c11 -Os -ffreestanding -fno-builtin -Wall -Wextra -Werror -c diagnostic/logging/uart.c -o out/owned-protocol/uart.o",
+  "compile_exit_code": 0,
+  "source_sha256": "5c708ece4f0f705559f6f4e0940c479103cca3c2a761c9b4d34dcb4f4d6566ac",
+  "object_sha256": "ca695869eac8a8037fad62427706a55e64481dc6b69953c4a35dee91edc0b539",
+  "native_synthetic_register_tests_passed": true,
+  "max_message_bytes": 64,
+  "max_status_polls": 4096,
+  "wall_clock_bound_proven": false,
+  "physical_address_bound": false,
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}
