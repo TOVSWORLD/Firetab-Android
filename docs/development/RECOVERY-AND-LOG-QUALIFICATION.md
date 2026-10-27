@@ -460,3 +460,19 @@ that no specification or agent-side source exists elsewhere.
 Next consolidate the remaining physical entry/agent/restore/logging prerequisites
 into one explicit go/no-go checklist and identify the smallest owner-supplied
 evidence needed. More synthetic validation cannot qualify those physical gates.
+
+## Supplied fixed-marker transcript interpretation (#313)
+
+`python3 scripts/decode_offline_uart_markers.py SUPPLIED_HOST_FILE` reads at most
+1 MiB from a regular host file and prints only its hash, length, marker counts and
+qualified text outcome. It opens no serial port and performs no acquisition.
+Only complete exact LF/CRLF lines `FTD1 ENTRY` followed by `FTD1 RETURN` or
+`FTD1 ERROR` form a valid single pair. Missing/truncated, repeated, reversed or
+malformed marker lines leave the outcome unqualified. Unrelated lines are not
+published; source files themselves must remain private unless owner-sanitized.
+
+A valid pair is a statement about supplied text, which can be fabricated or stale.
+It proves neither device origin/freshness nor executed agent, drained UART output,
+stock return, kernel boot or restore. Even an ERROR pair only reports marker text.
+Existing board identity, electrical level, entry/exit and original-state restore
+gates stay open. No owner collection action is requested by this parser.
