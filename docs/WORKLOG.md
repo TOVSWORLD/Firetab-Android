@@ -2229,3 +2229,14 @@ Added phase352/tasks353–354 for the existing first-party license hold and exac
 beta redistribution/source-obligation review. These are blocked policy inputs,
 not permissions inferred from CI. Total current delivery map44 nodes; Android
 and optional Crestron QA gates remain separate.
+
+## 2026-10-27 — Cover-only inspection review proposal (#345)
+
+Prepared a concrete review artifact in HARDWARE-EVIDENCE-PLAN.md using the
+firsthand exact-generation cover account and actually viewed supplier frames.
+Explicitly records video identity conflict, unknown connector mechanics and
+energized-battery boundary. Scope is identification-only with observable stop
+conditions/privacy handling; no physical action is approved. Updates345, not
+closure: owner/operator review and exact mechanical safety remain unresolved.
+Next independent work339 QA matrix while review/source gaps are pending. CI/PRs
+inspected healthy; no device/helper/firmware action or new audit micro-issue.
