@@ -682,3 +682,36 @@ per-call deadline or cleanup contract, so it is not yet an acceptable binding.
 Next investigate a concrete transport's source contract and its error/return
 semantics; do not add a live binding merely because the ABI is now stable.
 Original restore, security entry, placement and usable real logs remain open.
+
+## Concrete upstream USB callback contract (#259)
+
+The hash-verified pinned
+[write implementation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py#L477-L515)
+returns a boolean, not the agent ABI's exact byte count. A nonpositive endpoint
+write logs without advancing position or the exception counter; repeated zero
+results therefore lack a progress bound. Endpoint writes supply no explicit
+per-call timeout. Three exceptions can stop writing, but that does not bound
+zero-progress calls or the elapsed time of the whole transaction.
+
+The [read implementation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py#L522-L606)
+passes initial timeout argument zero on its fast path; the nonfast path omits
+that argument and uses the endpoint/backend default. Its timeout counter advances
+on selected exceptions, not a monotonic total deadline. It may retain excess
+bytes for later calls. These observations do not establish a bounded exact-frame
+receive contract for the owned agent or host session.
+
+Even [close(reset=False)](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/Connection/usblib.py#L449-L475)
+clears buffered receive state and may attach kernel driver zero before resource
+disposal. The parameter suppresses the explicit reset branch; it does not prove
+cleanup has no device/driver effects. The
+[receipt](../../evidence/concrete-usb-contract/report.json) records source identity,
+ranges and the rejected direct-binding conclusion. No helper import, backend
+initialization, enumeration or device operation occurred.
+
+Do not bind these upstream methods directly or translate boolean success into
+an assumed full byte count. Next integrate the existing owned exact-count,
+finite-timeout injected host backend with framed transactions in synthetic tests,
+including partial-send uncertainty and explicit disposal outcomes. That is still
+host verification; BootROM-side callback deadlines/cleanup and initial security
+entry remain separate blockers. Original-state restore and real log acquisition
+are not supplied by this source review.

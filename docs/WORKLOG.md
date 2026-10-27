@@ -1823,3 +1823,14 @@ Native regression mutates caller ABI but original2transactions complete safely;
 268hosttests and actual ARM recompile pass. New link/stack result pending CI.
 Repository/diff pass. No firmware/device execution. Next concrete transport
 source deadline/error/cleanup investigation, no unqualified BootROM callback binding.
+
+## 2026-10-27 — Concrete USB callback contract rejection (#259 / #106)
+
+Merged #258 after five passing checks at c786c266c22228963720f442c53c996e96b45365,
+merge61e5e8e233c852589941835e4eb6fc1c271702fb; #257 closed. Verified pinned
+usblib blob. Write returnsbool, zero progress has no bound; fast read initial
+argument0/nonfastdefault, no total monotonic deadline. close(reset=False) clears
+RX and mayattach kernel driver0. Direct agent/host binding rejected; metadata/
+source citations retained. No import/backend/device access. Repo/diff pass,
+unchanged268tests. Next owned exact-count injected host framed transaction
+integration, not upstream binding; BootROM-side timing/security/restore/logs open.
