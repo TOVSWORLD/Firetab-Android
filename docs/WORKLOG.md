@@ -2271,3 +2271,17 @@ checks. Retained full/shared write stages and readback limitations; no atomic
 rollback or exhaustive imported-helper claim. Explicit preservation decision
 required before any destructive test; Linux availability is not permission.
 No device/helper execution. Existing tasks updated; no audit micro-issue created.
+
+## 2026-10-27 — reconcile recovery route and host prerequisites (#347)
+
+- Source baseline b51c24f1655a18890fb5422c09716aad21dab373; latest three CI
+  runs successful, open PR11 is the dependency update.
+- Corrected the main recovery plan's stale read-back-first and native-Mac
+  prerequisites to the current original-author USB-first candidate and verified
+  Linux tool inventory. USB transport, exact-build entry, restore and logs remain
+  untested; no tablet, helper, service or firmware operation occurred.
+- Owner approved original archives under a combined 31 MiB cap. Browser retrieval
+  timed out, attachment navigation was blocked by client, and no archive was
+  found in the approved output/download/temp locations checked. Approval is no
+  longer the blocker. Next: original package identity and preservation decision;
+  do not treat cached mirror hashes as original attachment verification.
