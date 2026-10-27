@@ -1,0 +1,113 @@
+{
+  "scope": "Pinned metadata plus selected source layout arithmetic, not live GPT or write authorization",
+  "review_sha256": "822b565413d1f34614dcd03b85d0eabcf0d157bc69c2b16262e875705d60443d",
+  "sector_bytes_assumed_by_helper": 512,
+  "boot0_components": [
+    {
+      "component": "preloader.hdr0",
+      "sha256": "114f4cbdb58c110168df273be2508b6efa36e2ef432f2255ed4f67ba35e97262",
+      "relative_start_bytes": 0,
+      "content_bytes": 2048,
+      "padded_bytes": 2048,
+      "relative_end_exclusive": 2048,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    },
+    {
+      "component": "preloader.hdr1",
+      "sha256": "e86ae322a97975e75cb3ec7dca89ea4ac24639c1ecdcc3f45fe1bd509fc0c0ff",
+      "relative_start_bytes": 2048,
+      "content_bytes": 2048,
+      "padded_bytes": 2048,
+      "relative_end_exclusive": 4096,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    },
+    {
+      "component": "preloader.bin",
+      "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d",
+      "relative_start_bytes": 4096,
+      "content_bytes": 138924,
+      "padded_bytes": 139264,
+      "relative_end_exclusive": 143360,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    },
+    {
+      "component": "preloader.bin",
+      "sha256": "cefc66528a56626e65a553b7f97e0521e7939c195ce72794e7c4e14eab04619d",
+      "relative_start_bytes": 266240,
+      "content_bytes": 138924,
+      "padded_bytes": 139264,
+      "relative_end_exclusive": 405504,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    }
+  ],
+  "boot0_component_ranges_disjoint": true,
+  "declared_new_boot_recovery_slot_bytes": 115343360,
+  "each_new_boot_recovery_slot_components": [
+    {
+      "component": "boot.hdr",
+      "sha256": "12d881348acb2e9c2c7b42988125524c648d5948b1bdb677ee6c9d4e9e8d28c5",
+      "relative_start_bytes": 0,
+      "content_bytes": 4096,
+      "padded_bytes": 4096,
+      "relative_end_exclusive": 4096,
+      "static_capacity_bytes": 115343360,
+      "static_capacity_fit": true
+    },
+    {
+      "component": "boot.payload",
+      "sha256": "e10fdf770a5be2c2adc3cce0d03b8e296eac3b31e18ebdce5b56dc5491f4e7e8",
+      "relative_start_bytes": 114290176,
+      "content_bytes": 492132,
+      "padded_bytes": 492544,
+      "relative_end_exclusive": 114782720,
+      "static_capacity_bytes": 115343360,
+      "static_capacity_fit": true
+    }
+  ],
+  "payload_tail_slack_bytes": 560640,
+  "partition_relative_components": [
+    {
+      "component": "tz.img",
+      "sha256": "dc0bbd4dec52b96c74e57c6439d093963dfce048e67d22d717b6654629e41cac",
+      "relative_start_bytes": 0,
+      "content_bytes": 3307008,
+      "padded_bytes": 3307008,
+      "relative_end_exclusive": 3307008,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    },
+    {
+      "component": "lk.bin",
+      "sha256": "7637da8754a7494f8907d07c7b25532476959956d1cfea856ab8ea6940176056",
+      "relative_start_bytes": 0,
+      "content_bytes": 485988,
+      "padded_bytes": 486400,
+      "relative_end_exclusive": 486400,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    },
+    {
+      "component": "twrp.img",
+      "sha256": "77889e8de3d48412bd29665d539c7559c0984ae7e46664581874b752484169af",
+      "relative_start_bytes": 0,
+      "content_bytes": 13512704,
+      "padded_bytes": 13512704,
+      "relative_end_exclusive": 13512704,
+      "static_capacity_bytes": null,
+      "static_capacity_fit": null
+    }
+  ],
+  "generated_primary_gpt_bytes": 17408,
+  "generated_backup_gpt_bytes": 16896,
+  "actual_gpt_names_and_addresses_verified": false,
+  "actual_target_capacities_verified": false,
+  "selector_acknowledgement_verified": false,
+  "native_payload_binary_source_match_verified": false,
+  "independent_failure_return_qualified": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

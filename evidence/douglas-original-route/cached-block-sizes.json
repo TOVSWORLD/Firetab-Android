@@ -1,0 +1,25 @@
+{
+  "scope": "Selected cached kernel block-node sizes only; not raw GPT/EXT_CSD or current geometry",
+  "source_report_sha256": "f8521045dd891c20ea01a4baec9a3117edf6035a801b865fa2aeab5d8fe8f79a",
+  "nodes": [
+    {
+      "node": "mmcblk0",
+      "reported_1024_byte_blocks": 15388672,
+      "kernel_reported_bytes": 15758000128
+    },
+    {
+      "node": "mmcblk0boot1",
+      "reported_1024_byte_blocks": 4096,
+      "kernel_reported_bytes": 4194304
+    },
+    {
+      "node": "mmcblk0boot0",
+      "reported_1024_byte_blocks": 1024,
+      "kernel_reported_bytes": 1048576
+    }
+  ],
+  "named_gpt_mapping_available": false,
+  "raw_gpt_available": false,
+  "ext_csd_available": false,
+  "device_accessed": false
+}
