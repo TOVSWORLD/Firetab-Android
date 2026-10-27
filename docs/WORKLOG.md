@@ -2176,3 +2176,14 @@ Signature/size reset, allocation, conditional pstore branches and raw fallback
 prevent treating this as proven retention or sanitized first-byte logs. No installed
 binary match, cross-boot observation or device acquisition. Next actual config,
 layout/retention and accessible recovery retrieval remain open under #106.
+
+## 2026-10-27 — Exact stock ramdisk log-access policy (#321)
+
+Inspected existing boot SHA8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363
+using component bounds, capped gzip and newc parsing only. Ramdisk 1492335 bytes;
+decoded archive 2917376 bytes. Metadata receipt preserves hashes/line ranges.
+Packaged init declares restricted pstore/last_kmsg and private copy permissions;
+douglas init declares removing the copy. Actual action ordering/access/log survival
+unverified. No raw upstream files/logs published and no execution/device access.
+Next lifecycle and authorized retrieval evidence, independent of retained-memory
+qualification. Repository/diff checks applied; no code changed.

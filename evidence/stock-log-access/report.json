@@ -1,0 +1,49 @@
+{
+  "ramdisk": {
+    "name": "ramdisk",
+    "offset": 7194624,
+    "bytes": 1492335,
+    "padded_end": 8687616,
+    "sha256": "2fbdceb228be3312a549ae13f415dac9699539686ebb6b099bd480fc362c304c",
+    "identification": "not inspected"
+  },
+  "cpio_bytes": 2917376,
+  "cpio_sha256": "bfac91d45d2f66dd9f3d8cf0291fb03da4e662b7649198a940f86b21598bcd54",
+  "matches": [
+    {
+      "path": "init.douglas.rc",
+      "sha256": "2accaf9e756c14db7040c4162fdbcf9640e8bbf8ce92098863dce08b4bcdc35e",
+      "lines": [
+        24
+      ]
+    },
+    {
+      "path": "init.rc",
+      "sha256": "e930fa5d7fc651dfcec0f3995edfecc084646496cf0b76bdc944e65cedcb7758",
+      "lines": [
+        176,
+        177,
+        178,
+        179,
+        243,
+        244,
+        277,
+        279,
+        280,
+        281
+      ]
+    }
+  ],
+  "boot_sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+  "decompression_cap_bytes": 16777216,
+  "method": "inspect_boot_image.inspect component bounds; gzip zlib decompression capped; bounded newc header walk; exact log-name search in rc/contexts text only",
+  "findings": {
+    "init.rc": "pstore mount and console mode0440 system/log; last_kmsg mode0440 system/log; copied SYSTEM_LAST_KMSG mode0600 system/system",
+    "init.douglas.rc": "post-fs removal of SYSTEM_LAST_KMSG declared; actual action ordering/execution unverified"
+  },
+  "device_accessed": false,
+  "ramdisk_executed": false,
+  "actual_log_available_verified": false,
+  "authorized_retrieval_verified": false,
+  "physical_test_ready": false
+}
