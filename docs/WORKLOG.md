@@ -2349,3 +2349,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   out/stock-log-config/reservation-crosscheck.json. Original archives still absent.
   Next actual reservation/retention evidence and original package verification;
   no helper/firmware/device execution or source-tree mutation occurred.
+
+## 2026-10-27 — offline legacy-console ring decoder (#348)
+
+- Baselinefd5af92 after PR364 merged with all five exact-head checks passed.
+- Reviewed legacy header/writer/reader layout at pinned sourcee0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74,
+  ram-console source SHA256cc57dd6936a85f40fb59ded3ee45f66db7ee9dc6dbc415b1c4049591ac66779e;
+  lines98–119,300–340,464–472. No upstream code imported/executed/modified.
+- Added owned bounded host-file decoder with chronological hashes and no raw log
+  output. Rejects counter underflow, invalid partial cursor and corrupt bounds.
+  Origin/freshness/layout/retention/boot flags remain false; synthetic data only.
+  Decoder SHA25673e002fd34b003bbd29420a958d356671c90323b573ce3dae6203391d1d48fab.
+- python3 -m unittest discover -s tests -q:302 pass; repository guard against
+  current development and whitespace check pass. Next approved supplied legacy
+  buffers, not live acquisition; original ZIP intake remains blocked on files.

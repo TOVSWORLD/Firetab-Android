@@ -609,3 +609,26 @@ consistency check, not permission to load an image there. Qualification still
 needs the effective loader-preserved DT, actual reservation result/memblock map,
 writer initialization and retention/readout across the intended failure. No
 memory probe, reboot, UART or device operation was performed or authorized.
+
+## Offline legacy-ring interpretation (#348)
+
+The owned `scripts/decode_legacy_console.py SUPPLIED_PRIVATE_FILE` consumes only
+a previously supplied regular host file, capped at2MiB. It interprets the pinned
+legacy16-u32 header layout, checks signature/full buffer extent and ring bounds,
+and hashes chronological ring bytes. It emits no raw text or extracted file,
+opens no transport, imports no vendor helper and has no acquisition path.
+This is not a pstore decoder or authentication of the installed binary layout.
+
+The reviewed legacy source read path bounds log_start and log_size separately
+against capacity but does not require log_start <= log_size before subtraction
+(lines464–472 of the already hash-pinned ram-console source). Our decoder rejects
+that malformed state, inconsistent partial cursors and truncated/oversized
+buffers. It never follows the legacy reader's raw-buffer fallback. Empty,
+partial, full and wrapped synthetic rings are covered by chronological hash
+checks. No actual retained buffer is available or was read from the tablet.
+
+A structurally valid ring can still be fabricated, stale, misidentified or from
+a different backend. Origin, freshness, installed layout, retention, boot and
+physical-test readiness remain false. Keep source buffers private; this tool's
+hash report does not qualify retrieval or permit memory acquisition. Next use
+only owner-approved supplied evidence after backend/lifecycle qualification.
