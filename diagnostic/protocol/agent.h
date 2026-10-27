@@ -11,5 +11,10 @@ struct diagnostic_agent_io {
     diagnostic_read read;
     void *opaque;
 };
+#if defined(__arm__)
+_Static_assert(sizeof(struct diagnostic_agent_io)==28, "Embedded ARM32 IO ABI size");
+_Static_assert(offsetof(struct diagnostic_agent_io,receive)==8, "Embedded callback offset");
+_Static_assert(offsetof(struct diagnostic_agent_io,opaque)==24, "Embedded opaque offset");
+#endif
 int diagnostic_agent_run(const struct diagnostic_agent_io *io);
 #endif

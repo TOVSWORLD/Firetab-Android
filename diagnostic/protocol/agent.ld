@@ -6,6 +6,7 @@ SECTIONS
   . = 0;
   .text : { *(.text.agent_entry) *(.text .text.*) }
   .rodata : { *(.rodata .rodata.*) }
+  .agent_context : { *(.agent_context) }
   .data : { *(.data .data.*) }
   .bss : { *(.bss .bss.*) *(COMMON) }
   .agent_stack ALIGN(8) : { *(.agent_stack) }

@@ -1,0 +1,17 @@
+{
+  "command": "xcrun clang --target=arm-none-eabi -mcpu=cortex-a9 -mthumb -c diagnostic/protocol/bridge.S -o out/owned-protocol/bridge.o",
+  "compile_exit_code": 0,
+  "source_sha256": "5f4f23444d97774d6efbcd77bb96cf608944c6ac3cf6f6d005c5f65fb3e983ba",
+  "object_sha256": "2d906722b886ce47d54d55fed6f3446f54a3086cc31cc76f02ad13254156ea17",
+  "static_observations": {
+    "arm_to_thumb_sequence_at_entry": true,
+    "constructs_image_relative_io_pointer": true,
+    "assigns_private_sp_before_push": true,
+    "embedded_context_bytes": 28,
+    "embedded_callbacks_zero": true
+  },
+  "callback_transport_bound": false,
+  "linux_link_pending": true,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

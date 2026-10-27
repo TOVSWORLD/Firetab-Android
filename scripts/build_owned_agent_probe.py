@@ -10,15 +10,15 @@ from prepare_stage1_host_image import prepare_host_image
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
+def build_variant(entry_source):
     clang = shutil.which('clang-18') or shutil.which('clang')
     ld = shutil.which('ld.lld-18') or shutil.which('ld.lld')
     if not clang or not ld: raise RuntimeError('Preinstalled clang/LLD required')
-    output = ROOT/'out/owned-agent-ci'
+    output = ROOT/('out/owned-agent-ci-'+entry_source)
     if output.exists() or shutil.disk_usage(ROOT).free < 1024**3:
         raise ValueError('Fresh output and 1GiB free disk required')
     output.mkdir(parents=True)
-    sources = [ROOT/'diagnostic/protocol'/name for name in ['entry.S','agent.c','dispatcher.c']]
+    sources = [ROOT/'diagnostic/protocol'/name for name in [entry_source+'.S','agent.c','dispatcher.c']]
     objects = []
     for source in sources:
         obj=output/(source.name+'.o')
@@ -44,7 +44,7 @@ def main():
     subprocess.run([ld,'-m','armelf','--build-id=none','-T',str(script),*[str(o) for o in objects],
                     '-o',str(elf)],check=True,capture_output=True,timeout=30)
     _,image=prepare_host_image(elf.read_bytes())
-    report=dict(source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+    report=dict(entry_variant=entry_source, embedded_callbacks_bound=False, source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in sources+[script,ROOT/'diagnostic/protocol/agent.h',ROOT/'diagnostic/protocol/dispatcher.h']},
                 compiler=subprocess.check_output([clang,'--version'],text=True,timeout=10).splitlines()[0],
                 linker=subprocess.check_output([ld,'--version'],text=True,timeout=10).splitlines()[0],
@@ -55,7 +55,8 @@ def main():
                 maximum_callback_stack_usage_verified=False,
                 caller_return_verified=False,transport_bound=False,firmware_executed=False,physical_test_ready=False)
     (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
-    print(json.dumps(report,indent=2))
+    return report
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    print(json.dumps({'variants':[build_variant(n) for n in ['entry','bridge']]},indent=2))

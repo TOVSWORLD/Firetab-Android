@@ -790,3 +790,26 @@ currently supplies that complete chain. Next source-investigate an initial
 bridge that can establish those inputs, while keeping original-state restoration
 and a real log channel independent. Do not spend further effort on host framing
 features until that bridge has a viable source-backed design.
+
+## Owned ARM entry bridge, deliberately unbound (#267)
+
+`diagnostic/protocol/bridge.S` is an owned compile-only alternative to the direct
+Thumb entry. It accepts ARM instruction-state entry without depending on incoming
+r0, switches to Thumb, computes an image-relative IO-context pointer/private
+stack and preserves caller SP/r4-r6/LR around agent_run. Its embedded ARM32
+context is 28 bytes with version one, six transactions and zero callback/opaque
+fields. Agent rejects this unbound context before transport or call activity;
+it is not a runnable diagnostic package. No callback patching is performed.
+
+Actual local assembly compilation/static review and C ARM32 size/offset assertions
+pass; the [receipt](../../evidence/owned-arm-bridge/report.json) records hashes.
+The native host suite confirms unbound-context rejection; all 274 tests pass.
+Linux CI now compiles/links both direct and bridge variants with existing image/
+relocation/static-stack gates; actual bridge link result is pending. This maps
+the caller-r0 mismatch into owned source but does not supply security entry,
+qualified callbacks, memory mapping, stock return or real log capture.
+
+Next inspect the actual bridge link/layout, then qualify a source-backed method
+for installing the callback/context values and returning from initial execution.
+Do not populate callback fields from guessed BootROM addresses or execute helpers.
+Original-state restoration and a bounded physical log channel remain prerequisites.
