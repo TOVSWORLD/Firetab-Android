@@ -2240,3 +2240,12 @@ conditions/privacy handling; no physical action is approved. Updates345, not
 closure: owner/operator review and exact mechanical safety remain unresolved.
 Next independent work339 QA matrix while review/source gaps are pending. CI/PRs
 inspected healthy; no device/helper/firmware action or new audit micro-issue.
+
+## 2026-10-27 — Beta QA test definition (#339)
+
+Defined admissionA01–A07 versus campaignQ01–Q04, recovery/log/memory-first
+preconditions, proposed measured smoke thresholds, stop conditions, result format
+and S0–S3 defect triage. All device cases NOT RUN. No test execution or physical
+procedure authorized. Inspection345 remains pending review; matrix is independent
+planned work under phase338, not a new micro-issue. Phase/beta admission remains
+open. Documentation community/repository/diff checks applied.
