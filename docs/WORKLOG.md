@@ -1867,3 +1867,14 @@ base; direct JUMP_DA host address/status does not prove firmware register/LR ABI
 274hosttests/repo/diff pass. Source receipt/checklist retain concrete initialbridge
 blocker, no runtime gates closed. No firmware/device execution. Next source-backed
 initial bridge design, not more host framing; original restore/log channel open.
+
+## 2026-10-27 — Owned ARM/context bridge compile (#267 / #106)
+
+Merged #266 at passing9638262334a915a7ca1ff74731175dd89a143c2e,
+merge939dea327d6ee0f2f2fa15e4ea6d2495d9f3c8a9; #265 source scope closed.
+Added owned ARM-to-Thumb bridge, image-relative28B IO context/private stack,
+caller SP/callee-state preservation. Context callbacks deliberately zero; native
+regression rejects before activity. Actual local assembly and ARM C layout-assert
+compilation pass;274hosttests pass. CI links both variants; bridge result pending.
+Repo/diff pass; no firmware/helper/device execution or callback patching. Next
+actual link/context installation source qualification; initial security/restore/logs open.
