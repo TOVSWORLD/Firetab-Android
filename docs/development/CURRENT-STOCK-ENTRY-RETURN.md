@@ -644,3 +644,32 @@ Neither has been demonstrated. A normal bounded GET of the published original
 attachment also returned HTTP403 after the earlier browser failure; no archive
 was saved. Original ZIP matching still requires accessible original attachments.
 No helper code was imported, run or modified, and no tablet was accessed.
+
+## Offline original-package intake (#347)
+
+Once the three original files are supplied locally, run our owned inspector from
+the repository root (v1.2, brick, return-to-stock order):
+
+```sh
+python3 scripts/inspect_recovery_originals.py \
+  out/recovery-originals/amonet-douglas-v1.2.zip \
+  out/recovery-originals/brick-douglas.zip \
+  out/recovery-originals/amonet-douglas-return-to-stock.zip \
+  --mirror-receipt out/recovery-provenance/extraction-report.json \
+  > out/recovery-originals/intake-report.json
+```
+
+The inspector reads regular local files under the combined 31 MiB cap, hashes
+whole archives, and decompresses only an explicit selected-content allowlist
+under per-entry and aggregate caps. It rejects symlinks, encrypted entries,
+unsafe paths and ambiguous selected names. It writes no extracted code, opens
+no network/device and imports no archive module. It compares supplied bytes
+with the optional own mirror receipt; equal bytes do not prove source custody,
+archive authenticity, exact-build compatibility or recovery readiness. Missing
+selected names are reported rather than silently treated as matches.
+
+Keep the original ZIPs and report private in ignored output until provenance
+and sanitization review. Supplied roles are positional labels, not authenticated
+package identities. No real originals were available for this implementation;
+synthetic ZIP tests establish host-tool behavior only. Original-author matching,
+restore and physical-test readiness remain false even on successful inspection.
