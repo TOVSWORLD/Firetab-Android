@@ -1,0 +1,25 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "tree_truncated": false,
+  "tree_receipt_sha256": "5b9da7eb05840427fe90aa7b8441ae529de7406e54cd878974528d56b598d890",
+  "bounded_inventory": "src/ paths containing usb or uart; cached filenames containing brom/bootrom/USB C implementation",
+  "matching_src_paths": [
+    "src/stage1/generic/generic_uart_dump.c"
+  ],
+  "callback_source_sha256": "1593d6a391c9ecb36db4adc275630468fba572a6692ad0a89c9a23bc188dfb29",
+  "reviewed_lines": [
+    254,
+    275
+  ],
+  "findings": {
+    "usb_functions_discovered_from_runtime_rom_scan": true,
+    "discovery_repairs_in_memory_usb_dispatch_pointer": true,
+    "previous_dispatch_pointer_saved_for_restore_in_selected_block": false,
+    "actual_rom_function_bodies_in_cache_located": false,
+    "source_inventory_proves_global_absence": false,
+    "stock_return_after_pointer_repair_qualified": false
+  },
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

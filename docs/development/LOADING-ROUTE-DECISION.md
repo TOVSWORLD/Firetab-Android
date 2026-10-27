@@ -841,3 +841,28 @@ the actual get/put implementation provenance or an alternative owned transport;
 writing adapters around guessed return semantics would hide the remaining gap.
 The bridge's build success does not establish initial security entry, physical
 mapping, original-state restore or usable real logs.
+
+## Callback provenance and discovery-side return dependency (#271)
+
+A bounded inventory of the complete pinned MTKClient tree and existing cache
+found no actual BootROM get/put function bodies. The only `src/` filename matching
+USB/UART was `generic_uart_dump.c`. This filename/cache inventory is not a global
+absence proof. The [receipt](../../evidence/callback-provenance-inventory/report.json)
+retains tree/source hashes, scope and limits; no ROM was read or downloaded.
+
+The inspected [discovery block](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L254-L275)
+scans runtime ROM patterns and extracts function pointers rather than supplying
+implementations. It also writes an in-memory USB dispatch slot as a repair before
+sending the initial response. That selected block does not save the previous
+slot for restoration. Thus borrowing its discovery path would add a state-change
+and return prerequisite; it cannot be described as passive lookup or a qualified
+stock return. This is source-level analysis, not observed device state.
+
+Do not bind guessed pointers or claim bounded get/put behavior from pattern
+matches. The actual ROM implementation/return contract is a specific missing
+dependency, requiring separately authorized evidence or another transport.
+Next advance the independent source-backed UART logging alternative: bounded
+polling/output design from the existing UART0 register contract, compile/static
+inspection only. Pin routing/electrical access, runtime clocks and actual log
+capture remain hardware gates. Original-state restore and initial security entry
+remain open regardless of the logging alternative.
