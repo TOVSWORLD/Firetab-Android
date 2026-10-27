@@ -2035,3 +2035,13 @@ inference, notdeviceobservation; user/bootescrow doesnotprove RTCrestore. Metada
 primarylinks retained; repo/diff pass, unchanged276tests. No firmware/device access.
 Next least-state-change return/entry evidence needs; RTCretention/originalrestore/
 security/real logs remainopen.
+
+## 2026-10-27 — OS restart mode-state comparison (#297 / #106)
+
+Merged #296 at passinga21f962a81b0ecc1caf21ddb1e8f78ba72f7ec80,
+merge9f7f01edf6f5c11901bae1bc65ebaaf9003cc5d2; #295 closed. Verified cached
+arch_reset/RTC Gitobjects: namedbootloader/recovery branchesmarkRTC, selected
+ordinary branch omitsmarker then watchdogAPIreset. Not runningkernelidentity or
+wholepathstatefree proof. Metadata/primarylinks retained; repo/diff pass,
+unchanged276tests. No reboot/helper/firmware/device operations. Next minimal
+mode/return evidence plan for hardware-acceptable route; physicalgates open.

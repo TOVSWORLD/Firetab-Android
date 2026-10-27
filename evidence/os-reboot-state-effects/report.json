@@ -1,0 +1,37 @@
+{
+  "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "files": [
+    {
+      "path": "drivers/watchdog/mediatek/wdk/wd_api.c",
+      "sha256": "c7756f1a0a00c5fc89adba30305edfc2c3201ac2543237164f87c6c2a3976d44",
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/watchdog/mediatek/wdk/wd_api.c"
+    },
+    {
+      "path": "drivers/misc/mediatek/rtc/mtk_rtc_common.c",
+      "sha256": "d6fae35a1e217bd79681ba3c0d49ea9fac30007806e9018d5326066388e916ca",
+      "url": "https://github.com/mt8163-dev/android_kernel_amazon_mt8163/blob/e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74/drivers/misc/mediatek/rtc/mtk_rtc_common.c"
+    }
+  ],
+  "reviewed_ranges": {
+    "arch_reset": [
+      561,
+      598
+    ],
+    "rtc_markers": [
+      393,
+      435
+    ]
+  },
+  "selected_source_branches": {
+    "bootloader": "rtc_mark_fast then watchdog software reset path",
+    "recovery": "rtc_mark_recovery then watchdog software reset path",
+    "ordinary_unmatched_command": "reboot flag one then watchdog software reset path"
+  },
+  "ordinary_branch_calls_RTC_marker_in_selected_function": false,
+  "running_kernel_binary_matched": false,
+  "runtime_reboot_or_return_verified": false,
+  "RTC_restore_verified": false,
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}
