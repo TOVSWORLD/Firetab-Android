@@ -633,3 +633,26 @@ Next inspect the actual linked image/undefined-symbol result and quantify static
 stack requirements before proposing any transport callback binding. Partial I/O,
 callback deadlines, original-state restoration and real boot-log acquisition
 remain open requirements; a successful link will not close them.
+
+## Actual agent link and owned static stack frames (#255)
+
+The [Linux agent job](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40422978975/job/121921673252)
+linked wrapper/agent/core successfully. Its zero-initialized host image is 2608
+bytes, SHA256 `d47572bcdfda9dcd9d66e7f07046f5903a1c3e647a2bec3d7a742d3a93c4d590`;
+entry value one denotes Thumb at image offset zero. Six sections passed the
+relocation gate. The [receipt](../../evidence/owned-agent-link-stack/report.json)
+records exact tested revisions and the separate local stack measurement.
+
+Actual Apple clang ARM `-fstack-usage` compilation reports 352 bytes for agent_run
+and 32 for dispatch. Adding the wrapper's 16 saved-register bytes yields 400
+owned bytes along their nested path, leaving 1648 of the private 2048 before
+callbacks, interrupt/exception use or other runtime effects. This is not a
+whole-program bound or Linux compiler measurement. The Linux build now collects
+its own static-frame reports, rejects missing/dynamic/duplicate frames and gates
+the conservative sum of owned frame sizes plus wrapper against stack capacity.
+That new Linux stack result is pending. No firmware was executed.
+
+Next inspect the Linux stack receipt and specify a concrete bounded transport
+callback implementation/cleanup contract. Callback stack depth, deadlines,
+security entry, memory permissions/cache/interrupt context and original restore
+remain unqualified. Host image/link success still supplies no real boot logs.

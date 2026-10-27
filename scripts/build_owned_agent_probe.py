@@ -25,9 +25,21 @@ def main():
         command=[clang,'--target=arm-none-eabi','-mcpu=cortex-a9','-mthumb','-c',str(source),'-o',str(obj)]
         if source.suffix=='.c':
             command+=['-std=c11','-Os','-ffreestanding','-fno-builtin','-fPIE','-fno-unwind-tables',
-                      '-fno-asynchronous-unwind-tables','-Wall','-Wextra','-Werror']
+                      '-fno-asynchronous-unwind-tables','-fstack-usage','-Wall','-Wextra','-Werror']
         subprocess.run(command,check=True,capture_output=True,timeout=30)
         objects.append(obj)
+    frames = {}
+    for source in sources:
+        if source.suffix != '.c': continue
+        for line in (output/(source.name+'.su')).read_text().splitlines():
+            location, size, kind = line.split('\t')
+            name = location.rsplit(':', 1)[-1]
+            if kind != 'static' or name in frames: raise ValueError('Unbounded or duplicate stack frame')
+            frames[name] = int(size)
+    if not {'diagnostic_agent_run', 'diagnostic_dispatch'} <= frames.keys():
+        raise ValueError('Missing owned stack frames')
+    owned_stack = 16 + sum(frames.values())
+    if owned_stack >= 2048: raise ValueError('Owned frames exhaust private stack')
     script=ROOT/'diagnostic/protocol/agent.ld';elf=output/'agent.elf'
     subprocess.run([ld,'-m','armelf','--build-id=none','-T',str(script),*[str(o) for o in objects],
                     '-o',str(elf)],check=True,capture_output=True,timeout=30)
@@ -37,7 +49,10 @@ def main():
                 compiler=subprocess.check_output([clang,'--version'],text=True,timeout=10).splitlines()[0],
                 linker=subprocess.check_output([ld,'--version'],text=True,timeout=10).splitlines()[0],
                 elf_sha256=hashlib.sha256(elf.read_bytes()).hexdigest(),host_image=image,
-                stack_bytes=2048,maximum_callback_stack_usage_verified=False,
+                stack_bytes=2048, compiler_static_frames=frames,
+                owned_frame_sum_with_wrapper_bytes=owned_stack,
+                remaining_before_callbacks_interrupts_bytes=2048-owned_stack,
+                maximum_callback_stack_usage_verified=False,
                 caller_return_verified=False,transport_bound=False,firmware_executed=False,physical_test_ready=False)
     (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))

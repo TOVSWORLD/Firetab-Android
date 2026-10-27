@@ -1798,3 +1798,16 @@ Bounded Linux wrapper+agent+core link/image/relocation probe added; result pendi
 Source/object hashes retained, no firmware execution or transport/device access.
 Repository/diff pass; unchanged268testbaseline. Next actual link and static stack
 requirements; callback deadlines/cleanup/security/physical restore/log gates open.
+
+## 2026-10-27 — Actual agent link and static stack measurement (#255 / #106)
+
+Merged #254 at passing f9316e72cb431cc66a8875e82f201724a6622787,
+merge 0c802ad4b6e87eba1cb52c8a6298550a572ccb03; #253 closed. Linux job
+121921673252/run40422978975 linked2608B image SHA256
+d47572bcdfda9dcd9d66e7f07046f5903a1c3e647a2bec3d7a742d3a93c4d590,
+Thumb entry1/six sections, metadata retained. Actual local ARM stack compilation
+352B agent+32B dispatch+16B wrapper=400B owned;1648B before unknown callbacks/
+interrupts, not whole-program bound. Added Linux static-frame gate/metadata;
+actual Linux stack outcome pending. Repo/diff pass; unchanged268testbaseline.
+No firmware execution/device access. Next Linux result and bounded transport/
+cleanup contract; physical security/placement/restore/logging remain open.
