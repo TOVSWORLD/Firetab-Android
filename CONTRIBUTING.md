@@ -82,3 +82,9 @@ A checked issue is complete only when acceptance criteria are evidenced and its 
 or documentation has merged into development. Track release inclusion separately;
 GitHub's default-branch closing behavior is not a production deployment indicator.
 See [work hierarchy](docs/project/ISSUES.md) and [release process](docs/releases/PROCESS.md).
+
+## Delivery and PR traceability
+
+Follow [Epic → Feature → Phase → Task](docs/project/DELIVERY-WORKFLOW.md). Every PR
+must explicitly update or close a real issue; use the task and retain open runtime
+gates. See the [beta roadmap](docs/project/ROADMAP.md) for admission criteria.

@@ -1,6 +1,8 @@
 ## Project, issue and behavior
 
-Project label and parent task/feature: Closes #... or Refs #...
+<!-- Required: replace this comment with a standalone Updates #123 or Closes #123 line.
+Link the concrete task issue; its parent chain must be Epic → Feature → Phase → Task.
+Use Updates/Refs for partial progress, Closes only when acceptance is met. -->
 Concrete before/after behavior, reason and non-goals.
 
 ## Evidence and validation
