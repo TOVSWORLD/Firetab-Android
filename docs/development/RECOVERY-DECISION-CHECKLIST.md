@@ -291,11 +291,12 @@ supply the missing physical observations. Carry these specific gates forward:
   presence nor policy declarations proves fresh readable logs or authorized access.
 - UART: exact PCB identity, isolation, pads, signaling level and captured output
   remain unqualified. Hardware planning is allowed, but no physical action is
-  authorized by that preference. The existing question about already-held board
-  photos/revision records is pending; do not repeat it or request opening here.
+  authorized by that preference. The owner confirmed no existing board photos/revision records on 2026-10-27;
+  that question is resolved. Qualify an inspection proposal before requesting
+  any specific physical action.
 
-Next useful evidence is an existing exact-board record or build-matched configuration/
+Next useful evidence is qualified exact-board inspection evidence or build-matched configuration/
 sanitized prior runtime record with provenance. Do not substitute more marker features
-or host test totals for these gates. Preserve the existing owner question and review
-any supplied evidence before proposing a concrete bounded inspection/capture step.
+or host test totals for these gates. Do not repeat the resolved board-record question. Source-qualify a concrete bounded
+inspection proposal and review any supplied evidence before a capture step.
 No loading, configuration, boot, hardware or app-reliability runtime gate is closed.
