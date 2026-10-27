@@ -7,11 +7,18 @@ complete scopes. None establishes tablet entry, boot, hardware or app operation.
 
 ## Current route decision
 
-Prioritize a separately reviewed read-back bootstrap over the archived unlock
-sequence. MTKClient is a source candidate, not a selected working tool. Its exact
-agent provenance, bootstrap effects, backend and acknowledged region selection
-must be resolved before trusting a backup. The legacy reader currently ignores
-failed region selection; this must fail closed in any future collector.
+Qualify the original-author USB-first full-stage route described in
+[the current entry/return review](CURRENT-STOCK-ENTRY-RETURN.md) as the primary
+loading candidate. The February 2026 maintainer clarification distinguishes the
+full stage from the incompatible brick-plus-minimal pairing. Exact installed
+build success and original-state restoration are still unverified. Hardware
+access is fallback planning, not the sole blocker or an approved operation.
+
+A separately reviewed read-back bootstrap remains a preservation alternative,
+not a prerequisite already known to work. MTKClient is an unqualified source
+candidate: agent provenance, bootstrap effects, backend and acknowledged region
+selection remain unresolved. The historical investigations below retain those
+findings; they do not supersede the current USB-first research priority.
 
 The archived rooted path rejects the observed PL7/LK3/TEE262. The minimal path
 assumes prior changes and writes GPT, boot-region headers, RPMB and other regions.
@@ -50,10 +57,15 @@ owner-reviewed recovery procedure before execution.
    A user/boot-region backup does not cover those states. Reject a sequence that
    zeroes security state while claiming ordinary partition images undo it. No
    such restoration capability is established here.
-5. **Host/re-entry:** separately qualify native Mac CLI dependencies, USB backend,
-   reconnect/timeout behavior and the actual direct/dock cable topology. No host
-   security change is justified merely by generic FUSE installation guidance.
-   A source-level fallback import is not a completed Mac runtime test.
+5. **Host/re-entry:** use the available native Linux host for this candidate.
+   Host-only checks verified Ubuntu 24.04.5 LTS x86_64, Python 3.12.3,
+   PySerial, Ubuntu adb/fastboot package 1:34.0.4-1build3 and dos2unix 7.5.1-1.
+   Binary presence is not USB transport qualification: no adb/fastboot or device
+   command was invoked. ModemManager is active/enabled and unchanged; any
+   temporary pause belongs to a separately approved session with restoration
+   of its prior state. Direct USB topology, permissions, reconnect behavior and
+   bounded failure exits remain untested. Keep private host access details out
+   of public records. Mac research/download access is a separate capability.
 6. **Logs before image test:** qualify one of the paths below, including retrieval
    after the failure class being tested. Then qualify image placement, loader
    acceptance and runtime handoff. A black screen is not a useful first result.
@@ -107,13 +119,25 @@ No diagnostic package meeting these conditions exists yet.
 
 ## Next bounded development task
 
-Resolve the candidate's DA selection and agent source/binary provenance using
-pinned repository metadata and bounded source inspection. Produce the required
-artifact/version/hash inventory and identify any binary-only dependencies before
-installing tools or downloading large payload sets. In parallel only where
-independent, derive the exact UART source/driver contract from cached sources;
-physical pad/electrical evidence remains a separate owner-assisted gate. Do not
-return to peripheral/schema cleanup while these recovery blockers remain open.
+Acceptance for the next source task: obtain the three original-author archives
+within the owner-approved combined 31 MiB download cap, record source URL,
+actual size and SHA256, and compare selected script/component identities with
+our pinned mirror. Inspect only; do not execute or import archive code. The
+approved local destination is ignored `out/recovery-originals/`. Approval covers
+static retrieval only, not firmware execution or transfer to a tablet.
+
+The browser download timed out and direct attachment navigation reported
+`net::ERR_BLOCKED_BY_CLIENT`; no original archive was found in the destination
+or checked download/temp locations. Earlier CLI HEAD requests returned 403.
+Original-package matching remains blocked by retrieval, not missing owner
+resource approval. Do not claim mirror identity establishes original identity.
+
+Independently reconcile the complete write/restore inventory, including GPT,
+RPMB, preloader, TEE, LK and userdata effects. Before any executable proposal,
+resolve either qualified pre-change preservation/restore or an explicit owner
+choice of test unit and accepted loss limits. Keep #346, #347 and #348 open.
+UART or retained-log qualification still requires actual capture/retrieval
+prerequisites; launcher terminal output does not demonstrate kernel boot logs.
 
 ## Download-agent selection provenance result
 
