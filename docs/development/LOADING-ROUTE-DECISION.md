@@ -763,3 +763,30 @@ into a concrete loader-entry/return dependency check. Physical use still lacks
 qualified initial security entry, safe mapping/callback setup, original-state
 restore and a real bounded log/readback channel. Do not substitute more host
 simulation for those gates or infer them from successful process supervision.
+
+## Initial loader invocation fails the owned ABI contract (#265)
+
+The pinned [generic-stage jump handler](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/src/stage1/generic/generic_stage1.c#L320-L346)
+invokes its target with argument zero. Our agent entry preserves r0 as the
+required pointer to versioned callback/context storage; agent_run explicitly
+rejects null. A native host regression confirms null context returns -1 without
+callbacks. Thus uploading the owned agent through that handler is not an
+integration: it supplies neither its IO context nor compatible completion.
+The Thumb entry's tagged function address is also distinct from its byte load
+base; existing host stage code does not construct this owned image/ABI contract.
+
+The [direct JUMP_DA host exchange](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/mtk_preloader.py#L708-L766)
+sends an address and checks echoed address/status. It does not transmit an owned
+IO pointer. This is a host-source observation, not proof of the firmware's
+register/mode/LR semantics. Its success status cannot establish our entry ABI,
+security acceptance or return to stock. The
+[receipt](../../evidence/initial-loader-abi-gap/report.json) retains verified
+source hashes and explicit unresolved gates; no request was sent.
+
+The concrete blocker is now a missing initial bridge: qualified security entry,
+correct instruction state/target, valid caller state and owned IO context with
+bounded callbacks plus a demonstrated stock return. No inspected candidate
+currently supplies that complete chain. Next source-investigate an initial
+bridge that can establish those inputs, while keeping original-state restoration
+and a real log channel independent. Do not spend further effort on host framing
+features until that bridge has a viable source-backed design.

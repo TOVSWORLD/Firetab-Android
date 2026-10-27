@@ -1,0 +1,35 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "sources": [
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "git_blob_sha1": "c7434697b14253aefe15c74c739c4832484cee97",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68"
+    },
+    {
+      "path": "mtkclient/Library/mtk_main.py",
+      "git_blob_sha1": "ab3cda283ef63be72f7ae1669bb6ea836af0fc1d",
+      "sha256": "139c45d116a9b866c55c03a0d13cf64e2bc17054ff39a96cb0a9d877f58c0129"
+    }
+  ],
+  "candidate_paths": {
+    "generic_stage_jump": {
+      "argument_zero_in_pinned_C_source": true,
+      "owned_agent_requires_nonnull_io_pointer": true,
+      "typed_agent_jump_address_thumb_bit_required": true,
+      "host_cmd_stage_synthesizes_owned_io_context": false,
+      "call_completion_protocol_compatible": false
+    },
+    "direct_jump_da": {
+      "host_sends_target_address": true,
+      "host_sends_owned_agent_io_pointer": false,
+      "firmware_cpu_register_contract_verified": false
+    }
+  },
+  "qualified_initial_loader_selected": false,
+  "qualified_original_state_restore": false,
+  "qualified_boot_log_channel": false,
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}
