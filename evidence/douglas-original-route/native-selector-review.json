@@ -1,0 +1,32 @@
+{
+  "scope": "Candidate cached native source explains protocol only; shipped binary equivalence unverified",
+  "source_revision": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31",
+  "sources": [
+    {
+      "path": "brom-payload/main.c",
+      "sha256": "84bd39d5a16bb7934799eaedb676f98933ef801871b3e63b33a1e247ae6978bf",
+      "ranges": [
+        [
+          127,
+          145
+        ]
+      ]
+    },
+    {
+      "path": "brom-payload/drivers/mmc.c",
+      "sha256": "0bb32f7aa845fb5beb9f6780328dc7418718aae0588f25c0f2f84f6f4c770790",
+      "ranges": [
+        [
+          337,
+          338
+        ]
+      ]
+    }
+  ],
+  "finding": "Selector command prints mmc_set_part return value to native console then delays; no framed acknowledgement sent to Python for this command. RPMB wrappers also do not report result through this dispatch path.",
+  "shipped_binary_source_match_verified": false,
+  "actual_region_selected_verified": false,
+  "independent_failure_return_verified": false,
+  "code_executed": false,
+  "device_accessed": false
+}

@@ -757,3 +757,67 @@ complete binary/write extent and geometry review, reachable restore after the ch
 failure, and fresh attributable boot logs with retrieval. Hardware fallback remains
 unit-specific and separately authorized. #346/#347/#348 stay open; no generic
 compilation result, archive match or source review closes these physical gates.
+
+## Original write extents and failure-return assessment (#347 / #346)
+
+**Static slot arithmetic passes; actual target geometry and independent failure
+return do not.** The owned `python3 scripts/audit_original_write_extents.py` checks
+the hash-pinned original metadata against the selected source arithmetic. The
+[write-extents receipt](../../evidence/douglas-original-route/write-extents.json)
+is reproducible without importing helpers or reading a device.
+
+The helper assumes512-byte sectors and pads whole files to that boundary. Its
+preloader headers occupy bytes0–4096; the two preloader copies occupy byte ranges
+4096–143360 and266240–405504 (ends exclusive). These four component ranges do
+not overlap. New boot/recovery slots are each115,343,360bytes by the GPT tool's
+0x37000-sector declaration. Each slot's4,096-byte header and492,544-byte padded
+payload at sector223223 fit that declared slot, leaving560,640bytes at its end.
+This proves only the selected declared profile, not an already modified GPT.
+
+TEE requires3,307,008bytes; LK requires486,400 padded bytes; TWRP requires
+13,512,704bytes in their respective target partitions. Generated primary and
+backup GPT outputs are17,408 and16,896bytes. Absolute user-region LBAs, actual
+partition capacities and valid backup placement remain unavailable from these
+sizes alone. The two brick image lengths are not a description of their full
+persistent effects or ordinary partition write extents.
+
+Previously authorized cached `/proc/partitions` has selected kernel-reported
+internal block-node sizes, now retained in a [sanitized receipt](../../evidence/douglas-original-route/cached-block-sizes.json).
+It reports user capacity15,758,000,128bytes, boot0 node1,048,576bytes and boot1
+node4,194,304bytes. The declared preloader extents fit the reported boot0 node,
+but unequal kernel boot-node sizes must not be silently normalized into physical
+EXT_CSD geometry. The cached report contains no raw GPT, GPT-name/start mapping
+or EXT_CSD. Therefore it cannot establish tee1/LK/recovery_x targets, actual
+region selection, protected extents or a complete original-state backup.
+
+The cached candidate native source clarifies the selector limitation: its command
+handler prints the mmc_set_part return value and delays, but sends no framed
+acknowledgement to the Python host for that command. The [native source receipt](../../evidence/douglas-original-route/native-selector-review.json)
+pins exact files/ranges. Shipped binary-to-source equivalence is not established;
+this is a candidate protocol explanation, not proof of deployed behavior or a
+validated selector. Header/MBR plausibility reads are not independent region
+identity evidence. No native build or helper execution occurred.
+
+### Which failure boundaries have an independent return?
+
+- **Before any device mutation:** stopping host preparation needs no recovery.
+  This is the only boundary with no assumed on-device change.
+- **After separate brick or intentional header clearing:** USB BootROM re-entry
+  is the proposed mechanism; exact current-build entry and persistence through
+  the intended failure are unobserved. If it fails, the hardware fallback needs
+  unit-specific board/contact qualification and separate owner action. Neither
+  is a demonstrated failure exit today.
+- **After GPT/component/RPMB changes:** entry to BootROM alone is insufficient.
+  Restoring original state also requires correct region identity, original data
+  and a compatible writer. Original region escrow is absent and ordinary images
+  do not undo arbitrary RPMB/security-state changes. No qualified rollback exists.
+- **After preloader headers are restored/reboot requested:** the earlier cleared-
+  header mechanism no longer guarantees BootROM re-entry. Modified fastboot/TWRP
+  may be the intended forward state, but neither has been observed on this unit.
+  The original ADB/root-dependent stock-return script is not an independent rescue.
+
+The next useful evidence is exact target geometry/selection and a concrete,
+reachable failure exit with attributable logs. Acquiring it may require separately
+approved device activity; none is requested by these offline commands. This
+review does not authorize a trial, relax preservation requirements or substitute
+a Fire7/other revision for douglas. Tasks346/347/348 remain open.

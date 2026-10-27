@@ -2384,3 +2384,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   reviewable effects, failure stop boundaries and remaining owner/physical gates.
   Next actual write geometry/binary and independent return/log qualification;
   no tablet/firmware/helper action occurred.
+
+## 2026-10-27 — original write geometry and failure boundaries (#347 / #346)
+
+- Baseline5c5f23c8dfd2a05de2aa4f4bfaccd4e260c500a5; no new feature PRs pending.
+- Added owned pinned-metadata arithmetic audit. Selected boot0 extents disjoint;
+  declared0x37000-sector exploit slots fit header/payload with560,640bytes slack.
+  Actual GPT/target geometry still unknown; source helper's dropped bound remains.
+- Sanitized internal-only block sizes from already authorized cached report
+  SHA256f8521045dd891c20ea01a4baec9a3117edf6035a801b865fa2aeab5d8fe8f79a.
+  No SD/household/device identifiers published. Kernel-reported sizes are not
+  independently acquired EXT_CSD or GPT-name/address proof.
+- Read cached native selector/RPMB dispatch source; exact hashes/ranges retained.
+  Selector prints status without framed host acknowledgement. Shipped native
+  binary/source equivalence unverified; no build/import/execution.
+- Recorded pre-mutation, cleared-header, changed GPT/security and restored-header
+  failure boundaries. No independent physical exit or original-state rollback
+  demonstrated. Next exact selection/geometry and reachable return/log evidence.
+- Validation:304 host tests pass; community/link, repository guard against exact
+  baseline and staged whitespace checks pass. No runtime test was performed.
