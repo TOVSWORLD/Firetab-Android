@@ -65,3 +65,78 @@ Until board identity/isolation evidence is qualified, keep a physical inspection
 proposal incomplete and continue independent source work. Initial security,
 recoverable entry/exit, original-state restoration and usable real logs remain
 open, regardless of battery compatibility or the host agent's passing tests.
+
+## Owner-review proposal: cover-only identification (#345)
+
+**Review artifact only. Opening is not approved or qualified for this exact unit.**
+The decision requested is whether this limited scope is suitable for a competent
+operator to assess; it is not approval for electrical work or recovery execution.
+No physical step is performed by automation.
+
+### Purpose and proposed deliverable
+
+Obtain one overall interior view and any PCB revision marking visible without
+moving a connector, shield, battery, ribbon or board. This would resolve whether
+our unit matches the source layout and what exact connector evidence is still
+needed. If markings are hidden, an incomplete identification is the correct result;
+do not expand the operation to uncover them. No photos or records already exist,
+as confirmed by the owner; that question is resolved.
+
+### Source basis and limits
+
+- The [firsthand cover-only account](https://sakue.com/archives/821) explicitly
+  names 2017/KFDOWI/SX034QT and shows case clips and an interior view. It supports
+  a model-family mechanical reference, not our revision or a guaranteed opening
+  method. It reports no cover adhesive on that particular unit.
+- The [supplier demonstration](https://www.youtube.com/watch?v=oZjys6q6BRA) was
+  actually viewed at 2:33, 3:24, 3:29 and 4:15. The gross board/battery/speaker
+  arrangement is broadly consistent with the independent photo. Its title names
+  Fire HD8 seventh generation while its description names an Asus model; this
+  unresolved discrepancy prevents treating it as a verified connector procedure.
+  Its battery-removal section is outside this proposal.
+- The [repair-provider guide](https://www.lmlrepair.com/guides/tablet/amazon/kindle/kindle-fire-hd-8-7th-gen/power-button-repair)
+  has generic heating/disconnection directions without exact connector geometry.
+  Do not adopt those directions to fill this gap. No temperature, insertion depth,
+  force, connector direction or electrical contact is established here.
+
+### Scope for review
+
+A person experienced with tablet mechanical inspection must first assess whether
+cover-only observation is feasible using the exact-generation references and the
+actual unit's condition. A powered-off tablet still contains an energized battery;
+this proposal does not claim electrical isolation. If the operator needs an
+unverified connector action to make their work safe, stop and resolve that method
+before any opening. This document is not a substitute for a qualified mechanical
+procedure or an operator's own assessment.
+
+No battery disconnection/removal, board/shield removal, test-pad contact, soldering,
+shorting, voltage injection, USB/charger/UART connection, mode change, unlock,
+reboot experiment or firmware/helper execution is in scope. No purchases or repair
+booking are authorized. No approach is selected merely because a video shows it.
+
+### Stop conditions and evidence handling
+
+Stop for battery swelling/leakage, damage/corrosion, uncertain tool placement or
+mechanical resistance, unexpected adhesive or layout, any need to disturb wiring,
+or markings not visible in the permitted scope. Do not force a source procedure
+to fit a different layout. A stop report with the reason is sufficient evidence;
+continuing to meet a photo target is not required.
+
+Keep original photographs private. For review/publication, crop or mask serials,
+barcodes, account details and household background before sharing. Share only the
+minimum geometry/revision evidence needed; no device identifier is required. No
+raw source screenshots with visible unit labels are republished in the repository.
+
+### Decision and follow-on gates
+
+Before proceeding, the owner must review the scope, choose a competent operator
+and explicitly authorize a specific inspection plan after the mechanical/safety
+gaps are resolved. If that cannot be established, obtain a qualified repair
+assessment rather than guess. No owner approval has been recorded for this plan.
+
+After any separately approved identification, compare the actual board layout
+before qualifying battery isolation or any UART/BootROM route. An interior photo
+would not establish de-energization, pad voltage, storage backup, recoverable entry,
+stock return or usable boot logs. Tasks #346–#348 and recovery phase #344 remain
+open. Task #345 stays open until this proposal and its unresolved source limits
+have been reviewed; no physical gate is closed by merging documentation.
