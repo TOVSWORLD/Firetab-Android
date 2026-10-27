@@ -565,3 +565,30 @@ and separate owner approval for destructive actions. No code changes to helpers,
 no downgrade, flash, reset or connection is authorized by this source decision.
 Task #347, restoration #346, logs #348 and parent #106 remain open. The revised
 research priority no longer waits solely on the cover-photo review #345.
+
+## Full-stage state transition and restore boundary (#347 / #346)
+
+The full launcher is not a backup/observation phase. Hash-pinned cached main
+source first transforms/writes both GPT copies when needed, then performs later
+boot-region/RPMB checks. It clears a boot header and changes/rechecks RPMB state
+in both modes. Full mode additionally replaces preloader copies, TEE and LK;
+subsequent code injects boot/recovery payloads, requests a mode, restores headers
+and reboots. The final fastboot script installs recovery, erases userdata and
+changes MISC. These are separate mutation/failure boundaries, not one atomic
+operation. The [selected-source inventory](../../evidence/douglas-original-route/full-stage-effects.json)
+records exact ranges and source hash without redistributing helper code.
+
+AST inspection found no call to the selected module's dump_binary helper in main.
+This is not an exhaustive assertion about every imported helper, but no complete
+pre-change region escrow is established by this selected path. GPT name reparse,
+RPMB equality recheck and later recovery success are different evidence from
+original-state readback/rollback. Do not claim this route preserves user data or
+can restore all security state. A stock-return package is not an original backup.
+
+The practical qualification choice must be explicit before execution: either a
+separately qualified read-before-write/restore route, or an owner-approved test
+unit and accepted irreversible-state/data-loss limits. That second option is a
+change to the preservation requirement, not something automation can assume.
+The Fire7 cannot stand in for a douglas test unit. First reconcile original
+package identity and host preflight; then present the complete proposed effects
+for review. No write, reset, wipe, helper or payload execution is approved here.

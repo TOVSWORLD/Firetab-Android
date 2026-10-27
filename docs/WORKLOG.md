@@ -2262,3 +2262,12 @@ priority, cover review is fallback. Exact-build execution/restore/log gates rema
 open. Owner Linux host available (private alias excluded); second desk tablet is
 Fire7, generation unknown and outside douglas route. Next original-package match
 and full-stage write/restore inventory, not more case-only audit waiting.
+
+## 2026-10-27 — Full-stage write/escrow boundary (#347/#346)
+
+Static AST/range review of cached main SHA0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5
+found zero dump_binary calls in main and GPT writes before later region/security
+checks. Retained full/shared write stages and readback limitations; no atomic
+rollback or exhaustive imported-helper claim. Explicit preservation decision
+required before any destructive test; Linux availability is not permission.
+No device/helper execution. Existing tasks updated; no audit micro-issue created.
