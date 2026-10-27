@@ -1,0 +1,50 @@
+{
+  "url": "https://raw.githubusercontent.com/ryanfortner/FireHD8-2017/91f93505eee47d6848dc6e161f29011503106a33/amonet-douglas.zip",
+  "entry": {
+    "name": "amonet/bootrom-step.sh",
+    "flags": 0,
+    "method": 0,
+    "crc32": 141500601,
+    "compressed_bytes": 54,
+    "uncompressed_bytes": 54,
+    "offset": 22325211
+  },
+  "bytes": 54,
+  "sha256": "c7c93a2aff2b17bb2cd9fd1a90fcea7ac22699986f14c445d434668e56126799",
+  "response_body_bytes": 65557,
+  "budget": 131072,
+  "etag": "\"17fd024a05f24b05d42503aade64db6fa67fc224cc8704da5eb27169116a7592\"",
+  "helpers_executed": false,
+  "device_accessed": false,
+  "cached_main_sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5",
+  "sources": [
+    {
+      "url": "https://xdaforums.com/posts/80154797/",
+      "role": "Original author guide, expanded newer-firmware warning; modification/wipe disclosures"
+    },
+    {
+      "url": "https://xdaforums.com/posts/90487831/",
+      "role": "2026 maintainer full-versus-minimal correction"
+    },
+    {
+      "url": "https://xdaforums.com/posts/90490714/",
+      "role": "2026 maintainer latest-firmware USB-first candidate and native-Linux requirement"
+    },
+    {
+      "url": "https://xdaforums.com/posts/90488396/",
+      "role": "Maintainer hardware fallback with annotated image; not inspected on owner board"
+    },
+    {
+      "url": "https://xdaforums.com/posts/90570763/",
+      "role": "2026 first-person mirrored-guide bootloop report"
+    },
+    {
+      "url": "https://xdaforums.com/posts/90777437/",
+      "role": "5.7.1.0 question; no success reply observed in reviewed page"
+    }
+  ],
+  "source_route_exists": true,
+  "exact_current_build_success_verified": false,
+  "restore_qualified": false,
+  "physical_test_ready": false
+}

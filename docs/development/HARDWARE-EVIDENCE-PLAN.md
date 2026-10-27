@@ -140,3 +140,12 @@ would not establish de-energization, pad voltage, storage backup, recoverable en
 stock return or usable boot logs. Tasks #346–#348 and recovery phase #344 remain
 open. Task #345 stays open until this proposal and its unresolved source limits
 have been reviewed; no physical gate is closed by merging documentation.
+
+## Revised priority after original-thread access (#347)
+
+The [current-stock route review](CURRENT-STOCK-ENTRY-RETURN.md) now links the
+original maintainer's USB-first guidance and hardware fallback material. Cover
+identification #345 remains a review-only fallback plan, not a prerequisite for
+all further recovery research. Do not keep waiting on its review while package/
+full-stage/restore qualification can advance under #347. A Fire7 of unknown
+generation is a separate target and must not inherit douglas contact/firmware data.

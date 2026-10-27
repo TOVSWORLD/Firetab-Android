@@ -2249,3 +2249,16 @@ and S0–S3 defect triage. All device cases NOT RUN. No test execution or physic
 procedure authorized. Inspection345 remains pending review; matrix is independent
 planned work under phase338, not a new micro-issue. Phase/beta admission remains
 open. Documentation community/repository/diff checks applied.
+
+## 2026-10-27 — Original douglas route and full/minimal correction (#347)
+
+Broader search reached original XDA via browser despite text-fetch502. Read author
+post80154797, maintainer90487831/90490714 and fallback90488396; recent failure
+reports corroborate wrong brick/minimal pairing. Static full launcher inspection:
+54bytes, SHA c7c93a2aff2b17bb2cd9fd1a90fcea7ac22699986f14c445d434668e56126799;
+65557 response bytes within128KiB cap. Cached main non-minimal guards corroborated;
+no upstream code copied publicly or helper executed. USB-first candidate now gets
+priority, cover review is fallback. Exact-build execution/restore/log gates remain
+open. Owner Linux host available (private alias excluded); second desk tablet is
+Fire7, generation unknown and outside douglas route. Next original-package match
+and full-stage write/restore inventory, not more case-only audit waiting.
