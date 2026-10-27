@@ -2129,3 +2129,19 @@ scalar lengths. Actual local ARM recompilation shows0ABS32 markerentries;
 290hosttests pass. Retained failure/object/source metadata; Linuxconfirmation
 pending. Repo/diff pass. No firmware/device execution. Next exacthead CI both
 variants, no weakened comparison or runtime/restore claim.
+
+## 2026-10-27 — Corrected Linux two-base result (#311 / #312)
+
+Actual Linux job 40471752722/122080264532 passed at source head
+`722f52846a9e1aafba65206c82f291af115fdceb`, tested merge
+`0c7a7b78b76dfcc5f15102046e82322b5f1a3644`. Direct (3000 bytes) and bridge
+(3040 bytes) have equal normalized load bytes at zero and synthetic `0x10000000`,
+with unchanged relative entry and ARM/Thumb state. Exact image/source hashes,
+tool versions and stack analysis are retained in
+`evidence/owned-agent-link-bases/report.json`. This confirms the pointer-table
+fix for these two linked bases; it does not prove arbitrary runtime relocation,
+physical mapping, callback binding, security entry, original-state restoration
+or captured UART output. No firmware or tablet execution occurred.
+
+Next: original acquisition/restore provenance and board-specific logging
+qualification under #106; existing board-record question remains pending.
