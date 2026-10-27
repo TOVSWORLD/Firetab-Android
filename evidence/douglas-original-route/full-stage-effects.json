@@ -1,0 +1,44 @@
+{
+  "scope": "Static selected mirrored full-stage source only; imported modules and firmware effects not exhaustively proved",
+  "source_sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5",
+  "source_revision": "91f93505eee47d6848dc6e161f29011503106a33",
+  "main_dump_binary_calls": 0,
+  "effects": [
+    {
+      "lines": [
+        145,
+        176
+      ],
+      "stage": "Conditional GPT transformation and two-copy writes before later boot/RPMB checks",
+      "readback_limit": "Reparse/name checks, not verified original-state escrow or atomic rollback"
+    },
+    {
+      "lines": [
+        193,
+        208
+      ],
+      "stage": "Boot header clearing and RPMB zero/write/recheck shared by full and minimal paths",
+      "restore_limit": "RPMB/security state not covered by ordinary user/boot image copies"
+    },
+    {
+      "lines": [
+        210,
+        225
+      ],
+      "stage": "Full-only preloader copies, TEE and LK replacement",
+      "restore_limit": "Requires exact original identities and post-failure reachable restore, not supplied by script selection"
+    },
+    {
+      "lines": [
+        227,
+        256
+      ],
+      "stage": "Boot/recovery payload, MISC mode and preloader headers; reboot",
+      "restore_limit": "No transaction rollback inferred"
+    }
+  ],
+  "helpers_executed": false,
+  "device_accessed": false,
+  "original_state_restore_verified": false,
+  "physical_test_ready": false
+}
