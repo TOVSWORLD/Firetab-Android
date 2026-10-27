@@ -125,3 +125,20 @@ No actual EXT_CSD was collected. Supplied values cannot prove device origin,
 acknowledged selection, independent acquisition or restoration, and every such
 qualification flag remains false. This supplies a future evidence decoder,
 not a memory-read or collection procedure.
+
+## Cross-checking supplied geometry against both sets (#309)
+
+The two-set verifier now optionally accepts `--ext-csd supplied.bin`, a regular
+host file limited to the exact 512 bytes required by the decoder. Both manifest
+sector sizes and all three expected region lengths must match the supplied
+geometry before file verification. Thus two internally consistent copies with
+the same wrong extent no longer pass this optional check. Without metadata,
+the existing two-set integrity mode remains available and reports no geometry
+cross-check. Output never publishes the raw EXT_CSD or identifiers.
+
+Three additional synthetic tests cover matching geometry without origin claims,
+wrong user/boot capacity despite matching copies, sector mismatch and malformed
+metadata; all 287 host tests pass. Supplied geometry consistency is not device
+origin, fresh acquisition, acknowledged region selection or independent reads.
+No metadata was collected or selector/transport bound. Original-state acquisition,
+RTC/RPMB state and reachable post-failure restoration remain open.

@@ -2098,3 +2098,13 @@ Verified cached source Gitobjects/receipt, four synthetic tests/full284pass.
 Repo/diff pass. No metadata/device acquisition/selector/helper execution; origin/
 selection/independence/restore remainfalse. Existingboardrecord question pending;
 next integrate suppliedgeometry into explicit escrow evidence validation, no physicalbinding.
+
+## 2026-10-27 — Escrow versus supplied geometry (#309 / #106)
+
+Merged #308 at passing34738376ef0717520fbea67b7c3db1a643b87398,
+merge69514e8f1eec1cafbeac77d8d1ff35d7cf2f83bb; #307 closed. Added optional
+supplied512B metadata cross-check for sector/three-region extents in both sets;
+matchingwrongsize copies reject. Three newsynthetictests/full287hosttests pass;
+repo/diff pass. Output geometryconsistency only, no origin/selection/independence/
+restore claim or rawmetadata. No device/metadata acquisition. Existingboardquestion
+pending withoutrepeat; next actual acquisitionprovenance/restore entry remainsopen.
