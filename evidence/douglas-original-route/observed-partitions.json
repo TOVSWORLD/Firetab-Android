@@ -1,0 +1,220 @@
+{
+  "scope": "Owner-authorized unprivileged sysfs partition metadata, not raw GPT/EXT_CSD or boot evidence",
+  "identity": {
+    "manufacturer": "Amazon",
+    "model": "KFDOWI",
+    "device": "douglas"
+  },
+  "raw_record_sha256": "8bb1c0b3f59f89de6741c8069cdb9b83d8c9abf9f22668d9d8dbf20183f4a398",
+  "raw_record_bytes": 2258,
+  "sector_units_bytes": 512,
+  "partitions": [
+    {
+      "number": 1,
+      "node": "mmcblk0p1",
+      "name": "proinfo",
+      "start_sector_512": 1024,
+      "sectors_512": 6144,
+      "start_bytes": 524288,
+      "bytes": 3145728
+    },
+    {
+      "number": 2,
+      "node": "mmcblk0p2",
+      "name": "PMT",
+      "start_sector_512": 7168,
+      "sectors_512": 9216,
+      "start_bytes": 3670016,
+      "bytes": 4718592
+    },
+    {
+      "number": 3,
+      "node": "mmcblk0p3",
+      "name": "lk",
+      "start_sector_512": 16384,
+      "sectors_512": 1024,
+      "start_bytes": 8388608,
+      "bytes": 524288
+    },
+    {
+      "number": 4,
+      "node": "mmcblk0p4",
+      "name": "lk2",
+      "start_sector_512": 17408,
+      "sectors_512": 1024,
+      "start_bytes": 8912896,
+      "bytes": 524288
+    },
+    {
+      "number": 5,
+      "node": "mmcblk0p5",
+      "name": "boot",
+      "start_sector_512": 18432,
+      "sectors_512": 32768,
+      "start_bytes": 9437184,
+      "bytes": 16777216
+    },
+    {
+      "number": 6,
+      "node": "mmcblk0p6",
+      "name": "recovery",
+      "start_sector_512": 51200,
+      "sectors_512": 34816,
+      "start_bytes": 26214400,
+      "bytes": 17825792
+    },
+    {
+      "number": 7,
+      "node": "mmcblk0p7",
+      "name": "tee1",
+      "start_sector_512": 86016,
+      "sectors_512": 10240,
+      "start_bytes": 44040192,
+      "bytes": 5242880
+    },
+    {
+      "number": 8,
+      "node": "mmcblk0p8",
+      "name": "tee2",
+      "start_sector_512": 96256,
+      "sectors_512": 10240,
+      "start_bytes": 49283072,
+      "bytes": 5242880
+    },
+    {
+      "number": 9,
+      "node": "mmcblk0p9",
+      "name": "metadata",
+      "start_sector_512": 106496,
+      "sectors_512": 80896,
+      "start_bytes": 54525952,
+      "bytes": 41418752
+    },
+    {
+      "number": 10,
+      "node": "mmcblk0p10",
+      "name": "kb",
+      "start_sector_512": 187392,
+      "sectors_512": 2048,
+      "start_bytes": 95944704,
+      "bytes": 1048576
+    },
+    {
+      "number": 11,
+      "node": "mmcblk0p11",
+      "name": "dkb",
+      "start_sector_512": 189440,
+      "sectors_512": 2048,
+      "start_bytes": 96993280,
+      "bytes": 1048576
+    },
+    {
+      "number": 12,
+      "node": "mmcblk0p12",
+      "name": "MISC",
+      "start_sector_512": 191488,
+      "sectors_512": 1024,
+      "start_bytes": 98041856,
+      "bytes": 524288
+    },
+    {
+      "number": 13,
+      "node": "mmcblk0p13",
+      "name": "reserved",
+      "start_sector_512": 192512,
+      "sectors_512": 16384,
+      "start_bytes": 98566144,
+      "bytes": 8388608
+    },
+    {
+      "number": 14,
+      "node": "mmcblk0p14",
+      "name": "system",
+      "start_sector_512": 208896,
+      "sectors_512": 3306496,
+      "start_bytes": 106954752,
+      "bytes": 1692925952
+    },
+    {
+      "number": 15,
+      "node": "mmcblk0p15",
+      "name": "cache",
+      "start_sector_512": 3515392,
+      "sectors_512": 868352,
+      "start_bytes": 1799880704,
+      "bytes": 444596224
+    },
+    {
+      "number": 16,
+      "node": "mmcblk0p16",
+      "name": "userdata",
+      "start_sector_512": 4383744,
+      "sectors_512": 26393567,
+      "start_bytes": 2244476928,
+      "bytes": 13513506304
+    }
+  ],
+  "component_comparisons": [
+    {
+      "component": "lk.bin",
+      "target_in_observed_layout": "lk",
+      "padded_bytes": 486400,
+      "kernel_reported_target_bytes": 524288,
+      "slack_bytes": 37888,
+      "fits_reported_partition": true
+    },
+    {
+      "component": "tz.img",
+      "target_in_observed_layout": "tee1",
+      "padded_bytes": 3307008,
+      "kernel_reported_target_bytes": 5242880,
+      "slack_bytes": 1935872,
+      "fits_reported_partition": true
+    },
+    {
+      "component": "tz.img",
+      "target_in_observed_layout": "tee2",
+      "padded_bytes": 3307008,
+      "kernel_reported_target_bytes": 5242880,
+      "slack_bytes": 1935872,
+      "fits_reported_partition": true
+    },
+    {
+      "component": "twrp.img",
+      "target_in_observed_layout": "recovery",
+      "padded_bytes": 13512704,
+      "kernel_reported_target_bytes": 17825792,
+      "slack_bytes": 4313088,
+      "fits_reported_partition": true
+    },
+    {
+      "component": "stock-return recovery.img",
+      "target_in_observed_layout": "recovery",
+      "padded_bytes": 9277440,
+      "kernel_reported_target_bytes": 17825792,
+      "slack_bytes": 8548352,
+      "fits_reported_partition": true
+    }
+  ],
+  "conditional_projection": {
+    "scope": "Conditional source arithmetic from observed userdata end, not raw GPT validation",
+    "original_userdata_end_inclusive_sector": 30777310,
+    "projected_userdata_end_inclusive_sector": 30325759,
+    "projected_userdata_loss_bytes": 231194112,
+    "new_boot_start_sector": 30325760,
+    "new_recovery_start_sector": 30551040,
+    "each_new_slot_bytes": 115343360,
+    "existing_boot_payload_offset_would_fit": false,
+    "existing_recovery_payload_offset_would_fit": false
+  },
+  "partinfo_available": false,
+  "partinfo_failure": "missing",
+  "sysfs_metadata_available": true,
+  "kernel_reported_ranges_nonoverlapping": true,
+  "raw_gpt_crc_verified": false,
+  "physical_region_selection_verified": false,
+  "original_state_restore_verified": false,
+  "failure_exit_verified": false,
+  "device_modified": false,
+  "root_used": false
+}
