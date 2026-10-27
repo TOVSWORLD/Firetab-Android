@@ -2415,3 +2415,23 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Prepared exact targeted read for separate owner review; actual availability and
   permission still unverified. Next approved supplied layout record, not another
   automatic device query. No tablet/helper/firmware activity occurred.
+
+## 2026-10-27 — owner-approved named layout evidence (#347 / #346)
+
+- Owner connected douglas, added plugdev membership, installed a narrow USB-mode
+  rule and authorized the ADB host. Agent restarted only the account-owned host
+  ADB server to clear cached permission state; no tablet reboot occurred.
+- Authorized targeted property reads confirmed Amazon/KFDOWI/douglas.
+  proc partinfo missing:64-byte error SHA256f33c257060bb942bb0298adb5b2aa67591e22a869092a04fbcec279e979e4b11.
+- Read only sysfs mmcblk0 partition start/size/uevent metadata using a fixed shell
+  loop, no root or block-device reads. Private2258-byte capture SHA256
+  8bb1c0b3f59f89de6741c8069cdb9b83d8c9abf9f22668d9d8dbf20183f4a398.
+  Published only normalized internal partition fields, no serial/host/household data.
+- Offline assertions:16 unique consecutive-numbered/nonoverlapping named ranges;
+  original LK/TEE/TWRP/recovery sizes fit reported capacities. Large-offset exploit
+  payload does not fit original boot/recovery. Conditional source GPT projection
+  shrinks userdata231,194,112bytes; no storage changed. Raw GPT/security escrow,
+  selector and reachable failure-return/log qualification remain open.
+- Baseline8d0a520d7cd102e1e971590690ad3c3635b4c9d9. Next independent failure
+  return/logging with explicit preservation limits; automatic tablet access remains
+  prohibited even while connected.

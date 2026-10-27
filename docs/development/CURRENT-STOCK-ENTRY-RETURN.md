@@ -1,5 +1,11 @@
 # Current-stock douglas: entry and return route review
 
+Latest owner-session evidence: douglas identity and unprivileged sysfs partition
+metadata are now observed. Original packages and named ranges are available;
+raw GPT/security-state escrow, independent failure return and real boot logs
+remain unqualified. See [observed layout](#owner-observed-partition-layout-347--346).
+
+
 Reviewed2026-10-26. Target evidence remains build50.6.5.9_user_659664620,
 PL7/LK3/TEE262; displayed Fire OS5.7.1.0 is not a substitute for those component
 versions. No tablet was accessed and no helper was executed in this review.
@@ -856,3 +862,38 @@ synthesizes512KiB entries, and sgpt starts at the end of the last iterated
 partition. Even successful named metadata would not prove GPT CRCs, backup-header
 placement, EXT_CSD, acknowledged selection, original-region escrow or failure
 return. It would narrow the write-capacity question only.
+
+## Owner-observed partition layout (#347 / #346)
+
+After owner-installed host USB permissions and owner acceptance of the ADB host,
+identity reads confirmed Amazon/KFDOWI/douglas. `/proc/partinfo` is missing on the
+installed build; its source presence was not a runtime guarantee. An equivalent
+unprivileged sysfs metadata read returned start, size and partition-name fields
+for all16 internal mmcblk0 partitions. No root, block-device reads, reboot,
+helper or firmware execution occurred. Raw host/device selectors remain private.
+[Sanitized observed metadata and comparisons](../../evidence/douglas-original-route/observed-partitions.json)
+retain the capture hash, units and explicit limitations.
+
+The16 named ranges are nonoverlapping; boot/recovery and userdata names are
+present, while boot_x/recovery_x are absent. Existing boot is16MiB, recovery17MiB,
+LK512KiB and each TEE5MiB. Original LK and TEE components fit these reported
+capacities. TWRP fits the reported recovery capacity with4,313,088bytes slack;
+packaged stock-return recovery fits with8,548,352bytes slack. These are size
+comparisons, not image acceptance or a statement that writing them is safe.
+
+The exploit header/payload layout at sector223223 does **not** fit either
+existing boot or recovery partition. It relies on the helper's GPT transformation
+creating two115,343,360-byte slots and renaming the original partitions. Applying
+only that reviewed arithmetic to the observed userdata end projects a231,194,112-
+byte userdata shrink, including alignment loss. The projection is not an executed
+partition change or proof that actual GPT headers satisfy the helper assumptions.
+Do not apply the large-offset writes directly to the original partitions.
+
+This resolves kernel-reported names, starts and capacities for the observed unit.
+It does not establish raw GPT CRCs/header copies, original region escrow, native
+selector acknowledgement, security-state restore, image acceptance or a failure
+return. No modified fastboot/TWRP/BootROM path or boot-log lifecycle was tested.
+The next gate is an independent, reachable recovery/log route with explicit
+preservation limits; no destructive trial is authorized by successful ADB access.
+The source-only proc request is superseded by this successful sysfs observation;
+there is no remaining USB permission or owner file-supply blocker.
