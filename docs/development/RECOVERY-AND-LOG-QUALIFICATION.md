@@ -505,3 +505,27 @@ first-byte UART capture or qualify logs from a kernel that never reached a write
 Reboot/power retention, recovery accessibility and freshness are untested. No proc
 read, reboot, memory access or device operation is requested. Next resolve actual
 configuration/layout and retention evidence before selecting this as a capture route.
+
+## Exact packaged stock ramdisk log access (#321)
+
+Static inspection of the cached hash-matched stock boot image adds binary-package
+policy evidence beyond the source defconfig. The gzip ramdisk decoded to a bounded
+newc archive under a 16 MiB cap; only rc/context text was searched. Component,
+archive and matching-file hashes/line references are retained in the
+[metadata receipt](../../evidence/stock-log-access/report.json); no raw archive,
+init file or log text is published.
+
+The packaged init.rc declares a pstore mount and restricts console-ramoops and
+last_kmsg to mode 0440 with system/log ownership. It also declares copying
+last_kmsg to `/data/system/SYSTEM_LAST_KMSG`, then mode 0600 and system/system
+ownership. The douglas init file separately declares removing this copied file
+in post-fs. Actual import/action ordering and operation success have not been
+established; do not assume this path survives or contains a fresh log.
+
+These are policy declarations, not proof of available pstore, retained memory,
+readable proc entries, a successful copy, permitted shell access or an accessible
+recovery environment. Retrieval must account for the active identity, SELinux,
+init/data availability, file lifecycle and provenance without changing permissions
+or weakening policy. No device read, chmod, mount, reboot or init execution occurred.
+Next establish actual lifecycle/access evidence from existing sanitized records;
+the kernel configuration/retention and board UART gates remain open.
