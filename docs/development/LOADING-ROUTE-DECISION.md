@@ -946,3 +946,27 @@ transmitter drain, initial entry security or original-state restoration.
 Next inspect linked image/layout and inventory the remaining physical-entry,
 restore and UART capture prerequisites against existing evidence. Avoid expanding
 logging features until a viable recovery/capture route is established.
+
+## Actual initial-entry crash branch effects (#281)
+
+The earlier entry audit followed delegation. This bounded follow-up reviews the
+actual pinned [crash implementation](https://github.com/bkerler/mtkclient/blob/7cb40e727727dfe3faa065eefb29b16ed29bbdf1/mtkclient/Library/exploit_handler.py#L146-L177)
+with hash verification and AST-only call inventory. The
+[receipt](../../evidence/current-entry-crash-effects/report.json) retains metadata,
+not helper code or payload bytes. No helper was imported or executed.
+
+Mode zero requests a DA upload at a low address; mode one requests a low-address
+memory read as a crash attempt; mode two requests upload followed by execution.
+Mode three requests reset-to-BootROM explicitly. The default caller loop tries
+only modes zero through two; mode three is not reached by that loop. Exceptions
+are suppressed and the method supplies no explicit transition-success result.
+These are active target operations with different effects, not alternative
+passive ways of enumerating a connected tablet.
+
+No branch proves applicability to the installed PL7/LK3/TEE262 state, an actual
+BootROM transition, signature acceptance or stock exit after failure. Recreating
+and initializing a host object afterward does not fill those gaps. Keep automatic
+runs free of these requests. Next inspect the explicit reset implementation's
+exact register/effect/return assumptions as a separate source task, then compare
+it with installed-state evidence; do not run it to discover compatibility.
+Original-state restore and usable physical logs remain independent prerequisites.
