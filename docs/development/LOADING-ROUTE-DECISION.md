@@ -918,3 +918,31 @@ may explicitly request markers with a known UART mapping. Physical initializatio
 exclusive ownership, electrical/pad routing, actual capture, initial security
 entry and original-state restore remain open. Linking a marker function does not
 produce usable real boot logs or a recovery procedure.
+
+## Explicit opt-in logged agent integration (#277)
+
+The previous marker-enabled agent builds linked successfully; exact hashes and
+revisions are retained in the [receipt](../../evidence/explicit-logged-agent/report.json).
+`diagnostic_logged_run` now provides an explicit caller-invoked integration with
+a supplied qualified UART mapping. Default entry/bridge behavior is unchanged:
+no UART calls happen automatically and no physical address is selected.
+
+A total budget <=4096 polls is split between ENTRY and exit markers. Short ENTRY
+prevents agent invocation. After agent_run returns, RETURN or ERROR is queued
+according to its result. The separate result retains agent invocation, agent
+status, queued counts and logging completion even when exit output fails. A
+completed log wrapper is not necessarily agent success; partial output after
+agent invocation must never trigger an automatic retry. Agent invocation here
+means entry to agent_run, not proof a downstream CALL or stock return occurred.
+
+Actual ARM compilation and native synthetic-register/frame tests pass, including
+invalid mapping, short entry, agent error and lost UART readiness after agent
+completion. The full host suite passed 276 tests; affected native tests were
+rerun after adding the exit-failure regression. Linux CI now links this routine
+into both variants; its new image result is pending. No ARM firmware/physical
+MMIO/device access occurs. Queueing fixed lines cannot prove electrical capture,
+transmitter drain, initial entry security or original-state restoration.
+
+Next inspect linked image/layout and inventory the remaining physical-entry,
+restore and UART capture prerequisites against existing evidence. Avoid expanding
+logging features until a viable recovery/capture route is established.
