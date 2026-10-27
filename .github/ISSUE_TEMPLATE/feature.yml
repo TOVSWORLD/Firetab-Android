@@ -33,7 +33,7 @@
       "type": "input",
       "id": "parent",
       "attributes": {
-        "label": "Parent project/feature issue",
+        "label": "Parent epic issue",
         "description": "Use an issue number/URL or say needs triage."
       },
       "validations": {

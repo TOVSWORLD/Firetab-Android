@@ -2217,3 +2217,10 @@ projects/delivery-plan.json and roadmap/workflow. Every PR now requires a real
 Updates/Refs/Closes issue reference; parser rejection tests cover template examples,
 missing issues and PR substitutions. Existing open PR descriptions linked to issues.
 Main release policy remains unchanged. No device action or runtime pass.
+
+Verified all41 native hierarchy nodes/parents; both boards now expose hierarchy,
+phase gates, ready tasks and blocked tasks. Archived137 historical closed cards.
+PR linkage check passed in actual GitHub run40525664117; added it to development
+and main required checks, preserving strict mode and existing contexts. Issue forms
+and checked-in taxonomy now support Epic/Feature/Phase/Task. All runtime gates stay
+open; no beta date fabricated. Source audit history and linked PRs remain accessible.

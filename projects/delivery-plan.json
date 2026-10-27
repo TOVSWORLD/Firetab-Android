@@ -5,288 +5,247 @@
       "number": 2,
       "level": "epic",
       "parent": null,
-      "title": "[Epic] FireTabs Android \u2014 beta platform for QA",
-      "blocked": false
+      "title": "[Epic] FireTabs Android \u2014 beta platform for QA"
     },
     "panel": {
       "number": 3,
       "level": "epic",
       "parent": null,
-      "title": "[Epic] Crestron Panel \u2014 supported client beta for QA",
-      "blocked": false
+      "title": "[Epic] Crestron Panel \u2014 supported client beta for QA"
     },
     "recovery": {
       "number": 327,
       "level": "feature",
       "parent": 2,
-      "title": "[Feature] Recoverable diagnostic loading and real boot logs",
-      "blocked": false
+      "title": "[Feature] Recoverable diagnostic loading and real boot logs"
     },
     "recovery_phase": {
       "number": 106,
       "level": "phase",
       "parent": 327,
-      "title": "[Phase 1] Qualify recovery entry, original-state restore and capture",
-      "blocked": true
+      "title": "[Phase 1] Qualify recovery entry, original-state restore and capture"
     },
     "board": {
       "number": 4,
       "level": "feature",
       "parent": 2,
-      "title": "[Feature] Maintained-kernel douglas board enablement",
-      "blocked": false
+      "title": "[Feature] Maintained-kernel douglas board enablement"
     },
     "core": {
       "number": 328,
       "level": "phase",
       "parent": 4,
-      "title": "[Phase 2] Integrate and validate core board providers",
-      "blocked": true
+      "title": "[Phase 2] Integrate and validate core board providers"
     },
     "task18": {
       "number": 18,
       "level": "task",
       "parent": 328,
-      "title": "[Task] Clock/reset providers",
-      "blocked": true
+      "title": "[Task] Clock/reset providers"
     },
     "task19": {
       "number": 19,
       "level": "task",
       "parent": 328,
-      "title": "[Task] Pinctrl and EINT",
-      "blocked": true
+      "title": "[Task] Pinctrl and EINT"
     },
     "task20": {
       "number": 20,
       "level": "task",
       "parent": 328,
-      "title": "[Task] PMIC wrapper and power domains",
-      "blocked": true
+      "title": "[Task] PMIC wrapper and power domains"
     },
     "task27": {
       "number": 27,
       "level": "task",
       "parent": 328,
-      "title": "[Task] Matched full DT binding validation",
-      "blocked": true
+      "title": "[Task] Matched full DT binding validation"
     },
     "task29": {
       "number": 29,
       "level": "task",
       "parent": 328,
-      "title": "[Task] Resolve HDMI clock dependency relevance and parents",
-      "blocked": true
+      "title": "[Task] Resolve HDMI clock dependency relevance and parents"
     },
     "boot": {
       "number": 21,
       "level": "phase",
       "parent": 4,
-      "title": "[Phase 3] Boot with memory, UART and storage evidence",
-      "blocked": true
+      "title": "[Phase 3] Boot with memory, UART and storage evidence"
     },
     "storage": {
       "number": 22,
       "level": "task",
       "parent": 21,
-      "title": "[Task] Validate UART/MMC diagnostic integration",
-      "blocked": true
+      "title": "[Task] Validate UART/MMC diagnostic integration"
     },
     "ui": {
       "number": 23,
       "level": "phase",
       "parent": 4,
-      "title": "[Phase 4] Make display and input usable",
-      "blocked": true
+      "title": "[Phase 4] Make display and input usable"
     },
     "display": {
       "number": 329,
       "level": "task",
       "parent": 23,
-      "title": "[Task] Panel and backlight bring-up",
-      "blocked": true
+      "title": "[Task] Panel and backlight bring-up"
     },
     "touch": {
       "number": 330,
       "level": "task",
       "parent": 23,
-      "title": "[Task] Touch and input integration",
-      "blocked": true
+      "title": "[Task] Touch and input integration"
     },
     "graphics": {
       "number": 331,
       "level": "task",
       "parent": 23,
-      "title": "[Task] Android graphics composition",
-      "blocked": true
+      "title": "[Task] Android graphics composition"
     },
     "platform": {
       "number": 332,
       "level": "feature",
       "parent": 2,
-      "title": "[Feature] Reproducible Android platform and essential hardware",
-      "blocked": false
+      "title": "[Feature] Reproducible Android platform and essential hardware"
     },
     "abi": {
       "number": 24,
       "level": "phase",
       "parent": 332,
-      "title": "[Phase 5] Build integrated Android userspace and kernel",
-      "blocked": true
+      "title": "[Phase 5] Build integrated Android userspace and kernel"
     },
     "build": {
       "number": 333,
       "level": "task",
       "parent": 24,
-      "title": "[Task] Reproduce complete Android candidate build",
-      "blocked": true
+      "title": "[Task] Reproduce complete Android candidate build"
     },
     "hardware": {
       "number": 25,
       "level": "phase",
       "parent": 332,
-      "title": "[Phase 6] Essential hardware and reliability smoke",
-      "blocked": true
+      "title": "[Phase 6] Essential hardware and reliability smoke"
     },
     "connect": {
       "number": 334,
       "level": "task",
       "parent": 25,
-      "title": "[Task] Connectivity and audio smoke",
-      "blocked": true
+      "title": "[Task] Connectivity and audio smoke"
     },
     "power": {
       "number": 335,
       "level": "task",
       "parent": 25,
-      "title": "[Task] Power, charging and suspend smoke",
-      "blocked": true
+      "title": "[Task] Power, charging and suspend smoke"
     },
     "periph": {
       "number": 336,
       "level": "task",
       "parent": 25,
-      "title": "[Task] Storage and peripheral smoke",
-      "blocked": true
+      "title": "[Task] Storage and peripheral smoke"
     },
     "qa": {
       "number": 337,
       "level": "feature",
       "parent": 2,
-      "title": "[Feature] Beta QA admission and reproducible handoff",
-      "blocked": false
+      "title": "[Feature] Beta QA admission and reproducible handoff"
     },
     "qphase": {
       "number": 338,
       "level": "phase",
       "parent": 337,
-      "title": "[Phase 7] Admit beta candidate to owner QA",
-      "blocked": true
+      "title": "[Phase 7] Admit beta candidate to owner QA"
     },
     "qmatrix": {
       "number": 339,
       "level": "task",
       "parent": 338,
-      "title": "[Task] Define beta QA matrix and defect severity",
-      "blocked": false
+      "title": "[Task] Define beta QA matrix and defect severity"
     },
     "qpackage": {
       "number": 340,
       "level": "task",
       "parent": 338,
-      "title": "[Task] Assemble exact beta package and recovery handoff",
-      "blocked": true
+      "title": "[Task] Assemble exact beta package and recovery handoff"
     },
     "qgate": {
       "number": 341,
       "level": "task",
       "parent": 338,
-      "title": "[Task] Review beta admission evidence",
-      "blocked": true
+      "title": "[Task] Review beta admission evidence"
     },
     "governance": {
       "number": 8,
       "level": "feature",
       "parent": 2,
-      "title": "[Feature] Delivery traceability and release governance",
-      "blocked": false
+      "title": "[Feature] Delivery traceability and release governance"
     },
     "gphase": {
       "number": 342,
       "level": "phase",
       "parent": 8,
-      "title": "[Phase] Enforce issue-linked delivery workflow",
-      "blocked": false
+      "title": "[Phase] Enforce issue-linked delivery workflow"
     },
     "policy": {
       "number": 343,
       "level": "task",
       "parent": 342,
-      "title": "[Task] Enforce PR issue linkage and publish beta delivery map",
-      "blocked": false
+      "title": "[Task] Enforce PR issue linkage and publish beta delivery map"
     },
     "pfeature": {
       "number": 6,
       "level": "feature",
       "parent": 3,
-      "title": "[Feature] Supported Crestron client qualification",
-      "blocked": false
+      "title": "[Feature] Supported Crestron client qualification"
     },
     "pphase": {
       "number": 7,
       "level": "phase",
       "parent": 6,
-      "title": "[Phase] Prepare supported-client QA qualification",
-      "blocked": true
+      "title": "[Phase] Prepare supported-client QA qualification"
     },
     "pclient": {
       "number": 349,
       "level": "task",
       "parent": 7,
-      "title": "[Task] Resolve supported client and processor prerequisites",
-      "blocked": false
+      "title": "[Task] Resolve supported client and processor prerequisites"
     },
     "ptest": {
       "number": 350,
       "level": "task",
       "parent": 7,
-      "title": "[Task] Execute authorized supported-client QA matrix",
-      "blocked": true
+      "title": "[Task] Execute authorized supported-client QA matrix"
     },
     "ownerphase": {
       "number": 344,
       "level": "phase",
       "parent": 327,
-      "title": "[Phase 1b] Qualify owner recovery procedure and capture on exact board",
-      "blocked": true
+      "title": "[Phase 1b] Qualify owner recovery procedure and capture on exact board"
     },
     "inspect": {
       "number": 345,
       "level": "task",
       "parent": 344,
-      "title": "[Task] Source-qualify exact-generation inspection and isolation proposal",
-      "blocked": false
+      "title": "[Task] Source-qualify exact-generation inspection and isolation proposal"
     },
     "escrow": {
       "number": 346,
       "level": "task",
       "parent": 344,
-      "title": "[Task] Qualify original-state acquisition and reachable restore",
-      "blocked": true
+      "title": "[Task] Qualify original-state acquisition and reachable restore"
     },
     "entrytest": {
       "number": 347,
       "level": "task",
       "parent": 344,
-      "title": "[Task] Qualify current-device entry and bounded return path",
-      "blocked": true
+      "title": "[Task] Qualify current-device entry and bounded return path"
     },
     "capturetest": {
       "number": 348,
       "level": "task",
       "parent": 344,
-      "title": "[Task] Demonstrate real boot-log capture and retrieval",
-      "blocked": true
+      "title": "[Task] Demonstrate real boot-log capture and retrieval"
     }
   }
 }

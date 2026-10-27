@@ -13,7 +13,7 @@
     {
       "name": "level:project",
       "color": "5319e7",
-      "description": "Top-level project scope"
+      "description": "Legacy historical label; new top-level work uses level:epic"
     },
     {
       "name": "level:feature",
@@ -134,6 +134,21 @@
       "name": "question",
       "color": "d876e3",
       "description": "Support or research question needing context"
+    },
+    {
+      "name": "level:epic",
+      "color": "5319e7",
+      "description": "Product outcome above features"
+    },
+    {
+      "name": "level:phase",
+      "color": "5319e7",
+      "description": "Gated delivery stage under a feature"
+    },
+    {
+      "name": "status:ready-for-qa",
+      "color": "d93f0b",
+      "description": "Admission evidence accepted for QA"
     }
   ],
   "milestones": [

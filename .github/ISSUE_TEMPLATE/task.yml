@@ -1,6 +1,6 @@
 {
   "name": "Implementation task",
-  "description": "A reviewable task under an accepted feature",
+  "description": "A reviewable task under a delivery phase",
   "title": "[Implementation task] ",
   "labels": [
     "level:task",
@@ -32,7 +32,7 @@
       "type": "input",
       "id": "parent",
       "attributes": {
-        "label": "Parent feature issue"
+        "label": "Parent phase issue"
       },
       "validations": {
         "required": true
