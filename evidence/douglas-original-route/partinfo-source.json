@@ -1,0 +1,50 @@
+{
+  "scope": "Candidate read-only named-partition metadata source; installed availability/access not observed",
+  "source_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "sources": [
+    {
+      "path": "drivers/misc/mediatek/partition/partition.c",
+      "sha256": "ab898a09c90f6caf3a442a1ef59ca2ec253f8a139ecf8fa02295122bb68bf400",
+      "ranges": [
+        [
+          57,
+          86
+        ],
+        [
+          94,
+          109
+        ]
+      ]
+    },
+    {
+      "path": "drivers/misc/mediatek/partition/Makefile",
+      "sha256": "c32041936438c6cc465717f03ee019f543bfc1afcd920a5a2a43f0483ab05b2c",
+      "ranges": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "path": "drivers/misc/mediatek/Makefile",
+      "sha256": "46b25fbaf3bc1547e8d15e007d3c021f6c04f3079a5e4a8125444efc31c9d56b",
+      "ranges": [
+        [
+          22,
+          22
+        ]
+      ]
+    }
+  ],
+  "findings": [
+    "Source registers proc partinfo with mode0444 and read-only file operations.",
+    "Iterator selects mmcblk0 and reports partition volume names, start_sect*512 and nr_sects*512 in hexadecimal byte units.",
+    "pgpt and sgpt entries are synthetic512KiB rows; sgpt start derives from the last iterated partition, not independently parsed backup GPT location.",
+    "Build inclusion is conditional; mode0444 does not establish installed presence or SELinux/shell access."
+  ],
+  "collector_executed_on_device": false,
+  "installed_source_match_verified": false,
+  "metadata_origin_verified": false,
+  "restore_qualified": false
+}

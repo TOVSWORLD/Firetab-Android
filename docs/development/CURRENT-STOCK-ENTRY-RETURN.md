@@ -821,3 +821,38 @@ reachable failure exit with attributable logs. Acquiring it may require separate
 approved device activity; none is requested by these offline commands. This
 review does not authorize a trial, relax preservation requirements or substitute
 a Fire7/other revision for douglas. Tasks346/347/348 remain open.
+
+## Minimal next layout-evidence request (#347)
+
+Cached MediaTek source provides a narrower metadata route than raw GPT or root:
+`/proc/partinfo`. The source registers a mode0444 read-only proc file, selects
+mmcblk0 and prints partition volume names, start offsets and sizes in hexadecimal
+**bytes** (sector values multiplied by512). This could supply the missing named
+partition ranges. Exact hashes/ranges and conditional build gates are in the
+[partinfo source receipt](../../evidence/douglas-original-route/partinfo-source.json).
+Actual installed presence, source match and shell/SELinux permission are untested.
+
+The existing owner-run `collect_stock_facts.py` now requests this one extra proc
+file through its bounded read-only reader after the douglas identity gate. No
+collector was run on a tablet during this change. If the file is missing, denied,
+truncated or timed out, collection records it unavailable; do not retry with root
+or read a block device. The read-only collection scope does not authorize other
+helpers, reboot, firmware modification or service changes.
+
+For a separately approved targeted owner read, the concrete request is:
+
+```sh
+adb -s YOUR_LOCAL_DOUGLAS_SERIAL shell cat /proc/partinfo > partinfo-private.txt
+```
+
+The selector stays private/local and must identify the already known douglas,
+not a Fire7 or another unit. Do not post the command with a real serial. Inspect
+and sanitize the output before sharing; a denial/missing-file result is useful
+and must not trigger privilege escalation. This command is presented for review,
+not executed or authorized by this document or an automatic heartbeat.
+
+Do not interpret the tool's pgpt/sgpt rows as verified raw GPT geometry: source
+synthesizes512KiB entries, and sgpt starts at the end of the last iterated
+partition. Even successful named metadata would not prove GPT CRCs, backup-header
+placement, EXT_CSD, acknowledged selection, original-region escrow or failure
+return. It would narrow the write-capacity question only.
