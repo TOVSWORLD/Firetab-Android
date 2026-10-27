@@ -656,3 +656,29 @@ Next inspect the Linux stack receipt and specify a concrete bounded transport
 callback implementation/cleanup contract. Callback stack depth, deadlines,
 security entry, memory permissions/cache/interrupt context and original restore
 remain unqualified. Host image/link success still supplies no real boot logs.
+
+## Linux stack receipt and immutable in-flight ABI (#257)
+
+[Linux job 121932357873](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40426169089/job/121932357873)
+reports agent_run 360 bytes and dispatch 40; with the wrapper's 16 bytes, owned
+frames total 416, leaving 1632 before callbacks/interrupts. The
+[receipt](../../evidence/owned-agent-linux-stack/report.json) retains the exact
+build. This supersedes neither the separate Apple compiler observation nor the
+unresolved whole-program bound. Changed builds need their own stack receipt.
+
+Agent callback review found that caller-owned ABI fields were reread during the
+transaction loop. The loop now freezes validated count, receive/send/call/read
+and opaque pointer before any callback executes. A native synthetic regression
+mutates that caller storage during receive; the original two-transaction session
+still completes using its original callbacks/context. Actual ARM recompilation
+and all 268 host tests pass. This protects against callback-side caller-storage
+changes, not concurrent memory corruption, unsafe pointers or unbounded callbacks.
+
+For a physical transport, exact byte counts alone are insufficient. Candidate
+callbacks must supply finite completion/error behavior, documented stack use,
+partial-send uncertainty and cleanup that does not silently reset/reconfigure
+the device. The upstream BootROM get/put function scan supplies no proved
+per-call deadline or cleanup contract, so it is not yet an acceptable binding.
+Next investigate a concrete transport's source contract and its error/return
+semantics; do not add a live binding merely because the ABI is now stable.
+Original restore, security entry, placement and usable real logs remain open.

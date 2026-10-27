@@ -1811,3 +1811,15 @@ interrupts, not whole-program bound. Added Linux static-frame gate/metadata;
 actual Linux stack outcome pending. Repo/diff pass; unchanged268testbaseline.
 No firmware execution/device access. Next Linux result and bounded transport/
 cleanup contract; physical security/placement/restore/logging remain open.
+
+## 2026-10-27 — Linux stack receipt and frozen callback ABI (#257 / #106)
+
+Merged #256 at passing b67e5fa6379727e871e3f384d05fc5ad712f72a8,
+merge 6f1cac28444daa9e601ffacce25292f0a3ab6c04; #255 closed. Linux job
+121932357873/run40426169089 reports360B agent+40B dispatch+16B wrapper=416B,
+1632B before unknown callbacks/interrupts; exact receipt retained. Found callback
+ABI rereads during loop; snapshot validated fields before first callback.
+Native regression mutates caller ABI but original2transactions complete safely;
+268hosttests and actual ARM recompile pass. New link/stack result pending CI.
+Repository/diff pass. No firmware/device execution. Next concrete transport
+source deadline/error/cleanup investigation, no unqualified BootROM callback binding.

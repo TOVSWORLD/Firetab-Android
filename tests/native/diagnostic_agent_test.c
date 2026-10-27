@@ -3,8 +3,13 @@
 #include <string.h>
 #include "agent.h"
 struct fixture { unsigned receive_count,send_count,calls;int short_receive,short_send; };
+static struct diagnostic_agent_io *mutable_io;
 static int receive(void *p,uint8_t *q,size_t n) {
     struct fixture *f=p;unsigned sequence=++f->receive_count;
+    if(mutable_io) {
+        mutable_io->transactions=16;mutable_io->receive=0;mutable_io->send=0;
+        mutable_io->call=0;mutable_io->read=0;mutable_io->opaque=0;
+    }
     assert(n==16);memset(q,0,n);memcpy(q,"FTDQ",4);q[4]=1;
     q[5]=(uint8_t)(sequence==1?1:2);q[8]=(uint8_t)sequence;
     if(sequence>1)q[14]=4;
@@ -31,5 +36,7 @@ int main(void) {
     assert(diagnostic_agent_run(&io)==-1 && f.receive_count==0);
     io.transactions=1;io.version=0;
     assert(diagnostic_agent_run(&io)==-1 && f.receive_count==0);
+    io.version=1;io.transactions=2;memset(&f,0,sizeof(f));mutable_io=&io;
+    assert(diagnostic_agent_run(&io)==0 && f.receive_count==2 && f.send_count==2 && f.calls==1);
     return 0;
 }
