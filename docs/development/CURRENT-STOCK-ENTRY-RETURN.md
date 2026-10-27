@@ -510,3 +510,58 @@ proves a bootloader accepts an unsigned diagnostic image or restores prior state
 Next consolidate the smallest separately reviewable mode/return evidence plan
 for the hardware-acceptable route, using these effect distinctions. No physical
 step is requested until the exact board/interface and failure exit are qualified.
+
+## Original-thread correction and revised route priority (2026-10-27, #347)
+
+The original discussion is readable in the browser even when the text-fetch tool
+returns HTTP502. The [author's guide](https://xdaforums.com/posts/80154797/)
+explicitly describes an initially case-closed route, partition changes and a
+factory reset, with opening as a possible failure fallback. Its expanded section
+contains a full-versus-minimal warning alongside older conflicting text; do not
+flatten the whole page into one consistent command recipe.
+
+The [maintainer correction](https://xdaforums.com/posts/90487831/) explains that
+minimal mode skips components needed after the separate brick package. A later
+[maintainer reply](https://xdaforums.com/posts/90490714/) recommends a native-Linux,
+USB-first sequence for then-current firmware using the full stage. It rejects WSL
+as the host for that procedure. These are primary-source route statements, not a
+pass for our exact installed component versions.
+
+Static inspection corroborates the distinction: the pinned mirror's full launcher
+is 54 bytes and invokes main without the minimal argument. The already-cached
+main guards the preloader/TZ/LK writes behind the non-minimal branch; common paths
+still change boot/security state. Only 65,557 HTTP response bytes were used to
+inspect the launcher within a 128KiB cap; no helper was imported or executed.
+The [metadata receipt](../../evidence/douglas-original-route/report.json) preserves
+hashes and source links, not copied helper code.
+
+[Recent first-person reports](https://xdaforums.com/posts/90570763/) associate the
+mirrored guide's brick/minimal pairing with boot loops. This is corroborating
+failure evidence, not a controlled compatibility test. A reviewed
+[5.7.1.0 post](https://xdaforums.com/posts/90777437/) asks about compatibility;
+no successful exact-build reply was observed on that page. Do not turn unanswered
+questions, broad version claims or a different unit's success into our test result.
+
+### Decision for the next qualification work
+
+USB-first is the primary candidate to qualify. Hardware inspection is fallback
+preparation, not the sole prerequisite for discovering whether a route exists.
+The [maintainer fallback](https://xdaforums.com/posts/90488396/) provides an
+annotated board image and describes its mechanism, so the earlier source-access
+block is resolved. Contacts must still match the actual board before any proposed
+physical operation; this document prescribes none.
+
+The owner reports an available Linux host; verify OS/tool versions and a direct
+USB path without enumerating or accessing a tablet during automatic runs. Keep
+its hostname/private access details out of public evidence. The other desk device
+is a **Fire7 of unknown generation**, not another douglas; it is excluded from
+this route. Record each future unit's model/generation/build separately.
+
+Before an executable owner procedure: match original-author package metadata and
+selected contents against the pinned mirror; audit the complete full-stage effect
+inventory, including RPMB, GPT and erase operations; qualify original-state
+coverage/failure return; then present exact host/device prerequisites, boundaries
+and separate owner approval for destructive actions. No code changes to helpers,
+no downgrade, flash, reset or connection is authorized by this source decision.
+Task #347, restoration #346, logs #348 and parent #106 remain open. The revised
+research priority no longer waits solely on the cover-photo review #345.
