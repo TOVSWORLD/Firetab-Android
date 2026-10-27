@@ -1,0 +1,63 @@
+{
+  "scope": "Cached build-checked OTA index/component coverage only",
+  "build": "50.6.5.9_user_659664620",
+  "index_receipt_sha256": "6b639351f22e05058b58b46effed0df5224a29526b3489ff3d2705814547c6ee",
+  "indexed_entries": [
+    "system.patch.dat",
+    "META-INF/com/amazon/android/target.blocklist",
+    "META-INF/com/amazon/android/target.build.prop",
+    "META-INF/com/amazon/android/target.system.devicepath",
+    "META-INF/com/amazon/android/target.system.map",
+    "META-INF/com/amazon/android/target.system.map.sha1",
+    "META-INF/com/android/metadata",
+    "META-INF/com/google/android/update-binary",
+    "META-INF/com/google/android/updater-script",
+    "boot.img",
+    "file_contexts",
+    "images/lk.bin",
+    "images/preloader.bin",
+    "images/preloader.hdr0",
+    "images/preloader.hdr1",
+    "images/tz.img",
+    "ota.prop",
+    "system.new.dat",
+    "system.transfer.list",
+    "system/build.prop",
+    "META-INF/com/android/otacert",
+    "META-INF/MANIFEST.MF",
+    "META-INF/CERT.SF",
+    "META-INF/CERT.RSA"
+  ],
+  "cached_components": {
+    "preloader": {
+      "bytes": 139352,
+      "sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+      "scope": "packaged component, not original full hardware region"
+    },
+    "lk": {
+      "bytes": 485552,
+      "sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "packaged component, not original full hardware region"
+    },
+    "boot": {
+      "bytes": 8689664,
+      "sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+      "scope": "packaged component, not original full hardware region"
+    }
+  },
+  "full_package_downloaded": false,
+  "signature_verified": false,
+  "coverage": {
+    "original_user_region_image": false,
+    "original_first_boot_region": false,
+    "original_second_boot_region": false,
+    "device_specific_second_boot_records": false,
+    "RTC_state_and_retention": false,
+    "RPMB_security_state": false,
+    "reachable_post_failure_restore_mechanism": false
+  },
+  "limits": "No absence proof for other packages; this cached index is not a device-origin escrow manifest",
+  "device_accessed": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

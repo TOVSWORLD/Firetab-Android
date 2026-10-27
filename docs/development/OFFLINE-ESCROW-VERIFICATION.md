@@ -60,3 +60,27 @@ primary/secondary/table corruption, copied primary header, rechecksummed invalid
 geometry and inconsistent copies, partition overlap, truncation/digest mismatch,
 symlink/nonregular rejection, and sanitized CLI success/failure. No tablet backup
 has been collected or validated with this tool.
+
+## Cached official components versus original-state coverage (#303)
+
+The build-checked cached OTA index for `50.6.5.9_user_659664620` lists boot,
+preloader, LK, preloader header and update/system assets. A bounded inventory
+rehashes the cached components and index receipt in
+[official restore coverage](../../evidence/official-restore-coverage/report.json).
+No full package was downloaded or signature verification newly established.
+This index is not a manifest of original hardware-region captures from the tablet.
+
+A packaged preloader plus header assets is not proof of the complete original
+first boot region. Packaged LK/boot do not supply original user-region bytes or
+both boot regions. In particular, the previously traced second-boot record
+container has no acquired original device contents in current evidence; generic
+components cannot establish that record's preservation or restoration. RTC
+state, RPMB/security state and a restore mechanism reachable after failure are
+also separate from these component files. No claim is made that other packages
+cannot contain additional material; this is the coverage of the inspected cache.
+
+Therefore retain these components as provenance/build references, not a completed
+recovery escrow. Before any physical proposal, require independently consistent
+original region evidence, provenance/geometry validation and a separately
+qualified restoration path for the specific intended changes. No device read,
+flash, register operation or helper execution occurred in this inventory.
