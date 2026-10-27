@@ -1,0 +1,13 @@
+{
+  "owner_hardware_planning_acceptable": true,
+  "sources": [
+    {"url":"https://sakue.com/archives/821","type":"firsthand cover-removal account","published":"2020-09-14","author_labels":["2017","7th generation","KFDOWI","SX034QT"],"qualifies_PCB_revision":false,"qualifies_UART_pads_or_voltage":false},
+    {"url":"https://www.ifixit.com/Device/Kindle_Fire_HD_8","type":"7th generation identification category","qualifies_PCB_revision":false,"qualifies_electrical_procedure":false}
+  ],
+  "evidence_stages":["existing model and source provenance","board revision and unobstructed pad geometry","ground and electrical level evidence","entry and failure-return evidence","bounded log acquisition and sanitization"],
+  "missing":["owner board revision match","qualified battery/power isolation plan","UART pad and voltage mapping","BootROM contact and safe release mapping","initial entry and stock-return qualification"],
+  "physical_procedure_ready":false,
+  "physical_action_requested":false,
+  "device_accessed":false,
+  "physical_test_ready":false
+}
