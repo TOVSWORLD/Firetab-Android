@@ -1,0 +1,47 @@
+{
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "scope": "Selected manually decoded flag consumer/backend prefix",
+  "windows": [
+    {
+      "start": 166188,
+      "end": 166222,
+      "sha256": "ad54d6fb0e00cde62b650aa2f487a8f1a7b62f75a7a5b7fd9e14074a0a893d79"
+    },
+    {
+      "start": 148380,
+      "end": 148410,
+      "sha256": "85d0502c4b6d027d0e5e9c17ab32493e3e3f920434416c205969f9de50d4223b"
+    },
+    {
+      "start": 148550,
+      "end": 148576,
+      "sha256": "ef6e3b1849cd68c808ffddc602aa4663e5ecdd77e96a3b245404a2ab481b8de4"
+    },
+    {
+      "start": 158152,
+      "end": 158336,
+      "sha256": "3d061df03a9888cf41bf2f334694963429bd618b5325dc7cd32324cfed6c30e0"
+    }
+  ],
+  "flag_reader": 166188,
+  "reader_call": 148402,
+  "selector": 32812,
+  "bit_index": 13,
+  "nonzero_branch": 148550,
+  "branch_mode_code": 99,
+  "clear_helper_tail": 148572,
+  "clear_helper": 166120,
+  "clear_helper_argument": 0,
+  "clear_path_reachable_in_selected_static_branch": true,
+  "reader_access_status_checked": false,
+  "clear_completion_checked": false,
+  "backend_prefix_uses_mmio": true,
+  "backend_full_identity_verified": false,
+  "actual_flag_consumed_or_cleared_observed": false,
+  "reset_persistence_verified": false,
+  "command_entry_verified": false,
+  "stock_return_verified": false,
+  "original_restore_verified": false,
+  "firmware_executed": false,
+  "physical_test_ready": false
+}

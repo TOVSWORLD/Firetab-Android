@@ -387,3 +387,25 @@ Next identify the shared register backend and mode-flag consumption/clear path
 from cached stock evidence, without commands or firmware execution. Initial
 reachability, actual stock operation after failure, original-state restoration
 and usable logs remain independent open gates.
+
+## Conditional flag consumption/clear path (#289)
+
+The exact-stock helper at `0x2892c` reads selector `0x802c` and extracts bit 13.
+A selected caller at `0x243b2` tests that result; its nonzero branch at `0x24446`
+stores mode code `0x63` and tailcalls the same setter at `0x288e8` with argument
+zero, which requests clearing the flag. This establishes a static consume/clear
+path, rather than leaving the flag's intended lifetime entirely unknown. It does
+not demonstrate that the write succeeds, when the branch runs on this tablet or
+which reset/power events retain the underlying state. Reader access status and
+clear completion are not checked on these selected paths.
+
+The shared backend's reviewed prefix uses MMIO, but its full hardware identity,
+error/timing and persistence contract remain unresolved. The
+[metadata receipt](../../evidence/stock-mode-flag-consumer/report.json) retains
+exact LK/window hashes and offsets; raw disassembly remains private. No commands
+or firmware ran. A requested clear is not restored original state, and mode code
+alone is not proof of current command acceptance or an arbitrary RAM-loading path.
+
+Next qualify the backend against cached platform source identity and distinguish
+its hardware register channel from storage writes. Keep real entry/exit,
+original-state restore and usable physical logs as separate untested gates.

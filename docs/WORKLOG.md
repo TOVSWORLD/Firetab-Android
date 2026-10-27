@@ -1990,3 +1990,14 @@ physicalbackend/persistence unknown. Plain reboot selected handler omits helper;
 narrower sourcecandidate, not observedreturn. Metadata-only own hashgated audit,
 repo/diff pass, unchanged276tests. No commands/firmware/device execution. Next
 backend and flagconsume/clear path; restore/log/initialentry gates stayopen.
+
+## 2026-10-27 — Selected mode-flag consume/clear path (#289 / #106)
+
+Merged #288 at passingeceb49366c087fc997e0d9fde2732047749c7b96,
+mergeafa3e8ee03500d99ea370d88f90799510666720a; #287 closed. ExactLK reader
+2892c extracts bit13/selector802c; caller243b2 nonzero branch24446 storesmode63
+then tailcalls setter288e8 argument0. Staticclearpath found, access/clearstatus
+unchecked; actualresetretention/clearunobserved. BackendprefixusesMMIO, identity
+stillunknown. Own hashgated metadataaudit/repo/diff pass, unchanged276tests.
+No commands/firmware/device execution/rawdisassembly publication. Next cached
+platform backendidentity; physicalentry/return/restore/log gates remainopen.
