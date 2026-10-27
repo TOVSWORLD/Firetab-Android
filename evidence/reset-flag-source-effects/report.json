@@ -1,0 +1,57 @@
+{
+  "revision": "7cb40e727727dfe3faa065eefb29b16ed29bbdf1",
+  "files": [
+    {
+      "path": "mtkclient/Library/mtk_preloader.py",
+      "sha256": "a0e07938abc49ac1ef547071c6a152c003047cb2b24b6c268284a2c9bba39d68",
+      "git_blob_sha1": "c7434697b14253aefe15c74c739c4832484cee97"
+    },
+    {
+      "path": "mtkclient/config/brom_config.py",
+      "sha256": "a8d94deac4fb3d485e7ed9fcc17aa9fca14f19307c1dea5daf429cf7a1e1de63",
+      "git_blob_sha1": "8bb0c14757a0839a67dc48bfe377d153f9ec274a"
+    }
+  ],
+  "reviewed_ranges": {
+    "reset_to_brom": [
+      457,
+      482
+    ],
+    "MT8163_config": [
+      2264,
+      2288
+    ]
+  },
+  "active_calls": [
+    {
+      "line": 478,
+      "callee": "self.write32"
+    },
+    {
+      "line": 479,
+      "callee": "self.write32"
+    },
+    {
+      "line": 480,
+      "callee": "self.write32"
+    },
+    {
+      "line": 481,
+      "callee": "self.write32"
+    }
+  ],
+  "findings": {
+    "target_register_writes": 4,
+    "write_return_values_checked": false,
+    "previous_register_values_saved": false,
+    "explicit_reset_trigger_in_selected_function": false,
+    "explicit_transition_success_result": false,
+    "default_timeout_source_described_as_no_timeout": true,
+    "MT8163_misc_lock_configured": true,
+    "configuration_matches_actual_target_verified": false,
+    "post_failure_stock_return_qualified": false
+  },
+  "firmware_executed": false,
+  "device_accessed": false,
+  "physical_test_ready": false
+}

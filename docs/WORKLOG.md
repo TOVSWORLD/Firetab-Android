@@ -1957,3 +1957,14 @@ default0..2loop. Exceptions swallowed/no positive transition result. Metadata
 only, no payload code publication/helper import/device execution. Repo/diff pass,
 unchanged276tests. Next explicit reset effect/return source assumptions, not mode
 execution; current-build entry/failed-exit/restore/log gates remain open.
+
+## 2026-10-27 — Explicit BootROM flag/reset distinction (#283 / #106)
+
+Merged #282 at passing59d21af7ef8f4a03dc61f8dde81202aeeb8bed9e,
+mergea3b8d9c3131716009ed4cd24b033a6a53d02464f; #281 closed. Verified pinned
+reset/config blobs and AST calls. Four registerwrites, no savedoldvalues/checks,
+no explicitresettrigger/positive transition result; default source no-timeout
+encoding. MT8163 record has misc_lock, actualinstalledstate match unproved.
+Metadata/sourcecitations only; no helper/deviceexecution. Repo/diff pass;
+unchanged276tests. Next stock mode/return alternative avoidingflagmutation,
+keeping physical observation/restore/log gates open.
