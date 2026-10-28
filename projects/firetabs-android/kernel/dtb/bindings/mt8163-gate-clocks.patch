@@ -1,0 +1,59 @@
+--- a/clock/mediatek,syscon.yaml
++++ b/clock/mediatek,syscon.yaml
+@@ -44,8 +44,12 @@
+               - mediatek,mt6779-vencsys
+               - mediatek,mt6797-imgsys
+               - mediatek,mt6797-vdecsys
+               - mediatek,mt6797-vencsys
++              - mediatek,mt8163-imgsys
++              - mediatek,mt8163-mfgcfg
++              - mediatek,mt8163-vdecsys
++              - mediatek,mt8163-vencsys
+               - mediatek,mt8167-imgsys
+               - mediatek,mt8167-mfgcfg
+               - mediatek,mt8167-vdecsys
+               - mediatek,mt8173-imgsys
+@@ -88,19 +92,32 @@
+ required:
+   - compatible
+   - '#clock-cells'
+
+-if:
+-  properties:
+-    compatible:
+-      contains:
+-        const: mediatek,mt8183-mfgcfg
+-then:
+-  properties:
+-    power-domains: true
+-else:
+-  properties:
+-    power-domains: false
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8183-mfgcfg
++    then:
++      properties:
++        power-domains: true
++    else:
++      properties:
++        power-domains: false
++  - if:
++      properties:
++        compatible:
++          contains:
++            enum:
++              - mediatek,mt8163-imgsys
++              - mediatek,mt8163-mfgcfg
++              - mediatek,mt8163-vdecsys
++              - mediatek,mt8163-vencsys
++    then:
++      required:
++        - reg
+
+ additionalProperties: false
+
+ examples:

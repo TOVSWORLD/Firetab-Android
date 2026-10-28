@@ -2712,6 +2712,24 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - PR384 still compiling; source work continues independently. Next actual parent
   integration investigation; never copy DRM display-path data into SoC match data.
 
+## 2026-10-28 — four direct gate-provider exact contracts (#27)
+
+- While actual parent fix compiled, qualified IMG/MFG/VDEC/VENC exact OF/syscon
+  tuples against cached common schema and direct simple-probe drivers. New nodes
+  require register mapping; old power-domain conditional preserved unchanged.
+- Actual full cached context47diagnostics (35unmatched/12validation),4 target
+  unmatched removed/no additions; wrapper exit1 preserved.31 processed-node
+  controls pass, no media/GPU/runtime qualification implied.
+- PR384 full generic Image and QEMU passed at18f2d5b; GitHub reports merge conflict
+  after independent documentation/schema merges. Next resolve history, verify
+  all compile inputs unchanged, and run required checks on final merged head.
+  No unnecessary repeat full compilation of unchanged inputs is claimed as new.
+
+- Generated patch context blank lines initially triggered whitespace diagnostics;
+  reformatted context without altering applied YAML, verified isolated git apply
+  output identity and reran full cached profile (47diagnostics/exit1 unchanged).
+  Whitespace checks now pass before the correction commit.
+
 ## 2026-10-28 — actual parent-fix compile and merge-history resolution (#29)
 
 - Generic compile/QEMU run40755681118 passed at18f2d5b. Image SHA256

@@ -66,9 +66,9 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    reproducible bounded capture and private-data handling. Do not label it beta
    ready or close #340/#338 without their broader QA acceptance.
 5. **#27/#18/#19/#20/#29 — independent board dependency work.** Current execution:
-   #29 real audio-parent fix PR384 is in generic compile; #27 exact provider
+   #29 real audio-parent source scope is complete via merged PR384; #27 exact provider
    binding proposals proceed from cached source during that wait. Topckgen and
-   infracfg scopes merged (#385/#386); apmixedsys proposal and a real MMSYS parent-
+   infracfg scopes merged (#385/#386); apmixedsys scope merged (#387); four gate contracts are in #388. A real MMSYS parent-
    instantiation gap are recorded in #387. #18 next needs matched SoC parent/
    routing/reset integration, not merely a compiled MMSYS clock object.
    If recovery work

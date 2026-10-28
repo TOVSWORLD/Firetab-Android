@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in four exact direct gate-provider/syscon tuples and required register declaration; not media/GPU/hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-gate-clocks.patch",
+  "patch_sha256": "a2e087eb58270a97e3e304365bf868ff700832d206e9fad33a5d6b7f0f31a9d9",
+  "schema": "clock/mediatek,syscon.yaml",
+  "original_sha256": "e3c3dcb457bb8177ecf1e6bb859c125f6d1fa7dad4a3176417416678cf953140",
+  "proposed_sha256": "7a5dabd0c257626925e589ed2a93cc9e631fdc7a30f24fe506bc424ac98a14c9"
+}

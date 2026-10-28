@@ -1,0 +1,190 @@
+{
+  "cases": [
+    {
+      "provider": "imgsys",
+      "name": "exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "provider": "imgsys",
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "imgsys",
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "imgsys",
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "imgsys",
+      "name": "wrong-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "imgsys",
+      "name": "invented-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "imgsys",
+      "name": "power-domain-policy",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "wrong-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "invented-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "mfgcfg",
+      "name": "power-domain-policy",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "provider": "vdecsys",
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "wrong-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "invented-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vdecsys",
+      "name": "power-domain-policy",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "provider": "vencsys",
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "wrong-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "invented-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "provider": "vencsys",
+      "name": "power-domain-policy",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-mt8183-power-domain",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt8167-power-domain-rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-mt8173-optional-reg-preserved",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "only_new_providers_require_reg": true,
+  "passed": true
+}
