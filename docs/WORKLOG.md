@@ -3019,3 +3019,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   commands/hashes under evidence/watchdog-binding and WATCHDOG-BINDING.md.
 - Next #27 source acceptance: pinctrl syscfg-parent resource/binding matching
   with actual controls. Runtime IRQ/reset/independent return/log gates remain open.
+
+## 2026-10-28 — pinctrl syscfg provider/linkage/extent (#27)
+
+- Added opt-in exact MT8163 pctl-a-syscfg/syscon binding in both selector/tuple
+  enums, with all old policies preserved. Actual consumer resolves phandle14 to
+ 0x10005000+0x1000; EINT reg is distinct. Source type1[155,155) uses one regmap.
+- Reviewed155 pins/119drive/46pull/92IES-SMT entries plus generic port/mux models;
+  conservative end0xf5c fits4KiB. Fresh-DTB CI guard rejects wrong/missing/extra
+  maps, disabled provider and wrong/undersized/expanded resources. No all-MMIO
+  or hardware qualification. Source hashes verified from existing input locks.
+-12 actual decoded-node schema controls pass; corrected unknown-property control
+  to observed processed-schema rejection before acceptance. Full41→40 diagnostics
+  (28unmatched/12validation), only provider unmatched removed/no additions, exit1.
+- Exact receipts/commands: evidence/pinctrl-syscfg-binding and
+  PINCTRL-SYSCFG-BINDING.md. No driver/DTB/device change or new download.
+- Next #27 source acceptance: actual IOMMU/SMI probe/resource dependencies, then
+  source-matched contracts; keep40 diagnostics and all runtime recovery gates open.

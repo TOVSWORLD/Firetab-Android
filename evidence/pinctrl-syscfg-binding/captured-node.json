@@ -1,0 +1,18 @@
+{
+  "compatible": [
+    "mediatek,mt8163-pctl-a-syscfg",
+    "syscon"
+  ],
+  "reg": [
+    [
+      0,
+      268455936,
+      0,
+      4096
+    ]
+  ],
+  "phandle": 14,
+  "$nodename": [
+    "syscon@10005000"
+  ]
+}

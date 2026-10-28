@@ -1,0 +1,23 @@
+{
+  "baseline_count": 41,
+  "candidate_count": 40,
+  "removed": [
+    {
+      "column": null,
+      "compatible": [
+        "mediatek,mt8163-pctl-a-syscfg",
+        "syscon"
+      ],
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/syscon@10005000: failed to match any schema with compatible: ['mediatek,mt8163-pctl-a-syscfg', 'syscon']",
+      "level": "warning",
+      "line": null,
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-pctl-a-syscfg', 'syscon']",
+      "node": "/soc/syscon@10005000",
+      "nodename": "syscon@10005000",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

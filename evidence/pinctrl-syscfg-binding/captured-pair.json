@@ -1,0 +1,27 @@
+{
+  "provider": {
+    "compatible": [
+      "mediatek,mt8163-pctl-a-syscfg",
+      "syscon"
+    ],
+    "reg": [
+      [
+        0,
+        268455936,
+        0,
+        4096
+      ]
+    ],
+    "phandle": 14
+  },
+  "consumer": {
+    "compatible": [
+      "mediatek,mt8163-pinctrl"
+    ],
+    "mediatek,pctl-regmap": [
+      [
+        14
+      ]
+    ]
+  }
+}

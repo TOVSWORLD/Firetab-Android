@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in MT8163 pinctrl syscfg exact compatible/syscon provider matching source regmap dependency; no pin/IRQ/runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-pctl-syscfg.patch",
+  "patch_sha256": "85b7377861a8573d066f306eb80c35620ba11a96dcf296df733abb474b801344",
+  "schema": "mfd/syscon.yaml",
+  "original_sha256": "9370472ad0f5f7bb1b8dbeac0318a130fccd6035f005a09b706d146b877e13a5",
+  "proposed_sha256": "c64fa9099fd3c107cca84984dd15837ed2299a99093e9ade83781d4be0c63f4a"
+}
