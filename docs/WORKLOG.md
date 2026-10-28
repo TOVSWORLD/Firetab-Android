@@ -2645,3 +2645,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   clocks requested with devm_clk_get and BUG_ON lookup failure. Legacy DT includes
   HDMI gates absent from captured candidate. Preserve PIXEL/PLLCK phandle/name
   ordering discrepancy; no validated driver mapping or hardware rate inferred.
+
+## 2026-10-28 — matched HDMI PHY ownership and unavailable-consumer policy (#29)
+
+- Donor directory metadata pinned; first source acquired then raw endpoint429.
+  No immediate repeat. Read16195bytes from official matched ACK source; common
+  probe/header Git blobs equal pinned donor, MT8173 implementation does not.
+- Common provider needs real pll_ref, output name and matched PHY; supports
+  MT2701/MT8173/MT8195, no MT8163 entry. Captured candidate has no HDMI PHY output.
+  Legacy direct mode/deep-color PLL programming is not a fixed CTS rate proof.
+- Existing CI audit now rejects7 unresolved dependent literal DT consumers while
+  allowing real DSI/audio divider.3 targeted rejection tests added; no provider
+  register/gating behavior changed. Full host/check results recorded with PR.
+- Next evaluate exact aud_2_sel direct-parent equivalence for two legacy aliases,
+  separate from unqualified CTS source. #29 remains Active; no hardware claim.

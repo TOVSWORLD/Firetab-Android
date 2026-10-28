@@ -9,6 +9,28 @@ ROOT = Path(__file__).resolve().parents[1]
 OVERLAY = ROOT / 'projects/firetabs-android/kernel/clock-port/overlay'
 
 
+
+# #29: these captured DT consumers depend on unresolved aliases or the missing
+# external CTS provider. Remove a restriction only with a reviewed provider/rate
+# contract; do not silently accept a dummy parent to make the audit pass.
+UNQUALIFIED_HDMI = frozenset({
+    'CLK_TOP_HDMI_CTS', 'CLK_TOP_HDMI_CTS_D2', 'CLK_TOP_HDMI_CTS_D3',
+    'CLK_TOP_HDMI_SEL', 'CLK_MM_HDMI_SPDIF', 'CLK_MM_HDMI_ADSP',
+    'CLK_MM_HDMI_PLLCK',
+})
+
+
+def hdmi_policy(consumers):
+    rejected = sorted({x['symbol'] for x in consumers} & UNQUALIFIED_HDMI)
+    if rejected:
+        raise ValueError('Unqualified HDMI clock consumer(s), resolve #29 provider/rate contract: '
+                         + ', '.join(rejected))
+    return {'decision': 'Dependent HDMI paths unavailable to captured literal DT consumers',
+            'restricted_symbols': sorted(UNQUALIFIED_HDMI),
+            'captured_restricted_consumers': [],
+            'scope': 'Literal captured DT only; not expanded DT/C consumers or runtime proof'}
+
+
 def audit():
     providers = []
     names, parents = set(), set()
@@ -56,6 +78,7 @@ def audit():
             'board_external_clock_names': sorted(external),
             'unresolved_literal_parent_names': unresolved,
             'captured_literal_clock_consumers': consumers,
+            'unqualified_hdmi_policy': hdmi_policy(consumers),
             'limitations': ['Textual identifier presence is not clock registration proof.',
                            'Only literal named clock consumers in captured DT files are checked; no exhaustive C/DT expansion, schema or register audit.',
                            'No clocks or hardware were exercised.']}

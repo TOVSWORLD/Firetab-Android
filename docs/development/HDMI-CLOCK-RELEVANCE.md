@@ -62,3 +62,29 @@ and external HDMI PHY registration/rates, then determine which paths the integra
 candidate actually enables. Implement a valid parent relationship or justify a
 bounded unavailable dependent path using that evidence, compile the actual change
 and specify later runtime tests. #29 stays Active until its acceptance is met.
+
+## Maintained PHY ownership and explicit consumer guard
+
+The [pinned PHY ownership receipt](../../evidence/clock-port/hdmi-phy-ownership.json)
+now identifies the maintained registration contract. The matched ACK common probe
+is byte-identical to the pinned donor Git blob. It requires pll_ref and a
+clock-output-names property, registers its PLL and publishes an OF clock provider.
+Its match table lists MT2701, MT8173 and MT8195; no MT8163 compatible exists there.
+The captured candidate DT has no HDMI PHY/output node. MT8173 rate calculations
+are not an MT8163 hardware contract, and its ACK implementation is not identical
+to the donor blob. Legacy vSetHDMITxPLL writes mode/deep-color tables directly;
+a clk_null alias or assumed fixed CTS rate does not reproduce that ownership.
+
+The existing CI clock audit now rejects literal captured DT consumers of the
+seven unresolved dependent CTS/mux/HDMI audio-SPDIF-PLL gates until a reviewed
+provider/rate contract replaces the restriction. It continues to allow the actual
+DSI and audio-divider consumers; it does not blanket-suppress unresolved names.
+This is an explicit source-policy decision to keep these dependent paths
+unavailable, not removal of registered clocks or hardware validation. Numeric/
+expanded DT and C consumers remain outside this bounded textual guard. Any
+provider implementation still needs actual compile and later runtime checks.
+
+Next source change to evaluate: replacing the two legacy1:1 alias references with
+real aud_2_sel parent relationships while preserving their exact rate/gating
+semantics, independently of the missing CTS PHY. Do not substitute the real
+APLL2 divider or reopen HDMI consumer paths merely to remove orphan names.
