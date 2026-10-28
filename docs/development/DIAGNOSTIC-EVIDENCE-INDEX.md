@@ -46,6 +46,18 @@ Generic kernel/initramfs/QEMU or static DT results do not show douglas boot,
 hardware usability, app reliability or QA admission. Keep each scope's flags and
 remaining conditions intact; no device gate closes because a generic check passes.
 
+## Candidate provider effects before experimental loading
+
+[Power-domain/source contract](../../evidence/power-port/domain-contract/report.json)
+and [probe prerequisites](../../evidence/power-port/domain-contract/probe-contract.json)
+record operations initiated by the captured DT: available domains are normally
+powered on during probe; pwrap enables clocks/DCM and may reset/reinitialize its
+PMIC transport. Generic QEMU does not exercise these douglas providers. Treat
+these hardware register writes as part of the intended experimental failure and
+return plan, not as read-only log collection. Suspend-wakeup and MFG clock
+placement differ from legacy and remain unqualified. No device action was used
+to obtain this source evidence; stock USB log export remains a separate scope.
+
 ## Procedure and release gates
 
 - [Concrete loader/return rehearsal](LOADER-RETURN-REHEARSAL.md): R0 passed;

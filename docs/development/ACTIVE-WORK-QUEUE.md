@@ -73,9 +73,12 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    Its compact reset mapping corrects donor DSI and LCM mismatches. Parent object,
    generic Image and QEMU pass at5c02907 (run40763077737); actual runtime remains
    untested. #390/#391/#392 merged; pinctrl probe contract has19 controls and45
-   remaining full-context diagnostics. Next queued executable task: #20 review
-   actual power/provider parent-child matching, register/rail prerequisites and
-   DT consumers against pinned ACK/donor/legacy; qualify schemas under #27.
+   remaining full-context diagnostics. Current #20 source review compares eight IDs/32 register-SRAM fields/three
+   protection masks/two status offsets against actual legacy, all equal. Wakeup
+   policy and MFG clock attachment differ; provider probe writes are documented
+   in the diagnostic evidence index. Next queued source scope: matched pwrap/
+   scpsys/domain binding prerequisites under #27 and explicit wakeup/order
+   qualification; do not claim runtime equivalence from equal register values.
    Acceptance: explicit source differences and probe prerequisites, targeted checks,
    and preserved runtime gates. Do not create placeholders or alter the device.
    If recovery work

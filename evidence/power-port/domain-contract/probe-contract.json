@@ -1,0 +1,22 @@
+{
+  "scope": "Reviewed ACK plus bounded provider patch and captured DT; no hardware execution",
+  "power_domain_parent": "syscon@10006000 / mediatek,mt8163-scpsys,syscon,simple-mfd; child matches mediatek,mt8163-power-controller",
+  "domain_count": 8,
+  "subdomain": "MFG under MFG_ASYNC in both source models; clock attachment changes",
+  "bus_protection": "MM, MFG_ASYNC and CONN use unchanged masks; ACK poll/ack paths retained, no ignore-clear-ack or protection bypass introduced",
+  "pwrap": {
+    "match": "mediatek,mt8163-pwrap",
+    "first_child": "mediatek,mt6323 from included mt6323.dtsi",
+    "required_named_mapping": "pwrap",
+    "required_named_reset": "pwrap (PWRAP_CAP_RESET)",
+    "captured_clocks": [
+      "spi",
+      "wrap"
+    ],
+    "probe_effects": [
+      "Enable clocks and DCM",
+      "If INIT_DONE2 clear, reset/reinitialize wrapper and PMIC transport; initialization is not a read-only observation"
+    ]
+  },
+  "runtime_limit": "Register/ID agreement and generic Image compilation do not validate voltage, clock/power ordering, suspend wakeup or recovery after failed experimental boot."
+}

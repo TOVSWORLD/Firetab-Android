@@ -1,0 +1,125 @@
+{
+  "scope": "Compare pinned legacy/candidate domain IDs and register/protection values.",
+  "domains": [
+    {
+      "name": "audio",
+      "id": 5,
+      "register_fields": {
+        "sta_mask": 16777216,
+        "ctl_offs": 668,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 61440
+      },
+      "bus_protection_mask": 0,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "conn",
+      "id": 4,
+      "register_fields": {
+        "sta_mask": 2,
+        "ctl_offs": 640,
+        "sram_pdn_bits": 256,
+        "sram_pdn_ack_bits": 0
+      },
+      "bus_protection_mask": 57344,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "isp",
+      "id": 3,
+      "register_fields": {
+        "sta_mask": 32,
+        "ctl_offs": 568,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 12288
+      },
+      "bus_protection_mask": 0,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "mfg",
+      "id": 7,
+      "register_fields": {
+        "sta_mask": 16,
+        "ctl_offs": 532,
+        "sram_pdn_bits": 16128,
+        "sram_pdn_ack_bits": 65536
+      },
+      "bus_protection_mask": 0,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "mfg_async",
+      "id": 6,
+      "register_fields": {
+        "sta_mask": 8388608,
+        "ctl_offs": 708,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 0
+      },
+      "bus_protection_mask": 10485760,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "mm",
+      "id": 0,
+      "register_fields": {
+        "sta_mask": 8,
+        "ctl_offs": 572,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 4096
+      },
+      "bus_protection_mask": 2,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "vdec",
+      "id": 1,
+      "register_fields": {
+        "sta_mask": 128,
+        "ctl_offs": 528,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 4096
+      },
+      "bus_protection_mask": 0,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    },
+    {
+      "name": "venc",
+      "id": 2,
+      "register_fields": {
+        "sta_mask": 2097152,
+        "ctl_offs": 560,
+        "sram_pdn_bits": 3840,
+        "sram_pdn_ack_bits": 61440
+      },
+      "bus_protection_mask": 0,
+      "legacy_active_wakeup": true,
+      "candidate_active_wakeup": false
+    }
+  ],
+  "shared_status_registers": {
+    "SPM_PWR_STATUS": 1548,
+    "SPM_PWR_STATUS_2ND": 1552
+  },
+  "bus_protection_flags": "Register-update path with set/clear acknowledgement polling; no ignore-clear-ack flag in MT8163 operations",
+  "policy_differences": [
+    "All eight legacy active-wakeup callbacks return true; candidate has no ACTIVE_WAKEUP capability. Suspend semantics require qualification.",
+    "Legacy MFG owns the mfg clock; captured modern DT places it on MFG_ASYNC parent. Parent-before-child hierarchy remains, exact clock/power ordering is not equivalent proof."
+  ],
+  "error_handling_difference": "Legacy ignores initial genpd power_on return; ACK propagates failed domain power_on and runs cleanup. Hardware state after partial failure is not qualified.",
+  "probe_side_effects": [
+    "ACK powers each available domain on during registration unless KEEP_DEFAULT_OFF; no MT8163 entry sets that capability.",
+    "Pwrap enables clocks/DCM and may reset/reinitialize the wrapper/PMIC transport when INIT_DONE2 is clear.",
+    "No MT8163 domain requests DOMAIN_SUPPLY; per-domain regulator control is absent. Other consumer supplies are separate."
+  ],
+  "runtime_qualified": false
+}

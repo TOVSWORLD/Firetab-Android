@@ -2813,3 +2813,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - #27 exact pinctrl probe contract merged in #392; full context45diagnostics,
   not passed. Next executable dependency is #20 power/provider source integration
   review and matched schemas under #27; no physical action requested.
+
+## 2026-10-28 — actual power/domain source contract (#20)
+
+- Pinned legacy Git snapshots compare eight IDs,32 domain register/SRAM fields,
+  three nonzero bus-protection masks and two status offsets to ACK plus the real
+  candidate. All values match; original headers/provenance retained. Drift checks
+  reject changed register/protection values and unknown expression guessing.
+- Recorded two policy differences: eight legacy active-wakeup=true callbacks
+  versus candidate capability absent; mfg clock moves from MFG to MFG_ASYNC.
+  No runtime equivalence or voltage/order claim follows from equal bitmasks.
+- Recorded concrete probe effects in diagnostic evidence index: available power
+  domains turn on during registration; pwrap enables DCM/clocks and can reset/
+  initialize transport if INIT_DONE2 clear. Experimental DT boot is not read-only
+  log collection. No device/firmware/helper action or new download performed.
+- Next: matched pwrap/scpsys/domain binding prerequisites under #27, plus source
+  qualification of wakeup/clock-order deltas. Loading/independent return and actual
+  hardware gates remain open; no owner cable/photo/approval action requested.
