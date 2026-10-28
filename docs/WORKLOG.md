@@ -2578,3 +2578,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Normalized interval arithmetic asserts pass; no raw logs or household fields
   published and no tablet access during this automatic run. Next failure-lifecycle
   qualification, preserving truncation/freshness limits.
+
+## 2026-10-28 — prevent blocked-task idle loops (#106)
+
+- Owner requested a standing executable/fallback queue after repeated waiting
+  turns. Added [active work queue](development/ACTIVE-WORK-QUEUE.md) with ordered
+  tasks, acceptance criteria, current evidence and explicit external gates.
+- Updated the existing heartbeat instructions: active work continues within turns;
+  pending CI/owner input triggers independent queued work, not repeated polling.
+  Preserved15-minute recovery trigger and meaningful-only notifications.
+- Reconciled stale blanket device prohibition with owner standing low-brick-risk
+  lab permission; high-brick-risk and large/paid resource gates remain.
+- Current queue starts with exact320KiB truncation-stage investigation, then boot
+  attribution, bounded loader-return rehearsal, diagnostic handoff and dependency-
+  ready board work. No outstanding cable/photo/Android-return request.
