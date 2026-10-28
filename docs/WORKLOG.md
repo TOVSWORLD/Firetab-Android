@@ -2887,3 +2887,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   boundaries; do not equate original-route source with installed LK3. No execution.
   #20 wakeup equivalence awaits the pinned ACK genpd implementation, not just its
   header. Actual matching DTB handoff, independent failure return and logs stay open.
+
+## 2026-10-28 — cached LK version-selection prerequisite (#347)
+
+- Static exact-OTA LK trace anchors root version lookup, missing-property rescan,
+  string equality and selected-suffix path; bounded excerpts/hashes published in
+  evidence/lk-dtb-selection. Candidate b837e6cb root version is absent; stock
+  variants are pre_evt/hvt. No guessed version or firmware execution.
+- Reproduction command and exact input hashes: LK-DTB-SELECTION.md/report.json.
+  Installed LK3 equivalence, selector runtime provenance, destination bounds, late
+  fixups and actual failure return remain unqualified. Next executable source
+  acceptance: trace these producer/fixup boundaries from cached artifacts.
