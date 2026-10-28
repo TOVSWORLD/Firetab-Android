@@ -2763,3 +2763,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   MMSYS to module state. Pinned Kconfig confirms dependency; generic parent
   experiment disables CMDQ and requires MMSYS=y, preserving diagnostic isolation.
   Corrected-head run required; initial failure is not an Image result.
+
+## 2026-10-28 — matched MMSYS schema during parent compilation (#27)
+
+- PR389 parent integration is compiling independently. Cached ACK proposal adds
+  exact MT8163 MMSYS/syscon tuple only; original constraints preserved structurally.
+- Full profile46diagnostics (34unmatched/12validation), one target unmatched
+  removed/no additions, wrapper exit1. Eleven processed-node controls pass.
+  No source corpus download or device action. Does not prove reset IDs or probe.
+- Next complete exact-head parent build/reset review under #18; full schema and
+  actual device/recovery acceptance remain open. All evidence hashes and full
+  profile command retained in evidence/mmsys-binding.
