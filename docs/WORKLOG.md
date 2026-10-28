@@ -2660,6 +2660,16 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next evaluate exact aud_2_sel direct-parent equivalence for two legacy aliases,
   separate from unqualified CTS source. #29 remains Active; no hardware claim.
 
+## 2026-10-28 — resolve real HDMI audio/SPDIF parent references (#29)
+
+- Contracted two missing legacy ungated1:1 aliases to actual aud_2_sel in MMSYS.
+  Gate IDs, bits11/12, registers and ops unchanged; no fixed rate or audsys divider
+  substitution. All7 unqualified HDMI consumer restrictions retained.
+- Textual orphan set now only hdmitx_dig_cts, still explicitly unavailable behind
+  matched PHY/rate gate. This source change does not claim runtime HDMI/audio.
+- Appropriate host/policy checks plus existing bounded generic kernel compile
+  workflow are required before merge. No tablet/firmware operation.
+
 ## 2026-10-28 — exact topckgen binding coverage during provider compile (#27)
 
 - #29 provider parent fix PR384 generic compile running; selected independent27
@@ -2719,3 +2729,16 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   reformatted context without altering applied YAML, verified isolated git apply
   output identity and reran full cached profile (47diagnostics/exit1 unchanged).
   Whitespace checks now pass before the correction commit.
+
+## 2026-10-28 — actual parent-fix compile and merge-history resolution (#29)
+
+- Generic compile/QEMU run40755681118 passed at18f2d5b. Image SHA256
+  d7eb0fa46d5fe5141bcce9d9c48e774a15ce6cf9796efdd1c85005e6202942d9;
+  config6a4c801a15e3e210948ccf7053bff6b83caffdcae5a431054af3dad1ed0ff8d5.
+- Independent source work merged while compile ran. Resolved WORKLOG-only conflict
+  preserving both histories;48 relevant build inputs match compiled revision byte
+  for byte. No duplicate full compile of unchanged inputs claimed; final-head
+  required repository/traceability/evidence checks rerun before merge.
+- CTS remains deliberately unavailable behind tested consumer guard. Missing
+  MMSYS parent creation is #18 integration, not corrected by generic compilation;
+  no actual board boot/audio/HDMI or failure-return gate is closed here.

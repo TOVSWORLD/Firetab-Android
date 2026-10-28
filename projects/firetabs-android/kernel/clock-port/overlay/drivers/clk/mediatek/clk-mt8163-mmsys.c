@@ -76,8 +76,9 @@ static const struct mtk_gate mm_clks[] = {
 	GATE_MM1(CLK_MM_DPI1_PIXEL, "mm_dpi1_pixel", "mm_sel", 8),
 	GATE_MM1(CLK_MM_DPI1_ENGINE, "mm_dpi1_engine", "dpi1_sel", 9),
 	GATE_MM1(CLK_MM_HDMI_PIXEL, "mm_hdmi_pixel", "dpi1_sel", 10),
-	GATE_MM1(CLK_MM_HDMI_SPDIF, "mm_hdmi_spdif", "apll2_div1", 11),
-	GATE_MM1(CLK_MM_HDMI_ADSP, "mm_hdmi_audio", "apll2_div0", 12),
+	/* Legacy apll2_div0/1 are ungated 1:1 aud_2_sel aliases, not audsys dividers. */
+	GATE_MM1(CLK_MM_HDMI_SPDIF, "mm_hdmi_spdif", "aud_2_sel", 11),
+	GATE_MM1(CLK_MM_HDMI_ADSP, "mm_hdmi_audio", "aud_2_sel", 12),
 	GATE_MM1(CLK_MM_HDMI_PLLCK, "mm_hdmi_pllck", "hdmi_sel", 13),
 	GATE_MM1(CLK_MM_DISP_DSC_ENGINE, "mm_disp_dsc_eng", "mm_sel", 14),
 	GATE_MM1(CLK_MM_DISP_DSC_MEM, "mm_disp_dsc_mem", "mm_sel", 15),
