@@ -2659,3 +2659,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   register/gating behavior changed. Full host/check results recorded with PR.
 - Next evaluate exact aud_2_sel direct-parent equivalence for two legacy aliases,
   separate from unqualified CTS source. #29 remains Active; no hardware claim.
+
+## 2026-10-28 — exact topckgen binding coverage during provider compile (#27)
+
+- #29 provider parent fix PR384 generic compile running; selected independent27
+  cached exact-compatible work and synchronized issue/project/parent active state.
+- Uncached MMSYS source request429; did not retry or invent its driver contract.
+  Cached topckgen driver matches standalone MT8163 DT tuple; opt-in locked schema
+  adds only that value. Actual full corpus53diagnostics (41unmatched/12validation),
+  target unmatched removed, no added diagnostic; wrapper exit1 preserved.
+-7 processed tuple controls pass; all non-compatible constraints exactly preserved.
+  First extraction expected an id#suffix that processed corpus omits; corrected
+  lookup before controls. No claimed full schema pass/runtime support.
+- Next cached infracfg compatible/reset contract while exact-head provider compile
+  continues. Raw source request limits do not block independent cached work.

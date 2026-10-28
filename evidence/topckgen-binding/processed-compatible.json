@@ -1,0 +1,64 @@
+{
+  "oneOf": [
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt6797-topckgen",
+            "mediatek,mt7622-topckgen",
+            "mediatek,mt8135-topckgen",
+            "mediatek,mt8163-topckgen",
+            "mediatek,mt8173-topckgen",
+            "mediatek,mt8516-topckgen"
+          ]
+        }
+      ],
+      "maxItems": 1,
+      "minItems": 1,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "const": "mediatek,mt7623-topckgen"
+        },
+        {
+          "const": "mediatek,mt2701-topckgen"
+        },
+        {
+          "const": "syscon"
+        }
+      ],
+      "maxItems": 3,
+      "minItems": 3,
+      "type": "array"
+    },
+    {
+      "items": [
+        {
+          "enum": [
+            "mediatek,mt2701-topckgen",
+            "mediatek,mt2712-topckgen",
+            "mediatek,mt6735-topckgen",
+            "mediatek,mt6765-topckgen",
+            "mediatek,mt6779-topckgen",
+            "mediatek,mt6795-topckgen",
+            "mediatek,mt7629-topckgen",
+            "mediatek,mt7981-topckgen",
+            "mediatek,mt7986-topckgen",
+            "mediatek,mt7988-mcusys",
+            "mediatek,mt7988-topckgen",
+            "mediatek,mt8167-topckgen",
+            "mediatek,mt8183-topckgen"
+          ]
+        },
+        {
+          "const": "syscon"
+        }
+      ],
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    }
+  ]
+}
