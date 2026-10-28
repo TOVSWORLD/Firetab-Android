@@ -2898,3 +2898,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   Installed LK3 equivalence, selector runtime provenance, destination bounds, late
   fixups and actual failure return remain unqualified. Next executable source
   acceptance: trace these producer/fixup boundaries from cached artifacts.
+
+## 2026-10-28 — FDT destination and late-write source boundaries (#347)
+
+- Extended merged #397's exact-OTA static trace: header+0x20 supplies FDT r1,
+  fallback constructs0x40000100; header+0xc remains the separate kernel address.
+  Rounded suffix copy precedes the in-place open capacity limit of at most1MiB;
+  pre-copy bounds/overlap and runtime addresses remain unqualified.
+- Pinned /memory/reg and selected /chosen atag writes: input DTB contents are not
+  assumed preserved. K64 call r1=r5 checked, complete intervening lineage/SMC and
+  installed LK3 equivalence remain open. See LK-FDT-DESTINATION.md and bounded
+  evidence/lk-fdt-destination receipts (same exact LK SHA256 as #397).
+- Four host controls replay sparse evidence and reject instruction/reference drift
+  or truncation. No device action, firmware/helper execution or new download.
+- Next executable source acceptance: memory-tuple producer and reservation/PSCI
+  callbacks, then complete selected FDT lineage/trust checks. Runtime loading,
+  independent return and failure-log gates remain Blocked.

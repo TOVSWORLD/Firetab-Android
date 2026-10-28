@@ -1,0 +1,32 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   3e24a: ac28         	add	r4, sp, #0xa0
+   3e24c: 4620         	mov	r0, r4
+   3e24e: f7e7 f93f    	bl	0x254d0 <.text+0x254d0> @ imm = #-0x18d82
+   3e252: f8df 27b4    	ldr.w	r2, [pc, #0x7b4]        @ 0x3ea08 <.text+0x3ea08>
+   3e256: 1b00         	subs	r0, r0, r4
+   3e258: 9000         	str	r0, [sp]
+   3e25a: 4623         	mov	r3, r4
+   3e25c: 4628         	mov	r0, r5
+   3e25e: 4649         	mov	r1, r9
+   3e260: 447a         	add	r2, pc
+   3e262: f008 fb65    	bl	0x46930 <.text+0x46930> @ imm = #0x86ca
+   3e266: 2800         	cmp	r0, #0x0
+   3e268: f47f af4a    	bne.w	0x3e100 <.text+0x3e100> @ imm = #-0x16c
+   3e26c: f8df 779c    	ldr.w	r7, [pc, #0x79c]        @ 0x3ea0c <.text+0x3ea0c>
+   3e270: 4620         	mov	r0, r4
+   3e272: f7e7 f95f    	bl	0x25534 <.text+0x25534> @ imm = #-0x18d42
+   3e276: 1b00         	subs	r0, r0, r4
+   3e278: 4649         	mov	r1, r9
+   3e27a: 447f         	add	r7, pc
+   3e27c: 9000         	str	r0, [sp]
+   3e27e: 463a         	mov	r2, r7
+   3e280: 4628         	mov	r0, r5
+   3e282: 4623         	mov	r3, r4
+   3e284: f008 fb54    	bl	0x46930 <.text+0x46930> @ imm = #0x86a8
+   3e288: 2800         	cmp	r0, #0x0
+   3e28a: f47f af39    	bne.w	0x3e100 <.text+0x3e100> @ imm = #-0x18e

@@ -1,0 +1,16 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   3e732: 9f09         	ldr	r7, [sp, #0x24]
+   3e734: 6838         	ldr	r0, [r7]
+   3e736: 2800         	cmp	r0, #0x0
+   3e738: f000 8126    	beq.w	0x3e988 <.text+0x3e988> @ imm = #0x24c
+   3e73c: 980a         	ldr	r0, [sp, #0x28]
+   3e73e: 4629         	mov	r1, r5
+   3e740: 2200         	movs	r2, #0x0
+   3e742: 2301         	movs	r3, #0x1
+   3e744: f7ff fb44    	bl	0x3ddd0 <.text+0x3ddd0> @ imm = #-0x978
+   3e748: e7fe         	b	0x3e748 <.text+0x3e748> @ imm = #-0x4
