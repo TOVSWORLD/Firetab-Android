@@ -2974,3 +2974,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable source acceptance: finite final-DTB mutation/entry/handoff
   coverage inventory across receipts, unresolved dispatcher setup/trust and
   minimum installed-LK3 evidence. Physical loading/return/log gates stay Blocked.
+
+## 2026-10-28 — finite LK handoff coverage and evidence admission (#347)
+
+- Consolidated nine pinned exact-OTA receipts into evidence/lk-handoff-coverage/
+  manifest.json and LK-HANDOFF-COVERAGE.md. Cached source is explicitly distinct
+  from installed LK3. Five gates: installed identity, bounded entry, matching
+  final DTB, independent failure return and attributable retained failure log.
+  All remain unqualified; no beta/loading admission inferred from source checks.
+- Validator verifies receipt content hashes/one LK identity/completeness and
+  rejects source-only runtime promotion. Four controls cover drift, duplicate/
+  missing/external/cross-artifact receipts and attempted gate promotion.
+  Command: python3 scripts/validate_lk_handoff_coverage.py; all source tests.
+- Linked checklist from rehearsal/index and placed next acceptance at queue top.
+  Next: compare existing cached loading/trust alternatives against checklist,
+  select one viable nonpersistent bounded route or rule out with exact blockers.
+  No cable/approval/device action requested; no firmware/helper execution.

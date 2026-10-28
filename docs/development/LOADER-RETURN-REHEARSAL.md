@@ -1,5 +1,8 @@
 # Douglas loader and supported-stock return rehearsal
 
+The [LK handoff coverage inventory](LK-HANDOFF-COVERAGE.md) consolidates nine
+pinned source receipts and five explicitly unqualified runtime evidence gates.
+
 ## Target and present decision
 
 Exact lab unit: douglas/KFDOWI, stock incremental50.6.5.9_user_659664620,

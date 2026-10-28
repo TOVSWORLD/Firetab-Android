@@ -1,5 +1,8 @@
 # Douglas diagnostic evidence package
 
+The [LK handoff coverage inventory](LK-HANDOFF-COVERAGE.md) consolidates nine
+pinned source receipts and five explicitly unqualified runtime evidence gates.
+
 This index is a source-review handoff, not an installable beta or authorization to
 run firmware/helpers. Experimental loading, independent failure return and beta QA
 admission remain open. Firmware, raw logs/photos and selectors remain private in
