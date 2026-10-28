@@ -1,0 +1,60 @@
+{
+  "scope": "Matched common HDMI PHY source registration and explicit unavailable-consumer policy, not MT8163 hardware support",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "sources": [
+    {
+      "path": "phy-mtk-hdmi.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-hdmi.c?format=TEXT",
+      "sha256": "8c36bad3f3de6f69b938fbfd95e94d5ffe374d61e97160033feeaf978a97d22d",
+      "bytes": 5733,
+      "git_blob": "52a7d525ff9b7acc2ad9eb3da6373161ff894f15"
+    },
+    {
+      "path": "phy-mtk-hdmi.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-hdmi.h?format=TEXT",
+      "sha256": "335173f4f3fd03821729f21953332dd048acc76e9076fc952605fa45220f2cb8",
+      "bytes": 1502,
+      "git_blob": "99d917e0036adb745f0c7d4d8e5dc1fdd2aa9b35"
+    },
+    {
+      "path": "phy-mtk-hdmi-mt8173.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-hdmi-mt8173.c?format=TEXT",
+      "sha256": "a61f0d58f52b9d7ceafb2cbf504b10168468edb49826d07dbc82ff3c7356d83d",
+      "bytes": 8960,
+      "git_blob": "d04758396046363ab9edc584ae10bf31e9c5fb0f"
+    }
+  ],
+  "common_probe_blob_equals_pinned_donor": true,
+  "matched_common_compatibles": [
+    "mediatek,mt2701-hdmi-phy",
+    "mediatek,mt8173-hdmi-phy",
+    "mediatek,mt8195-hdmi-phy"
+  ],
+  "mt8163_compatible_present": false,
+  "probe_contract": {
+    "reference_clock": "pll_ref",
+    "output_clock_name": "clock-output-names property",
+    "registers_output": "devm_clk_register and of_clk_add_provider",
+    "requires_real_phy_node_and_match_data": true
+  },
+  "captured_candidate_hdmi_phy_or_output_present": false,
+  "other_soc_rate_implementation": "MT8173 round_rate requests parent=rate or rate/2 above74250000, recalc returns cached pll_rate; not an MT8163 rate contract and ACK file differs from donor blob.",
+  "legacy_direct_pll_owner": {
+    "path": "sources/kernel-mt8163/drivers/misc/mediatek/hdmi/hdmitx/mt8163/hdmictrl.c",
+    "sha256": "38eebdf3b84499143cb6e5e688c2c2adc133f2b90f9cc28c9131d92ed524c23f",
+    "function": "vSetHDMITxPLL",
+    "lines": [
+      658,
+      700
+    ],
+    "behavior": "Mode/deep-color indexed feedback/divider tables and direct HDMI_CON register writes; not a valid fixed CTS rate proof"
+  },
+  "policy": "Reject captured literal DT consumers of7 unresolved dependent branches in the existing CI clock audit; no dummy source or hardware behavior change.",
+  "limits": [
+    "Raw donor source endpoint429 recorded; not immediately retried. Official matched ACK sources used, common probe identity independently verified against donor Git blob.",
+    "No claim that another SoC PHY/rate implementation works on MT8163.",
+    "No exhaustive C/expanded-DT consumer or board boot proof."
+  ],
+  "device_operations": false
+}
