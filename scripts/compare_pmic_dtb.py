@@ -59,13 +59,35 @@ def compare(baseline, candidate, include_sysirq=False, include_rdma=False):
             'all_other_property_values_identical': True}
 
 
+def compare_pmic_parent(baseline, candidate):
+    old, new = '/soc/pwrap@1000d000/mt6323', '/soc/pwrap@1000d000/pmic'
+    if old not in baseline or new in baseline:
+        raise ValueError('Expected one original PMIC parent without rename collision')
+    expected = {}
+    for path, properties in baseline.items():
+        destination = new + path[len(old):] if path == old or path.startswith(old + '/') else path
+        if destination in expected:
+            raise ValueError('PMIC parent rename collision')
+        expected[destination] = properties
+    if expected != candidate:
+        raise ValueError('PMIC parent rename changed properties, phandles or unrelated paths')
+    return {'scope': 'Complete binary DT node/property comparison against RDMA candidate; only PMIC parent path changes',
+            'nodes_compared': len(candidate), 'properties_compared': sum(len(x) for x in candidate.values()),
+            'old_parent': old, 'new_parent': new, 'all_property_values_identical': True,
+            'phandle_values_identical': True, 'runtime_tested': False}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--fdtget', type=Path, default=ROOT / 'work/dtb-tool/build/fdtget')
-    parser.add_argument('--experiment', choices=['pmic-node-names', 'sysirq-node-name', 'rdma-node-name'], default='pmic-node-names')
+    parser.add_argument('--experiment', choices=['pmic-node-names', 'sysirq-node-name', 'rdma-node-name', 'pwrap-pmic-node-name'], default='pmic-node-names')
     args = parser.parse_args()
-    baseline = snapshot(args.fdtget, ROOT / 'work/dtb-compile/repro/douglas.dtb')
+    base = 'rdma-node-name' if args.experiment == 'pwrap-pmic-node-name' else 'repro'
+    baseline = snapshot(args.fdtget, ROOT / 'work/dtb-compile' / base / 'douglas.dtb')
     candidate = snapshot(args.fdtget, ROOT / 'work/dtb-compile' / args.experiment / 'douglas.dtb')
+    if args.experiment == 'pwrap-pmic-node-name':
+        print(json.dumps(compare_pmic_parent(baseline, candidate), indent=2))
+        return
     print(json.dumps(compare(baseline, candidate, args.experiment in ['sysirq-node-name', 'rdma-node-name'], args.experiment == 'rdma-node-name'), indent=2))
 
 

@@ -2830,3 +2830,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next: matched pwrap/scpsys/domain binding prerequisites under #27, plus source
   qualification of wakeup/clock-order deltas. Loading/independent return and actual
   hardware gates remain open; no owner cable/photo/approval action requested.
+
+## 2026-10-28 — wrapper prerequisites and real PMIC parent-name failure (#27/#20)
+
+- #393 power audit merged after six exact-head checks including object compile.
+  Matched pwrap binding requires real reset/PMIC child and excludes bridge
+  resources absent from MT8163 descriptor; old policies preserved structurally.
+- Matching RDMA context first exposed two PMIC parent naming errors (46diagnostics).
+  Retained failures; isolated parent rename candidate preserves all880 property
+  and phandle values across186 nodes against RDMA. No DT baseline mutation.
+- New candidate DTB26259bytes/SHA256
+  b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411;
+  zero compiler diagnostics. Full context44diagnostics (32unmatched/12validation),
+  wrapper exit1.22 actual processed-node controls preserve original SoC policies.
+- Added CI compile/property-equivalence gate and phandle/path drift controls.
+  No transport/rail/device or failed-boot recovery qualification implied. Next
+  existing source scope: matched scpsys parent/power-controller dependencies under
+  #27/#20 and explicit qualification of active-wakeup/clock-order differences.

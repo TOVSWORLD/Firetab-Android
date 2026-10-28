@@ -1,0 +1,43 @@
+{
+  "diagnostics": 46,
+  "new_pwrap_errors": [
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/pwrap@1000d000",
+      "nodename": "pwrap@1000d000",
+      "compatible": "mediatek,mt8163-pwrap",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml",
+      "message": "'mt6323' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: pwrap@1000d000 (mediatek,mt8163-pwrap): 'mt6323' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/pwrap@1000d000",
+      "nodename": "pwrap@1000d000",
+      "compatible": "mediatek,mt8163-pwrap",
+      "property_path": [],
+      "schema_path": [
+        "allOf",
+        0,
+        "then",
+        "required"
+      ],
+      "schema": "http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml",
+      "message": "'pmic' is a required property",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: pwrap@1000d000 (mediatek,mt8163-pwrap): 'pmic' is a required property\n\tfrom schema $id: http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml"
+    }
+  ],
+  "binding_passed": false
+}

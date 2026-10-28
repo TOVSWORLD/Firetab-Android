@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "name": "exact-candidate",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-reg-names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-interrupts",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-clock-names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-resets",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-reset-names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-pmic",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "bridge-registers",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "bridge-resets",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-mapping-name",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-reset-name",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "syscon-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-clock-order",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "one-clock",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "two-interrupts",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unexpected-power-domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-parent-child-name",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-mt8135-bridge",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt2701-optional-reset-child",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt8173-power-domain",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "passed": true,
+  "limits": "Parent schema does not prove PMIC transport, first-child compatible support or voltage; full MFD schema and actual driver checks are separate"
+}

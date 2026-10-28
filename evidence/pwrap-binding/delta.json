@@ -1,0 +1,24 @@
+{
+  "before": 45,
+  "matched_original_name": 46,
+  "after_parent_name_candidate": 44,
+  "normalization": "Only DTB filename and reviewed PMIC parent path; properties/phandles separately byte-identical",
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/pwrap@1000d000",
+      "nodename": "pwrap@1000d000",
+      "compatible": [
+        "mediatek,mt8163-pwrap"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-pwrap']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/pwrap@1000d000: failed to match any schema with compatible: ['mediatek,mt8163-pwrap']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

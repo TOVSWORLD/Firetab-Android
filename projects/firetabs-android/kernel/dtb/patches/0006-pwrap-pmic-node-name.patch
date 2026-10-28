@@ -1,0 +1,11 @@
+--- a/arch/arm64/boot/dts/mediatek/mt6323.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt6323.dtsi
+@@ -7,7 +7,7 @@
+  */
+
+ &pwrap {
+-	pmic: mt6323 {
++	pmic: pmic {
+ 		compatible = "mediatek,mt6323";
+ 		interrupt-controller;
+ 		#interrupt-cells = <2>;

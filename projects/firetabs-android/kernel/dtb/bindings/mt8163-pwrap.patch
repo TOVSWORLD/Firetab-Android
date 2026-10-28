@@ -1,0 +1,37 @@
+--- a/soc/mediatek/mediatek,pwrap.yaml
++++ b/soc/mediatek/mediatek,pwrap.yaml
+@@ -38,6 +38,7 @@
+               - mediatek,mt6873-pwrap
+               - mediatek,mt7622-pwrap
+               - mediatek,mt8135-pwrap
++              - mediatek,mt8163-pwrap
+               - mediatek,mt8173-pwrap
+               - mediatek,mt8183-pwrap
+               - mediatek,mt8186-pwrap
+@@ -120,6 +121,26 @@
+       properties:
+         compatible:
+           contains:
++            const: mediatek,mt8163-pwrap
++    then:
++      properties:
++        reg:
++          maxItems: 1
++        reg-names:
++          maxItems: 1
++        resets:
++          maxItems: 1
++        reset-names:
++          maxItems: 1
++      required:
++        - resets
++        - reset-names
++        - pmic
++
++  - if:
++      properties:
++        compatible:
++          contains:
+             const: mediatek,mt8365-pwrap
+     then:
+       properties:
