@@ -2943,3 +2943,21 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   acceptance: alternate tuple branch0x3e17c, remaining reservation/PSCI callbacks,
   selected FDT lineage/trust boundaries. Installed LK3/physical return/log gates
   remain Blocked; no owner physical action requested.
+
+## 2026-10-28 — alternate rank branch and IDME dispatcher boundary (#347)
+
+- Alternate0x3e17c guard is function presence: pinned GOT+0x380 points to actual
+  mblock helper0x4bd25ac5, not a runtime mode flag. Unchanged artifact takes helper
+  path. Alternate ranks use32-bit pairs/last-size adjustment and save/restore FDT
+  r5; host model reports wrap rather than validating physical geometry.
+- Dispatcher0x140 callback/context storage traced; one conditional setup writes
+  Thumb target0x4bd00d85. Target looks up /idme and writes value/permission from
+  context. No actual identifiers read/published; raw final-DTB capture must remain
+  private with normalized technical facts only. No PSCI identity inferred.
+- Evidence/lk-alternate-memory and LK-ALTERNATE-MEMORY.md pin exact LK hash,
+  selected instruction windows/GOT slots and five replay/arithmetic controls.
+  Sparse replay initially exposed missing instruction bytes; corrected window
+  bounds and regenerated from the pinned artifact before validation.
+- Next executable source acceptance: selected dispatcher setup and remaining
+  PSCI/reservation edits, then full selected FDT lineage/trust inventory. Actual
+  installed LK3/loading/failure return/log-retention gates remain Blocked.

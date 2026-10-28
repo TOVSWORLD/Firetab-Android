@@ -1,0 +1,62 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   3e17c: f8df 3850    	ldr.w	r3, [pc, #0x850]        @ 0x3e9d0 <.text+0x3e9d0>
+   3e180: f858 a003    	ldr.w	r10, [r8, r3]
+   3e184: f8da b000    	ldr.w	r11, [r10]
+   3e188: f1bb 0f00    	cmp.w	r11, #0x0
+   3e18c: f340 834a    	ble.w	0x3e824 <.text+0x3e824> @ imm = #0x694
+   3e190: f8df 3868    	ldr.w	r3, [pc, #0x868]        @ 0x3e9fc <.text+0x3e9fc>
+   3e194: af18         	add	r7, sp, #0x60
+   3e196: f8df 0868    	ldr.w	r0, [pc, #0x868]        @ 0x3ea00 <.text+0x3ea00>
+   3e19a: 468e         	mov	lr, r1
+   3e19c: 463a         	mov	r2, r7
+   3e19e: f10d 0c58    	add.w	r12, sp, #0x58
+   3e1a2: f858 3003    	ldr.w	r3, [r8, r3]
+   3e1a6: f858 4000    	ldr.w	r4, [r8, r0]
+   3e1aa: f10b 30ff    	add.w	r0, r11, #0xffffffff
+   3e1ae: 9004         	str	r0, [sp, #0x10]
+   3e1b0: a817         	add	r0, sp, #0x5c
+   3e1b2: 681b         	ldr	r3, [r3]
+   3e1b4: f8cd c01c    	str.w	r12, [sp, #0x1c]
+   3e1b8: 9006         	str	r0, [sp, #0x18]
+   3e1ba: 9305         	str	r3, [sp, #0x14]
+   3e1bc: 950b         	str	r5, [sp, #0x2c]
+   3e1be: 1863         	adds	r3, r4, r1
+   3e1c0: 9d04         	ldr	r5, [sp, #0x10]
+   3e1c2: 9805         	ldr	r0, [sp, #0x14]
+   3e1c4: 3210         	adds	r2, #0x10
+   3e1c6: f8d3 c004    	ldr.w	r12, [r3, #0x4]
+   3e1ca: 5863         	ldr	r3, [r4, r1]
+   3e1cc: 3108         	adds	r1, #0x8
+   3e1ce: 4575         	cmp	r5, lr
+   3e1d0: bf18         	it	ne
+   3e1d2: 2000         	movne	r0, #0x0
+   3e1d4: f10e 0e01    	add.w	lr, lr, #0x1
+   3e1d8: ebc0 000c    	rsb	r0, r0, r12
+   3e1dc: 45de         	cmp	lr, r11
+   3e1de: f3c0 2907    	ubfx	r9, r0, #0x8, #0x8
+   3e1e2: f3c3 2c07    	ubfx	r12, r3, #0x8, #0x8
+   3e1e6: ea4f 4909    	lsl.w	r9, r9, #0x10
+   3e1ea: ea4f 4c0c    	lsl.w	r12, r12, #0x10
+   3e1ee: 9017         	str	r0, [sp, #0x5c]
+   3e1f0: ea49 6900    	orr.w	r9, r9, r0, lsl #24
+   3e1f4: ea4c 6c03    	orr.w	r12, r12, r3, lsl #24
+   3e1f8: 9316         	str	r3, [sp, #0x58]
+   3e1fa: ea49 6910    	orr.w	r9, r9, r0, lsr #24
+   3e1fe: ea4c 6c13    	orr.w	r12, r12, r3, lsr #24
+   3e202: f3c0 4007    	ubfx	r0, r0, #0x10, #0x8
+   3e206: f3c3 4307    	ubfx	r3, r3, #0x10, #0x8
+   3e20a: ea49 2000    	orr.w	r0, r9, r0, lsl #8
+   3e20e: ea4c 2303    	orr.w	r3, r12, r3, lsl #8
+   3e212: f04f 0500    	mov.w	r5, #0x0
+   3e216: f842 0c04    	str	r0, [r2, #-4]
+   3e21a: f842 5c10    	str	r5, [r2, #-16]
+   3e21e: f842 5c08    	str	r5, [r2, #-8]
+   3e222: f842 3c0c    	str	r3, [r2, #-12]
+   3e226: d1ca         	bne	0x3e1be <.text+0x3e1be> @ imm = #-0x6c
+   3e228: 9d0b         	ldr	r5, [sp, #0x2c]
+   3e22a: e737         	b	0x3e09c <.text+0x3e09c> @ imm = #-0x192
