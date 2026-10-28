@@ -22,8 +22,13 @@ no-valid-DT diagnostic. The helper excerpt includes the NUL comparison behavior.
 The exact candidate DTB queried with fdtget reports FDT_ERR_NOTFOUND for root
 version. The cached stock-DTB report independently contains pre_evt and hvt.
 Therefore this candidate lacks a selection prerequisite for this cached route.
-Adding a guessed version is not a qualified fix: selector0x20984 reads runtime
-state, and installed LK3 selection/fixups have not been demonstrated.
+The selector helper references the key `board_id`, compares up to seven fixed
+17-byte records, caches a selected index and uses index*17 into a version table.
+The pinned relocated table at payload0x70540 contains pre_evt, six hvt records,
+and invalid. Failure/unmatched paths return invalid. This establishes the static
+mapping, not the actual runtime board_id, storage-reader semantics or installed
+selector state. Adding a guessed version is not a qualified fix: installed LK3
+selection/fixups have not been demonstrated.
 
 Reproduce with the cached inputs:
 

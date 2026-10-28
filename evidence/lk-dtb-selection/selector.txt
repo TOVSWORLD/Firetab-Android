@@ -80,22 +80,3 @@ Disassembly of section .text:
    20a2c: 58eb         	ldr	r3, [r5, r3]
    20a2e: 4418         	add	r0, r3
    20a30: e7bd         	b	0x209ae <.text+0x209ae> @ imm = #-0x86
-   20a32: bf00         	nop
-   20a34: fbaa 0004    	umull	r0, r0, r10, r4
-   20a38: 585c         	ldr	r4, [r3, r1]
-   20a3a: 0005         	movs	r5, r0
-   20a3c: 0318         	lsls	r0, r3, #0xc
-   20a3e: 0000         	movs	r0, r0
-   20a40: a980         	add	r1, sp, #0x200
-   20a42: 0002         	movs	r2, r0
-   20a44: c5d0         	stm	r5!, {r4, r6, r7}
-   20a46: 0003         	movs	r3, r0
-   20a48: 0038         	movs	r0, r7
-   20a4a: 0000         	movs	r0, r0
-   20a4c: c5e0         	stm	r5!, {r5, r6, r7}
-   20a4e: 0003         	movs	r3, r0
-   20a50: c5ec         	stm	r5!, {r2, r3, r5, r6, r7}
-   20a52: 0003         	movs	r3, r0
-   20a54: c5a2         	stm	r5!, {r1, r5, r7}
-   20a56: 0003         	movs	r3, r0
-   20a58: fb10 0004    	smlabb	r0, r0, r4, r0

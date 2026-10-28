@@ -7,7 +7,7 @@ from pathlib import Path
 import struct
 import subprocess
 from inspect_loader_layout import checked_file, lk_layout
-from trace_lk_handoff import analysis_object, thumb_call
+from trace_lk_handoff import analysis_object, thumb_call, thumb_pc_string
 
 LK_SHA = '4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08'
 DT_SHA = 'b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411'
@@ -42,6 +42,14 @@ def main():
     refs = [wide_pc_string(payload, a, b) for a, b in
             [(0x3de76, 0x3de88), (0x3de7e, 0x3de8e), (0x3df76, 0x3df7c)]]
     assert [x['text'] for x in refs] == ['version', 'not fdt prop\n', 'ERROR: No valid DT found for version %s\n']
+    selector_key = thumb_pc_string(payload, 0x209b2, 0x209bc)
+    assert selector_key['text'] == 'board_id'
+    # Relocated pointer table: use the image-linked base, not host addresses.
+    linked_base = struct.unpack_from('<I', payload, 0x74)[0]
+    got_base = struct.unpack_from('<I', payload, 0x20a38)[0]+0x20994+4
+    table = struct.unpack_from('<I', payload, got_base+0x318)[0]-linked_base
+    versions = [payload[table+i*17:table+(i+1)*17].split(b'\0', 1)[0].decode('ascii') for i in range(8)]
+    assert versions == ['pre_evt']+['hvt']*6+['invalid']
     calls = {}
     for pc, target in [(0x3de38, 0x20984), (0x3dee6, 0x3de04),
                        (0x3df08, 0x46cc8), (0x3df14, 0x45f34),
@@ -64,7 +72,7 @@ def main():
     excerpts = []
     for name, start, end in [('entry', 0x3de1c, 0x3de44), ('selection', 0x3de76, 0x3dfa8),
                              ('match', 0x3e162, 0x3e17c), ('compare', 0x45cc0, 0x45cde),
-                             ('selector', 0x20984, 0x20a5c), ('copy', 0x3de04, 0x3de1c)]:
+                             ('selector', 0x20984, 0x20a32), ('copy', 0x3de04, 0x3de1c)]:
         r = subprocess.run([objdump, '-d', '--triple=thumbv7-none-eabi', '--print-imm-hex',
                             '--start-address='+hex(start), '--stop-address='+hex(end), str(obj)],
                            capture_output=True, text=True, check=True, timeout=15)
@@ -77,6 +85,8 @@ def main():
     report = {'scope': 'Exact OTA LK static selection only; installed LK3 equivalence and execution untested',
               'lk_sha256': LK_SHA, 'candidate_dtb_sha256': DT_SHA,
               'candidate_root_version': 'FDT_ERR_NOTFOUND', 'strings': refs, 'calls': calls,
+              'selector_key': selector_key, 'selector_table_offset': hex(table),
+              'selector_versions': versions, 'llvm_version': subprocess.check_output([objdump, '--version'], text=True, timeout=15).splitlines()[0],
               'excerpts': excerpts, 'selector_runtime_value': 'unqualified; producer uses runtime state',
               'result': 'Missing version follows rescan branch in this cached route; matching installed route remains unqualified',
               'next': 'Trace selector runtime provenance, incoming DT destination, late fixups and final handoff; do not invent a version or execute loader'}

@@ -34,6 +34,25 @@
     "0x3df26": "0x464ac",
     "0x3df62": "0x45cc0"
   },
+  "selector_key": {
+    "load_offset": "0x209b2",
+    "add_pc_offset": "0x209bc",
+    "literal_pool_offset": "0x20a40",
+    "target_offset": "0x4b340",
+    "text": "board_id"
+  },
+  "selector_table_offset": "0x70540",
+  "selector_versions": [
+    "pre_evt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "invalid"
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0",
   "excerpts": [
     {
       "name": "entry",
@@ -62,8 +81,8 @@
     {
       "name": "selector",
       "start": "0x20984",
-      "end": "0x20a5c",
-      "sha256": "dce6d928dcdce688ba3cb9a1f8c89fadf7c6286b5be8f998e799910d17984404"
+      "end": "0x20a32",
+      "sha256": "1843e700bc5fae6258f8a40da0237c4b8878068c07b4e72ad007d12d9f6b3de7"
     },
     {
       "name": "copy",
