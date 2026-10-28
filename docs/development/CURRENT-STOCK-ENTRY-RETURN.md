@@ -922,3 +922,12 @@ acceptance target. No flash/helper execution is approved by that decision.
 Supported-stock return after the intended failure and independent logs remain
 required. [The observed access and exact-build installer review](RECOVERY-AND-LOG-QUALIFICATION.md#selected-wiped-test-unit-return-target)
 defines the candidate full OTA and remaining authentication/access/resource gates.
+
+## Full stock artifact now available
+
+The owner-approved907,705,758-byte exact-build stock OTA is downloaded and its
+whole-file SHA256 and RSA/SHA1 CMS signature verified. Its signer key material
+matches the original bundled stock-return recovery's key file. The earlier
+large-download blocker is resolved; see the [verification and trust limits](RECOVERY-AND-LOG-QUALIFICATION.md#approved-full-stock-candidate-hash-and-signature-346).
+This does not establish deployed recovery trust, actual sideload/update acceptance,
+rollback behavior, failure return or real logs. No firmware was run or installed.

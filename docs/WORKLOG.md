@@ -2461,3 +2461,21 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   remains undownloaded/unauthenticated; selected script writes system,boot,LK,TEE
   and preloader aliases but does not explicitly restore recovery/RPMB. No updater
   binary execution. Next full-package resource gate and independent failure/log path.
+
+## 2026-10-27 — approved full stock OTA verification (#346)
+
+- Owner explicitly approved full866MiB stock download. Streamed exact907,705,758-
+  byte Amazon object under910,000,000 cap, checked pinned ETag/status/encoding,
+  saved ignored stock-return file; SHA2566e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab.
+- Parsed OTA footer/EOCD with duplicate-marker rejection. Detached DER1553bytes,
+  signed prefix907,704,179bytes. OpenSSL4.1.0 CMS -verify -binary -inform DER
+  -content /dev/stdin -noverify:success; no PKI trust inferred. Stream-only one-byte
+  mutation correctly failed(exit4); original file unchanged. Own scripts and exact
+  local receipts under ignored out/stock-return/signature/.
+- Compared original return-recovery res/keys material to embedded signer:
+  modulus/exponent3 and SHA1 profile match, n0inv/RR consistent. Bounded16MiB
+  gzip/newc read; no image code execution. Candidate/installed trust kept distinct.
+- Primary AOSP verifier source fetched at exact ec63d564a86ad5b30f75aa307b4bd271f6a96a56
+  after a requested historical mirror URL returned404;11,291source bytes, retained
+  hash/ranges. No binary/helper run or tablet access. Next recovery acceptance,
+  failure entry/return and independent logs; task346 remains open.
