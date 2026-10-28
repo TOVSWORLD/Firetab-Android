@@ -747,3 +747,41 @@ reachable installation after the intended failure, actual supported-stock return
 and independent boot-log capture are still open. The owner-authorized wiped-test
 unit target remains; no install, downgrade, helper run or reboot was approved by
 the download permission. No additional OTA download is needed for this candidate.
+
+## Exact-build recovery reconstruction chain found (#346)
+
+The missing direct recovery write in the OTA updater script is now explained at
+static source/asset level. The signed full OTA contains a system filesystem with
+`/system/bin/install-recovery.sh`, a288,787-byte IMGDIFF2 recovery patch and a
+146,209-byte recovery resource file. The script checks for the exact9,299,968-byte
+recovery target declared by the signed blocklist. If the check fails, it declares
+applypatch using the exact8,689,664-byte stock boot image, patch and bonus resource,
+then records success/failure under `/cache/recovery/log`. Otherwise it reports the
+image is already installed. No extracted script or applypatch binary was run.
+[The reconstruction-chain receipt](../../evidence/douglas-original-route/stock-recovery-reconstruction.json)
+pins file hashes, targets, source lines, resource caps and qualifications.
+
+The packaged boot init.rc declares flash_recovery as a main-class oneshot service
+running that script in the install_recovery SELinux domain. It declares class main
+startup on nonencrypted/decryption-related events. These are invocation declarations,
+not proof of service execution, policy allowance or successful patching on the unit.
+This chain depends on reaching stock init, a usable system filesystem, applypatch,
+correct boot input and writable target. It is not rescue for a unit that cannot
+reach those dependencies after a loading failure.
+
+Offline inspection reconstructed a sparse local system analysis image from only
+the signed transfer-list new ranges. Other blocks were initialized zero; this is
+not a captured device filesystem. Streaming1,543,191,816unique decompressed bytes
+verified all9 available system/boot/LK/TEE/preloader target hashes/lengths against
+the signed blocklist under a2GiB local cap. System caremap matches the new ranges.
+A bounded owned prototype read selected ext4 metadata/files without mounting it;
+470,262bytes were read under64MiB aggregate/16MiB per-file caps. It is not a
+qualified general ext4 parser and did not independently verify ext4 metadata
+checksums. The asset/source interpretation is separate from executing recovery.
+
+The older bundled stock-return recovery does not equal the current recovery target;
+the OTA system carries the declared update chain to that target. This resolves
+where the recovery reconstruction assets and invocation live. Producing the exact
+result bytes, observing the service/update result and demonstrating reachable
+return/failure log capture remain open. The pending owner recovery-entry test
+has not run, and automatic turns still do not touch the connected tablet.

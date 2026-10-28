@@ -1,0 +1,214 @@
+{
+  "scope": "Static exact-build stock recovery reconstruction declarations and assets; not executed patching or actual recovery return",
+  "ota_sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab",
+  "signed_target_component_check": {
+    "scope": "Downloaded OTA entry bytes versus its signed target blocklist, not installed state or return demonstration",
+    "ota_sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab",
+    "target_blocklist_sha256": "9cae8aad6d747287a752ee6bf05c671663f752b5f8992921fa914266b1f5e148",
+    "verified_targets": [
+      {
+        "target": "/system",
+        "entry": "system.new.dat",
+        "bytes": 1529413632,
+        "sha1": "9dabd249974c3cc3dd03a4a666c2e606553cc386",
+        "sha256": "4c3a0c923649559c3ea21768d36afff325f5a49ea826ce021f133fd1b000b1e0",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/boot",
+        "entry": "boot.img",
+        "bytes": 8689664,
+        "sha1": "36be7fedd2f2ea368b363477af97b0b3cc3b8acc",
+        "sha256": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/lk",
+        "entry": "images/lk.bin",
+        "bytes": 485552,
+        "sha1": "12cc99dea801004a85e372b0ebb5b86f8f1b5992",
+        "sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/tee1",
+        "entry": "images/tz.img",
+        "bytes": 4459520,
+        "sha1": "3decbf490f2eb2bbe92da042d34a5be9db72fb50",
+        "sha256": "3461f8e9efc9d2cdead7f0011fef0802180fb18c6a3eb1face93e54da38de10b",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/tee2",
+        "entry": "images/tz.img",
+        "bytes": 4459520,
+        "sha1": "3decbf490f2eb2bbe92da042d34a5be9db72fb50",
+        "sha256": "3461f8e9efc9d2cdead7f0011fef0802180fb18c6a3eb1face93e54da38de10b",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/pl_hdr0",
+        "entry": "images/preloader.hdr0",
+        "bytes": 2048,
+        "sha1": "846d607112875a187c96fbc020ff8fbcb7822504",
+        "sha256": "14e6b06e95adacb6dec3b995d71ad85d4f14dd1113f43e347c0ce5b8171c8083",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/pl_img0",
+        "entry": "images/preloader.bin",
+        "bytes": 139352,
+        "sha1": "d6fca52381edab8e1668a74a064f20298e7e3f2f",
+        "sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/pl_hdr1",
+        "entry": "images/preloader.hdr1",
+        "bytes": 2048,
+        "sha1": "ce996b940dc750caf1a3ee69218007301cbefad1",
+        "sha256": "030d0d86effc27821c8134c1e61c7df014f79a2662410a8db1d5be39e93aa02b",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      },
+      {
+        "target": "/pl_img1",
+        "entry": "images/preloader.bin",
+        "bytes": 139352,
+        "sha1": "d6fca52381edab8e1668a74a064f20298e7e3f2f",
+        "sha256": "b30d8d1292c620ed372050549cff27f153fec6c2467484b9202265c0a364fea5",
+        "signed_manifest_sha1_matches": true,
+        "declared_length_matches": true
+      }
+    ],
+    "system_caremap_equals_new_ranges": true,
+    "unique_decompressed_bytes": 1543191816,
+    "local_decompression_cap": 2147483648,
+    "entry_stream_chunk_bytes": 1048576,
+    "expected_current_recovery": {
+      "bytes": 9299968,
+      "sha1": "8e5e7f6f63fd77383c5721a13d818f880a1e70c9"
+    },
+    "bundled_return_recovery": {
+      "bytes": 9277440,
+      "sha1": "f601e42cd6381acc05e070fdbb866649caa79c30",
+      "equals_current_recovery_target": false
+    },
+    "recovery_target_reconstruction_verified": false,
+    "installer_executed": false,
+    "tablet_accessed": false
+  },
+  "system_image_reconstruction": {
+    "scope": "Local sparse filesystem inspection artifact; unspecified/non-new blocks initialized zero, not a device snapshot",
+    "image_logical_bytes": 1692925952,
+    "new_data_bytes": 1529413632,
+    "new_data_sha1": "9dabd249974c3cc3dd03a4a666c2e606553cc386",
+    "full_ota_sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab",
+    "filesystem_mounted": false,
+    "firmware_executed": false,
+    "tablet_accessed": false
+  },
+  "selected_file_inspection": {
+    "scope": "Bounded selected ext4 files from local reconstructed OTA system data, no mount or execution",
+    "block_bytes": 4096,
+    "inode_bytes": 256,
+    "bytes_read": 470262,
+    "read_cap": 67108864,
+    "selected_files": [
+      {
+        "path": "bin/install-recovery.sh",
+        "present": true,
+        "bytes": 674,
+        "sha256": "d281398f179720902a80ddb6aa9fca9575d9fab8f9ab4a1e78baed527fdde0be"
+      },
+      {
+        "path": "etc/install-recovery.sh",
+        "present": false
+      },
+      {
+        "path": "recovery-from-boot.p",
+        "present": true,
+        "bytes": 288787,
+        "sha256": "319e8ed946abfb9eab83b2f343212b8a93d0bd05c5489e77758747652cb75e40"
+      },
+      {
+        "path": "etc/recovery-resource.dat",
+        "present": true,
+        "bytes": 146209,
+        "sha256": "7227fe97af0cf79c18bcf89048054a90bc0803bf3aa568dde88a1d879d7b0a05"
+      }
+    ],
+    "filesystem_mounted": false,
+    "scripts_executed": false,
+    "tablet_accessed": false
+  },
+  "local_parser_limits": {
+    "extent_depth_max": 5,
+    "extent_tree_nodes_max": 128,
+    "selected_file_bytes_max": 16777216,
+    "aggregate_reads_max": 67108864,
+    "ext4_metadata_checksums_verified": false,
+    "general_ext4_parser_qualified": false
+  },
+  "analysis_script_sha256": {
+    "reconstruct.py": "823415b5f853621099058b6adb9b6da1e0d1c4ac2e5bba20250ceffd24df31e7",
+    "read_selected_ext4.py": "90c88d9387013f6b8d4efbfe46bf8ba3cd28ae383557918f2bd6da9b312c6c21"
+  },
+  "declared_recovery_install": {
+    "script": "/system/bin/install-recovery.sh",
+    "input_boot_bytes": 8689664,
+    "input_boot_sha1": "36be7fedd2f2ea368b363477af97b0b3cc3b8acc",
+    "target_recovery_bytes": 9299968,
+    "target_recovery_sha1": "8e5e7f6f63fd77383c5721a13d818f880a1e70c9",
+    "patch": "/system/recovery-from-boot.p",
+    "patch_format": "IMGDIFF2",
+    "patch_chunk_count": 3,
+    "bonus_resource": "/system/etc/recovery-resource.dat",
+    "condition": "Check current recovery hash; if different, invoke applypatch using boot+patch+bonus; otherwise report already installed",
+    "success_failure_log": "/cache/recovery/log"
+  },
+  "packaged_init_declarations": {
+    "file": "init.rc",
+    "sha256": "e930fa5d7fc651dfcec0f3995edfecc084646496cf0b76bdc944e65cedcb7758",
+    "service_line": 726,
+    "service": "flash_recovery",
+    "program": "/system/bin/install-recovery.sh",
+    "class": "main",
+    "selinux_domain": "u:r:install_recovery:s0",
+    "oneshot": true,
+    "class_start_main_declarations": [
+      {
+        "line": 501,
+        "context": "on nonencrypted"
+      },
+      {
+        "line": 536,
+        "context": "on property:vold.decrypt=trigger_restart_min_framework"
+      },
+      {
+        "line": 540,
+        "context": "on property:vold.decrypt=trigger_restart_framework"
+      }
+    ]
+  },
+  "qualification": {
+    "exact_build_assets_present": true,
+    "script_target_matches_signed_recovery_manifest": true,
+    "input_boot_matches_signed_boot_manifest": true,
+    "recovery_bytes_reconstructed_and_verified": false,
+    "applypatch_execution_observed": false,
+    "stock_boot_service_execution_observed": false,
+    "recovery_reachable_after_failure": false,
+    "real_failure_logs_qualified": false,
+    "filesystem_mounted": false,
+    "firmware_or_helper_scripts_executed": false,
+    "tablet_accessed": false
+  }
+}
