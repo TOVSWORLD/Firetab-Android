@@ -2765,3 +2765,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   index0. Inherited behavior, no new regression established. Parent-line ownership,
   delivery and GPIO87 input-enable delta remain unqualified. Next #18 actual
   compile result and #27 full binding work; no physical request is outstanding.
+
+## 2026-10-28 — real pinctrl/EINT probe prerequisites (#27/#19)
+
+- Exact MT8163 pinctrl tuple plus required reg/syscon/EINT/IRQ/cells declaration
+  follows actual common probe. Old SoC/pin-group policies preserved structurally.
+- Full cached context45diagnostics (33unmatched/12validation), one target removed,
+  none added, wrapper exit1.19 controls use actual dtschema Draft201909/typeSize
+  validation and four local processed dependencies, including phandle-array bounds.
+- Parent IRQ delivery and GPIO87 remain unqualified; source matches do not close
+  hardware gates. #389 real MMSYS Image build remains active, #391 bank audit
+  merged after six exact-head checks including pinctrl object compile.
