@@ -83,3 +83,18 @@ class PMICComparison(unittest.TestCase):
         del old['/aliases']
         with self.assertRaises(ValueError):
             module.compare(old, new, include_rdma=True)
+
+class PMICParentComparison(unittest.TestCase):
+    def trees(self):
+        old='/soc/pwrap@1000d000/mt6323';new='/soc/pwrap@1000d000/pmic'
+        baseline={old:{'compatible':'6d 65 64 69 61 74 65 6b 00','phandle':'0 0 0 7'},old+'/regulators':{'reg':'0 0 0 1'},'/consumer':{'supply':'0 0 0 7'}}
+        candidate={(new+p[len(old):] if p==old or p.startswith(old+'/') else p):dict(v) for p,v in baseline.items()}
+        return baseline,candidate
+    def test_parent_only_preserves_all_bytes(self):
+        self.assertTrue(module.compare_pmic_parent(*self.trees())['all_property_values_identical'])
+    def test_reject_changed_phandle(self):
+        old,new=self.trees();new['/consumer']['supply']='0 0 0 8'
+        with self.assertRaises(ValueError):module.compare_pmic_parent(old,new)
+    def test_reject_unexpected_path(self):
+        old,new=self.trees();new['/extra']={}
+        with self.assertRaises(ValueError):module.compare_pmic_parent(old,new)

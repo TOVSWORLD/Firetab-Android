@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact MT8163 pwrap tuple, one non-bridge mapping/reset and required PMIC child; not transport/voltage/runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-pwrap.patch",
+  "patch_sha256": "f2eaa21c2ddf2a8a31abaaf2ff4b6ab136123c39f352f2c4e7fde26b2e7ebed1",
+  "schema": "soc/mediatek/mediatek,pwrap.yaml",
+  "original_sha256": "a34d495213e8ec0709d5c192ce26e1c3a11b4c9253811499cc7c30905880b06b",
+  "proposed_sha256": "c57c858b265f3058f854f05d4dccce768943db018c6140e585de89fcc6196765"
+}

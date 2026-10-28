@@ -75,6 +75,10 @@ jobs:
         run: |
           python3 scripts/build_douglas_dtb.py --experiment rdma-node-name
           python3 scripts/compare_pmic_dtb.py --experiment rdma-node-name
+      - name: Compile PMIC parent-name candidate and verify all properties/phandles
+        run: |
+          python3 scripts/build_douglas_dtb.py --experiment pwrap-pmic-node-name
+          python3 scripts/compare_pmic_dtb.py --experiment pwrap-pmic-node-name
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04

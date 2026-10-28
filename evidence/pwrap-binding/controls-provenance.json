@@ -1,0 +1,16 @@
+{
+  "scope": "Actual dtschema Draft201909/typeSize node controls, not PMIC transport validation",
+  "dtschema_version": "2026.9",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "inputs": {
+    "evidence/pwrap-binding/original.yaml": "a34d495213e8ec0709d5c192ce26e1c3a11b4c9253811499cc7c30905880b06b",
+    "evidence/pwrap-binding/proposed.yaml": "c57c858b265f3058f854f05d4dccce768943db018c6140e585de89fcc6196765",
+    "evidence/pwrap-binding/processed-schemas.json": "2ae7b65048963451478de2dd7958f49b97f4c001732e56c90a3ad9d5145dbc2a",
+    "evidence/pwrap-binding/check-controls.py": "3bb77e46ef821006ef97b889fb1b2f3de89146f3917e01e00a8b465c77301c74"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/pwrap-binding/check-controls.py"
+  ],
+  "full_binding_validation_passed": false
+}

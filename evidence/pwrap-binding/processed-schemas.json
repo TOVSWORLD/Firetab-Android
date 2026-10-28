@@ -1,0 +1,273 @@
+{
+  "root": "http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml",
+  "schemas": {
+    "http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml": {
+      "$filename": "<ack-bindings>/soc/mediatek/mediatek,pwrap.yaml",
+      "$id": "http://devicetree.org/schemas/soc/mediatek/mediatek,pwrap.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "mediatek,mt8163-pwrap"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reg": {
+                "maxItems": 1
+              },
+              "reg-names": {
+                "maxItems": 1
+              },
+              "reset-names": {
+                "maxItems": 1
+              },
+              "resets": {
+                "maxItems": 1
+              }
+            },
+            "required": [
+              "resets",
+              "reset-names",
+              "pmic"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "mediatek,mt8365-pwrap"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "clock-names": {
+                "minItems": 4
+              },
+              "clocks": {
+                "minItems": 4
+              }
+            }
+          }
+        },
+        {
+          "else": {
+            "properties": {
+              "power-domains": false
+            }
+          },
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "mediatek,mt8173-pwrap"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "power-domains": true
+            }
+          }
+        }
+      ],
+      "dependentRequired": {
+        "resets": [
+          "reset-names"
+        ]
+      },
+      "oneOf": [
+        {
+          "required": [
+            "interrupts"
+          ]
+        },
+        {
+          "required": [
+            "interrupts-extended"
+          ]
+        }
+      ],
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "$nodename": true,
+        "assigned-clock-parents": true,
+        "assigned-clock-rates": true,
+        "assigned-clock-rates-u64": true,
+        "assigned-clock-sscs": true,
+        "assigned-clocks": true,
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "clock-names": {
+          "items": [
+            {
+              "const": "spi"
+            },
+            {
+              "const": "wrap"
+            },
+            {
+              "const": "sys"
+            },
+            {
+              "const": "tmr"
+            }
+          ],
+          "maxItems": 4,
+          "minItems": 2,
+          "type": "array"
+        },
+        "clocks": {
+          "maxItems": 4,
+          "minItems": 2,
+          "type": "array"
+        },
+        "compatible": {
+          "oneOf": [
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt2701-pwrap",
+                    "mediatek,mt6765-pwrap",
+                    "mediatek,mt6779-pwrap",
+                    "mediatek,mt6795-pwrap",
+                    "mediatek,mt6797-pwrap",
+                    "mediatek,mt6873-pwrap",
+                    "mediatek,mt7622-pwrap",
+                    "mediatek,mt8135-pwrap",
+                    "mediatek,mt8163-pwrap",
+                    "mediatek,mt8173-pwrap",
+                    "mediatek,mt8183-pwrap",
+                    "mediatek,mt8186-pwrap",
+                    "mediatek,mt8195-pwrap",
+                    "mediatek,mt8365-pwrap",
+                    "mediatek,mt8516-pwrap"
+                  ]
+                }
+              ],
+              "maxItems": 1,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt8186-pwrap",
+                    "mediatek,mt8195-pwrap"
+                  ]
+                },
+                {
+                  "const": "syscon"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt8188-pwrap"
+                  ]
+                },
+                {
+                  "const": "mediatek,mt8195-pwrap"
+                },
+                {
+                  "const": "syscon"
+                }
+              ],
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            }
+          ]
+        },
+        "interrupt-parent": true,
+        "interrupts": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "interrupts-extended": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "pmic": {
+          "type": "object"
+        },
+        "power-domains": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "reg": {
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array"
+        },
+        "reg-names": {
+          "items": [
+            {
+              "const": "pwrap"
+            },
+            {
+              "const": "pwrap-bridge"
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array"
+        },
+        "reset-names": {
+          "items": [
+            {
+              "const": "pwrap"
+            },
+            {
+              "const": "pwrap-bridge"
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array"
+        },
+        "resets": {
+          "maxItems": 2,
+          "minItems": 1,
+          "type": "array"
+        },
+        "secure-status": true,
+        "status": true
+      },
+      "required": [
+        "compatible",
+        "reg",
+        "reg-names",
+        "clocks",
+        "clock-names"
+      ],
+      "title": "Mediatek PMIC Wrapper",
+      "type": "object"
+    }
+  }
+}
