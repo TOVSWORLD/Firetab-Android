@@ -1,0 +1,75 @@
+{
+  "scope": "Exact cached stock framework static bytecode call-chain analysis; not runtime execution or installed-byte equivalence",
+  "boot_oat_sha256": "fc475414b6fa53273fc3311839c510da78e8fd4ca8938c157876b7ffd4ad1a7c",
+  "dex_container": {
+    "oat_offset": 15556508,
+    "bytes": 4286744,
+    "sha256": "6f6bcbfec95741386bb4d91af2fc4307cb322b5436ffc4842c9450dbb5e1b1fd"
+  },
+  "class": "Lcom/android/server/BootReceiver;",
+  "log_size_initializer": {
+    "code_offset": 2410740,
+    "code_units": 53,
+    "debug_property": "ro.debuggable",
+    "debug_value_bytes": 98304,
+    "user_value_bytes": 65536,
+    "static_field": "LOG_SIZE",
+    "review": "ro.debuggable=1 retains98304; user branch assigns65536 before sput LOG_SIZE"
+  },
+  "recovery_kernel_call": {
+    "method": "logBootEvents",
+    "code_offset": 2413984,
+    "filename_string_offset_units": 355,
+    "log_size_field_read_offset_units": 357,
+    "multiply_offset_units": 359,
+    "multiply_instruction_words": [
+      "0x0ada",
+      "0x0503"
+    ],
+    "operation": "mul-int/lit8 v10, v3, +5",
+    "tag_offset_units": 361,
+    "invoke_range_offset_units": 367,
+    "args": "v6..v11: db,prefs,headers,filename,maxSize,tag",
+    "user_payload_limit_bytes": 327680,
+    "positive_limit": true
+  },
+  "helper_chain": {
+    "wrapper": "addFileToDropBox forwards maxSize unchanged into addFileWithFootersToDropBox",
+    "reader_call_offset_units": 185,
+    "reader": "android.os.FileUtils.readTextFile",
+    "limit_argument": "maxSize parameter v36 moved to v0",
+    "truncation_marker": "[[TRUNCATED]]\n"
+  },
+  "observed_agreement": {
+    "scope": "Offline normalized archived-payload boundary analysis; not proof of truncating component",
+    "source_sha256": "25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256",
+    "transport_crlf_normalized": true,
+    "entries": [
+      {
+        "entry": 1,
+        "lf_normalized_payload_bytes_before_marker": 327680,
+        "equals_320kib": true,
+        "payload_sha256": "0d9c4e43e7e757786a6870ab85f501f75f1364aa64384788f76e20c12b41f7a8",
+        "contains_first_zero_timestamp": false
+      },
+      {
+        "entry": 2,
+        "lf_normalized_payload_bytes_before_marker": 327680,
+        "equals_320kib": true,
+        "payload_sha256": "12d25f35829d805d524b70aa131a44d8fa6fc329c5c6fb5fb0ff4b9b9d70f437",
+        "contains_first_zero_timestamp": true
+      }
+    ],
+    "full_log_recoverable_from_archive_verified": false,
+    "truncation_component_identified": false
+  },
+  "private_decoder_sha256": "3ecef6ce26eb05b6a205ad46233492aa9d6a3e097d3cbce076955289ce788497",
+  "qualification": {
+    "packaged_bootreceiver_positive_320kib_limit_identified": true,
+    "installed_framework_bytes_verified": false,
+    "underlying_recovery_cache_file_complete_verified": false,
+    "missing_archive_bytes_recoverable_verified": false,
+    "experimental_retention_verified": false
+  },
+  "limits": "Instruction-boundary walk and manually reviewed parameter flow; purpose-specific private decoder is not a general verified DEX disassembler. Positive limit/trailing marker support prefix capture; exact installed reader implementation remains unverified."
+}

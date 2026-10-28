@@ -2592,3 +2592,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Current queue starts with exact320KiB truncation-stage investigation, then boot
   attribution, bounded loader-return rehearsal, diagnostic handoff and dependency-
   ready board work. No outstanding cable/photo/Android-return request.
+
+## 2026-10-28 — identify packaged320KiB recovery archive collector (#348)
+
+- Bounded static DEX instruction walk located BootReceiver in exact cached oat;
+  user LOG_SIZE65536 and recovery last_kmsg call positive*5 feed unchanged maxSize
+  into FileUtils.readTextFile with truncation marker. Both acquired normalized
+  payloads equal327680bytes. This identifies packaged collector sizing.
+- Initial private assertion used the wrong slice for final initializer words;
+  corrected to last3:-1, then initializer and call-site word assertions passed.
+- Public receipt contains hashes/offsets/semantic review only, no raw logs or DEX.
+  Private purpose-specific parser is not a general verified disassembler; installed
+  equivalence and cache-file completeness remain unverified. No device execution.
+- Queue item1 source scope complete; next item2 archive attribution/coverage, then
+  loading-return rehearsal. Do not repeat the same archive read for missing bytes.

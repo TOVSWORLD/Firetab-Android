@@ -23,7 +23,11 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
 ## Ordered ready work
 
-1. **#348 — locate the 320KiB collection limit.** Next action: inspect the exact
+1. **#348 — locate the 320KiB collection limit (completed source scope).**
+   Exact packaged BootReceiver user LOG_SIZE65536 multiplied by positive5 matches
+   both measured327680byte payloads. See stock-recovery-archive-limit.json and
+   WORKLOG; installed equivalence/source-file completeness remain open.
+   Next executable item is2. Historical investigation acceptance: inspect the exact
    cached framework BootReceiver/DumpBox implementation and recovery log-copy
    paths using bounded static decoding; no firmware execution. Compare with both
    acquired archive boundaries after CRLF normalization. Acceptance: identify the
