@@ -2435,3 +2435,29 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Baseline8d0a520d7cd102e1e971590690ad3c3635b4c9d9. Next independent failure
   return/logging with explicit preservation limits; automatic tablet access remains
   prohibited even while connected.
+
+## 2026-10-27 — actual restore/log accessibility (#346 / #348)
+
+- Owner requested restore and log qualification after named-layout capture.
+  Verified douglas identity, current659664620/PL7/LK3/TEE262 via targeted properties.
+- Read only shell identity, permission metadata, user sysfs capacity, bounded
+  current dmesg attempt and exact SYSTEM_LAST_KMSG diagnostic archive metadata.
+  No raw blocks, protected copied log contents, root, reboot or helper execution.
+- dmesg denied; last_kmsg metadata denied; pstore/config.gz missing. Copied log
+  exists0600/system but was not read. Tag-filtered archive query returned no entries.
+  Exact sanitized receipts in observed-restore-log-access.json; raw outputs ignored.
+- Downloaded32133-byte official AOSP5.1.1 DropBoxManagerService source to inspect
+  tag filtering/DUMP gate before targeted query; no broad bugreport or app logs.
+- Asked preservation requirement for current unit as a planning decision only:
+  expendable/wipe/security changes versus preserve current data/state. Next target
+  determines restore acceptance; no consent to firmware execution inferred.
+  Both branches still require credible failure exit and independent log path.
+
+- Owner replied wiped test unit acceptable. Updated current acceptance target:
+  supported-stock return and independent logs; original-state preservation no
+  longer required for this unit. Planning only, no execution approval inferred.
+- Inspected exact-build OTA updater-script/ota.prop/system-devicepath via strict
+  ETag/size-pinned ranges,512KiB cap,66,411bytes actual. Full OTA907,705,758bytes
+  remains undownloaded/unauthenticated; selected script writes system,boot,LK,TEE
+  and preloader aliases but does not explicitly restore recovery/RPMB. No updater
+  binary execution. Next full-package resource gate and independent failure/log path.

@@ -1,5 +1,11 @@
 # Douglas hardware identification and mode/return evidence plan
 
+Current unit policy: the owner accepts a wiped douglas test unit and security-state
+changes for planning. Exact original-state preservation is superseded for this
+unit; credible supported-stock return and independent logs remain required.
+This does not approve opening, probing, mode changes or helper execution.
+
+
 This is a source/evidence plan, not an opening, probing or shorting procedure.
 Owner hardware access is acceptable if needed for planning. Automatic runs retain
 no-device-access restrictions. No owner physical action is requested here.
