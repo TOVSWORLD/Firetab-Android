@@ -897,3 +897,28 @@ The next gate is an independent, reachable recovery/log route with explicit
 preservation limits; no destructive trial is authorized by successful ADB access.
 The source-only proc request is superseded by this successful sysfs observation;
 there is no remaining USB permission or owner file-supply blocker.
+
+## Observed restore/log access disposition (#346 / #348)
+
+The follow-up owner session refreshed current build/PL/LK/TEE and checked only
+metadata permissions, current kernel-log access and a kernel-tag-filtered archive
+query. Ordinary shell access has not established original-region escrow or usable
+boot logs. Direct kernel access is denied, the protected copied log was not read,
+and the diagnostic archive reports no SYSTEM_LAST_KMSG entries. See the
+[observed access review](RECOVERY-AND-LOG-QUALIFICATION.md#owner-observed-restore-and-log-access-346--348).
+No raw storage acquisition, root, reboot or firmware/helper execution occurred.
+
+The owner has now accepted a wiped douglas test unit for planning. Next qualify
+a concrete supported-stock return and failure-log mechanism for that target. Accepting a wiped test unit
+is not permission to execute or proof the route works. Existing automatic-run
+prohibitions remain in force even while ADB is connected.
+
+## Current owner-selected recovery target
+
+The owner accepts wiping this douglas and bootloader/security-state changes for
+planning. Exact original data/security-state preservation is no longer required
+for this unit; historical original-escrow gates are not the current blocking
+acceptance target. No flash/helper execution is approved by that decision.
+Supported-stock return after the intended failure and independent logs remain
+required. [The observed access and exact-build installer review](RECOVERY-AND-LOG-QUALIFICATION.md#selected-wiped-test-unit-return-target)
+defines the candidate full OTA and remaining authentication/access/resource gates.

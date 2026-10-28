@@ -23,7 +23,7 @@
       "number": 106,
       "level": "phase",
       "parent": 327,
-      "title": "[Phase 1] Qualify recovery entry, original-state restore and capture"
+      "title": "[Phase 1] Qualify recovery entry, stock return and capture"
     },
     "board": {
       "number": 4,
@@ -233,7 +233,7 @@
       "number": 346,
       "level": "task",
       "parent": 344,
-      "title": "[Task] Qualify original-state acquisition and reachable restore"
+      "title": "[Task] Qualify wiped-test-unit stock return and failure recovery"
     },
     "entrytest": {
       "number": 347,

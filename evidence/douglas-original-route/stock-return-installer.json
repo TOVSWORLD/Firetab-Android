@@ -1,0 +1,99 @@
+{
+  "scope": "Exact-build OTA selected text only, not full-package/signature or installer execution",
+  "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659664620.bin",
+  "archive_bytes": 907705758,
+  "etag": "\"2312512edef1e8f78b32eab8d1ca2e39-53\"",
+  "response_body_bytes": 66411,
+  "response_body_budget": 524288,
+  "files": [
+    {
+      "name": "META-INF/com/google/android/updater-script",
+      "bytes": 1378,
+      "sha256": "061a935646b1812d16cc88b0576cdd6e95423f4b918da7c711b8eb0f2d7ec745"
+    },
+    {
+      "name": "ota.prop",
+      "bytes": 251,
+      "sha256": "4d8afe5ced5c051ac6d1188fe870a02d9fac85cb7390bdb746d1661d8c2163b6"
+    },
+    {
+      "name": "META-INF/com/amazon/android/target.system.devicepath",
+      "bytes": 45,
+      "sha256": "a1d9ce7e40d283644ee415ebcff8e2e3ad34ae14b90ef1228db4428aef3c2793"
+    }
+  ],
+  "ranges": [
+    {
+      "offset": 907640201,
+      "bytes": 65557,
+      "sha256": "9795ed3ee3cd9ea9f1302b21fb6d5dadeb1fa15919695137c95677867c08a891"
+    },
+    {
+      "offset": 434843,
+      "bytes": 30,
+      "sha256": "ffc56c53ddb6f24b84998a0b2842430fc33098dcb840be0998e9614e32717d5a"
+    },
+    {
+      "offset": 434873,
+      "bytes": 42,
+      "sha256": "1115dff982bb82a020ac5392e1689250e988f42a4a747118138be5c278e26128"
+    },
+    {
+      "offset": 434915,
+      "bytes": 445,
+      "sha256": "5ea4a02a8501dc26b380dbc143020e8ce284bde700a9d7fe879fc47f8e34f3b3"
+    },
+    {
+      "offset": 13829922,
+      "bytes": 30,
+      "sha256": "60af9758fbfd3bb173b6387d99bd24103512ce650c883b94a02bf1523f6e4787"
+    },
+    {
+      "offset": 13829952,
+      "bytes": 8,
+      "sha256": "c1f5b67d962b84dc45b2084c9b910e4e49837ee91e46c2e4b276b980aef14bba"
+    },
+    {
+      "offset": 13829960,
+      "bytes": 171,
+      "sha256": "d1401021cb4d0507d0bc1825e311583a4fd5225e1c3e116711bcc26ee164695f"
+    },
+    {
+      "offset": 3877,
+      "bytes": 30,
+      "sha256": "0b19e15c9d4fd34dafd20ac9a961e3eb9b2ae33d69d646d394ea82d4289ef5fd"
+    },
+    {
+      "offset": 3907,
+      "bytes": 52,
+      "sha256": "227a159014dca80810652fd699e136716f72b8c08a629d98d8171453971c5f66"
+    },
+    {
+      "offset": 3959,
+      "bytes": 46,
+      "sha256": "caa3149cb859b7cf60d3a83cf9cd43e064e42319c1392ca5bf5b14ed25faa396"
+    }
+  ],
+  "full_package_downloaded": false,
+  "signature_verified": false,
+  "installer_executed": false,
+  "recovery_acceptance_verified": false,
+  "declared_product": "douglas",
+  "declared_incremental_build": "50.6.5.9_user_659664620",
+  "declared_binary_type": "full",
+  "selected_script_declared_targets": [
+    "system",
+    "boot",
+    "lk",
+    "tee1",
+    "tee2",
+    "boot0hdr0",
+    "boot0img0",
+    "boot0hdr1",
+    "boot0img1",
+    "cache/recovery/last_blocklist"
+  ],
+  "recovery_image_explicitly_written_by_selected_script": false,
+  "rpmb_restore_explicit_in_selected_script": false,
+  "limits": "Selected script declarations only; updater binary, full system contents and post-boot recovery reconstruction not exhaustively audited"
+}

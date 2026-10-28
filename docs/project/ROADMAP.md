@@ -9,10 +9,10 @@ loading gate. Generic compilation and completed source audits are supporting evi
 
 - [[Epic] FireTabs Android — beta platform for QA](https://github.com/TOVSWORLD/Firetab-Android/issues/2)
   - [[Feature] Recoverable diagnostic loading and real boot logs](https://github.com/TOVSWORLD/Firetab-Android/issues/327)
-    - [[Phase 1] Qualify recovery entry, original-state restore and capture](https://github.com/TOVSWORLD/Firetab-Android/issues/106)
+    - [[Phase 1] Qualify recovery entry, stock return and capture](https://github.com/TOVSWORLD/Firetab-Android/issues/106)
     - [[Phase 1b] Qualify owner recovery procedure and capture on exact board](https://github.com/TOVSWORLD/Firetab-Android/issues/344)
       - [[Task] Source-qualify exact-generation inspection and isolation proposal](https://github.com/TOVSWORLD/Firetab-Android/issues/345)
-      - [[Task] Qualify original-state acquisition and reachable restore](https://github.com/TOVSWORLD/Firetab-Android/issues/346)
+      - [[Task] Qualify wiped-test-unit stock return and failure recovery](https://github.com/TOVSWORLD/Firetab-Android/issues/346)
       - [[Task] Qualify current-device entry and bounded return path](https://github.com/TOVSWORLD/Firetab-Android/issues/347)
       - [[Task] Demonstrate real boot-log capture and retrieval](https://github.com/TOVSWORLD/Firetab-Android/issues/348)
   - [[Feature] Maintained-kernel douglas board enablement](https://github.com/TOVSWORLD/Firetab-Android/issues/4)

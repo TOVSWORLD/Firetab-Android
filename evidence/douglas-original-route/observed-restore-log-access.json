@@ -1,0 +1,116 @@
+{
+  "scope": "Owner-authorized stock access checks; no root, reboot, raw storage or firmware execution",
+  "identity": {
+    "ro.product.manufacturer": "Amazon",
+    "ro.product.model": "KFDOWI",
+    "ro.product.device": "douglas"
+  },
+  "current_build_properties": {
+    "ro.build.version.incremental": "50.6.5.9_user_659664620",
+    "ro.boot.pl_version": "0x0007",
+    "ro.boot.lk_version": "0x0003",
+    "ro.boot.tee_version": "0x0106"
+  },
+  "shell_identity": {
+    "uid": 2000,
+    "role": "shell",
+    "selinux_context": "u:r:shell:s0"
+  },
+  "observations": {
+    "proc_last_kmsg_metadata_access": "permission_denied",
+    "proc_config_gz": "missing",
+    "sys_fs_pstore": "missing",
+    "sys_fs_pstore_console_ramoops": "missing",
+    "copied_system_last_kmsg": {
+      "exists": true,
+      "owner": "system",
+      "group": "system",
+      "mode": "0600",
+      "content_read": false,
+      "freshness_verified": false
+    },
+    "raw_block_node_metadata_access": "permission_denied",
+    "raw_block_read_attempted": false,
+    "user_region_sectors_512": 30777344,
+    "user_region_kernel_reported_bytes": 15758000128,
+    "current_dmesg": {
+      "scope": "Owner-approved current stock kernel log read attempt, not crash-retention proof",
+      "host_exit": 0,
+      "bytes": 33,
+      "sha256": "ff8474e9d3706b589b1657a83316d888467e25e72ad88d96b9d2f388feb46d1b",
+      "truncated": false,
+      "timed_out": false,
+      "permission_denied": true,
+      "kernel_version_lines": 0,
+      "failed_experimental_boot_capture_verified": false,
+      "root_used": false,
+      "rebooted": false,
+      "device_modified": false
+    },
+    "dropbox_kernel_tag_metadata": {
+      "tag": "SYSTEM_LAST_KMSG",
+      "matching_entries_observed": 0,
+      "permission_denied": false,
+      "bytes": 88,
+      "sha256": "29644dbcc6e9d07cd33c0c0200648def1521f37492f03319bc6608e04369c526",
+      "raw_text_published": false
+    }
+  },
+  "input_receipts": [
+    {
+      "name": "shell_identity",
+      "bytes": 201,
+      "sha256": "c83879a7b98036d883e373f6eea08e78ca0bd1bb3015e01bc4dc9f50f7b50201"
+    },
+    {
+      "name": "log_access",
+      "bytes": 255,
+      "sha256": "dc353401f69445cbef072646fdde74a4d07cb7acdffdb9c88b3404e7edb5968d"
+    },
+    {
+      "name": "restore_read_access",
+      "bytes": 127,
+      "sha256": "5baa3887f3aa51413932c617b55f96b264ef51fb195a141354f50764247739fa"
+    },
+    {
+      "name": "user_capacity",
+      "bytes": 10,
+      "sha256": "f4774941394eb815ffb9bb7438401e0f50196f605053974527202fdbe10af91e"
+    }
+  ],
+  "diagnostic_service_source": {
+    "url": "https://github.com/aosp-mirror/platform_frameworks_base/blob/android-5.1.1_r38/services/core/java/com/android/server/DropBoxManagerService.java",
+    "bytes": 32133,
+    "sha256": "2417b76f2d021b73a0255d6e0cdf1ab2b9ef6ac63454f222259c49c5def02159",
+    "reviewed_ranges": [
+      [
+        311,
+        362
+      ],
+      [
+        365,
+        389
+      ]
+    ],
+    "installed_source_match_verified": false
+  },
+  "qualification": {
+    "adb_metadata_transport_verified": true,
+    "original_region_escrow_acquired": false,
+    "original_state_restore_qualified": false,
+    "real_boot_log_capture_qualified": false,
+    "failure_retrieval_qualified": false,
+    "physical_trial_ready": false,
+    "root_used": false,
+    "tablet_rebooted": false,
+    "firmware_or_helpers_executed": false,
+    "storage_modified": false
+  },
+  "owner_planning_decision": {
+    "wiped_douglas_test_unit_acceptable": true,
+    "existing_data_and_security_state_preservation_required": false,
+    "flash_or_helper_execution_authorized": false,
+    "supported_stock_return_still_required": true,
+    "independent_failure_logs_still_required": true
+  }
+}

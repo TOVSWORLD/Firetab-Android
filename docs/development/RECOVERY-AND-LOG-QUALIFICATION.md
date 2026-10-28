@@ -632,3 +632,81 @@ a different backend. Origin, freshness, installed layout, retention, boot and
 physical-test readiness remain false. Keep source buffers private; this tool's
 hash report does not qualify retrieval or permit memory acquisition. Next use
 only owner-approved supplied evidence after backend/lifecycle qualification.
+
+## Owner-observed restore and log access (#346 / #348)
+
+The authorized stock session confirms the same installed incremental build
+`50.6.5.9_user_659664620` and PL7/LK3/TEE262. The shell is uid2000 in the
+shell SELinux domain. [Sanitized access observations](../../evidence/douglas-original-route/observed-restore-log-access.json)
+record exact private-response hashes and qualified outcomes; no raw user logs,
+host selectors or identifiers are published.
+
+Unprivileged metadata lookup on the three ordinary raw storage nodes is denied;
+no raw block read was attempted. The reported user extent is30,777,344512-byte
+sectors, consistent with earlier selected metadata. This is useful capacity
+consistency, not independent original user/boot escrow or a validated writer.
+The existing helper sequence still changes GPT/components/RPMB and erases userdata;
+stock-return cannot establish original data/security-state rollback.
+
+Direct last_kmsg metadata access and a bounded current dmesg read are denied.
+The config.gz and checked pstore paths are missing. The copied SYSTEM_LAST_KMSG
+file exists with0600 system ownership; its content was not read and freshness
+is unknown. Missing pstore paths do not prove CONFIG_PSTORE is disabled, and a
+copied file's existence does not establish its origin or failed-boot retrieval.
+
+A kernel-tag-only diagnostic service query was also checked. Official Android5.1
+source review verifies exact-tag filtering and a DUMP permission gate before
+using `dumpsys dropbox --file SYSTEM_LAST_KMSG`; no broad bugreport or app logs
+were requested. The installed service accepted the query but returned no matching
+entries. Deployed source equivalence is not established. There is no usable log
+capture from these attempts, and none tests a future experimental kernel crash.
+No privilege escalation, permission change, reboot or helper execution followed.
+
+### Planning decision and remaining mechanism
+
+The owner has selected this douglas as an expendable test unit: wiping and
+bootloader/security-state changes are acceptable for planning. Exact preservation
+of its current data/security state is no longer the trial acceptance target. The concrete changes and absent rollback coverage are reviewed in
+[the original package assessment](CURRENT-STOCK-ENTRY-RETURN.md#original-package-review-and-owner-decision-boundary-347--346).
+That decision sets the required restore target; it does not authorize executing
+helpers or remove the need for a credible failure exit and independent logs.
+
+If preservation is required, the current stock shell/packaged return route has
+not established original-region acquisition or security-state restore. If a wiped
+test unit is acceptable, exact original-state preservation may cease to be the
+acceptance target, but tested return to a defined supported state remains open.
+For either branch, the hardware-qualified BootROM fallback and passive UART
+candidate need exact-board/electrical/source qualification and separately reviewed
+owner actions. No opening, probing or reboot is authorized by this evidence.
+Stop broad software probing here; the observed denials are not an invitation to
+root, weaken policy or collect household-containing bugreports.
+
+### Selected wiped-test-unit return target
+
+The owner decision is now explicit: plan for a wiped douglas test unit, not exact
+original-state rollback. Historical escrow requirements in this document describe
+the preservation branch and are superseded for this unit only. This does not
+claim any original state has been backed up, authorize execution, or close the
+failure-return/logging gates. Task346 now targets a defined supported stock state.
+
+A bounded66,411-byte range inspection of the already known Amazon-hosted exact-
+build OTA identifies a full douglas659664620 candidate. The source archive is
+907,705,758bytes (about866MiB). Selected ota.prop declares binary_type=full;
+the updater script checks douglas, applies system data and writes boot, LK,
+tee1/tee2 and both preloader header/image aliases. It also writes a cache blocklist.
+[The installer receipt](../../evidence/douglas-original-route/stock-return-installer.json)
+records URLs, ETag, exact text hashes, ranges and512KiB response cap.
+
+The selected installer does not explicitly install a recovery image or restore
+RPMB. Its updater binary, full system contents and any recovery reconstruction on
+subsequent boot are not exhaustively audited here. Do not infer complete recovery
+or security-state behavior from those omissions. Exact-build identification is
+not full-package authentication or installed recovery acceptance.
+
+Preparing a real stock-return package next requires the full OTA under a separate
+large-download approval, whole-file identity/signature analysis and a compatible,
+reachable installation environment. The earlier31MiB permission covered the three
+original helper ZIPs, not this866MiB file. No full OTA was downloaded. This resource
+gate is independent of permission to install firmware or change the tablet.
+Passive UART/exact-board fallback qualification remains the log/failure route
+candidate; no physical connection or case opening is requested by these audits.
