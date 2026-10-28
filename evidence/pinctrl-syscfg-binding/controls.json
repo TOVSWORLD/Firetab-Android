@@ -1,0 +1,68 @@
+{
+  "scope": "Actual decoded-node Draft201909/typeSize controls; no resource/physical qualification",
+  "cases": [
+    {
+      "name": "decoded-candidate",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "reversed-tuple",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unknown-soc",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported-third-compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "two-regions",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-mt8173",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt8135",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "unknown-provider-property",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "disabled-is-schema-valid-but-reviewed-guard-rejects",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "passed": true,
+  "runtime_qualified": false
+}

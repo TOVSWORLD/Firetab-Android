@@ -1,0 +1,539 @@
+{
+  "scope": "Pinned ACK corpus with explicitly reported local proposal, if selected; donor-specific schemas still incomplete; no hardware validation",
+  "extra_proposals": [
+    {
+      "scope": "Opt-in exact standalone MT8163 PLL provider compatible only; not rate/hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-apmixedsys.patch",
+      "patch_sha256": "19638d01b2ec34ee8ed3c94ed1cbd759386880a03286d38be94947a498152681",
+      "schema": "clock/mediatek,apmixedsys.yaml",
+      "original_sha256": "03d1a47f57f31a680b21ba2fe1fb914ecd5d30e9b5672e875a4df9e48ddec423",
+      "proposed_sha256": "ca18ed298a073ca6b9290593cd27997710205d8b67ee8da240c0e2f1f2c67416"
+    },
+    {
+      "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-auxadc.patch",
+      "patch_sha256": "eea7d206b22956274b3cceca6d205b9ab47375f96c5ccde5e2e676c74cb69141",
+      "schema": "iio/adc/mediatek,mt2701-auxadc.yaml",
+      "original_sha256": "2ff827459d237adf5edc7aef0f3169e023fa6df3493da17b37aa99773bd54a4d",
+      "proposed_sha256": "c80124feec7e4e29bac776347f048bbe5d3a679a0cc6256660148c78dfe0952c"
+    },
+    {
+      "scope": "Opt-in exact generic efuse compatible coverage; calibration/hardware unqualified",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-efuse.patch",
+      "patch_sha256": "10e01417495123c9c27db070418d0de284c316e6d2e07eaece133400dd559883",
+      "schema": "nvmem/mediatek,efuse.yaml",
+      "original_sha256": "2eeab62cdc238ce0333f11fccea55d721cb019dcc2e01c2c3f6dff9dbac0619d",
+      "proposed_sha256": "507cc4fef9b1d2e4e97fc6d0f5212fa0d64a3ff8f73563935ea436607ac27088"
+    },
+    {
+      "scope": "Opt-in four exact direct gate-provider/syscon tuples and required register declaration; not media/GPU/hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-gate-clocks.patch",
+      "patch_sha256": "a2e087eb58270a97e3e304365bf868ff700832d206e9fad33a5d6b7f0f31a9d9",
+      "schema": "clock/mediatek,syscon.yaml",
+      "original_sha256": "e3c3dcb457bb8177ecf1e6bb859c125f6d1fa7dad4a3176417416678cf953140",
+      "proposed_sha256": "7a5dabd0c257626925e589ed2a93cc9e631fdc7a30f24fe506bc424ac98a14c9"
+    },
+    {
+      "scope": "Opt-in exact fallback schema coverage only; no CMDQ/display/hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-gce.patch",
+      "patch_sha256": "525c1a7cc9799ce957cacb73d64925845c12e8252cfbedf5b8ced19b3d47ae7b",
+      "schema": "mailbox/mediatek,gce-mailbox.yaml",
+      "original_sha256": "b9258b1b6e82016002ff0cc3f3c5742e4c245828c9f66b84697e9e72c451ac21",
+      "proposed_sha256": "5de2d46c24d039a1cfe66e2eab0425ed53fb96cc2fc499e21654f20f4ed29a48"
+    },
+    {
+      "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-i2c.patch",
+      "patch_sha256": "c91f9dcda5cbe7627e688469f0674dc6918b2b8fd3d654238b41dbce5b5c1496",
+      "schema": "i2c/i2c-mt65xx.yaml",
+      "original_sha256": "2cf48f67160ff269e5cb1feddc60e57b0e0204c035b559c4dd8bcbae2aad0ac7",
+      "proposed_sha256": "9d0bf9f6e2ebe204839e6ff51073f8d06513afdc96974af13bd40f82d55cdde3"
+    },
+    {
+      "scope": "Opt-in exact MT8163 infracfg/syscon tuple and required one-cell reset declaration; no hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-infracfg.patch",
+      "patch_sha256": "ec4b5ac2c95a83f1061a5ad5c55e2f46f45fe6447252c30e29dec9f38535ec1f",
+      "schema": "clock/mediatek,infracfg.yaml",
+      "original_sha256": "0610f891e326d1e0a7ce9ffe3ef0513ab229bf37eee8177de0999cac17157c6f",
+      "proposed_sha256": "b0b570c6e44f966b665ea792d235073b1b3d6900e34f9fdba1ce2c990de22fbb"
+    },
+    {
+      "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-keypad.patch",
+      "patch_sha256": "d5e097cef2d40d89e621242b9cc3f161981310cb269b7a16d44724bab1f9d600",
+      "schema": "input/mediatek,mt6779-keypad.yaml",
+      "original_sha256": "8fcd9af89028d9e7a5a34714ba39b5d45a787260c3e14db3168bb86696adc577",
+      "proposed_sha256": "2634ad42f68123326def6ca9e5191637cfdc63c064f77e4954cef9f48d979672"
+    },
+    {
+      "scope": "Local exact compatible proposal, not hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-mmc.patch",
+      "patch_sha256": "bff3b3cfd06b79e394a447fc247e0d5d0bc532e928da831e4e96809ce58995b1",
+      "schema": "mmc/mtk-sd.yaml",
+      "original_sha256": "2a8753dad64fb9e4a1dbf37446b4c007068604212a9627ca620aed7a9c507e99",
+      "proposed_sha256": "2dbacdaaa5f0ca1cc32127dccb85f2a35f9c3907d68c3e7fbea401812d7ab5d3"
+    },
+    {
+      "scope": "Opt-in exact MT8163 MMSYS/syscon tuple matching parent integration PR389; no reset/display runtime qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-mmsys.patch",
+      "patch_sha256": "463afc72281dd9ff48817556a7c51f5a8613cbbb9deb000625fd24ff8a533c61",
+      "schema": "arm/mediatek/mediatek,mmsys.yaml",
+      "original_sha256": "52c3cd54f7b294def2341335f0cbcb7cb7a9d40d3f64c8f16d4462a08fb5d0d9",
+      "proposed_sha256": "9e912cdd4c9755adc95bdf6034f8a6523b3414dd9585f39449e2358d5a24b302"
+    },
+    {
+      "scope": "Opt-in MT8163 pinctrl syscfg exact compatible/syscon provider matching source regmap dependency; no pin/IRQ/runtime qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-pctl-syscfg.patch",
+      "patch_sha256": "85b7377861a8573d066f306eb80c35620ba11a96dcf296df733abb474b801344",
+      "schema": "mfd/syscon.yaml",
+      "original_sha256": "9370472ad0f5f7bb1b8dbeac0318a130fccd6035f005a09b706d146b877e13a5",
+      "proposed_sha256": "c64fa9099fd3c107cca84984dd15837ed2299a99093e9ade83781d4be0c63f4a"
+    },
+    {
+      "scope": "Opt-in exact MT8163 pinctrl contract with real common-probe regmap/EINT prerequisites; no electrical/IRQ qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-pinctrl.patch",
+      "patch_sha256": "e33e93921b8ed6884f0612028d92faa0cbd98aa2f71d06e7d5b7a2d740da7f17",
+      "schema": "pinctrl/mediatek,mt65xx-pinctrl.yaml",
+      "original_sha256": "02ae53a7cb1f6a7b61c6a9c4e45e90a420d0ee5e2f938b06f30c34fbec43c4d8",
+      "proposed_sha256": "58a894e934f26911f234cc09387815497152d1900785def8f92de0fab94ce23b"
+    },
+    {
+      "scope": "Opt-in matched MT8163 syscon/child and source-backed power ID/legacy-bus/supply restrictions; no power-sequence or runtime qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-power-controller.patch",
+      "patch_sha256": "a9df335bd922ce5469ae68ce2fb9921e0d789ff86a2eda136832228ad6fb93ef",
+      "schema": "power/mediatek,power-controller.yaml",
+      "original_sha256": "935497f9a52e928187aabaf07581c6b11a58557bc7b9a8ecc5dabb25fa53c352",
+      "proposed_sha256": "d10251fb985e4c54760d4b0444cce8919fa04f5d00d8922da9b50bf82385e9ec"
+    },
+    {
+      "scope": "Opt-in exact MT8163 pwrap tuple, one non-bridge mapping/reset and required PMIC child; not transport/voltage/runtime qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-pwrap.patch",
+      "patch_sha256": "f2eaa21c2ddf2a8a31abaaf2ff4b6ab136123c39f352f2c4e7fde26b2e7ebed1",
+      "schema": "soc/mediatek/mediatek,pwrap.yaml",
+      "original_sha256": "a34d495213e8ec0709d5c192ce26e1c3a11b4c9253811499cc7c30905880b06b",
+      "proposed_sha256": "c57c858b265f3058f854f05d4dccce768943db018c6140e585de89fcc6196765"
+    },
+    {
+      "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-rng.patch",
+      "patch_sha256": "83f41deff822318c35160c7fc6edb71c8b61deab54efd661ede14ec274b98261",
+      "schema": "rng/mtk-rng.yaml",
+      "original_sha256": "c073fb84fda7e277a5ffb8f8228ab119e6c73e566ffbd09d236bdec030993741",
+      "proposed_sha256": "07891460f040f4eb46eb373249906f37bf7f43a707a3800c91044aa328d304d0"
+    },
+    {
+      "scope": "Opt-in matched MT8163 syscon/child and source-backed power ID/legacy-bus/supply restrictions; no power-sequence or runtime qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-scpsys.patch",
+      "patch_sha256": "8b977900921d1c6fbabc2299eb2ea64187545048760ce7fac9f953e95fe2f73a",
+      "schema": "mfd/mediatek,mt8195-scpsys.yaml",
+      "original_sha256": "70c314d8825928d48f8e7a7ec74c538094b6330792ed62a329ec47796493f13c",
+      "proposed_sha256": "4d9624f9f96b4dde9297c637e12ade4710602f395e313028274bfe24122f2e45"
+    },
+    {
+      "scope": "Local exact fallback compatible coverage only; no hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-spi.patch",
+      "patch_sha256": "00cac44927b08ba946c0da0e8bdcacc1ffb79845aed37735915ec6e5c1acd896",
+      "schema": "spi/mediatek,spi-mt65xx.yaml",
+      "original_sha256": "26b06e61380d4318de94f9298b670593e4784de5dba8a9e87756b1571c5c1e77",
+      "proposed_sha256": "b8fd1e94520ad1c45b77c53db66a087854f77db52ebd7c87d81547214c89c593"
+    },
+    {
+      "scope": "Local compatible coverage proposal only; no upstream/hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-sysirq.patch",
+      "patch_sha256": "56956806837ac08f180142fcef0f7f66ae9eec8f025289499c7ff45fa3a01e7d",
+      "schema": "interrupt-controller/mediatek,mt6577-sysirq.yaml",
+      "original_sha256": "afd2dc7c05f6b08b6c7887b8f8c6a4f7fea7772b83be2843be801dbd9d0c378f",
+      "proposed_sha256": "2e8efeb23d599d99f3af237517f4910b4f25e158d2a34ff281937ff06ab31ca9"
+    },
+    {
+      "scope": "Local GPT compatible coverage only; not upstream acceptance or timer runtime validation",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-timer.patch",
+      "patch_sha256": "6547f483ab487c7cf3c427e053f7187ae81b2222adaad8e9d6695b9967fa7e64",
+      "schema": "timer/mediatek,timer.yaml",
+      "original_sha256": "1bc18fd510435ed8829d2a4249678627c38237a87d082f229b7a9c3189ac23d1",
+      "proposed_sha256": "679ae73d2d949de3657529ca52e30d477af16546a6b70f1169ef442df8726eee"
+    },
+    {
+      "scope": "Opt-in exact topckgen compatible coverage only; no clock/rate/hardware qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-topckgen.patch",
+      "patch_sha256": "a6379dd5f3c550cf0f8aa867c17ba7ef3f8c3d519530663245eb267424f9ae16",
+      "schema": "clock/mediatek,topckgen.yaml",
+      "original_sha256": "3fc81c3394923afb49b91664ee542e2d13fe92f304e34f17ac0836d2699d064f",
+      "proposed_sha256": "05a3e64600d173ddbb0bfcf71c7f24f4ced6002489d6dd462449f26afe271d6f"
+    },
+    {
+      "scope": "Local exact compatible proposal, not hardware/upstream qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-uart-dma.patch",
+      "patch_sha256": "29e5b5a691c13eb1c0d17dde97f4031151d433576fadf5003f89f6b96b63bf11",
+      "schema": "dma/mediatek,uart-dma.yaml",
+      "original_sha256": "a2f68bf8756393db03dec07961c7574db2e3615b819973ca9fb5a176294313ca",
+      "proposed_sha256": "88ed90a8d2c0dcf26bbc2de0459c77a1416d7855310f1741cf19821d2affa45d"
+    },
+    {
+      "scope": "Opt-in MT8163 watchdog OF/probe contract and source2..31second timeout range; unrelated SoCs preserved; no runtime reset/return qualification",
+      "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+      "patch": "bindings/mt8163-watchdog.patch",
+      "patch_sha256": "93b51586e10b49edf8a7eb617d91d5b98237fd7bd47aa90bed8f6b2524cc8720",
+      "schema": "watchdog/mediatek,mtk-wdt.yaml",
+      "original_sha256": "f71cd316c2196ce78c44bdffc3d7494b098b85995bb498b566c9c889dd3b1ec3",
+      "proposed_sha256": "c0ced74a1b14351c3c5f506ec82d1cdfa1498bb8cf8f4fc39ec932dd83e4ef1d"
+    }
+  ],
+  "pmic_selector_proposal": {
+    "scope": "Local exact sys-off selection correction, not upstream acceptance/hardware validation",
+    "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "patch": "bindings/pmic-domain-selector.patch",
+    "patch_sha256": "2b1276acc703f2c120d78bdae0aa86fe6975fad1248aa17999b26fb0daa52362",
+    "schema": "power/power-domain.yaml",
+    "original_sha256": "7c300a191edea03ccc7efbf8ea467f43e067695dca24431085e17d46399dabbe",
+    "proposed_sha256": "8605d2fd4cade3a941f8f0272265a53bd50e30e3f91ab37ccf979b9a182e3d28"
+  },
+  "yaml_repair": {
+    "scope": "Opt-in YAML lexical repair only; schema semantic/meta errors remain visible",
+    "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "schema": "firmware/gunyah-cma-mem.yaml",
+    "original_sha256": "24f2cf919ae2433761364966eae4215223b389556b4713daec9d86d323bc39a5",
+    "repaired_sha256": "611f72101dd804abe189dfd6122fd6e541e8f3adabdc72681bbd5bf43b7596f8",
+    "tab_replacement_spaces": 6
+  },
+  "experiment": "pwrap-pmic-node-name",
+  "binding_profile": "mt8163-uart-proposed",
+  "binding_proposal": {
+    "scope": "Local UART binding proposal, not upstream acceptance or hardware validation",
+    "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+    "patch": "bindings/mt8163-uart.patch",
+    "patch_sha256": "fd66980ac202aa1db059693dac2349e310a37afbd06c36c418c39f26391e2908",
+    "schema": "serial/mediatek,uart.yaml",
+    "original_sha256": "3d088774d677738abb17d5657662b48ae611223f55fdc43b10202d78c5f11d6b",
+    "proposed_sha256": "0de555737b276d68f83676c8484f45b3f1c96d343cc587db6ed1f620e6b86012"
+  },
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "archive_sha256": "4d1108f17127afcb03d3f1b45a3721195572c8048078ebe821eb0edb94d1e526",
+  "yaml_files": 5186,
+  "dtschema_version": "2026.9",
+  "wrapper_sha256": "0d82684dc7c0782b06f5414a13cc880ea5ca3b932674de7bffc4a76afc7418d0",
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "commands": [
+    {
+      "stage": "doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/serial/mediatek,uart.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "pmic-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/power/power-domain.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-apmixedsys-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/clock/mediatek,apmixedsys.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-auxadc-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/iio/adc/mediatek,mt2701-auxadc.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-efuse-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/nvmem/mediatek,efuse.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-gate-clocks-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/clock/mediatek,syscon.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-gce-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/mailbox/mediatek,gce-mailbox.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-i2c-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/i2c/i2c-mt65xx.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-infracfg-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/clock/mediatek,infracfg.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-keypad-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/input/mediatek,mt6779-keypad.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-mmc-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/mmc/mtk-sd.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-mmsys-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/arm/mediatek/mediatek,mmsys.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-pctl-syscfg-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/mfd/syscon.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-pinctrl-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/pinctrl/mediatek,mt65xx-pinctrl.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-power-controller-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/power/mediatek,power-controller.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-pwrap-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/soc/mediatek/mediatek,pwrap.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-rng-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/rng/mtk-rng.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-scpsys-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/mfd/mediatek,mt8195-scpsys.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-spi-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/spi/mediatek,spi-mt65xx.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-sysirq-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/interrupt-controller/mediatek,mt6577-sysirq.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-timer-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/timer/mediatek,timer.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-topckgen-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/clock/mediatek,topckgen.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-uart-dma-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/dma/mediatek,uart-dma.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mt8163-watchdog-doc-validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-doc-validate",
+        "-u",
+        "<ack-bindings>",
+        "<ack-bindings>/watchdog/mediatek,mtk-wdt.yaml"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 0
+    },
+    {
+      "stage": "mk-schema",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-mk-schema",
+        "-j",
+        "-o",
+        "<workspace>/work/binding-validation/result-1212519b3fe0d5495d590cdd07009f2c41ff2bf0cc92c69e29e1f7854a46e322/processed.json",
+        "<ack-bindings>"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 1
+    },
+    {
+      "stage": "validate",
+      "command": [
+        "<workspace>/work/dtb-tool/venv/bin/dt-validate",
+        "-s",
+        "<workspace>/work/binding-validation/result-1212519b3fe0d5495d590cdd07009f2c41ff2bf0cc92c69e29e1f7854a46e322/processed.json",
+        "-m",
+        "--json-output",
+        "<workspace>/work/binding-validation/result-1212519b3fe0d5495d590cdd07009f2c41ff2bf0cc92c69e29e1f7854a46e322/diagnostics.json",
+        "<workspace>/work/dtb-compile/pwrap-pmic-node-name/douglas.dtb"
+      ],
+      "exit_code": 0,
+      "stderr_lines": 131
+    }
+  ],
+  "diagnostic_count": 40,
+  "diagnostic_types": {
+    "unmatched": 28,
+    "validation": 12
+  },
+  "diagnostic_levels": {
+    "warning": 28,
+    "error": 12
+  },
+  "passed": false
+}

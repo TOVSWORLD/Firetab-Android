@@ -1,0 +1,18 @@
+--- a/mfd/syscon.yaml
++++ b/mfd/syscon.yaml
+@@ -87,6 +87,7 @@
+           - mediatek,mt6397-pctl-pmic-syscfg
+           - mediatek,mt7988-topmisc
+           - mediatek,mt8135-pctl-a-syscfg
++          - mediatek,mt8163-pctl-a-syscfg
+           - mediatek,mt8135-pctl-b-syscfg
+           - mediatek,mt8173-pctl-a-syscfg
+           - mediatek,mt8365-syscfg
+@@ -195,6 +196,7 @@
+           - mediatek,mt6397-pctl-pmic-syscfg
+           - mediatek,mt7988-topmisc
+           - mediatek,mt8135-pctl-a-syscfg
++          - mediatek,mt8163-pctl-a-syscfg
+           - mediatek,mt8135-pctl-b-syscfg
+           - mediatek,mt8173-pctl-a-syscfg
+           - mediatek,mt8365-infracfg-nao

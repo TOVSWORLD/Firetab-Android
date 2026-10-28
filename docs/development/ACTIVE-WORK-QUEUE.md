@@ -4,10 +4,11 @@ Updated 2026-10-28 at owner request. This is an execution queue under the existi
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
 Current #347 route review: [no cached candidate admitted](CURRENT-ROUTE-ADMISSION.md)
-for a nonpersistent trial. Independent #27 watchdog binding is source-validated:
-19 actual controls, full context42→41 diagnostics and still unpassed. Next ready
-source scope: pinctrl syscfg-parent resource matching/binding, with source-pinned
-decoded-node controls. No runtime watchdog/failed-boot return claim follows.
+for a nonpersistent trial. #27 pinctrl syscfg provider/linkage/extent checks now
+pass12 actual schema controls and fresh-DTB drift checks; full context41→40
+and still unpassed. Next ready source scope: actual IOMMU/SMI driver/probe and
+candidate-resource dependencies before any matched binding claim. Runtime
+loading, pin/IRQ, watchdog and failed-boot return/log gates remain open.
 
 ## Execution contract
 

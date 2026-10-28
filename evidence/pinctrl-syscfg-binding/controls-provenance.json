@@ -1,0 +1,26 @@
+{
+  "scope": "Actual processed-node controls plus fresh-DTB source/provider guard, not hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/pinctrl-syscfg-binding/original.yaml": "9370472ad0f5f7bb1b8dbeac0318a130fccd6035f005a09b706d146b877e13a5",
+    "evidence/pinctrl-syscfg-binding/proposed.yaml": "c64fa9099fd3c107cca84984dd15837ed2299a99093e9ade83781d4be0c63f4a",
+    "evidence/pinctrl-syscfg-binding/processed-schemas.json": "e346b1ab5cbcc01817e59def0043a7b5daf9e51169a6d91154def226a7abcf9f",
+    "evidence/pinctrl-syscfg-binding/captured-node.json": "4c8bbe786a6a3451602af617191d05c89aae17460d53369f5f9d847cdc042ac4",
+    "evidence/pinctrl-syscfg-binding/check-controls.py": "435788576b359c7df024f53f9f5392b78d746c2dbd46070aae8e3293a5e908f7",
+    "scripts/validate_pinctrl_syscfg.py": "621ed40900e3122c4abbaefaddc72adb92bf5ab86a6644cf80d7bd3adb03902c"
+  },
+  "commands": [
+    [
+      "work/dtb-tool/venv/bin/python",
+      "evidence/pinctrl-syscfg-binding/check-controls.py"
+    ],
+    [
+      "python3",
+      "scripts/validate_pinctrl_syscfg.py",
+      "--dtb",
+      "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb"
+    ]
+  ],
+  "full_validation_passed": false
+}

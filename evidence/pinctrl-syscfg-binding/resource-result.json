@@ -1,0 +1,19 @@
+{
+  "scope": "Fresh declared-DTB/provider/source extent check only",
+  "provider_phandle": 14,
+  "resource_bytes": 4096,
+  "source_layout": {
+    "pin_count": 155,
+    "table_counts": {
+      "MTK_PIN_DRV_GRP": 119,
+      "MTK_PIN_PUPD_SPEC_SR": 46,
+      "MTK_PIN_IES_SMT_SPEC": 92
+    },
+    "maximum_reviewed_base_offset": 3920,
+    "conservative_last_word_offset": 3928,
+    "required_extent_bytes": 3932,
+    "scope": "Selected descriptor/tables with conservative set/clear aliases; not all possible MMIO or hardware proof"
+  },
+  "runtime_qualified": false,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}
