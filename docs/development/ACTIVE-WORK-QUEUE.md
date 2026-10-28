@@ -143,3 +143,12 @@ atag writes are pinned in LK-FDT-DESTINATION.md/evidence/lk-fdt-destination.
 Next executable source acceptance: identify memory-tuple producer and complete
 reservation/PSCI callback effects, then selected r5 lineage/trust checks. Runtime
 addresses, installed LK3 equivalence and failed-boot return/logs remain blocked.
+
+### Latest #347 memory source scope
+
+Selected helper0x25ac4 consumes runtime count/24-byte records and emits16-byte DT
+tuples; metadata/framebuffer callback0x25bbc is pinned. See LK-MEMORY-FIXUPS.md
+and evidence/lk-memory-fixups. Next executable source acceptance: identify writer
+and lifetime of runtime pointer-global0x4bd874c0, then alternate tuple branch and
+remaining reservation/PSCI callbacks/r5 lineage. Installed LK3 and physical
+handoff/return/log qualifications remain Blocked.
