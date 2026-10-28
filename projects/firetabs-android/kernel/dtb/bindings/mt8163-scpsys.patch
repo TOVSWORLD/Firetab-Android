@@ -1,0 +1,36 @@
+--- a/mfd/mediatek,mt8195-scpsys.yaml
++++ b/mfd/mediatek,mt8195-scpsys.yaml
+@@ -18,8 +18,9 @@
+   compatible:
+     items:
+       - enum:
+           - mediatek,mt6893-scpsys
++          - mediatek,mt8163-scpsys
+           - mediatek,mt8167-scpsys
+           - mediatek,mt8173-scpsys
+           - mediatek,mt8183-scpsys
+           - mediatek,mt8186-scpsys
+@@ -38,8 +39,23 @@
+
+ required:
+   - compatible
+   - reg
++
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8163-scpsys
++    then:
++      properties:
++        power-controller:
++          properties:
++            compatible:
++              const: mediatek,mt8163-power-controller
++      required:
++        - power-controller
+
+ additionalProperties: false
+
+ examples:

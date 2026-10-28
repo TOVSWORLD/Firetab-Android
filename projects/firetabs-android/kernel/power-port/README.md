@@ -61,3 +61,10 @@ voltage, wakeup and failed-boot recovery remain unqualified.
 Legacy ignores the initial domain power_on return, while ACK propagates a failed
 power_on and runs cleanup. Equal masks do not qualify hardware state after a
 partial failed probe; include this failure case in recovery/log qualification.
+
+
+The opt-in matched scpsys/controller proposals and captured-tree guard are
+specified in `../dtb/SCPSYS-BINDING.md`. The fresh DTB guard checks the actual
+INFRACFG phandle and MFG parent relation, rejects duplicate/disabled domains,
+and retains all voltage/wakeup/order limits. Generic schema declarations cannot
+substitute for missing bus-block lists or domain-supply capability.

@@ -2847,3 +2847,21 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   No transport/rail/device or failed-boot recovery qualification implied. Next
   existing source scope: matched scpsys parent/power-controller dependencies under
   #27/#20 and explicit qualification of active-wakeup/clock-order differences.
+
+## 2026-10-28 — actual scpsys parent/child and bus prerequisites (#27/#20)
+
+- Pinned ACK OF platform source22288bytes/SHA256
+  5c670486e3ec04cfe976d40b3cd4758c2ae2abe2176551cba0a8b7b75a1a3c85
+  verifies normal simple-mfd child-creation source path, not actual device probe.
+- Matched parent/child proposals bound eight IDs, nested domain cell range and
+  protected INFRACFG requirements. Reject modern access-controllers mode (SoC
+  block count defaults0) and ignored domain supplies (capability absent).
+-24 actual decoded-node controls pass; full cached context42diagnostics
+  (30unmatched/12validation), two matched nodes removed/no additions, wrapper1.
+- Fresh-DTB guard checks eight unique IDs, MFG under MFG_ASYNC, actual INFRACFG
+  phandle and clock/name counts. Six drift tests include wrong target/flattened
+  hierarchy/duplicates/disabling domains; no bypass to obtain a pass.
+- Next queued source investigation: legacy active_wakeup callback versus ACK
+  GENPD_FLAG_ACTIVE_WAKEUP mapping and explicit MFG clock-order rationale under
+  #20. Hardware voltage/order/wakeup and failed-boot return remain unqualified.
+  No device/helper/firmware action performed; one small pinned source read only.

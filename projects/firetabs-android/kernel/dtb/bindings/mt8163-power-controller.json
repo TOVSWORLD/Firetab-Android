@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in matched MT8163 syscon/child and source-backed power ID/legacy-bus/supply restrictions; no power-sequence or runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-power-controller.patch",
+  "patch_sha256": "a9df335bd922ce5469ae68ce2fb9921e0d789ff86a2eda136832228ad6fb93ef",
+  "schema": "power/mediatek,power-controller.yaml",
+  "original_sha256": "935497f9a52e928187aabaf07581c6b11a58557bc7b9a8ecc5dabb25fa53c352",
+  "proposed_sha256": "d10251fb985e4c54760d4b0444cce8919fa04f5d00d8922da9b50bf82385e9ec"
+}
