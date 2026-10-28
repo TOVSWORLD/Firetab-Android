@@ -25,6 +25,40 @@ def table(text):
     return result
 
 
+def numeric_fields(text):
+    return {name: int(value, 0) for name, value in re.findall(
+        r'\.(\w+)\s*=\s*(0x[0-9a-fA-F]+|[0-9]+)\s*,', text)}
+
+
+def bank_contract(old_driver, new_driver, ack_eint):
+    old = numeric_fields(old_driver)
+    new = numeric_fields(new_driver)
+    generic = re.search(r'mtk_generic_eint_regs\s*=\s*\{(.*?)\n\};', ack_eint, re.S)[1]
+    offsets = numeric_fields(generic)
+    for name, value in offsets.items():
+        if old.get(name) != value:
+            raise ValueError('Legacy/ACK EINT offset mismatch: ' + name)
+    geometry = ['dir_offset', 'pullen_offset', 'pullsel_offset', 'dout_offset',
+                'din_offset', 'pinmux_offset', 'type1_start', 'type1_end',
+                'port_shf', 'port_align', 'ports', 'ap_num', 'db_cnt']
+    for name in geometry:
+        if old.get(name) != new.get(name):
+            raise ValueError('Legacy/donor GPIO/EINT geometry mismatch: ' + name)
+    # port_mask appears once in GPIO geometry and again in EINT hardware data.
+    masks = lambda text: [int(x, 0) for x in re.findall(r'\.port_mask\s*=\s*(0x[0-9a-f]+|[0-9]+)', text)]
+    if masks(old_driver) != masks(new_driver):
+        raise ValueError('Legacy/donor GPIO and EINT port-mask mismatch')
+    if 'if (!eint->regs)' not in ack_eint or 'eint->regs = &mtk_generic_eint_regs;' not in ack_eint:
+        raise ValueError('ACK default EINT map selection changed')
+    return {'identical_legacy_ack_eint_offsets': offsets,
+            'identical_legacy_donor_geometry': {n: new[n] for n in geometry},
+            'gpio_and_eint_port_masks': masks(new_driver),
+            'maximum_eint_register_offset': max(offsets.values()),
+            'captured_eint_window_bytes': 4096,
+            'interrupt_limit': 'Captured DT lists SPI153/154/155; ACK and legacy common pinctrl both read parent index0 only. This is inherited, not a newly introduced regression; remaining parent-line ownership and actual delivery are unqualified.',
+            'scope': 'Literal register/capacity comparison and source allocation path; not electrical or interrupt-delivery proof'}
+
+
 def audit():
     rel = Path('drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h')
     candidate = table((PORT / rel).read_text())
@@ -54,6 +88,7 @@ def audit():
     return {'scope': __doc__, 'identical_legacy_descriptor_count': len(candidate),
             'unique_literal_dt_pin_functions': consumers,
             'register_table_comparison': register_tables,
+            'bank_contract': bank_contract(old_driver, new_driver, (ROOT / 'evidence/pinctrl-port/ack/drivers/pinctrl/mediatek/mtk-eint.c').read_text()),
             'legacy_goodix_gpio_descriptors': {n: candidate[n] for n in ['35', '46']},
             'limitations': ['No full preprocessor/schema validation or electrical routing test.',
                            'A GPIO number and its EINT line are distinct identifiers.',
