@@ -36,7 +36,11 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    expecting missing bytes. Raw captures remain private under
    `out/recovery-log-export`; current dump SHA256 is
    `25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256`.
-2. **#348 — qualify archive attribution and usable capture coverage.** Independently
+2. **#348 — qualify archive attribution and usable capture coverage (completed
+   bounded analysis).** Second entry covers0..29.865148seconds and all photographed
+   markers, first entry is not monotonic; collection headers are not boot identity.
+   Exact freshness/failure retention remain open. Next executable item is3.
+   Historical acceptance: Independently
    compare existing entry headers, kernel/build markers, uptime spans and
    photographed markers; publish sanitized attribution/coverage only. Acceptance:
    define exactly which stock boot evidence is supported and which freshness or

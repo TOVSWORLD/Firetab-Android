@@ -23,7 +23,21 @@
       "contains_kernel_version": true,
       "truncation_marker_offsets": [
         331329
-      ]
+      ],
+      "visible_uptime_seconds": {
+        "uptime_min": 94793.628679,
+        "uptime_max": 101184.690836,
+        "first_visible_timestamp": 101184.690836,
+        "last_visible_timestamp": 95161.155669,
+        "zero_uptime_present": false
+      },
+      "photo_all_five_markers_match": false,
+      "limited_lexical_panic_marker_counts": {
+        "kernel panic": 0,
+        "oops:": 0,
+        "watchdog bite": 0
+      },
+      "panic_absence_or_success_proved": false
     },
     {
       "entry_order": 2,
@@ -40,7 +54,21 @@
       "contains_kernel_version": true,
       "truncation_marker_offsets": [
         332356
-      ]
+      ],
+      "visible_uptime_seconds": {
+        "uptime_min": 0.0,
+        "uptime_max": 29.865148,
+        "first_visible_timestamp": 0.0,
+        "last_visible_timestamp": 29.865148,
+        "zero_uptime_present": true
+      },
+      "photo_all_five_markers_match": true,
+      "limited_lexical_panic_marker_counts": {
+        "kernel panic": 0,
+        "oops:": 0,
+        "watchdog bite": 0
+      },
+      "panic_absence_or_success_proved": false
     }
   ],
   "raw_text_publication": "Private only; kernel command lines and archived identifiers require sanitization",
@@ -63,5 +91,12 @@
     "Truncation markers are in archived output, not caused by the local 1MiB capture cap.",
     "Baseline AOSP tail-limit behavior is not proof of the vendor collection implementation.",
     "No experimental kernel was loaded and no intended failure capture was tested."
+  ],
+  "attribution_limits": [
+    "Build/Kernel header describes collection context and is not sufficient retained-boot identity.",
+    "First entry timestamps are not monotonically ordered; do not treat archive order as log chronology.",
+    "Second entry supports early stock boot coverage from0 through29.865148seconds only, with a truncation marker.",
+    "Zero tested experimental boots; no causal failed-load, return or failure-retention lifecycle demonstrated.",
+    "No exact boot/session identifier matched, so freshness remains unqualified."
   ]
 }

@@ -989,3 +989,16 @@ The underlying cache file may contain more than the archived prefix; its size an
 access are unknown. No security properties, partitions or tablet state changed.
 Next use the retained partial log for attribution/early-boot coverage and assess a
 separately scoped source-file read, without claiming complete failure retention.
+
+### Archive attribution and useful coverage
+
+The second entry has visible uptime0 through29.865148seconds and matches all five
+photographed markers. This supplies actual early stock-kernel coverage, including
+memory reservation and console initialization. It ends at the fixed collector
+limit, so later boot, shutdown and failure coverage cannot be inferred. The first
+entry has no zero-uptime start and contains nonmonotonic timestamps; archive order
+must not be treated as log chronology. Shared Build/Kernel headers can describe
+the collection context rather than identify the retained boot. No exact session
+identifier or experimental boot is established. Simple panic/Oops/watchdog marker
+scans found none in these partial entries; that does not prove a successful boot
+or absence of a later failure. The normalized acquisition receipt records coverage.

@@ -2606,3 +2606,9 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   equivalence and cache-file completeness remain unverified. No device execution.
 - Queue item1 source scope complete; next item2 archive attribution/coverage, then
   loading-return rehearsal. Do not repeat the same archive read for missing bytes.
+
+- While archive-limit PR CI ran, queue item2 attribution/coverage analysis completed:
+  second entry0..29.865148seconds/photo-consistent, first nonmonotonic. Collection
+  Build/Kernel headers do not establish retained-boot identity. No tested
+  experimental boot/failure and no lexical panic absence promoted to success.
+  Normalized receipt updated. Next executable item3 loader-return rehearsal.
