@@ -2751,8 +2751,10 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   and reset header1489bytes/SHA256
   9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f.
 - Added exact donor SoC descriptor/match and clock-child creation path via a
-  hash-locked patch against ACK d9318bdb; retained64 raw-bit reset contract.
-  Compact table belongs to donor MT8167 use, not MT8163. No DT consumers added.
+  hash-locked patch against ACK d9318bdb. Subsequent captured-consumer review found
+  donor raw64 reset IDs conflict with compact DSI23. Corrected descriptor uses
+  the34-entry map (DSI23 -> bit24); legacy LCM0x150 corrects donor bank2 to4.
+  No DT consumers added. Original donor headers retained unchanged in evidence.
 - Explicit MMSYS parent-object build now required. Isolated patch apply/hash
   check and reapply rejection pass. Generic Image/parent compile next via PR CI;
   board probe/reset/routing and failure recovery remain untested.

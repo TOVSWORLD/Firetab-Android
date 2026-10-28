@@ -65,8 +65,8 @@ static const u8 mmsys_mt8163_rst_tb[] = {
 	[MT8163_MMSYS_RST_DPI1]			= MMSYS_RST_NR(1, 0),
 	[MT8163_MMSYS_RST_LVDS]			= MMSYS_RST_NR(1, 1),
 
-	/* MMSYS_LCM_RST_B */
-	[MT8163_MMSYS_RST_LCM]			= MMSYS_RST_NR(2, 0),
+	/* Legacy MT8163 LCM reset is0x150: base0x140 + bank4 *4. */
+	[MT8163_MMSYS_RST_LCM]			= MMSYS_RST_NR(4, 0),
 };
 
 /*

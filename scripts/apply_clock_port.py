@@ -27,6 +27,9 @@ def main():
         if (source / record['target']).exists():
             raise SystemExit(f'Refusing to overwrite {record["target"]}')
     parent = lock['mmsys_parent']
+    routing = PORT / 'overlay/drivers/soc/mediatek/mt8163-mmsys.h'
+    if hashlib.sha256(routing.read_bytes()).hexdigest() != parent['routing_overlay_sha256']:
+        raise SystemExit('MMSYS routing/reset overlay hash mismatch')
     parent_path = source / parent['target']
     if hashlib.sha256(parent_path.read_bytes()).hexdigest() != parent['original_sha256']:
         raise SystemExit('MMSYS parent source hash mismatch')

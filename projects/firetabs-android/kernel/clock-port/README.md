@@ -79,10 +79,12 @@ routing and reset headers retain their original SPDX terms; provenance and
 hashes are in `evidence/clock-port/mmsys-parent/integration.json`. The existing
 parent and patch are verified before mutation and the patched result afterward.
 
-MT8163 retains the donor's64 raw reset bank-bit IDs and0x140 base. The compact
-reset table in the imported header is used by the donor's MT8167 descriptor,
-not its MT8163 descriptor. No new DT reset consumers or compact-ID ABI are
-introduced. Routing covers only the donor's minimal internal display path;
+The captured disabled DSI node already uses compact reset ID23. The donor's
+MT8163 descriptor incorrectly interprets it as raw bit23 (PWM); integration uses
+the34-entry mapping so DSI resolves to bit24. LCM's donor bank2 resolves to0x148,
+but pinned legacy source locates LCM at0x150; the overlay corrects it to bank4.
+Original donor evidence is retained unchanged, and the adapted overlay is hashed.
+No new DT reset consumers are introduced. Routing covers only the donor's minimal internal display path;
 external routes are absent. The generic build explicitly enables MTK_MMSYS and
 compiles its parent object before linking Image. Compile remains pending for
 this change; actual probe, routing and reset behavior remain untested.

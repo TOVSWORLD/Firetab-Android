@@ -26,10 +26,18 @@ class MmsysParentPatch(unittest.TestCase):
             again = subprocess.run(['git', 'apply', '--check', str(patch)], cwd=d, capture_output=True)
             self.assertNotEqual(again.returncode, 0)
 
-    def test_retained_reset_contract_is_raw_bank_bits(self):
-        # Donor MT8163 descriptor uses64 raw bit IDs; its compact reset table is
-        # referenced by MT8167, not MT8163. Do not silently substitute that ABI.
+    def test_compact_dsi_and_lcm_mapping(self):
         patch = (PORT / 'mmsys-parent.patch').read_text()
-        self.assertIn('+\t.num_resets = 64,', patch)
-        self.assertNotIn('+\t.rst_tb', patch)
-        self.assertIn('"clk-mt8163-mm"', patch)
+        self.assertIn('+\t.rst_tb = mmsys_mt8163_rst_tb,', patch)
+        self.assertIn('+\t.num_resets = ARRAY_SIZE(mmsys_mt8163_rst_tb),', patch)
+        self.assertNotIn('+\t.num_resets = 64,', patch)
+        import re
+        header = (PORT / 'overlay/drivers/soc/mediatek/mt8163-mmsys.h').read_text()
+        table = {name: (int(bank), int(bit)) for name, bank, bit in re.findall(
+            r'\[(MT8163_MMSYS_RST_\w+)\]\s*= MMSYS_RST_NR\((\d+), (\d+)\)', header)}
+        self.assertEqual(len(table), 34)
+        self.assertEqual(table['MT8163_MMSYS_RST_DSI'], (0, 24))
+        self.assertEqual(table['MT8163_MMSYS_RST_LCM'], (4, 0))
+        self.assertEqual(0x140 + table['MT8163_MMSYS_RST_LCM'][0] * 4, 0x150)
+        lock = json.loads((PORT / 'inputs.json').read_text())['mmsys_parent']
+        self.assertEqual(hashlib.sha256(header.encode()).hexdigest(), lock['routing_overlay_sha256'])
