@@ -944,3 +944,22 @@ cable reseat. Further cable reseats are not a prerequisite for this route.
 Next: investigate the existing archived truncation and boot attribution offline,
 then qualify retrieval across the intended loading/failure lifecycle. No firmware,
 helper, wipe, installation or security-property change was used for this result.
+
+## Actual kernel memory layout reconciled (2026-10-28)
+
+The acquired second archive entry reports three kernel memory banks and names
+ATF at `0x43000000–0x43030000` (192KiB) plus the previously unknown dynamic
+consys allocation at `0x98400000–0x98600000` (2MiB). Intervals here use exclusive
+ends; source PHY-layout lines use inclusive ends. Their total removal of2240KiB
+exactly reconciles earlier DT usable1464320KiB with kernel-reported1462080KiB.
+The [normalized layout receipt](../../evidence/runtime-memory/observed-stock-kernel-layout.json)
+records the actual ranges, arithmetic and attribution limits. It does not assign
+the separate106MiB top-of-DT exclusion or equate it with the memory-summary
+73844KiB reserved count.
+
+The same entry declares the2MiB console region at0x44400000 and later buffer
+initialization of matching size; the separate128KiB low-level log starts0x44600000.
+Its literal node name @46600000 differs from the callback-reported address;
+that discrepancy remains recorded. These are stronger stock runtime observations
+than static candidate declarations, but do not prove old-valid console contents,
+exact boot freshness, or retention through an experimental failure.
