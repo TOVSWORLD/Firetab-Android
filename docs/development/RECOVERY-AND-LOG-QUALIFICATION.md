@@ -710,3 +710,40 @@ original helper ZIPs, not this866MiB file. No full OTA was downloaded. This reso
 gate is independent of permission to install firmware or change the tablet.
 Passive UART/exact-board fallback qualification remains the log/failure route
 candidate; no physical connection or case opening is requested by these audits.
+
+## Approved full stock candidate: hash and signature (#346)
+
+The owner approved the large local download. The exact-build Amazon-hosted OTA
+is now saved privately in ignored `out/stock-return/update-douglas-659664620.bin`:
+907,705,758bytes, within the910,000,000-byte cap, matching pinned ETag/size.
+Whole-file SHA256 is
+`6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab`.
+No firmware content was executed and no tablet was accessed during this step.
+The [full-package verification receipt](../../evidence/douglas-original-route/full-stock-package.json)
+records exact measurements, method and remaining false qualification flags.
+
+The Android OTA footer and unambiguous EOCD identify907,704,179 signed bytes and
+a1,553-byte detached PKCS7 signature. Streaming that exact prefix through installed
+OpenSSL CMS verification succeeds with RSA/SHA1. The command used binary content
+mode and `-noverify`: it checks the cryptographic signature against the embedded
+certificate, without claiming a trusted certificate chain. SHA256 fingerprint of
+the embedded certificate is
+`e78bf74ef231d7683e596ab1987e9e7e40fc4e29e7964eca0244844809562d2c`.
+A negative control flipped one signed byte in the stream, not the stored file;
+verification correctly failed with exit4.
+
+Static bounded inspection of the original stock-return recovery ramdisk found its
+res/keys file. Its2048-bit RSA modulus and exponent3 match the OTA signer; mincrypt
+n0inv and Montgomery RR values are internally consistent. The unversioned key
+profile implies SHA1/e3 in the pinned official AOSP verifier source. The compressed
+ramdisk/newc inspection stayed under16MiB and imported/executed no recovery code.
+This is a **bundled candidate key-material match**, not proof that this recovery
+boots on the unit, that its deployed verifier exactly matches AOSP, or that the
+currently installed recovery trusts or accepts this OTA.
+
+The full stock artifact/hash/signature gate is therefore resolved at offline
+candidate level. The installed-recovery key/acceptance, update/rollback rules,
+reachable installation after the intended failure, actual supported-stock return
+and independent boot-log capture are still open. The owner-authorized wiped-test
+unit target remains; no install, downgrade, helper run or reboot was approved by
+the download permission. No additional OTA download is needed for this candidate.

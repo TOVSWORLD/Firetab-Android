@@ -1,0 +1,123 @@
+{
+  "scope": "Approved exact-build stock OTA offline download/signature and bundled candidate key comparison; not device acceptance",
+  "download": {
+    "url": "https://fireos-tablet-updates.s3.us-west-2.amazonaws.com/0ddfeap1GXdqCPab39o1Yn1dWv/update-kindle-Fire_HD8_7th_Gen-50.6.5.9_user_659664620.bin",
+    "bytes": 907705758,
+    "sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab",
+    "etag": "\"2312512edef1e8f78b32eab8d1ca2e39-53\"",
+    "maximum_download_bytes": 910000000,
+    "elapsed_seconds": 24.29,
+    "firmware_executed": false,
+    "tablet_accessed": false
+  },
+  "signature": {
+    "file_bytes": 907705758,
+    "signature_start": 1559,
+    "comment_bytes": 1577,
+    "signature_der_bytes": 1553,
+    "signature_der_sha256": "a5139c50a5592ff88d3bbfdfb0c09de2afc62e3043c1e84121aa65853fb75326",
+    "signed_content_bytes": 907704179,
+    "signed_content_sha1": "7f110b4ab4936f8b4d3f94330027e07a78b5ff4b",
+    "openssl_exit": 0,
+    "openssl_result": "CMS Verification successful",
+    "whole_file_cms_signature_valid": true,
+    "trusted_recovery_key_match_verified": false,
+    "certificate_chain_trusted": false,
+    "signature_algorithm": "RSA/SHA1",
+    "elapsed_seconds": 1.01,
+    "firmware_executed": false,
+    "tablet_accessed": false,
+    "cms_signed_attributes_present": false
+  },
+  "signer": {
+    "embedded_certificate_count": 1,
+    "certificate_sha256_fingerprint": "e78bf74ef231d7683e596ab1987e9e7e40fc4e29e7964eca0244844809562d2c",
+    "public_key_spki_sha256": "823d1668e47e24ee502c1485e6f0f03fe5056a11a8b6e24867dc4cd41135ba4d",
+    "rsa_bits": 2048,
+    "exponent": 3,
+    "signature_digest": "SHA1",
+    "certificate_chain_trusted": false
+  },
+  "candidate_recovery": {
+    "recovery_sha256": "f850f6b3580911def460b787a897f02f7fe2d7292217f26bf347c3a2dc1833b1",
+    "ramdisk_sha256": "0e0b5cfa381779e1ee8db6c242682ae2261ff54d4f6c5d561f152094fa72b957",
+    "cpio_bytes": 3837696,
+    "cpio_sha256": "44f62a5c44bac2d01841861bd2f5fa2783956bf1f21474e98e7b78ea1689b7f3",
+    "ramdisk_decompression_cap": 16777216,
+    "selected_entries": [
+      {
+        "name": "etc/recovery.fstab",
+        "bytes": 1223,
+        "sha256": "c46ae29c9abc08bd442d25752c67ad3878e06115e2aad1bb1285614e554fb87c"
+      },
+      {
+        "name": "res/keys",
+        "bytes": 1388,
+        "sha256": "1b94f0c5c31261999477299fb35a9126b735fefa2b85b5035d436514aab8472c"
+      },
+      {
+        "name": "sbin/recovery",
+        "bytes": 912192,
+        "sha256": "d702bbcc7a290606b02c54c73d982aab2216a00eb48c9d24d60df92a8d13c08d"
+      }
+    ],
+    "recovery_executed": false
+  },
+  "candidate_key_comparison": {
+    "scope": "Candidate original-return recovery key modulus comparison only",
+    "recovery_key_format": "unversioned mincrypt64-word RSA key",
+    "rsa_bits": 2048,
+    "modulus_matches_ota_signer": true,
+    "n0inv_consistent": true,
+    "montgomery_rr_consistent": true,
+    "installed_recovery_key_verified": false,
+    "signature_acceptance_on_tablet_verified": false,
+    "candidate_recovery_key_text_stripped_sha256": "721cc6cd43fe44db58c1e2037f51b669ff04d35c2b8bcce393152baaebe5132a",
+    "candidate_recovery_key_file_sha256": "1b94f0c5c31261999477299fb35a9126b735fefa2b85b5035d436514aab8472c",
+    "unversioned_key_exponent": 3,
+    "unversioned_key_digest": "SHA1",
+    "ota_signer_exponent": 3,
+    "exponent_and_digest_match": true
+  },
+  "negative_control": {
+    "control": "Flip one signed-content byte in the verification stream only; downloaded file unchanged",
+    "openssl_exit": 4,
+    "tampered_stream_rejected": true,
+    "firmware_executed": false,
+    "tablet_accessed": false
+  },
+  "verifier_source": {
+    "url": "https://android.googlesource.com/platform/bootable/recovery/+/ec63d564a86ad5b30f75aa307b4bd271f6a96a56/verifier.cpp",
+    "bytes": 11291,
+    "sha256": "35cf29aeb9c8ffe86ac896d2f086c8d03a96d31a07447fa98640a8387d05c966",
+    "reviewed_ranges": [
+      [
+        43,
+        140
+      ],
+      [
+        190,
+        208
+      ],
+      [
+        220,
+        283
+      ]
+    ],
+    "use": "Whole-file signed range/footer checks and unversioned mincrypt e3/SHA1 key semantics; deployed recovery equivalence not proved"
+  },
+  "qualification": {
+    "full_stock_candidate_downloaded": true,
+    "full_stock_candidate_sha256_recorded": true,
+    "whole_file_signature_integrity_verified": true,
+    "bundled_candidate_recovery_key_material_matches_signer": true,
+    "installed_recovery_trust_verified": false,
+    "ota_acceptance_on_tablet_verified": false,
+    "rollback_constraints_verified": false,
+    "successful_stock_return_demonstrated": false,
+    "failure_log_capture_demonstrated": false,
+    "firmware_or_helpers_executed": false,
+    "tablet_accessed_in_this_step": false,
+    "physical_trial_ready": false
+  }
+}
