@@ -1,0 +1,39 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   46c74: b570         	push	{r4, r5, r6, lr}
+   46c76: b082         	sub	sp, #0x8
+   46c78: 460d         	mov	r5, r1
+   46c7a: 4606         	mov	r6, r0
+   46c7c: f7ff fd90    	bl	0x467a0 <.text+0x467a0> @ imm = #-0x4e0
+   46c80: 4604         	mov	r4, r0
+   46c82: b10c         	cbz	r4, 0x46c88 <.text+0x46c88> @ imm = #0x2
+   46c84: b002         	add	sp, #0x8
+   46c86: bd70         	pop	{r4, r5, r6, pc}
+   46c88: 4630         	mov	r0, r6
+   46c8a: 4629         	mov	r1, r5
+   46c8c: f000 f944    	bl	0x46f18 <.text+0x46f18> @ imm = #0x288
+   46c90: 1e02         	subs	r2, r0, #0x0
+   46c92: db16         	blt	0x46cc2 <.text+0x46cc2> @ imm = #0x2c
+   46c94: 68b1         	ldr	r1, [r6, #0x8]
+   46c96: 4630         	mov	r0, r6
+   46c98: 4623         	mov	r3, r4
+   46c9a: 1b52         	subs	r2, r2, r5
+   46c9c: f3c1 2607    	ubfx	r6, r1, #0x8, #0x8
+   46ca0: f3c1 4407    	ubfx	r4, r1, #0x10, #0x8
+   46ca4: 0436         	lsls	r6, r6, #0x10
+   46ca6: 9101         	str	r1, [sp, #0x4]
+   46ca8: ea46 6601    	orr.w	r6, r6, r1, lsl #24
+   46cac: ea46 6111    	orr.w	r1, r6, r1, lsr #24
+   46cb0: ea41 2104    	orr.w	r1, r1, r4, lsl #8
+   46cb4: 4429         	add	r1, r5
+   46cb6: 4401         	add	r1, r0
+   46cb8: b002         	add	sp, #0x8
+   46cba: e8bd 4070    	pop.w	{r4, r5, r6, lr}
+   46cbe: f7ff bdf9    	b.w	0x468b4 <.text+0x468b4> @ imm = #-0x40e
+   46cc2: 4610         	mov	r0, r2
+   46cc4: b002         	add	sp, #0x8
+   46cc6: bd70         	pop	{r4, r5, r6, pc}

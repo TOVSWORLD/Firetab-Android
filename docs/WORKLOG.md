@@ -2961,3 +2961,16 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable source acceptance: selected dispatcher setup and remaining
   PSCI/reservation edits, then full selected FDT lineage/trust inventory. Actual
   installed LK3/loading/failure return/log-retention gates remain Blocked.
+
+## 2026-10-28 — actual selected CPU-node edits (#347)
+
+- Callback0x258ec selected by nonzero GOT function pointer; /cpus cpu-node reg
+  low-byte threshold selects node removal, retained clock-frequency only capped
+  downward. Pinned seven-entry core table and frequency arithmetic; separate
+  helper reads modeled independently. No actual CPU/rate or PSCI inference.
+- Evidence/lk-cpu-fixup and LK-CPU-FIXUP.md pin exact LK hash, full selected
+  windows, calls/strings/table and five replay/drift/selector controls. No device
+  read, firmware/helper execution or new download.
+- Next executable source acceptance: finite final-DTB mutation/entry/handoff
+  coverage inventory across receipts, unresolved dispatcher setup/trust and
+  minimum installed-LK3 evidence. Physical loading/return/log gates stay Blocked.

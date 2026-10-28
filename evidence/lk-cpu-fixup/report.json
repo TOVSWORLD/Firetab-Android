@@ -1,0 +1,121 @@
+{
+  "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "facts": {
+    "references": [
+      {
+        "load_offset": "0x2591a",
+        "add_pc_offset": "0x2591e",
+        "literal_pool_offset": "0x25aa0",
+        "target_offset": "0x5f038",
+        "text": "/cpus"
+      },
+      {
+        "load_offset": "0x2593c",
+        "add_pc_offset": "0x2594a",
+        "literal_pool_offset": "0x25aa4",
+        "target_offset": "0x5f068",
+        "text": "reg"
+      },
+      {
+        "load_offset": "0x25948",
+        "add_pc_offset": "0x2595a",
+        "literal_pool_offset": "0x25aac",
+        "target_offset": "0x5f058",
+        "text": "device_type"
+      },
+      {
+        "load_offset": "0x25958",
+        "add_pc_offset": "0x25962",
+        "literal_pool_offset": "0x25ab4",
+        "target_offset": "0x5f06c",
+        "text": "clock-frequency"
+      },
+      {
+        "load": "0x2594c",
+        "add": "0x2595c",
+        "pool": "0x25ab0",
+        "target": "0x5f064",
+        "text": "cpu"
+      }
+    ],
+    "calls": [
+      {
+        "offset": "0x3e076",
+        "target": "0x258ec"
+      },
+      {
+        "offset": "0x258f4",
+        "target": "0x25794"
+      },
+      {
+        "offset": "0x258fc",
+        "target": "0x4b014"
+      },
+      {
+        "offset": "0x25798",
+        "target": "0x4b014"
+      },
+      {
+        "offset": "0x25920",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x259d2",
+        "target": "0x46c74"
+      },
+      {
+        "offset": "0x25a76",
+        "target": "0x46930"
+      }
+    ],
+    "core_table_offset": "0x5ef20",
+    "core_limits_selectors8_to14": [
+      3,
+      4,
+      4,
+      4,
+      2,
+      4,
+      1
+    ],
+    "caller_guard": "GOT+0x310 is nonzero Thumb pointer0x4bd258ed; selected pinned artifact calls callback",
+    "input": "Helper0x4b014 argument3 is read separately for frequency low nibble and core-limit bits4..7; actual value/stability unqualified",
+    "removal": "device_type=cpu and low8 bits of first big-endian reg cell >= core limit selects node-removal helper0x46c74; not status=disabled",
+    "frequency": "Retained nodes receive clock-frequency only when current cell exceeds selected cap; no upward rate assertion",
+    "psci_limit": "Selected callback has no proven enable-method/PSCI rewrite; CPU-node mutation is not PSCI qualification",
+    "unresolved": [
+      "Actual helper input and stability between its two reads",
+      "All malformed/missing property paths and nonstandard CPU reg encodings",
+      "Installed LK3 equivalence, other reservation/dispatcher writes and complete FDT lineage",
+      "Physical CPU boot/rates and independent failure return/log retention"
+    ]
+  },
+  "excerpts": [
+    {
+      "name": "callback",
+      "start": "0x258ec",
+      "end": "0x25a9a",
+      "sha256": "6cd1e144210f106551b85bd988451d0c060c9eb89188a6ac0d50c68d1b910d70"
+    },
+    {
+      "name": "frequency",
+      "start": "0x25794",
+      "end": "0x257d4",
+      "sha256": "71d61716b0a24600a30f65cad7518e2c98c125f1a0faaac0833c020bec360fed"
+    },
+    {
+      "name": "caller",
+      "start": "0x3e06a",
+      "end": "0x3e07a",
+      "sha256": "ad5b726a0375a36fbda6f89508213530c8134bb6cb03584594652735867a8c3a"
+    },
+    {
+      "name": "node_remove",
+      "start": "0x46c74",
+      "end": "0x46cc8",
+      "sha256": "014a5f43044891c758a8d598e3e9fb2d10f0a44250b7a5de01f99a05272261d7"
+    }
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0"
+}

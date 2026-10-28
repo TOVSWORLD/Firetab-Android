@@ -170,3 +170,12 @@ optional-dispatcher setup targets IDME writes, so raw post-fixup DTB stays priva
 See LK-ALTERNATE-MEMORY.md/evidence/lk-alternate-memory. Next executable source
 acceptance: selected dispatcher setup source, remaining PSCI/reservation edits,
 then complete FDT lineage/trust inventory. Runtime loading/return/log gates open.
+
+### Latest #347 CPU source scope
+
+Pinned callback removes out-of-limit CPU nodes and caps retained clock-frequency;
+source tests do not qualify actual CPU boot/rates or PSCI. See LK-CPU-FIXUP.md and
+evidence/lk-cpu-fixup. Next executable source acceptance: consolidate finite final-
+DTB mutation/entry/handoff coverage inventory, unresolved dispatcher setup/trust
+boundaries and minimum missing installed-LK3 evidence. Physical loading, failure
+return and retained-log gates remain Blocked.
