@@ -2659,3 +2659,13 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   register/gating behavior changed. Full host/check results recorded with PR.
 - Next evaluate exact aud_2_sel direct-parent equivalence for two legacy aliases,
   separate from unqualified CTS source. #29 remains Active; no hardware claim.
+
+## 2026-10-28 — resolve real HDMI audio/SPDIF parent references (#29)
+
+- Contracted two missing legacy ungated1:1 aliases to actual aud_2_sel in MMSYS.
+  Gate IDs, bits11/12, registers and ops unchanged; no fixed rate or audsys divider
+  substitution. All7 unqualified HDMI consumer restrictions retained.
+- Textual orphan set now only hdmitx_dig_cts, still explicitly unavailable behind
+  matched PHY/rate gate. This source change does not claim runtime HDMI/audio.
+- Appropriate host/policy checks plus existing bounded generic kernel compile
+  workflow are required before merge. No tablet/firmware operation.

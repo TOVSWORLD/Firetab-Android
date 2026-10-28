@@ -53,8 +53,6 @@
     "mipi_tx0_pll"
   ],
   "unresolved_literal_parent_names": [
-    "apll2_div0",
-    "apll2_div1",
     "hdmitx_dig_cts"
   ],
   "captured_literal_clock_consumers": [

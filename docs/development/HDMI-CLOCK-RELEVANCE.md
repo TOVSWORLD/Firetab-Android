@@ -88,3 +88,19 @@ Next source change to evaluate: replacing the two legacy1:1 alias references wit
 real aud_2_sel parent relationships while preserving their exact rate/gating
 semantics, independently of the missing CTS PHY. Do not substitute the real
 APLL2 divider or reopen HDMI consumer paths merely to remove orphan names.
+
+## Resolve the two audio alias references without a dummy clock
+
+The overlay now directly parents mm_hdmi_spdif and mm_hdmi_audio to aud_2_sel.
+This contracts each missing legacy ungated1:1 alias edge without changing gate
+IDs, register bank, bits11/12, gate ops or upstream aud_2_sel mux/PLL ownership.
+It does not substitute aud_apll2_div0, introduce a fixed rate, or enable an HDMI
+consumer. The legacy registration code passes CLK_SET_RATE_PARENT to its1:1
+factors; their rate is exactly the upstream rate. This source contract supports
+using the real parent instead of recreating orphan alias names.
+
+The textual orphan set is now only hdmitx_dig_cts. The seven-consumer guard stays
+in force, including HDMI audio/SPDIF: resolving two parent names is not complete
+HDMI support. Actual compile evidence and subsequent runtime tests are separate;
+no device was modified. Runtime validation must check aud_2_sel rate/gate behavior
+with real audio consumers and any future qualified HDMI path before release.
