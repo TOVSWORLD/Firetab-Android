@@ -2627,3 +2627,21 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   This does not close beta package/QA or high-risk recovery acceptance issues.
 - Next executable queue5: select dependency-ready board task after live acceptance
   review; independently investigate one actual remaining R1 route prerequisite.
+
+## 2026-10-28 — unresolved HDMI parent/consumer distinctions (#29)
+
+- Selected live board task29 while recovery R1/R2 remain blocked. Reviewed pinned
+  overlay/donor/legacy constructors and captured literal DT references.
+- Legacy HDMI APLL aliases are1:1 aud_2_sel factors; captured audio uses distinct
+  actual aud_apll2_div0 divider (shift28,width3,gate1,reg0x05a0). No substitution.
+- Legacy CTS ends in clk_null; no valid hardware source/rate demonstrated. Captured
+  direct DSI refs have different immediate edges, but no whole-board irrelevance
+  inferred from absent literal HDMI/DPI refs. No provider behavior changed.
+- Next trace matched CCF/non-DT consumers and HDMI PHY ownership/rates, then bound
+  unavailable paths or implement valid relationships with compile evidence.
+  Runtime support remains untested; project/issue stays Active with current result.
+
+- During PR CI, traced actual legacy HDMI C probe and DT consumer: all named
+  clocks requested with devm_clk_get and BUG_ON lookup failure. Legacy DT includes
+  HDMI gates absent from captured candidate. Preserve PIXEL/PLLCK phandle/name
+  ordering discrepancy; no validated driver mapping or hardware rate inferred.

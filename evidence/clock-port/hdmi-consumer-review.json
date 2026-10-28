@@ -1,0 +1,121 @@
+{
+  "scope": "Bounded manual provider/DT consumer source review, not CCF registration, rate, DT expansion or hardware qualification",
+  "donor_revision": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "sources": [
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mmsys.c",
+      "sha256": "9900d38786b8fc046e176265c1060570b90d6e7d4bd674e0ecaf7812e3081ffd"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "sha256": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-audsys.c",
+      "sha256": "b5ace0bf5329895a108960bb2c7a1abb61eb858d1f196c799959413c8ae80d74"
+    },
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629"
+    },
+    {
+      "path": "sources/kernel-mt8163/drivers/clk/mediatek/clk-mt8163.c",
+      "sha256": "3aef9e7da88f4ba736b299b54d99473ce8015a64e9893933d7062aec5975b3b1"
+    },
+    {
+      "path": "sources/kernel-mt8163/drivers/misc/mediatek/hdmi/hdmitx/mt8163/hdmi_drv.c",
+      "sha256": "2334d17ee2550e9240e0217dad4bfaadce552a59476405f60a9a469f836407d6"
+    },
+    {
+      "path": "sources/kernel-mt8163/arch/arm64/boot/dts/mt8163.dtsi",
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1"
+    }
+  ],
+  "unresolved_parents": {
+    "apll2_div0": {
+      "direct_child": "mm_hdmi_audio",
+      "legacy_relationship": "1:1 alias of aud_2_sel; not aud_apll2_div0 divider/gate"
+    },
+    "apll2_div1": {
+      "direct_child": "mm_hdmi_spdif",
+      "legacy_relationship": "1:1 alias of aud_2_sel"
+    },
+    "hdmitx_dig_cts": {
+      "direct_children": [
+        "hdmi_cts_ck",
+        "hdmi_cts_d2",
+        "hdmi_cts_d3"
+      ],
+      "via_mux": "hdmi_sel",
+      "downstream_gate": "mm_hdmi_pllck",
+      "legacy_relationship": "1:1 factor from clk_null; no valid hardware rate established"
+    }
+  },
+  "captured_dsi_clock_paths": {
+    "CLK_MM_DSI_ENGINE": [
+      "mm_dsi0_engine",
+      "mm_sel"
+    ],
+    "CLK_MM_DSI_DIGITAL": [
+      "mm_dsi0_digital",
+      "dsi0_lntc_dsick"
+    ],
+    "phy": "mipi_tx0"
+  },
+  "captured_hdmi_or_dpi_literal_dt_consumers": [],
+  "captured_audio_divider_consumer": [
+    {
+      "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+      "line": 725,
+      "provider": "audiosys",
+      "symbol": "CLK_AUDIO_APLL2_DIV0",
+      "id": 14
+    }
+  ],
+  "audio_divider_definition": {
+    "name": "aud_apll2_div0",
+    "parent": "aud_2_sel",
+    "gate_bit": 1,
+    "is_legacy_hdmi_alias": false,
+    "divider_shift": 28,
+    "divider_width": 3,
+    "register_offset": "0x05a0"
+  },
+  "decision": "Keep unresolved dependent HDMI branches unqualified; do not copy clk_null or substitute aud_apll2_div0 for the legacy aliases. Captured direct DT refs do not establish whole-board irrelevance. No provider behavior changed.",
+  "remaining_acceptance": [
+    "Trace matched maintained-driver HDMI PHY registration/rates and candidate enablement; legacy C consumers are now source-traced, not integrated-equivalent.",
+    "Determine integrated candidate consumer enablement before implementing/removing parent paths.",
+    "Compile any eventual provider change and retain required physical runtime tests."
+  ],
+  "runtime_support_verified": false,
+  "clock_rates_verified": false,
+  "device_accessed": false,
+  "legacy_c_consumer": {
+    "file": "drivers/misc/mediatek/hdmi/hdmitx/mt8163/hdmi_drv.c",
+    "name_mapping_lines": [
+      187,
+      210
+    ],
+    "probe_lines": [
+      1253,
+      1273
+    ],
+    "behavior": "devm_clk_get for every HDMI_REF_CLOCK_ENUM entry; BUG_ON(IS_ERR) on lookup failure",
+    "dt_compatible": "mediatek,mt8163-hdmitx",
+    "dt_lines": [
+      1263,
+      1283
+    ],
+    "dt_clock_symbols": [
+      "CLK_INFRA_CEC",
+      "CLK_INFRA_CEC_26M",
+      "CLK_MM_HDMI_PIXEL",
+      "CLK_MM_HDMI_PLLCK",
+      "CLK_MM_HDMI_ADSP",
+      "CLK_MM_HDMI_SPDIF"
+    ],
+    "dt_clock_name_order_note": "PIXEL then PLLCK phandles pair positionally with mmsys_hdmi_pll then mmsys_hdmi_pixel; source naming/order discrepancy must not be normalized into a validated mapping.",
+    "integrated_candidate_equivalence_verified": false
+  }
+}
