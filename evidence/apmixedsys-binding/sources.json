@@ -1,0 +1,32 @@
+{
+  "scope": "Exact compatible/reg/clock-cell source contract, not PLL rate testing",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/clock/mediatek,apmixedsys.yaml",
+  "driver": {
+    "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+    "sha256": "09f1c75eec24c1c1004277edadef5fe11a1b601f7279b4af68451a2172b8f4f4",
+    "match_lines": [
+      125,
+      129
+    ],
+    "pll_registration_lines": [
+      131,
+      154
+    ]
+  },
+  "captured_dt": {
+    "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+    "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+    "node": "/soc/clock-controller@1000c000",
+    "compatible": [
+      "mediatek,mt8163-apmixedsys"
+    ],
+    "reg": [
+      0,
+      268484608,
+      0,
+      4096
+    ],
+    "clock_cells": 1
+  }
+}

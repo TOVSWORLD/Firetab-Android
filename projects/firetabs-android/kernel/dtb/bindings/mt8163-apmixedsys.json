@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact standalone MT8163 PLL provider compatible only; not rate/hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-apmixedsys.patch",
+  "patch_sha256": "19638d01b2ec34ee8ed3c94ed1cbd759386880a03286d38be94947a498152681",
+  "schema": "clock/mediatek,apmixedsys.yaml",
+  "original_sha256": "03d1a47f57f31a680b21ba2fe1fb914ecd5d30e9b5672e875a4df9e48ddec423",
+  "proposed_sha256": "ca18ed298a073ca6b9290593cd27997710205d8b67ee8da240c0e2f1f2c67416"
+}

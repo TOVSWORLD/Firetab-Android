@@ -1,0 +1,37 @@
+{
+  "scope": "Reviewed ACK-plus-current-overlay parent-instantiation gap, not device test",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "ack_parent_source": {
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/soc/mediatek/mtk-mmsys.c?format=TEXT",
+    "bytes": 15830,
+    "sha256": "6f959cf51269bd1e1cf2895c38962bec5341a53e4f189681ff0db75e960e3dac"
+  },
+  "clock_child": {
+    "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mmsys.c",
+    "sha256": "9900d38786b8fc046e176265c1060570b90d6e7d4bd674e0ecaf7812e3081ffd",
+    "platform_id": "clk-mt8163-mm",
+    "match_type": "platform device ID, not OF compatible",
+    "lines": [
+      91,
+      104
+    ]
+  },
+  "ack_parent_child_creation_lines": [
+    429,
+    434
+  ],
+  "ack_parent_match_lines": [
+    458,
+    483
+  ],
+  "mt8163_parent_compatible_present": false,
+  "clock_port_patches_change_soc_parent": false,
+  "patch_hashes": {
+    "projects/firetabs-android/kernel/clock-port/build-wiring.patch": "fb0a02ec33feb419e1e4db547d5af78359cfdd399c55837e612fa1d2909bdf06",
+    "projects/firetabs-android/kernel/clock-port/mux-api.patch": "63200df001b190198cc89dca99fec8d4327f07b66e4397874baca942b042f1a8"
+  },
+  "impact": "Reviewed normal OF parent path does not create the MT8163 clock child; generic object/image compile alone is insufficient board integration proof. Alternate unseen platform-device creation is not excluded.",
+  "next": "Port/review matched MT8163 MMSYS parent data/routing/reset and child creation before claiming provider probe; do not copy DRM path data as SoC parent data.",
+  "hardware_tested": false,
+  "repository_review_revision": "cbcfe230619aca0cca8d16370314882ff1a01956"
+}
