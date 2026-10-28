@@ -1,0 +1,82 @@
+{
+  "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "facts": {
+    "entry_bootarg_register": "r4",
+    "entry_capture_address": "0x4bd00020",
+    "capture_instruction_offset": "0x28",
+    "pointer_global": "0x4bd874c0",
+    "local_buffer": "0x4bd87340",
+    "local_buffer_bytes": 384,
+    "magic": "0x504c504c",
+    "slots": [
+      {
+        "literal_pool": "0x233c4",
+        "got_offset": "0x12c",
+        "linked_target": "0x4bd874c0"
+      },
+      {
+        "literal_pool": "0x233c8",
+        "got_offset": "0x98",
+        "linked_target": "0x4bd87340"
+      },
+      {
+        "literal_pool": "0x233cc",
+        "got_offset": "0x21c",
+        "linked_target": "0x4bd00020"
+      }
+    ],
+    "calls": [
+      {
+        "offset": "0x2347e",
+        "target": "0x23230"
+      },
+      {
+        "offset": "0x233a8",
+        "target": "0x45a58"
+      }
+    ],
+    "writer": "0x23248 stores local buffer address into pointer-global before inspecting incoming bootarg magic",
+    "matching_magic_path": "0x233a4 sets384-byte copy length;0x233a8 copies source from saved entry r4 into local buffer",
+    "nonmatching_magic_path": "0x23256 onward parses alternate tags into local buffer; complete tag conversion unqualified",
+    "lifetime": "Local buffer and pointer global lie beyond file-backed relocation range; full initialization/reset ordering unqualified",
+    "relocation_caveat": "Absolute linked-address r4 store precedes relocation copy; alternate placement/pointer preservation not qualified",
+    "unresolved": [
+      "Actual entry r4 pointer, accessibility,384-byte extent and magic",
+      "All subsequent writers and local-buffer lifetime across reset/alternate boot paths",
+      "Alternate tag conversion and alternate DT memory tuple branch",
+      "Installed LK3 equivalence, remaining PSCI/FDT lineage and failed-boot return/log retention"
+    ]
+  },
+  "excerpts": [
+    {
+      "name": "startup",
+      "start": "0x24",
+      "end": "0x70",
+      "mode": "armv7",
+      "sha256": "bf3b3ccae7ad4c48842ec9acb8f35bc3f651a4a02f28bc5fc6dd84cead7d687f"
+    },
+    {
+      "name": "writer",
+      "start": "0x23230",
+      "end": "0x23266",
+      "mode": "thumbv7",
+      "sha256": "900a08babb7f4a51a7379de2f821863dd211b0951f4e868f8adbf81ce292fe47"
+    },
+    {
+      "name": "magic_copy",
+      "start": "0x233a4",
+      "end": "0x233b0",
+      "mode": "thumbv7",
+      "sha256": "120e14fc2f74f21944aec38cb18437792a638613749330eea3fa2793e0323d2b"
+    },
+    {
+      "name": "init_call",
+      "start": "0x2347c",
+      "end": "0x23486",
+      "mode": "thumbv7",
+      "sha256": "e38c23baad7237e48eaa43d95b223f57e43ce611c3b9eb13d8dfeba12b06552b"
+    }
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0"
+}

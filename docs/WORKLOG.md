@@ -2929,3 +2929,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable source acceptance: pointer-global writer/lifetime, alternate
   tuple branch, remaining reservation/PSCI callbacks and selected FDT lineage.
   Experimental loading/return/log gates remain blocked; no owner action needed.
+
+## 2026-10-28 — entry-r4 bootarg capture and local memory pointer (#347)
+
+- Exact-OTA startup stores incoming r4 at linked0x4bd00020. Initializer0x23230
+  assigns local buffer0x4bd87340 to pointer-global0x4bd874c0; matching0x504c504c
+  magic selects384-byte copy from saved entry pointer. Slots/instructions pinned
+  in evidence/lk-memory-pointer; complete tag conversion/lifetime still open.
+- Absolute pointer store precedes conditional relocation copy; file pointer slot
+  is zero. Arbitrary load placement/pointer preservation cannot be assumed.
+  No firmware execution or runtime failure claim; see LK-MEMORY-POINTER.md.
+- Three sparse replay/drift/truncation controls pass. Next executable source
+  acceptance: alternate tuple branch0x3e17c, remaining reservation/PSCI callbacks,
+  selected FDT lineage/trust boundaries. Installed LK3/physical return/log gates
+  remain Blocked; no owner physical action requested.
