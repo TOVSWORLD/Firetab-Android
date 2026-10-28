@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "issue": 347,
+  "scope": "Bounded source coverage inventory only; no installed or runtime qualification",
+  "artifact_role": "Cached exact-OTA LK; not installed LK3 identity proof",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "receipts": [
+    {
+      "evidence": "evidence/lk-handoff/report.json",
+      "receipt_sha256": "23814a5f761d82e0a720b3423a9d64620f3ae4489654355f719314f8725364e9",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static ARM/Thumb instruction evidence only; firmware never executed",
+      "id": "entry-and-smc",
+      "source_result": "Selected entry/wrapper/register shuffle and SMC ID; secure monitor behavior and complete lineage unproved."
+    },
+    {
+      "evidence": "evidence/lk-header-producer/report.json",
+      "receipt_sha256": "d29cc18ff062ac32e84dd34c1ad5b7bd2e6f915314e838ab361a6ac740866ea1",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static selected paths only; no firmware/device execution",
+      "id": "header-and-inflate",
+      "source_result": "Header+0xc kernel destination and staging/decompression limits; full storage/input validation unproved."
+    },
+    {
+      "evidence": "evidence/lk-bootargs/report.json",
+      "receipt_sha256": "16479cccfbff4cbae741ac092eb35974efa557812541f0ec52e25eb66fc3b7f8",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Selected exact-build static paths only; not whole-loader emulation",
+      "id": "bootargs",
+      "source_result": "Selected command-buffer/header merge and chosen bootargs overwrite; final runtime diagnostics arguments unproved."
+    },
+    {
+      "evidence": "evidence/lk-dtb-selection/report.json",
+      "receipt_sha256": "56fcc6449103d3911f01d20d63cf9a470283df3ad1481a47dcdc88d2b058d0cf",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Exact OTA LK static selection only; installed LK3 equivalence and execution untested",
+      "id": "dtb-selection",
+      "source_result": "Root version comparison; current candidate missing version. Runtime board selector/installed LK3 unproved."
+    },
+    {
+      "evidence": "evidence/lk-fdt-destination/report.json",
+      "receipt_sha256": "59420d2a96c2dd55240f524be9e922966f109cd6e346860ae4a4cff2cd729c98",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static exact-OTA selected paths only; firmware never executed",
+      "id": "dtb-destination",
+      "source_result": "Header+0x20/fallback address and selected late writes; pre-copy bounds/actual placement unproved."
+    },
+    {
+      "evidence": "evidence/lk-memory-fixups/report.json",
+      "receipt_sha256": "63221e141e6578e4c7543f2b857f61ffb9d8bf635cd86ff3e260e859cac0cabf",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+      "id": "memory-tuples",
+      "source_result": "Selected runtime mblock structure/DT tuple decoder and metadata writes; actual contents/ownership unproved."
+    },
+    {
+      "evidence": "evidence/lk-memory-pointer/report.json",
+      "receipt_sha256": "5bf633863a206efc0ed3c0d0befb8eecc808f4b065f72fad11649999f9737a9a",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+      "id": "entry-pointer",
+      "source_result": "Entry r4 capture/local384-byte magic copy; arbitrary relocation/full lifetime unproved."
+    },
+    {
+      "evidence": "evidence/lk-alternate-memory/report.json",
+      "receipt_sha256": "65d25d6a3b25ce6cb6fccf8317b9b5af42cf267088a9ee7761dcfdb34bafd8ab",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+      "id": "alternate-and-idme",
+      "source_result": "Pinned nonzero helper guard, alternate arithmetic and conditional IDME target; selected setup/context unproved."
+    },
+    {
+      "evidence": "evidence/lk-cpu-fixup/report.json",
+      "receipt_sha256": "d1d16d336ca19af1496aa5dc1587e2db06bb5db725326728f7145a150fcd6304",
+      "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+      "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+      "id": "cpu-mutation",
+      "source_result": "Selected CPU removal and downward DT frequency caps; actual CPU boot/rates/PSCI unproved."
+    }
+  ],
+  "runtime_gates": {
+    "installed_identity": {
+      "qualified": false,
+      "required_evidence": "Private installed-artifact readback/identity plus reviewed equivalence to the selected source route; LK3 version string alone is insufficient."
+    },
+    "bounded_entry": {
+      "qualified": false,
+      "required_evidence": "Reviewed exact route/artifact and limits, actual entry r4/placement, pre-copy extent/overlap and preserved return mechanism; no assumed helper compatibility."
+    },
+    "matching_final_dtb": {
+      "qualified": false,
+      "required_evidence": "Observed selected post-fixup DTB with candidate driver ABI, effective command line, memory/reservations and CPU contract; raw IDME-bearing capture private."
+    },
+    "independent_return": {
+      "qualified": false,
+      "required_evidence": "Observed exit after the intended failed experimental load through a mechanism independent of that failed payload; ordinary pre-test stock recovery is insufficient."
+    },
+    "failure_log": {
+      "qualified": false,
+      "required_evidence": "Fresh attributable failure markers retained across the defined reset/return lifecycle, with truncation/coverage quantified; stock320KiB export alone is insufficient."
+    }
+  },
+  "ready_for_loading_trial": false,
+  "beta_ready": false,
+  "source_open_items": [
+    "Selected IDME dispatcher setup/context and all later GOT/global writers",
+    "Complete selected FDT lineage and remaining mutation callbacks/trust checks",
+    "Installed-route equivalence cannot be supplied by more exact-OTA static disassembly alone"
+  ],
+  "next_executable_source_acceptance": "Review cached original-route loading/trust alternatives against these five gates; identify one viable nonpersistent bounded entry candidate or rule them out with precise blockers.",
+  "privacy": "Raw firmware, final DTB/IDME, logs, selectors and identifiers remain private in ignored out; publish normalized allowlisted technical facts only."
+}

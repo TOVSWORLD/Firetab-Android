@@ -3,6 +3,11 @@
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
+Current next executable #347 scope: compare cached loading/trust alternatives
+against the [finite handoff checklist](LK-HANDOFF-COVERAGE.md), identify a viable
+nonpersistent bounded entry candidate or rule it out with exact blockers. The nine-
+receipt source inventory is complete; all five runtime gates remain unqualified.
+
 ## Execution contract
 
 - Continue useful authorized work within the active turn. The 15-minute heartbeat
