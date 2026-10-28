@@ -1,0 +1,193 @@
+{
+  "scope": "Bounded literal transition/clock trace; never execute power or device operations.",
+  "normal_non_modem_non_rtff_success_path_only": true,
+  "control_writes": {
+    "legacy_on": [
+      "set:PWR_ON_BIT",
+      "set:PWR_ON_2ND_BIT",
+      "clear:PWR_CLK_DIS_BIT",
+      "clear:PWR_ISO_BIT",
+      "set:PWR_RST_B_BIT"
+    ],
+    "ack_on": [
+      "set:PWR_ON_BIT",
+      "set:PWR_ON_2ND_BIT",
+      "clear:PWR_CLK_DIS_BIT",
+      "clear:PWR_ISO_BIT",
+      "set:PWR_RST_B_BIT"
+    ],
+    "legacy_off": [
+      "set:PWR_ISO_BIT",
+      "clear:PWR_RST_B_BIT",
+      "set:PWR_CLK_DIS_BIT",
+      "clear:PWR_ON_BIT",
+      "clear:PWR_ON_2ND_BIT"
+    ],
+    "ack_off": [
+      "set:PWR_ISO_BIT",
+      "set:PWR_CLK_DIS_BIT",
+      "clear:PWR_RST_B_BIT",
+      "clear:PWR_ON_2ND_BIT",
+      "clear:PWR_ON_BIT"
+    ]
+  },
+  "clock_owner": {
+    "legacy": "MFG domain",
+    "candidate": "MFG_ASYNC parent",
+    "same_lifetime_proven": false
+  },
+  "mux_definition": {
+    "register_fields": [
+      80,
+      24,
+      2,
+      31,
+      4,
+      7
+    ],
+    "legacy_parent_names": [
+      "clk26m",
+      "mmpll_ck",
+      "univpll_d3",
+      "syspll_d3"
+    ],
+    "candidate_parent_names": [
+      "clk26m",
+      "mmpll",
+      "univ_416m",
+      "main_h364m"
+    ],
+    "legacy_aliases_resolve_to_candidate": true,
+    "clock_rates_measured": false
+  },
+  "clock_abi": {
+    "legacy_source_and_observed_stock": {
+      "MFG": 70,
+      "MM": 67
+    },
+    "candidate": {
+      "MFG": 54,
+      "MM": 51
+    },
+    "candidate_meaning_of_stock_numeric_ids": {
+      "MFG": "CLK_TOP_SCAM_SEL",
+      "MM": "CLK_TOP_ATB_SEL"
+    },
+    "stock_cells_are_not_candidate_ids": true,
+    "loader_matching_dtb_required": true,
+    "experimental_dtb_handoff_observed": false
+  },
+  "legacy_resume_model": [
+    {
+      "can_wake": false,
+      "may_wake": false,
+      "active_callback": false,
+      "resume_needed": false
+    },
+    {
+      "can_wake": false,
+      "may_wake": false,
+      "active_callback": true,
+      "resume_needed": false
+    },
+    {
+      "can_wake": false,
+      "may_wake": true,
+      "active_callback": false,
+      "resume_needed": false
+    },
+    {
+      "can_wake": false,
+      "may_wake": true,
+      "active_callback": true,
+      "resume_needed": false
+    },
+    {
+      "can_wake": true,
+      "may_wake": false,
+      "active_callback": false,
+      "resume_needed": true
+    },
+    {
+      "can_wake": true,
+      "may_wake": false,
+      "active_callback": true,
+      "resume_needed": false
+    },
+    {
+      "can_wake": true,
+      "may_wake": true,
+      "active_callback": false,
+      "resume_needed": false
+    },
+    {
+      "can_wake": true,
+      "may_wake": true,
+      "active_callback": true,
+      "resume_needed": true
+    }
+  ],
+  "legacy_noirq_model": [
+    {
+      "suspend_power_off": false,
+      "wakeup_path": false,
+      "active_callback": false,
+      "skip_stop_start": false
+    },
+    {
+      "suspend_power_off": false,
+      "wakeup_path": false,
+      "active_callback": true,
+      "skip_stop_start": false
+    },
+    {
+      "suspend_power_off": false,
+      "wakeup_path": true,
+      "active_callback": false,
+      "skip_stop_start": false
+    },
+    {
+      "suspend_power_off": false,
+      "wakeup_path": true,
+      "active_callback": true,
+      "skip_stop_start": true
+    },
+    {
+      "suspend_power_off": true,
+      "wakeup_path": false,
+      "active_callback": false,
+      "skip_stop_start": true
+    },
+    {
+      "suspend_power_off": true,
+      "wakeup_path": false,
+      "active_callback": true,
+      "skip_stop_start": true
+    },
+    {
+      "suspend_power_off": true,
+      "wakeup_path": true,
+      "active_callback": false,
+      "skip_stop_start": true
+    },
+    {
+      "suspend_power_off": true,
+      "wakeup_path": true,
+      "active_callback": true,
+      "skip_stop_start": true
+    }
+  ],
+  "wakeup_qualification": {
+    "legacy_predicates_source_checked": true,
+    "python_boolean_model_not_kernel_execution": true,
+    "ack_header_contract": "ACTIVE_WAKEUP requests domain retention for attached wakeup-path devices",
+    "ack_genpd_implementation_acquired": false,
+    "capability_change_justified": false
+  },
+  "limits": [
+    "Power-off reset/clock-disable and ON/ON_2ND ordering differs; no MMIO equivalence claim.",
+    "Same mux fields and one-to-one alias parents do not measure rates or transition timing.",
+    "Do not substitute stock DTB for matching candidate; actual loading/return/log gates remain open."
+  ],
+  "hardware_transition_tested": false
+}

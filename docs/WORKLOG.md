@@ -2865,3 +2865,25 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   GENPD_FLAG_ACTIVE_WAKEUP mapping and explicit MFG clock-order rationale under
   #20. Hardware voltage/order/wakeup and failed-boot return remain unqualified.
   No device/helper/firmware action performed; one small pinned source read only.
+
+## 2026-10-28 — observed stock clock ABI and transition-order gate (#20/#347)
+
+- Authorized bounded normal-Android USB reads confirm douglas/known incremental/
+  completed boot. Sysfs/proc DT properties agree: mfg/mm clocks<6 70 6 67>,
+  topckgen phandle6/#clock-cells1. Raw data stays ignored; normalized receipt only.
+  First head command was absent; rejected error bytes, cat+host bounds succeeded.
+- Candidate IDs54/51 differ; candidate70/67 are SCAM/ATB. Added explicit fresh-DTB
+  provider/ID checks rejecting stock IDs and wrong provider despite valid counts.
+  Loader R1 must qualify actual matching DTB selection/handoff; no trial performed.
+- Source MFG mux fields and unit-alias parent identities match, but clock ownership
+  moves MFG->MFG_ASYNC. OFF reset/clock and ON/ON_2ND write orders differ. Literal
+  traces/legacy Boolean models are not hardware or ACK implementation equivalence.
+- ACK genpd implementation unavailable from capped pinned endpoints; cached header
+  contract alone does not justify capability changes. Moved immediately to cached
+  transition/clock analysis and safe ABI evidence; no root/reboot/helper/flash.
+- Next queued source scope: #347 trace actual candidate DTB selection/handoff
+  from cached LK/FDT/load artifacts (out/lk-instruction-audit, out/lk-fastboot-review,
+  out/lk-bootargs), identifying exact artifact/revision and image/address/trust
+  boundaries; do not equate original-route source with installed LK3. No execution.
+  #20 wakeup equivalence awaits the pinned ACK genpd implementation, not just its
+  header. Actual matching DTB handoff, independent failure return and logs stay open.

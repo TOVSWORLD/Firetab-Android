@@ -18,6 +18,12 @@ ignored out/. Receipts below retain exact hashes, provenance and qualification f
 - [Observed stock memory/reservations](../../evidence/runtime-memory/observed-stock-kernel-layout.json):
  ATF/consys placement and console buffer initialization, not experimental retention.
 
+The [observed stock clock ABI](../../evidence/power-port/transition-order/observed-stock-clock-abi.json)
+was read over authorized normal-Android USB with strict property/byte/time bounds:
+MFG70/MM67 differ from candidate54/51. This is live declared-DT metadata, not a
+clock-rate or register measurement. The [transition and ABI review](../../projects/firetabs-android/kernel/power-port/TRANSITION-AND-DTB-ABI.md)
+explains why matching candidate-DTB handoff remains a loading prerequisite.
+
 ## Material available for supported-stock review
 
 - [Original route package review](../../evidence/douglas-original-route/original-package-review.json).

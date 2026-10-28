@@ -68,3 +68,10 @@ specified in `../dtb/SCPSYS-BINDING.md`. The fresh DTB guard checks the actual
 INFRACFG phandle and MFG parent relation, rejects duplicate/disabled domains,
 and retains all voltage/wakeup/order limits. Generic schema declarations cannot
 substitute for missing bus-block lists or domain-supply capability.
+
+
+The [transition and observed DT ABI review](TRANSITION-AND-DTB-ABI.md) records
+actual stock MFG70/MM67 versus candidate54/51, alias-resolved source mux identity
+and differing power-off write order. The fresh-DTB guard now checks clock IDs and
+provider identity, not only counts. No source equivalence or runtime flag change
+is inferred while ACK genpd implementation and hardware timing remain unqualified.

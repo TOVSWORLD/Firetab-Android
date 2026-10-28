@@ -1,0 +1,59 @@
+{
+  "scope": "Observed normal-stock read-only USB DT clock metadata; not an experimental loading/boot test",
+  "date_utc": "2026-10-28",
+  "expected_device_confirmed": true,
+  "expected_stock_incremental_confirmed": true,
+  "boot_completed_confirmed": true,
+  "stock_incremental": "50.6.5.9_user_659664620",
+  "transport": "Existing authorized ADB on confirmed douglas; no root, mode, reboot, firmware or unlock-helper action",
+  "observation": {
+    "scpsys_compatible": [
+      "mediatek,mt8163-scpsys",
+      "syscon"
+    ],
+    "scpsys_clock_names": [
+      "mfg",
+      "mm"
+    ],
+    "scpsys_clock_cells": [
+      6,
+      70,
+      6,
+      67
+    ],
+    "topckgen_compatible": [
+      "mediatek,mt8163-topckgen"
+    ],
+    "topckgen_clock_cells": [
+      1
+    ],
+    "topckgen_phandle": 6
+  },
+  "sys_and_proc_alias_values_identical": true,
+  "limits": {
+    "per_command_seconds": 5,
+    "per_stream_bytes": 256,
+    "whitelisted_properties_per_namespace": 7
+  },
+  "collection_note": "First attempt used unavailable head and produced only command errors; those bytes were rejected. Available cat with host capture bounds succeeded. This was not a root/USB permission limitation.",
+  "private_evidence": {
+    "probe-cat.private.json": {
+      "bytes": 2838,
+      "sha256": "a59f952a6149df82845d4b4c81b2ba31bb19d4dd5b71e20331bcb6f23cabfb77"
+    },
+    "context.private.json": {
+      "bytes": 74,
+      "sha256": "4d7fc00044a24479f3eb2ae74603bc1e6c1ff2965672031b97054bc27ebac983"
+    },
+    "read-only-host-probe.py": {
+      "bytes": 1834,
+      "sha256": "71b57968785c3224b37e079d7beac139a1ee46821c6182de2a7755b91bc9eb2b"
+    }
+  },
+  "qualification": {
+    "stock_declared_clock_abi_observed": true,
+    "clock_rates_measured": false,
+    "candidate_dtb_handoff_observed": false,
+    "experimental_return_or_logs_qualified": false
+  }
+}
