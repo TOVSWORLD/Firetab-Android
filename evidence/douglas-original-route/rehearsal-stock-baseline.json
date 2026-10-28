@@ -1,0 +1,24 @@
+{
+  "scope": "Actual standing-authorized low-risk stock baseline read, not a loader trial",
+  "date_local": "2026-10-28",
+  "device": "douglas",
+  "build_incremental": "50.6.5.9_user_659664620",
+  "sys_boot_completed": "1",
+  "cache_directory": {
+    "owner": "system",
+    "group": "cache",
+    "mode": "drwxrwx--x"
+  },
+  "recovery_directory": {
+    "owner": "system",
+    "group": "cache",
+    "mode": "drwxrwx---"
+  },
+  "last_kmsg_metadata": "Permission denied",
+  "last_kmsg_test_readable": false,
+  "file_contents_read": false,
+  "raw_block_read_attempted": false,
+  "mode_changed": false,
+  "security_changed": false,
+  "qualifies_experimental_return": false
+}

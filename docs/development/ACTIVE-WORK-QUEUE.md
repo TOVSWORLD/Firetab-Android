@@ -46,14 +46,20 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    define exactly which stock boot evidence is supported and which freshness or
    failure lifecycle is untested. A full log and experimental failure retention
    are not implied by the demonstrated USB archive export.
-3. **#346/#347 — make the loading/return gate concrete.** Reconcile authenticated
+3. **#346/#347 — make the loading/return gate concrete (source plan complete;
+   runtime gates open).** See LOADER-RETURN-REHEARSAL.md. R0 baseline passes;
+   R1/R2 are blocked on compatible bounded entry and independent failure return.
+   Historical acceptance: Reconcile authenticated
    exact stock package/reconstructed recovery, observed geometry, original loader
    write effects and available log route into one bounded rehearsal plan.
    Acceptance: explicit prerequisites, intended failure, reachable return path,
    persistent effects, stop conditions and high-brick-risk decision boundary.
    Source-complete planning may finish while physical gates remain open; do not
    execute helpers or close runtime gates on the strength of the plan.
-4. **#340 — assemble the diagnostic evidence handoff.** Use existing sanitized
+4. **#340 — assemble the diagnostic evidence handoff (source-review index
+   complete; beta package gate open).** See DIAGNOSTIC-EVIDENCE-INDEX.md.
+   Next executable item is5, with live issue acceptance review.
+   Historical acceptance: Use existing sanitized
    receipts, exact revisions, hashes and commands. Acceptance: one navigable
    package index differentiating verified stock entry/return/export, generic
    builds, candidate diagnostics and untested experimental recovery. Include

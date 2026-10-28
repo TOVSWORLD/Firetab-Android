@@ -2612,3 +2612,18 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   Build/Kernel headers do not establish retained-boot identity. No tested
   experimental boot/failure and no lexical panic absence promoted to success.
   Normalized receipt updated. Next executable item3 loader-return rehearsal.
+
+## 2026-10-28 — concrete loader/return rehearsal and diagnostic handoff (#346/#347/#348/#340)
+
+- Queue3 source plan complete: R0 stock baseline passes, R1/R2 explicitly gate
+  compatible bounded entry, region identity, independent failure return and
+  attributable capture. First persistent effects and each unqualified exit are
+  identified. No firmware/helper/electrical trial scheduled or approval requested.
+- Standing low-risk read reconfirms douglas/build659664620 and boot_completed=1;
+  direct cache/recovery/last_kmsg metadata denied and readability false. Captured
+  normalized permissions only; no source log/raw block read or mode/security change.
+- Queue4 source-review index complete with authenticated material, observed stock
+  behavior/partialUSB capture, generic results and release/runtime gate separation.
+  This does not close beta package/QA or high-risk recovery acceptance issues.
+- Next executable queue5: select dependency-ready board task after live acceptance
+  review; independently investigate one actual remaining R1 route prerequisite.
