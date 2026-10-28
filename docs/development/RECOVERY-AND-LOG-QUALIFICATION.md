@@ -885,3 +885,25 @@ image equivalence, OTA installation acceptance, log contents or retained early
 boot logs. No upload, wipe, installer or unlock helper was used. Next bounded
 owner step is a separately agreed view-recovery-logs observation; tasks #346,
 #347 and #348 remain open for their broader acceptance gates.
+
+## Real stock kernel text visible through recovery (2026-10-28)
+
+Owner photographs now confirm the log-file selector and readable early kernel
+text after the requested last_kmsg selection. The content photo does not show
+the selected filename or establish session freshness.
+[Sanitized observation](../../evidence/douglas-original-route/observed-recovery-kernel-log.json)
+records source-photo hashes and bounded visible text; raw household photos stay private.
+
+Visible output declares a 128KiB low-level log reservation at
+`0x44600000–0x44620000` and compatible `amazon,ll_log-reserved-memory`. This is
+a distinct region from the legacy console candidate at `0x44400000`; do not
+conflate their formats or ownership. UART command-line fragments include
+921600n1 and MMIO `0x11002000`, but establish neither physical pads/voltage nor
+working UART output. PSCI v0.1 and 360515 total pages are visible.
+
+An owner-approved interactive USB check found no ADB device and no Amazon or
+MediaTek vendor enumeration. No log bytes were pulled. The cause remains
+unresolved; this alone cannot diagnose disabled recovery USB versus cable or
+connectivity. Next: owner cable reseat, then bounded USB availability/file read
+within authorized scope. Full log acquisition, freshness and retrieval after
+the intended experimental failure remain open; #348 is not complete.
