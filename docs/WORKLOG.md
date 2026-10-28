@@ -2714,3 +2714,8 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   after independent documentation/schema merges. Next resolve history, verify
   all compile inputs unchanged, and run required checks on final merged head.
   No unnecessary repeat full compilation of unchanged inputs is claimed as new.
+
+- Generated patch context blank lines initially triggered whitespace diagnostics;
+  reformatted context without altering applied YAML, verified isolated git apply
+  output identity and reran full cached profile (47diagnostics/exit1 unchanged).
+  Whitespace checks now pass before the correction commit.
