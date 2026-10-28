@@ -907,3 +907,40 @@ unresolved; this alone cannot diagnose disabled recovery USB versus cable or
 connectivity. Next: owner cable reseat, then bounded USB availability/file read
 within authorized scope. Full log acquisition, freshness and retrieval after
 the intended experimental failure remain open; #348 is not complete.
+
+## Demonstrated Android-side USB recovery-kernel export (2026-10-28)
+
+After the owner returned normally from recovery, ADB again reported douglas and
+build `50.6.5.9_user_659664620`. A tag-only archive read succeeded:
+
+```sh
+adb shell dumpsys dropbox --file SYSTEM_RECOVERY_KMSG
+adb shell dumpsys dropbox --print SYSTEM_RECOVERY_KMSG
+```
+
+`--file` lists backing files; `--print` returns their text. These commands are
+for an owner-authorized connected lab session, not an automatic device action.
+Use an external timeout (20 seconds used here), capture at most 1MiB into private
+storage, and inspect/sanitize before sharing. Do not substitute a broad bugreport
+or dump other tags. Store raw output with owner-only permissions and record
+exact byte count/hash, truncation markers and whether the capture cap was hit.
+
+The actual text export contains two entries, 663874 bytes total, SHA256
+`25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256`.
+[Normalized acquisition receipt](../../evidence/douglas-original-route/observed-usb-recovery-log-export.json)
+contains entry hashes and qualification limits; raw text remains ignored/private.
+The second entry matches all five photographed markers: low-level log range
+endpoints, total pages, USB boot mode and PSCI v0.1. This is content consistency,
+not proof of exact boot-session identity or freshness.
+
+Both entries contain trailing `[[TRUNCATED]]` markers; the local capture did not
+hit its 1MiB cap. Complete logs are therefore not qualified. The vendor archive
+behavior must not be inferred solely from baseline AOSP size/tail limits.
+Successful normal-Android export and readable kernel text are demonstrated;
+retrieval after an experimental loading failure and independent retained capture
+remain open. Stock recovery USB itself was unavailable despite the confirmed
+cable reseat. Further cable reseats are not a prerequisite for this route.
+
+Next: investigate the existing archived truncation and boot attribution offline,
+then qualify retrieval across the intended loading/failure lifecycle. No firmware,
+helper, wipe, installation or security-property change was used for this result.
