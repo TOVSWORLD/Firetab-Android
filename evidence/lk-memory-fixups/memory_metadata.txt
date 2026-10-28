@@ -1,0 +1,67 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   25bbc: e92d 41f0    	push.w	{r4, r5, r6, r7, r8, lr}
+   25bc0: 2300         	movs	r3, #0x0
+   25bc2: 4956         	ldr	r1, [pc, #0x158]        @ 0x25d1c <.text+0x25d1c>
+   25bc4: b088         	sub	sp, #0x20
+   25bc6: 4605         	mov	r5, r0
+   25bc8: 4c55         	ldr	r4, [pc, #0x154]        @ 0x25d20 <.text+0x25d20>
+   25bca: 4f56         	ldr	r7, [pc, #0x158]        @ 0x25d24 <.text+0x25d24>
+   25bcc: 4479         	add	r1, pc
+   25bce: 9304         	str	r3, [sp, #0x10]
+   25bd0: 447c         	add	r4, pc
+   25bd2: 9305         	str	r3, [sp, #0x14]
+   25bd4: 9306         	str	r3, [sp, #0x18]
+   25bd6: 9307         	str	r3, [sp, #0x1c]
+   25bd8: f020 fc30    	bl	0x4643c <.text+0x4643c> @ imm = #0x20860
+   25bdc: 59e7         	ldr	r7, [r4, r7]
+   25bde: 2348         	movs	r3, #0x48
+   25be0: 9300         	str	r3, [sp]
+   25be2: 4606         	mov	r6, r0
+   25be4: 4a50         	ldr	r2, [pc, #0x140]        @ 0x25d28 <.text+0x25d28>
+   25be6: 4628         	mov	r0, r5
+   25be8: 683b         	ldr	r3, [r7]
+   25bea: 4631         	mov	r1, r6
+   25bec: 447a         	add	r2, pc
+   25bee: 3398         	adds	r3, #0x98
+   25bf0: f020 fe9e    	bl	0x46930 <.text+0x46930> @ imm = #0x20d3c
+   25bf4: b118         	cbz	r0, 0x25bfe <.text+0x25bfe> @ imm = #0x6
+   25bf6: 2001         	movs	r0, #0x1
+   25bf8: b008         	add	sp, #0x20
+   25bfa: e8bd 81f0    	pop.w	{r4, r5, r6, r7, r8, pc}
+   25bfe: 2268         	movs	r2, #0x68
+   25c00: 683b         	ldr	r3, [r7]
+   25c02: 9200         	str	r2, [sp]
+   25c04: 4628         	mov	r0, r5
+   25c06: 4a49         	ldr	r2, [pc, #0x124]        @ 0x25d2c <.text+0x25d2c>
+   25c08: 4631         	mov	r1, r6
+   25c0a: 3330         	adds	r3, #0x30
+   25c0c: 447a         	add	r2, pc
+   25c0e: f020 fe8f    	bl	0x46930 <.text+0x46930> @ imm = #0x20d1e
+   25c12: 2800         	cmp	r0, #0x0
+   25c14: d1ef         	bne	0x25bf6 <.text+0x25bf6> @ imm = #-0x22
+   25c16: 683b         	ldr	r3, [r7]
+   25c18: f04f 0810    	mov.w	r8, #0x10
+   25c1c: 4a44         	ldr	r2, [pc, #0x110]        @ 0x25d30 <.text+0x25d30>
+   25c1e: 4628         	mov	r0, r5
+   25c20: f8cd 8000    	str.w	r8, [sp]
+   25c24: 4631         	mov	r1, r6
+   25c26: 33e0         	adds	r3, #0xe0
+   25c28: 447a         	add	r2, pc
+   25c2a: f020 fe81    	bl	0x46930 <.text+0x46930> @ imm = #0x20d02
+   25c2e: 2800         	cmp	r0, #0x0
+   25c30: d1e1         	bne	0x25bf6 <.text+0x25bf6> @ imm = #-0x3e
+   25c32: 683b         	ldr	r3, [r7]
+   25c34: 4631         	mov	r1, r6
+   25c36: 4a3f         	ldr	r2, [pc, #0xfc]         @ 0x25d34 <.text+0x25d34>
+   25c38: 4628         	mov	r0, r5
+   25c3a: f8cd 8000    	str.w	r8, [sp]
+   25c3e: 33f0         	adds	r3, #0xf0
+   25c40: 447a         	add	r2, pc
+   25c42: f020 fe75    	bl	0x46930 <.text+0x46930> @ imm = #0x20cea
+   25c46: 2800         	cmp	r0, #0x0
+   25c48: d1d5         	bne	0x25bf6 <.text+0x25bf6> @ imm = #-0x56

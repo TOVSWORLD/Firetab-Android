@@ -1,0 +1,206 @@
+{
+  "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "facts": {
+    "calls": [
+      {
+        "offset": "0x3e08c",
+        "target": "0x25ac4"
+      },
+      {
+        "offset": "0x3e0ce",
+        "target": "0x25bbc"
+      },
+      {
+        "offset": "0x25bd8",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x25bf0",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x25c0e",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x25c2a",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x25c42",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x25c50",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x25c5c",
+        "target": "0x46c54"
+      },
+      {
+        "offset": "0x25c7c",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x25ce0",
+        "target": "0x46930"
+      }
+    ],
+    "references": [
+      {
+        "load_offset": "0x25ae6",
+        "add_pc_offset": "0x25af0",
+        "literal_pool_offset": "0x25bb4",
+        "target_offset": "0x5f12c",
+        "text": "mblock[%d].start: 0x%llx, size: 0x%llx\n"
+      },
+      {
+        "load_offset": "0x25b9c",
+        "add_pc_offset": "0x25b9e",
+        "literal_pool_offset": "0x25bb8",
+        "target_offset": "0x5f0f0",
+        "text": "mblock_info->mblock_num =%d is bigger than mem_property=%d\n"
+      },
+      {
+        "load_offset": "0x25bc2",
+        "add_pc_offset": "0x25bcc",
+        "literal_pool_offset": "0x25d1c",
+        "target_offset": "0x5f154",
+        "text": "/memory"
+      },
+      {
+        "load_offset": "0x25be4",
+        "add_pc_offset": "0x25bec",
+        "literal_pool_offset": "0x25d28",
+        "target_offset": "0x5f15c",
+        "text": "orig_dram_info"
+      },
+      {
+        "load_offset": "0x25c06",
+        "add_pc_offset": "0x25c0c",
+        "literal_pool_offset": "0x25d2c",
+        "target_offset": "0x5f16c",
+        "text": "mblock_info"
+      },
+      {
+        "load_offset": "0x25c1c",
+        "add_pc_offset": "0x25c28",
+        "literal_pool_offset": "0x25d30",
+        "target_offset": "0x5f178",
+        "text": "lca_reserved_mem"
+      },
+      {
+        "load_offset": "0x25c36",
+        "add_pc_offset": "0x25c40",
+        "literal_pool_offset": "0x25d34",
+        "target_offset": "0x5f18c",
+        "text": "tee_reserved_mem"
+      },
+      {
+        "load_offset": "0x25c4a",
+        "add_pc_offset": "0x25c4e",
+        "literal_pool_offset": "0x25d38",
+        "target_offset": "0x5f1a0",
+        "text": "/reserved-memory"
+      },
+      {
+        "load_offset": "0x25c54",
+        "add_pc_offset": "0x25c5a",
+        "literal_pool_offset": "0x25d3c",
+        "target_offset": "0x5f1b4",
+        "text": "fb-reserved-memory"
+      },
+      {
+        "load_offset": "0x25c64",
+        "add_pc_offset": "0x25c66",
+        "literal_pool_offset": "0x25d40",
+        "target_offset": "0x5f204",
+        "text": "mediatek,fb-reserved-memory"
+      },
+      {
+        "load_offset": "0x25c6e",
+        "add_pc_offset": "0x25c7a",
+        "literal_pool_offset": "0x25d44",
+        "target_offset": "0x4f350",
+        "text": "compatible"
+      },
+      {
+        "load_offset": "0x25c9a",
+        "add_pc_offset": "0x25c9e",
+        "literal_pool_offset": "0x25d50",
+        "target_offset": "0x5f068",
+        "text": "reg"
+      }
+    ],
+    "runtime_structure_pointer_global": "0x4bd874c0",
+    "runtime_pointer_value_file_backed": false,
+    "tuple_layout": {
+      "count_offset": 48,
+      "records_offset": 56,
+      "stride": 24,
+      "start_offset": 0,
+      "size_offset": 8,
+      "output_bytes_per_record": 16,
+      "selected_caller_max_records": 4,
+      "output_endianness": "big"
+    },
+    "metadata_copies": [
+      {
+        "property": "orig_dram_info",
+        "offset": 152,
+        "bytes": 72
+      },
+      {
+        "property": "mblock_info",
+        "offset": 48,
+        "bytes": 104
+      },
+      {
+        "property": "lca_reserved_mem",
+        "offset": 224,
+        "bytes": 16
+      },
+      {
+        "property": "tee_reserved_mem",
+        "offset": 240,
+        "bytes": 16
+      }
+    ],
+    "framebuffer": "Adds fb-reserved-memory child, compatible string and16-byte reg from runtime globals; actual geometry unqualified",
+    "unresolved": [
+      "Runtime structure writer and actual count/records",
+      "Alternate inline memory-tuple branch at0x3e17c",
+      "Complete reserved-memory/PSCI callback inventory and selected r5 lineage",
+      "Installed LK3 equivalence, physical placement and failure return/log retention"
+    ]
+  },
+  "excerpts": [
+    {
+      "name": "tuple_producer",
+      "start": "0x25ac4",
+      "end": "0x25bac",
+      "sha256": "65b546340767bd19c8fbc13e9d8b41a2e12b9fa92b809774e2c687560593d45a"
+    },
+    {
+      "name": "memory_metadata",
+      "start": "0x25bbc",
+      "end": "0x25c4a",
+      "sha256": "a6c7adddaa3df87293d85e2bf1aff8d2a6cfd644de11f4a2e143491ecf14b555"
+    },
+    {
+      "name": "framebuffer",
+      "start": "0x25c4a",
+      "end": "0x25d1c",
+      "sha256": "cdd318b93f0a2a1fc4b2c91da32eb77e47bab5c6d242a733b2f6094264e96bb6"
+    },
+    {
+      "name": "caller",
+      "start": "0x3e07a",
+      "end": "0x3e0da",
+      "sha256": "a7b5ddcc7bde38592fac077f23a89a769ffa998b2ee6e190a2c50822f8609207"
+    }
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0"
+}

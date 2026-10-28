@@ -2914,3 +2914,18 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable source acceptance: memory-tuple producer and reservation/PSCI
   callbacks, then complete selected FDT lineage/trust checks. Runtime loading,
   independent return and failure-log gates remain Blocked.
+
+## 2026-10-28 — selected runtime memory layout and reservation metadata (#347)
+
+- Pinned exact-OTA helper0x25ac4: runtime pointer-global0x4bd874c0, count+0x30,
+  records+0x38/stride24; selected caller capacity4. Start/size become16-byte
+  big-endian DT tuples. Runtime pointer writer and alternate branch unqualified.
+- Callback0x25bbc copies original-DRAM/mblock/LCA/TEE metadata and adds framebuffer
+  reservation from globals. Actual geometry/ownership and remaining PSCI/fixups
+  unqualified. Evidence/lk-memory-fixups includes bounded excerpts/window hashes.
+- Owned host tuple decoder and five drift/64-bit/boundary/truncation controls
+  pass; no firmware execution or actual runtime decoding claim. Reproduce using
+  LK-MEMORY-FIXUPS.md with cached exact LK hash; raw artifact remains ignored.
+- Next executable source acceptance: pointer-global writer/lifetime, alternate
+  tuple branch, remaining reservation/PSCI callbacks and selected FDT lineage.
+  Experimental loading/return/log gates remain blocked; no owner action needed.
