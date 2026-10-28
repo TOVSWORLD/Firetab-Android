@@ -126,3 +126,11 @@ Large/paid resource gates and private-data exclusions remain. Main changes only
 through development-to-main releases; merge feature PRs only after required
 exact-head checks. Every PR updates/closes an actual issue; physical gates close
 only on their acceptance evidence.
+
+### Latest #347 bounded source result
+
+Cached exact-OTA LK selects a root version string; missing version resumes scan.
+Current candidate b837e6cb has no version. See kernel/LK-DTB-SELECTION.md and
+evidence/lk-dtb-selection/report.json. Do not inject a guessed stock version.
+Next executable source task: selector runtime provenance, incoming FDT destination
+address and late fixups/final handoff, with installed LK3 equivalence kept open.

@@ -1,0 +1,97 @@
+{
+  "scope": "Exact OTA LK static selection only; installed LK3 equivalence and execution untested",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "candidate_dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "candidate_root_version": "FDT_ERR_NOTFOUND",
+  "strings": [
+    {
+      "load": "0x3de76",
+      "add": "0x3de88",
+      "pool": "0x3e9a0",
+      "target": "0x4b480",
+      "text": "version"
+    },
+    {
+      "load": "0x3de7e",
+      "add": "0x3de8e",
+      "pool": "0x3e9a4",
+      "target": "0x659dc",
+      "text": "not fdt prop\n"
+    },
+    {
+      "load": "0x3df76",
+      "add": "0x3df7c",
+      "pool": "0x3e9b4",
+      "target": "0x659ec",
+      "text": "ERROR: No valid DT found for version %s\n"
+    }
+  ],
+  "calls": {
+    "0x3de38": "0x20984",
+    "0x3dee6": "0x3de04",
+    "0x3df08": "0x46cc8",
+    "0x3df14": "0x45f34",
+    "0x3df26": "0x464ac",
+    "0x3df62": "0x45cc0"
+  },
+  "selector_key": {
+    "load_offset": "0x209b2",
+    "add_pc_offset": "0x209bc",
+    "literal_pool_offset": "0x20a40",
+    "target_offset": "0x4b340",
+    "text": "board_id"
+  },
+  "selector_table_offset": "0x70540",
+  "selector_versions": [
+    "pre_evt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "hvt",
+    "invalid"
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0",
+  "excerpts": [
+    {
+      "name": "entry",
+      "start": "0x3de1c",
+      "end": "0x3de44",
+      "sha256": "a3780f211ee84c009613fe252e99ed627f424655aa2d854c5c5890d427e8d3b7"
+    },
+    {
+      "name": "selection",
+      "start": "0x3de76",
+      "end": "0x3dfa8",
+      "sha256": "91c7bb682e948c2f28ca4d486831cc9d92b004bdcea29a5c7a3814cda2866105"
+    },
+    {
+      "name": "match",
+      "start": "0x3e162",
+      "end": "0x3e17c",
+      "sha256": "a7d86b6d27f1d5f065cead9f3101bccfbc330a41299d74d67c6653dadbb705df"
+    },
+    {
+      "name": "compare",
+      "start": "0x45cc0",
+      "end": "0x45cde",
+      "sha256": "20e68d7513054ab16c5888c34790a557e1307a35a43f2a724adb9b07ea06a146"
+    },
+    {
+      "name": "selector",
+      "start": "0x20984",
+      "end": "0x20a32",
+      "sha256": "1843e700bc5fae6258f8a40da0237c4b8878068c07b4e72ad007d12d9f6b3de7"
+    },
+    {
+      "name": "copy",
+      "start": "0x3de04",
+      "end": "0x3de1c",
+      "sha256": "a06f92db2189514113a8ce2fe1dcc31ec8482f11cb183d0bf38b9790221f3621"
+    }
+  ],
+  "selector_runtime_value": "unqualified; producer uses runtime state",
+  "result": "Missing version follows rescan branch in this cached route; matching installed route remains unqualified",
+  "next": "Trace selector runtime provenance, incoming DT destination, late fixups and final handoff; do not invent a version or execute loader"
+}
