@@ -2542,3 +2542,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - No firmware/helper execution, OTA upload, wipe or installation. Ordinary
   return passes; experimental failure recovery, OTA acceptance and usable
   retained boot-log capture remain untested. Next: owner log-view observation.
+
+## 2026-10-28 — actual stock kernel log text observed (#348)
+
+- Owner photos show recovery log selector and readable early kernel output.
+  Published normalized text/photo hashes only, no raw household imagery.
+- Actual visible low-level log reservation is128KiB at0x44600000, distinct from
+  the legacy console candidate0x44400000. No freshness/backend format inferred.
+- Interactive owner-approved adb get-state returned no device; narrow USB
+  vendor enumeration found none. No bytes pulled. Owner cable reseat pending.
+- No tablet actions in this automatic run. Full log/failure capture and physical
+  UART qualification remain open. Source revision95df19f36e1b8f9134900a0525ae63896919f5ed.
