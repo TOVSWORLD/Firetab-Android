@@ -1,0 +1,32 @@
+{
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "ack_revision": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_revision": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "legacy_git_snapshots": [
+    {
+      "source": "drivers/soc/mediatek/mtk-scpsys-mt8163.c",
+      "snapshot": "legacy-scpsys.c",
+      "sha256": "f40ec3b744305b40c688af3aaaff5e888aa9ae5155bde87dbc7f062f12ed232e"
+    },
+    {
+      "source": "include/linux/soc/mediatek/infracfg.h",
+      "snapshot": "legacy-infracfg.h",
+      "sha256": "7aafb3919e5942f8c8aff99e04860af0a654ad7f917bd7618307fa348cb06c2f"
+    },
+    {
+      "source": "include/dt-bindings/power/mt8163-power.h",
+      "snapshot": "legacy-power.h",
+      "sha256": "0ca3422df794b055f36323e8ec34dee62afbb3bef30be61e32bd8730c2139183"
+    }
+  ],
+  "runtime_tested": false,
+  "other_inputs_sha256": {
+    "projects/firetabs-android/kernel/power-port/provider.patch": "b049213320b01b3d4a8e3dea4ac45d8996eaf89900e947ce7a3b8d6b80a249eb",
+    "projects/firetabs-android/kernel/power-port/overlay/drivers/pmdomain/mediatek/mt8163-pm-domains.h": "221b2dcd067fd9ff8ec2e1a52e405a2a611a2885b09910ec53301f0ded96a0b6",
+    "evidence/power-port/ack/drivers/pmdomain/mediatek/mtk-pm-domains.c": "fc86b8c8e12931b337ab98fff4678cc93300f807a6d9d2ae813c12135f9e1ecd",
+    "evidence/power-port/ack/drivers/pmdomain/mediatek/mtk-pm-domains.h": "6784f50366a74c5607d0f66ff397a6b72a148ea396ba0a6d6be92db9f0764e9e",
+    "evidence/power-port/ack/drivers/soc/mediatek/mtk-pmic-wrap.c": "80173dd03ba85c5f900d27d35a2b6d0bd60bb5cf4bd801295e9953a0e4eaec12",
+    "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+    "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt6323.dtsi": "2794447b31a2856764bb63b41d94ace827adb45ab77556205501363a4eee975b"
+  }
+}

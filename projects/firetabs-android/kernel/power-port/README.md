@@ -32,3 +32,32 @@ clocks/pinctrl; wrapper/reset/PMIC supplies and clock ordering; bus-protection
 mask/power sequence review against legacy; all hardware read/write and voltage
 qualification. The common API compiling does not establish safe runtime power
 sequencing. Keep #20 open until its remaining acceptance work is accounted for.
+
+
+## Reviewed domain/probe contract (#20)
+
+Run `python3 scripts/audit_power_domain_contract.py --check`. Eight domain IDs
+(including legacy DISP → modern MM, both0),32 register/SRAM fields, three
+nonzero bus-protection masks and two status offsets match the actual pinned
+legacy Git objects. The MFG subdomain remains under MFG_ASYNC. Original legacy
+snapshots, source hashes, report and probe requirements are in
+`evidence/power-port/domain-contract/`. Protection polling remains enabled.
+
+Two policy differences remain: all eight legacy domains return active-wakeup
+true, but the candidate sets no ACTIVE_WAKEUP capability; legacy attaches the
+mfg clock to MFG while the modern DT attaches it to MFG_ASYNC. These source
+models are not proof of equivalent suspend or clock/power ordering. No policy
+is changed merely to make the comparison pass.
+
+ACK normally powers available domains on during registration. None of these
+MT8163 entries sets KEEP_DEFAULT_OFF or DOMAIN_SUPPLY. This does not mean other
+consumer supplies are absent. Pwrap needs its named mapping/reset, enabled clocks
+and first child PMIC match; captured MT6323 provides that child. Probe enables
+DCM and can reset/reinitialize transport if INIT_DONE2 is clear. A kernel boot
+using this captured DT is therefore not a read-only diagnostic operation.
+Generic provider/Image compilation passed in run40763077737; runtime sequencing,
+voltage, wakeup and failed-boot recovery remain unqualified.
+
+Legacy ignores the initial domain power_on return, while ACK propagates a failed
+power_on and runs cleanup. Equal masks do not qualify hardware state after a
+partial failed probe; include this failure case in recovery/log qualification.
