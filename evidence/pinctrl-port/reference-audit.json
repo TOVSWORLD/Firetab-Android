@@ -122,6 +122,51 @@
       "identical_sequence": true
     }
   ],
+  "bank_contract": {
+    "identical_legacy_ack_eint_offsets": {
+      "stat": 0,
+      "ack": 64,
+      "mask": 128,
+      "mask_set": 192,
+      "mask_clr": 256,
+      "sens": 320,
+      "sens_set": 384,
+      "sens_clr": 448,
+      "soft": 512,
+      "soft_set": 576,
+      "soft_clr": 640,
+      "pol": 768,
+      "pol_set": 832,
+      "pol_clr": 896,
+      "dom_en": 1024,
+      "dbnc_ctrl": 1280,
+      "dbnc_set": 1536,
+      "dbnc_clr": 1792
+    },
+    "identical_legacy_donor_geometry": {
+      "dir_offset": 0,
+      "pullen_offset": 256,
+      "pullsel_offset": 512,
+      "dout_offset": 1024,
+      "din_offset": 1280,
+      "pinmux_offset": 1536,
+      "type1_start": 155,
+      "type1_end": 155,
+      "port_shf": 4,
+      "port_align": 4,
+      "ports": 6,
+      "ap_num": 169,
+      "db_cnt": 64
+    },
+    "gpio_and_eint_port_masks": [
+      15,
+      7
+    ],
+    "maximum_eint_register_offset": 1792,
+    "captured_eint_window_bytes": 4096,
+    "interrupt_limit": "Captured DT lists SPI153/154/155; ACK and legacy common pinctrl both read parent index0 only. This is inherited, not a newly introduced regression; remaining parent-line ownership and actual delivery are unqualified.",
+    "scope": "Literal register/capacity comparison and source allocation path; not electrical or interrupt-delivery proof"
+  },
   "legacy_goodix_gpio_descriptors": {
     "35": {
       "name": "KPROW2",

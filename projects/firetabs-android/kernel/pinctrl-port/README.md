@@ -47,3 +47,20 @@ input-enable entry for GPIO87/MSDC2_DAT0: offset 0xcf0 bit 4. This value is reta
 as a donor candidate, not called a verified fix; its correctness requires further
 source/hardware evidence. The report records this delta rather than asserting
 that every register setting matches legacy.
+
+
+## GPIO/EINT bank contract (#19)
+
+The extended source audit compares18 EINT register offsets in ACK's generic map
+with legacy MT8163, plus13 shared GPIO/EINT offsets, capacities and geometry
+fields and both port masks. All match. ACK common pinctrl leaves the register
+map unspecified and EINT selects these generic defaults. The highest declared
+base offset is0x700 inside the captured0x1000 EINT window; this does not prove
+all runtime accesses or interrupt delivery. Provenance is recorded in
+`evidence/pinctrl-port/bank-audit-provenance.json`.
+
+The captured DT supplies parent SPI153/154/155. Both legacy and ACK common
+pinctrl select parent index0 only. This is inherited behavior, not an established
+new regression. Parent-line ownership and actual interrupt delivery remain
+unqualified. GPIO87's extra input-enable candidate also remains unverified.
+No descriptor, register, DT or device behavior changed in this audit.
