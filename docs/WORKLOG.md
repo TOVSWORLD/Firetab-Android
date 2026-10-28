@@ -2640,3 +2640,8 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next trace matched CCF/non-DT consumers and HDMI PHY ownership/rates, then bound
   unavailable paths or implement valid relationships with compile evidence.
   Runtime support remains untested; project/issue stays Active with current result.
+
+- During PR CI, traced actual legacy HDMI C probe and DT consumer: all named
+  clocks requested with devm_clk_get and BUG_ON lookup failure. Legacy DT includes
+  HDMI gates absent from captured candidate. Preserve PIXEL/PLLCK phandle/name
+  ordering discrepancy; no validated driver mapping or hardware rate inferred.

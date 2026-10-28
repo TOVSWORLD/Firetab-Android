@@ -22,6 +22,14 @@
     {
       "path": "sources/kernel-mt8163/drivers/clk/mediatek/clk-mt8163.c",
       "sha256": "3aef9e7da88f4ba736b299b54d99473ce8015a64e9893933d7062aec5975b3b1"
+    },
+    {
+      "path": "sources/kernel-mt8163/drivers/misc/mediatek/hdmi/hdmitx/mt8163/hdmi_drv.c",
+      "sha256": "2334d17ee2550e9240e0217dad4bfaadce552a59476405f60a9a469f836407d6"
+    },
+    {
+      "path": "sources/kernel-mt8163/arch/arm64/boot/dts/mt8163.dtsi",
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1"
     }
   ],
   "unresolved_parents": {
@@ -76,11 +84,38 @@
   },
   "decision": "Keep unresolved dependent HDMI branches unqualified; do not copy clk_null or substitute aud_apll2_div0 for the legacy aliases. Captured direct DT refs do not establish whole-board irrelevance. No provider behavior changed.",
   "remaining_acceptance": [
-    "Trace non-DT driver/CCF consumers and external HDMI PHY ownership/rates.",
+    "Trace matched maintained-driver HDMI PHY registration/rates and candidate enablement; legacy C consumers are now source-traced, not integrated-equivalent.",
     "Determine integrated candidate consumer enablement before implementing/removing parent paths.",
     "Compile any eventual provider change and retain required physical runtime tests."
   ],
   "runtime_support_verified": false,
   "clock_rates_verified": false,
-  "device_accessed": false
+  "device_accessed": false,
+  "legacy_c_consumer": {
+    "file": "drivers/misc/mediatek/hdmi/hdmitx/mt8163/hdmi_drv.c",
+    "name_mapping_lines": [
+      187,
+      210
+    ],
+    "probe_lines": [
+      1253,
+      1273
+    ],
+    "behavior": "devm_clk_get for every HDMI_REF_CLOCK_ENUM entry; BUG_ON(IS_ERR) on lookup failure",
+    "dt_compatible": "mediatek,mt8163-hdmitx",
+    "dt_lines": [
+      1263,
+      1283
+    ],
+    "dt_clock_symbols": [
+      "CLK_INFRA_CEC",
+      "CLK_INFRA_CEC_26M",
+      "CLK_MM_HDMI_PIXEL",
+      "CLK_MM_HDMI_PLLCK",
+      "CLK_MM_HDMI_ADSP",
+      "CLK_MM_HDMI_SPDIF"
+    ],
+    "dt_clock_name_order_note": "PIXEL then PLLCK phandles pair positionally with mmsys_hdmi_pll then mmsys_hdmi_pixel; source naming/order discrepancy must not be normalized into a validated mapping.",
+    "integrated_candidate_equivalence_verified": false
+  }
 }

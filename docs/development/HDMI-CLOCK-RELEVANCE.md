@@ -40,10 +40,24 @@ outputs remain outside that textual audit. It does not prove HDMI-related paths
 are irrelevant to douglas or that DSI works. The donor's fixed DSI source/rate
 also remains a separate hardware qualification, not established by this review.
 
+## Legacy C consumer cross-check
+
+The pinned legacy HDMI driver's clock probe requests every enumerated HDMI clock
+with devm_clk_get and BUG_ON on lookup failure (lines1253–1273). Its name mapping
+includes MMSYS HDMI PLL/pixel/audio/SPDIF. Legacy mt8163.dtsi has an hdmitx node
+with actual HDMI clock phandles (lines1263–1283), unlike the captured maintained
+candidate DT. Thus a real legacy C/DT consumer exists; absence from the captured
+candidate audit cannot establish whole-board irrelevance.
+
+Preserve a further source discrepancy: legacy phandles list PIXEL then PLLCK,
+while corresponding clock-names list mmsys_hdmi_pll then mmsys_hdmi_pixel. Names
+and phandle positions must be reviewed rather than copied as an accepted mapping.
+No legacy/candidate driver equivalence or correct physical rates are inferred.
+
 ## Decision and next executable investigation
 
 Keep dependent HDMI branches explicitly unqualified; introduce no dummy source,
-rate placeholder or divider substitution. Next inspect matched CCF/non-DT consumers
+rate placeholder or divider substitution. Next inspect matched maintained-driver consumers
 and external HDMI PHY registration/rates, then determine which paths the integrated
 candidate actually enables. Implement a valid parent relationship or justify a
 bounded unavailable dependent path using that evidence, compile the actual change
