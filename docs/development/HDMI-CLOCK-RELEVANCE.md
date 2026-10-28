@@ -88,3 +88,35 @@ Next source change to evaluate: replacing the two legacy1:1 alias references wit
 real aud_2_sel parent relationships while preserving their exact rate/gating
 semantics, independently of the missing CTS PHY. Do not substitute the real
 APLL2 divider or reopen HDMI consumer paths merely to remove orphan names.
+
+## Resolve the two audio alias references without a dummy clock
+
+The overlay now directly parents mm_hdmi_spdif and mm_hdmi_audio to aud_2_sel.
+This contracts each missing legacy ungated1:1 alias edge without changing gate
+IDs, register bank, bits11/12, gate ops or upstream aud_2_sel mux/PLL ownership.
+It does not substitute aud_apll2_div0, introduce a fixed rate, or enable an HDMI
+consumer. The legacy registration code passes CLK_SET_RATE_PARENT to its1:1
+factors; their rate is exactly the upstream rate. This source contract supports
+using the real parent instead of recreating orphan alias names.
+
+The textual orphan set is now only hdmitx_dig_cts. The seven-consumer guard stays
+in force, including HDMI audio/SPDIF: resolving two parent names is not complete
+HDMI support. Actual compile evidence and subsequent runtime tests are separate;
+no device was modified. Runtime validation must check aud_2_sel rate/gate behavior
+with real audio consumers and any future qualified HDMI path before release.
+
+### Actual generic compile result and input-preserving history resolution
+
+[Run40755681118](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40755681118)
+compiled revision18f2d5b62e8d726b31415dbd06bb46032ea9abf7 and passed the generic
+QEMU diagnostic smoke test. [Pinned result/input comparison](../../evidence/kernel-compile/hdmi-parent-image-result.json)
+records Image/config/vmlinux/gzip hashes and48 identical relevant build inputs.
+Subsequent independent binding/documentation merges conflicted only in WORKLOG;
+both histories were preserved, no compiled input changed. The successful compile
+is still attributed to18f2d5b, not misrepresented as a fresh final-head compile.
+Required repository/issue/evidence checks run on the resolved head before merge.
+
+This closes the source-resolution/compile portion for the two audio aliases while
+CTS-dependent consumers remain explicitly unavailable. It does not instantiate
+the missing MT8163 MMSYS parent, qualify rates on hardware, or prove board boot;
+those integration/runtime gates remain in #18 and the relevant phases.
