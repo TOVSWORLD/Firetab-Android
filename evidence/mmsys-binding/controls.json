@@ -1,0 +1,61 @@
+{
+  "cases": [
+    {
+      "name": "captured-exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "standalone",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-reset-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "invented-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unknown-property",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-mt8173",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-reset-optional",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "passed": true
+}

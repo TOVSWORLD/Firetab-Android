@@ -1,0 +1,16 @@
+{
+  "scope": "Processed MMSYS tuple controls, not reset-ID or runtime validation",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/mmsys-binding/original.yaml": "52c3cd54f7b294def2341335f0cbcb7cb7a9d40d3f64c8f16d4462a08fb5d0d9",
+    "evidence/mmsys-binding/proposed.yaml": "9e912cdd4c9755adc95bdf6034f8a6523b3414dd9585f39449e2358d5a24b302",
+    "evidence/mmsys-binding/processed-schema.json": "120ff45ce90debb5a00454b2ea2eac0932f73066eb178c85e8a222b2d601d036",
+    "evidence/mmsys-binding/check-controls.py": "56052fcf24b5d19d413dc0a3b5b8c40332e53b9742b5bbcc49e710b9695838cd"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/mmsys-binding/check-controls.py"
+  ],
+  "full_validation_passed": false
+}
