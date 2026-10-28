@@ -46,6 +46,9 @@ if [ "$mode" != generic ]; then
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 defconfig
 if [ "$mode" != generic ]; then
+  # ACK forbids a built-in MMSYS with modular CMDQ. Keep this generic parent
+  # compile isolated from command-queue operation rather than enabling that I/O.
+  "$root/source/scripts/config" --file "$output/.config" --disable MTK_CMDQ
   for symbol in MTK_MMSYS COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     "$root/source/scripts/config" --file "$output/.config" --enable "$symbol"
   done
@@ -76,6 +79,7 @@ if [ "$mode" != generic ]; then
   for symbol in MTK_MMSYS COMMON_CLK_MT8163 COMMON_CLK_MT8163_AUDSYS COMMON_CLK_MT8163_IMGSYS COMMON_CLK_MT8163_MFGCFG COMMON_CLK_MT8163_MMSYS COMMON_CLK_MT8163_VDECSYS COMMON_CLK_MT8163_VENCSYS; do
     grep -qx "CONFIG_${symbol}=y" "$output/.config"
   done
+  grep -qx "# CONFIG_MTK_CMDQ is not set" "$output/.config"
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/clk/mediatek/
   make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/soc/mediatek/mtk-mmsys.o
   echo MT8163_MMSYS_PARENT_OBJECT_COMPILE_COMPLETE

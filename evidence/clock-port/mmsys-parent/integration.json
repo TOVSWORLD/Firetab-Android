@@ -59,5 +59,11 @@
     "SW0": 320,
     "SW1": 324,
     "LCM": 336
+  },
+  "configuration_dependency": {
+    "source": "ack-Kconfig",
+    "sha256": "9ad99fb7f3b2c36bc6d6291e85f41d76b2239ea36b13520cb9362ea1a7981214",
+    "expression": "MTK_CMDQ || MTK_CMDQ=n",
+    "resolution": "Disable CMDQ for this isolated generic parent compile; MTK_MMSYS must resolve y. No device/display qualification."
   }
 }

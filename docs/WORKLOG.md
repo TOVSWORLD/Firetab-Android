@@ -2758,3 +2758,8 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Explicit MMSYS parent-object build now required. Isolated patch apply/hash
   check and reapply rejection pass. Generic Image/parent compile next via PR CI;
   board probe/reset/routing and failure recovery remain untested.
+
+- Initial run40762643646 failed before C compilation: ACK modular CMDQ bounds
+  MMSYS to module state. Pinned Kconfig confirms dependency; generic parent
+  experiment disables CMDQ and requires MMSYS=y, preserving diagnostic isolation.
+  Corrected-head run required; initial failure is not an Image result.
