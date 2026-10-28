@@ -1,0 +1,16 @@
+{
+  "scope": "Actual processed full-node tuple/reset controls, not hardware testing",
+  "dtschema_version": "2026.9",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "inputs": {
+    "evidence/infracfg-binding/original.yaml": "0610f891e326d1e0a7ce9ffe3ef0513ab229bf37eee8177de0999cac17157c6f",
+    "evidence/infracfg-binding/proposed.yaml": "b0b570c6e44f966b665ea792d235073b1b3d6900e34f9fdba1ce2c990de22fbb",
+    "evidence/infracfg-binding/processed-schema.json": "07038e7733bf40a77fcf99146c42753fe53e8a0198707daa7f7b29c875731278",
+    "evidence/infracfg-binding/check-controls.py": "45634a53feeec4efc4a397ddafd8eb27d6eb0a87c8470337b8c019371cfa014f"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/infracfg-binding/check-controls.py"
+  ],
+  "full_validation_passed": false
+}

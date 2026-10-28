@@ -1,0 +1,23 @@
+{
+  "before": 53,
+  "after": 52,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@10001000",
+      "nodename": "clock-controller@10001000",
+      "compatible": [
+        "mediatek,mt8163-infracfg",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-infracfg', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/clock-controller@10001000: failed to match any schema with compatible: ['mediatek,mt8163-infracfg', 'syscon']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

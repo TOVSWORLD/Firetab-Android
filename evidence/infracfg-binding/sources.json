@@ -1,0 +1,32 @@
+{
+  "scope": "Exact source compatible/reset declaration contract; not physical rates/reset testing",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/clock/mediatek,infracfg.yaml",
+  "driver": {
+    "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-infracfg.c",
+    "sha256": "c8d24c737034b3f2464ec3ebfb14ba27ab35d6901af1d9fd8509bb7b16c146d2",
+    "reset_descriptor_lines": [
+      174,
+      207
+    ],
+    "reset_registration_lines": [
+      224,
+      226
+    ],
+    "compatible_match_lines": [
+      281,
+      284
+    ]
+  },
+  "dt": {
+    "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+    "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+    "node": "/soc/clock-controller@10001000",
+    "compatible": [
+      "mediatek,mt8163-infracfg",
+      "syscon"
+    ],
+    "clock_cells": 1,
+    "reset_cells": 1
+  }
+}
