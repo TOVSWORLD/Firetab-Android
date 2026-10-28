@@ -1,0 +1,10 @@
+--- a/clock/mediatek,apmixedsys.yaml
++++ b/clock/mediatek,apmixedsys.yaml
+@@ -25,6 +25,7 @@
+           - mediatek,mt7986-apmixedsys
+           - mediatek,mt7988-apmixedsys
+           - mediatek,mt8135-apmixedsys
++          - mediatek,mt8163-apmixedsys
+           - mediatek,mt8173-apmixedsys
+           - mediatek,mt8516-apmixedsys
+       - items:
