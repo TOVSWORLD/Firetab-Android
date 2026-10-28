@@ -1,0 +1,22 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "legacy_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "new_source_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pinctrl/mediatek/mtk-eint.c?format=TEXT",
+  "inputs": {
+    "evidence/pinctrl-port/ack/drivers/pinctrl/mediatek/mtk-eint.c": "c4c2fbdd4a34aa09c0db698328d7bcd80eaedfd98765392f37cdcf5a2ce92e39",
+    "evidence/pinctrl-port/ack/drivers/pinctrl/mediatek/pinctrl-mtk-common.c": "6ea39d5265cb1bd6264ad3a0e3ca6ba56128bd707e057287aa8e25cfafa3c0eb",
+    "evidence/kernel-audit/legacy/drivers/pinctrl/mediatek/pinctrl-mt8163.c": "e6df57572ad87441237e32868a26ad65420d7b2857792d99dfd132177b9bcfd9",
+    "projects/firetabs-android/kernel/pinctrl-port/overlay/drivers/pinctrl/mediatek/pinctrl-mt8163.c": "aa3c679d8eade2dfa2363fb9e1a7e8c778fa364e69ac56b41a3444f25941bcee",
+    "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629"
+  },
+  "qualification": "Source comparison only; no EINT delivery or electrical test",
+  "legacy_parent_irq": {
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "path": "drivers/pinctrl/mediatek/pinctrl-mtk-common.c",
+    "sha256": "590a69dd0ce5bd5fe8dc9402a977a7730dc135b5ec2db387e620b3b60dc4d43d",
+    "line": 1848,
+    "expression": "irq = irq_of_parse_and_map(np, 0);",
+    "conclusion": "Single parent-index selection is inherited; no new routing regression established."
+  }
+}

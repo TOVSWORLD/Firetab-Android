@@ -2753,3 +2753,15 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next complete exact-head parent build/reset review under #18; full schema and
   actual device/recovery acceptance remain open. All evidence hashes and full
   profile command retained in evidence/mmsys-binding.
+
+## 2026-10-28 — GPIO/EINT bank source acceptance (#19)
+
+- While #389 builds, reviewed pinned ACK EINT17013bytes/SHA256
+  c4c2fbdd4a34aa09c0db698328d7bcd80eaedfd98765392f37cdcf5a2ce92e39.
+ 18 register offsets,13 shared geometry fields and both masks match legacy/donor.
+- Source-drift rejection controls cover changed EINT ACK address and AP capacity.
+  Existing155 descriptors/15 mux references still checked; no runtime claim.
+- Captured DT lists three parent SPIs; both ACK and actual legacy Git blob select
+  index0. Inherited behavior, no new regression established. Parent-line ownership,
+  delivery and GPIO87 input-enable delta remain unqualified. Next #18 actual
+  compile result and #27 full binding work; no physical request is outstanding.
