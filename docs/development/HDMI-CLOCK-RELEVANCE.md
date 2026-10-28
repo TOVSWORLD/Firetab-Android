@@ -104,3 +104,19 @@ in force, including HDMI audio/SPDIF: resolving two parent names is not complete
 HDMI support. Actual compile evidence and subsequent runtime tests are separate;
 no device was modified. Runtime validation must check aud_2_sel rate/gate behavior
 with real audio consumers and any future qualified HDMI path before release.
+
+### Actual generic compile result and input-preserving history resolution
+
+[Run40755681118](https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40755681118)
+compiled revision18f2d5b62e8d726b31415dbd06bb46032ea9abf7 and passed the generic
+QEMU diagnostic smoke test. [Pinned result/input comparison](../../evidence/kernel-compile/hdmi-parent-image-result.json)
+records Image/config/vmlinux/gzip hashes and48 identical relevant build inputs.
+Subsequent independent binding/documentation merges conflicted only in WORKLOG;
+both histories were preserved, no compiled input changed. The successful compile
+is still attributed to18f2d5b, not misrepresented as a fresh final-head compile.
+Required repository/issue/evidence checks run on the resolved head before merge.
+
+This closes the source-resolution/compile portion for the two audio aliases while
+CTS-dependent consumers remain explicitly unavailable. It does not instantiate
+the missing MT8163 MMSYS parent, qualify rates on hardware, or prove board boot;
+those integration/runtime gates remain in #18 and the relevant phases.

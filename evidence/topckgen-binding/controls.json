@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "compatible": [
+        "mediatek,mt8163-topckgen"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-topckgen",
+        "syscon"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-topckgen",
+        "mediatek,mt8173-topckgen"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8163-topckgen",
+        "extra"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,unknown-topckgen"
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "compatible": [
+        "mediatek,mt8173-topckgen"
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "compatible": [
+        "mediatek,mt8167-topckgen",
+        "syscon"
+      ],
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_other_constraints_preserved": true,
+  "passed": true
+}

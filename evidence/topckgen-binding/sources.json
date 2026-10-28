@@ -1,0 +1,32 @@
+{
+  "scope": "Matched exact-compatible proposal provenance; not runtime clock support",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "clock/mediatek,topckgen.yaml",
+  "schema_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/clock/mediatek,topckgen.yaml",
+  "driver": {
+    "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+    "sha256": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d",
+    "match_lines": [
+      449,
+      451
+    ],
+    "probe": "mtk_clk_simple_probe"
+  },
+  "captured_dt": {
+    "path": "evidence/dtb-compile/inputs/arch/arm64/boot/dts/mediatek/mt8163.dtsi",
+    "sha256": "875d2af7f97129b78a0d0d06b3b37e20b664f1dd7e0ece7f2cb56780dde86629",
+    "node": "/soc/clock-controller@10000000",
+    "compatible": [
+      "mediatek,mt8163-topckgen"
+    ],
+    "reg": [
+      0,
+      268435456,
+      0,
+      4096
+    ],
+    "clock_cells": 1
+  },
+  "proposal_change": "Add exact standalone MT8163 compatible to existing single-compatible enum; no property constraints changed.",
+  "clock_registration_or_rates_verified": false
+}

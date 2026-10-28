@@ -1,0 +1,16 @@
+{
+  "scope": "Actual processed full-node controls",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/apmixedsys-binding/original.yaml": "03d1a47f57f31a680b21ba2fe1fb914ecd5d30e9b5672e875a4df9e48ddec423",
+    "evidence/apmixedsys-binding/proposed.yaml": "ca18ed298a073ca6b9290593cd27997710205d8b67ee8da240c0e2f1f2c67416",
+    "evidence/apmixedsys-binding/processed-schema.json": "d539ebae281d67d0fb1ed79d3528261f6166101f58414779b000c044f5b44ef5",
+    "evidence/apmixedsys-binding/check-controls.py": "3d329100fc5cc7547a4191a824f8517989be1a198593ecaaf0c0423bf509391f"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/apmixedsys-binding/check-controls.py"
+  ],
+  "full_validation_passed": false
+}

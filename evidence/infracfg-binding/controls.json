@@ -1,0 +1,62 @@
+{
+  "cases": [
+    {
+      "name": "exact tuple and one-cell reset",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "standalone tuple rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "invented fallback rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing reset declaration rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong reset cells rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong clock cells rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing register rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "multiple register ranges rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing MT8173 reset required",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing MT8173 valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing MT8167 optional-reset policy preserved",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "only_exact_compatible_and_reset_requirement_added": true,
+  "all_other_constraints_preserved": true,
+  "passed": true
+}

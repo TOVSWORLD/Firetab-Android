@@ -1,0 +1,228 @@
+{
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40755681118",
+  "compiled_revision": "18f2d5b62e8d726b31415dbd06bb46032ea9abf7",
+  "log_bytes": 1481964,
+  "log_sha256": "9dba86cd2ea5edb97c1cea2a1602d3a2c3f4b57f2bf4024d60ec96b3b3525bb9",
+  "artifact_hashes": [
+    {
+      "artifact": "arch/arm64/boot/Image.gz",
+      "sha256": "9e33fc22ae883b5f4b6969636907e941bfef2bf9cce45b9f3aa28f110b4776ca"
+    },
+    {
+      "artifact": ".config",
+      "sha256": "6a4c801a15e3e210948ccf7053bff6b83caffdcae5a431054af3dad1ed0ff8d5"
+    },
+    {
+      "artifact": "vmlinux",
+      "sha256": "65fcdb85139ad7236d4c6c24c5b431d096d73cd6cc79223a1817ad1a92415200"
+    },
+    {
+      "artifact": "arch/arm64/boot/Image",
+      "sha256": "d7eb0fa46d5fe5141bcce9d9c48e774a15ce6cf9796efdd1c85005e6202942d9"
+    }
+  ],
+  "generic_compile_passed": true,
+  "generic_qemu_passed": true,
+  "douglas_boot_qualified": false,
+  "compile_inputs_identical_after_documentation_merge": true,
+  "input_equivalence_scope": "Pinned kernel/clock/pinctrl/power/diagnostic overlays and build/QEMU scripts; only worklog conflict resolved",
+  "verified_inputs": [
+    {
+      "path": ".github/workflows/kernel-baseline.yml",
+      "sha256": "f512a9e283b3907e599c72e90e1a95ea4f99d474c5d153b2b1d16ac545deebd7"
+    },
+    {
+      "path": "projects/firetabs-android/diagnostic/cpu_contract.h",
+      "sha256": "9b7feede7391391dd61956ec3bec3f2d56d5dae0710df5fe61f43a9967db0e3b"
+    },
+    {
+      "path": "projects/firetabs-android/diagnostic/init.c",
+      "sha256": "c371372906ad3d32594000041042a2301d54ca2ce46c5b05add40bf2905bf63b"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/README.md",
+      "sha256": "e4d7653f7fc68745f494e7db4a2c8a02a8546c9afdb47ff1813d24b31f9f9664"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/build-wiring.patch",
+      "sha256": "fb0a02ec33feb419e1e4db547d5af78359cfdd399c55837e612fa1d2909bdf06"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/inputs.json",
+      "sha256": "4bd74641c7195fbc0632ce3d31c6c86b4f7afee88fd5533135fcdbd85580208d"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/mux-api.patch",
+      "sha256": "63200df001b190198cc89dca99fec8d4327f07b66e4397874baca942b042f1a8"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-apmixedsys.c",
+      "sha256": "09f1c75eec24c1c1004277edadef5fe11a1b601f7279b4af68451a2172b8f4f4"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-audsys.c",
+      "sha256": "b5ace0bf5329895a108960bb2c7a1abb61eb858d1f196c799959413c8ae80d74"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-imgsys.c",
+      "sha256": "69302aa9d9e87abc91d9d2d155b46be5368e5009fd4f88c1414c29a7f82026a3"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-infracfg.c",
+      "sha256": "c8d24c737034b3f2464ec3ebfb14ba27ab35d6901af1d9fd8509bb7b16c146d2"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mfgcfg.c",
+      "sha256": "537ff2fec283c89ca8a26e42d6ad2edfe0165d8f19a6ca2c9b664f96c3d3c327"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mmsys.c",
+      "sha256": "d448f9de8e41e8bde9dbc2fabe16ff7bdc2beb1a8e48ec2229b6e03c9c31861e"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-topckgen.c",
+      "sha256": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-vdecsys.c",
+      "sha256": "95629aa8eadc268cf2ed0c51dcc66bd4c4f8f9690be95b07c5075ed750eede34"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-vencsys.c",
+      "sha256": "9f81ab848876539c802150f89563c46b3fc5bcfe17dbe91d3f048dbdd676ff48"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h",
+      "sha256": "79ad800586196916c143d106be55e710e41e7f26849798e880fa7c6f6c5cbb07"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-audsys.h",
+      "sha256": "50f777458df074d816da3bfa86c5276462799a3acb4555987dbcdabdaa0a6a77"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-imgsys.h",
+      "sha256": "ec1c50795adb221c3f0ca0d4f21bd43b2a212e692e976c3719a9478bb2c9a38f"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-infracfg.h",
+      "sha256": "3a559330bcb5ff22984f32447909dacdd4a760934a78ad53f1575b9d91cbbe37"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-mfgcfg.h",
+      "sha256": "bce3ad6b7f00c3afaff0a2a75b8141c0050b529ea0314a5a76116aad76be50b5"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-mmsys.h",
+      "sha256": "1a411a525ba1bb215e99cfbf847f54dd78d6f31c8eb812eb45228f98c9e62d7f"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-topckgen.h",
+      "sha256": "852998dc9577129aa5f5c7e05c2ef50a5f419d64348cc4f6daf7252a84cbd4d7"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-vdecsys.h",
+      "sha256": "458c5c5cda939141b9036a5bf9f3fd4a8f23e437da6e68f1ef2b15d333e90a6a"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-vencsys.h",
+      "sha256": "53b12c11093228d7227af8064d7c26339ec2f3291ace2cf34711fed389dd0461"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/reset/mediatek,mt8163-infracfg.h",
+      "sha256": "b6bcde0dc42803e783c95313952b8fb50d061d72fecf032e97e1f2a87cfd2317"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "sha256": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/diagnostic/fragment.config",
+      "sha256": "2fdc8bb1dc7376484ef35cfa7c5daecc7497d9ccb9c40eff8e6f2bee97bb81cd"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/README.md",
+      "sha256": "9cc087ac3bd1df71baeb22cf41dbab7459158e05da92ccaf1aab6cc3e112b2af"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/build-wiring.patch",
+      "sha256": "afac269bb3aa3390e4981f82263c1c1048c9f8982e219edc9483958b48789699"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/inputs.json",
+      "sha256": "708356385c42a01c1551f484223acda4dfe3e0e4c485e5a9529232f1d9f8b307"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/overlay/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+      "sha256": "aa3c679d8eade2dfa2363fb9e1a7e8c778fa364e69ac56b41a3444f25941bcee"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/overlay/drivers/pinctrl/mediatek/pinctrl-mtk-mt8163.h",
+      "sha256": "53c1adc2ef0af8af42eb17ce4dcc0b32a41354cee1adcd956fa63a1794ef5106"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/pinctrl-port/overlay/include/dt-bindings/pinctrl/mt8163-pinfunc.h",
+      "sha256": "870564d41f8905c8c955ab4c3e57547a889f598fca24f8bff7272811e4f83106"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/power-port/README.md",
+      "sha256": "04acc7eb42d645d0db2cbf81c1c043d1a21970f69252e5be74ce4ed26d328020"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/power-port/inputs.json",
+      "sha256": "bab56f8d1171161a6319720f56d11606bbd56d1396afc259bcae66f67d104160"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/power-port/overlay/drivers/pmdomain/mediatek/mt8163-pm-domains.h",
+      "sha256": "221b2dcd067fd9ff8ec2e1a52e405a2a611a2885b09910ec53301f0ded96a0b6"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/power-port/overlay/include/dt-bindings/power/mediatek,mt8163-power-controller.h",
+      "sha256": "bca573acd8fe88a4d526edb8587e6f117cb7510701849e663628c856edd5ee21"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/power-port/provider.patch",
+      "sha256": "b049213320b01b3d4a8e3dea4ac45d8996eaf89900e947ce7a3b8d6b80a249eb"
+    },
+    {
+      "path": "scripts/apply_clock_port.py",
+      "sha256": "f128ce103f5fdc8589a13b870093b7ae4b9b07fcb4e165ba817bcd8d34a89487"
+    },
+    {
+      "path": "scripts/apply_pinctrl_port.py",
+      "sha256": "08066441a4b92bd422d51b0ae2312e29dcfe5dd97ad2322a9f2e0ad92afa68b3"
+    },
+    {
+      "path": "scripts/apply_power_port.py",
+      "sha256": "9a510e90011ae66b4792498ac51e39877b642eaed5f45f3727d70f75b40cbef7"
+    },
+    {
+      "path": "scripts/build_ack_baseline.sh",
+      "sha256": "939b857f4f0fdb758beaa3993fb214e57430d07bb8e7681b690c73472c3da1d9"
+    },
+    {
+      "path": "scripts/build_diagnostic_initramfs.py",
+      "sha256": "1df901c15de1b92ce16b4ebc231f471cd9e3a1407deb24a313bb9e5f84892931"
+    },
+    {
+      "path": "scripts/check_diagnostic_commandline.py",
+      "sha256": "3e136768236a87ffcd4ba83511fe943f5f88beb5f15162394482dc60d20c8999"
+    },
+    {
+      "path": "scripts/diagnostic_config.py",
+      "sha256": "4f5a7493211e8ca40d515bb40685d5767067e306747b805a30ac6de87b8837b3"
+    },
+    {
+      "path": "scripts/install_qemu_for_ci.py",
+      "sha256": "ece40075e5f1140727d0fe16395a8d063eab974df41c47aa275e1764f2b7167f"
+    },
+    {
+      "path": "scripts/run_qemu_diagnostic.py",
+      "sha256": "621f6f5ccd7c2ac77bdfbe33f60028dbdf5f7afe30e5ba3a8404d16ee3cd4a66"
+    }
+  ],
+  "final_head_generic_checks_required": true,
+  "scope": "Generic ARM64 provider compile and QEMU smoke; not douglas boot or HDMI/audio runtime",
+  "document_merge_parent_revision": "f7e2c4141927c28277f42a6188147a9c4ba52e70",
+  "generic_compile_after_document_merge_rerun": false,
+  "reason": "No compiled inputs changed; successful run remains attributed to original18f2d5b, required final-head generic checks are rerun."
+}

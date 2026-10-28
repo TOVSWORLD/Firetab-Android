@@ -49,11 +49,18 @@ def apply_gunyah_yaml_repair(source, ack_commit):
     return profile
 
 
+def bounded_result_name(name):
+    """Keep existing profile paths unless a component exceeds filesystem limits."""
+    if len(name.encode('utf-8')) <= 255:
+        return name
+    return 'result-' + hashlib.sha256(name.encode('utf-8')).hexdigest()
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--experiment', choices=['baseline', 'pmic-node-names', 'sysirq-node-name', 'rdma-node-name'], default='baseline')
     parser.add_argument('--binding-profile', choices=['ack', 'mt8163-uart-proposed'], default='ack')
-    parser.add_argument('--extra-binding', choices=['mt8163-sysirq', 'mt8163-timer', 'mt8163-mmc', 'mt8163-uart-dma', 'mt8163-i2c', 'mt8163-spi', 'mt8163-auxadc', 'mt8163-rng', 'mt8163-keypad', 'mt8163-efuse', 'mt8163-gce'], action='append', default=[], help='Additional opt-in locked binding proposals')
+    parser.add_argument('--extra-binding', choices=['mt8163-sysirq', 'mt8163-timer', 'mt8163-mmc', 'mt8163-uart-dma', 'mt8163-i2c', 'mt8163-spi', 'mt8163-auxadc', 'mt8163-rng', 'mt8163-keypad', 'mt8163-efuse', 'mt8163-gce', 'mt8163-topckgen', 'mt8163-infracfg', 'mt8163-apmixedsys'], action='append', default=[], help='Additional opt-in locked binding proposals')
     parser.add_argument('--repair-pmic-selector', action='store_true', help='Opt-in exact MT6323 sys-off selector proposal')
     parser.add_argument('--repair-gunyah-yaml', action='store_true', help='Opt-in hash-locked indentation repair; not schema qualification')
     parser.add_argument('--download', action='store_true', help='Allow one hash-locked archive download, at most 20 MiB')
@@ -90,7 +97,7 @@ def main():
         result_name += '-pmic-selector'
     if args.extra_binding:
         result_name += '-' + '-'.join(sorted(set(args.extra_binding)))
-    output = WORK / result_name
+    output = WORK / bounded_result_name(result_name)
     output.mkdir(exist_ok=True)
     (output / 'diagnostics.json').unlink(missing_ok=True)
     with tempfile.TemporaryDirectory(prefix='source-', dir=WORK) as temporary:

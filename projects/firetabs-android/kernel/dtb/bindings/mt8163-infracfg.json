@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact MT8163 infracfg/syscon tuple and required one-cell reset declaration; no hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-infracfg.patch",
+  "patch_sha256": "ec4b5ac2c95a83f1061a5ad5c55e2f46f45fe6447252c30e29dec9f38535ec1f",
+  "schema": "clock/mediatek,infracfg.yaml",
+  "original_sha256": "0610f891e326d1e0a7ce9ffe3ef0513ab229bf37eee8177de0999cac17157c6f",
+  "proposed_sha256": "b0b570c6e44f966b665ea792d235073b1b3d6900e34f9fdba1ce2c990de22fbb"
+}

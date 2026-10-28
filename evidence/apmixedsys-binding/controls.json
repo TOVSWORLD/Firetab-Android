@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "name": "exact MT8163",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "invented syscon tuple",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "invented fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing register",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "extra register",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong clock cell count",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing MT8173",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing MT8167 syscon",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_other_constraints_preserved": true,
+  "passed": true
+}

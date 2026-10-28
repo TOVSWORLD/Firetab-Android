@@ -1,0 +1,18 @@
+--- a/clock/mediatek,infracfg.yaml
++++ b/clock/mediatek,infracfg.yaml
+@@ -34,6 +34,7 @@
+               - mediatek,mt7986-infracfg
+               - mediatek,mt7988-infracfg
+               - mediatek,mt8135-infracfg
++              - mediatek,mt8163-infracfg
+               - mediatek,mt8167-infracfg
+               - mediatek,mt8173-infracfg
+               - mediatek,mt8183-infracfg
+@@ -69,6 +70,7 @@
+           - mediatek,mt7622-infracfg
+           - mediatek,mt7986-infracfg
+           - mediatek,mt8135-infracfg
++          - mediatek,mt8163-infracfg
+           - mediatek,mt8173-infracfg
+           - mediatek,mt8183-infracfg
+ then:
