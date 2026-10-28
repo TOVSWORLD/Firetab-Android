@@ -70,3 +70,23 @@ files to the expected provider's header and numeric ID. It fails on unknown
 provider labels or IDs. This does not expand arbitrary DTS/C expressions or
 validate live providers, mux routing, clock rates or schemas. Use `--check` to
 compare the recomputed report with the committed evidence.
+
+## MMSYS parent integration (#18)
+
+`mmsys-parent.patch` adds the exact pinned donor SoC match and descriptor to
+ACK's existing MMSYS parent, enabling creation of `clk-mt8163-mm`. The matched
+routing and reset headers retain their original SPDX terms; provenance and
+hashes are in `evidence/clock-port/mmsys-parent/integration.json`. The existing
+parent and patch are verified before mutation and the patched result afterward.
+
+The captured disabled DSI node already uses compact reset ID23. The donor's
+MT8163 descriptor incorrectly interprets it as raw bit23 (PWM); integration uses
+the34-entry mapping so DSI resolves to bit24. LCM's donor bank2 resolves to0x148,
+but pinned legacy source locates LCM at0x150; the overlay corrects it to bank4.
+Original donor evidence is retained unchanged, and the adapted overlay is hashed.
+No new DT reset consumers are introduced. Routing covers only the donor's minimal internal display path;
+external routes are absent. The generic build explicitly enables MTK_MMSYS and
+compiles its parent object before linking Image. Explicit MMSYS parent object, full generic Image and QEMU diagnostic smoke
+passed at5c02907 in run40763077737. Compile result and unchanged-input receipts
+are in evidence/clock-port/mmsys-parent. Actual probe, routing and reset behavior
+remain untested.

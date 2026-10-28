@@ -101,7 +101,20 @@
       "source": "evidence/dtb-compile/inputs/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
       "target": "include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
       "sha256": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f"
+    },
+    {
+      "source": "evidence/clock-port/mmsys-parent/drivers/soc/mediatek/mt8163-mmsys.h",
+      "target": "drivers/soc/mediatek/mt8163-mmsys.h",
+      "sha256": "16a2ab928d4395a4b2463991c34e586ec39359143779cbfe26ab1a1221459489"
     }
   ],
-  "scope": "Experimental source overlay; not compiled or hardware-tested"
+  "scope": "Experimental source overlay; not compiled or hardware-tested",
+  "mmsys_parent": {
+    "target": "drivers/soc/mediatek/mtk-mmsys.c",
+    "original_sha256": "6f959cf51269bd1e1cf2895c38962bec5341a53e4f189681ff0db75e960e3dac",
+    "patched_sha256": "84752d55f660028b09c9c241db3c6604830981e7c4138291becdea66f1bce8f9",
+    "patch_sha256": "55c8a10cbbbcbfe7930f338ff2e32496d0559e445b4a3e74a88be9fde40e62b0",
+    "donor_parent_sha256": "ecc301173d81b43c37cd43a41f110e53104ad2a486281d4f08bd7a0d7f5a0e16",
+    "routing_overlay_sha256": "e09e7373572dd6d876b06076b824eeb569c7f771295274c9b100b95659bf62f2"
+  }
 }

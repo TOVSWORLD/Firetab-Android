@@ -2743,6 +2743,27 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   MMSYS parent creation is #18 integration, not corrected by generic compilation;
   no actual board boot/audio/HDMI or failure-return gate is closed here.
 
+## 2026-10-28 — real MMSYS parent connection (#18)
+
+- PR388 merged at532c20d after five exact-head checks;315 host tests passed.
+- Acquired pinned routing header4157bytes/SHA256
+  16a2ab928d4395a4b2463991c34e586ec39359143779cbfe26ab1a1221459489
+  and reset header1489bytes/SHA256
+  9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f.
+- Added exact donor SoC descriptor/match and clock-child creation path via a
+  hash-locked patch against ACK d9318bdb. Subsequent captured-consumer review found
+  donor raw64 reset IDs conflict with compact DSI23. Corrected descriptor uses
+  the34-entry map (DSI23 -> bit24); legacy LCM0x150 corrects donor bank2 to4.
+  No DT consumers added. Original donor headers retained unchanged in evidence.
+- Explicit MMSYS parent-object build now required. Isolated patch apply/hash
+  check and reapply rejection pass. Generic Image/parent compile next via PR CI;
+  board probe/reset/routing and failure recovery remain untested.
+
+- Initial run40762643646 failed before C compilation: ACK modular CMDQ bounds
+  MMSYS to module state. Pinned Kconfig confirms dependency; generic parent
+  experiment disables CMDQ and requires MMSYS=y, preserving diagnostic isolation.
+  Corrected-head run required; initial failure is not an Image result.
+
 ## 2026-10-28 — matched MMSYS schema during parent compilation (#27)
 
 - PR389 parent integration is compiling independently. Cached ACK proposal adds
@@ -2776,3 +2797,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Parent IRQ delivery and GPIO87 remain unqualified; source matches do not close
   hardware gates. #389 real MMSYS Image build remains active, #391 bank audit
   merged after six exact-head checks including pinctrl object compile.
+
+## 2026-10-28 — actual MMSYS parent/Image result (#18)
+
+- Run40763077737 passed explicit MMSYS parent object, full generic ARM64 Image
+  and QEMU diagnostic smoke at5c02907; MTK_MMSYS=y/CMDQ=n. No warning:/error:
+  lines found in1481984byte private log; SHA256
+  f80c5b785d16bd00dbdc72595ab26b1c68ce08860d59bf4455a98d32f2a8822d.
+- Image SHA25627a9366144cf7e313af9132e94d75d3152cadb4bbc95739215e08c0d498f8436.
+  Full artifact/config/QEMU receipts: evidence/clock-port/mmsys-parent/compile-result.json.
+- Independent #390/#391/#392 merged while build ran. Verified all selected
+  provider/source-lock/input/config/build inputs byte-identical to compiled head;
+  no duplicate compile of documentation/schema changes claimed. Final-head checks
+  rerun before parent merge. Actual device probe/reset/routes and recovery open.
+- #27 exact pinctrl probe contract merged in #392; full context45diagnostics,
+  not passed. Next executable dependency is #20 power/provider source integration
+  review and matched schemas under #27; no physical action requested.
