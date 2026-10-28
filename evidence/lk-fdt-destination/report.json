@@ -1,0 +1,196 @@
+{
+  "scope": "Static exact-OTA selected paths only; firmware never executed",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "analysis_object": "ET_REL; no entry/program headers",
+  "llvm_version": "Apple LLVM version 21.0.0",
+  "facts": {
+    "instruction_anchors": [
+      {
+        "offset": "0x3ed80",
+        "bytes": "3368abb11d6ad3f80c80"
+      },
+      {
+        "offset": "0x3ed90",
+        "bytes": "294622463d6803464046"
+      },
+      {
+        "offset": "0x3edbc",
+        "bytes": "4ff400404ff4807122460096c4f200000195c4f20001"
+      },
+      {
+        "offset": "0x3eb84",
+        "bytes": "30b583b0069d079c00950194"
+      },
+      {
+        "offset": "0x3de2a",
+        "bytes": "0d46"
+      },
+      {
+        "offset": "0x3deee",
+        "bytes": "28462946aa46"
+      },
+      {
+        "offset": "0x3defc",
+        "bytes": "5a1bb2f5801f28bf4ff48012"
+      },
+      {
+        "offset": "0x3e0a8",
+        "bytes": "daf800400146dff8282928463b4624017a440094"
+      },
+      {
+        "offset": "0x3e73c",
+        "bytes": "0a98294600220123"
+      }
+    ],
+    "calls": [
+      {
+        "offset": "0x3eda0",
+        "target": "0x3eb84"
+      },
+      {
+        "offset": "0x3edd2",
+        "target": "0x3eb84"
+      },
+      {
+        "offset": "0x3eb90",
+        "target": "0x3de1c"
+      },
+      {
+        "offset": "0x3dee6",
+        "target": "0x3de04"
+      },
+      {
+        "offset": "0x3df08",
+        "target": "0x46cc8"
+      },
+      {
+        "offset": "0x3e0a4",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x3e0bc",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x3e0e2",
+        "target": "0x4643c"
+      },
+      {
+        "offset": "0x3e262",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x3e284",
+        "target": "0x46930"
+      },
+      {
+        "offset": "0x3e744",
+        "target": "0x3ddd0"
+      }
+    ],
+    "references": [
+      {
+        "load": "0x3e09c",
+        "add": "0x3e0a2",
+        "pool": "0x3e9d4",
+        "target": "0x5f154",
+        "text": "/memory"
+      },
+      {
+        "load": "0x3e0ae",
+        "add": "0x3e0b8",
+        "pool": "0x3e9d8",
+        "target": "0x5f068",
+        "text": "reg"
+      },
+      {
+        "load": "0x3e0da",
+        "add": "0x3e0e0",
+        "pool": "0x3e9e0",
+        "target": "0x65ad8",
+        "text": "/chosen"
+      },
+      {
+        "load": "0x3e252",
+        "add": "0x3e260",
+        "pool": "0x3ea08",
+        "target": "0x65b08",
+        "text": "atag,boot"
+      },
+      {
+        "load": "0x3e26c",
+        "add": "0x3e27a",
+        "pool": "0x3ea0c",
+        "target": "0x65b14",
+        "text": "atag,mem"
+      }
+    ],
+    "header_present_destination": "header+0x20 -> r5 -> r1 at0x3ed90 -> wrapper -> incoming r1 saved in r5 at0x3de2a",
+    "header_absent_destination": "r1 MOV.W0x100 then MOVT0x4000 ->0x40000100 -> same wrapper",
+    "copy_open_order": "rounded suffix copied to r5 before in-place open/check; open capacity MIN(global boundary-r5,0x100000)",
+    "memory_fixup": "/memory reg receives stack tuple buffer, length runtime count<<4; values not proved equal to candidate reg",
+    "chosen_fixups": "selected atag,boot and atag,mem writes via0x46930; existing bootargs overwrite trace remains applicable",
+    "selected_handoff": "r1=r5 at0x3e73e before K64 wrapper; all intervening r5 lineage and secure-monitor behavior remain unproved",
+    "assumptions": [
+      "Standard ARM AAPCS callee-saved register preservation",
+      "Selected header-present/absent and K64 branches only"
+    ],
+    "unresolved": [
+      "Runtime header+0x20 and boundary global values",
+      "Pre-copy destination capacity/overlap/alignment qualification",
+      "All mutation callbacks and reservation/PSCI edits",
+      "Complete r5 lineage across every selected branch",
+      "Installed LK3 equivalence and actual experimental handoff/return/log retention"
+    ]
+  },
+  "excerpts": [
+    {
+      "name": "header_or_fallback",
+      "start": "0x3ed80",
+      "end": "0x3edd6",
+      "sha256": "2a2c6b14cdc4bb4d5f4038eeb70f1fb37293d07e1a0c508e5eab0bad8c3bd5b2"
+    },
+    {
+      "name": "wrapper",
+      "start": "0x3eb84",
+      "end": "0x3eb96",
+      "sha256": "5b0003eede8372d51ee91148df5a1ac541895a8d1f8b5cfed99cd9af5e532487"
+    },
+    {
+      "name": "save_destination",
+      "start": "0x3de1c",
+      "end": "0x3de44",
+      "sha256": "a3780f211ee84c009613fe252e99ed627f424655aa2d854c5c5890d427e8d3b7"
+    },
+    {
+      "name": "copy_before_open",
+      "start": "0x3ded8",
+      "end": "0x3df20",
+      "sha256": "1a97ba74650cd90dfece84331a24a08a75e8789ba4ac02004aae7a023f7617c6"
+    },
+    {
+      "name": "memory_write",
+      "start": "0x3e09c",
+      "end": "0x3e0c2",
+      "sha256": "b576a764b2d381009892d876f67504d8c6afede1f7f02c356690b8075a627bcd"
+    },
+    {
+      "name": "chosen_lookup",
+      "start": "0x3e0da",
+      "end": "0x3e100",
+      "sha256": "d25c6f60268ee85359eec9ce08abf5222adbb65adc8eb5baa6be8bf819b7a23d"
+    },
+    {
+      "name": "chosen_atags",
+      "start": "0x3e24a",
+      "end": "0x3e28e",
+      "sha256": "9fa7a73101e915ebaa678bae44226c04116a8fd13dceefbffc4d586b8d8002e8"
+    },
+    {
+      "name": "handoff_call",
+      "start": "0x3e732",
+      "end": "0x3e74a",
+      "sha256": "6b485f64b54c024dc6f1b1c480cda54b99c6741b74b217229e57c244ee3329d3"
+    }
+  ]
+}

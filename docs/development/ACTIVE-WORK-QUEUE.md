@@ -134,3 +134,12 @@ Current candidate b837e6cb has no version. See kernel/LK-DTB-SELECTION.md and
 evidence/lk-dtb-selection/report.json. Do not inject a guessed stock version.
 Next executable source task: selector runtime provenance, incoming FDT destination
 address and late fixups/final handoff, with installed LK3 equivalence kept open.
+
+### Latest #347 destination/fixup source scope
+
+Header+0x20 supplies selected FDT destination; fallback is0x40000100. The suffix
+copy precedes in-place open capacity checking. Selected /memory/reg and /chosen
+atag writes are pinned in LK-FDT-DESTINATION.md/evidence/lk-fdt-destination.
+Next executable source acceptance: identify memory-tuple producer and complete
+reservation/PSCI callback effects, then selected r5 lineage/trust checks. Runtime
+addresses, installed LK3 equivalence and failed-boot return/logs remain blocked.

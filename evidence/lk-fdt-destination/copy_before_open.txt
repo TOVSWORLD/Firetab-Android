@@ -1,0 +1,32 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   3ded8: 1cfb         	adds	r3, r7, #0x3
+   3deda: 4628         	mov	r0, r5
+   3dedc: f023 0303    	bic	r3, r3, #0x3
+   3dee0: 4621         	mov	r1, r4
+   3dee2: 461a         	mov	r2, r3
+   3dee4: 9308         	str	r3, [sp, #0x20]
+   3dee6: f7ff ff8d    	bl	0x3de04 <.text+0x3de04> @ imm = #-0xe6
+   3deea: f8df 3ac4    	ldr.w	r3, [pc, #0xac4]        @ 0x3e9b0 <.text+0x3e9b0>
+   3deee: 4628         	mov	r0, r5
+   3def0: 4629         	mov	r1, r5
+   3def2: 46aa         	mov	r10, r5
+   3def4: f858 3003    	ldr.w	r3, [r8, r3]
+   3def8: 9305         	str	r3, [sp, #0x14]
+   3defa: 681b         	ldr	r3, [r3]
+   3defc: 1b5a         	subs	r2, r3, r5
+   3defe: f5b2 1f80    	cmp.w	r2, #0x100000
+   3df02: bf28         	it	hs
+   3df04: f44f 1280    	movhs.w	r2, #0x100000
+   3df08: f008 fede    	bl	0x46cc8 <.text+0x46cc8> @ imm = #0x8dbc
+   3df0c: 2800         	cmp	r0, #0x0
+   3df0e: f040 80f7    	bne.w	0x3e100 <.text+0x3e100> @ imm = #0x1ee
+   3df12: 4628         	mov	r0, r5
+   3df14: f008 f80e    	bl	0x45f34 <.text+0x45f34> @ imm = #0x801c
+   3df18: 4601         	mov	r1, r0
+   3df1a: 2800         	cmp	r0, #0x0
+   3df1c: f040 80f0    	bne.w	0x3e100 <.text+0x3e100> @ imm = #0x1e0
