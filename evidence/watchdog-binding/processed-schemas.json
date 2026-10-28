@@ -1,0 +1,172 @@
+{
+  "root": "http://devicetree.org/schemas/watchdog/mediatek,mtk-wdt.yaml",
+  "schemas": {
+    "http://devicetree.org/schemas/watchdog/mediatek,mtk-wdt.yaml": {
+      "$filename": "<ack-bindings>/watchdog/mediatek,mtk-wdt.yaml",
+      "$id": "http://devicetree.org/schemas/watchdog/mediatek,mtk-wdt.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "allOf": [
+        {
+          "$ref": "watchdog.yaml#"
+        },
+        {
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "mediatek,mt8163-wdt"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "timeout-sec": {
+                "items": [
+                  {
+                    "maximum": 31,
+                    "minimum": 2
+                  }
+                ],
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array"
+              }
+            }
+          }
+        }
+      ],
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "#reset-cells": {
+          "const": 1
+        },
+        "$nodename": true,
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "compatible": {
+          "oneOf": [
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt2712-wdt",
+                    "mediatek,mt6589-wdt",
+                    "mediatek,mt6735-wdt",
+                    "mediatek,mt6795-wdt",
+                    "mediatek,mt7986-wdt",
+                    "mediatek,mt7988-wdt",
+                    "mediatek,mt8163-wdt",
+                    "mediatek,mt8183-wdt",
+                    "mediatek,mt8186-wdt",
+                    "mediatek,mt8188-wdt",
+                    "mediatek,mt8192-wdt",
+                    "mediatek,mt8195-wdt"
+                  ]
+                }
+              ],
+              "maxItems": 1,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt2701-wdt",
+                    "mediatek,mt6572-wdt",
+                    "mediatek,mt6582-wdt",
+                    "mediatek,mt6797-wdt",
+                    "mediatek,mt7622-wdt",
+                    "mediatek,mt7623-wdt",
+                    "mediatek,mt7629-wdt",
+                    "mediatek,mt8173-wdt",
+                    "mediatek,mt8365-wdt",
+                    "mediatek,mt8516-wdt"
+                  ]
+                },
+                {
+                  "const": "mediatek,mt6589-wdt"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            }
+          ]
+        },
+        "interrupt-parent": true,
+        "interrupts": {
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "interrupts-extended": {
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "mediatek,disable-extrst": {
+          "type": "boolean"
+        },
+        "mediatek,reset-by-toprgu": {
+          "type": "boolean"
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "reg": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "status": true
+      },
+      "required": [
+        "compatible",
+        "reg"
+      ],
+      "title": "MediaTek SoCs Watchdog timer",
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "http://devicetree.org/schemas/watchdog/watchdog.yaml": {
+      "$filename": "<ack-bindings>/watchdog/watchdog.yaml",
+      "$id": "http://devicetree.org/schemas/watchdog/watchdog.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "properties": {
+        "$nodename": {
+          "items": [
+            {
+              "pattern": "^(timer|watchdog)(@.*|-([0-9]|[1-9][0-9]+))?$"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "timeout-sec": {}
+      },
+      "select": {
+        "properties": {
+          "$nodename": {
+            "items": [
+              {
+                "pattern": "^watchdog(@.*|-([0-9]|[1-9][0-9]+))?$"
+              }
+            ],
+            "maxItems": 1,
+            "minItems": 1,
+            "type": "array"
+          }
+        }
+      },
+      "title": "Watchdog Common Properties",
+      "type": "object"
+    }
+  }
+}

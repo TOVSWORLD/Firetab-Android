@@ -1,0 +1,103 @@
+{
+  "scope": "Actual decoded-node Draft201909/typeSize controls; no runtime watchdog/reset claim",
+  "cases": [
+    {
+      "name": "decoded-candidate",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "missing-compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unknown-compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported-fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-optional-irq",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "two-irq",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-reset-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "optional-reset-provider",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "unknown-property",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "timeout-1",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "timeout-2",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "timeout-31",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "timeout-32",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "disable-extrst",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "reset-by-toprgu",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt6589-unchanged-timeout-policy",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "existing-mt8183",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "passed": true,
+  "runtime_qualified": false
+}

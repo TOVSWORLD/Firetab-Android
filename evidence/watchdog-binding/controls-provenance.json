@@ -1,0 +1,17 @@
+{
+  "scope": "Decoded candidate DTB, actual processed Draft201909/typeSize controls; not runtime reset qualification",
+  "dtschema_version": "2026.9",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "inputs": {
+    "evidence/watchdog-binding/original.yaml": "f71cd316c2196ce78c44bdffc3d7494b098b85995bb498b566c9c889dd3b1ec3",
+    "evidence/watchdog-binding/proposed.yaml": "c0ced74a1b14351c3c5f506ec82d1cdfa1498bb8cf8f4fc39ec932dd83e4ef1d",
+    "evidence/watchdog-binding/processed-schemas.json": "d4a7853da2402d1ffd3a5aa99576b48cbe55a4fe14401d86bb0f539c0341215a",
+    "evidence/watchdog-binding/captured-node.json": "a93a60a7c0da32a00e9519b67a69f76d97243b09aa91badceb3311614a3361b8",
+    "evidence/watchdog-binding/check-controls.py": "0b0d7fc524f9950e91411d0e9ece9334b97f4da0fa6bc027cecff45d4b8b7b51"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/watchdog-binding/check-controls.py"
+  ],
+  "full_binding_validation_passed": false
+}

@@ -4,10 +4,10 @@ Updated 2026-10-28 at owner request. This is an execution queue under the existi
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
 Current #347 route review: [no cached candidate admitted](CURRENT-ROUTE-ADMISSION.md)
-for a nonpersistent trial. No physical action is scheduled. Next independent ready
-source task is #27 watchdog provider/probe/reset binding from cached sources;
-acceptance is a matched contract and negative controls with full42-diagnostic
-baseline retained. No runtime watchdog/failed-boot return claim follows.
+for a nonpersistent trial. Independent #27 watchdog binding is source-validated:
+19 actual controls, full context42→41 diagnostics and still unpassed. Next ready
+source scope: pinctrl syscfg-parent resource matching/binding, with source-pinned
+decoded-node controls. No runtime watchdog/failed-boot return claim follows.
 
 ## Execution contract
 

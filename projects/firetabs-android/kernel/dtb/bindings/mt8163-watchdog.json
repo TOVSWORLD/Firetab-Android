@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in MT8163 watchdog OF/probe contract and source2..31second timeout range; unrelated SoCs preserved; no runtime reset/return qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-watchdog.patch",
+  "patch_sha256": "93b51586e10b49edf8a7eb617d91d5b98237fd7bd47aa90bed8f6b2524cc8720",
+  "schema": "watchdog/mediatek,mtk-wdt.yaml",
+  "original_sha256": "f71cd316c2196ce78c44bdffc3d7494b098b85995bb498b566c9c889dd3b1ec3",
+  "proposed_sha256": "c0ced74a1b14351c3c5f506ec82d1cdfa1498bb8cf8f4fc39ec932dd83e4ef1d"
+}
