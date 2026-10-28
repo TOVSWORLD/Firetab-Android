@@ -1,0 +1,67 @@
+{
+  "scope": "Actual owner-authorized targeted Android USB archive read after ordinary recovery return",
+  "tag": "SYSTEM_RECOVERY_KMSG",
+  "listing_bytes": 367,
+  "listing_sha256": "30c27f7a7d415939dc012cc4faac4524a9e612e14e9dd12998c0f65ad0502e66",
+  "text_bytes": 663874,
+  "text_sha256": "25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256",
+  "capture_cap": 1048576,
+  "capture_cap_hit": false,
+  "entries": [
+    {
+      "entry_order": 1,
+      "bytes_in_dump": 331388,
+      "sha256": "d7945dc66fffedd2e17b2f08d8084248d6d06edf28de8ce53f88556cbe1a0559",
+      "truncation_marker": true,
+      "photo_matches": {
+        "0x44600000": false,
+        "0x44620000": false,
+        "360515": false,
+        "bootmode=usb": false,
+        "PSCI v0.1": false
+      },
+      "contains_kernel_version": true,
+      "truncation_marker_offsets": [
+        331329
+      ]
+    },
+    {
+      "entry_order": 2,
+      "bytes_in_dump": 332373,
+      "sha256": "d0d684438b156b732348448d786f834e8122e4246a8829a697cb40f69a997a38",
+      "truncation_marker": true,
+      "photo_matches": {
+        "0x44600000": true,
+        "0x44620000": true,
+        "360515": true,
+        "bootmode=usb": true,
+        "PSCI v0.1": true
+      },
+      "contains_kernel_version": true,
+      "truncation_marker_offsets": [
+        332356
+      ]
+    }
+  ],
+  "raw_text_publication": "Private only; kernel command lines and archived identifiers require sanitization",
+  "qualification": {
+    "targeted_usb_recovery_log_export_verified": true,
+    "readable_kernel_text_verified": true,
+    "complete_log_verified": false,
+    "exact_boot_session_freshness_verified": false,
+    "experimental_failure_retention_verified": false,
+    "tablet_modified_by_read": false
+  },
+  "commands": [
+    "adb shell dumpsys dropbox --file SYSTEM_RECOVERY_KMSG",
+    "adb shell dumpsys dropbox --print SYSTEM_RECOVERY_KMSG"
+  ],
+  "date_local": "2026-10-28",
+  "provenance": "Interactive owner-authorized lab session; ordinary Android return observed before identity and archive reads",
+  "limitations": [
+    "Archive timestamps alone do not identify the photographed boot session.",
+    "Truncation markers are in archived output, not caused by the local 1MiB capture cap.",
+    "Baseline AOSP tail-limit behavior is not proof of the vendor collection implementation.",
+    "No experimental kernel was loaded and no intended failure capture was tested."
+  ]
+}

@@ -2553,3 +2553,16 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   vendor enumeration found none. No bytes pulled. Owner cable reseat pending.
 - No tablet actions in this automatic run. Full log/failure capture and physical
   UART qualification remain open. Source revision95df19f36e1b8f9134900a0525ae63896919f5ed.
+
+## 2026-10-28 — targeted USB recovery-kernel archive export (#348)
+
+- Owner returned to Android; interactive identity read reconfirmed douglas and
+  build659664620. Tag-only --file listing367bytes; --print text663874bytes,
+  SHA25625a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256.
+- Two archived kernel entries; second matches five photographed markers. Both
+  have trailing truncation markers, despite no local1MiB cap hit. Full log and
+  exact session freshness not qualified; no experimental failure tested.
+- Published normalized metadata and repeatable scoped procedure, raw text kept
+  ignored/private0600. No broad bugreport or firmware/helper/security changes.
+- Automatic run only analyzed supplied/captured local evidence, no tablet access.
+  Next offline truncation/attribution investigation, then failure lifecycle gate.
