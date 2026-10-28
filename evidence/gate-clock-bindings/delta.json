@@ -1,0 +1,68 @@
+{
+  "before": 51,
+  "after": 47,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@13000000",
+      "nodename": "clock-controller@13000000",
+      "compatible": [
+        "mediatek,mt8163-mfgcfg",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mfgcfg', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/clock-controller@13000000: failed to match any schema with compatible: ['mediatek,mt8163-mfgcfg', 'syscon']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@15000000",
+      "nodename": "clock-controller@15000000",
+      "compatible": [
+        "mediatek,mt8163-imgsys",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-imgsys', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/clock-controller@15000000: failed to match any schema with compatible: ['mediatek,mt8163-imgsys', 'syscon']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@16000000",
+      "nodename": "clock-controller@16000000",
+      "compatible": [
+        "mediatek,mt8163-vdecsys",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-vdecsys', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/clock-controller@16000000: failed to match any schema with compatible: ['mediatek,mt8163-vdecsys', 'syscon']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@17000000",
+      "nodename": "clock-controller@17000000",
+      "compatible": [
+        "mediatek,mt8163-vencsys",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-vencsys', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/clock-controller@17000000: failed to match any schema with compatible: ['mediatek,mt8163-vencsys', 'syscon']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

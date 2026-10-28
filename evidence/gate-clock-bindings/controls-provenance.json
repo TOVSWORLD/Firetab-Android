@@ -1,0 +1,16 @@
+{
+  "scope": "Actual processed direct-provider contract controls",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/gate-clock-bindings/original.yaml": "e3c3dcb457bb8177ecf1e6bb859c125f6d1fa7dad4a3176417416678cf953140",
+    "evidence/gate-clock-bindings/proposed.yaml": "7a5dabd0c257626925e589ed2a93cc9e631fdc7a30f24fe506bc424ac98a14c9",
+    "evidence/gate-clock-bindings/processed-schema.json": "5f6c849c78bf0bae913d8f785c77b6136d1586b8d8f60fe195039110df3404fd",
+    "evidence/gate-clock-bindings/check-controls.py": "8efcd08aebb36f1a0822b8994e1d1bd974a5117efa1dc21530b93c2954b186c1"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/gate-clock-bindings/check-controls.py"
+  ],
+  "full_validation_passed": false
+}

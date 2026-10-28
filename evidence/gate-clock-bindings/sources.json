@@ -1,0 +1,41 @@
+{
+  "scope": "Four exact direct OF provider compatible/register contracts, not GPU/media behavior",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema_url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/devicetree/bindings/clock/mediatek,syscon.yaml",
+  "drivers": [
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-imgsys.c",
+      "sha256": "69302aa9d9e87abc91d9d2d155b46be5368e5009fd4f88c1414c29a7f82026a3",
+      "probe": "mtk_clk_simple_probe"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mfgcfg.c",
+      "sha256": "537ff2fec283c89ca8a26e42d6ad2edfe0165d8f19a6ca2c9b664f96c3d3c327",
+      "probe": "mtk_clk_simple_probe"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-vdecsys.c",
+      "sha256": "95629aa8eadc268cf2ed0c51dcc66bd4c4f8f9690be95b07c5075ed750eede34",
+      "probe": "mtk_clk_simple_probe"
+    },
+    {
+      "path": "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-vencsys.c",
+      "sha256": "9f81ab848876539c802150f89563c46b3fc5bcfe17dbe91d3f048dbdd676ff48",
+      "probe": "mtk_clk_simple_probe"
+    }
+  ],
+  "common_probe": {
+    "path": "evidence/clock-port/ack/drivers/clk/mediatek/clk-mtk.c",
+    "sha256": "6fe08df05e51750f1619c9c9e986933fe0ac0c6d94e85324da3cb5468718a076",
+    "register_mapping_lines": [
+      467,
+      492
+    ]
+  },
+  "candidate_ranges": {
+    "mfgcfg": "0x13000000/0x1000",
+    "imgsys": "0x15000000/0x1000",
+    "vdecsys": "0x16000000/0x1000",
+    "vencsys": "0x17000000/0x1000"
+  }
+}
