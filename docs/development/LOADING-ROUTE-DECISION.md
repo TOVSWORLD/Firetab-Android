@@ -1,5 +1,7 @@
 # Douglas diagnostic loading route decision
 
+Current admission verdict and resolved historical prerequisites: [2026-10-28 review](CURRENT-ROUTE-ADMISSION.md). No cached nonpersistent trial candidate is qualified.
+
 Decision2026-10-26: continue developing an observation-first, separately reviewed
 RAM-bootstrap route. No physical loading route is qualified. This decision
 selects the engineering investigation; it does not select a working exploit,

@@ -2990,3 +2990,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   Next: compare existing cached loading/trust alternatives against checklist,
   select one viable nonpersistent bounded route or rule out with exact blockers.
   No cable/approval/device action requested; no firmware/helper execution.
+
+## 2026-10-28 — route admission verdict and independent next task (#347/#27)
+
+- Compared retained routes against all five handoff gates. Seven route classes,
+  zero qualified nonpersistent trials. Pinned ten existing receipts in
+  evidence/route-admission/review.json; CURRENT-ROUTE-ADMISSION.md records exact
+  version/write/entry/protocol blockers and resolved owner/material prerequisites.
+- No firmware/helper/device execution or new download. Source evidence does not
+  prove no future route exists. Runtime recovery gates remain Blocked.
+- Owner beta estimate: roughly15% engineering progress, not measured task fraction
+  or remaining-time prediction; actual maintained-kernel/Android/hardware QA open.
+- Next independent source acceptance #27: cached watchdog provider/probe/reset
+  binding with actual negative controls; preserve full42-diagnostic baseline and
+  distinguish source reset contract from actual failed-boot return.

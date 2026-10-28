@@ -1,0 +1,110 @@
+{
+  "issue": 347,
+  "scope": "Current source-admission verdict, not firmware execution or proof no future route can exist",
+  "inputs": [
+    {
+      "path": "evidence/loader-routes/result.json",
+      "sha256": "7a50d5a8644d26bd11238f598bf3997da36ab5e8ca4e431cb57ca9eab3b0d583"
+    },
+    {
+      "path": "evidence/stock-fastboot-handlers/report.json",
+      "sha256": "f8f54083e970f3dcd50ddd191e883b29e4d1b795be89423fcdce6e47806e43dc"
+    },
+    {
+      "path": "evidence/loader-return-readback-gap/report.json",
+      "sha256": "b46fb9d576c7371511a729f964f7fcc44dfb1c98d011522af0cd14791bae7a70"
+    },
+    {
+      "path": "evidence/initial-loader-abi-gap/report.json",
+      "sha256": "93fe475d99c8ca131f7463dca66671e790cab7a975067a633e80dd71005f74d1"
+    },
+    {
+      "path": "evidence/recovery-entry-escrow/report.json",
+      "sha256": "5ec6dd370a36d73da56c0aa078a6c4ee04252b0c064cd69de951385f50e1621b"
+    },
+    {
+      "path": "evidence/entry-transition-source-audit/report.json",
+      "sha256": "4d93f05a1fc5d04e5977396a0d0d727c235a56446a4d69451e5e145a458212fc"
+    },
+    {
+      "path": "evidence/current-entry-crash-effects/report.json",
+      "sha256": "107343e65f4e6bf767aec69ee9192e1b5713060c4e6fdbb3958b5097e26d27ab"
+    },
+    {
+      "path": "evidence/lk-handoff-coverage/manifest.json",
+      "sha256": "73f1d6016a33e924f8f7c555e655131edc198d50d9544054818c0f9c82724db3"
+    },
+    {
+      "path": "evidence/douglas-original-route/full-stock-package.json",
+      "sha256": "d1af0094f7a501e05368a84e19497792e99490c5f0ad74cab2530352fef3a7a0"
+    },
+    {
+      "path": "evidence/douglas-original-route/reconstructed-stock-recovery.json",
+      "sha256": "d52e83d57126989e11da2f0281a4cd3dcd2590a550a097192a986f6224cf3ffa"
+    }
+  ],
+  "routes": [
+    {
+      "name": "stock_recovery",
+      "decision": "unqualified",
+      "blocker": "Signed stock return does not establish arbitrary diagnostic acceptance or post-failure independence.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "stock_fastboot",
+      "decision": "unqualified",
+      "blocker": "Selected cached registration lacks a boot command; download/continue is not established RAM boot; current command filtering/installed equivalence unproved.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "legacy_software_unlock",
+      "decision": "excluded_from_nonpersistent_trial",
+      "blocker": "Observed versions7/3/262 exceed source gates6/2/259; newer-version branch intentionally alters preloader/LK/TEE.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "legacy_bootrom_full_or_minimal",
+      "decision": "excluded_from_nonpersistent_trial",
+      "blocker": "Both reviewed paths have persistent storage/security effects; minimal mode is not read-only; independent escrow/restore remains unqualified.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "koboreru_or_custom_lk_tee",
+      "decision": "excluded_from_nonpersistent_trial",
+      "blocker": "Reviewed alternatives require older vulnerable preloader or prior persistent boot-chain changes; no exact installed applicability established.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "modern_bootstrap_entry",
+      "decision": "unqualified",
+      "blocker": "Entry may invoke crash, low-address memory/DA requests or MMIO; source does not prove passive/persistence-free bootstrap or failed-attempt return.",
+      "ready_for_trial": false
+    },
+    {
+      "name": "generic_stage1_or_direct_da",
+      "decision": "unqualified",
+      "blocker": "Generic call has zero argument while owned agent needs nonnull context; read ACK/call completion mismatch and direct-jump CPU contract unresolved.",
+      "ready_for_trial": false
+    }
+  ],
+  "qualified_nonpersistent_trial_candidates": 0,
+  "physical_trial_ready": false,
+  "resolved_historical_prerequisites": [
+    "Owner standing low-risk lab authorization is recorded; do not ask again for routine reads.",
+    "Authenticated stock package and reconstructed recovery are retained; generic image absence is not current blocker.",
+    "Normal stock recovery return and bounded320KiB archive export observed; cable/photo checks are complete."
+  ],
+  "remaining_real_dependencies": [
+    "Exact installed route/entry state and reviewed safe bootstrap effects",
+    "Matching post-fixup candidate DTB and independent failed-load return/log lifecycle"
+  ],
+  "next_independent_ready_task": {
+    "issue": 27,
+    "scope": "Cached watchdog provider/source binding and reset prerequisites; retain full42-diagnostic baseline and no runtime watchdog/return claim."
+  },
+  "beta_progress": {
+    "rough_engineering_estimate_percent": 15,
+    "measurement": false,
+    "basis": "Partial source/build/recovery groundwork; maintained-kernel device boot, Android integration, essential hardware and QA admission remain unqualified."
+  }
+}

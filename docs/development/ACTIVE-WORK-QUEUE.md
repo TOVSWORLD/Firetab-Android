@@ -3,10 +3,11 @@
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
-Current next executable #347 scope: compare cached loading/trust alternatives
-against the [finite handoff checklist](LK-HANDOFF-COVERAGE.md), identify a viable
-nonpersistent bounded entry candidate or rule it out with exact blockers. The nine-
-receipt source inventory is complete; all five runtime gates remain unqualified.
+Current #347 route review: [no cached candidate admitted](CURRENT-ROUTE-ADMISSION.md)
+for a nonpersistent trial. No physical action is scheduled. Next independent ready
+source task is #27 watchdog provider/probe/reset binding from cached sources;
+acceptance is a matched contract and negative controls with full42-diagnostic
+baseline retained. No runtime watchdog/failed-boot return claim follows.
 
 ## Execution contract
 
