@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact MT8163 MMSYS/syscon tuple matching parent integration PR389; no reset/display runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-mmsys.patch",
+  "patch_sha256": "463afc72281dd9ff48817556a7c51f5a8613cbbb9deb000625fd24ff8a533c61",
+  "schema": "arm/mediatek/mediatek,mmsys.yaml",
+  "original_sha256": "52c3cd54f7b294def2341335f0cbcb7cb7a9d40d3f64c8f16d4462a08fb5d0d9",
+  "proposed_sha256": "9e912cdd4c9755adc95bdf6034f8a6523b3414dd9585f39449e2358d5a24b302"
+}

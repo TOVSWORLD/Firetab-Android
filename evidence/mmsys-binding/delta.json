@@ -1,0 +1,23 @@
+{
+  "before": 47,
+  "after": 46,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/syscon@14000000",
+      "nodename": "syscon@14000000",
+      "compatible": [
+        "mediatek,mt8163-mmsys",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mmsys', 'syscon']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/syscon@14000000: failed to match any schema with compatible: ['mediatek,mt8163-mmsys', 'syscon']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}
