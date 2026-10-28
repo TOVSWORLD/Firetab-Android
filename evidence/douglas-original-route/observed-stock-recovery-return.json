@@ -1,0 +1,33 @@
+{
+  "device": "douglas",
+  "build_incremental_before_entry": "50.6.5.9_user_659664620",
+  "date_local": "2026-10-27",
+  "authorization": "Owner approved stock recovery entry and ordinary return in the interactive session.",
+  "entry_command": "adb reboot recovery",
+  "entry_command_exit_code": 0,
+  "photo_sha256": "673dda56a40c13e564c2ba1ac1f836e8f218c6f13bc1778eecea9f8bb415c8cb",
+  "photo_publication": "Private owner photo; only normalized screen transcription published.",
+  "screen_heading": "Amazon system recovery <3e>",
+  "visible_options": [
+    "reboot system now",
+    "wipe data/factory reset",
+    "wipe cache partition",
+    "reboot to bootloader",
+    "power down",
+    "view recovery logs"
+  ],
+  "selected_return_option": "reboot system now",
+  "owner_return_report": "Back on the regular screen.",
+  "qualification": {
+    "stock_recovery_entry_observed": true,
+    "ordinary_android_return_owner_observed": true,
+    "visible_log_menu_observed": true,
+    "log_contents_observed": false,
+    "post_return_build_reverified": false,
+    "experimental_failure_recovery_verified": false,
+    "independent_boot_log_capture_verified": false,
+    "stock_ota_install_acceptance_verified": false,
+    "installed_recovery_bytes_verified": false
+  },
+  "scope": "No OTA upload, wipe, installation, unlock or firmware helper execution. Ordinary return is not failure recovery."
+}

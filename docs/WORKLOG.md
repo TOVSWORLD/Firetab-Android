@@ -2531,3 +2531,14 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   Raw static file data and private inspection script retained under ignored
   out/stock-return/recovery-inspection; public receipt is normalized metadata.
   No recovery/adbd/firmware/helper execution and no physical gate closed.
+
+## 2026-10-27 — owner-observed stock recovery entry and ordinary return (#346/#347/#348)
+
+- Owner explicitly approved the interactive recovery mode test. Identity reads
+  confirmed douglas/KFDOWI and exact incremental build659664620.
+- Command `adb reboot recovery` exited0. Private photo confirms stock recovery
+  menu and view-recovery-logs label. Owner selected reboot-system and reported
+  normal screen. Published only normalized metadata and source-photo SHA256.
+- No firmware/helper execution, OTA upload, wipe or installation. Ordinary
+  return passes; experimental failure recovery, OTA acceptance and usable
+  retained boot-log capture remain untested. Next: owner log-view observation.
