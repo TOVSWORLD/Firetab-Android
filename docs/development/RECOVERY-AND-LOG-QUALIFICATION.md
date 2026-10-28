@@ -963,3 +963,42 @@ Its literal node name @46600000 differs from the callback-reported address;
 that discrepancy remains recorded. These are stronger stock runtime observations
 than static candidate declarations, but do not prove old-valid console contents,
 exact boot freshness, or retention through an experimental failure.
+
+## Exact packaged recovery archive limit identified (2026-10-28)
+
+The measured320KiB truncation now matches a specific stock framework call site,
+not merely a baseline AOSP hypothesis. The exact cached boot.oat contains
+BootReceiver DEX at offset15556508,4286744bytes. Static initializer control flow
+sets LOG_SIZE to65536 on the nondebug branch (98304 on debug). In logBootEvents,
+the `/cache/recovery/last_kmsg` call loads LOG_SIZE and uses `mul-int/lit8` with
+positive5 before invoking addFileToDropBox under SYSTEM_RECOVERY_KMSG. The helper
+forwards that limit to FileUtils.readTextFile with the trailing truncation marker.
+The [pinned bytecode receipt](../../evidence/douglas-original-route/stock-recovery-archive-limit.json)
+records offsets, hashes, instruction words, parameter flow and measured agreement.
+
+Thus the packaged user-build archive collector requests327680bytes. Both acquired
+payloads contain exactly that many LF-normalized bytes before their markers.
+This explains why repeating the same archive export cannot restore omitted bytes.
+Positive-limit/prefix behavior fits the trailing marker and zero-uptime start in
+the second entry. Baseline AOSP recovery-log tail behavior was not the vendor call.
+
+This was a bounded purpose-specific static instruction walk and manual parameter-
+flow review, not firmware execution or a general verified disassembler. Installed
+framework hashes and the exact installed FileUtils implementation remain unverified.
+The underlying cache file may contain more than the archived prefix; its size and
+access are unknown. No security properties, partitions or tablet state changed.
+Next use the retained partial log for attribution/early-boot coverage and assess a
+separately scoped source-file read, without claiming complete failure retention.
+
+### Archive attribution and useful coverage
+
+The second entry has visible uptime0 through29.865148seconds and matches all five
+photographed markers. This supplies actual early stock-kernel coverage, including
+memory reservation and console initialization. It ends at the fixed collector
+limit, so later boot, shutdown and failure coverage cannot be inferred. The first
+entry has no zero-uptime start and contains nonmonotonic timestamps; archive order
+must not be treated as log chronology. Shared Build/Kernel headers can describe
+the collection context rather than identify the retained boot. No exact session
+identifier or experimental boot is established. Simple panic/Oops/watchdog marker
+scans found none in these partial entries; that does not prove a successful boot
+or absence of a later failure. The normalized acquisition receipt records coverage.

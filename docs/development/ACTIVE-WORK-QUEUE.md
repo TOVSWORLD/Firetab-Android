@@ -23,7 +23,11 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
 ## Ordered ready work
 
-1. **#348 — locate the 320KiB collection limit.** Next action: inspect the exact
+1. **#348 — locate the 320KiB collection limit (completed source scope).**
+   Exact packaged BootReceiver user LOG_SIZE65536 multiplied by positive5 matches
+   both measured327680byte payloads. See stock-recovery-archive-limit.json and
+   WORKLOG; installed equivalence/source-file completeness remain open.
+   Next executable item is2. Historical investigation acceptance: inspect the exact
    cached framework BootReceiver/DumpBox implementation and recovery log-copy
    paths using bounded static decoding; no firmware execution. Compare with both
    acquired archive boundaries after CRLF normalization. Acceptance: identify the
@@ -32,7 +36,11 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    expecting missing bytes. Raw captures remain private under
    `out/recovery-log-export`; current dump SHA256 is
    `25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256`.
-2. **#348 — qualify archive attribution and usable capture coverage.** Independently
+2. **#348 — qualify archive attribution and usable capture coverage (completed
+   bounded analysis).** Second entry covers0..29.865148seconds and all photographed
+   markers, first entry is not monotonic; collection headers are not boot identity.
+   Exact freshness/failure retention remain open. Next executable item is3.
+   Historical acceptance: Independently
    compare existing entry headers, kernel/build markers, uptime spans and
    photographed markers; publish sanitized attribution/coverage only. Acceptance:
    define exactly which stock boot evidence is supported and which freshness or
