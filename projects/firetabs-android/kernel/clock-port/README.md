@@ -70,3 +70,19 @@ files to the expected provider's header and numeric ID. It fails on unknown
 provider labels or IDs. This does not expand arbitrary DTS/C expressions or
 validate live providers, mux routing, clock rates or schemas. Use `--check` to
 compare the recomputed report with the committed evidence.
+
+## MMSYS parent integration (#18)
+
+`mmsys-parent.patch` adds the exact pinned donor SoC match and descriptor to
+ACK's existing MMSYS parent, enabling creation of `clk-mt8163-mm`. The matched
+routing and reset headers retain their original SPDX terms; provenance and
+hashes are in `evidence/clock-port/mmsys-parent/integration.json`. The existing
+parent and patch are verified before mutation and the patched result afterward.
+
+MT8163 retains the donor's64 raw reset bank-bit IDs and0x140 base. The compact
+reset table in the imported header is used by the donor's MT8167 descriptor,
+not its MT8163 descriptor. No new DT reset consumers or compact-ID ABI are
+introduced. Routing covers only the donor's minimal internal display path;
+external routes are absent. The generic build explicitly enables MTK_MMSYS and
+compiles its parent object before linking Image. Compile remains pending for
+this change; actual probe, routing and reset behavior remain untested.

@@ -26,9 +26,17 @@ def main():
             raise SystemExit(f'Input hash mismatch: {original}')
         if (source / record['target']).exists():
             raise SystemExit(f'Refusing to overwrite {record["target"]}')
-    patches = [str(PORT / name) for name in ['build-wiring.patch', 'mux-api.patch']]
+    parent = lock['mmsys_parent']
+    parent_path = source / parent['target']
+    if hashlib.sha256(parent_path.read_bytes()).hexdigest() != parent['original_sha256']:
+        raise SystemExit('MMSYS parent source hash mismatch')
+    if hashlib.sha256((PORT / 'mmsys-parent.patch').read_bytes()).hexdigest() != parent['patch_sha256']:
+        raise SystemExit('MMSYS parent patch hash mismatch')
+    patches = [str(PORT / name) for name in ['build-wiring.patch', 'mux-api.patch', 'mmsys-parent.patch']]
     subprocess.run(['git', '-C', str(source), 'apply', '--check', *patches], check=True)
     subprocess.run(['git', '-C', str(source), 'apply', *patches], check=True)
+    if hashlib.sha256(parent_path.read_bytes()).hexdigest() != parent['patched_sha256']:
+        raise SystemExit('MMSYS patched parent hash mismatch')
     for record in lock['inputs']:
         target = source / record['target']
         target.parent.mkdir(parents=True, exist_ok=True)

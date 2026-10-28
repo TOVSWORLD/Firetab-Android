@@ -2742,3 +2742,17 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - CTS remains deliberately unavailable behind tested consumer guard. Missing
   MMSYS parent creation is #18 integration, not corrected by generic compilation;
   no actual board boot/audio/HDMI or failure-return gate is closed here.
+
+## 2026-10-28 — real MMSYS parent connection (#18)
+
+- PR388 merged at532c20d after five exact-head checks;315 host tests passed.
+- Acquired pinned routing header4157bytes/SHA256
+  16a2ab928d4395a4b2463991c34e586ec39359143779cbfe26ab1a1221459489
+  and reset header1489bytes/SHA256
+  9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f.
+- Added exact donor SoC descriptor/match and clock-child creation path via a
+  hash-locked patch against ACK d9318bdb; retained64 raw-bit reset contract.
+  Compact table belongs to donor MT8167 use, not MT8163. No DT consumers added.
+- Explicit MMSYS parent-object build now required. Isolated patch apply/hash
+  check and reapply rejection pass. Generic Image/parent compile next via PR CI;
+  board probe/reset/routing and failure recovery remain untested.

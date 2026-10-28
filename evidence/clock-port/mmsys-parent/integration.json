@@ -1,0 +1,42 @@
+{
+  "issue": 18,
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "sources": [
+    {
+      "file": "ack-mtk-mmsys.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/soc/mediatek/mtk-mmsys.c?format=TEXT",
+      "bytes": 15830,
+      "sha256": "6f959cf51269bd1e1cf2895c38962bec5341a53e4f189681ff0db75e960e3dac"
+    },
+    {
+      "file": "donor-mtk-mmsys.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/soc/mediatek/mtk-mmsys.c",
+      "bytes": 16321,
+      "sha256": "ecc301173d81b43c37cd43a41f110e53104ad2a486281d4f08bd7a0d7f5a0e16"
+    },
+    {
+      "file": "drivers/soc/mediatek/mt8163-mmsys.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/soc/mediatek/mt8163-mmsys.h",
+      "bytes": 4157,
+      "sha256": "16a2ab928d4395a4b2463991c34e586ec39359143779cbfe26ab1a1221459489"
+    },
+    {
+      "file": "include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/include/dt-bindings/reset/mediatek,mt8163-mmsys.h",
+      "bytes": 1489,
+      "sha256": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f"
+    }
+  ],
+  "contract": {
+    "child": "clk-mt8163-mm",
+    "reset": "64 raw bank-bit IDs; inherited offset MT8183_MMSYS_SW0_RST_B (0x140), legacy SW1 at0x144",
+    "routes": "Exact donor minimal internal-display routing table; external routes unimplemented",
+    "limitation": "Donor compact reset table is unused by MT8163 descriptor; do not expose compact reset constants as its ABI."
+  },
+  "qualification": {
+    "patch_apply": "passed; reapply rejected",
+    "compile": "pending exact PR-head generic Image and explicit MMSYS parent object",
+    "runtime": "untested; no device operation"
+  }
+}
