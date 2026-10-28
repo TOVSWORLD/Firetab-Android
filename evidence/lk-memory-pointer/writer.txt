@@ -1,0 +1,28 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+   23230: b5f8         	push	{r3, r4, r5, r6, r7, lr}
+   23232: f245 034c    	movw	r3, #0x504c
+   23236: 4e62         	ldr	r6, [pc, #0x188]        @ 0x233c0 <.text+0x233c0>
+   23238: f2c5 034c    	movt	r3, #0x504c
+   2323c: 4861         	ldr	r0, [pc, #0x184]        @ 0x233c4 <.text+0x233c4>
+   2323e: 4962         	ldr	r1, [pc, #0x188]        @ 0x233c8 <.text+0x233c8>
+   23240: 447e         	add	r6, pc
+   23242: 4a62         	ldr	r2, [pc, #0x188]        @ 0x233cc <.text+0x233cc>
+   23244: 5835         	ldr	r5, [r6, r0]
+   23246: 5870         	ldr	r0, [r6, r1]
+   23248: 6028         	str	r0, [r5]
+   2324a: 58b2         	ldr	r2, [r6, r2]
+   2324c: 6811         	ldr	r1, [r2]
+   2324e: 680a         	ldr	r2, [r1]
+   23250: 429a         	cmp	r2, r3
+   23252: f000 80a7    	beq.w	0x233a4 <.text+0x233a4> @ imm = #0x14e
+   23256: 680a         	ldr	r2, [r1]
+   23258: f245 034c    	movw	r3, #0x504c
+   2325c: f363 431f    	bfi	r3, r3, #16, #16
+   23260: 460c         	mov	r4, r1
+   23262: 6003         	str	r3, [r0]
+   23264: b1ca         	cbz	r2, 0x2329a <.text+0x2329a> @ imm = #0x32

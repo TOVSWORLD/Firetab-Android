@@ -152,3 +152,12 @@ and evidence/lk-memory-fixups. Next executable source acceptance: identify write
 and lifetime of runtime pointer-global0x4bd874c0, then alternate tuple branch and
 remaining reservation/PSCI callbacks/r5 lineage. Installed LK3 and physical
 handoff/return/log qualifications remain Blocked.
+
+### Latest #347 entry-pointer source scope
+
+Selected writer proven: entry r4 saved at0x4bd00020; initializer assigns local
+buffer and matching-magic384-byte copy (LK-MEMORY-POINTER.md/evidence receipt).
+Absolute store precedes relocation, so arbitrary-placement preservation is open.
+Next executable source acceptance: alternate tuple branch0x3e17c and remaining
+reservation/PSCI callbacks, then selected FDT lineage/trust checks. Full lifetime,
+actual entry state/installed LK3 and runtime return/log gates remain Blocked.
