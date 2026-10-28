@@ -2515,3 +2515,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   no runtime hardware gate closed by this artifact result.
 - Validation:309 host tests pass plus actual signed-target reconstruction and
   component/size checks; repository/community/link and whitespace guards pass.
+
+## 2026-10-27 — exact recovery USB/log observation contract (#346 / #348)
+
+- CI healthy; dependency PR11 only. Stock recovery-mode approval remains pending;
+  no tablet/USB/network query or mode change in this automatic run.
+- Bounded gzip/newc inspection of verified exact recovery records default.prop,
+  recovery init, key file, adbd/recovery literals and fstab hashes under16MiB cap.
+  Secure/nondebug defaults plus disabled adbd/conditional startup mean a normal
+  shell must not be assumed. Static log menu/path literals are not runtime access.
+- Exact current recovery res/keys hash equals the already checked bundled key
+  file; candidate signer-material alignment persists, installed image not verified.
+- Updated pending observation expectations: owner screen labels/ordinary return,
+  no sideload/update selection or policy weakening to manufacture shell access.
+  Raw static file data and private inspection script retained under ignored
+  out/stock-return/recovery-inspection; public receipt is normalized metadata.
+  No recovery/adbd/firmware/helper execution and no physical gate closed.

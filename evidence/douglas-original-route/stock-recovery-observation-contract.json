@@ -1,0 +1,102 @@
+{
+  "scope": "Exact reconstructed recovery static ramdisk policy/literals, not observed runtime services/menu/log access",
+  "recovery_sha256": "4de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2",
+  "ramdisk_sha256": "7af75166c86eda8922240c52621629f2aadacf061ded782ea5a45657d2e2ca00",
+  "cpio_bytes": 3860480,
+  "cpio_sha256": "900c10e05360698ac8a1312a23fb9aad206fe4527a9c801a08f021736411c0a0",
+  "decompression_cap": 16777216,
+  "recovery_or_adbd_executed": false,
+  "tablet_accessed": false,
+  "selected_files": [
+    {
+      "name": "default.prop",
+      "bytes": 7842,
+      "sha256": "39691f43677f13edfbeba934d739ded47d351c257c00716399edc36a95de4296"
+    },
+    {
+      "name": "etc/recovery.fstab",
+      "bytes": 1223,
+      "sha256": "c46ae29c9abc08bd442d25752c67ad3878e06115e2aad1bb1285614e554fb87c"
+    },
+    {
+      "name": "init.rc",
+      "bytes": 3112,
+      "sha256": "af4e418f1b9293a1981f2307d0f939ad1dbe909d582283fea2aee1edd7b86b34"
+    },
+    {
+      "name": "init.recovery.mt8163.rc",
+      "bytes": 184,
+      "sha256": "71a5135fd23e68fe65077bc301f24ef77cbbd7bd4057fddd525ea05978af48c9"
+    },
+    {
+      "name": "res/keys",
+      "bytes": 1388,
+      "sha256": "1b94f0c5c31261999477299fb35a9126b735fefa2b85b5035d436514aab8472c"
+    },
+    {
+      "name": "sbin/adbd",
+      "bytes": 396632,
+      "sha256": "18d14bd2a0615a533a3a43ec75a4875b161cc8c0eccb1e3aac092a082421e08c"
+    },
+    {
+      "name": "sbin/recovery",
+      "bytes": 912192,
+      "sha256": "0208824c1baf9eb40d586ad3a78d47318a6b41bd07d2eba8a0e656eff2dd0001",
+      "literal_counts": {
+        "reboot system now": 1,
+        "apply update from ADB": 0,
+        "view recovery logs": 1,
+        "/tmp/recovery.log": 1,
+        "/cache/recovery/log": 1,
+        "/proc/last_kmsg": 1,
+        "sideload-host": 2,
+        "--adbd": 1
+      }
+    }
+  ],
+  "declarations": {
+    "default_properties": {
+      "ro.adb.secure": "1",
+      "ro.secure": "1",
+      "ro.debuggable": "0",
+      "persist.sys.usb.config": "mtp"
+    },
+    "default_property_lines": [
+      4,
+      6,
+      8,
+      10
+    ],
+    "adbd_service": {
+      "init_file": "init.rc",
+      "line": 101,
+      "disabled": true,
+      "banner": "recovery",
+      "selinux_domain": "u:r:adbd:s0"
+    },
+    "declared_auto_start": {
+      "lines": [
+        106,
+        109
+      ],
+      "condition": "ro.debuggable=1"
+    },
+    "other_recovery_control_paths_audited": false,
+    "pstore_mount_declaration": {
+      "line": 36,
+      "runtime_mount_success_verified": false
+    }
+  },
+  "exact_build_recovery_key_file_equals_bundled_candidate_key_file": true,
+  "qualification": {
+    "packaged_policy_and_literals_recorded": true,
+    "ordinary_recovery_adb_shell_available_verified": false,
+    "visible_menu_options_observed": false,
+    "recovery_ui_log_access_verified": false,
+    "retained_log_backend_verified": false,
+    "experimental_failure_log_capture_verified": false,
+    "installed_recovery_image_match_verified": false,
+    "tablet_accessed": false
+  },
+  "inspection_script_sha256": "40440d1f9d61d62bceafa581fcd563c4fdbca6755dc898115888fd34fd2b0488"
+}

@@ -830,3 +830,41 @@ This closes the exact reconstruction-byte gap. Ordinary stock recovery entry and
 return, post-failure reachability, update acceptance and real boot logs remain
 open. The owner recovery-mode approval is still pending; no automatic tablet
 operation occurred.
+
+## Exact recovery USB/log observation expectations (#346 / #348)
+
+Static inspection of the reconstructed current-build recovery narrows the pending
+owner test. Its packaged default properties declare secure ADB, secure mode and
+ro.debuggable=0. Recovery init declares adbd disabled and an automatic-start
+condition requiring ro.debuggable=1. Recovery code can have other daemon/control
+paths, which this policy inspection does not exhaustively resolve. Therefore
+ordinary ADB shell availability must not be assumed when the owner enters stock
+recovery; disappearance from ADB can be consistent with this packaged policy,
+not a reason to repeat host permission changes or weaken device properties.
+Exact file hashes/lines and bounded inspection metadata are in the
+[observation-contract receipt](../../evidence/douglas-original-route/stock-recovery-observation-contract.json).
+
+The recovery binary contains the reboot-system and view-recovery-logs labels,
+recovery log paths, a last_kmsg path and sideload-related literals. These are
+static presence observations, not confirmed visible menu options, accessible
+logs or a working shell. Init also declares a pstore mount; this does not prove
+that the stock kernel has a functioning retained backend or usable reservation.
+The exact recovery's key file equals the previously checked bundled candidate
+key file, retaining the OTA signer key-material match; actual installed image
+and verifier/acceptance behavior remain unobserved.
+
+For the already proposed, still unapproved stock entry-and-return test: the owner
+observes the actual recovery screen and reports its visible labels. Record the
+mode transition and host state only through the separately authorized interactive
+session. Do not choose an update/sideload option merely to make ADB appear; do not
+set debug/root properties or change host/device security to obtain a shell.
+If the visible Reboot system now option is present, the owner can use that as
+the proposed return step. Unexpected screens/options require observation before
+any further action. The existing proposal remains entry/ordinary-return only,
+with no OTA upload, wipe, install or helper execution.
+
+A later actual view-logs observation may qualify access to stock recovery logs;
+it cannot alone establish early experimental-kernel capture or retention after
+the intended failure. That needs an attributable writer/backend, freshness and
+failure retrieval lifecycle. No tablet access, recovery/adbd execution, mode
+change or new download occurred in this packaged-policy investigation.
