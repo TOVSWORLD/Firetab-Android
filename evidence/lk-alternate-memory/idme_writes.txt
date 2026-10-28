@@ -1,0 +1,32 @@
+
+<analysis-only.o>:	file format elf32-littlearm
+
+Disassembly of section .text:
+
+00000000 <.text>:
+     e80: f044 ff6a    	bl	0x45d58 <.text+0x45d58> @ imm = #0x44ed4
+     e84: 3001         	adds	r0, #0x1
+     e86: 4631         	mov	r1, r6
+     e88: 9000         	str	r0, [sp]
+     e8a: 463b         	mov	r3, r7
+     e8c: 9a04         	ldr	r2, [sp, #0x10]
+     e8e: 4640         	mov	r0, r8
+     e90: f045 fd4e    	bl	0x46930 <.text+0x46930> @ imm = #0x45a9c
+     e94: 4631         	mov	r1, r6
+     e96: 1e06         	subs	r6, r0, #0x0
+     e98: ab0e         	add	r3, sp, #0x38
+     e9a: f04f 0e04    	mov.w	lr, #0x4
+     e9e: 9a05         	ldr	r2, [sp, #0x14]
+     ea0: 4640         	mov	r0, r8
+     ea2: db40         	blt	0xf26 <.text+0xf26>     @ imm = #0x80
+     ea4: 69a6         	ldr	r6, [r4, #0x18]
+     ea6: f8cd e000    	str.w	lr, [sp]
+     eaa: f3c6 2c07    	ubfx	r12, r6, #0x8, #0x8
+     eae: f3c6 4e07    	ubfx	lr, r6, #0x10, #0x8
+     eb2: ea4f 4c0c    	lsl.w	r12, r12, #0x10
+     eb6: 9607         	str	r6, [sp, #0x1c]
+     eb8: ea4c 6c06    	orr.w	r12, r12, r6, lsl #24
+     ebc: ea4c 6616    	orr.w	r6, r12, r6, lsr #24
+     ec0: ea46 260e    	orr.w	r6, r6, lr, lsl #8
+     ec4: f843 6d20    	str	r6, [r3, #-32]!
+     ec8: f045 fd32    	bl	0x46930 <.text+0x46930> @ imm = #0x45a64

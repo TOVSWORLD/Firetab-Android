@@ -1,0 +1,114 @@
+{
+  "scope": "Static selected exact-OTA paths only; no firmware/device execution",
+  "lk_sha256": "4ca0cca7ae9af6e959dc848b9ca002624c62e1bb93c83c0ecc89bae8d2186b08",
+  "facts": {
+    "slots": [
+      {
+        "pool": "0x3e9cc",
+        "got_offset": "0x380",
+        "linked_target": "0x4bd25ac5"
+      },
+      {
+        "pool": "0x3e9d0",
+        "got_offset": "0x2b0",
+        "linked_target": "0x4bd874e4"
+      },
+      {
+        "pool": "0x3e9fc",
+        "got_offset": "0x39c",
+        "linked_target": "0x4bd874e8"
+      },
+      {
+        "pool": "0x3ea00",
+        "got_offset": "0x138",
+        "linked_target": "0x4bd874c4"
+      },
+      {
+        "pool": "0x5c0",
+        "got_offset": "0xdc",
+        "linked_target": "0x4bd00d85"
+      }
+    ],
+    "references": [
+      {
+        "load": "0xda6",
+        "add": "0xdb4",
+        "pool": "0xf40",
+        "target": "0x4b674",
+        "text": "/idme"
+      },
+      {
+        "load_offset": "0xe12",
+        "add_pc_offset": "0xe14",
+        "literal_pool_offset": "0xf50",
+        "target_offset": "0x4b740",
+        "text": "value"
+      },
+      {
+        "load_offset": "0xe18",
+        "add_pc_offset": "0xe1a",
+        "literal_pool_offset": "0xf54",
+        "target_offset": "0x4b770",
+        "text": "permission"
+      }
+    ],
+    "alternate_guard": "GOT entry is nonzero Thumb function pointer0x4bd25ac5; pinned artifact takes helper path, not alternate branch, absent later mutation",
+    "alternate_arithmetic": "32-bit start/size pairs become zero-high64-bit DT cells; subtract runtime adjustment from last size modulo2^32; FDT r5 saved/restored atstack+0x2c",
+    "callback_storage_payload": "0x7c010",
+    "context_storage_payload": "0x7c014",
+    "selected_registered_target": "0x4bd00d85 (Thumb payload0xd84); conditional setup0x51c/0x520",
+    "selected_target_effect": "Looks up /idme and writes value/permission properties from runtime context; full record enumeration and identity contents unqualified",
+    "privacy": "Raw post-fixup DTB may contain device/household identifiers; keep it private in ignored out and publish normalized allowlisted facts only",
+    "unresolved": [
+      "All GOT and dispatcher storage writers/selected setup outcome",
+      "Runtime alternate rank count/adjustment and actual callback context",
+      "Remaining PSCI/reservation callbacks and complete FDT lineage",
+      "Installed LK3 equivalence, physical placement and failure return/log retention"
+    ]
+  },
+  "excerpts": [
+    {
+      "name": "guard",
+      "start": "0x3e07a",
+      "end": "0x3e09c",
+      "sha256": "185332fcb3bf9f59322545e2201430b4ab8516458dfd8b6e70d35f6bc781d364"
+    },
+    {
+      "name": "alternate",
+      "start": "0x3e17c",
+      "end": "0x3e22c",
+      "sha256": "fe291bc3bf9b3be7501cee1cbb89e1f3558e8f12696375b9f48b247576960e7d"
+    },
+    {
+      "name": "dispatcher",
+      "start": "0x140",
+      "end": "0x158",
+      "sha256": "2d13987353628f8d2dcfd4c80a312b4022bf5c359e921dd9fffeda3fe7faf283"
+    },
+    {
+      "name": "registration",
+      "start": "0x50e",
+      "end": "0x522",
+      "sha256": "4740923dc3034c535ef3aaffa2c67b6e5d2a597e9c80428bd778a80d03c8c9b8"
+    },
+    {
+      "name": "idme_lookup",
+      "start": "0xda6",
+      "end": "0xdc2",
+      "sha256": "2036b491b51e4dac96320c3e78a5c5f656da2fcf25b7df5ce44f2cf4eeea7867"
+    },
+    {
+      "name": "idme_property_refs",
+      "start": "0xe08",
+      "end": "0xe1e",
+      "sha256": "cc3881ac3120312e36a2e71b3ac875fd8a006b04cd864cd402e592d775dfdc09"
+    },
+    {
+      "name": "idme_writes",
+      "start": "0xe80",
+      "end": "0xecc",
+      "sha256": "0316adc50d849ef76cce491e977c52c3f08abbda02e79462920b0022fb1f90c5"
+    }
+  ],
+  "llvm_version": "Apple LLVM version 21.0.0"
+}

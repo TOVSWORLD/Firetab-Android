@@ -161,3 +161,12 @@ Absolute store precedes relocation, so arbitrary-placement preservation is open.
 Next executable source acceptance: alternate tuple branch0x3e17c and remaining
 reservation/PSCI callbacks, then selected FDT lineage/trust checks. Full lifetime,
 actual entry state/installed LK3 and runtime return/log gates remain Blocked.
+
+### Latest #347 alternate/dispatcher source scope
+
+Pinned GOT function presence selects mblock helper; alternate rank branch is not
+selected absent later mutation. Its arithmetic and r5 restore are traced. One
+optional-dispatcher setup targets IDME writes, so raw post-fixup DTB stays private.
+See LK-ALTERNATE-MEMORY.md/evidence/lk-alternate-memory. Next executable source
+acceptance: selected dispatcher setup source, remaining PSCI/reservation edits,
+then complete FDT lineage/trust inventory. Runtime loading/return/log gates open.
