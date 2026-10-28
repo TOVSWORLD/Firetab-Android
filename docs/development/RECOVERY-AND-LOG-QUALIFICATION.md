@@ -785,3 +785,48 @@ where the recovery reconstruction assets and invocation live. Producing the exac
 result bytes, observing the service/update result and demonstrating reachable
 return/failure log capture remain open. The pending owner recovery-entry test
 has not run, and automatic turns still do not touch the connected tablet.
+
+## Exact stock recovery bytes reconstructed offline (#346)
+
+The owned `scripts/reconstruct_stock_recovery.py` now reconstructs the exact
+current-build recovery bytes from pinned stock boot, IMGDIFF2 patch and bonus
+resource inputs. It interprets bounded BSDIFF40/raw/deflate chunks using host
+byte/decompression libraries; it does not run the firmware's install-recovery.sh,
+applypatch executable, kernel, recovery or any unlock helper. No filesystem is
+mounted and no device or network is opened by the decoder.
+
+The9,299,968-byte output matches the signed blocklist's SHA1
+`8e5e7f6f63fd77383c5721a13d818f880a1e70c9`; its measured SHA256 is
+`4de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2`.
+Its kernel component matches the exact-build stock boot kernel, unlike the older
+bundled return recovery, and its size fits the owner-reported17MiB recovery
+partition. The [reconstruction receipt](../../evidence/douglas-original-route/reconstructed-stock-recovery.json)
+records exact hashes, format source, limits and component layout. The2,048-byte
+trailer remains unclassified; image-level signature/bootloader acceptance is not
+inferred from the signed OTA target hash.
+
+The decoder CLI requires exact SHA256s for all three inputs and refuses publication
+unless output length/SHA1 match the signed target. It supports only the reviewed
+deflate profile, caps each input/expanded/output at16MiB, control data at1MiB and
+chunks at32. Publication is flushed/fsynced and exclusive; an existing file is
+not overwritten, and incomplete temporary files are removed on failure. Synthetic
+controls exercise diff/extra/negative-seek, raw/deflate/bonus, corrupt lengths,
+profile limits and failed/duplicate publication. The real artifact reconstruction
+is a separate successful file-only test; neither is a tablet recovery test.
+
+Reproduce from the existing ignored artifacts, choosing a fresh output path:
+
+```sh
+python3 scripts/reconstruct_stock_recovery.py \
+  --boot out/stock-ota-douglas-659664620/boot.img \
+  --patch out/stock-return/system-inspection/recovery-from-boot.p.private \
+  --bonus out/stock-return/system-inspection/etc_recovery-resource.dat.private \
+  --output out/stock-return/recovery-reconstruction/recovery-new-check.img
+```
+
+The verified local output is `out/stock-return/recovery-reconstruction/recovery-659664620-verified.img`.
+It remains ignored/private and must not be treated as an instruction to flash.
+This closes the exact reconstruction-byte gap. Ordinary stock recovery entry and
+return, post-failure reachability, update acceptance and real boot logs remain
+open. The owner recovery-mode approval is still pending; no automatic tablet
+operation occurred.

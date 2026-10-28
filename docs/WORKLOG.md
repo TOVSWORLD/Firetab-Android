@@ -2496,3 +2496,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   oneshot flash_recovery service; class startup declarations are not execution proof.
 - Source/asset-location gap resolved; exact patched bytes, live service acceptance,
   reachable post-failure return and usable real logs remain unqualified.
+
+## 2026-10-27 — exact recovery result-byte verification (#346)
+
+- CI healthy, dependency PR11 only. No owner recovery-mode approval received;
+  automatic run did not access, enumerate or reboot the connected tablet.
+- Read bounded primary AOSP IMGDIFF2 format source at
+  b31f9ce6d150a264f584d9b38a54da0723fc249c; hash/URL retained in receipt.
+  Implemented owned bounded file-only BSDIFF40/raw/deflate+bonus decoder; did not
+  execute vendor applypatch/installer/unlock helper or mount a filesystem.
+- Actual pinned inputs produced9,299,968bytes/SHA18e5e7f6f63fd77383c5721a13d818f880a1e70c9,
+  exactly the signed OTA recovery target. SHA2564de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2.
+  Rechecked output bytes and boot-component layout; exact-stock kernel matches,
+  size fits owner-reported recovery,2KiB trailer remains unclassified.
+- Added malformed-format/capacity and exclusive publication controls; pinned
+  output verification precedes fsync/exclusive host publication. Binary stays ignored.
+  Next owner entry/return observation and independent failure/log qualification;
+  no runtime hardware gate closed by this artifact result.
+- Validation:309 host tests pass plus actual signed-target reconstruction and
+  component/size checks; repository/community/link and whitespace guards pass.

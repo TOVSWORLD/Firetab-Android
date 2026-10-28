@@ -942,3 +942,13 @@ This explains the absence of a direct recovery write from the selected OTA scrip
 No patch/helper was executed and no successful boot-time reconstruction or
 post-failure rescue is inferred. The earlier unknown asset/source location is
 resolved; actual recovery reachability and failure logging remain separate gates.
+
+## Exact current recovery artifact is available
+
+Owned offline decoding now produces the9,299,968-byte recovery whose hash matches
+the signed current-build OTA target. It also matches the stock boot kernel
+component and fits the observed recovery partition. See the [decoder, controls and
+runtime limits](RECOVERY-AND-LOG-QUALIFICATION.md#exact-stock-recovery-bytes-reconstructed-offline-346).
+This replaces the older bundled recovery as the exact-build artifact candidate;
+it does not establish bootloader acceptance, actual recovery boot or failure return.
+No patching helper or image was executed, and no tablet was accessed.

@@ -1,0 +1,97 @@
+{
+  "scope": "Owned offline IMGDIFF2/BSDIFF40 byte reconstruction of signed stock recovery target, not executed recovery or restore",
+  "source_ota_sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab",
+  "input_sha256": {
+    "boot": "8982fa50193acc764be69ee51027ee92e83614cee4b8235b07439d1f9e2db363",
+    "patch": "319e8ed946abfb9eab83b2f343212b8a93d0bd05c5489e77758747652cb75e40",
+    "bonus": "7227fe97af0cf79c18bcf89048054a90bc0803bf3aa568dde88a1d879d7b0a05"
+  },
+  "result": {
+    "bytes": 9299968,
+    "sha1": "8e5e7f6f63fd77383c5721a13d818f880a1e70c9",
+    "sha256": "4de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2",
+    "matches_signed_target": true,
+    "zlib_runtime": "1.2.12",
+    "firmware_or_helpers_executed": false,
+    "device_accessed": false,
+    "recovery_boot_verified": false,
+    "stock_return_verified": false
+  },
+  "layout": {
+    "scope": "Read-only component layout; no signature, firmware identity, load-address, DT or boot qualification",
+    "bytes": 9299968,
+    "sha256": "4de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2",
+    "header_layout": "v0 or legacy zero-dt-size; indistinguishable here",
+    "page_size": 2048,
+    "tags_address": 1207959552,
+    "os_version_word": 0,
+    "components": [
+      {
+        "name": "kernel",
+        "offset": 2048,
+        "bytes": 7191666,
+        "load_address": 1074266112,
+        "padded_end": 7194624,
+        "sha256": "1bc3d2ed848a576259f4a04bb01b1206e5ddc60480b20d4e2567b524504b5e1e",
+        "identification": "unknown kernel payload"
+      },
+      {
+        "name": "ramdisk",
+        "offset": 7194624,
+        "bytes": 2101692,
+        "load_address": 1140850688,
+        "padded_end": 9297920,
+        "sha256": "7af75166c86eda8922240c52621629f2aadacf061ded782ea5a45657d2e2ca00",
+        "identification": "not inspected"
+      },
+      {
+        "name": "second",
+        "offset": 9297920,
+        "bytes": 0,
+        "load_address": 1089470464,
+        "padded_end": 9297920,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identification": "not inspected"
+      }
+    ],
+    "unclassified_trailing_bytes": 2048,
+    "partition_bytes": 17825792,
+    "fits_supplied_partition": true,
+    "signature_verified": false,
+    "bootable": "not determined"
+  },
+  "format_source": {
+    "url": "https://android.googlesource.com/platform/bootable/recovery/+/b31f9ce6d150a264f584d9b38a54da0723fc249c/applypatch/imgpatch.cpp?format=TEXT",
+    "bytes": 10971,
+    "sha256": "c59f0f934d0feb192105207eb4a9a295a1b1577b5ef532c10084b5ef521082e0"
+  },
+  "decoder_sha256": "51458f6c9ac15248865ada836d4a5d907fec789ed822837efb08dbd0c2388598",
+  "limits": {
+    "input_bytes_each": 16777216,
+    "expanded_or_output_bytes_each": 16777216,
+    "decoded_control_bytes": 1048576,
+    "image_chunks": 32,
+    "reviewed_deflate_parameters": [
+      6,
+      8,
+      -15,
+      8,
+      0
+    ],
+    "output_publication": "Same-directory fsync and exclusive link; no overwrite or partial named output"
+  },
+  "qualification": {
+    "reconstructed_bytes_match_signed_target": true,
+    "kernel_component_matches_exact_stock_boot": true,
+    "fits_owner_reported_recovery_partition": true,
+    "recovery_image_internal_signature_verified": false,
+    "bootloader_acceptance_verified": false,
+    "recovery_boot_verified": false,
+    "stock_return_verified": false,
+    "failure_exit_verified": false,
+    "boot_logs_captured": false,
+    "vendor_helper_executed": false,
+    "filesystem_mounted": false,
+    "tablet_accessed": false
+  }
+}
