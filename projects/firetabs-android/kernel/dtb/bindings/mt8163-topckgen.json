@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact topckgen compatible coverage only; no clock/rate/hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-topckgen.patch",
+  "patch_sha256": "a6379dd5f3c550cf0f8aa867c17ba7ef3f8c3d519530663245eb267424f9ae16",
+  "schema": "clock/mediatek,topckgen.yaml",
+  "original_sha256": "3fc81c3394923afb49b91664ee542e2d13fe92f304e34f17ac0836d2699d064f",
+  "proposed_sha256": "05a3e64600d173ddbb0bfcf71c7f24f4ced6002489d6dd462449f26afe271d6f"
+}

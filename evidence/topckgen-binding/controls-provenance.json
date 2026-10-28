@@ -1,0 +1,16 @@
+{
+  "scope": "Actual processed compatible controls and unchanged-property comparison",
+  "dtschema_version": "2026.9",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "inputs": {
+    "evidence/topckgen-binding/original.yaml": "3fc81c3394923afb49b91664ee542e2d13fe92f304e34f17ac0836d2699d064f",
+    "evidence/topckgen-binding/proposed.yaml": "05a3e64600d173ddbb0bfcf71c7f24f4ced6002489d6dd462449f26afe271d6f",
+    "evidence/topckgen-binding/processed-compatible.json": "b045587e6ac9d1c26881e00d4fe644f3a1df20b8adfb37f99f8fa512208f8b47",
+    "evidence/topckgen-binding/check-controls.py": "82da642f6d34700c5c9712b191024f1b12feb2ceb290c0a066f3f1a9c25c603e"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/topckgen-binding/check-controls.py"
+  ],
+  "full_validation_passed": false
+}

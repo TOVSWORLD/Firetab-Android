@@ -1,0 +1,10 @@
+--- a/clock/mediatek,topckgen.yaml
++++ b/clock/mediatek,topckgen.yaml
+@@ -22,6 +22,7 @@
+           - mediatek,mt6797-topckgen
+           - mediatek,mt7622-topckgen
+           - mediatek,mt8135-topckgen
++          - mediatek,mt8163-topckgen
+           - mediatek,mt8173-topckgen
+           - mediatek,mt8516-topckgen
+       - items:
