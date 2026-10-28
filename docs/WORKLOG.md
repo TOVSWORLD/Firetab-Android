@@ -2566,3 +2566,15 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   ignored/private0600. No broad bugreport or firmware/helper/security changes.
 - Automatic run only analyzed supplied/captured local evidence, no tablet access.
   Next offline truncation/attribution investigation, then failure lifecycle gate.
+
+## 2026-10-28 — reconcile acquired kernel layout with DT memory (#348/#106)
+
+- Offline strict selected-line parsing of acquired second kernel archive entry;
+  three PHY banks plus named ATF/consys regions form a contiguous partition of
+  earlier DT usable banks. Kernel total1462080KiB plus2240KiB ATF/consys equals
+  DT1464320KiB. Dynamic consys actual address0x98400000 now observed.
+-2MiB console declaration/buffer initialization observed; old-valid contents and
+  experimental retention remain unqualified. Top106MiB owner remains unknown.
+- Normalized interval arithmetic asserts pass; no raw logs or household fields
+  published and no tablet access during this automatic run. Next failure-lifecycle
+  qualification, preserving truncation/freshness limits.

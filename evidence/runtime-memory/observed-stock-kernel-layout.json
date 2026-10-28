@@ -1,0 +1,69 @@
+{
+  "scope": "Actual archived stock-kernel declarations reconciled with earlier DT memory decoder; not experimental boot qualification",
+  "source_dump_sha256": "25a703e1315c636794d26a586153d4051f4569bbf008e429eccff197bd3ba256",
+  "source_entry_order": 2,
+  "kernel_reported_banks": [
+    {
+      "start": 1073741824,
+      "end_exclusive": 1124073472,
+      "bytes": 50331648
+    },
+    {
+      "start": 1124270080,
+      "end_exclusive": 2554331136,
+      "bytes": 1430061056
+    },
+    {
+      "start": 2556428288,
+      "end_exclusive": 2573205504,
+      "bytes": 16777216
+    }
+  ],
+  "kernel_reported_removed_regions": [
+    {
+      "name": "atf-reserved-memory@43000000",
+      "start": 1124073472,
+      "end_exclusive": 1124270080,
+      "bytes": 196608
+    },
+    {
+      "name": "consys-reserve-memory",
+      "start": 2554331136,
+      "end_exclusive": 2556428288,
+      "bytes": 2097152
+    }
+  ],
+  "dt_usable_bytes": 1499463680,
+  "kernel_reported_total_bytes": 1497169920,
+  "difference_bytes": 2293760,
+  "difference_exactly_matches_atf_plus_consys": true,
+  "kernel_memory_summary_kib": {
+    "available": 1388236,
+    "total": 1462080,
+    "reserved": 73844
+  },
+  "console": {
+    "start": 1145044992,
+    "bytes": 2097152,
+    "initialized_buffer_size": 2097152,
+    "old_valid_contents_verified": false
+  },
+  "low_level_log": {
+    "start": 1147142144,
+    "bytes": 131072,
+    "literal_node_unit_address": "46600000",
+    "unit_address_discrepancy_preserved": true
+  },
+  "top_dt_exclusion": {
+    "bytes": 111149056,
+    "owner_identified": false
+  },
+  "qualification": {
+    "stock_dynamic_consys_address_observed": true,
+    "stock_reservation_declarations_observed": true,
+    "installed_binary_source_equivalence_verified": false,
+    "boot_session_freshness_verified": false,
+    "experimental_retention_verified": false
+  },
+  "limits": "Archive truncated; address intervals from PHY layout use inclusive ends, normalized explicitly to exclusive ends. Memory summary reserved is not the DT top exclusion."
+}
