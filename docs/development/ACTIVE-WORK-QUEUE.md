@@ -70,9 +70,14 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    binding proposals proceed from cached source during that wait. Topckgen and
    infracfg scopes merged (#385/#386); apmixedsys scope merged (#387); four gate contracts are in #388. A real MMSYS parent-
    instantiation gap are recorded in #387. #18 real parent integration is in PR389 with explicit parent-object/Image CI.
-   Its compact reset mapping corrects donor DSI and LCM mismatches; runtime remains
-   untested. #27 MMSYS exact tuple proposal has11 controls and46 diagnostics;
-   full schema acceptance remains open.
+   Its compact reset mapping corrects donor DSI and LCM mismatches. Parent object,
+   generic Image and QEMU pass at5c02907 (run40763077737); actual runtime remains
+   untested. #390/#391/#392 merged; pinctrl probe contract has19 controls and45
+   remaining full-context diagnostics. Next queued executable task: #20 review
+   actual power/provider parent-child matching, register/rail prerequisites and
+   DT consumers against pinned ACK/donor/legacy; qualify schemas under #27.
+   Acceptance: explicit source differences and probe prerequisites, targeted checks,
+   and preserved runtime gates. Do not create placeholders or alter the device.
    If recovery work
    truly awaits external evidence, select one dependency-ready existing board task
    after reading its live acceptance criteria. Investigate or implement its actual

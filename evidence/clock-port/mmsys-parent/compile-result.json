@@ -1,0 +1,38 @@
+{
+  "scope": "Actual pinned parent-object/full generic ARM64 Image compile and generic QEMU diagnostic smoke; no douglas runtime qualification",
+  "source_revision": "5c02907cf4f368cd3b3987cdb979ced55d4df35f",
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40763077737",
+  "conclusion": "success",
+  "parent_object_marker": true,
+  "resolved_configuration": {
+    "MTK_MMSYS": "y",
+    "MTK_CMDQ": "n",
+    "mode": "diagnostic",
+    "argument_profile": "generic-force"
+  },
+  "artifacts_sha256": {
+    "Image.gz": "e0026ddab5b23f9b282cf026e9656ccba2369ed5cb85c43f5390d1520c7d04cd",
+    ".config": "f97aa49390383aa722aa2d112ba2f5abb4e3ffce24dcdd11d1898c4f85757e3d",
+    "vmlinux": "4a82abcade61db0937bc55cfdd115061492bbbe1cdfb66ffa15492aed9be623d",
+    "Image": "27a9366144cf7e313af9132e94d75d3152cadb4bbc95739215e08c0d498f8436"
+  },
+  "compile_diagnostic_lines": {
+    "warning": 0,
+    "error": 0
+  },
+  "private_log": {
+    "bytes": 1481984,
+    "sha256": "f80c5b785d16bd00dbdc72595ab26b1c68ce08860d59bf4455a98d32f2a8822d"
+  },
+  "qemu": {
+    "conclusion": "success",
+    "scope": "generic ARM64 virt only",
+    "console_bytes": 14471,
+    "console_sha256": "535217e37b05f6ef0cf884b3263fe72fb669db66e4b4330c8599f4ceb481743a"
+  },
+  "limits": [
+    "Actual tablet probe, reset and routing untested.",
+    "Experimental boot/failure-return and retained-log gates remain open.",
+    "Documentation/schema merges require input-identity verification and final-head required checks; no duplicate compile claimed."
+  ]
+}

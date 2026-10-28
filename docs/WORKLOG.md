@@ -2797,3 +2797,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Parent IRQ delivery and GPIO87 remain unqualified; source matches do not close
   hardware gates. #389 real MMSYS Image build remains active, #391 bank audit
   merged after six exact-head checks including pinctrl object compile.
+
+## 2026-10-28 — actual MMSYS parent/Image result (#18)
+
+- Run40763077737 passed explicit MMSYS parent object, full generic ARM64 Image
+  and QEMU diagnostic smoke at5c02907; MTK_MMSYS=y/CMDQ=n. No warning:/error:
+  lines found in1481984byte private log; SHA256
+  f80c5b785d16bd00dbdc72595ab26b1c68ce08860d59bf4455a98d32f2a8822d.
+- Image SHA25627a9366144cf7e313af9132e94d75d3152cadb4bbc95739215e08c0d498f8436.
+  Full artifact/config/QEMU receipts: evidence/clock-port/mmsys-parent/compile-result.json.
+- Independent #390/#391/#392 merged while build ran. Verified all selected
+  provider/source-lock/input/config/build inputs byte-identical to compiled head;
+  no duplicate compile of documentation/schema changes claimed. Final-head checks
+  rerun before parent merge. Actual device probe/reset/routes and recovery open.
+- #27 exact pinctrl probe contract merged in #392; full context45diagnostics,
+  not passed. Next executable dependency is #20 power/provider source integration
+  review and matched schemas under #27; no physical action requested.

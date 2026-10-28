@@ -36,7 +36,7 @@
   },
   "qualification": {
     "patch_apply": "passed; reapply rejected",
-    "compile": "Pending corrected-head explicit MMSYS object and generic Image",
+    "compile": "Passed explicit MMSYS object and full generic Image/QEMU at5c02907 in run40763077737; input-equivalence.json verifies documentation/schema sync inputs unchanged.",
     "runtime": "untested; no device operation"
   },
   "captured_reset_consumer": {

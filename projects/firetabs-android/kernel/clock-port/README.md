@@ -86,5 +86,7 @@ but pinned legacy source locates LCM at0x150; the overlay corrects it to bank4.
 Original donor evidence is retained unchanged, and the adapted overlay is hashed.
 No new DT reset consumers are introduced. Routing covers only the donor's minimal internal display path;
 external routes are absent. The generic build explicitly enables MTK_MMSYS and
-compiles its parent object before linking Image. Compile remains pending for
-this change; actual probe, routing and reset behavior remain untested.
+compiles its parent object before linking Image. Explicit MMSYS parent object, full generic Image and QEMU diagnostic smoke
+passed at5c02907 in run40763077737. Compile result and unchanged-input receipts
+are in evidence/clock-port/mmsys-parent. Actual probe, routing and reset behavior
+remain untested.
