@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in exact MT8163 pinctrl contract with real common-probe regmap/EINT prerequisites; no electrical/IRQ qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "bindings/mt8163-pinctrl.patch",
+  "patch_sha256": "e33e93921b8ed6884f0612028d92faa0cbd98aa2f71d06e7d5b7a2d740da7f17",
+  "schema": "pinctrl/mediatek,mt65xx-pinctrl.yaml",
+  "original_sha256": "02ae53a7cb1f6a7b61c6a9c4e45e90a420d0ee5e2f938b06f30c34fbec43c4d8",
+  "proposed_sha256": "58a894e934f26911f234cc09387815497152d1900785def8f92de0fab94ce23b"
+}

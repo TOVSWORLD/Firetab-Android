@@ -1,0 +1,22 @@
+{
+  "before": 46,
+  "after": 45,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/rdma-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/pinctrl@1000b000",
+      "nodename": "pinctrl@1000b000",
+      "compatible": [
+        "mediatek,mt8163-pinctrl"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-pinctrl']",
+      "formatted": "work/dtb-compile/rdma-node-name/douglas.dtb: /soc/pinctrl@1000b000: failed to match any schema with compatible: ['mediatek,mt8163-pinctrl']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

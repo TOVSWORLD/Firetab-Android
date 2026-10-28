@@ -1,0 +1,16 @@
+{
+  "donor_driver": "projects/firetabs-android/kernel/pinctrl-port/overlay/drivers/pinctrl/mediatek/pinctrl-mt8163.c",
+  "common_driver": "evidence/pinctrl-port/ack/drivers/pinctrl/mediatek/pinctrl-mtk-common.c",
+  "requirements": {
+    "reg": "EINT devm_platform_ioremap_resource(pdev,0)",
+    "mediatek,pctl-regmap": "common probe supplies NULL regmap; init requires syscon phandle",
+    "interrupt-controller": "mtk_eint_init returns ENODEV without property",
+    "interrupts": "irq_of_parse_and_map(np,0) must succeed",
+    "#interrupt-cells": "Existing common binding requires cell value2; now declaration required for exact MT8163 EINT contract"
+  },
+  "source_notes": "ap_num169 makes EINT init mandatory; only first parent IRQ consumed as in legacy. Schema retains existing1..3 IRQ range, not delivery qualification.",
+  "sha256": {
+    "projects/firetabs-android/kernel/pinctrl-port/overlay/drivers/pinctrl/mediatek/pinctrl-mt8163.c": "aa3c679d8eade2dfa2363fb9e1a7e8c778fa364e69ac56b41a3444f25941bcee",
+    "evidence/pinctrl-port/ack/drivers/pinctrl/mediatek/pinctrl-mtk-common.c": "6ea39d5265cb1bd6264ad3a0e3ca6ba56128bd707e057287aa8e25cfafa3c0eb"
+  }
+}

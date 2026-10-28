@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "name": "captured-exact",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "missing-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-mediatek,pctl-regmap",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-gpio-controller",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-#gpio-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-interrupt-controller",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-interrupts",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing-#interrupt-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-gpio-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong-interrupt-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "two-reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "fallback",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "zero-parent-irqs",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "four-parent-irqs",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "one-parent-irq",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "three-regmaps",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "zero-regmaps",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unknown-property",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "existing-optional-reg",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "all_unrelated_constraints_preserved": true,
+  "passed": true
+}
