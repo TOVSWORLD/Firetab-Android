@@ -1,0 +1,41 @@
+{
+  "legacy_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "ack_revision": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "legacy_git_objects": [
+    {
+      "path": "drivers/base/power/domain.c",
+      "snapshot": "legacy-genpd.c",
+      "bytes": 62275,
+      "sha256": "e6d53437207c6c944f3360255812fd77c0c5cba7a4a3666c20324a28f855b762"
+    },
+    {
+      "path": "arch/arm64/boot/dts/mt8163.dtsi",
+      "snapshot": "legacy-mt8163.dtsi",
+      "bytes": 48528,
+      "sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1"
+    },
+    {
+      "path": "include/dt-bindings/clock/mt8163-clk.h",
+      "snapshot": "legacy-clock.h",
+      "bytes": 8874,
+      "sha256": "88ca0d673703830da8728634ca03d8695d16bfe6e5cc0ea0bf988e8a37dca64b"
+    }
+  ],
+  "ack_header": {
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/linux/pm_domain.h?format=TEXT",
+    "bytes": 18610,
+    "sha256": "b50e87d6da25e11428bcfc5179758c621c173c0b0a47ac4476a17e2f0cb389ac"
+  },
+  "ack_genpd_implementation_available": false,
+  "fetch_limits": "Primary core source unavailable (503); exact official mirror path404. Header cannot establish full implementation equivalence.",
+  "runtime_tested": false,
+  "other_inputs_sha256": {
+    "evidence/power-port/domain-contract/legacy-scpsys.c": "f40ec3b744305b40c688af3aaaff5e888aa9ae5155bde87dbc7f062f12ed232e",
+    "evidence/power-port/ack/drivers/pmdomain/mediatek/mtk-pm-domains.c": "fc86b8c8e12931b337ab98fff4678cc93300f807a6d9d2ae813c12135f9e1ecd",
+    "evidence/kernel-audit/legacy/drivers/clk/mediatek/clk-mt8163.c": "3aef9e7da88f4ba736b299b54d99473ce8015a64e9893933d7062aec5975b3b1",
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-topckgen.c": "2f964a3f2b9cdda1ec71d03fa3b6a42669c6c1cdbb54e4f30abc738c59663e1d",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-topckgen.h": "852998dc9577129aa5f5c7e05c2ef50a5f419d64348cc4f6daf7252a84cbd4d7",
+    "evidence/scpsys-binding/captured-node.json": "c074b295b1eaba99f8ac1cd19b3450cc8fe4db4aeb62150181a2c72fd85dff48",
+    "scripts/validate_power_provider_tree.py": "9330bf64819e0fcb716d3a707a3302459468b50aa523f805edd82f7b1705e091"
+  }
+}

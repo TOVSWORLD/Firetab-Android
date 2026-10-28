@@ -3,13 +3,22 @@
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 from pathlib import Path
 
 
-def validate(node, infracfg_phandle):
+def captured_clock_ids():
+    header = (Path(__file__).resolve().parents[1] / 'projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-topckgen.h').read_text()
+    return {name: int(re.search(r'#define\s+CLK_TOP_' + name.upper() + r'_SEL\s+(\d+)', header)[1]) for name in ['mm', 'mfg']}
+
+
+def validate(node, infracfg_phandle, topckgen_phandle):
     if type(infracfg_phandle) is not int or not 0 < infracfg_phandle < 0xffffffff:
         raise ValueError('Invalid declared INFRACFG phandle')
+    if type(topckgen_phandle) is not int or not 0 < topckgen_phandle < 0xffffffff or topckgen_phandle == infracfg_phandle:
+        raise ValueError('Invalid distinct TOPCKGEN phandle')
+    clock_ids = captured_clock_ids()
     if node.get('compatible') != ['mediatek,mt8163-scpsys', 'syscon', 'simple-mfd']:
         raise ValueError('Wrong captured syscon parent tuple')
     controller = node.get('power-controller', {})
@@ -40,6 +49,10 @@ def validate(node, infracfg_phandle):
                 raise ValueError('Domain clock/name count mismatch')
             if domain_id in [0, 1, 2, 3, 6] and not child.get('clocks'):
                 raise ValueError('Captured model requires the basic domain clock')
+            if domain_id in [0, 1, 2, 3, 6]:
+                role = 'mfg' if domain_id == 6 else 'mm'
+                if child.get('clocks') != [[topckgen_phandle, clock_ids[role]]] or child.get('clock-names') != [role]:
+                    raise ValueError('Captured clock provider/ID contract mismatch: ' + role)
             found[domain_id] = parent_id
             walk(child, domain_id)
     walk(controller)
@@ -48,7 +61,8 @@ def validate(node, infracfg_phandle):
     return {'scope': 'Captured candidate topology only; no power/clock sequencing or runtime proof',
             'domain_ids': sorted(found), 'mfg_parent': found[7],
             'protected_ids': [0, 4, 6], 'infracfg_phandle': infracfg_phandle,
-            'clock_name_counts_consistent': True, 'runtime_qualified': False}
+            'clock_name_counts_consistent': True, 'topckgen_phandle': topckgen_phandle,
+            'matched_basic_clock_ids': clock_ids, 'runtime_qualified': False}
 
 
 def from_dtb(binary, dtb):
@@ -89,10 +103,14 @@ def from_dtb(binary, dtb):
                 result[child] = read(path + '/' + child)
         return result
     node = {'compatible': strings(parent_path, 'compatible'), 'power-controller': read(controller_path)}
+    clock_path = '/soc/clock-controller@10000000'
+    if strings(clock_path, 'compatible') != ['mediatek,mt8163-topckgen'] or numbers(clock_path, '#clock-cells') != [1]:
+        raise ValueError('Captured TOPCKGEN tuple/cell contract changed')
+    topckgen = numbers(clock_path, 'phandle')
     phandle = numbers(infra_path, 'phandle')
-    if len(phandle) != 1:
+    if len(phandle) != 1 or len(topckgen) != 1:
         raise ValueError('INFRACFG must have one declared phandle')
-    return node, phandle[0]
+    return node, phandle[0], topckgen[0]
 
 
 def main():
@@ -101,16 +119,17 @@ def main():
     parser.add_argument('--dtb', type=Path)
     parser.add_argument('--fdtget', type=Path, default=Path(__file__).resolve().parents[1] / 'work/dtb-tool/build/fdtget')
     parser.add_argument('--infracfg-phandle', type=int)
+    parser.add_argument('--topckgen-phandle', type=int)
     args = parser.parse_args()
     if bool(args.node) == bool(args.dtb):
         parser.error('Choose one decoded node JSON or --dtb')
     if args.dtb:
-        if args.infracfg_phandle is not None:
+        if args.infracfg_phandle is not None or args.topckgen_phandle is not None:
             parser.error('DTB mode resolves its own declared INFRACFG phandle')
-        node, phandle = from_dtb(args.fdtget, args.dtb)
+        node, phandle, topckgen = from_dtb(args.fdtget, args.dtb)
     else:
-        node, phandle = json.loads(args.node.read_text()), args.infracfg_phandle
-    result = validate(node, phandle)
+        node, phandle, topckgen = json.loads(args.node.read_text()), args.infracfg_phandle, args.topckgen_phandle
+    result = validate(node, phandle, topckgen)
     if args.dtb:
         result['dtb_sha256'] = hashlib.sha256(args.dtb.read_bytes()).hexdigest()
     print(json.dumps(result, indent=2))

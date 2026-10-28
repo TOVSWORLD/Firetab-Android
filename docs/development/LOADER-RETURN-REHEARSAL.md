@@ -125,3 +125,16 @@ not on another cable reseat or ordinary recovery-menu photograph. Next independe
 work is the dependency-ready board task selected from the active queue; next route
 investigation must narrow one of the five R1 questions rather than repeat generic
 compilation or reclassify the partial log as complete.
+
+
+## Observed clock ABI constrains any experimental DTB handoff
+
+The sanitized [stock DT clock receipt](../../evidence/power-port/transition-order/observed-stock-clock-abi.json)
+confirms MFG70/MM67 while the candidate provider uses54/51. In the candidate,
+70/67 identify different clock functions. The stock parent tuple also differs
+from the candidate parent/child model; this selected-property capture is not a
+full DTB compatibility analysis. A qualified R1 plan must identify and verify the
+actual matching DTB passed to the candidate kernel. Stock-DTB substitution and
+unobserved loader selection are not acceptable evidence of compatible handoff.
+The host guard checks fresh candidate clock IDs/providers, but cannot prove what
+a loader passes. R1/R2 and independent failure return remain unqualified.

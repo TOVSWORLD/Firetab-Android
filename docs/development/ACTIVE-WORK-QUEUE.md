@@ -83,7 +83,15 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    fresh-DTB topology guard rejects wrong INFRACFG, MFG flattening, duplicate or
    disabled domains. Full context42 diagnostics remains unpassed. Next queued #20
    source scope: compare legacy active_wakeup callback to ACK genpd flag semantics
-   and establish an explicit MFG clock-order rationale; do not claim runtime equivalence from equal register values.
+   and establish an explicit MFG clock-order rationale. The clock trace now records
+   same alias-resolved mux fields but different owner and OFF write order. Bounded
+   stock USB metadata confirms legacy MFG70/MM67 vs candidate54/51; fresh-DTB
+   guard rejects old IDs/wrong provider. #347 must qualify actual matching DTB
+   selection/handoff before any experimental loading. Next queued source task is
+   #347: trace image/DTB selection, address and trust boundaries from cached
+   LK/FDT/load artifacts (out/lk-instruction-audit, out/lk-fastboot-review,
+   out/lk-bootargs), pinning each artifact and distinguishing source from installed
+   binary evidence. No helper execution; keep R1/R2 blocked until observed. do not claim runtime equivalence from equal register values.
    Acceptance: explicit source differences and probe prerequisites, targeted checks,
    and preserved runtime gates. Do not create placeholders or alter the device.
    If recovery work

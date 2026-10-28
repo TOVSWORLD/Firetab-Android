@@ -1,0 +1,28 @@
+{
+  "scope": "Captured candidate topology only; no power/clock sequencing or runtime proof",
+  "domain_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "mfg_parent": 6,
+  "protected_ids": [
+    0,
+    4,
+    6
+  ],
+  "infracfg_phandle": 2,
+  "clock_name_counts_consistent": true,
+  "topckgen_phandle": 3,
+  "matched_basic_clock_ids": {
+    "mm": 51,
+    "mfg": 54
+  },
+  "runtime_qualified": false,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}
