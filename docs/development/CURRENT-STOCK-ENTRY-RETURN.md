@@ -931,3 +931,14 @@ matches the original bundled stock-return recovery's key file. The earlier
 large-download blocker is resolved; see the [verification and trust limits](RECOVERY-AND-LOG-QUALIFICATION.md#approved-full-stock-candidate-hash-and-signature-346).
 This does not establish deployed recovery trust, actual sideload/update acceptance,
 rollback behavior, failure return or real logs. No firmware was run or installed.
+
+## Stock recovery update-chain gap narrowed
+
+The exact-build OTA's signed system data includes the recovery-install script,
+IMGDIFF2 patch and bonus resource. Packaged boot init declares its oneshot service;
+script input/target hashes agree with the signed boot/recovery manifest. See the
+[static reconstruction-chain review](RECOVERY-AND-LOG-QUALIFICATION.md#exact-build-recovery-reconstruction-chain-found-346).
+This explains the absence of a direct recovery write from the selected OTA script.
+No patch/helper was executed and no successful boot-time reconstruction or
+post-failure rescue is inferred. The earlier unknown asset/source location is
+resolved; actual recovery reachability and failure logging remain separate gates.

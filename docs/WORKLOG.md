@@ -2479,3 +2479,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   after a requested historical mirror URL returned404;11,291source bytes, retained
   hash/ranges. No binary/helper run or tablet access. Next recovery acceptance,
   failure entry/return and independent logs; task346 remains open.
+
+## 2026-10-27 — cached exact-build recovery reconstruction (#346)
+
+- CI healthy; dependency PR11 only. Owner stock-recovery entry/return approval
+  remains pending; no device/USB query or reboot during this automatic run.
+- Verified9 target-blocklist component hashes/lengths by bounded local streaming;
+ 1,543,191,816unique bytes under2GiB cap, no new downloads. Built local sparse
+  analysis filesystem from new ranges with signed system caremap digest agreement.
+- Owned bounded ext4 prototype found install-recovery.sh, recovery-from-boot.p
+  and recovery-resource.dat; exact file hashes/sizes in reconstruction receipt.
+  Read470,262bytes under64MiB cap, no mount, script/helper execution or raw-device
+  access. Local prototypes/reports remain ignored system-inspection output.
+- Script declares exact current recovery9,299,968bytes/SHA18e5e7f6f63fd77383c5721a13d818f880a1e70c9
+  from exact stock boot plus patch/bonus. Packaged init.rc726 declares main-class
+  oneshot flash_recovery service; class startup declarations are not execution proof.
+- Source/asset-location gap resolved; exact patched bytes, live service acceptance,
+  reachable post-failure return and usable real logs remain unqualified.
