@@ -1,0 +1,24 @@
+{
+  "compatible": [
+    "mediatek,mt8163-wdt"
+  ],
+  "reg": [
+    [
+      0,
+      268464128,
+      0,
+      4096
+    ]
+  ],
+  "interrupts": [
+    [
+      0,
+      128,
+      8
+    ]
+  ],
+  "#reset-cells": 1,
+  "$nodename": [
+    "watchdog@10007000"
+  ]
+}

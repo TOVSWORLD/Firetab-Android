@@ -1,0 +1,5 @@
+{
+  "scope": "Decoded locked candidate DTB declaration, not a live read",
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "node": "/soc/watchdog@10007000"
+}

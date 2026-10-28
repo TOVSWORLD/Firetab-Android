@@ -1,0 +1,84 @@
+{
+  "scope": "Cached source/probe contract, not runtime watchdog or independent return qualification",
+  "source": "evidence/kernel-audit/upstream-series/drivers/watchdog/mtk_wdt.c",
+  "source_revision": "84fae418d21ba2f7b92215834cfe4708305954c8",
+  "source_sha256": "39f0d5ada7e66bc8e62b15b8776c76df3265ab8fa64ccd50a2b3c28ae814a407",
+  "of_compatible": "mediatek,mt8163-wdt",
+  "reset_ids": {
+    "minimum": 0,
+    "maximum": 14,
+    "count": 15,
+    "mapping": "identity; no MT8163 remap table or swsysrst-enable capability supplied"
+  },
+  "timeout_seconds": {
+    "minimum": 2,
+    "maximum": 31
+  },
+  "probe": {
+    "resource_index": 0,
+    "irq_index": 0,
+    "irq_optional": true,
+    "irq_request_flags": "IRQF_NO_AUTOEN",
+    "bark_enabled_after_watchdog_registration": true,
+    "already_running_watchdog": "Reapplies timeout/mode by mtk_wdt_start; writes WDT_MODE and reload/length state; not passive observation",
+    "reset_controller_registration": "after watchdog registration, descriptor reset count15"
+  },
+  "runtime_qualified": false,
+  "independent_failure_return_qualified": false,
+  "legacy_reference": {
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "path": "drivers/watchdog/mediatek/wdt/common/mt_wdt.h",
+    "sha256": "f2ba83feef0b30444bf7bdbd4c3199a0f2ef4ea2fde01f4acc02f832462358b1",
+    "acquisition": "git show HEAD:path; nested working tree not read"
+  },
+  "matched_offsets": [
+    {
+      "legacy": "MTK_WDT_MODE",
+      "candidate": "WDT_MODE",
+      "offset": 0
+    },
+    {
+      "legacy": "MTK_WDT_LENGTH",
+      "candidate": "WDT_LENGTH",
+      "offset": 4
+    },
+    {
+      "legacy": "MTK_WDT_RESTART",
+      "candidate": "WDT_RST",
+      "offset": 8
+    },
+    {
+      "legacy": "MTK_WDT_SWRST",
+      "candidate": "WDT_SWRST",
+      "offset": 20
+    },
+    {
+      "legacy": "MTK_WDT_SWSYSRST",
+      "candidate": "WDT_SWSYSRST",
+      "offset": 24
+    }
+  ],
+  "matched_keys": [
+    {
+      "legacy": "MTK_WDT_MODE_KEY",
+      "candidate": "WDT_MODE_KEY",
+      "value": 570425344
+    },
+    {
+      "legacy": "MTK_WDT_LENGTH_KEY",
+      "candidate": "WDT_LENGTH_KEY",
+      "value": 8
+    },
+    {
+      "legacy": "MTK_WDT_RESTART_KEY",
+      "candidate": "WDT_RST_RELOAD",
+      "value": 6513
+    },
+    {
+      "legacy": "MTK_WDT_SWRST_KEY",
+      "candidate": "WDT_SWRST_KEY",
+      "value": 4617
+    }
+  ],
+  "unqualified_bit_difference": "Legacy bit5 is marked reserved IN_DIS; modern file defines IRQ_LEVEL_EN but never uses that macro elsewhere. This naming difference is not proof of changed writes; full mode/IRQ/runtime reset behavior remains unqualified."
+}

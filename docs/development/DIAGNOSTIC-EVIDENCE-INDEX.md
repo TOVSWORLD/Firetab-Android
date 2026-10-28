@@ -86,3 +86,5 @@ Every published trial receipt must identify exact source/PR/artifact revisions,
 commands and output hashes, actual observation, truncation and unresolved limits.
 Main receives development-to-main releases only. Beta tasks #338/#340 remain open
 until their live acceptance criteria pass; this review package alone is not QA-ready.
+
+The [watchdog provider contract](WATCHDOG-BINDING.md) reuses verified legacy register offsets/keys and matches the donor probe/binding. Probe can reprogram an already-running watchdog;19 schema controls and41 remaining full-context diagnostics do not qualify reset/return behavior.

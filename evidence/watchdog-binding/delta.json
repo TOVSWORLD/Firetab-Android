@@ -1,0 +1,22 @@
+{
+  "baseline_count": 42,
+  "candidate_count": 41,
+  "removed": [
+    {
+      "column": null,
+      "compatible": [
+        "mediatek,mt8163-wdt"
+      ],
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/watchdog@10007000: failed to match any schema with compatible: ['mediatek,mt8163-wdt']",
+      "level": "warning",
+      "line": null,
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-wdt']",
+      "node": "/soc/watchdog@10007000",
+      "nodename": "watchdog@10007000",
+      "type": "unmatched"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

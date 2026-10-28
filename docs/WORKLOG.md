@@ -3004,3 +3004,18 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next independent source acceptance #27: cached watchdog provider/probe/reset
   binding with actual negative controls; preserve full42-diagnostic baseline and
   distinguish source reset contract from actual failed-boot return.
+
+## 2026-10-28 — matched MT8163 watchdog provider/probe/reset binding (#27)
+
+- Added opt-in hash-locked MT8163 compatible/2..31sec timeout contract; all old
+  SoC constraints preserved. Cached source OF match/15-reset descriptor pinned.
+  Five offsets/four keys match exact legacy Git header; bit5 naming alone is not
+  a changed write. Probe may reprogram already-running watchdog, not passive.
+-19 actual decoded-node Draft201909/typeSize controls pass, including optional
+  IRQ and existing-SoC positives. Corrected timeout mutations to decoded cell
+  representation before acceptance. No DTB/driver/device change or download.
+- Full cached wrapper42→41 diagnostics (29unmatched/12validation), only watchdog
+  unmatched removed/no additions; exit1/passedfalse retained. Evidence and exact
+  commands/hashes under evidence/watchdog-binding and WATCHDOG-BINDING.md.
+- Next #27 source acceptance: pinctrl syscfg-parent resource/binding matching
+  with actual controls. Runtime IRQ/reset/independent return/log gates remain open.
