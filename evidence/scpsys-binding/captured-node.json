@@ -1,0 +1,150 @@
+{
+  "compatible": [
+    "mediatek,mt8163-scpsys",
+    "syscon",
+    "simple-mfd"
+  ],
+  "reg": [
+    [
+      0,
+      268460032,
+      0,
+      4096
+    ]
+  ],
+  "power-controller": {
+    "compatible": [
+      "mediatek,mt8163-power-controller"
+    ],
+    "#address-cells": 1,
+    "#size-cells": 0,
+    "#power-domain-cells": 1,
+    "phandle": 21,
+    "power-domain@0": {
+      "reg": [
+        [
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          3,
+          51
+        ]
+      ],
+      "clock-names": [
+        "mm"
+      ],
+      "#power-domain-cells": 0,
+      "mediatek,infracfg": [
+        [
+          2
+        ]
+      ]
+    },
+    "power-domain@1": {
+      "reg": [
+        [
+          1
+        ]
+      ],
+      "clocks": [
+        [
+          3,
+          51
+        ]
+      ],
+      "clock-names": [
+        "mm"
+      ],
+      "#power-domain-cells": 0
+    },
+    "power-domain@2": {
+      "reg": [
+        [
+          2
+        ]
+      ],
+      "clocks": [
+        [
+          3,
+          51
+        ]
+      ],
+      "clock-names": [
+        "mm"
+      ],
+      "#power-domain-cells": 0
+    },
+    "power-domain@3": {
+      "reg": [
+        [
+          3
+        ]
+      ],
+      "clocks": [
+        [
+          3,
+          51
+        ]
+      ],
+      "clock-names": [
+        "mm"
+      ],
+      "#power-domain-cells": 0
+    },
+    "power-domain@4": {
+      "reg": [
+        [
+          4
+        ]
+      ],
+      "#power-domain-cells": 0,
+      "mediatek,infracfg": [
+        [
+          2
+        ]
+      ]
+    },
+    "power-domain@5": {
+      "reg": [
+        [
+          5
+        ]
+      ],
+      "#power-domain-cells": 0
+    },
+    "power-domain@6": {
+      "reg": [
+        [
+          6
+        ]
+      ],
+      "clocks": [
+        [
+          3,
+          54
+        ]
+      ],
+      "clock-names": [
+        "mfg"
+      ],
+      "#address-cells": 1,
+      "#size-cells": 0,
+      "#power-domain-cells": 1,
+      "mediatek,infracfg": [
+        [
+          2
+        ]
+      ],
+      "power-domain@7": {
+        "reg": [
+          [
+            7
+          ]
+        ],
+        "#power-domain-cells": 0
+      }
+    }
+  }
+}

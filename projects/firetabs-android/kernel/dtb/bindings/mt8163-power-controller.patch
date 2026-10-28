@@ -1,0 +1,63 @@
+--- a/power/mediatek,power-controller.yaml
++++ b/power/mediatek,power-controller.yaml
+@@ -25,8 +25,9 @@
+     enum:
+       - mediatek,mt6735-power-controller
+       - mediatek,mt6795-power-controller
+       - mediatek,mt6893-power-controller
++      - mediatek,mt8163-power-controller
+       - mediatek,mt8167-power-controller
+       - mediatek,mt8173-power-controller
+       - mediatek,mt8183-power-controller
+       - mediatek,mt8186-power-controller
+@@ -146,12 +147,50 @@
+
+     required:
+       - reg
+
++  mt8163-domain-node:
++    type: object
++    properties:
++      reg:
++        items:
++          - minimum: 0
++            maximum: 7
++      domain-supply: false
++      '#power-domain-cells':
++        enum: [0, 1]
++    if:
++      properties:
++        reg:
++          items:
++            - enum: [0, 4, 6]
++    then:
++      required:
++        - mediatek,infracfg
++    patternProperties:
++      "^power-domain@[0-9a-f]+$":
++        $ref: "#/$defs/mt8163-domain-node"
++
+ required:
+   - compatible
+
+ allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8163-power-controller
++    then:
++      properties:
++        access-controllers: false
++      required:
++        - '#power-domain-cells'
++        - '#address-cells'
++        - '#size-cells'
++      patternProperties:
++        "^power-domain@[0-9a-f]+$":
++          $ref: "#/$defs/mt8163-domain-node"
++
+   - if:
+       properties:
+         compatible:
+           contains:

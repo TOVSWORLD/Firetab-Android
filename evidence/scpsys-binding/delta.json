@@ -1,0 +1,38 @@
+{
+  "before": 44,
+  "after": 42,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/syscon@10006000",
+      "nodename": "syscon@10006000",
+      "compatible": [
+        "mediatek,mt8163-scpsys",
+        "syscon",
+        "simple-mfd"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-scpsys', 'syscon', 'simple-mfd']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/syscon@10006000: failed to match any schema with compatible: ['mediatek,mt8163-scpsys', 'syscon', 'simple-mfd']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/syscon@10006000/power-controller",
+      "nodename": "power-controller",
+      "compatible": [
+        "mediatek,mt8163-power-controller"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-power-controller']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/syscon@10006000/power-controller: failed to match any schema with compatible: ['mediatek,mt8163-power-controller']"
+    }
+  ],
+  "added": [],
+  "full_validation_passed": false
+}

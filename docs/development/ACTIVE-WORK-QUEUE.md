@@ -78,8 +78,12 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
    policy and MFG clock attachment differ; provider probe writes are documented
    in the diagnostic evidence index. Next queued source scope: matched pwrap/
    scpsys/domain binding prerequisites under #27 and explicit wakeup/order
-   qualification. Pwrap contract/PMIC parent rename candidate has22 controls,
-   all880 properties/phandles preserved,44 remaining full-context diagnostics; do not claim runtime equivalence from equal register values.
+   qualification. Pwrap contract/PMIC parent rename has22 controls and all880 property/phandle
+   values preserved. Scpsys parent/child proposals have24 decoded-node controls;
+   fresh-DTB topology guard rejects wrong INFRACFG, MFG flattening, duplicate or
+   disabled domains. Full context42 diagnostics remains unpassed. Next queued #20
+   source scope: compare legacy active_wakeup callback to ACK genpd flag semantics
+   and establish an explicit MFG clock-order rationale; do not claim runtime equivalence from equal register values.
    Acceptance: explicit source differences and probe prerequisites, targeted checks,
    and preserved runtime gates. Do not create placeholders or alter the device.
    If recovery work

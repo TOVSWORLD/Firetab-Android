@@ -1,0 +1,20 @@
+{
+  "scope": "Actual dtschema validator plus decoded locked DT candidate; no hardware test",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/scpsys-binding/mt8163-scpsys-original.yaml": "70c314d8825928d48f8e7a7ec74c538094b6330792ed62a329ec47796493f13c",
+    "evidence/scpsys-binding/mt8163-scpsys-proposed.yaml": "4d9624f9f96b4dde9297c637e12ade4710602f395e313028274bfe24122f2e45",
+    "evidence/scpsys-binding/mt8163-power-controller-original.yaml": "935497f9a52e928187aabaf07581c6b11a58557bc7b9a8ecc5dabb25fa53c352",
+    "evidence/scpsys-binding/mt8163-power-controller-proposed.yaml": "d10251fb985e4c54760d4b0444cce8919fa04f5d00d8922da9b50bf82385e9ec",
+    "evidence/scpsys-binding/processed-schemas.json": "cedb85e840ce71d28ed377f5244f0c28f3bc25c647263c84f501af4bf483635c",
+    "evidence/scpsys-binding/captured-node.json": "c074b295b1eaba99f8ac1cd19b3450cc8fe4db4aeb62150181a2c72fd85dff48",
+    "evidence/scpsys-binding/capture-context.json": "0d6dba79095feecd80c690fe900c499bd4338b641a405304a0441edff023e693",
+    "evidence/scpsys-binding/check-controls.py": "975b4e0d0d9c10adf53f56fa606ba907db4bfed867110a4bca44da8d20cff8f1"
+  },
+  "command": [
+    "work/dtb-tool/venv/bin/python",
+    "evidence/scpsys-binding/check-controls.py"
+  ],
+  "full_validation_passed": false
+}

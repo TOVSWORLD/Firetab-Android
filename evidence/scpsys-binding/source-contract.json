@@ -1,0 +1,23 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "source_sha256": {
+    "evidence/power-port/ack/drivers/pmdomain/mediatek/mtk-pm-domains.c": "fc86b8c8e12931b337ab98fff4678cc93300f807a6d9d2ae813c12135f9e1ecd",
+    "evidence/power-port/ack/drivers/pmdomain/mediatek/mtk-pm-domains.h": "6784f50366a74c5607d0f66ff397a6b72a148ea396ba0a6d6be92db9f0764e9e",
+    "projects/firetabs-android/kernel/power-port/overlay/drivers/pmdomain/mediatek/mt8163-pm-domains.h": "221b2dcd067fd9ff8ec2e1a52e405a2a611a2885b09910ec53301f0ded96a0b6",
+    "projects/firetabs-android/kernel/power-port/provider.patch": "b049213320b01b3d4a8e3dea4ac45d8996eaf89900e947ce7a3b8d6b80a249eb"
+  },
+  "requirements": {
+    "parent": "Probe reads parent syscon regmap; exact parent/child SoC match added by bounded provider.patch.",
+    "domain_ids": "Eight descriptors; core rejects ID>=num_domains.",
+    "legacy_infracfg": "Nonzero masks on IDs0/4/6 require the intended INFRACFG map.",
+    "access_controllers": "MT8163 num_bus_prot_blocks defaults0; core modern mode requires count equality, so nonempty access-controllers fails.",
+    "domain_supply": "MTK_SCPD_DOMAIN_SUPPLY absent; core does not request domain-supply regulators.",
+    "hierarchy": "Captured and legacy MFG child under MFG_ASYNC; node IDs must be unique."
+  },
+  "limits": [
+    "Active-wakeup and MFG clock placement differences remain unqualified.",
+    "Generic schema and topology checks do not validate voltage, timing or recovery after failed boot.",
+    "Captured-topology guard intentionally requires all eight nodes; generic bindings may permit other valid subsets."
+  ]
+}

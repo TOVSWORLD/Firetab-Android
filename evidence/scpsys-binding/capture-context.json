@@ -1,0 +1,6 @@
+{
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "infracfg_node": "/soc/clock-controller@10001000",
+  "infracfg_phandle": 2,
+  "scope": "Decoded declaration from locked candidate DTB, not live device"
+}

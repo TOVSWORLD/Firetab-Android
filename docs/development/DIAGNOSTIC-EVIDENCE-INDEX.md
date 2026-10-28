@@ -58,6 +58,12 @@ return plan, not as read-only log collection. Suspend-wakeup and MFG clock
 placement differ from legacy and remain unqualified. No device action was used
 to obtain this source evidence; stock USB log export remains a separate scope.
 
+The [captured power topology result](../../evidence/scpsys-binding/topology-result.json)
+checks declared IDs, MFG parent and INFRACFG phandle in the locked candidate;
+[contract and limits](../../projects/firetabs-android/kernel/dtb/SCPSYS-BINDING.md).
+It is rerun against the freshly compiled DTB in CI. This is not a register read,
+voltage test or independent failed-boot recovery result.
+
 ## Procedure and release gates
 
 - [Concrete loader/return rehearsal](LOADER-RETURN-REHEARSAL.md): R0 passed;
