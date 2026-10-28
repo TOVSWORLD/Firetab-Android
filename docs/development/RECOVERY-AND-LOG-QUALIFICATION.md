@@ -868,3 +868,20 @@ it cannot alone establish early experimental-kernel capture or retention after
 the intended failure. That needs an attributable writer/backend, freshness and
 failure retrieval lifecycle. No tablet access, recovery/adbd execution, mode
 change or new download occurred in this packaged-policy investigation.
+
+## Owner-observed stock recovery entry and return (2026-10-27)
+
+The owner approved the interactive mode test. After verifying douglas/KFDOWI
+and build `50.6.5.9_user_659664620`, `adb reboot recovery` returned success.
+The owner photo shows Amazon system recovery `<3e>` with reboot, wipe-data,
+wipe-cache, bootloader, power-down and view-recovery-logs options. The owner
+then selected ordinary reboot and reported “Back on the regular screen.”
+[Normalized observation receipt](../../evidence/douglas-original-route/observed-stock-recovery-return.json)
+records the private photo hash without publishing the household image.
+
+This qualifies stock recovery entry and owner-observed ordinary Android return.
+It does not qualify recovery after an experimental loading failure, installed
+image equivalence, OTA installation acceptance, log contents or retained early
+boot logs. No upload, wipe, installer or unlock helper was used. Next bounded
+owner step is a separately agreed view-recovery-logs observation; tasks #346,
+#347 and #348 remain open for their broader acceptance gates.
