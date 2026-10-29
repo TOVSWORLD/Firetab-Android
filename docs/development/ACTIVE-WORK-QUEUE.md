@@ -34,10 +34,16 @@ initramfs. Actual cached role function RAM mocks (18 transitions/error cases)
 return success/update role despite called PHY failures. Source audit in
 kernel/USB-GADGET-PREREQUISITES.md and scripts/audit_usb_gadget_prerequisites.py;
 require-ready rejects current package. No transport admission or DT changes.
-Next actual #27 kernel implementation: MT8163-scoped role/init PHY error handling,
-rollback tests with actual C RAM mocks, preserve other SoCs and exact-head USB
-provider/Image build. Separate opt-in builtin ACM/gadget userspace remains needed.
-All physical role/clock/loading/return/log/runtime gates remain open.
+Active #27 actual implementation: exact-match MT8163 role/init PHY transactions,
+power/init bookkeeping and conservative fault latch now implemented. Actual C
+RAM failure/cleanup controls and byte-identical legacy-path checks pass;409 host
+tests. Both T-PHY/MUSB original and output hashes preflighted before source writes.
+New exact-head USB provider/config/Image build required before merge; old416 build
+not sufficient. DTs/canonical34/isolated28 contexts unchanged; no device action.
+After successful source build: next executable package scope is a separately
+opt-in builtin ACM/configfs diagnostic profile and explicit gadget userspace,
+preserving current minimal init/security/storage boundaries. Physical role/clock/
+loading/independent return/log/runtime gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

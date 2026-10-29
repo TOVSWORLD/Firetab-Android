@@ -25,6 +25,9 @@ class USBPort(unittest.TestCase):
         target=root/LOCK['target'];target.parent.mkdir(parents=True)
         shutil.copyfile(ROOT/LOCK['original_source'],target)
         shutil.copyfile(ROOT/LOCK['helper_source'],target.parent/'phy-mtk-io.h')
+        for part in LOCK.get('additional_patches',[]):
+            dest=root/part['target'];dest.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(ROOT/part['original_source'],dest)
         return target
 
     def test_actual_patch_preserves_generic_policy_and_descriptors(self):

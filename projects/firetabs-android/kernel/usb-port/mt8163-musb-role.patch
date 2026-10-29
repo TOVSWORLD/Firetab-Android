@@ -1,0 +1,364 @@
+--- a/drivers/usb/musb/mediatek.c
++++ b/drivers/usb/musb/mediatek.c
+@@ -11,6 +11,7 @@
+ #include <linux/dma-mapping.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
++#include <linux/of_device.h>
+ #include <linux/of_platform.h>
+ #include <linux/platform_device.h>
+ #include <linux/usb/role.h>
+@@ -38,6 +39,10 @@
+ #define DMA_INTR_UNMASK_SET_MSK	GENMASK(31, 24)
+ 
+ #define MTK_MUSB_CLKS_NUM	3
++
++struct mtk_musb_pdata {
++	bool strict_role_errors;
++};
+ 
+ struct mtk_glue {
+ 	struct device *dev;
+@@ -50,6 +55,12 @@
+ 	struct clk_bulk_data clks[MTK_MUSB_CLKS_NUM];
+ 	enum usb_role role;
+ 	struct usb_role_switch *role_sw;
++	bool strict_role_errors;
++	bool role_faulted;
++	bool role_ready;
++	bool phy_initialized;
++	bool phy_powered;
++	bool role_switch_registered;
+ };
+ 
+ static int mtk_musb_clks_get(struct mtk_glue *glue)
+@@ -63,7 +74,146 @@
+ 	return devm_clk_bulk_get(dev, MTK_MUSB_CLKS_NUM, glue->clks);
+ }
+ 
+-static int mtk_otg_switch_set(struct mtk_glue *glue, enum usb_role role)
++/* Strict MT8163 transactions: API cleanup is best-effort, never hardware proof. */
++static void mt8163_role_fault(struct mtk_glue *glue, const char *stage, int ret)
++{
++	glue->role_faulted = true;
++	dev_err(glue->dev, "MT8163 %s failed: %d; role unqualified for this instance\n",
++		stage, ret);
++}
++
++static int mt8163_musb_phy_cleanup(struct mtk_glue *glue)
++{
++	int ret;
++
++	glue->role_ready = false;
++	if (glue->phy_powered) {
++		ret = phy_power_off(glue->phy);
++		if (ret) {
++			mt8163_role_fault(glue, "power-off cleanup", ret);
++			return ret;
++		}
++		glue->phy_powered = false;
++	}
++	if (glue->phy_initialized) {
++		ret = phy_exit(glue->phy);
++		if (ret) {
++			mt8163_role_fault(glue, "exit cleanup", ret);
++			return ret;
++		}
++		glue->phy_initialized = false;
++	}
++	return 0;
++}
++
++static int mt8163_musb_phy_init(struct mtk_glue *glue)
++{
++	int ret;
++
++	if (glue->role_faulted || glue->phy_initialized)
++		return -EIO;
++	ret = phy_init(glue->phy);
++	if (ret)
++		goto fault;
++	glue->phy_initialized = true;
++	ret = phy_power_on(glue->phy);
++	if (ret)
++		goto cleanup;
++	glue->phy_powered = true;
++	ret = phy_set_mode(glue->phy, glue->phy_mode);
++	if (ret)
++		goto cleanup;
++	glue->role_ready = true;
++	return 0;
++
++cleanup:
++	mt8163_musb_phy_cleanup(glue);
++fault:
++	mt8163_role_fault(glue, "PHY initialization", ret);
++	return ret;
++}
++
++static int mt8163_otg_switch_set(struct mtk_glue *glue, enum usb_role role)
++{
++	struct musb *musb = glue->musb;
++	enum phy_mode mode;
++	bool want_power, added_power = false;
++	int ret, cleanup;
++	u8 devctl;
++
++	switch (role) {
++	case USB_ROLE_HOST:
++		mode = PHY_MODE_USB_HOST;
++		break;
++	case USB_ROLE_DEVICE:
++		mode = PHY_MODE_USB_DEVICE;
++		break;
++	case USB_ROLE_NONE:
++		mode = PHY_MODE_USB_OTG;
++		break;
++	default:
++		return -EINVAL;
++	}
++	if (glue->role_faulted)
++		return -EIO;
++	if (!glue->role_ready)
++		return -EAGAIN;
++	want_power = role != USB_ROLE_NONE;
++	if (role == glue->role && glue->phy_powered == want_power)
++		return 0;
++
++	if (want_power && !glue->phy_powered) {
++		ret = phy_power_on(glue->phy);
++		if (ret)
++			goto fault;
++		added_power = true;
++		glue->phy_powered = true;
++	}
++	ret = phy_set_mode(glue->phy, mode);
++	if (ret)
++		goto restore;
++	if (!want_power && glue->phy_powered) {
++		ret = phy_power_off(glue->phy);
++		if (ret)
++			goto restore;
++		glue->phy_powered = false;
++	}
++
++	/* Publish controller/software state only after the backend calls succeed. */
++	devctl = readb(musb->mregs + MUSB_DEVCTL);
++	if (role == USB_ROLE_HOST) {
++		devctl |= MUSB_DEVCTL_SESSION;
++		musb->xceiv->otg->state = OTG_STATE_A_WAIT_VRISE;
++		MUSB_HST_MODE(musb);
++	} else {
++		devctl &= ~MUSB_DEVCTL_SESSION;
++		if (role == USB_ROLE_DEVICE) {
++			musb->xceiv->otg->state = OTG_STATE_B_IDLE;
++			MUSB_DEV_MODE(musb);
++		}
++	}
++	musb_writeb(musb->mregs, MUSB_DEVCTL, devctl);
++	glue->phy_mode = mode;
++	glue->role = role;
++	return 0;
++
++restore:
++	cleanup = phy_set_mode(glue->phy, glue->phy_mode);
++	if (cleanup)
++		mt8163_role_fault(glue, "mode restoration", cleanup);
++	if (added_power) {
++		cleanup = phy_power_off(glue->phy);
++		if (cleanup)
++			mt8163_role_fault(glue, "power restoration", cleanup);
++		else
++			glue->phy_powered = false;
++	}
++fault:
++	mt8163_role_fault(glue, "role transaction", ret);
++	return ret;
++}
++
++static int mtk_otg_switch_set_legacy(struct mtk_glue *glue, enum usb_role role)
+ {
+ 	struct musb *musb = glue->musb;
+ 	u8 devctl = readb(musb->mregs + MUSB_DEVCTL);
+@@ -115,6 +265,13 @@
+ 	return 0;
+ }
+ 
++static int mtk_otg_switch_set(struct mtk_glue *glue, enum usb_role role)
++{
++	if (glue->strict_role_errors)
++		return mt8163_otg_switch_set(glue, role);
++	return mtk_otg_switch_set_legacy(glue, role);
++}
++
+ static int musb_usb_role_sx_set(struct usb_role_switch *sw, enum usb_role role)
+ {
+ 	return mtk_otg_switch_set(usb_role_switch_get_drvdata(sw), role);
+@@ -124,6 +281,8 @@
+ {
+ 	struct mtk_glue *glue = usb_role_switch_get_drvdata(sw);
+ 
++	if (glue->strict_role_errors && (glue->role_faulted || !glue->role_ready))
++		return USB_ROLE_NONE;
+ 	return glue->role;
+ }
+ 
+@@ -215,7 +374,7 @@
+ 	return data;
+ }
+ 
+-static int mtk_musb_set_mode(struct musb *musb, u8 mode)
++static int mtk_musb_set_mode_legacy(struct musb *musb, u8 mode)
+ {
+ 	struct device *dev = musb->controller;
+ 	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
+@@ -252,7 +411,37 @@
+ 	return 0;
+ }
+ 
+-static int mtk_musb_init(struct musb *musb)
++static int mtk_musb_set_mode(struct musb *musb, u8 mode)
++{
++	struct device *dev = musb->controller;
++	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
++	enum usb_role role;
++	enum phy_mode phy_mode;
++
++	if (!glue->strict_role_errors)
++		return mtk_musb_set_mode_legacy(musb, mode);
++	switch (mode) {
++	case MUSB_HOST:
++		role = USB_ROLE_HOST;
++		phy_mode = PHY_MODE_USB_HOST;
++		break;
++	case MUSB_PERIPHERAL:
++		role = USB_ROLE_DEVICE;
++		phy_mode = PHY_MODE_USB_DEVICE;
++		break;
++	case MUSB_OTG:
++		role = USB_ROLE_NONE;
++		phy_mode = PHY_MODE_USB_OTG;
++		break;
++	default:
++		return -EINVAL;
++	}
++	if (musb->port_mode != MUSB_OTG && glue->phy_mode != phy_mode)
++		return -EINVAL;
++	return mtk_otg_switch_set(glue, role);
++}
++
++static int mtk_musb_init_legacy(struct musb *musb)
+ {
+ 	struct device *dev = musb->controller;
+ 	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
+@@ -298,6 +487,44 @@
+ 	if (musb->port_mode == MUSB_OTG)
+ 		mtk_otg_switch_exit(glue);
+ 	return ret;
++}
++
++static int mtk_musb_init(struct musb *musb)
++{
++	struct device *dev = musb->controller;
++	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
++	int ret;
++
++	if (!glue->strict_role_errors)
++		return mtk_musb_init_legacy(musb);
++	glue->musb = musb;
++	musb->phy = glue->phy;
++	musb->xceiv = glue->xceiv;
++	musb->is_host = false;
++	musb->isr = mtk_musb_interrupt;
++	musb_writew(musb->mregs, MUSB_TXTOGEN, MTK_TOGGLE_EN);
++	musb_writew(musb->mregs, MUSB_RXTOGEN, MTK_TOGGLE_EN);
++	if (musb->port_mode == MUSB_OTG) {
++		ret = mtk_otg_switch_init(glue);
++		if (ret)
++			return ret;
++		glue->role_switch_registered = true;
++	}
++	ret = mt8163_musb_phy_init(glue);
++	if (ret) {
++		if (glue->role_switch_registered) {
++			mtk_otg_switch_exit(glue);
++			glue->role_switch_registered = false;
++		}
++		return ret;
++	}
++#if defined(CONFIG_USB_INVENTRA_DMA)
++	musb_writel(musb->mregs, MUSB_HSDMA_INTR,
++		    DMA_INTR_STATUS_MSK | DMA_INTR_UNMASK_SET_MSK);
++#endif
++	musb_writel(musb->mregs, USB_L1INTM, TX_INT_STATUS | RX_INT_STATUS |
++		    USBCOM_INT_STATUS | DMA_INT_STATUS);
++	return 0;
+ }
+ 
+ static u16 mtk_musb_get_toggle(struct musb_qh *qh, int is_out)
+@@ -331,7 +558,7 @@
+ 	return 0;
+ }
+ 
+-static int mtk_musb_exit(struct musb *musb)
++static int mtk_musb_exit_legacy(struct musb *musb)
+ {
+ 	struct device *dev = musb->controller;
+ 	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
+@@ -341,6 +568,27 @@
+ 	phy_exit(glue->phy);
+ 	clk_bulk_disable_unprepare(MTK_MUSB_CLKS_NUM, glue->clks);
+ 
++	pm_runtime_put_sync(dev);
++	pm_runtime_disable(dev);
++	return 0;
++}
++
++static int mtk_musb_exit(struct musb *musb)
++{
++	struct device *dev = musb->controller;
++	struct mtk_glue *glue = dev_get_drvdata(dev->parent);
++	int ret;
++
++	if (!glue->strict_role_errors)
++		return mtk_musb_exit_legacy(musb);
++	if (glue->role_switch_registered) {
++		mtk_otg_switch_exit(glue);
++		glue->role_switch_registered = false;
++	}
++	ret = mt8163_musb_phy_cleanup(glue);
++	if (ret)
++		return ret;
++	clk_bulk_disable_unprepare(MTK_MUSB_CLKS_NUM, glue->clks);
+ 	pm_runtime_put_sync(dev);
+ 	pm_runtime_disable(dev);
+ 	return 0;
+@@ -404,6 +652,7 @@
+ 	struct platform_device_info pinfo;
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
++	const struct mtk_musb_pdata *soc = of_device_get_match_data(dev);
+ 	int ret;
+ 
+ 	glue = devm_kzalloc(dev, sizeof(*glue), GFP_KERNEL);
+@@ -411,6 +660,7 @@
+ 		return -ENOMEM;
+ 
+ 	glue->dev = dev;
++	glue->strict_role_errors = soc && soc->strict_role_errors;
+ 	pdata = devm_kzalloc(dev, sizeof(*pdata), GFP_KERNEL);
+ 	if (!pdata)
+ 		return -ENOMEM;
+@@ -514,7 +764,12 @@
+ }
+ 
+ #ifdef CONFIG_OF
++static const struct mtk_musb_pdata mt8163_musb_pdata = {
++	.strict_role_errors = true,
++};
++
+ static const struct of_device_id mtk_musb_match[] = {
++	{ .compatible = "mediatek,mt8163-musb", .data = &mt8163_musb_pdata },
+ 	{.compatible = "mediatek,mtk-musb",},
+ 	{},
+ };

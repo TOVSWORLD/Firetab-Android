@@ -10,5 +10,15 @@
   "definition_sha256": "6f1ab80fe9cd8b358117956b6067de0919ef5b21cd672b7f3fc60f88e8f4f0d7",
   "helper_source": "evidence/usb-variant-definition/phy-mtk-io.h",
   "helper_sha256": "518e3da709794b27e77528a92a09b2205aafec3b9a3b9c1239c18442dc99aa5c",
-  "runtime_qualified": false
+  "runtime_qualified": false,
+  "additional_patches": [
+    {
+      "patch": "mt8163-musb-role.patch",
+      "patch_sha256": "3af63e352f91272eb0ec0177234facf766b1ff549cbfc86078db08ab7d8f3576",
+      "target": "drivers/usb/musb/mediatek.c",
+      "original_source": "evidence/usb-prerequisites/ack/mediatek.c",
+      "original_sha256": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2",
+      "patched_sha256": "0ea71dd2a963cce05c708ffd2f42482821642fd06f181189db0b075dfc74b4ba"
+    }
+  ]
 }

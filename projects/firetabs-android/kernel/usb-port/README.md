@@ -110,3 +110,10 @@ implemented; see ANALOG-POLICY.md and evidence/usb-analog-policy. Generic callba
 bodies are preserved after removing only the MT8163 branches. The old definition
 and PR413 build remain historical bank/calibration evidence; this changed source
 requires its own exact-head usb-providers build. No runtime readiness follows.
+
+## Current MUSB error extension
+
+The actual exact-match MT8163 role/init error path and all-target patch preflight
+are implemented; see ROLE-ERRORS.md and evidence/usb-role-errors. Earlier PHY-only
+build receipts remain historical; this changed MUSB source requires its own
+exact-head USB-enabled build. No hardware rollback or transport claim follows.

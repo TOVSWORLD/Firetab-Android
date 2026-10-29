@@ -1,0 +1,42 @@
+{
+  "scope": "Actual patched C in RAM-only mocks and all-target source preflight; no device qualification",
+  "inputs": {
+    "scripts/apply_usb_port.py": "dff7db9b60ba9d4c3246441829201e85789ce7b6368e22ba825aa56d8a4825a3",
+    "projects/firetabs-android/kernel/usb-port/inputs.json": "6ab4b42aa90f557c98075ad60fb8bb6fd7f11f14ef84e41729826982e1d1f4fa",
+    "projects/firetabs-android/kernel/usb-port/mt8163-musb-role.patch": "3af63e352f91272eb0ec0177234facf766b1ff549cbfc86078db08ab7d8f3576",
+    "evidence/usb-prerequisites/ack/mediatek.c": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2",
+    "tests/test_usb_role_errors.py": "c8a06558f6a94ed63d8839ef05b54e6301e050322bfe6214112c0275ae448088",
+    "tests/test_usb_port.py": "8aded1f7361271329aa4c00813d382264fa0c511bfe9a16510ce39cd510746af",
+    "evidence/usb-role-errors/phy-core.c": "5604648783018600a15d32d1d2f7526df0823d91f8b30875c58c117babbc3588",
+    "evidence/usb-role-errors/ram-harness.c": "1c134517ecba41c0ca8478d60c0a76322a29ebde83023653e7c7d5165872e241"
+  },
+  "commands": [
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usb_role_errors.py",
+      "-v"
+    ]
+  ],
+  "host_tests": 409,
+  "successful_role_combinations": 12,
+  "controls": [
+    "actual error/caller propagation",
+    "no register/role commit on backend failure",
+    "init-owned power reference not duplicated",
+    "mode/power restoration failures latched, primary error retained",
+    "init failure cleanup and no interrupt enable",
+    "power-off failure prevents premature phy_exit",
+    "strict peripheral lifecycle without missing role switch",
+    "unchanged generic bodies/behavior",
+    "all-target input/output drift causes no real source write"
+  ],
+  "kernel_build_passed": false,
+  "physical_rollback_qualified": false,
+  "runtime_qualified": false
+}
