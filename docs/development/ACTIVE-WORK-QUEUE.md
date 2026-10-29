@@ -16,9 +16,15 @@ matches but a V1 frequency-bank mismatch: source-derived0x1121010c vs legacy
 commented out and active code writes fixed0x60. Candidate controller/PHY
 are disabled; diagnostic fragment disables USB/GADGET. Fresh-DTB audit reports
 metadata only, with no variant/build/device-transport readiness. Full34 diagnostics
-unchanged. Next source acceptance: finite USB2 bank/calibration comparison before
-MT8163-specific variant/resource/source/build integration; no generic-match claim.
-Runtime DMA/display/loading, independent failed-boot return/log gates remain open.
+unchanged. Finite USB2 bank/calibration definition is now pinned under kernel/
+usb-port:65536 source-expression states reject field-only/EYE shortcuts; separate
+frequency resource prevents parent/child ownership overlap. Measurement retained,
+vendor byte policy defined, zero/timeout handling explicit; no kernel variant yet.
+Next source acceptance: implement the isolated MT8163 bank/calibration definition,
+missing-resource/type/error handling and unchanged-other-SoC guarantees, then
+actual object/config/Image build checks. Keep candidate disabled; no binding or
+whole-sequence/runtime equivalence claim. Runtime DMA/display/loading,
+independent failed-boot return/log gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

@@ -3130,3 +3130,23 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next bounded #27 source acceptance: USB2 bank/calibration arithmetic/timeouts
   comparison and justified MT8163-specific variant/resource definition before
   source/build integration. Runtime loading/independent return/log gates open.
+
+## 2026-10-28 — finite USB2 variant/resource definition (#27)
+
+- Compared actual byte write, ACK field/RMW and existing eye-src6 shortcut over
+  all65536 isolated low16-bit states. Equal counts8192/4096 and difference masks
+ 0x700/0x8700 respectively; concrete counterexample0x8700. Not hardware sampling
+  or whole sequence equivalence. High bits stable assumption remains explicit.
+- Defined MT8163-only USB2 measure-then-vendor-fixed-byte policy,3*HZ deadline
+  intent represented as3000000us, explicit zero/timeout cleanup and no dead divide.
+  No calibration skip/EYE shortcut; existing SoC policies must remain unchanged.
+- Separate frequency0x11210f00+0x100 resource disjoint from shared0x800 and child
+  windows; negative controls reject naive4KiB parent expansion/ownership overlap.
+  Missing bank must error, not fallback. One capped official helper-header read
+  verifies mask/field RMW semantics; no archive or kernel/DT/device change.
+- Reproduce scripts/validate_usb_variant_definition.py; exact hashes/results in
+  evidence/usb-variant-definition and kernel/usb-port/README.md. Full34 schema
+  diagnostics and candidate USB-disabled baseline unchanged.
+- Next executable #27 acceptance: isolated actual MT8163 source implementation
+  and source/build integration, preserving non-MT8163 behavior and explicit error
+  paths. Remaining analog/role/clock policy and all runtime return/log gates open.
