@@ -1,9 +1,9 @@
 {
   "scope": "Actual analog C functions with RAM-only mocks; kernel build and runtime separate",
   "inputs": {
-    "projects/firetabs-android/kernel/usb-port/inputs.json": "e61e66345027f6cb5ceb77a8a6ddf6c7a722546b95cf4d4bb381ceee761a8a62",
-    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "49f5a27bf3f05df41a9a0e4f615f4f175f091fd02ae29e3177861b893dd7bb90",
-    "tests/test_usb_port.py": "f7b5e560089fa1c2904b94b04c4958e06910c5ff734ce63b1a4dd9f01bbf61ee",
+    "projects/firetabs-android/kernel/usb-port/inputs.json": "449b4ce2f322f2248b0a6162bd1d12c85fdb6260a2b69b50aa837d6b92066813",
+    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "bf176f00879701681228d7e71aab5639262c2ac68400d02e6ff5dc600216d259",
+    "tests/test_usb_port.py": "7f110267739b875aebfb1d67c1e727ebdb08440b3165340394938797ca765803",
     "evidence/usb-prerequisites/legacy/usb20_phy.c": "ac37183fe1bac7045a5bc1b99c087887e7b940fd99519b4438b9b02175021a72",
     "evidence/usb-analog-policy/legacy-enable.c": "a2ec7922d25db3099b2fffc40888bab8072e6fcf21ab23c1a7417149026e5e3f"
   },
@@ -36,5 +36,6 @@
   "host_tests": 402,
   "kernel_build_passed": false,
   "device_tested": false,
-  "role_force_bits_changed": false
+  "role_force_bits_changed": false,
+  "exactly_one_u32_cell_required": true
 }

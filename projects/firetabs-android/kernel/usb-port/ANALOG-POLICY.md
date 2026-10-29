@@ -23,7 +23,9 @@ equivalence. Role-force bits are deliberately unchanged pending their own policy
 
 Before provider registration, absent eye-vrt/eye-term properties are accepted;
 explicit values7/7 are accepted because they match the selected operation. Any
-present conflicting value or malformed scalar returns EINVAL. Eye-src presence
+present conflicting value, malformed scalar or multi-cell array returns EINVAL.
+The guard requires exactly one u32 cell before reading the value; reading only
+the first cell would silently accept an array beginning with7. Eye-src presence
 still returns EINVAL, including explicit zero: the measured-slew policy must not
 be bypassed. The earlier opt-in schema allows broader generic eye values; that
 metadata acceptance does not override this narrower source guard. Current DT

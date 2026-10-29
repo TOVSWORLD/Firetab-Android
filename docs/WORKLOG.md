@@ -3240,3 +3240,8 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next independent metadata task: MT8163-only eye override contract/decoded-node
   negative controls after successful source build. Physical role/clock/signal
   behavior is still unqualified and controllers/PHY stay disabled.
+
+- Pre-merge review found read_u32 alone accepts the first cell of longer arrays.
+  Added exact one-cell count guard and actual C negative for multi-cell input
+  beginning with7. Old-head Linux run40813337073 is superseded; replacement
+  exact-head usb-providers run required after this fix. No build claim made.

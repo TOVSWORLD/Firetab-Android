@@ -93,7 +93,7 @@
  
  	/*
  	 * If a fixed HS slew rate (EYE) value was supplied, don't run the
-@@ -818,6 +870,36 @@
+@@ -818,6 +870,37 @@
  			 P2R_RG_U2PLL_FRA_EN | P2R_RG_U2PLL_REFCLK_SEL);
  }
  
@@ -121,7 +121,8 @@
 +		return -EINVAL;
 +	for (i = 0; i < ARRAY_SIZE(names); i++) {
 +		if (of_property_read_bool(np, names[i]) &&
-+		    (of_property_read_u32(np, names[i], &value) || value != 7))
++		    (of_property_count_u32_elems(np, names[i]) != 1 ||
++		     of_property_read_u32(np, names[i], &value) || value != 7))
 +			return -EINVAL;
 +	}
 +	return 0;
@@ -130,7 +131,7 @@
  static void u2_phy_instance_init(struct mtk_tphy *tphy,
  	struct mtk_phy_instance *instance)
  {
-@@ -856,7 +938,10 @@
+@@ -856,7 +939,10 @@
  	/* DP/DM BC1.1 path Disable */
  	mtk_phy_clear_bits(com + U3P_USBPHYACR6, PA6_RG_U2_BC11_SW_EN);
  
@@ -142,7 +143,7 @@
  
  	/* Workaround only for mt8195, HW fix it for others (V3) */
  	u2_phy_pll_26m_set(tphy, instance);
-@@ -883,6 +968,8 @@
+@@ -883,6 +969,8 @@
  
  		mtk_phy_set_bits(com + U3P_U2PHYDTM0, P2C_RG_SUSPENDM | P2C_FORCE_SUSPENDM);
  	}
@@ -151,7 +152,7 @@
  	dev_dbg(tphy->dev, "%s(%d)\n", __func__, index);
  }
  
-@@ -1077,7 +1164,8 @@
+@@ -1077,7 +1165,8 @@
  	switch (instance->type) {
  	case PHY_TYPE_USB2:
  		u2_banks->misc = NULL;
@@ -161,7 +162,7 @@
  		u2_banks->com = instance->port_base + SSUSB_SIFSLV_V1_U2PHY_COM;
  		break;
  	case PHY_TYPE_USB3:
-@@ -1476,6 +1564,9 @@
+@@ -1476,6 +1565,9 @@
  	}
  
  	instance->type = args->args[0];
@@ -171,7 +172,7 @@
  	if (!(instance->type == PHY_TYPE_USB2 ||
  	      instance->type == PHY_TYPE_USB3 ||
  	      instance->type == PHY_TYPE_PCIE ||
-@@ -1518,6 +1609,11 @@
+@@ -1518,6 +1610,11 @@
  	.owner		= THIS_MODULE,
  };
  
@@ -183,7 +184,7 @@
  static const struct mtk_phy_pdata tphy_v1_pdata = {
  	.avoid_rx_sen_degradation = false,
  	.slew_ref_clock_mhz = 26,
-@@ -1552,6 +1648,7 @@
+@@ -1552,6 +1649,7 @@
  };
  
  static const struct of_device_id mtk_tphy_id_table[] = {
@@ -191,7 +192,7 @@
  	{ .compatible = "mediatek,mt2701-u3phy", .data = &tphy_v1_pdata },
  	{ .compatible = "mediatek,mt2712-u3phy", .data = &tphy_v2_pdata },
  	{ .compatible = "mediatek,mt8173-u3phy", .data = &mt8173_pdata },
-@@ -1563,6 +1660,24 @@
+@@ -1563,6 +1661,24 @@
  };
  MODULE_DEVICE_TABLE(of, mtk_tphy_id_table);
  
@@ -216,7 +217,7 @@
  static int mtk_tphy_probe(struct platform_device *pdev)
  {
  	struct device *dev = &pdev->dev;
-@@ -1591,6 +1706,8 @@
+@@ -1591,6 +1707,8 @@
  	platform_set_drvdata(pdev, tphy);
  
  	sif_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
@@ -225,7 +226,7 @@
  	/* SATA phy of V1 needn't it if not shared with PCIe or USB */
  	if (sif_res && tphy->pdata->version == MTK_PHY_V1) {
  		/* get banks shared by multiple phys */
-@@ -1601,6 +1718,12 @@
+@@ -1601,6 +1719,12 @@
  		}
  	}
  
@@ -238,7 +239,7 @@
  	/* Optional properties for slew calibration variation */
  	ret = device_property_read_u32(dev, "mediatek,src-ref-clk-mhz", &tphy->src_ref_clk);
  	if (ret)
-@@ -1618,6 +1741,13 @@
+@@ -1618,6 +1742,13 @@
  		struct phy *phy;
  		int retval;
  
@@ -252,7 +253,7 @@
  		instance = devm_kzalloc(dev, sizeof(*instance), GFP_KERNEL);
  		if (!instance)
  			return -ENOMEM;
-@@ -1638,6 +1768,9 @@
+@@ -1638,6 +1769,9 @@
  			return retval;
  		}
  

@@ -71,13 +71,16 @@ typedef uint8_t u8; typedef uint32_t u32;
 #define PA1_RG_TERM_SEL GENMASK(10,8)
 struct u2phy_banks {void *com;};
 struct mtk_phy_instance {struct u2phy_banks u2_banks;};
-struct device_node {int present[3];u32 values[3];int malformed;};
+struct device_node {int present[3];u32 values[3];int malformed,extra_cells;};
 static int property(const char *name) {
  if(!strcmp(name,"mediatek,eye-vrt"))return 0;
  if(!strcmp(name,"mediatek,eye-term"))return 1;
  assert(!strcmp(name,"mediatek,eye-src"));return 2;
 }
 static bool of_property_read_bool(struct device_node *n,const char *name) {return n->present[property(name)];}
+static int of_property_count_u32_elems(struct device_node *n,const char *name) {
+ (void)name;return n->malformed?-EINVAL:n->extra_cells?2:1;
+}
 static int of_property_read_u32(struct device_node *n,const char *name,u32 *v) {
  if(n->malformed)return -EINVAL;
  *v=n->values[property(name)];return 0;
@@ -103,7 +106,7 @@ int main(void) {
   assert(mt8163_usb2_validate_eye(&np)==(value==7?0:-EINVAL));
  }
  np=(struct device_node){.present={1,1,0},.values={7,7,0}};
- assert(mt8163_usb2_validate_eye(&np)==0);np.malformed=1;assert(mt8163_usb2_validate_eye(&np)==-EINVAL);
+ assert(mt8163_usb2_validate_eye(&np)==0);np.extra_cells=1;assert(mt8163_usb2_validate_eye(&np)==-EINVAL);np.extra_cells=0;np.malformed=1;assert(mt8163_usb2_validate_eye(&np)==-EINVAL);
  np=(struct device_node){.present={0,0,1}};assert(mt8163_usb2_validate_eye(&np)==-EINVAL);
  return 0;
 }
