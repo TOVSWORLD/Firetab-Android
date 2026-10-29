@@ -3665,3 +3665,12 @@ public in evidence/dsi-source/ci-result.json. Current implementation is NOT kern
 build accepted yet: exact-head dsi-provider object/config/final Image and PR
 checks next. No DT/schema/device/PHY/panel/reset/security action. Full31/25
 contexts/disabled states and all physical/loading/failed-return/log gates remain.
+
+PR433 opened at b818202bc31cce3877af2370386060a066290da9. Initial Linux
+repository gate found a GCC unused-but-set value in the RAM poll mock (Clang
+accepted it); fixed the mock to evaluate the actual condition, without warning
+suppression or kernel source change. Superseded build40871144375 cancelled;
+replacement exact-head dsi-provider build required after the fix. Private binding
+controls also expose missing candidate panel graph: full dt-validate suppresses
+disabled-node validation errors, so unmatched removal is not graph acceptance.
+No binding publication or DT change.

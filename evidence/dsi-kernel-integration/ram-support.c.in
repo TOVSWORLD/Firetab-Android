@@ -8,7 +8,7 @@
 #define IORESOURCE_MEM 0
 #define msecs_to_jiffies(x) (x)
 static int poll_error;static long wait_result=1;static unsigned irq_enabled,irq_disabled;
-#define readl_poll_timeout(p,v,c,d,t) ((v)=readl(p),poll_error)
+#define readl_poll_timeout(p,v,c,d,t) ((v)=readl(p),(c)?poll_error:-ETIMEDOUT)
 #define wait_event_interruptible_timeout(q,c,t) (wait_result)
 static void mutex_init(struct mutex *m){m->held=0;}
 static void mutex_lock(struct mutex *m){assert(!m->held);m->held=1;}
