@@ -1,5 +1,5 @@
 /* Separate opt-in AArch64 static PID1. Current package always denies gadget setup. */
-#include "acm_fs.h"
+#include "acm_serial.h"
 #include "pid1_flow.h"
 #include "admission.h"
 #define FT_NR_MOUNT 40
@@ -46,17 +46,25 @@ static int emit_console(void *ctx,const char *data,unsigned long n) {
  }
  return sent==n?0:-5;
 }
+/* Called only after admitted flow owns a bound ACM function; fixed frame, no caller data. */
+static int emit_acm(void *ctx,const char *data,unsigned long n) {
+ static const char expected[]="FIRETABS_ACM_SOURCE_SETUP_COMPLETE\n";
+ if(n!=sizeof(expected)-1||!ft_bytes(data,expected,n))return -22;
+ struct ft_serial_state state={-1,0,0,0,0,0,{0,0,0,0,0,{0}}};
+ return ft_serial_output(ctx,1,1,&state);
+}
 #ifndef FT_PID1_HOST_TEST
 __attribute__((noreturn)) void _start(void) {
  struct ft_acm_io io={raw_call,0};
- struct ft_pid1_ops ops={mount_virtual,unmount_virtual,security_enforcing,discover,emit_console,&ft_acm_filesystem_ops};
+ struct ft_pid1_ops ops={mount_virtual,unmount_virtual,security_enforcing,discover,emit_acm,&ft_acm_filesystem_ops};
  const struct ft_admission admission={FT_LOADING_QUALIFIED,FT_RETURN_QUALIFIED,FT_LOG_RETENTION_QUALIFIED,
  FT_DEVICE_ROLE_QUALIFIED,FT_SECURITY_POLICY_QUALIFIED,FT_IMMUTABLE_NAMESPACE_QUALIFIED,FT_DESCRIPTOR_ASSIGNMENT_QUALIFIED};
  struct ft_pid1_result result={0,0,0,{0,0,0,0}};
  long fd=ft_retry(&io,FT_NR_OPENAT,FT_AT_FDCWD,(long)"/dev/console",FT_O_WRONLY|FT_O_NONBLOCK|FT_O_NOFOLLOW|FT_O_CLOEXEC);
  if(fd>=0)console=fd; /* O_NONBLOCK: bounded attempts cannot block on console backpressure. */
  int r=ft_pid1_flow(&ops,&io,&admission,FT_PHYSICAL_VID,FT_PHYSICAL_PID,&result);
- if(r)emit_console(&io,"FIRETABS_ACM_ADMISSION_DENIED\n",sizeof("FIRETABS_ACM_ADMISSION_DENIED\n")-1);
+ if(!ft_admitted(&admission))emit_console(&io,"FIRETABS_ACM_ADMISSION_DENIED\n",sizeof("FIRETABS_ACM_ADMISSION_DENIED\n")-1);
+ else if(r)emit_console(&io,"FIRETABS_ACM_LIFECYCLE_FAILED\n",sizeof("FIRETABS_ACM_LIFECYCLE_FAILED\n")-1);
  else emit_console(&io,"FIRETABS_ACM_SOURCE_LIFECYCLE_DONE\n",sizeof("FIRETABS_ACM_SOURCE_LIFECYCLE_DONE\n")-1);
  if(fd>=0)ft_call(&io,FT_NR_CLOSE,fd,0,0,0,0,0);
  for(;;){const long delay[2]={60,0};ft_call(&io,FT_NR_NANOSLEEP,(long)delay,0,0,0,0,0);}

@@ -1,0 +1,84 @@
+{
+  "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "sources": [
+    {
+      "path": "drivers/usb/gadget/function/f_acm.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/function/f_acm.c?format=TEXT",
+      "bytes": 25839,
+      "sha256": "af4cc45460315e7f35b5f9a5914b3a17b9d021726c103447d29a6eb787bbf02e"
+    },
+    {
+      "path": "drivers/usb/gadget/function/u_serial.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/function/u_serial.c?format=TEXT",
+      "bytes": 39468,
+      "sha256": "4b37a5d28ba1d10668e53436bde4f900cd8961f9305518738bd92461a1c183bd"
+    },
+    {
+      "path": "include/uapi/asm-generic/termbits.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/termbits.h?format=TEXT",
+      "bytes": 3654,
+      "sha256": "6769d652b4178463ed74ac4848a851abe5e457ee0623eb56f331d77c1e1863b9"
+    },
+    {
+      "path": "include/uapi/asm-generic/termbits-common.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/termbits-common.h?format=TEXT",
+      "bytes": 2214,
+      "sha256": "b022fb7a77f70ad67237b4f2091d17e0189ea7cc6c7d6632c1030326f887949c"
+    },
+    {
+      "path": "include/uapi/asm-generic/ioctls.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/ioctls.h?format=TEXT",
+      "bytes": 3983,
+      "sha256": "867644cd4a20815b7d8be14902b594bb6e30a81ea159aa5c67f24212c92cbab6"
+    },
+    {
+      "path": "include/uapi/linux/stat.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/linux/stat.h?format=TEXT",
+      "bytes": 7879,
+      "sha256": "c900a05e031d999074db5ac3567f651ce2cf2f9f9e0a686810d6453c9f8b9526"
+    },
+    {
+      "path": "include/uapi/linux/kdev_t.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/linux/kdev_t.h?format=TEXT",
+      "bytes": 441,
+      "sha256": "232a7c06c56de7bf1c3ba1def81834fda292c3e1771c36d01c7d2085106ca80a"
+    },
+    {
+      "path": "include/uapi/linux/tty.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/linux/tty.h?format=TEXT",
+      "bytes": 1800,
+      "sha256": "eddeed5efe6fa37c91960da9a90e8d0349ddcc7f00e98d07c97492a2e397dd3c"
+    },
+    {
+      "path": "include/linux/kdev_t.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/linux/kdev_t.h?format=TEXT",
+      "bytes": 1843,
+      "sha256": "88c47d8d1979f2c0e11aca3ad52f07d8da574db821a5a2b17bf64c5495991015"
+    },
+    {
+      "path": "arch/arm64/include/uapi/asm/Kbuild",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/include/uapi/asm/Kbuild?format=TEXT",
+      "bytes": 85,
+      "sha256": "80ea7d9bb46731c0ddf368714430e69508fa0e1489779ac0d2fdda2f2351955f"
+    },
+    {
+      "path": "include/uapi/asm-generic/Kbuild",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/Kbuild?format=TEXT",
+      "bytes": 928,
+      "sha256": "7f798a9dee418ae8169e28cfcfd4646cfdbf265e74907ce99191c1029a5cc1c0"
+    },
+    {
+      "path": "include/uapi/asm-generic/termios.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/termios.h?format=TEXT",
+      "bytes": 1392,
+      "sha256": "ced65a437336762b4e795389f5bcb26461e5c940624567f0f880eaa53082ff63"
+    },
+    {
+      "path": "arch/arm64/include/uapi/asm/",
+      "file": "arm64-uapi-directory.json",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/include/uapi/asm/?format=JSON",
+      "bytes": 2843,
+      "sha256": "7f5ea03b20b6c655fc4042796e9899e95655ac4702d82beb4328f256c8a74500"
+    }
+  ]
+}

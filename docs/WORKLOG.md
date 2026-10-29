@@ -3388,3 +3388,25 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
 - No ACM serial output, device execution, DT change or runtime policy qualification.
   Canonical34/isolated28 failing contexts unchanged. Next: actual bounded serial
   endpoint/output with failure controls; loading/role/security/return/log gates open.
+
+
+## 2026-10-29 — #27 actual bounded ACM status source
+
+- PR422 acceptedb0f84d7 after five checks atbad648f; actual Clang18 static ELF2088B
+  and archive914B inspected, never executed. Exact normalized receipt published
+  in evidence/usb-acm-pid1/clang-build-result.json; historical GNU proof retained.
+- Actual serial adapters now read owned function port_num and dynamic ttyGS dev,
+  reject existing private node, verify opened fd via statx, snapshot/set/readback/
+  restore raw termios, send one fixed status frame with bounded partial/EINTR/
+  EAGAIN attempts and preserve primary plus cleanup failures. No assumed ttyGS0
+  or device numbers. PID1 admitted emit mapping uses actual adapters.
+-422 host tests/RAM sanitizers, pinned UAPI layout/hash/negative controls, GNU
+  AArch64 object/static ELF/archive checks pass. Exact-head Clang CI required.
+  Kernel/provider/config/Image unchanged; no repeated Linux build needed.
+- Pinned u_serial close can wait15*HZ and discard queued data; writes queue without
+  connection, acm_set_alt ignores gserial_connect result. Userspace attempt bounds
+  are not strict wall-clock/host receipt proof. Fixed frame says unverified.
+- All seven runtime gates stayzero, physical descriptors empty, minimal PID1/DTs
+  and canonical34/isolated28 failures unchanged. No device action. Next actual
+  source scope: host bounded capture/frame validation and private receipts with
+  mocks, before physical loading/role/policy/independent return/retained-log gates.

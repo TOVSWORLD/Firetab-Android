@@ -28,6 +28,7 @@ int main(void){
  for(int kind=0;kind<4;kind++){m=(struct model){0};m.mode=kind;assert(security_enforcing(&io)==(kind? -1:0));assert(m.closes==1);}
  m=(struct model){0};m.mode=10;assert(security_enforcing(&io)==-1&&m.closes==1);
  char udc[64];m=(struct model){0};assert(discover(&io,udc,64)==-19);
+ assert(emit_acm(&io,"bad",3)==-22);
  console=-1;m=(struct model){0};assert(emit_console(&io,"abc",3)==-19&&m.calls==0);
  console=42;
  for(int kind=0;kind<10;kind++){m=(struct model){0};m.mode=kind;int r=emit_console(&io,"abc",3);assert((kind==5||kind==6||kind==7||kind==8)?r==-5:r==0);assert(m.writes<=16);}
