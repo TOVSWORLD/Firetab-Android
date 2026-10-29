@@ -1,0 +1,14 @@
+{
+  "scope": "Source/build dependency pins; no physical guarantee",
+  "sha256": {
+    "scripts/apply_dsi_port.py": "54c60ac3e7f9bd16a0b9b42a179a9a8ce822d3987963b71768eb1adaa230bb56",
+    "scripts/build_dsi_provider.sh": "7c85f6ed5b6c5058abd8d0f4540bb7890afa797fab1f647310058fb5a8fbf300",
+    "projects/firetabs-android/kernel/dsi-port/inputs.json": "ca4dbc75499162ede790df79d01a3487c19d7de6d9cb5f182a45b073750a8b41",
+    "projects/firetabs-android/kernel/dsi-port/mt8163-dsi.patch": "0d3430a1e921d1f58276f64b2ce331df2ab6b009cbbcc56d67d87f6565b29528",
+    "projects/firetabs-android/kernel/dsi-port/mtk_dsi_mt8163.h": "20286c21a14ec381b4763140d2427559a02073f30eb354eab002a9571ad98efe",
+    "evidence/dsi-kernel-integration/build-result.json": "b7ad88e91ff54f31f2ec1c3475a6e1dbdb2c95570cf58fdbf94134853c481948",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-mmsys.h": "1a411a525ba1bb215e99cfbf847f54dd78d6f31c8eb812eb45228f98c9e62d7f",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/reset/mediatek,mt8163-mmsys.h": "9fac0dd783e907ac8fdbbf1a32b660d18d890f828cff61f40ccc62e9b1f9802f",
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/soc/mediatek/mt8163-mmsys.h": "e09e7373572dd6d876b06076b824eeb569c7f771295274c9b100b95659bf62f2"
+  }
+}

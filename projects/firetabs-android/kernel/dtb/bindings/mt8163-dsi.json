@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in source-matched disabled MT8163 DSI metadata; missing panel graph/master/runtime remain unqualified",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "display/mediatek/mediatek,dsi.yaml",
+  "patch": "bindings/mt8163-dsi.patch",
+  "patch_sha256": "a5d4d981ab2244af0f82a1963d0f3a1a00d94ce5eb7aba05afbe75a7435dc503",
+  "original_sha256": "d4186b1c32ed07e6e428fabe5137e1be00d3a569eac0c4407a6f0e047783cb25",
+  "proposed_sha256": "9c50cee062f683f07d8bdd957141830bcda692c1bb036e0e9030878f9c7dec7a"
+}

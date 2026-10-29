@@ -1,0 +1,14 @@
+{
+  "scope": "Fresh compiled disabled DSI dependencies only; actual graph absent",
+  "source_build_run": 40871693672,
+  "resource_bytes": 4096,
+  "source_minimum_bytes": 1024,
+  "engine_clock_id": 34,
+  "digital_clock_id": 35,
+  "mmsys_reset_id": 23,
+  "power_domain_id": 0,
+  "missing_panel_graph": true,
+  "mmsys_master_pipeline_qualified": false,
+  "runtime_qualified": false,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}

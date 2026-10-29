@@ -1,0 +1,43 @@
+{
+  "scope": "Exact-head builtin DSI/DRM provider compilation; no QEMU/device/pipeline qualification",
+  "repository_head": "2109781474e29dd4f9ce5523fdaf7aa6c2bf2822",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "run": 40871693672,
+  "job": 123440089189,
+  "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40871693672/job/123440089189",
+  "command": "bash scripts/build_dsi_provider.sh",
+  "mode": "dsi-provider",
+  "passed": true,
+  "log_sha256": "92fad4ce8cf6a43b7d2dc5f95ffc734ea240e2fe73cfc06e9349a5cd7708bf3a",
+  "final_hashes": {
+    "output/.config": "d7af0169ab21f480f61808509d3e8f64ef017735089d3f9103aa6cca45131568",
+    "output/vmlinux": "3d02d15355278ff6470ad3e6ba61aa55729c822eca63f3fe240f0acd0041e79b",
+    "output/arch/arm64/boot/Image": "37d881065af7ece2b6ad707b8a26fba66348214482220275a632a8f7ee68d1aa",
+    "source/drivers/gpu/drm/mediatek/mtk_dsi.c": "64b67ab57d171d171f1638cae1676c82ec3be6bbfe3ae4b66e055abd9dbd753b",
+    "source/drivers/gpu/drm/mediatek/mtk_drm_drv.c": "fd7af1b187b34d4caf99a329354fe7b11da78d19c20ffc5c30a0a6bc5e24c3fd",
+    "source/drivers/gpu/drm/mediatek/mtk_dsi_mt8163.h": "20286c21a14ec381b4763140d2427559a02073f30eb354eab002a9571ad98efe",
+    "output/drivers/gpu/drm/mediatek/mtk_dsi.o": "f39f97cbde962fb78f895a3b78b44821b9bf49cfcf5356957ede82ad7e05c999",
+    "output/drivers/gpu/drm/mediatek/mtk_drm_drv.o": "8145bf0935d27ab7650d90bd217201a9651d2ae258cacef940aad0a4797d0642"
+  },
+  "resolved_symbols": {
+    "DRM": "y",
+    "DRM_MEDIATEK": "y",
+    "DRM_MIPI_DSI": "y",
+    "DRM_PANEL": "y",
+    "DRM_KMS_HELPER": "y",
+    "DRM_DISPLAY_HELPER": "y",
+    "DRM_BRIDGE_CONNECTOR": "y",
+    "VIDEOMODE_HELPERS": "y",
+    "MTK_MMSYS": "y",
+    "PHY_MTK_MIPI_DSI": "y",
+    "RESET_CONTROLLER": "y",
+    "ARCH_MEDIATEK": "y",
+    "COMMON_CLK": "y",
+    "OF": "y",
+    "GENERIC_PHY": "y"
+  },
+  "image_bytes": 29374976,
+  "object_hash_scope": "Explicit W1 pre-Image probes; not asserted final linked object bytes",
+  "earlier_baseline_outputs": "All pre-DSI staged Images/gzip excluded",
+  "runtime_qualified": false
+}

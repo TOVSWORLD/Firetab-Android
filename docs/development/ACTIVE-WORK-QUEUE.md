@@ -1,14 +1,19 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: actual isolated DSI kernel implementation in progress.
-New scoped descriptor/lifecycle/host/packet/probe paths and all-target preflight
-are implemented;478 host tests/native patched-C ASan/UBSan controls pass locally.
-Actual ACK six-bit CMDQ_SIZE narrows payload to248B, below the historical508B
-layout bound;249/508 reject before writes. Legacy function bodies/descriptors
-remain unchanged. New dsi-provider Linux objects/config/final Image and all
-exact-head PR checks are REQUIRED before source acceptance or binding work.
-No Image/runtime success is claimed. Next: submit exact-head implementation CI,
-fix real failures, then publish source-matched binding only after build passes.
+2026-10-29 #27: PR433 merged6f670e0346a278857eff946e5ab6bc82d6b168f1.
+Five final-head checks at2109781/478 tests plus actual DSI-provider Linux
+run40871693672/job123440089189 passed real DSI/DRM objects/config/final29374976B
+Image37d881065af7. Source hashes match lock; receipt distinguishes pre-DSI staged
+outputs and W1 pre-Image probes. Source backend only, no pipeline/panel admission.
+
+Current bounded metadata scope adds exact DSI compatible/mandatory reset with
+older policies unchanged;40 selected+type controls and fresh graph guards pass.
+Actual node lacks panel graph and selected schema rejects it; synthetic graph
+control is not actual panel data. Full validator skips disabled required errors,
+so full5186-YAML contexts31→30/25→24 remove only unmatched DSI, still failed.
+Canonical b837e6cb/isolated4480f085 and disabled states unchanged. New metadata
+CI required; no further kernel Image for schema-only work. Physical/master/panel,
+thermal/loading/failed-return/retained-log/beta gates remain open.
 
 Historical PR432 finite actual DSI source/lifecycle/packet contract complete.
 Explicit donor MT8163 descriptor exists, but common paths retain references on

@@ -1,0 +1,7 @@
+{
+  "exit": 1,
+  "passed": false,
+  "diagnostics": 30,
+  "required_graph_for_disabled_node_not_accepted": true,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}

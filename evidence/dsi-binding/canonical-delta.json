@@ -1,0 +1,22 @@
+{
+  "before": 31,
+  "after": 30,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/dsi@14012000",
+      "nodename": "dsi@14012000",
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-dsi']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/dsi@14012000: failed to match any schema with compatible: ['mediatek,mt8163-dsi']"
+    }
+  ],
+  "added": [],
+  "full_passed": false
+}

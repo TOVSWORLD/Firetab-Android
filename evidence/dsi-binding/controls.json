@@ -1,0 +1,9 @@
+{
+  "scope": "Actual disabled candidate missing panel graph remains rejected by selected schema; synthetic graph is shape only",
+  "count": 40,
+  "older_soc_structure_preserved": true,
+  "type_policy_pipeline_retained": true,
+  "actual_candidate_accepted": false,
+  "synthetic_graph_not_actual_panel": true,
+  "runtime_qualified": false
+}

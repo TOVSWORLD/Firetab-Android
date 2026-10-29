@@ -1,0 +1,8 @@
+{
+  "scope": "Forty instances observed with full matched DTValidator selected schema+all type/select validators; replayed by closed bundle",
+  "controls": 40,
+  "closed_schemas": 56,
+  "always_type_selectors": 52,
+  "candidate_missing_graph_preserved": true,
+  "runtime_qualified": false
+}

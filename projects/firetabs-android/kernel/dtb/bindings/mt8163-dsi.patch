@@ -1,0 +1,27 @@
+--- a/display/mediatek/mediatek,dsi.yaml
++++ b/display/mediatek/mediatek,dsi.yaml
+@@ -18,6 +18,16 @@
+ 
+ allOf:
+   - $ref: /schemas/display/dsi-controller.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8163-dsi
++      required:
++        - compatible
++    then:
++      required:
++        - resets
+ 
+ properties:
+   compatible:
+@@ -26,6 +36,7 @@
+           - mediatek,mt2701-dsi
+           - mediatek,mt7623-dsi
+           - mediatek,mt8167-dsi
++          - mediatek,mt8163-dsi
+           - mediatek,mt8173-dsi
+           - mediatek,mt8183-dsi
+           - mediatek,mt8186-dsi
