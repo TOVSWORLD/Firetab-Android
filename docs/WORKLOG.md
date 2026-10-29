@@ -3036,3 +3036,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   PINCTRL-SYSCFG-BINDING.md. No driver/DTB/device change or new download.
 - Next #27 source acceptance: actual IOMMU/SMI probe/resource dependencies, then
   source-matched contracts; keep40 diagnostics and all runtime recovery gates open.
+
+## 2026-10-28 — pinned genpd wakeup core comparison (#20)
+
+- Retried obsolete drivers/base/power/domain.c:404; acquired actual relocated
+  drivers/pmdomain/core.c102206bytes and pm_wakeup.h7474bytes at pinned ACK
+  d9318bdb. Official URLs and SHA256 receipts in evidence/power-port/wakeup-core.
+- Exact legacy Git object and modern core/header establish16 Boolean branch
+  combinations. Equal active policy matches only under stated already-off/OOB
+  assumptions; prepare, noirq callback ordering, stop/start and errors differ.
+- Candidate omits active-wakeup capability while eight legacy domains enable it;
+  no automatic flag edit from narrow predicate equivalence. Missing-source blocker
+  resolved; desired modern device wakeup policy and runtime transitions remain open.
+- Reproduce: python3 scripts/validate_genpd_wakeup_comparison.py. No device/firmware
+  execution. Independent source task completed while PR407 provider build runs.
+- Next #20 acceptance: derive intended modern wakeup configuration and power
+  transition behavior before any capability change; #27 source/build then matched
+  IOMMU/SMI contracts remains the current queue priority.

@@ -48,6 +48,8 @@ jobs:
           python3 scripts/audit_power_references.py --check
       - name: Test gate rejection paths
         run: python3 -m unittest discover -s tests -v
+      - name: Verify pinned genpd wakeup source comparison
+        run: python3 scripts/validate_genpd_wakeup_comparison.py
   android:
     name: FireTabs Android evidence
     runs-on: ubuntu-24.04
