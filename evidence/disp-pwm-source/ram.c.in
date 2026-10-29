@@ -1,0 +1,89 @@
+#include <assert.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include <errno.h>
+typedef uint32_t u32;typedef uint64_t u64;
+#define __iomem
+#define BIT(x) (1U<<(x))
+#define FIELD_GET(m,v) (((v)&(m))>>__builtin_ctz((u32)(m)))
+#define NSEC_PER_SEC 1000000000ULL
+#define EPROBE_DEFER 517
+#define ERR_PTR(x) ((void *)(intptr_t)(x))
+#define PTR_ERR(x) ((int)(intptr_t)(x))
+#define IS_ERR(x) ((uintptr_t)(x)>=(uintptr_t)-4095)
+#define dev_err(d,...) ((void)(d))
+#define dev_err_probe(d,e,...) ((void)(d),(e))
+#define BUG_ON(x) assert(!(x))
+#define PWM_WFHWSIZE 16
+#define CONFIG_PWM_DEBUG 0
+#define IS_ENABLED(x) (x)
+struct device {int unused;};struct platform_device {struct device dev;};struct clk {int id;};struct pwm_chip;struct pwm_device;struct pwm_state;
+enum pwm_polarity {PWM_POLARITY_NORMAL,PWM_POLARITY_INVERSED};
+struct pwm_ops {int (*apply)(struct pwm_chip *,struct pwm_device *,const struct pwm_state *);int (*get_state)(struct pwm_chip *,struct pwm_device *,struct pwm_state *);unsigned sizeof_wfhw;};
+struct pwm_chip {struct device dev;const struct pwm_ops *ops;};
+/* ACTUAL_STRUCTS */
+struct pwm_device {struct pwm_chip *chip;struct pwm_state state;};
+static struct mtk_disp_pwm mdp;static struct pwm_chip chip;static struct pwm_device pwm;static struct clk main_clk={0},mm_clk={1};static struct platform_device pdev;
+static u32 regs[64];static unsigned writes,maxoff,commit_writes,main_on,mm_on,main_off,mm_off,divide_zero,probe_step,trace_count;static int fail_main,fail_mm,fail_probe;static u64 rate=1000000000ULL;static unsigned trace[64];
+static u64 round_div(u64 n,u64 d){if(!d){divide_zero++;return 0;}return n/d+(n%d!=0);}
+#define DIV64_U64_ROUND_UP(n,d) round_div((n),(d))
+static u64 mul_u64_u64_div_u64(u64 a,u64 b,u64 d){assert(d);return (u64)((__uint128_t)a*b/d);}
+static unsigned slot(void *p){uintptr_t o=(uintptr_t)p-(uintptr_t)regs;assert(o<sizeof(regs)&&!(o&3));if(o>maxoff)maxoff=o;return o/4;}
+static u32 readl(void *p){return regs[slot(p)];}static void writel(u32 v,void *p){unsigned o=slot(p);regs[o]=v;writes++;if(o==2)commit_writes++;}
+static void *pwmchip_get_drvdata(struct pwm_chip *c){assert(c==&chip);return &mdp;}static struct device *pwmchip_parent(struct pwm_chip *c){assert(c==&chip);return &pdev.dev;}
+static int clk_prepare_enable(struct clk *c){assert(c==&main_clk||c==&mm_clk);if(c==&main_clk){main_on++;return fail_main?-EIO:0;}mm_on++;return fail_mm?-EBUSY:0;}
+static void clk_disable_unprepare(struct clk *c){if(c==&main_clk)main_off++;else {assert(c==&mm_clk);mm_off++;}}
+static u64 clk_get_rate(struct clk *c){assert(c==&main_clk);return rate;}
+static int step(void){return ++probe_step==fail_probe;}
+static struct pwm_chip *devm_pwmchip_alloc(struct device *d,unsigned n,size_t size){assert(d==&pdev.dev&&n==1&&size==sizeof(mdp));return step()?ERR_PTR(-ENOMEM):&chip;}
+static const void *match;static const void *of_device_get_match_data(struct device *d){assert(d==&pdev.dev);return match;}
+static void *devm_platform_ioremap_resource(struct platform_device *p,unsigned i){assert(p==&pdev&&!i);return step()?ERR_PTR(-EIO):regs;}
+static struct clk *devm_clk_get(struct device *d,const char *n){assert(d==&pdev.dev);return step()?ERR_PTR(-EPROBE_DEFER):!strcmp(n,"main")?&main_clk:&mm_clk;}
+static int devm_pwmchip_add(struct device *d,struct pwm_chip *c){assert(d==&pdev.dev&&c==&chip);return step()?-EIO:0;}
+struct pwm_waveform {u64 duty_length_ns,period_length_ns,duty_offset_ns;};
+#define pwmchip_supports_waveform(c) false
+#define pwm_state2wf(s,w) ((void)(s),(void)(w))
+#define __pwm_round_waveform_tohw(c,p,w,h) ((void)(c),(void)(p),(void)(w),(void)(h),-EOPNOTSUPP)
+#define __pwm_round_waveform_fromhw(c,p,h,w) ((void)(c),(void)(p),(void)(h),(void)(w),-EOPNOTSUPP)
+#define pwm_check_rounding(w,r) ((void)(w),(void)(r),true)
+#define __pwm_write_waveform(c,p,h) ((void)(c),(void)(p),(void)(h),-EOPNOTSUPP)
+#define trace_pwm_apply(p,s,e) ((void)(p),(void)(s),(void)(e))
+#define pwm_apply_debug(p,s) ((void)(p),(void)(s))
+typedef int DISP_MODULE_ENUM;typedef int disp_ddp_path_config;typedef int disp_pwm_id_t;typedef void *cmdqRecHandle;
+#define DISP_MODULE_PWM0 0
+#define TOP_PWM_SEL 1
+#define MM_CLK_DISP_PWM 2
+#define MM_CLK_DISP_PWM_26M 3
+#define DISP_PWM0 1
+#define DISP_PWM_ALL 3
+#define PWM_DEFAULT_DIV_VALUE 0
+#define pwm_get_reg_base(id) ((uintptr_t)regs)
+#define index_of_pwm(id) ((id)==DISP_PWM0?0:1)
+#define PWM_MSG(...) ((void)0)
+#define PWM_NOTICE(...) ((void)0)
+#define PWM_ERR(...) ((void)0)
+static int g_pwm_backlight[2],g_pwm_max_backlight[2]={1023,1023};static volatile int g_pwm_duplicate_count;
+static void atomic_set(int *p,int v){*p=v;}static int atomic_xchg(int *p,int v){int old=*p;*p=v;return old;}
+#define DISP_REG_GET(a) readl((void *)(a))
+#define DISP_REG_MASK(q,a,d,m) ((void)(q),writel((readl((void *)(a))&~(u32)(m))|((u32)(d)&(u32)(m)),(void *)(a)))
+static int ddp_module_clock_enable(int id,bool on){assert(trace_count<64);trace[trace_count++]=id|(on?0x10:0);return -EIO;}
+/* ACTUAL_SOURCE */
+static void fixture(void){memset(&mdp,0,sizeof(mdp));memset(regs,0,sizeof(regs));mdp.data=&mt8173_pwm_data;match=&mt8173_pwm_data;mdp.base=regs;mdp.clk_main=&main_clk;mdp.clk_mm=&mm_clk;chip.ops=&mtk_disp_pwm_ops;pwm.chip=&chip;memset(&pwm.state,0,sizeof(pwm.state));writes=maxoff=commit_writes=main_on=mm_on=main_off=mm_off=divide_zero=probe_step=trace_count=0;fail_main=fail_mm=fail_probe=0;rate=1000000000ULL;g_pwm_backlight[0]=-1;}
+int main(void){struct pwm_state s={.period=1024,.duty_cycle=512,.enabled=true},read;
+ fixture();assert(__pwm_apply(&pwm,&s)==0&&mdp.enabled&&main_on==1&&mm_on==1);assert(regs[4]==0&&regs[5]==(1023|(512U<<16))&&commit_writes==2);unsigned prior_writes=writes;assert(__pwm_apply(&pwm,&s)==0&&writes==prior_writes);assert(mtk_disp_pwm_get_state(&chip,&pwm,&read)==0&&read.period==1023&&read.duty_cycle==512);
+ fixture();s.enabled=false;s.period=1024;s.duty_cycle=0;assert(pwm_state_valid(&s));assert(__pwm_apply(&pwm,&s)==0);assert(!pwm.state.enabled&&mdp.enabled&&(regs[0]&1));
+ fixture();s.period=0;s.enabled=false;s.duty_cycle=0;pwm.state.period=1;assert(__pwm_apply(&pwm,&s)==0&&mdp.enabled);
+ fixture();s.enabled=true;s.period=0;assert(__pwm_apply(&pwm,&s)==-EINVAL&&!writes&&!main_on);
+ for(int stage=0;stage<2;stage++){fixture();s.period=1024;s.duty_cycle=512;s.enabled=true;if(stage==0)fail_main=1;else fail_mm=1;assert(__pwm_apply(&pwm,&s)<0&&!mdp.enabled&&!writes);if(stage==1)assert(main_off==1);}
+ fixture();s.period=UINT64_C(4194304);s.duty_cycle=0;s.enabled=true;assert(__pwm_apply(&pwm,&s)==-EINVAL&&!writes&&main_off==1&&mm_off==1);
+ fixture();s.period=(UINT64_C(1)<<44)+1024;s.duty_cycle=0;s.enabled=true;assert(__pwm_apply(&pwm,&s)==0&&mdp.enabled);assert(regs[4]==0&&(regs[5]&PWM_PERIOD_MASK)==1023&&pwm.state.period==s.period);
+ fixture();s.period=1024;s.duty_cycle=0;rate=0;assert(__pwm_apply(&pwm,&s)==0&&mdp.enabled);assert(mtk_disp_pwm_get_state(&chip,&pwm,&read)==0&&divide_zero==2);
+ fixture();for(unsigned raw=0;raw<4096;raw++){regs[5]=raw;assert(mtk_disp_pwm_get_state(&chip,&pwm,&read)==0&&read.period==raw);assert(read.period+1==(u64)raw+1);}
+ unsigned period_equal=0,commit_equal=0;for(unsigned word=0;word<65536;word++){fixture();regs[5]=word;assert(disp_pwm_config_init(0,NULL,NULL)==0);u32 legacy=regs[5];regs[5]=word;s.period=1024;s.duty_cycle=0;s.enabled=true;assert(mtk_disp_pwm_apply(&chip,&pwm,&s)==0);if(legacy==regs[5])period_equal++;regs[2]=word;g_pwm_backlight[0]=-1;assert(disp_pwm_set_backlight_cmdq(1,1,NULL)==0);u32 legacy_commit=regs[2];regs[2]=word;assert(mtk_disp_pwm_apply(&chip,&pwm,&s)==0);if(legacy_commit==regs[2])commit_equal++;}
+ assert(period_equal==16384&&commit_equal==2);
+ fixture();assert(ddp_pwm_power_on(0,NULL)==0);assert(ddp_pwm_power_off(0,NULL)==0);assert(trace_count==6&&trace[0]==0x11&&trace[1]==0x12&&trace[2]==0x13&&trace[3]==2&&trace[4]==3&&trace[5]==1);
+ for(int stage=1;stage<=5;stage++){fixture();fail_probe=stage;assert(mtk_disp_pwm_probe(&pdev)<0);}fixture();assert(mtk_disp_pwm_probe(&pdev)==0);
+ puts("PASS actual PWM/core/legacy C:disabled enable,readback,zero-rate callback,clock errors,65536 field/commit states,probe");return 0;}
