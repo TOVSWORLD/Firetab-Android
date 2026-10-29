@@ -12,7 +12,8 @@ schema and fresh-DTB SPI/type/polarity guard preserve all other SoC constraints.
 40 actual updated controls pass; full context38→34 diagnostics (22unmatched/
 12validation), wrapper exit1/passedfalse. No DTB/driver/device change. USB source acceptance now identifies actual fallback
 matches but a V1 frequency-bank mismatch: source-derived0x1121010c vs legacy
-0x11210f0c and default reference26 vs legacy formula48. Candidate controller/PHY
+0x11210f0c and default reference26 vs legacy formula48; legacy computed slew write is
+commented out and active code writes fixed0x60. Candidate controller/PHY
 are disabled; diagnostic fragment disables USB/GADGET. Fresh-DTB audit reports
 metadata only, with no variant/build/device-transport readiness. Full34 diagnostics
 unchanged. Next source acceptance: finite USB2 bank/calibration comparison before

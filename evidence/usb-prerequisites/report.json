@@ -7,6 +7,8 @@
     "legacy_frequency_bank_offset": 3840,
     "ack_v1_default_ref_mhz": 26,
     "legacy_formula_ref": 48,
+    "legacy_applies_computed_slew": false,
+    "legacy_fixed_slew_byte": 96,
     "controller_fallback": "mediatek,mtk-musb",
     "phy_fallback": "mediatek,generic-tphy-v1"
   },

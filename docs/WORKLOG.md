@@ -3117,7 +3117,9 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   fallbacks match actual tables, without proving MT8163 variant equivalence.
 - Legacy resource1 SIF->io_priv->macro+0x800 and calibration0xf00-0x800+0x0c
   derive0x11210f0c; selected generic V1 SIF+0x100+0x0c derives0x1121010c. Legacy
-  formulaFRA48 vs V1 default26 also differs. No MMIO/device observation inferred.
+  formulaFRA48 vs V1 default26 also differs, but legacy calculated write is
+  commented out: active code writes fixed byte0x60/SRCTRL6. ACK applies a computed
+  field. No formula-only replacement or MMIO/device observation inferred.
 - Actual candidate controller and PHY disabled; diagnostic fragment requests
   USB/GADGET disabled. Probe/PHY operations are not passive. No reset dependency
   copied from siblings, no guessed DT property, no enabling/binding/build claim.

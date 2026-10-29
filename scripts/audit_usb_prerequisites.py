@@ -40,13 +40,17 @@ def source_facts():
     ref=int(re.search(r'\.slew_ref_clock_mhz\s*=\s*(\d+)',pdata)[1])
     old_ref=int(re.search(r'#define\s+FRA\s+\((\d+)\)',legacy)[1])
     assert 'USBPHY_READ32(0xf00-0x800+0x0c)' in legacy
+    active_legacy=re.sub(r'/\*.*?\*/|//[^\n]*', '', legacy, flags=re.S)
+    assert 'USBPHY_WRITE8(0x15, 0x60)' in active_legacy
+    assert 'USBPHY_WRITE8(0x15, value<<4)' not in active_legacy
     assert 'io_priv)+0x800+offset' in header
     assert 'pbase = of_iomap(pdev->dev.of_node, 1)' in (EVIDENCE/'legacy/probe-and-base.c').read_text()
     assert 'musb->xceiv->io_priv = ctrlp' in (EVIDENCE/'legacy/io-priv-assignment.c').read_text()
     assert '<0 0x11210000 0 0x10000>' in (EVIDENCE/'legacy/usb-resource.dtsi').read_text()
     return {'ack_v1_frequency_bank_offset':bank,'frequency_value_offset':value,
             'legacy_frequency_bank_offset':0xf00,'ack_v1_default_ref_mhz':ref,
-            'legacy_formula_ref':old_ref,'controller_fallback':'mediatek,mtk-musb',
+            'legacy_formula_ref':old_ref,'legacy_applies_computed_slew':False,
+            'legacy_fixed_slew_byte':0x60,'controller_fallback':'mediatek,mtk-musb',
             'phy_fallback':'mediatek,generic-tphy-v1'}
 
 

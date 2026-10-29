@@ -44,3 +44,5 @@ class USBPrerequisites(unittest.TestCase):
         self.assertEqual(r['source_derived_frequency_value_addresses'],{'ack_generic_v1':'0x1121010c','legacy_declared_sif':'0x11210f0c'})
         self.assertFalse(r['same_frequency_bank'])
         self.assertNotEqual(facts['ack_v1_default_ref_mhz'],facts['legacy_formula_ref'])
+        self.assertFalse(facts['legacy_applies_computed_slew'])
+        self.assertEqual(facts['legacy_fixed_slew_byte'],0x60)
