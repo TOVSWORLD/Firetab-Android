@@ -5,11 +5,15 @@ import json
 from pathlib import Path
 import subprocess
 USB_PATHS={'scripts/apply_usb_port.py','scripts/select_kernel_build_scope.py'}
-MODES={'clocks','clocks-pinctrl','providers','usb-providers','usb-acm-diagnostic','diagnostic','sym827-provider','mipi-provider'}
+MODES={'clocks','clocks-pinctrl','providers','usb-providers','usb-acm-diagnostic','diagnostic','sym827-provider','mipi-provider','dsi-provider'}
 
 
 def choose(event,changed=(),mode='diagnostic',argument_profile='none',emulated_boot=False):
     if event=='pull_request':
+        dsi=any(p in {'scripts/apply_dsi_port.py','scripts/build_dsi_provider.sh'} or p.startswith('projects/firetabs-android/kernel/dsi-port/') and (p.endswith('.patch') or p.endswith('inputs.json') or p.endswith('.h')) for p in changed)
+        if dsi:
+            if any(p.startswith('projects/firetabs-android/kernel/usb-port/') or p.startswith('projects/firetabs-android/kernel/usb-acm/') or p in {'scripts/apply_usb_port.py','scripts/usb_acm_config.py'} for p in changed):raise ValueError('Mixed USB/DSI source scope requires a separate build')
+            return {'mode':'dsi-provider','argument_profile':'none','qemu':False}
         mipi=any(p in {'scripts/apply_mipi_port.py','scripts/build_mipi_provider.sh'} or p.startswith('projects/firetabs-android/kernel/mipi-port/') and (p.endswith('.patch') or p.endswith('inputs.json')) for p in changed)
         if mipi:
             if any(p.startswith('projects/firetabs-android/kernel/usb-port/') or p.startswith('projects/firetabs-android/kernel/usb-acm/') or p in {'scripts/apply_usb_port.py','scripts/usb_acm_config.py'} for p in changed):raise ValueError('Mixed USB/MIPI source scope requires a separate build')

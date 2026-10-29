@@ -1,0 +1,19 @@
+{
+  "scope": "Actual patched C RAM controls only; Linux kernel Image still required",
+  "host_tests": 478,
+  "native_sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "queue_count_mask": 63,
+  "maximum_payload": 248,
+  "historical_layout_payload_bound": 508,
+  "runtime_qualified": false,
+  "kernel_build_passed": false,
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "sha256": {
+    "scripts/audit_dsi_port.py": "9c15d02e7d645f5fc415fcdd4f7311e8aa661e4883b99ea42d95dfa966f1bf55",
+    "evidence/dsi-kernel-integration/ram-support.c.in": "69aa4c33151f952792471d4b194f58576dc9e8539316a20d1dbbc16cbabc6394",
+    "evidence/dsi-kernel-integration/ram-cases.c.in": "1d2a5cac34e8c04d2783352460cd4e4e08078dfb43238a17a9812107d2ba8d1d"
+  }
+}

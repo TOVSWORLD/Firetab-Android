@@ -34,3 +34,12 @@ class KernelBuildScope(unittest.TestCase):
         self.assertEqual(choose('workflow_dispatch',mode='mipi-provider')['mode'],'mipi-provider')
         with self.assertRaises(ValueError):choose('workflow_dispatch',mode='mipi-provider',emulated_boot=True)
         with self.assertRaises(ValueError):choose('workflow_dispatch',mode='mipi-provider',argument_profile='generic-force')
+
+class DsiScope(unittest.TestCase):
+    def test_dsi_source_scope_and_mixed_guards(self):
+        for path in ['scripts/apply_dsi_port.py','scripts/build_dsi_provider.sh','projects/firetabs-android/kernel/dsi-port/mt8163-dsi.patch','projects/firetabs-android/kernel/dsi-port/inputs.json','projects/firetabs-android/kernel/dsi-port/mtk_dsi_mt8163.h']:
+            self.assertEqual(choose('pull_request',[path]),{'mode':'dsi-provider','argument_profile':'none','qemu':False})
+        self.assertEqual(choose('workflow_dispatch',mode='dsi-provider')['mode'],'dsi-provider')
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='dsi-provider',emulated_boot=True)
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='dsi-provider',argument_profile='generic-force')
+        with self.assertRaises(ValueError):choose('pull_request',['scripts/apply_dsi_port.py','scripts/apply_usb_port.py'])
