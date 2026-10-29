@@ -1,0 +1,61 @@
+{
+  "compatible": [
+    "mediatek,mt8163-dsi"
+  ],
+  "reg": [
+    [
+      0,
+      335618048,
+      0,
+      4096
+    ]
+  ],
+  "interrupts": [
+    [
+      0,
+      195,
+      8
+    ]
+  ],
+  "power-domains": [
+    [
+      21,
+      0
+    ]
+  ],
+  "clocks": [
+    [
+      40,
+      34
+    ],
+    [
+      40,
+      35
+    ],
+    [
+      42
+    ]
+  ],
+  "clock-names": [
+    "engine",
+    "digital",
+    "hs"
+  ],
+  "resets": [
+    [
+      40,
+      23
+    ]
+  ],
+  "phys": [
+    [
+      42
+    ]
+  ],
+  "phy-names": [
+    "dphy"
+  ],
+  "status": [
+    "disabled"
+  ]
+}

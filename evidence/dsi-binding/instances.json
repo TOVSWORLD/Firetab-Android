@@ -1,0 +1,2598 @@
+[
+  {
+    "name": "actual disabled candidate has no port graph,not accepted",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ]
+    }
+  },
+  {
+    "name": "synthetic graph shape only,not actual panel",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing compatible",
+    "accepted": false,
+    "node": {
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing reg",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing interrupts",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing power-domains",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing clocks",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing clock-names",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing resets",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing phys",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing phy-names",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "missing port",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ]
+    }
+  },
+  {
+    "name": "bad reg []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad reg [[0, 335618048, 0, 4096], [0, 335618048, 0, 4096]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ],
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad reg bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": "bad",
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad interrupts []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad interrupts [[0, 195, 8], [0, 195, 8]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ],
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad interrupts bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": "bad",
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad power-domains []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad power-domains [[21, 0], [21, 0]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ],
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad power-domains bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": "bad",
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad clocks []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad clocks [[40, 34], [40, 35], [42], [40, 34], [40, 35], [42]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ],
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad clocks bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": "bad",
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad resets []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad resets [[40, 23], [40, 23]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ],
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad resets bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": "bad",
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad phys []",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad phys [[42], [42]]",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ],
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "bad phys bad",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": "bad",
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "policy clock-names ['digital', 'engine', 'hs']",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "digital",
+        "engine",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "policy phy-names ['wrong']",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "wrong"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "policy compatible ['mediatek,mt8163-dsi', 'mediatek,mt8173-dsi']",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,mt8163-dsi",
+        "mediatek,mt8173-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "policy compatible ['mediatek,unknown-dsi']",
+    "accepted": false,
+    "node": {
+      "compatible": [
+        "mediatek,unknown-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "older SoC optional reset mediatek,mt2701-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt2701-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "older SoC reset still allowed mediatek,mt2701-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt2701-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      },
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ]
+    }
+  },
+  {
+    "name": "older SoC optional reset mediatek,mt8173-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt8173-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "older SoC reset still allowed mediatek,mt8173-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt8173-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      },
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ]
+    }
+  },
+  {
+    "name": "older SoC optional reset mediatek,mt8183-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt8183-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      }
+    }
+  },
+  {
+    "name": "older SoC reset still allowed mediatek,mt8183-dsi",
+    "accepted": true,
+    "node": {
+      "compatible": [
+        "mediatek,mt8183-dsi"
+      ],
+      "reg": [
+        [
+          0,
+          335618048,
+          0,
+          4096
+        ]
+      ],
+      "interrupts": [
+        [
+          0,
+          195,
+          8
+        ]
+      ],
+      "power-domains": [
+        [
+          21,
+          0
+        ]
+      ],
+      "clocks": [
+        [
+          40,
+          34
+        ],
+        [
+          40,
+          35
+        ],
+        [
+          42
+        ]
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "phys": [
+        [
+          42
+        ]
+      ],
+      "phy-names": [
+        "dphy"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "port": {
+        "endpoint": {}
+      },
+      "resets": [
+        [
+          40,
+          23
+        ]
+      ]
+    }
+  }
+]

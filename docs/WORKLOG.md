@@ -3674,3 +3674,24 @@ replacement exact-head dsi-provider build required after the fix. Private bindin
 controls also expose missing candidate panel graph: full dt-validate suppresses
 disabled-node validation errors, so unmatched removal is not graph acceptance.
 No binding publication or DT change.
+
+
+## 2026-10-29 — #27 accepted DSI source and matched disabled metadata
+
+PR433 merged6f670e0346a278857eff946e5ab6bc82d6b168f1 after five head2109781
+checks/478 tests and required Linux40871693672/job123440089189 passed. Actual
+DSI/DRM object probes, builtin dependencies and final29374976B Image SHA
+37d881065af7ece2b6ad707b8a26fba66348214482220275a632a8f7ee68d1aa accepted.
+Three source hashes match lock; public build receipt separates pre-DSI Images
+and pre-Image W1 object hashes. No runtime, panel or physical rollback proof.
+
+Published source-matched DSI proposal/closed56-schema pipeline/40 actual frozen
+controls/older policy preservation and fresh dependency guard. Source-DTB guards
+pin IRQ195/MM domain0/MMSYS clocks34/35/reset23/MIPI PHY+HS ownership; actual panel
+graph remains absent and selected-schema controls reject it. Do not invent graph
+data or relax graph requirements. Full wrapper5186-YAML contexts canonical31→30
+(18/12),isolated25→24(15/9) remove only DSI unmatched; disabled required-property
+suppression hides missing graph in full wrapper, not acceptance. Both wrappers
+still exit1/passedfalse; Gunyah warning/AFE unmatched retained. Fresh DTB hashes
+b837e6cb/4480f085 unchanged. Commands and processing receipts in dsi-binding;
+new exact metadata PR CI required. No new kernel build/device/DT/security action.

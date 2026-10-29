@@ -1,0 +1,103 @@
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /: failed to match any schema with compatible: ['amazon,douglas', 'mediatek,mt8163']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /: failed to match any schema with compatible: ['amazon,douglas', 'mediatek,mt8163']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/thermal@1100b000: failed to match any schema with compatible: ['mediatek,mt8163-thermal']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/clock-controller@11220000/audio-controller: failed to match any schema with compatible: ['mediatek,mt8163-afe-pcm']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: gpu@13040000 (mediatek,mt8163-mali): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-mali', 'arm,mali-t720'] is too short
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos5250-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos5420-mali']
+	'mediatek,mt8163-mali' is not one of ['allwinner,sun50i-h6-mali']
+	'mediatek,mt8163-mali' is not one of ['amlogic,meson-gxm-mali', 'realtek,rtd1295-mali']
+	'mediatek,mt8163-mali' is not one of ['arm,juno-mali']
+	'mediatek,mt8163-mali' is not one of ['rockchip,rk3288-mali', 'samsung,exynos5433-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos7-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos7870-mali']
+	'mediatek,mt8163-mali' is not one of ['rockchip,rk3399-mali']
+	'mediatek,mt8163-mali' is not one of ['samsung,exynos8890-mali']
+	'arm,mali-t604' was expected
+	'arm,mali-t628' was expected
+	'arm,mali-t820' was expected
+	'arm,mali-t624' was expected
+	'arm,mali-t760' was expected
+	'samsung,exynos5433-mali' was expected
+	'arm,mali-t830' was expected
+	'arm,mali-t860' was expected
+	'arm,mali-t880' was expected
+	from schema $id: http://devicetree.org/schemas/gpu/arm,mali-midgard.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/gpu@13040000: failed to match any schema with compatible: ['mediatek,mt8163-mali', 'arm,mali-t720']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: ovl@14007000 (mediatek,mt8163-disp-ovl): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ovl', 'mediatek,mt8173-disp-ovl'] is too long
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt2701-disp-ovl', 'mediatek,mt8173-disp-ovl', 'mediatek,mt8183-disp-ovl', 'mediatek,mt8192-disp-ovl', 'mediatek,mt8195-disp-ovl', 'mediatek,mt8195-mdp3-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt7623-disp-ovl', 'mediatek,mt2712-disp-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt6795-disp-ovl']
+	'mediatek,mt8163-disp-ovl' is not one of ['mediatek,mt8186-disp-ovl', 'mediatek,mt8365-disp-ovl']
+	'mediatek,mt8188-disp-ovl' was expected
+	'mediatek,mt8188-mdp3-ovl' was expected
+	'mediatek,mt2701-disp-ovl' was expected
+	'mediatek,mt8192-disp-ovl' was expected
+	'mediatek,mt8195-disp-ovl' was expected
+	'mediatek,mt8195-mdp3-ovl' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ovl.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/ovl@14007000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ovl', 'mediatek,mt8173-disp-ovl']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: rdma@14009000 (mediatek,mt8163-disp-rdma): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-rdma', 'mediatek,mt8173-disp-rdma'] is too long
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt2701-disp-rdma', 'mediatek,mt8173-disp-rdma', 'mediatek,mt8183-disp-rdma', 'mediatek,mt8195-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt8188-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt7623-disp-rdma', 'mediatek,mt2712-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt6795-disp-rdma']
+	'mediatek,mt8163-disp-rdma' is not one of ['mediatek,mt8186-disp-rdma', 'mediatek,mt8192-disp-rdma', 'mediatek,mt8365-disp-rdma']
+	'mediatek,mt8195-disp-rdma' was expected
+	'mediatek,mt2701-disp-rdma' was expected
+	'mediatek,mt8183-disp-rdma' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,rdma.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/rdma@14009000: failed to match any schema with compatible: ['mediatek,mt8163-disp-rdma', 'mediatek,mt8173-disp-rdma']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: color@1400c000 (mediatek,mt8163-disp-color): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-color', 'mediatek,mt8173-disp-color'] is too long
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt2701-disp-color', 'mediatek,mt8167-disp-color', 'mediatek,mt8173-disp-color', 'mediatek,mt8195-mdp3-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt8188-mdp3-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt7623-disp-color', 'mediatek,mt2712-disp-color']
+	'mediatek,mt8163-disp-color' is not one of ['mediatek,mt6795-disp-color', 'mediatek,mt8183-disp-color', 'mediatek,mt8186-disp-color', 'mediatek,mt8188-disp-color', 'mediatek,mt8192-disp-color', 'mediatek,mt8195-disp-color', 'mediatek,mt8365-disp-color']
+	'mediatek,mt8195-mdp3-color' was expected
+	'mediatek,mt2701-disp-color' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,color.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/color@1400c000: failed to match any schema with compatible: ['mediatek,mt8163-disp-color', 'mediatek,mt8173-disp-color']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: ccorr@1400d000 (mediatek,mt8163-disp-ccorr): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ccorr', 'mediatek,mt8192-disp-ccorr'] is too long
+	'mediatek,mt8163-disp-ccorr' is not one of ['mediatek,mt8183-disp-ccorr', 'mediatek,mt8192-disp-ccorr']
+	'mediatek,mt8365-disp-ccorr' was expected
+	'mediatek,mt8163-disp-ccorr' is not one of ['mediatek,mt8186-disp-ccorr', 'mediatek,mt8188-disp-ccorr', 'mediatek,mt8195-disp-ccorr']
+	'mediatek,mt8183-disp-ccorr' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ccorr.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/ccorr@1400d000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ccorr', 'mediatek,mt8192-disp-ccorr']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: aal@1400e000 (mediatek,mt8163-disp-aal): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-aal', 'mediatek,mt8183-disp-aal'] is too long
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8173-disp-aal', 'mediatek,mt8183-disp-aal', 'mediatek,mt8195-mdp3-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8188-mdp3-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt2712-disp-aal', 'mediatek,mt6795-disp-aal']
+	'mediatek,mt8163-disp-aal' is not one of ['mediatek,mt8186-disp-aal', 'mediatek,mt8188-disp-aal', 'mediatek,mt8192-disp-aal', 'mediatek,mt8195-disp-aal', 'mediatek,mt8365-disp-aal']
+	'mediatek,mt8195-mdp3-aal' was expected
+	'mediatek,mt8173-disp-aal' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,aal.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/aal@1400e000: failed to match any schema with compatible: ['mediatek,mt8163-disp-aal', 'mediatek,mt8183-disp-aal']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/gamma@1400f000: failed to match any schema with compatible: ['mediatek,mt8163-disp-gamma']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: dither@14010000 (mediatek,mt8163-disp-dither): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-dither', 'mediatek,mt8183-disp-dither'] is too long
+	'mediatek,mt8163-disp-dither' is not one of ['mediatek,mt8183-disp-dither']
+	'mediatek,mt8163-disp-dither' is not one of ['mediatek,mt8186-disp-dither', 'mediatek,mt8188-disp-dither', 'mediatek,mt8192-disp-dither', 'mediatek,mt8195-disp-dither', 'mediatek,mt8365-disp-dither']
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,dither.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/dither@14010000: failed to match any schema with compatible: ['mediatek,mt8163-disp-dither', 'mediatek,mt8183-disp-dither']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: ufoe@14011000 (mediatek,mt8163-disp-ufoe): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-ufoe', 'mediatek,mt8173-disp-ufoe'] is too long
+	'mediatek,mt8163-disp-ufoe' is not one of ['mediatek,mt8173-disp-ufoe']
+	'mediatek,mt6795-disp-ufoe' was expected
+	from schema $id: http://devicetree.org/schemas/display/mediatek/mediatek,ufoe.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/ufoe@14011000: failed to match any schema with compatible: ['mediatek,mt8163-disp-ufoe', 'mediatek,mt8173-disp-ufoe']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: pwm@14014000 (mediatek,mt8163-disp-pwm): compatible: 'oneOf' conditional failed, one must be fixed:
+	['mediatek,mt8163-disp-pwm', 'mediatek,mt8173-disp-pwm'] is too long
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt2701-disp-pwm', 'mediatek,mt6595-disp-pwm', 'mediatek,mt8173-disp-pwm', 'mediatek,mt8183-disp-pwm']
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt6795-disp-pwm', 'mediatek,mt8167-disp-pwm']
+	'mediatek,mt8163-disp-pwm' is not one of ['mediatek,mt6893-disp-pwm', 'mediatek,mt8186-disp-pwm', 'mediatek,mt8188-disp-pwm', 'mediatek,mt8192-disp-pwm', 'mediatek,mt8195-disp-pwm', 'mediatek,mt8365-disp-pwm']
+	'mediatek,mt8183-disp-pwm' was expected
+	from schema $id: http://devicetree.org/schemas/pwm/mediatek,pwm-disp.yaml
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/pwm@14014000: failed to match any schema with compatible: ['mediatek,mt8163-disp-pwm', 'mediatek,mt8173-disp-pwm']
+work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/mutex@14015000: failed to match any schema with compatible: ['mediatek,mt8163-disp-mutex']
