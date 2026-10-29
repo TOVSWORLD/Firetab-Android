@@ -1,0 +1,36 @@
+{
+  "scope": "Source/metadata only; no USB compilation/device readiness",
+  "inputs": {
+    "evidence/usb-prerequisites/sources.json": "06544ec7533b787f77e1850b39e7a79c71fdc938b257c2392cb5f209fcd4e34a",
+    "evidence/usb-prerequisites/report.json": "423b294fefafc52802e8a1b3811064ba078d973db27785e4f2ead4e7185d8e5f",
+    "evidence/usb-prerequisites/candidate-graph.json": "432d4624ffdd4d6140590355c0de67007704486f993b992d7c135f9cd63434e8",
+    "evidence/usb-prerequisites/legacy/io-priv-assignment.c": "8ed9baf993164cce8df5ad00ce7fc7261b36c1cd5fc5ab94cd4d96dec5e84d96",
+    "evidence/usb-prerequisites/legacy/mtk_musb.h": "149ba46c17acfdfadca6294b56976355c84f2490077df877da7033e400bef91f",
+    "evidence/usb-prerequisites/legacy/usb20_phy.c": "ac37183fe1bac7045a5bc1b99c087887e7b940fd99519b4438b9b02175021a72",
+    "evidence/usb-prerequisites/legacy/probe-and-base.c": "974ede38c96ed78039197be08eccaf9f860ee9c4433d0c99b8f2a19595ba4c37",
+    "evidence/usb-prerequisites/legacy/usb-resource.dtsi": "fae1bc7522fa1b4764b67f9d0be4cbf66a894ee176765cc1a6f7869d168ae029",
+    "evidence/usb-prerequisites/ack/phy-mtk-tphy.c": "c57efe8f40fdaf6572805a0546d3fceef8c4028c402405a3f61264955d90051b",
+    "evidence/usb-prerequisites/ack/mediatek.c": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2"
+  },
+  "script_sha256": "9b2132fd4af2bfbeb341b51f50eaf10cf7ff427c76f6ffc7735fcf52497b6a6b",
+  "commands": [
+    [
+      "python3",
+      "scripts/audit_usb_prerequisites.py",
+      "--dtb",
+      "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb"
+    ],
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usb_prerequisites.py",
+      "-v"
+    ]
+  ],
+  "runtime_qualified": false
+}

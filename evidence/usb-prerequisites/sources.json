@@ -1,0 +1,66 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "ack": [
+    {
+      "path": "drivers/usb/musb/mediatek.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/musb/mediatek.c?format=TEXT",
+      "bytes": 13649,
+      "sha256": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2",
+      "local": "evidence/usb-prerequisites/ack/mediatek.c"
+    },
+    {
+      "path": "drivers/phy/mediatek/phy-mtk-tphy.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-tphy.c?format=TEXT",
+      "bytes": 46869,
+      "sha256": "c57efe8f40fdaf6572805a0546d3fceef8c4028c402405a3f61264955d90051b",
+      "local": "evidence/usb-prerequisites/ack/phy-mtk-tphy.c"
+    }
+  ],
+  "legacy": [
+    {
+      "path": "drivers/misc/mediatek/usb20/mt8163/usb20_phy.c",
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "ac37183fe1bac7045a5bc1b99c087887e7b940fd99519b4438b9b02175021a72",
+      "first_line": null,
+      "last_line": null,
+      "local": "evidence/usb-prerequisites/legacy/usb20_phy.c",
+      "retained_sha256": "ac37183fe1bac7045a5bc1b99c087887e7b940fd99519b4438b9b02175021a72"
+    },
+    {
+      "path": "drivers/misc/mediatek/usb20/mtk_musb.h",
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "149ba46c17acfdfadca6294b56976355c84f2490077df877da7033e400bef91f",
+      "first_line": null,
+      "last_line": null,
+      "local": "evidence/usb-prerequisites/legacy/mtk_musb.h",
+      "retained_sha256": "149ba46c17acfdfadca6294b56976355c84f2490077df877da7033e400bef91f"
+    },
+    {
+      "path": "drivers/misc/mediatek/usb20/musb_core.c",
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "c1a25347c9b9de76f197636b9585430b392d7c65f7f8e1c7cded238ca982e413",
+      "first_line": 2380,
+      "last_line": 2419,
+      "local": "evidence/usb-prerequisites/legacy/probe-and-base.c",
+      "retained_sha256": "974ede38c96ed78039197be08eccaf9f860ee9c4433d0c99b8f2a19595ba4c37"
+    },
+    {
+      "path": "drivers/misc/mediatek/usb20/musb_core.c",
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "c1a25347c9b9de76f197636b9585430b392d7c65f7f8e1c7cded238ca982e413",
+      "first_line": 2218,
+      "last_line": 2224,
+      "local": "evidence/usb-prerequisites/legacy/io-priv-assignment.c",
+      "retained_sha256": "8ed9baf993164cce8df5ad00ce7fc7261b36c1cd5fc5ab94cd4d96dec5e84d96"
+    },
+    {
+      "path": "arch/arm64/boot/dts/mt8163.dtsi",
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1",
+      "first_line": 819,
+      "last_line": 839,
+      "local": "evidence/usb-prerequisites/legacy/usb-resource.dtsi",
+      "retained_sha256": "fae1bc7522fa1b4764b67f9d0be4cbf66a894ee176765cc1a6f7869d168ae029"
+    }
+  ]
+}

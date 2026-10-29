@@ -84,6 +84,7 @@ jobs:
           python3 scripts/validate_power_provider_tree.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_pinctrl_syscfg.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_iommu_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
+          python3 scripts/audit_usb_prerequisites.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04
