@@ -21,14 +21,16 @@ mask0x5, role-device mask0x3c08 and role-OTG mask0x3e0a; explicit eye7/7 only
 matches the isolated legacy eye operation. Legacy CCF prepares ICUSB but the PHY
 CCF enable path does not enable it; CLKMGR is a distinct branch. Reproduce
 scripts/audit_usb0_transitions.py and kernel/USB0-TRANSITIONS.md.
-Active #27 implementation: actual MT8163 cold-init/recovery analog policy and
-conflicting/malformed eye guards are implemented.402 host tests pass, including
-actual C RAM mocks over131072 states. Current source requires a new exact-head
-USB-enabled provider/Image build before acceptance; PR413's earlier build does
-not qualify the changed patch. DT/canonical34/isolated28 contexts stay unchanged.
-Next independent metadata task after build: narrow MT8163 eye binding overrides
-and actual decoded-node negative controls to match the implemented policy.
-Role-force ownership, clocks, transport/loading/return/log/runtime gates remain open.
+PR416 merged6ef265b after final-head checks and exact-head dad8de0 USB-enabled
+object/config/Image run40813924079 passed.402 host tests include actual C RAM
+mocks over131072 states and strict one-cell override negatives. No device test.
+MT8163-only eye const7 binding now matches the accepted source guard;30 actual
+decoded controls pass and prior SoC policies remain intact. Paired isolated28
+(19unmatched/9validation) and known Gunyah processing warning remain failed;
+canonical34 context/DTB and all disabled states unchanged. Prior414 receipts retained.
+Next #27 source acceptance: finite USB0 gadget/device-role handoff, actual controller
+role-switch/init/config and initramfs prerequisites before choosing any disabled
+device-mode experiment. No physical activation; loading/return/log/runtime gates open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

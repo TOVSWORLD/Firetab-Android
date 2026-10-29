@@ -1,0 +1,11 @@
+{
+  "prior_receipt": "evidence/usb-resource-binding/report.json",
+  "diagnostics_unchanged": 28,
+  "unmatched": 19,
+  "validation": 9,
+  "canonical_context_unchanged": 34,
+  "wrapper_exit": 1,
+  "passed": false,
+  "dtb_changed": false,
+  "runtime_qualified": false
+}

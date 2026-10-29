@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "count": 30,
+  "cases": [
+    {
+      "name": "actual disabled candidate without overrides",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "mediatek,eye-vrt 0",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 1",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 2",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 3",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 4",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 5",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 6",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 7",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "mediatek,eye-vrt 8",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt [7]",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt [7, 1]",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-vrt 7",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 0",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 1",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 2",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 3",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 4",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 5",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 6",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 7",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "mediatek,eye-term 8",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term [7]",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term [7, 1]",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "mediatek,eye-term 7",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "both vendor-equal overrides",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "slew bypass 0",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "slew bypass 6",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "slew bypass 7",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "old SoC non-seven tuning retained",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "other_policies_preserved": true,
+  "runtime_qualified": false
+}

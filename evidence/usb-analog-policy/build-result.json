@@ -1,0 +1,34 @@
+{
+  "scope": "Actual USB-enabled ARM64 object/config/Image compilation; no USB execution, QEMU or board runtime qualification",
+  "pr": 416,
+  "head": "dad8de0ee4992b13c0bdd230315b05f10c79caba",
+  "merge_commit": "6ef265b37da10f329f3a4d3b961791ce2b55ac2a",
+  "run": 40813924079,
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40813924079",
+  "private_log_sha256": "14674eb5cacec6a9e638359534f13135e7c7a52f36cac3b188d226f3484190f4",
+  "resolved_required_symbols": {
+    "USB": "y",
+    "USB_GADGET": "y",
+    "USB_PHY": "y",
+    "NOP_USB_XCEIV": "y",
+    "USB_MUSB_HDRC": "y",
+    "USB_MUSB_MEDIATEK": "y",
+    "USB_MUSB_DUAL_ROLE": "y",
+    "USB_INVENTRA_DMA": "y",
+    "PHY_MTK_TPHY": "y"
+  },
+  "MUSB_PIO_ONLY": "n",
+  "artifacts": {
+    "drivers/iommu/mtk_iommu.o": "2bbff0347324a1b4cd81a935c4fbde8d199fc7be277c37e4d7da8fd35d40254c",
+    "drivers/memory/mtk-smi.o": "49f0e811fc717ac841de004016d10be13c6efabddb89c0dc2b1dd080c1a44549",
+    "drivers/usb/musb/mediatek.o": "63148a571f2dfdca83e34ecde813fdac75a88c28af4382a19ec1c3b96dc99f0b",
+    "drivers/phy/mediatek/phy-mtk-tphy.o": "7ae06791e459c28fe8636433c9f6676d9d709475b225d0b36696f7fb341d9558",
+    ".config": "d3845dcaa0cdd37d5cd3729a8790a9e60d5d145387c485cf63496e313cd4423f",
+    "vmlinux": "2bee1ee823a2952311551b2245f7ecdd6b5bacb83ba254ff538d2def77234f0c",
+    "arch/arm64/boot/Image": "1cfd7b18b3369f2870592da03e074475fae5b6d178da4d81afdf515f7cef3b82"
+  },
+  "object_hash_stage": "Explicit W=1 object probe before Image; not asserted final linked-object hashes",
+  "generic_qemu_tested": false,
+  "device_usb_tested": false,
+  "runtime_qualified": false
+}
