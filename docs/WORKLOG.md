@@ -3465,3 +3465,10 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   cached as a lead only (SYR table entry does not establish SYM ownership). Qualify
   actual driver/legacy variant/probe/selector constraints before changes; no
   voltage/device actions or guessed aliases. Runtime recovery/beta gates stay open.
+
+- PR425 initial clean-CI failure40843369475: fresh canonical DTB guard passed,
+  then actual schema controls could not import dtschema (DTC-only bootstrap does
+  not install it). Added explicit16-artifact4,031,591-byte Linux/Python3.12 hash-
+  locked bootstrap, real pylibfdt extension with required SWIG4.4.1 and offline
+  dependency resolution. Controls remain enabled;452 host tests including lock/
+  budget/platform/cache-drift rejection. Replacement exact-head CI required.

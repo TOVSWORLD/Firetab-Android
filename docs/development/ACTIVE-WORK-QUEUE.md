@@ -1,13 +1,15 @@
 # Active work queue toward beta QA
 
 2026-10-29 #27/#18: actual AUDSYS parent contract and fresh-DTB source guard
-implemented.450 host tests/30 decoded parent controls pass; actual wrapper C RAM
+implemented.452 host tests/30 decoded parent controls pass; actual wrapper C RAM
 failure/order controls and GNU AArch64 object compile pass. Parent19 IDs/0x5a8
 extent/15 references pinned to accepted provider build; disabled AFE child remains
 independently unmatched, no MT2701 child policy guessed. Canonical matched context
 34→33 (21unmatched/12validation), isolated28→27 (18/9), exact one-parent removal,
 no additions; both wrappers exit1/passedfalse and Gunyah warning retained. DTB bytes
-and all disabled states unchanged. Exact-head fresh-DTB/controls CI required.
+and all disabled states unchanged. Initial CI passed fresh-DTB guard but lacked dtschema. Explicit hash-locked4MB
+Linux/Python3.12 bootstrap added without skipping controls; replacement exact-head
+fresh-DTB/controls CI required.
 Prior424 host source acceptedb2d8847 after five checks/446 tests; exact receipt now
  evidence/usb-acm-host/ci-result.json. No actual host/device observation.
 Next ready board source scope: unmatched silergy,sym827 regulator driver/variant/

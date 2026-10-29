@@ -61,3 +61,12 @@ unmatched regulator. Cached ACK fan53555 source supports syr827, not that spelli
 that is a lead, not proof of the actual bound driver. Next establish exact driver/
 legacy variant ownership, selector and probe/voltage constraints before any alias
 or binding change. Never treat SYM as SYR by guess or execute regulator operations.
+
+Clean-CI dependency correction: the DTC setup alone does not install dtschema.
+setup_binding_tools.py now explicitly verifies16 package artifacts/4,031,591bytes
+for Linux x86_64/Python3.12, installs only hash-checked local artifacts into the
+existing work venv and builds actual pylibfdt with pinned SWIG4.4.1. No online
+resolver/build isolation or skipped schema checks. The original full-corpus local
+receipts remain unchanged; replacement exact-head CI must execute the controls.
+Other local platforms retain their existing pinned schema environment; this new
+bootstrap does not claim cross-platform support.
