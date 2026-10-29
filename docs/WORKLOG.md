@@ -3695,3 +3695,26 @@ suppression hides missing graph in full wrapper, not acceptance. Both wrappers
 still exit1/passedfalse; Gunyah warning/AFE unmatched retained. Fresh DTB hashes
 b837e6cb/4480f085 unchanged. Commands and processing receipts in dsi-binding;
 new exact metadata PR CI required. No new kernel build/device/DT/security action.
+
+
+## 2026-10-29 — #27 finite actual display-PWM source/core prerequisites
+
+Locked ACK/donor8532B drivers (identical), exact legacy PWM/header/register/clock
+helper, and two capped official PWM core/API reads (67893+19649B). Actual selected
+core+driver+legacy C ASan/UBSan RAM witnesses cover framework-valid disabled-change
+output enable/cache divergence, raw period readback missing+1 over4096 values,
+u64 period narrowing wrap before divider guard, zero-rate helper calls (mock
+records zero denominator, no actual division), two clock failures/five probe
+stages.65536 low-word states each: period operations16384equal(mask0xc00 differs),
+commit2equal(legacy fullword1->0 vs modern bit0). Divider mask is10bits in both,
+not11 from comment; subset masks are not hardware width proof. Legacy three-clock
+API order/discarded negative injected returns recorded, no observed device error.
+
+Actual accepted DTB PWM status is okay, correcting queued disabled lead; no DT
+change, source Image/PWM builtin/variant/binding/runtime acceptance. Prior resolved
+PWM_MTK_DISP=m only. Next actual scoped safety/lifecycle/field policy implementation
+requires patched-C/oldSoC controls/preflight/new exact builtin object/config/Image.
+No another source microtrace for settled callback errors. Full30/24 remains
+failed, all physical loading/failed-return/log/thermal/panel gates open.434 final
+CI receipt now public evidence/dsi-binding/ci-result.json. Reproduce audit script
+and test_disp_pwm_source; native helper callbacks never touch devices.

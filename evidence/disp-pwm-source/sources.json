@@ -1,0 +1,84 @@
+{
+  "scope": "Pinned source/core API/legacy selected C RAM audit; no source variant admission",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "sources": [
+    {
+      "path": "evidence/disp-pwm-source/ack-pwm-mtk-disp.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pwm/pwm-mtk-disp.c?format=TEXT",
+      "bytes": 8532,
+      "sha256": "b5d96101164845e366ff0527ee82640a29a7f9760c9396f46fb429e0381589a6"
+    },
+    {
+      "path": "evidence/disp-pwm-source/legacy-ddp_pwm.c",
+      "repository_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source": "drivers/misc/mediatek/video/mt8163/dispsys/ddp_pwm.c",
+      "bytes": 8639,
+      "sha256": "c9a85628c2e65cd8acb49236199fa3b620ad8d042cb1d8a419dbe7bb3a0a20bb"
+    },
+    {
+      "path": "evidence/disp-pwm-source/legacy-ddp_pwm.h",
+      "repository_revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source": "drivers/misc/mediatek/video/mt8163/dispsys/ddp_pwm.h",
+      "bytes": 691,
+      "sha256": "13ecb0cdd18b6a2b42aeb65fbf589ba25e2242bbbbe7fd7065e0a48d0a317eef"
+    },
+    {
+      "path": "evidence/disp-pwm-source/ack-core.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pwm/core.c?format=TEXT",
+      "bytes": 67893,
+      "sha256": "e599eb855e715999104ab4b75dc4f26adc7d5c1eeea0b42490366099a18cc073"
+    },
+    {
+      "path": "evidence/disp-pwm-source/ack-pwm.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/linux/pwm.h?format=TEXT",
+      "bytes": 19649,
+      "sha256": "0387310ea7f56e225849fb9aa5d15e8fa9b1a2f4b41f0c7e8cf1d16a0f25e597"
+    },
+    {
+      "path": "evidence/disp-pwm-source/donor-pwm-mtk-disp.c",
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/pwm/pwm-mtk-disp.c",
+      "bytes": 8532,
+      "sha256": "b5d96101164845e366ff0527ee82640a29a7f9760c9396f46fb429e0381589a6"
+    }
+  ],
+  "runtime_qualified": false,
+  "sha256": {
+    "evidence/disp-pwm-source/ack-pwm.h": "0387310ea7f56e225849fb9aa5d15e8fa9b1a2f4b41f0c7e8cf1d16a0f25e597",
+    "evidence/disp-pwm-source/legacy-ddp_pwm.c": "c9a85628c2e65cd8acb49236199fa3b620ad8d042cb1d8a419dbe7bb3a0a20bb",
+    "evidence/disp-pwm-source/donor-pwm-mtk-disp.c": "b5d96101164845e366ff0527ee82640a29a7f9760c9396f46fb429e0381589a6",
+    "evidence/disp-pwm-source/ack-pwm-mtk-disp.c": "b5d96101164845e366ff0527ee82640a29a7f9760c9396f46fb429e0381589a6",
+    "evidence/disp-pwm-source/ack-core.c": "e599eb855e715999104ab4b75dc4f26adc7d5c1eeea0b42490366099a18cc073",
+    "evidence/disp-pwm-source/legacy-ddp_pwm.h": "13ecb0cdd18b6a2b42aeb65fbf589ba25e2242bbbbe7fd7065e0a48d0a317eef",
+    "evidence/disp-pwm-source/ram.c.in": "444d18869e33f6968ae0434a194fc552d2621022276ee0bd27c475edfdde869c",
+    "evidence/mipi-source/legacy-ddp_reg.h": "09f3554a395991bcafde21c923be77a2d92c3e65faa14d681e5cb441588864f9",
+    "evidence/disp-pwm-source/legacy-ddp_path.c": "c5c432ddbe716f650a026743a899a956c67327ad9a2612045c373f49e7adad80",
+    "evidence/dsi-binding/captured-graph.json": "b712bffc4856eab100abe94d2af17821f52e02719eb8824c87e20c9197fc0562",
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-mmsys.c": "d448f9de8e41e8bde9dbc2fabe16ff7bdc2beb1a8e48ec2229b6e03c9c31861e"
+  },
+  "candidate": {
+    "path": "/soc/pwm@14014000",
+    "compatible": [
+      "mediatek,mt8163-disp-pwm",
+      "mediatek,mt8173-disp-pwm"
+    ],
+    "status": [
+      "okay"
+    ],
+    "main_clock": "MMSYS ID33 CLK_MM_DISP_PWM_26M",
+    "mm_clock": "MMSYS ID32 CLK_MM_DISP_PWM_MM",
+    "power_domain": "MM ID0",
+    "scope": "Actual fresh DTB declaration; queued disabled lead was wrong; no runtime action"
+  },
+  "prior_resolved_config": {
+    "PWM_MTK_DISP": "m",
+    "evidence": "out/dsi-kernel-next/build-40871693672.log",
+    "scope": "Historical accepted DSI build config,not builtin PWM/object proof"
+  },
+  "legacy_clock_helper": {
+    "revision": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "source": "drivers/misc/mediatek/video/mt8163/dispsys/ddp_path.c",
+    "bytes": 36931,
+    "sha256": "c5c432ddbe716f650a026743a899a956c67327ad9a2612045c373f49e7adad80",
+    "return_contract": "int; failed clk_prepare/enable returns-1; PWM caller discards result"
+  }
+}

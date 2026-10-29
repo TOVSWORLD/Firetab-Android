@@ -1,0 +1,13 @@
+{
+  "scope": "Exact metadata-head CI and fresh source-DTB guards; no runtime qualification",
+  "head": "5188f991048f5e670dbb98d59a9a121a24f9dd68",
+  "run": 40875144176,
+  "android_job": 123451932065,
+  "repository_job": 123451932525,
+  "host_tests": 481,
+  "metadata_controls": 40,
+  "fresh_graph_guards": 2,
+  "passed": true,
+  "log_sha256": "6ee87a89432747d014c7cfad46a3a35b1566fafff6482e535d1fffe4bed187ff",
+  "runtime_qualified": false
+}

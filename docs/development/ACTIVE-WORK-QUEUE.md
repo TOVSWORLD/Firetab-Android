@@ -6,14 +6,26 @@ run40871693672/job123440089189 passed real DSI/DRM objects/config/final29374976B
 Image37d881065af7. Source hashes match lock; receipt distinguishes pre-DSI staged
 outputs and W1 pre-Image probes. Source backend only, no pipeline/panel admission.
 
-Current bounded metadata scope adds exact DSI compatible/mandatory reset with
+PR434 merged43e35858 after five checks at5188f99/481 CI tests. It adds exact DSI compatible/mandatory reset with
 older policies unchanged;40 selected+type controls and fresh graph guards pass.
 Actual node lacks panel graph and selected schema rejects it; synthetic graph
 control is not actual panel data. Full validator skips disabled required errors,
 so full5186-YAML contexts31→30/25→24 remove only unmatched DSI, still failed.
-Canonical b837e6cb/isolated4480f085 and disabled states unchanged. New metadata
-CI required; no further kernel Image for schema-only work. Physical/master/panel,
+Canonical b837e6cb/isolated4480f085 and source states unchanged. Final434 CI receipt
+public in evidence/dsi-binding/ci-result.json; no further kernel Image for schema-only work. Physical/master/panel,
 thermal/loading/failed-return/retained-log/beta gates remain open.
+
+Current #27 finite PWM source audit executes actual ACK/core/legacy C in RAM:
+framework-valid disabled change can enable output/cache divergence; get_state
+misses encoded+1; u64 period wraps32-bit divider before check; zero-rate helper
+calls, clock failures/probe order and65536 period/commit controls recorded.
+Driver/donor byte-identical, no explicit MT8163 variant; no binding/width/runtime
+admission. Actual candidate PWM status is okay, correcting the queued disabled
+lead; source state unchanged and no device action. NEXT actual implementation:
+scoped MT8163 safety/lifecycle/readback and conservative source-derived field/
+commit policy, unchanged older SoCs, patched-C controls/locked preflight/explicit
+builtin PWM object/config/final Image. Do not repeat settled findings as another
+planning-only micro-scope or guess MT8173 hardware equivalence.
 
 Historical PR432 finite actual DSI source/lifecycle/packet contract complete.
 Explicit donor MT8163 descriptor exists, but common paths retain references on
