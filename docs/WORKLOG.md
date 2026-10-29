@@ -3330,3 +3330,42 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   No PID1, syscall bridge, gadget archive, runtime policy/transport or physical
   return/log qualification. Next implement separate opt-in PID1 and admission;
   preserve no shell/ADB/storage and enforcing security prerequisites.
+## 2026-10-29 — explicit builtin ACM compile profile (#27)
+
+- PR419 merged37256b14f619b34018817ed0ac1fb11a7c5d6451 after six exact-head
+  checks at93e62f84cc2d93b1970c755d543740f55c6c4c5f; run40822461567 actual
+  MUSB/T-PHY objects/config/Image passed. No physical rollback/runtime/QEMU proof.
+  Raw log ignored out/usb-role-build-40822461567.log; public source/artifact receipt
+  evidence/usb-role-errors/build-result.json (object hashes pre-Image W=1).
+- Added actual opt-in usb-acm-diagnostic apply/check/build mode: builtin configfs/
+  libcomposite/ACM/u_serial, other configfs functions/Android uevents disabled.
+  SELinux must remain builtin; no security configuration change or device action.
+- Linux path applies before olddefconfig, verifies resolution, compiles/hashes three
+  actual ACM objects in addition to providers, then Image. One build selected per
+  profile PR; no QEMU/forced generic arguments. Old provider/minimal diagnostic
+  scopes unchanged.412 host tests and shell/repository checks pass; model fixtures
+  not claimed as actual Kconfig resolution. New exact-head ACM build required.
+- Exact policy/source hashes/commands in evidence/usb-acm-profile; docs kernel/
+  usb-acm/README.md. No DT change; canonical34/isolated28 failures stay open.
+- Independent next userspace implementation: separate opt-in static gadget PID1/
+  configuration/output with RAM cleanup/failure controls. Minimal PID1 remains
+  unchanged; no current gadget setup or physical loading/return/log claim.
+
+- First ACM run40826710226 at6bbdd03 failed before objects/Image: four ACM
+  components resolved builtin, but generic defconfig SECURITY_NETWORK/SELinux
+  absent and LSM list excluded SELinux. Earlier preservation assumption corrected.
+  Security guard retained. Explicit dependency/SELinux requests and LSM membership
+  added; SELinux boot-disable/development switches disabled. No runtime bypass.
+  Exact rejected config/log receipt in evidence/usb-acm-profile; actual negative
+  regression added. Replacement exact-head build required; no success claim.
+
+- Replacement40827564991 ataade0fa passed actual ACM/security/LSM resolution and
+  USB provider object checks, then failed at an invalid standalone builtin
+  libcomposite.o aggregate probe. Corrected to nine actual translation units from
+  hash-locked pinned Makefiles; Image link still required.414 host tests and target
+  regression controls pass; another exact-head ACM build required, no Image claim.
+
+PR420 final result: merged b68afe8 after exact-head bd288c7 run40828537870
+passed USB provider/nine builtin ACM components, security/LSM configuration and
+Image. No QEMU/device transport test. Normalized build receipt in
+evidence/usb-acm-profile/build-result.json. Prior failures remain historical.

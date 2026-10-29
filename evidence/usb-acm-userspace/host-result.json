@@ -3,7 +3,7 @@
   "dependency_pr": 420,
   "dependency_head": "bd288c7715f48e176f18280bfebd3f85c5475172",
   "required_build": 40828537870,
-  "matching_build_status_at_capture": "in_progress",
+  "matching_build_status_at_capture": "success",
   "inputs": {
     "projects/firetabs-android/diagnostic-usb/acm_setup.h": "b7866dd37eaffa447a8add58888ca527631a9e7420d56bf85d5a3677ad74e86f",
     "projects/firetabs-android/diagnostic-usb/acm_fs.h": "0e569267e9542ad20d672d11391adb5ba849defac2c39163f9ba36d12dcf2e5f",
@@ -22,5 +22,6 @@
     "python3 -m unittest discover -s tests -p test_usb_acm_userspace.py -v",
     "python3 scripts/validate_usb_acm_userspace_abi.py",
     "/opt/homebrew/bin/aarch64-linux-musl-gcc -std=c11 -Wall -Wextra -Werror -I projects/firetabs-android/diagnostic-usb -c evidence/usb-acm-userspace/{setup,fs}-ram.c (each separately; output ignored out/)"
-  ]
+  ],
+  "dependency_merge": "b68afe8"
 }

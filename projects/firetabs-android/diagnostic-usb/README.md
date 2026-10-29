@@ -3,8 +3,8 @@
 Updates #27. These unlinked C headers implement a bounded configuration transaction,
 filesystem callback adapters and conservative UDC discovery. They are not PID1,
 a syscall bridge, an initramfs or an admitted USB transport. The existing minimal
-PID1 and both disabled DTBs are unchanged. Acceptance depends on PR420's matching
-builtin ACM/security Image build; no runtime binding is authorized by this code.
+PID1 and both disabled DTBs are unchanged. PR420's matching builtin ACM/security Image build40828537870 passed atbd288c7;
+that compilation result does not authorize runtime binding or qualify this package.
 
 The transaction owns only `/config/usb_gadget/firetabs-diagnostic`, reverses its
 successful creations and preserves the primary error. A failed bind attempts
