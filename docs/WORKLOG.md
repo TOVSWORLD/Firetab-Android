@@ -3770,3 +3770,21 @@ not runtime admission. Replaced the operational queue and archived its old sourc
 history. First real next task is#439 after roadmap#438 acceptance; no unrelated
 peripheral bypass when blocked. Full30/24 and all physical/boot/log/beta gates remain
 open. Raw board/API/build captures stay ignored under out/.
+
+## 2026-10-29 — #439 first recoverable boot NO-GO decision
+
+Used retained exact installed-route evidence; no repeated microtrace/stock capture,
+new kernel build or device action. Decision explains why no cached route admits
+PL7/LK3/TEE262 loading; specifies smallest diagnostic bundle and missing CPU/RAM/
+transport/post-fixup DT/independent return/log/supply/thermal/abort contracts.
+Historical separate Image/initramfs proofs are not an integrated candidate;
+all seven ACM gates stay zero. Signed stock material/normal return/320KiB export
+do not qualify experimental failure recovery or logs. Input hashes pinned in
+evidence/first-boot-decision/decision.json.
+
+Single next action: prepare existing345 exact-board mechanical inspection and
+independent recovery/logging proposal within authorized planning. Request owner
+approval only after a concrete physical procedure is ready for review; no opening/
+electrical/firmware execution or peripheral bypass. NO-GO may complete439 decision acceptance but never admits347 or closes
+346/348. Replaced obsolete watchdog-next/percentage section in current route
+admission. Issue-linked PR and exact-head checks required before acceptance.
