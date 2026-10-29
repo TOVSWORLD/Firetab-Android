@@ -15,13 +15,16 @@ The board is the source of live state. Do not resume historical peripheral queue
 - **Decision#439 is complete:** owner approved the reviewed persistent software
   unlock and destructive lab-host/device work on29 October, with immediate
   reporting of breakage or unexpected state. Do not ask that approval again.
-- **Active execution task: #347**, actual lab entry preparation. The dedicated
-  strict-key SSH Linux/x86-64 host is available; the Mac is only the desktop.
-  Original archives and exact current stock OTA/recovery are staged/hash-verified
-  there. ADB/fastboot/PySerial are available; no tablet mode/write has occurred.
-  Host admin access is the remaining immediate prerequisite: ModemManager is
-  active and the SSH account needs its authorized one-time sudo grant before
-  temporary USB/serial preparation. The grant command has been presented.
+- **Execution#347/PR452 has reached actual TWRP3.3.1-0.** Original full BootROM
+  stage and original fastboot recovery stage both exited0. Post-full fastboot
+  identified Douglas; recovery_x capacity was corroborated against decoded GPT.
+  ADB reports recovery/douglas/TWRP3.3.1-0, kernel3.18.19; recovery and kernel logs
+  were retrieved. [Runtime receipt](../../evidence/approved-lab-entry/runtime-result.json).
+  The case stayed closed and no short was applied. Entry acceptance is under
+  exact-head PR review; independent failed-load stock return#346 and retained
+  failure logs#348 remain separate unpassed gates. No maintained-kernel or
+  Android11/app-QA boot is claimed. Host sudo and temporary USB/service setup
+  are complete; do not resurrect those resolved blockers or repeat approval.
 - **Urgent milestone: usable Android lab QA for Connect and passkeys.** Use the
   existing working ROM path before completing the maintained kernel. A donor-ROM
   result never closes maintained-kernel hardware/boot gates. Connect currently

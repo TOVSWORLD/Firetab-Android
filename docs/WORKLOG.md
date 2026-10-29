@@ -3853,3 +3853,28 @@ Connect minSdk24/current CI aarch64; Googlepasskeys needAndroid9/API28+, and cur
 Lineage18.1 source isARM32. Match APK/ROM ABI and test actual credentialprovider/
 userverification/browser/PKCE/deeplink, not merely boot. No ROM/GApps downloaded
 or account configured. Existing14 maintained-kernel hardware gates remain open.
+
+## 2026-10-29 — #347 actual case-closed custom-recovery entry
+
+Owner granted sudo; stopped ModemManager reversibly, installed temporary /run
+USB/tty plugdev rules and preserved prior state. Stockfastboot identifiedDOUGLAS
+with same serial. Once-only original brick9820 sentOKAY5.194s; owner's privatephoto
+showedAllgood/unplug/poweroff/fullbootrom. Hoststatusreadfailed after deliberate
+ownerUSBdisconnect, not a reason to retry. Owner poweredoff/reconnected; single
+original FULL script handshook. Exact conditional no-short prompt ackedoneEnter;
+no short or caseopening. Helper reportedGPT/RPMB/preloader/TEE/LK/payload/header
+stages, exited0 at16:31:27UTC. This is not independent all-partition readback.
+
+PostfullfastbootDOUGLAS observed. Partition size1100000 was unprefixedhex,
+corroborated against actual GPT sectors51200..86015 =17MiB, notdecimal1.1MB;
+initial conservativefitparser held until resolved. Original TWRPstage hash618590
+ranonce: recovery_x13,512,704B send/writeOKAY, authorizeduserdataerase/MISCwrite/
+rebootOKAY, exit0 at16:34:13UTC. ActualADB recovery transport/douglas/TWRP3.3.1-0
+and kernel3.18.19-g51c2c8d5bfb observed. Retrieved22,493B recoverylog and130,931B
+currentkernellog privately; exact hashes/publiclimits in runtime-result.json.
+
+Legacycustomrecovery isPermissive; securegetvaryes and unlockedgetvarempty are
+recorded, not relabeledunlockedflagpassed. Maintainedkernel/Android11/Connect/
+passkeyQA have not booted/passed. Independent failed-load stockreturn and retained
+failurelog gates stayopen. No observeddamage, no caseopening/electricalaction.
+All actual scripts/receipts stay in same347/PR452, not a newmicro-issue/PR.
