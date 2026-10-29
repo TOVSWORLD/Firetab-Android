@@ -13,12 +13,12 @@
     "evidence/usb-prerequisites/ack/mediatek.c": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2",
     "evidence/usb-prerequisites/candidate-graph.json": "432d4624ffdd4d6140590355c0de67007704486f993b992d7c135f9cd63434e8",
     "evidence/usb0-transition-review/legacy-clock-probe.c": "76dbd8015f2b7f9a0bafd156572f075308f1fdc535aeba3d9ca33a854392425c",
-    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "35fddb0ad3d4ffbdf75173b4790741607244c90191f2589b8489b915199d37b9",
     "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h": "79ad800586196916c143d106be55e710e41e7f26849798e880fa7c6f6c5cbb07",
     "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-apmixedsys.c": "09f1c75eec24c1c1004277edadef5fe11a1b601f7279b4af68451a2172b8f4f4",
     "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-infracfg.h": "3a559330bcb5ff22984f32447909dacdd4a760934a78ad53f1575b9d91cbbe37",
     "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-infracfg.c": "c8d24c737034b3f2464ec3ebfb14ba27ab35d6901af1d9fd8509bb7b16c146d2",
-    "evidence/usb0-transition-review/port0-properties.json": "7a84cdd1bef737e441d7b2e8b0705bae5876ccfcd12fcff0e950ff43ec5087dc"
+    "evidence/usb0-transition-review/port0-properties.json": "7a84cdd1bef737e441d7b2e8b0705bae5876ccfcd12fcff0e950ff43ec5087dc",
+    "evidence/usb0-transition-review/pre-analog-usb2.patch": "35fddb0ad3d4ffbdf75173b4790741607244c90191f2589b8489b915199d37b9"
   },
   "device_tested": false
 }

@@ -1,0 +1,40 @@
+{
+  "scope": "Actual analog C functions with RAM-only mocks; kernel build and runtime separate",
+  "inputs": {
+    "projects/firetabs-android/kernel/usb-port/inputs.json": "e61e66345027f6cb5ceb77a8a6ddf6c7a722546b95cf4d4bb381ceee761a8a62",
+    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "49f5a27bf3f05df41a9a0e4f615f4f175f091fd02ae29e3177861b893dd7bb90",
+    "tests/test_usb_port.py": "f7b5e560089fa1c2904b94b04c4958e06910c5ff734ce63b1a4dd9f01bbf61ee",
+    "evidence/usb-prerequisites/legacy/usb20_phy.c": "ac37183fe1bac7045a5bc1b99c087887e7b940fd99519b4438b9b02175021a72",
+    "evidence/usb-analog-policy/legacy-enable.c": "a2ec7922d25db3099b2fffc40888bab8072e6fcf21ab23c1a7417149026e5e3f"
+  },
+  "legacy_enable": {
+    "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+    "git_path": "drivers/misc/mediatek/usb20/mt8163/usb20.c",
+    "full_source_sha256": "54e4b0e046988c3d8b6180f9840199d3296c92116bfd7dc28ba798511c1d085f",
+    "first_line": 223,
+    "last_line": 262
+  },
+  "commands": [
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usb_port.py",
+      "-v"
+    ]
+  ],
+  "cold_callback": "u2_phy_instance_init, MT8163 branch replaces generic SQTH update",
+  "recovery_callback": "u2_phy_instance_power_on, MT8163-only tail hook",
+  "ram_states_checked": 131072,
+  "high_word_and_other_bytes_preserved": true,
+  "malformed_conflicting_and_slew_overrides_rejected": true,
+  "generic_functions_and_descriptors_preserved_under_branch_removal": true,
+  "host_tests": 402,
+  "kernel_build_passed": false,
+  "device_tested": false,
+  "role_force_bits_changed": false
+}
