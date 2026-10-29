@@ -12,12 +12,14 @@ The board is the source of live state. Do not resume historical peripheral queue
   at8ff8731 and actual PWM object/config/final Image run40881461603. No new PWM
   binding/peripheral scope follows. The source receipt is in
   evidence/pwm-kernel-integration/build-result.json; hardware remains unqualified.
-- **Next execution task: #439**, exact-build diagnostic entry/go-no-go decision.
-  Its [decision package](FIRST-BOOT-DECISION.md) records NO-GO, pending exact-head
-  PR acceptance. Next is selected conditional#345's exact-board mechanical
-  inspection/independent recovery-log proposal within authorized planning;
-  physical approval waits for its concrete reviewable procedure.
-  No cached nonpersistent trial route is qualified on observed PL7/LK3/TEE262.
+- **Active execution task: #439**, reopened software-first review following owner
+  correction. [Working-project entry reconciliation](WORKING-PROJECT-ENTRY.md)
+  reads original unlock/TWRP and LineageOS17.1/18.1 maintainer documentation.
+  The guide describes case-closed unlock; opening is not established as necessary.
+  Cached external-brick script/minimal-step advice conflicts with the author's
+  full-step warning. Next is the exact software-branch proposal inside#439.
+  #345 stays conditional/Blocked. No high-risk helper/device action is admitted.
+  PR449's NO-GO remains a historical trial decision, not software impossibility.
 
 The decision must identify one operational route or state why none is safely
 available, the minimum diagnostic package and entry/memory/CPU/transport contract,
