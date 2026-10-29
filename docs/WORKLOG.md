@@ -3542,3 +3542,26 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   no Image build needed for host audit. Task27 stays Active; thermal prerequisite
   recorded once and next independent MIPI-TX source qualification selected.
   Runtime recovery/thermal/clock/identity/voltage gates remain unqualified.
+
+
+## 2026-10-29 — #27 finite MIPI-TX source contract
+
+- PR428 merged12ba1852 after five exact-head checks at5840d29/460 CI tests;
+  normalized receipt now evidence/thermal-source/ci-result.json. Thermal port
+  remains unadmitted on exact calibration/bank/conversion prerequisites.
+- Three bounded pinned donor files19012bytes plus cached ACK15578bytes and exact
+  legacy e0a3a2b DSI/header inputs locked in evidence/mipi-source. Found distinct
+  MT8163 prepare, PCW-change0x60 andpreservevalue2; not a guessed MT8173 alias.
+- Actual C RAM ASan/UBSan selected functions/helpers:1201 integer-MHz rates50..1250
+  PCW agree active legacy byte arithmetic,65536 lowword states8192 preserve results
+  agree. Legacydeclaredfield7:14 vs donor7:11, genericcleanup8:15 differs. No samples,
+  probabilities, electrical/whole-sequence equivalence or fractional-rate proof.
+- Negative actual compiler control confirms donor callback reference lacks rate
+  definition; retained ACK round_rate resolves fixture. Global donor reset/oldSoC
+  rate ops changes must not be copied. Belowmin no I/O; direct prepare abovemax
+  writes despite roundclamp, so scoped bounds/reference checks needed before MMIO.
+- Definition/model chooses active legacy field8bits/value2,1ms delays/fixed RT8;
+ 26MHz formula/range50..1250MHz and0x6c extent. No kernel variant/DT/binding admitted.
+  NEXT actual implementation, not another model-only scope: isolated functions,
+  checked errors/resources/reset, unchanged oldSoCs, atomic patch+RAM negatives+
+  explicit builtin PHY/object/config/Image checks. No device/reset/PHY execution.

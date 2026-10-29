@@ -1,0 +1,59 @@
+{
+  "scope": "Finite actual MIPI source comparison only; no variant/build/binding/runtime acceptance",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "sources": {
+    "phy-mtk-mipi-dsi.c": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-mipi-dsi.c?format=TEXT",
+      "sha256": "22cd8bea37a7663052a5576c37d1fd68712d98fc8c45f4c0754547539cb3aded",
+      "bytes": 5419
+    },
+    "phy-mtk-mipi-dsi-mt8173.c": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c?format=TEXT",
+      "sha256": "00941d33c0adf03c6726884cc6f534a407eba64f64d57aa766e2c7d2e9c338ea",
+      "bytes": 8934
+    },
+    "phy-mtk-mipi-dsi.h": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/phy-mtk-mipi-dsi.h?format=TEXT",
+      "sha256": "e2bc2b68cfad1e061eb61f27847fbac8c840db0597b4eccd4284d15c90e5e2b7",
+      "bytes": 1225
+    }
+  },
+  "obsolete_path_404": "drivers/gpu/drm/mediatek/mtk_mipi_tx.c",
+  "actual_path": "drivers/phy/mediatek/phy-mtk-mipi-dsi.c",
+  "runtime_qualified": false,
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "donor_sources": {
+    "phy-mtk-mipi-dsi.c": {
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/phy/mediatek/phy-mtk-mipi-dsi.c",
+      "bytes": 5584,
+      "sha256": "4c1a7d35c969baf20196e4eb1ac67965f1b17f198f81111191f0c737b46ec5db"
+    },
+    "phy-mtk-mipi-dsi-mt8173.c": {
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c",
+      "bytes": 12147,
+      "sha256": "6607ecfab02a9d1543db48ba3a636f656b143610485d8e63cd710afaf6582369"
+    },
+    "phy-mtk-mipi-dsi.h": {
+      "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/phy/mediatek/phy-mtk-mipi-dsi.h",
+      "bytes": 1281,
+      "sha256": "82b482d8b1a6d4b67e7cddb6296135fdd53e8aacc046cf9a0d5b11d30c5abea3"
+    }
+  },
+  "legacy_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "legacy_paths": {
+    "legacy-ddp_dsi.c": "drivers/misc/mediatek/video/mt8163/dispsys/ddp_dsi.c",
+    "legacy-ddp_reg.h": "drivers/misc/mediatek/video/mt8163/dispsys/ddp_reg.h"
+  },
+  "sha256": {
+    "evidence/mipi-source/legacy-ddp_dsi.c": "c73f9fe4697cc19abbc65afe51e536ed4ad5babda0e24083a1ac8cefa90f3b1b",
+    "evidence/mipi-source/donor-phy-mtk-mipi-dsi-mt8173.c": "6607ecfab02a9d1543db48ba3a636f656b143610485d8e63cd710afaf6582369",
+    "evidence/mipi-source/donor-phy-mtk-mipi-dsi.h": "82b482d8b1a6d4b67e7cddb6296135fdd53e8aacc046cf9a0d5b11d30c5abea3",
+    "evidence/mipi-source/phy-mtk-mipi-dsi.h": "e2bc2b68cfad1e061eb61f27847fbac8c840db0597b4eccd4284d15c90e5e2b7",
+    "evidence/mipi-source/phy-mtk-io.h": "518e3da709794b27e77528a92a09b2205aafec3b9a3b9c1239c18442dc99aa5c",
+    "evidence/mipi-source/phy-mtk-mipi-dsi-mt8173.c": "00941d33c0adf03c6726884cc6f534a407eba64f64d57aa766e2c7d2e9c338ea",
+    "evidence/mipi-source/phy-mtk-mipi-dsi.c": "22cd8bea37a7663052a5576c37d1fd68712d98fc8c45f4c0754547539cb3aded",
+    "evidence/mipi-source/legacy-ddp_reg.h": "09f3554a395991bcafde21c923be77a2d92c3e65faa14d681e5cb441588864f9",
+    "evidence/mipi-source/donor-phy-mtk-mipi-dsi.c": "4c1a7d35c969baf20196e4eb1ac67965f1b17f198f81111191f0c737b46ec5db",
+    "projects/firetabs-android/kernel/mipi-port/variant-definition.json": "3889e37c397821496fc1a91df6c7b8ab6ee65583a9efc1406a7cf1f5dc8b282e"
+  }
+}

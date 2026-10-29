@@ -1,0 +1,22 @@
+{
+  "scope": "Source-derived next implementation intent; not an implemented kernel variant",
+  "compatible": "mediatek,mt8163-mipi-tx",
+  "reference_hz": 26000000,
+  "rate_min_hz": 50000000,
+  "rate_max_hz": 1250000000,
+  "preserve_field_bits": [7, 14],
+  "preserve_prepare_value": 2,
+  "preserve_unprepare_value": 0,
+  "lane_rt_code": 8,
+  "settle_delay_us_minimum": [1000, 1000, 1000],
+  "required_register_extent_bytes": 108,
+  "pcw_change_sequence": [0, 1],
+  "initial_ssc_enabled": false,
+  "reject_unqualified_properties": ["nvmem-cells", "nvmem-cell-names", "drive-strength-microamp"],
+  "reset_scope": "MT8163 match only; checked before provider registration; preserve other SoCs",
+  "rate_reference_errors": "Before MMIO; preserve cached rate on rejected set_rate",
+  "existing_soc_functions_and_ops": "Preserve ACK byte-identical, including round_rate; do not copy donor global determine_rate/reset change",
+  "kernel_variant_implemented": false,
+  "binding_admitted": false,
+  "runtime_qualified": false
+}
