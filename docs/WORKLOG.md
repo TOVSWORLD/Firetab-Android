@@ -3157,7 +3157,8 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   named frequency resource/minimum window, SIF/common extent and EYE guards.
   Missing/invalid mappings error rather than selecting generic bank.
 - New serialized measurement uses source-derived byte sequence and bounded3sec
-  polling; success/zero/timeout all clean up and apply vendor full-byte0x60. No
+  polling and explicit1024-cycle/channel0 field setup rather than reset-state
+  assumptions; success/zero/timeout all clean up and apply vendor full-byte0x60. No
   dead formula/divide-by-zero or skip-calibration shortcut. Existing descriptors
   and generic calibration body preserved. Analog/role/clock behavior unqualified.
 - Hash-lock apply validates exact ACK/source/helper/definition/patch/output.

@@ -8,16 +8,17 @@
     "success measurement",
     "zero measurement",
     "timeout cleanup",
-    "UINT32_MAX measurement without division"
+    "UINT32_MAX measurement without division",
+    "unaligned frequency bank -EINVAL"
   ],
   "preserved_generic_calibration_body_and_existing_descriptors": true,
   "inputs": {
-    "projects/firetabs-android/kernel/usb-port/inputs.json": "a74e79578568770454837e8978f3f8560fca8794b887b1042cbf6cd8d59ce375",
-    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "08e203c476c97f3df2b1dc394166d234723648fba8d3597a75b5f2dfc5b4bb27",
+    "projects/firetabs-android/kernel/usb-port/inputs.json": "9b126338d27f43a23d270ae976be3fba7e71205c5124f4d9ee1a5dc53050dd97",
+    "projects/firetabs-android/kernel/usb-port/mt8163-usb2.patch": "35fddb0ad3d4ffbdf75173b4790741607244c90191f2589b8489b915199d37b9",
     "scripts/apply_usb_port.py": "605e3e8287250d750355ebd5593a412f1cfa94a20968d1b17eb51d1d63ca1c6b",
     "scripts/select_kernel_build_scope.py": "8b281bafeacff0b32f3dbca7025b2276b0ed6d8c523f487245d398f030fde020",
     "scripts/build_ack_baseline.sh": "6cc169607703dc398d8636be498296ea44253bf4c69ceaf411bf558648dda977",
-    "tests/test_usb_port.py": "48e1547c8e16f7a7bec53521bc34626d0d0eeb09850194a0e9a3201a3433f95c",
+    "tests/test_usb_port.py": "8b0d080a3392c5b196f2dc53e8fc8c6205a8f38ee9eb4b63ba0c8c6f6250ab9d",
     "tests/test_kernel_build_scope.py": "bbd5acf18f15783b1c9e78c76150b8036c4704d8089539eed8612c0826087a91"
   },
   "commands": [

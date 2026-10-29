@@ -68,8 +68,8 @@ No device/firmware/helper/reset or calibration-bypass execution is authorized he
 
 The hash-locked mt8163-usb2.patch implements the definition against pinned ACK.
 It adds an exact MT8163 descriptor, mandatory named u2-frequency mapping and
-minimum extent checks, a mutex around shared measurement, source-derived byte
-sequencing, bounded polling and cleanup/fixed-byte application for timeout/zero
+minimum extent checks, a mutex around shared measurement, explicit 1024-cycle/channel0 measurement setup with preserved unrelated
+frequency bits, bounded polling and cleanup/fixed-byte application for timeout/zero
 results. It rejects an EYE override before provider registration. Only the
 reviewed USB2 port0 is admitted by xlate; port1/other PHY types remain unsupported
 for this new descriptor pending their own qualification. Existing descriptor data

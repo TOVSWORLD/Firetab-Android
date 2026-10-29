@@ -50,7 +50,7 @@ class USBPort(unittest.TestCase):
     def test_actual_c_resource_errors_measurement_cleanup_and_fixed_byte_in_ram(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);target=self.tree(root);apply(root,LOCK['ack_commit']);source=target.read_text()
-            constants='\n'.join(re.search(r'^#define '+name+r'\s+.*$',source,re.M)[0] for name in ['U3P_U2FREQ_FMCR0','U3P_U2FREQ_VALUE','U3P_U2FREQ_FMMONR1','P2F_USB_FM_VALID'])
+            constants='\n'.join(re.search(r'^#define '+name+r'\s+.*$',source,re.M)[0] for name in ['U3P_U2FREQ_FMCR0','U3P_U2FREQ_VALUE','U3P_U2FREQ_FMMONR1','P2F_USB_FM_VALID','P2F_RG_CYCLECNT','P2F_RG_MONCLK_SEL','P2F_RG_FREQDET_EN','P2F_RG_FRCK_EN','U3P_FM_DET_CYCLE_CNT'])
             code=r'''
 #include <assert.h>
 #include <stdint.h>
@@ -59,6 +59,8 @@ class USBPort(unittest.TestCase):
 #include <errno.h>
 #define __iomem
 #define BIT(n) (1U<<(n))
+#define GENMASK(h,l) ((~0U>>(31-(h))) & (~0U<<(l)))
+#define FIELD_PREP(mask,val) ((u32)(val)<<__builtin_ctz(mask))
 typedef uint8_t u8; typedef uint32_t u32;
 struct mutex { int held, initialized; };
 struct device { int unused; };
@@ -88,7 +90,8 @@ static void mutex_unlock(struct mutex *m) {assert(m->held);m->held=0;}
 static void udelay(int us) {assert(us==1 && active_lock->held);}
 static u8 readb(void *p) {assert(active_lock->held);return *(u8 *)p;}
 static void writeb(u8 v,void *p) {assert(active_lock->held);*(u8 *)p=v;writes++;}
-static u32 readl(void *p) {assert(active_lock->held && p==freq+12);reads++;return observed;}
+static u32 readl(void *p) {u32 v;assert(active_lock->held);if(p==freq+12){reads++;return observed;}assert(p==freq || p==freq+16);memcpy(&v,p,4);return v;}
+static void writel(u32 v,void *p) {assert(active_lock->held && (p==freq || p==freq+16));memcpy(p,&v,4);writes++;}
 static int fake_poll(void *p,u8 *v,int delay,int timeout)
 {assert(active_lock->held && p==freq+16 && delay==10 && timeout==3000000);*v=poll_error?0:1;return poll_error;}
 #define readb_poll_timeout(addr,val,cond,delay,timeout) fake_poll((addr),&(val),(delay),(timeout))
@@ -99,7 +102,7 @@ int main(void) {
  struct resource r={.start=0x11210f00,.end=0x11210fff};
  provided=NULL;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);
  provided=&r;r.end=r.start+15;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);
- r.end=r.start+255;map_error=1;assert(mt8163_usb2_map_frequency(&p,&t)==-EBUSY);
+ r.end=r.start+255;r.start++;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);r.start--;map_error=1;assert(mt8163_usb2_map_frequency(&p,&t)==-EBUSY);
  map_error=0;assert(mt8163_usb2_map_frequency(&p,&t)==0 && t.u2_freq==freq && t.u2_freq_lock.initialized);
  active_lock=&t.u2_freq_lock;
  struct mtk_phy_instance inst={.u2_banks={.fmreg=freq,.com=common}};
@@ -108,7 +111,8 @@ int main(void) {
   reads=warnings=writes=0;poll_error=test==2?-ETIMEDOUT:0;observed=test==1?0:test==3?UINT32_MAX:64;
   mt8163_hs_slew_measure_and_apply(&t,&inst);
   assert(!active_lock->held && common[0x15]==0x60 && writes==8);
-  assert(freq[1]==4 && freq[3]==0xaa && freq[0x11]==0);
+  u32 count;memcpy(&count,freq,4);assert((count&0xffffff)==1024 && !(count&(BIT(24)|GENMASK(27,26))));
+  assert(freq[0x11]==0xaa);
   assert(reads==(poll_error?0:1));assert(warnings==!!(poll_error||!observed));
   for(int i=0;i<256;i++)if(i!=0x15)assert(common[i]==0xff);
  }
