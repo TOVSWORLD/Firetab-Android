@@ -1,0 +1,29 @@
+--- a/regulator/fcs,fan53555.yaml
++++ b/regulator/fcs,fan53555.yaml
+@@ -11,6 +11,18 @@
+ 
+ allOf:
+   - $ref: regulator.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: silergy,sym827
++      required:
++        - compatible
++    then:
++      required:
++        - fcs,suspend-voltage-selector
++      properties:
++        vsel-gpios: false
+ 
+ properties:
+   compatible:
+@@ -20,6 +32,7 @@
+           - fcs,fan53526
+           - rockchip,rk8600
+           - rockchip,rk8602
++          - silergy,sym827
+           - silergy,syr827
+           - silergy,syr828
+           - tcs,tcs4525

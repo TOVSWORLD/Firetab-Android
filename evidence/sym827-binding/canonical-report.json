@@ -1,0 +1,9 @@
+{
+  "scope": "Full matched5186-YAML corpus; metadata only",
+  "diagnostics": 32,
+  "unmatched": 20,
+  "validation": 12,
+  "wrapper_exit": 1,
+  "passed": false,
+  "runtime_qualified": false
+}

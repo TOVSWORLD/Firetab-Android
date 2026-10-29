@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in donor-backed SYM827 metadata only; physical identity/GPIO34/DVS/active bank/voltage handoff unqualified",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "regulator/fcs,fan53555.yaml",
+  "patch": "bindings/mt8163-sym827.patch",
+  "patch_sha256": "ff567f865209220abe48bfa93bc3001e35c5c3d83ed7f26276792cb42a0649a6",
+  "original_sha256": "c2f3a680863753f8be1949e3a6b5dc711dd5f1ab34715bf8d6e5a1239738531b",
+  "proposed_sha256": "8145517ddd59b50f7b5107d6c008b6856d1366aa2c53cecdf23a9f0d2cd0a077"
+}

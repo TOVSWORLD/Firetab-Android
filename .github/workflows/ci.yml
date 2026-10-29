@@ -92,6 +92,7 @@ jobs:
           python3 scripts/validate_iommu_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_audsys_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           work/dtb-tool/venv/bin/python3 evidence/audsys-binding/check-controls.py --check
+          work/dtb-tool/venv/bin/python3 evidence/sym827-binding/check-controls.py --check --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/audit_usb_prerequisites.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_usb_variant_definition.py
       - name: Compile isolated disabled USB resource experiment and verify complete delta

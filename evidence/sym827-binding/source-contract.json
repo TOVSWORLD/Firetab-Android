@@ -1,0 +1,18 @@
+{
+  "scope": "Source-matched metadata only; no physical bank/voltage qualification",
+  "source_pr": 426,
+  "source_merge": "4e358045fd6a2fe2fa882100314c0b0f81e06084",
+  "source_build_run": 40847835013,
+  "canonical_dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "isolated_dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4",
+  "sha256": {
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-sym827.json": "592953f2d7bb6a9c6045c669160faa189e27e503f46656af929f9a4be17fdbd3",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-sym827.patch": "ff567f865209220abe48bfa93bc3001e35c5c3d83ed7f26276792cb42a0649a6",
+    "evidence/sym827-binding/portable-schemas.json": "58ff0e464ad43fc1b0543f8fbd44ebb9f8e26314dd5764c220fce64e58a96f64",
+    "evidence/sym827-binding/captured-node.json": "3f6c720b65fc91c274db4fee8d3fd7ad7f456f52e0b6ec83d78345362d845ba3",
+    "evidence/sym827-port/build-result.json": "2c36a649148bf9dc5d35f97291bf0c7601f5b3abf660e264f1ad154d5bcfa94b",
+    "evidence/sym827-binding/captured-raw-node.json": "df261e85cc76fe903cd160b719c335db2c0bfee857e5b2b7ce26f71fa1a1f641",
+    "evidence/sym827-binding/check-controls.py": "a7599ba12d6b3215b687f624239f48176f4d5dda4927d68a18d43a30caca3fe5"
+  },
+  "runtime_qualified": false
+}
