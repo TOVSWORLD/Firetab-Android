@@ -1,1 +1,6 @@
-{}
+{
+  "docs/development/ACTIVE-WORK-QUEUE.md": {
+    "old_sha256": "c3b797d98025fed0f7395fb191ff565fce1303b777528b9271d257d62ada9679",
+    "reason": "Owner requested a strictly ordered roadmap replacing peripheral hopping. Full previous queue is preserved byte-for-byte in docs/development/history/ACTIVE-WORK-QUEUE-2026-10-29-pre-roadmap.md; the active queue now points to explicit issue dependencies and acceptance gates."
+  }
+}
