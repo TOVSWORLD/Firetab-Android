@@ -1,0 +1,23 @@
+{
+  "scope": "Actual host file/CLI capture of offline fixture and mocked serial adapters, no device execution",
+  "inputs": {
+    "scripts/usb_acm_frame.py": "2d485b404d31ea29ef5f50213a9ce89eb842e69f4eac0ba95d13281eb86126c5",
+    "scripts/capture_usb_acm_status.py": "730ff124b9068411b2d1091dafd54893581942538b9d8671ae2d20153deb439c",
+    "projects/firetabs-android/diagnostic-usb/host-profile.json": "0c8ae18184b3226d3d6ee8d00f548a1c27f6b92b5e6e8105ca943b0722d59347",
+    "tests/test_usb_acm_frame.py": "0999545f43e599771f67cad1225acde4bae6affe5192757f79882b5ad99cd2dd",
+    "tests/test_usb_acm_capture.py": "dee45dbb10fd27deb0fd515ce32a8bcbd33cf3f562825765091a38d97947459e"
+  },
+  "host_suite_tests": 446,
+  "receiver_tests": 4,
+  "adapter_cli_tests": 20,
+  "split_points": 72,
+  "offline_cli_actual_run": true,
+  "exclusive_0700_directory_0600_files_verified": true,
+  "primary_cleanup_and_owned_inode_checks": true,
+  "input_deadline_and_byte_attempt_limits_tested": true,
+  "source_frame_hash_lock": true,
+  "selectors_invalid_data_and_exception_privacy_tested": true,
+  "serial_device_capture_admitted": false,
+  "host_frame_observed": false,
+  "runtime_qualified": false
+}

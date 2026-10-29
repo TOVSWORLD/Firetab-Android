@@ -3415,3 +3415,27 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   response mislabeled .json. Renamed raw evidence .txt and reader, preserving
   exact hash/bytes and strict repository JSON parsing. Local exact-base integrity
   and serial controls pass; source C unchanged. New exact-head CI required.
+
+
+## 2026-10-29 — #27 actual private host frame capture
+
+- PR423 merged8ca3a01 at766d648 after five checks; normalized actual Clang18 result
+  now evidence/usb-acm-serial/clang-build-result.json. Denied artifacts identical
+  to422; admitted paths remain RAM-only. No repeated kernel/Image build.
+- Reused tested receiver core; actual private file/read adapters and CLI now enforce
+  source/frame hash lock, denied serial profile, exclusive0700 output/0600 files,
+  bounded reads/writes/deadlines, partial/EINTR/EAGAIN/error/owned cleanup controls.
+  Failed raw bytes/selectors and invalid hashes stay private; stdout sanitized.
+-446 host tests: four receiver/20 adapter controls plus existing suites. Actual
+  offline CLI validated73 bytes, explicitly host_frame_observed=false/runtimefalse.
+  Serial descriptor/raw-setting checks exercised only mocks; no physical opens,
+  activation, termios writes or security bypass. Evidence/usb-acm-host.
+- Queue audited: #340 requires actual integrated candidate/return/log qualification;
+  no cached Image found and no new download attempted. #18 explicitly depends on
+  unmatched AUDSYS contract under#27. Cached integrated parent/binding/DTS leads
+  pinned ignored out/audsys-next-source.json; next actual source acceptance must
+  establish parent probe/resource/child ownership before schema extension. Do not
+  blindly reuse MT2701 audio child or suppress current failed corpus diagnostics.
+- Recovery items' obsolete watchdog-next delivery fields corrected; loading/return/
+  retained-log blockers and all seven PID1/host serial gates remain unqualified.
+  No runtime gate closed. Exact current-head host CI required before merge.
