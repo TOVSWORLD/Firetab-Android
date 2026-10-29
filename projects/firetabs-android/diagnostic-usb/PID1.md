@@ -54,3 +54,9 @@ Next actual implementation: bounded ACM serial endpoint discovery/output and
 associated failure/cleanup controls. Assigned physical descriptors, loading,
 peripheral-role experiment, runtime enforcing policy, analog/clock behavior,
 independent failed-load return and retained-log tests remain separate gates.
+
+Current serial source integration: see SERIAL.md. The admitted callback now uses
+a fixed ACM status frame, while current package gates still deny every TTY/gadget
+action. The prior console-only description documents PR422, whose exact Clang
+receipt is retained in evidence/usb-acm-pid1/clang-build-result.json. No runtime
+admission or host receipt follows from the serial source addition.

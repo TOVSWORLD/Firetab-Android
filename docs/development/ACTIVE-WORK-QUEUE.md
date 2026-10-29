@@ -1,14 +1,15 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: PR420/421 accepted actual ACM profile/Image and source adapters.
-Separate static PID1/syscall bridge now implemented with seven denied admission
-gates, owned virtual mounts, enforcing readback, strict UDC/configuration cleanup,
-bounded fixed console output and deterministic archive rejection controls. Native
-RAM ASan/UBSan and GNU static link/archive inspection pass; exact-head Clang CI
-required before acceptance. Existing minimal init/disabled DTs unchanged. This is
-not ACM serial output or runtime admission. Next actual source task: bounded ACM
-serial endpoint/output and failure controls; physical loading/role/policy/return/
-retained-log gates remain open. See diagnostic-usb/PID1.md and evidence/usb-acm-pid1.
+2026-10-29 #27: PR422 static PID1 acceptedb0f84d7 after five final-head checks;
+actual Clang18 ELF/archive receipt now in evidence/usb-acm-pid1/clang-build-result.json.
+Current source implementation adds allocated ACM port/dynamic tty identity, opened-fd
+statx verification, checked raw termios, fixed bounded status output and cleanup.
+422 host tests/native RAM ASan/UBSan and GNU AArch64 object/static archive checks
+pass; exact-head Clang CI required. Seven current admission gates stayzero; no
+TTY/device actions executed. Existing minimal init/disabled DTs/failing contexts
+unchanged. Source fixed status is not host receipt or retained boot logs. Next:
+host-side bounded frame capture/private receipt with read/timeout mocks, then
+physical admission dependencies. See diagnostic-usb/SERIAL.md.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

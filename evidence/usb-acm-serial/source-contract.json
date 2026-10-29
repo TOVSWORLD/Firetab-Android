@@ -1,0 +1,14 @@
+{
+  "source_contract": "Allocated function port_num -> dynamic ttyGS dev identity; fd statx; raw termios; fixed bounded frame",
+  "syscalls": {
+    "IOCTL": 29,
+    "MKNODAT": 33,
+    "STATX": 291,
+    "NANOSLEEP": 101
+  },
+  "write_return_is_not_host_receipt": true,
+  "driver_close_timeout_seconds_source": 15,
+  "strict_wall_clock_bound_qualified": false,
+  "device_tested": false,
+  "runtime_qualified": false
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Actual source adapters and PID1 emit mapping with RAM-only syscalls; no device execution",
+  "inputs": {
+    "projects/firetabs-android/diagnostic-usb/acm_serial.h": "6a501e131f91c7118d5c9417f67a6292b57d03610371b689f3c07dcedb070a94",
+    "projects/firetabs-android/diagnostic-usb/init.c": "8858b7afe5ff27f9fab9d7766f59d992516012799d5e47e6a92df0ea96c1c514",
+    "evidence/usb-acm-serial/serial-ram.c": "6b1784c4391f4caba9e44417113501e56210781ad24b85bd7094f3f5f3cb97e0"
+  },
+  "host_suite_tests": 422,
+  "native_asan_ubsan": true,
+  "gnu_aarch64_object_compile": true,
+  "gnu_static_elf_archive_inspected": true,
+  "pinned_uapi_layout_probe": true,
+  "failure_families": 23,
+  "fixed_frame_only": true,
+  "nonzero_allocated_port_and_dynamic_rdev_tested": true,
+  "partial_eintr_eagain_budgets_and_ioctl_retries_tested": true,
+  "primary_and_cleanup_errors_preserved": true,
+  "package_output_admitted": false,
+  "host_receipt_qualified": false,
+  "device_tested": false
+}

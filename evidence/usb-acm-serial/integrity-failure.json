@@ -1,0 +1,11 @@
+{
+  "run": 40836052126,
+  "job": 123320967381,
+  "head": "b0e79bd3a84666b7bcfd84b3fd9217a74a593d22",
+  "failed_check": "Repository integrity JSON parsing",
+  "cause": "Pinned raw Gitiles directory response includes anti-XSSI prefix; .json suffix was incorrect",
+  "fix": "Rename raw response to .txt and update hash-checked reader, preserving all original bytes and strict JSON validation",
+  "private_log_sha256": "ae05be34e2989b7fddb1b3862c38b601d454a00ce3cc716a9b3d85ff9638e458",
+  "local_exact_base_integrity_recheck_passed": true,
+  "serial_source_changed": false
+}

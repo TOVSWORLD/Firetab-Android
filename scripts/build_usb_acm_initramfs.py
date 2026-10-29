@@ -10,6 +10,7 @@ import struct
 import subprocess
 from build_diagnostic_initramfs import archive, inspect_elf
 from validate_usb_acm_userspace_abi import validate
+from validate_usb_acm_serial import validate as validate_serial
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT/'projects/firetabs-android/diagnostic-usb'
@@ -69,7 +70,7 @@ def inspect_archive(data,elf):
 
 
 def build(compiler,kind,output):
-    admission=admission_contract();output.mkdir(parents=True,exist_ok=True)
+    admission=admission_contract();serial_contract=validate_serial();output.mkdir(parents=True,exist_ok=True)
     elf=output/'init'
     cmd=[compiler]
     if kind=='clang':cmd+=['--target=aarch64-linux-gnu','-fuse-ld=lld']
@@ -89,7 +90,7 @@ def build(compiler,kind,output):
             'source_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(SOURCE.glob('*')) if p.suffix in ('.c','.h')},
             'elf':inspection,'archive_entries':names,
             'artifacts':{n:{'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()} for n,b in [('init',data),('initramfs.cpio.gz',packed)]},
-            'acm_serial_output_implemented':False,'boot_tested':False,'device_tested':False,'security_policy_qualified':False}
+            'source_fixed_acm_frame_implemented':True,'package_output_admitted':False,'serial_contract':serial_contract,'boot_tested':False,'device_tested':False,'security_policy_qualified':False}
     (output/'report.json').write_text(json.dumps(report,indent=2)+'\n')
     return report
 

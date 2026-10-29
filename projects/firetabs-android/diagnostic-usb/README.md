@@ -34,3 +34,7 @@ GNU AArch64 object compilation checks syntax/ABI only; no AArch64 binary runs.
 
 Next: separate opt-in static PID1, mount/security admission, bounded diagnostic
 output and archive inspection, then independent loading/role/recovery/log gates.
+
+Subsequent accepted/source integrations: PID1.md describes the separate static
+package; SERIAL.md describes the actual bounded fixed-frame adapters. Current
+package admission remains denied, and physical USB/log transport is unqualified.
