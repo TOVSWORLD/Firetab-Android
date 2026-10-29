@@ -3171,6 +3171,10 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Two capped pinned Kconfig reads total7581bytes confirm NOP transceiver/role/PHY
   dependencies; receipts in evidence/usb-kernel-integration. Reproduce host tests,
   scripts/apply_usb_port.py and build_ack_baseline.sh usb-providers.
+- Linux GCC caught stack-fixture addresses stored in global RAM-mock pointers;
+  changed fixture storage to static lifetime and exposed compiler stderr. GNU
+  cross-compile/link and native mock execution pass; no warning suppression or
+  kernel-patch change. New-head Linux build remains required after this test fix.
 - Next acceptance after exact-head Linux build: isolated disabled-DT frequency
   resource experiment and matched binding controls; baseline/full34 diagnostics,
   actual transport/loading/independent return/log gates remain unqualified.

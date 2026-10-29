@@ -18,7 +18,7 @@
     "scripts/apply_usb_port.py": "605e3e8287250d750355ebd5593a412f1cfa94a20968d1b17eb51d1d63ca1c6b",
     "scripts/select_kernel_build_scope.py": "8b281bafeacff0b32f3dbca7025b2276b0ed6d8c523f487245d398f030fde020",
     "scripts/build_ack_baseline.sh": "6cc169607703dc398d8636be498296ea44253bf4c69ceaf411bf558648dda977",
-    "tests/test_usb_port.py": "8b0d080a3392c5b196f2dc53e8fc8c6205a8f38ee9eb4b63ba0c8c6f6250ab9d",
+    "tests/test_usb_port.py": "54736f88534b8fd64493f3e94147126e4ef790b7ebe342e943eecb202044236a",
     "tests/test_kernel_build_scope.py": "bbd5acf18f15783b1c9e78c76150b8036c4704d8089539eed8612c0826087a91"
   },
   "commands": [
@@ -36,5 +36,7 @@
       "scripts/build_ack_baseline.sh"
     ]
   ],
-  "runtime_qualified": false
+  "runtime_qualified": false,
+  "fixture_portability_fix": "Static lifetime for global mock fixture pointers; GNU dangling-pointer diagnostic resolved without warning suppression. Compiler stderr exposed; kernel patch unchanged.",
+  "gnu_cross_compile_link_passed": true
 }

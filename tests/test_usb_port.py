@@ -98,8 +98,8 @@ static int fake_poll(void *p,u8 *v,int delay,int timeout)
 #define dev_warn_ratelimited(d,fmt,...) do { (void)(d);assert(!active_lock->held);warnings++; } while(0)
 '''+constants+'\n'+function(source,'mt8163_hs_slew_measure_and_apply')+'\n'+function(source,'mt8163_usb2_map_frequency')+r'''
 int main(void) {
- struct platform_device p={0};struct mtk_tphy t={.dev=&p.dev};
- struct resource r={.start=0x11210f00,.end=0x11210fff};
+ static struct platform_device p={0};static struct mtk_tphy t={.dev=&p.dev};
+ static struct resource r={.start=0x11210f00,.end=0x11210fff};
  provided=NULL;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);
  provided=&r;r.end=r.start+15;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);
  r.end=r.start+255;r.start++;assert(mt8163_usb2_map_frequency(&p,&t)==-EINVAL);r.start--;map_error=1;assert(mt8163_usb2_map_frequency(&p,&t)==-EBUSY);
@@ -120,5 +120,6 @@ int main(void) {
 }
 '''
             c=root/'test.c';exe=root/'test';c.write_text(code)
-            subprocess.run(['cc','-std=gnu11','-Wall','-Wextra','-Werror',str(c),'-o',str(exe)],check=True,capture_output=True)
+            compiled=subprocess.run(['cc','-std=gnu11','-Wall','-Wextra','-Werror',str(c),'-o',str(exe)],capture_output=True,text=True)
+            self.assertEqual(compiled.returncode,0,compiled.stderr)
             subprocess.run([str(exe)],check=True,timeout=5)
