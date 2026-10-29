@@ -3592,3 +3592,28 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   require distinct final marker/new exact-head build. No repeated generic QEMU.
 - No DT/schema/device change, full32/26 contexts remain failed/PHY disabled. New
   source Image checks required before merge/matched binding; no runtime gate closed.
+
+
+## 2026-10-29 — #27 accepted MIPI source build and matched metadata
+
+- PR430 merged9c3f4a81c8fb791ee76b1266f0365177223ceb82 after six exact-head
+  checks atb5e12688ced84a917657d928365dec969eb66a1c, actual run40859970271/
+  job123400424086. All three real PHY units/builtin dependencies/finalImage pass.
+  Final Image3efbebf6bd60705a981f350129b3ad57ee2748414f94ea41c8563f2df20f0d94,
+ 28645888bytes; source outputs match lock. Normalized full receipt public, raw
+  log private. Prior stagedImage/gzip excluded/W1objects pre-finalImage only.
+- Actual source-matched schema adds exact MIPI compatible/required reset/forbidden
+  overrides with olderSoC policy restored structurally.35 controls retain implicit
+  full-validator type policy, not just selected PHY schema; valid drive[4000]
+  distinguishes policy rejection from scalar-type failure.52 relevant selectors/
+ 54 closed schemas reproduce the full pipeline for all frozen instances.
+- Fresh-DTB guard resolves actual APMIXED@1000c000/ID13/refclk26m, INFRACFG reset10,
+ 4KiB/source0x6c extent and disabled DSI PHY/PLL lineage.21 graph mutations reject;
+  no claim actual reset/clock/PLL/controller function. Both fresh DTBs pass.
+- Full registered5186-YAML contexts32→31(19unmatched/12validation),26→25(16/9),
+  only MIPI unmatched removed/no additions. Gunyah warning/disabled AFE unmatched/
+  exit1/passedfalse retained; DTBs/source/disabled states unchanged. New exact-head
+  metadata checks required before merge; no redundant kernel build for schema.
+- Next existing independent #27 source is disabled MT8163 DSI controller actual
+  variant/IRQ/clock/power/probe/resource ownership. No guessed compatibility or
+  device action. Thermal/physical PHY/clock/recovery/beta gates remain unqualified.

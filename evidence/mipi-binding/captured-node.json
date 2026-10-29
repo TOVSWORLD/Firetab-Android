@@ -1,0 +1,34 @@
+{
+  "compatible": [
+    "mediatek,mt8163-mipi-tx"
+  ],
+  "reg": [
+    [
+      0,
+      270618624,
+      0,
+      4096
+    ]
+  ],
+  "clocks": [
+    [
+      22,
+      13
+    ]
+  ],
+  "clock-output-names": [
+    "mipi_tx0_pll"
+  ],
+  "resets": [
+    [
+      2,
+      10
+    ]
+  ],
+  "#clock-cells": 0,
+  "#phy-cells": 0,
+  "status": [
+    "disabled"
+  ],
+  "phandle": 42
+}

@@ -1,0 +1,1943 @@
+{
+  "nodes": {
+    "/": {
+      "compatible": [
+        "amazon,douglas",
+        "mediatek,mt8163"
+      ]
+    },
+    "/reserved-memory": {},
+    "/reserved-memory/secmon@43000000": {
+      "reg": [
+        0,
+        1124073472,
+        0,
+        196608
+      ]
+    },
+    "/reserved-memory/audio-dma-pool": {
+      "compatible": [
+        "shared-dma-pool"
+      ],
+      "phandle": [
+        30
+      ]
+    },
+    "/memory@40000000": {
+      "reg": [
+        0,
+        1073741824,
+        0,
+        536870912
+      ]
+    },
+    "/display-backlight": {
+      "compatible": [
+        "pwm-backlight"
+      ]
+    },
+    "/chosen": {},
+    "/thermal-zones": {},
+    "/thermal-zones/soc-thermal": {},
+    "/thermal-zones/soc-thermal/trips": {},
+    "/thermal-zones/soc-thermal/trips/trip-crit": {},
+    "/thermal-zones/soc-thermal/trips/trip-alert": {},
+    "/thermal-zones/gpu-thermal": {},
+    "/thermal-zones/gpu-thermal/cooling-maps": {},
+    "/thermal-zones/gpu-thermal/cooling-maps/map1": {},
+    "/thermal-zones/gpu-thermal/cooling-maps/map0": {},
+    "/thermal-zones/gpu-thermal/trips": {},
+    "/thermal-zones/gpu-thermal/trips/trip-crit": {
+      "phandle": [
+        51
+      ]
+    },
+    "/thermal-zones/gpu-thermal/trips/trip-alert": {
+      "phandle": [
+        49
+      ]
+    },
+    "/thermal-zones/cpu-thermal": {},
+    "/thermal-zones/cpu-thermal/cooling-maps": {},
+    "/thermal-zones/cpu-thermal/cooling-maps/map0": {},
+    "/thermal-zones/cpu-thermal/trips": {},
+    "/thermal-zones/cpu-thermal/trips/cpu-crit": {},
+    "/thermal-zones/cpu-thermal/trips/trip-point1": {
+      "phandle": [
+        48
+      ]
+    },
+    "/thermal-zones/cpu-thermal/trips/trip-point0": {},
+    "/soc": {
+      "compatible": [
+        "simple-bus"
+      ]
+    },
+    "/soc/larb@17001000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "reg": [
+        0,
+        385880064,
+        0,
+        4096
+      ],
+      "phandle": [
+        20
+      ],
+      "clocks": [
+        46,
+        1,
+        46,
+        0
+      ]
+    },
+    "/soc/clock-controller@17000000": {
+      "compatible": [
+        "mediatek,mt8163-vencsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        385875968,
+        0,
+        4096
+      ],
+      "phandle": [
+        46
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/larb@16010000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "reg": [
+        0,
+        369164288,
+        0,
+        65536
+      ],
+      "phandle": [
+        18
+      ],
+      "clocks": [
+        45,
+        0,
+        45,
+        1
+      ]
+    },
+    "/soc/clock-controller@16000000": {
+      "compatible": [
+        "mediatek,mt8163-vdecsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        369098752,
+        0,
+        4096
+      ],
+      "phandle": [
+        45
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/larb@15001000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "reg": [
+        0,
+        352325632,
+        0,
+        4096
+      ],
+      "phandle": [
+        19
+      ],
+      "clocks": [
+        44,
+        0,
+        44,
+        0
+      ]
+    },
+    "/soc/clock-controller@15000000": {
+      "compatible": [
+        "mediatek,mt8163-imgsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        352321536,
+        0,
+        4096
+      ],
+      "phandle": [
+        44
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/smi@14017000": {
+      "compatible": [
+        "mediatek,mt8163-smi-common"
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "reg": [
+        0,
+        335638528,
+        0,
+        4096
+      ],
+      "phandle": [
+        43
+      ],
+      "clocks": [
+        40,
+        0,
+        40,
+        0
+      ]
+    },
+    "/soc/larb@14016000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "reg": [
+        0,
+        335634432,
+        0,
+        4096
+      ],
+      "phandle": [
+        17
+      ],
+      "clocks": [
+        40,
+        1,
+        40,
+        1
+      ]
+    },
+    "/soc/mutex@14015000": {
+      "compatible": [
+        "mediatek,mt8163-disp-mutex"
+      ],
+      "reg": [
+        0,
+        335630336,
+        0,
+        4096
+      ]
+    },
+    "/soc/pwm@14014000": {
+      "compatible": [
+        "mediatek,mt8163-disp-pwm",
+        "mediatek,mt8173-disp-pwm"
+      ],
+      "status": [
+        "okay"
+      ],
+      "clock-names": [
+        "main",
+        "mm"
+      ],
+      "reg": [
+        0,
+        335626240,
+        0,
+        4096
+      ],
+      "phandle": [
+        52
+      ],
+      "clocks": [
+        40,
+        33,
+        40,
+        32
+      ]
+    },
+    "/soc/dsi@14012000": {
+      "compatible": [
+        "mediatek,mt8163-dsi"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "engine",
+        "digital",
+        "hs"
+      ],
+      "reg": [
+        0,
+        335618048,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        34,
+        40,
+        35,
+        42
+      ],
+      "resets": [
+        40,
+        23
+      ],
+      "phys": [
+        42
+      ]
+    },
+    "/soc/ufoe@14011000": {
+      "compatible": [
+        "mediatek,mt8163-disp-ufoe",
+        "mediatek,mt8173-disp-ufoe"
+      ],
+      "reg": [
+        0,
+        335613952,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        20
+      ]
+    },
+    "/soc/dither@14010000": {
+      "compatible": [
+        "mediatek,mt8163-disp-dither",
+        "mediatek,mt8183-disp-dither"
+      ],
+      "reg": [
+        0,
+        335609856,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        19
+      ]
+    },
+    "/soc/gamma@1400f000": {
+      "compatible": [
+        "mediatek,mt8163-disp-gamma"
+      ],
+      "reg": [
+        0,
+        335605760,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        18
+      ]
+    },
+    "/soc/aal@1400e000": {
+      "compatible": [
+        "mediatek,mt8163-disp-aal",
+        "mediatek,mt8183-disp-aal"
+      ],
+      "reg": [
+        0,
+        335601664,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        17
+      ]
+    },
+    "/soc/ccorr@1400d000": {
+      "compatible": [
+        "mediatek,mt8163-disp-ccorr",
+        "mediatek,mt8192-disp-ccorr"
+      ],
+      "reg": [
+        0,
+        335597568,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        16
+      ]
+    },
+    "/soc/color@1400c000": {
+      "compatible": [
+        "mediatek,mt8163-disp-color",
+        "mediatek,mt8173-disp-color"
+      ],
+      "reg": [
+        0,
+        335593472,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        15
+      ]
+    },
+    "/soc/rdma@14009000": {
+      "compatible": [
+        "mediatek,mt8163-disp-rdma",
+        "mediatek,mt8173-disp-rdma"
+      ],
+      "reg": [
+        0,
+        335581184,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        12
+      ]
+    },
+    "/soc/ovl@14007000": {
+      "compatible": [
+        "mediatek,mt8163-disp-ovl",
+        "mediatek,mt8173-disp-ovl"
+      ],
+      "reg": [
+        0,
+        335572992,
+        0,
+        4096
+      ],
+      "clocks": [
+        40,
+        10
+      ]
+    },
+    "/soc/syscon@14000000": {
+      "compatible": [
+        "mediatek,mt8163-mmsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        335544320,
+        0,
+        4096
+      ],
+      "phandle": [
+        40
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "#reset-cells": [
+        1
+      ]
+    },
+    "/soc/gpu@13040000": {
+      "compatible": [
+        "mediatek,mt8163-mali",
+        "arm,mali-t720"
+      ],
+      "status": [
+        "okay"
+      ],
+      "reg": [
+        0,
+        319029248,
+        0,
+        16384
+      ],
+      "phandle": [
+        50
+      ],
+      "clocks": [
+        36,
+        0
+      ],
+      "assigned-clocks": [
+        3,
+        54
+      ],
+      "assigned-clock-parents": [
+        22,
+        3
+      ]
+    },
+    "/soc/clock-controller@13000000": {
+      "compatible": [
+        "mediatek,mt8163-mfgcfg",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        318767104,
+        0,
+        4096
+      ],
+      "phandle": [
+        36
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/usb@11270000": {
+      "compatible": [
+        "mediatek,mt8163-musb",
+        "mediatek,mtk-musb"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "main",
+        "mcu",
+        "univpll"
+      ],
+      "reg": [
+        0,
+        287768576,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        8,
+        2,
+        23,
+        22,
+        2
+      ],
+      "phys": [
+        35,
+        3
+      ]
+    },
+    "/soc/mmc@11250000": {
+      "compatible": [
+        "mediatek,mt8163-mmc",
+        "mediatek,mt2701-mmc"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "source",
+        "hclk"
+      ],
+      "reg": [
+        0,
+        287637504,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        30,
+        3,
+        60
+      ]
+    },
+    "/soc/mmc@11240000": {
+      "compatible": [
+        "mediatek,mt8163-mmc",
+        "mediatek,mt2701-mmc"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "source",
+        "hclk"
+      ],
+      "reg": [
+        0,
+        287571968,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        29,
+        3,
+        59
+      ]
+    },
+    "/soc/mmc@11230000": {
+      "compatible": [
+        "mediatek,mt8163-mmc",
+        "mediatek,mt2701-mmc"
+      ],
+      "status": [
+        "okay"
+      ],
+      "clock-names": [
+        "source",
+        "hclk",
+        "bus_clk"
+      ],
+      "reg": [
+        0,
+        287506432,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        31,
+        3,
+        58,
+        2,
+        28
+      ],
+      "assigned-clocks": [
+        3,
+        58
+      ],
+      "assigned-clock-parents": [
+        3,
+        21
+      ]
+    },
+    "/soc/clock-controller@11220000": {
+      "compatible": [
+        "mediatek,mt8163-audsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        287440896,
+        0,
+        4096
+      ],
+      "phandle": [
+        29
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/clock-controller@11220000/audio-controller": {
+      "compatible": [
+        "mediatek,mt8163-afe-pcm"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "infrasys_aud",
+        "top_pdn_aud",
+        "top_pdn_aud_bus",
+        "aud_1_sel",
+        "aud_2_sel",
+        "apll1",
+        "apll1_tuner",
+        "apll1_div",
+        "apll2",
+        "apll2_tuner",
+        "apll2_div",
+        "afe",
+        "adc",
+        "dac",
+        "dac_predis",
+        "22m",
+        "24m",
+        "top_i2s",
+        "i2s0",
+        "i2s1",
+        "i2s2",
+        "i2s3",
+        "clk26m"
+      ],
+      "clocks": [
+        2,
+        49,
+        3,
+        63,
+        3,
+        64,
+        3,
+        71,
+        3,
+        72,
+        22,
+        8,
+        29,
+        6,
+        29,
+        13,
+        22,
+        9,
+        29,
+        5,
+        29,
+        14,
+        29,
+        0,
+        29,
+        9,
+        29,
+        10,
+        29,
+        11,
+        29,
+        2,
+        29,
+        3,
+        29,
+        1,
+        29,
+        15,
+        29,
+        16,
+        29,
+        17,
+        29,
+        18,
+        16
+      ]
+    },
+    "/soc/t-phy@11210000": {
+      "compatible": [
+        "mediatek,mt8163-tphy",
+        "mediatek,generic-tphy-v1"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "reg": [
+        0,
+        287375360,
+        0,
+        2048
+      ]
+    },
+    "/soc/t-phy@11210000/usb-phy@11210900": {
+      "clock-names": [
+        "ref"
+      ],
+      "reg": [
+        0,
+        287377664,
+        0,
+        256
+      ],
+      "phandle": [
+        35
+      ],
+      "clocks": [
+        22,
+        14
+      ],
+      "#phy-cells": [
+        1
+      ]
+    },
+    "/soc/t-phy@11210000/usb-phy@11210800": {
+      "clock-names": [
+        "ref"
+      ],
+      "reg": [
+        0,
+        287377408,
+        0,
+        256
+      ],
+      "phandle": [
+        28
+      ],
+      "clocks": [
+        22,
+        14
+      ],
+      "#phy-cells": [
+        1
+      ]
+    },
+    "/soc/usb@11200000": {
+      "compatible": [
+        "mediatek,mt8163-musb",
+        "mediatek,mtk-musb"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "main",
+        "mcu",
+        "univpll"
+      ],
+      "reg": [
+        0,
+        287309824,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        7,
+        2,
+        23,
+        22,
+        2
+      ],
+      "phys": [
+        28,
+        3
+      ]
+    },
+    "/soc/thermal@1100b000": {
+      "compatible": [
+        "mediatek,mt8163-thermal"
+      ],
+      "clock-names": [
+        "therm",
+        "auxadc"
+      ],
+      "nvmem-cell-names": [
+        "calibration-data"
+      ],
+      "reg": [
+        0,
+        285257728,
+        0,
+        4096
+      ],
+      "phandle": [
+        47
+      ],
+      "clocks": [
+        2,
+        10,
+        2,
+        34
+      ],
+      "resets": [
+        2,
+        0
+      ],
+      "nvmem-cells": [
+        27
+      ]
+    },
+    "/soc/spi@1100a000": {
+      "compatible": [
+        "mediatek,mt8163-spi",
+        "mediatek,mt2712-spi"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "parent-clk",
+        "sel-clk",
+        "spi-clk"
+      ],
+      "reg": [
+        0,
+        285253632,
+        0,
+        4096
+      ],
+      "clocks": [
+        3,
+        31,
+        3,
+        57,
+        2,
+        27
+      ],
+      "assigned-clocks": [
+        2,
+        66
+      ],
+      "assigned-clock-parents": [
+        3,
+        57
+      ]
+    },
+    "/soc/i2c@11009000": {
+      "compatible": [
+        "mediatek,mt8163-i2c",
+        "mediatek,mt8173-i2c"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "main",
+        "dma"
+      ],
+      "reg": [
+        0,
+        285249536,
+        0,
+        112,
+        0,
+        285213312,
+        0,
+        128
+      ],
+      "clocks": [
+        2,
+        13,
+        2,
+        42
+      ]
+    },
+    "/soc/i2c@11008000": {
+      "compatible": [
+        "mediatek,mt8163-i2c",
+        "mediatek,mt8173-i2c"
+      ],
+      "status": [
+        "okay"
+      ],
+      "clock-names": [
+        "main",
+        "dma"
+      ],
+      "reg": [
+        0,
+        285245440,
+        0,
+        112,
+        0,
+        285213184,
+        0,
+        128
+      ],
+      "clocks": [
+        2,
+        12,
+        2,
+        42
+      ],
+      "clock-frequency": [
+        400000
+      ]
+    },
+    "/soc/i2c@11008000/regulator@60": {
+      "compatible": [
+        "silergy,sym827"
+      ],
+      "reg": [
+        96
+      ],
+      "phandle": [
+        7
+      ]
+    },
+    "/soc/i2c@11007000": {
+      "compatible": [
+        "mediatek,mt8163-i2c",
+        "mediatek,mt8173-i2c"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "main",
+        "dma"
+      ],
+      "reg": [
+        0,
+        285241344,
+        0,
+        112,
+        0,
+        285213056,
+        0,
+        128
+      ],
+      "clocks": [
+        2,
+        11,
+        2,
+        42
+      ]
+    },
+    "/soc/serial@11005000": {
+      "compatible": [
+        "mediatek,mt8163-uart",
+        "mediatek,mt6577-uart"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "baud",
+        "bus"
+      ],
+      "reg": [
+        0,
+        285233152,
+        0,
+        1024
+      ],
+      "clocks": [
+        16,
+        2,
+        22
+      ]
+    },
+    "/soc/serial@11004000": {
+      "compatible": [
+        "mediatek,mt8163-uart",
+        "mediatek,mt6577-uart"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "baud",
+        "bus"
+      ],
+      "reg": [
+        0,
+        285229056,
+        0,
+        1024
+      ],
+      "clocks": [
+        16,
+        2,
+        21
+      ]
+    },
+    "/soc/serial@11003000": {
+      "compatible": [
+        "mediatek,mt8163-uart",
+        "mediatek,mt6577-uart"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "baud",
+        "bus"
+      ],
+      "reg": [
+        0,
+        285224960,
+        0,
+        1024
+      ],
+      "clocks": [
+        16,
+        2,
+        20
+      ]
+    },
+    "/soc/serial@11002000": {
+      "compatible": [
+        "mediatek,mt8163-uart",
+        "mediatek,mt6577-uart"
+      ],
+      "status": [
+        "okay"
+      ],
+      "clock-names": [
+        "baud",
+        "bus"
+      ],
+      "reg": [
+        0,
+        285220864,
+        0,
+        1024
+      ],
+      "clocks": [
+        16,
+        2,
+        19
+      ]
+    },
+    "/soc/dma-controller@11000300": {
+      "compatible": [
+        "mediatek,mt8163-uart-dma",
+        "mediatek,mt6577-uart-dma"
+      ],
+      "clock-names": [
+        "apdma"
+      ],
+      "reg": [
+        0,
+        285213440,
+        0,
+        128,
+        0,
+        285213568,
+        0,
+        128,
+        0,
+        285213696,
+        0,
+        128,
+        0,
+        285213824,
+        0,
+        128,
+        0,
+        285213952,
+        0,
+        128,
+        0,
+        285214080,
+        0,
+        128,
+        0,
+        285214208,
+        0,
+        128,
+        0,
+        285214336,
+        0,
+        128
+      ],
+      "phandle": [
+        23
+      ],
+      "clocks": [
+        2,
+        42
+      ]
+    },
+    "/soc/auxadc@11001000": {
+      "compatible": [
+        "mediatek,mt8163-auxadc",
+        "mediatek,mt8173-auxadc"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "main"
+      ],
+      "reg": [
+        0,
+        285216768,
+        0,
+        4096
+      ],
+      "phandle": [
+        26
+      ],
+      "clocks": [
+        2,
+        34
+      ]
+    },
+    "/soc/cci@10390000": {
+      "compatible": [
+        "arm,cci-400"
+      ],
+      "reg": [
+        0,
+        272171008,
+        0,
+        4096
+      ]
+    },
+    "/soc/cci@10390000/pmu@9000": {
+      "compatible": [
+        "arm,cci-400-pmu,r1"
+      ],
+      "reg": [
+        36864,
+        20480
+      ]
+    },
+    "/soc/cci@10390000/slave-if@5000": {
+      "compatible": [
+        "arm,cci-400-ctrl-if"
+      ],
+      "reg": [
+        20480,
+        4096
+      ],
+      "phandle": [
+        5
+      ]
+    },
+    "/soc/cci@10390000/slave-if@4000": {
+      "compatible": [
+        "arm,cci-400-ctrl-if"
+      ],
+      "reg": [
+        16384,
+        4096
+      ]
+    },
+    "/soc/cci@10390000/slave-if@1000": {
+      "compatible": [
+        "arm,cci-400-ctrl-if"
+      ],
+      "reg": [
+        4096,
+        4096
+      ]
+    },
+    "/soc/interrupt-controller@10221000": {
+      "compatible": [
+        "arm,gic-400"
+      ],
+      "reg": [
+        0,
+        270667776,
+        0,
+        4096,
+        0,
+        270671872,
+        0,
+        4096,
+        0,
+        270680064,
+        0,
+        8192,
+        0,
+        270688256,
+        0,
+        8192
+      ],
+      "phandle": [
+        12
+      ]
+    },
+    "/soc/dsi-phy@10215000": {
+      "compatible": [
+        "mediatek,mt8163-mipi-tx"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-output-names": [
+        "mipi_tx0_pll"
+      ],
+      "reg": [
+        0,
+        270618624,
+        0,
+        4096
+      ],
+      "phandle": [
+        42
+      ],
+      "clocks": [
+        22,
+        13
+      ],
+      "resets": [
+        2,
+        10
+      ],
+      "#clock-cells": [
+        0
+      ],
+      "#phy-cells": [
+        0
+      ]
+    },
+    "/soc/mailbox@10212000": {
+      "compatible": [
+        "mediatek,mt8163-gce",
+        "mediatek,mt8173-gce"
+      ],
+      "clock-names": [
+        "gce"
+      ],
+      "reg": [
+        0,
+        270606336,
+        0,
+        4096
+      ],
+      "phandle": [
+        39
+      ],
+      "clocks": [
+        2,
+        9
+      ]
+    },
+    "/soc/rng@1020f000": {
+      "compatible": [
+        "mediatek,mt8163-rng",
+        "mediatek,mt7623-rng"
+      ],
+      "clock-names": [
+        "rng"
+      ],
+      "reg": [
+        0,
+        270594048,
+        0,
+        4096
+      ],
+      "clocks": [
+        2,
+        33
+      ]
+    },
+    "/soc/efuse@10206000": {
+      "compatible": [
+        "mediatek,mt8163-efuse",
+        "mediatek,efuse"
+      ],
+      "reg": [
+        0,
+        270557184,
+        0,
+        4096
+      ]
+    },
+    "/soc/efuse@10206000/calib@100": {
+      "reg": [
+        256,
+        12
+      ],
+      "phandle": [
+        27
+      ]
+    },
+    "/soc/iommu@10205000": {
+      "compatible": [
+        "mediatek,mt8163-m4u"
+      ],
+      "reg": [
+        0,
+        270553088,
+        0,
+        4096
+      ],
+      "phandle": [
+        41
+      ]
+    },
+    "/soc/interrupt-controller@10200620": {
+      "compatible": [
+        "mediatek,mt8163-sysirq",
+        "mediatek,mt6577-sysirq"
+      ],
+      "reg": [
+        0,
+        270534176,
+        0,
+        32
+      ],
+      "phandle": [
+        1
+      ]
+    },
+    "/soc/keyboard@10010000": {
+      "compatible": [
+        "mediatek,mt8163-keypad",
+        "mediatek,mt6779-keypad"
+      ],
+      "status": [
+        "disabled"
+      ],
+      "clock-names": [
+        "kpd"
+      ],
+      "reg": [
+        0,
+        268500992,
+        0,
+        4096
+      ],
+      "clocks": [
+        16
+      ]
+    },
+    "/soc/pwrap@1000d000": {
+      "compatible": [
+        "mediatek,mt8163-pwrap"
+      ],
+      "clock-names": [
+        "spi",
+        "wrap"
+      ],
+      "reg": [
+        0,
+        268488704,
+        0,
+        4096
+      ],
+      "clocks": [
+        3,
+        65,
+        2,
+        1
+      ],
+      "resets": [
+        2,
+        13
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic": {
+      "compatible": [
+        "mediatek,mt6323"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/rtc": {
+      "compatible": [
+        "mediatek,mt6323-rtc"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/power-controller": {
+      "compatible": [
+        "mediatek,mt6323-pwrc"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/audio-codec": {
+      "compatible": [
+        "mediatek,mt6397-codec"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/keys": {
+      "compatible": [
+        "mediatek,mt6323-keys"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/keys/home": {},
+    "/soc/pwrap@1000d000/pmic/keys/power": {},
+    "/soc/pwrap@1000d000/pmic/regulators": {
+      "compatible": [
+        "mediatek,mt6323-regulator"
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcamio": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcamd": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vio18": {
+      "phandle": [
+        34
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vm": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vrf18": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vibr": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcamaf": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vrtc": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vsim2": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vsim1": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcn18": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vgp3": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vgp2": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vgp1": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vemc3v3": {
+      "phandle": [
+        33
+      ]
+    },
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vmch": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vmc": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vusb": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vio28": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcama": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_va": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcn33_wifi": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcn33_bt": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vcn28": {},
+    "/soc/pwrap@1000d000/pmic/regulators/ldo_vtcxo": {},
+    "/soc/pwrap@1000d000/pmic/regulators/buck_vpa": {},
+    "/soc/pwrap@1000d000/pmic/regulators/buck_vsys": {},
+    "/soc/pwrap@1000d000/pmic/regulators/buck_vproc": {},
+    "/soc/pwrap@1000d000/pmic/leds": {
+      "compatible": [
+        "mediatek,mt6323-led"
+      ],
+      "status": [
+        "disabled"
+      ]
+    },
+    "/soc/clock-controller@1000c000": {
+      "compatible": [
+        "mediatek,mt8163-apmixedsys"
+      ],
+      "reg": [
+        0,
+        268484608,
+        0,
+        4096
+      ],
+      "phandle": [
+        22
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/soc/pinctrl@1000b000": {
+      "compatible": [
+        "mediatek,mt8163-pinctrl"
+      ],
+      "reg": [
+        0,
+        268480512,
+        0,
+        4096
+      ],
+      "phandle": [
+        15
+      ]
+    },
+    "/soc/pinctrl@1000b000/uart0-pins": {
+      "phandle": [
+        24
+      ]
+    },
+    "/soc/pinctrl@1000b000/uart0-pins/pins": {},
+    "/soc/pinctrl@1000b000/emmc-uhs-pins": {
+      "phandle": [
+        32
+      ]
+    },
+    "/soc/pinctrl@1000b000/emmc-uhs-pins/pins_rst": {},
+    "/soc/pinctrl@1000b000/emmc-uhs-pins/pins_clk": {},
+    "/soc/pinctrl@1000b000/emmc-uhs-pins/pins_cmd_dat": {},
+    "/soc/pinctrl@1000b000/emmc-sdr-pins": {
+      "phandle": [
+        31
+      ]
+    },
+    "/soc/pinctrl@1000b000/emmc-sdr-pins/pins_rst": {},
+    "/soc/pinctrl@1000b000/emmc-sdr-pins/pins_clk": {},
+    "/soc/pinctrl@1000b000/emmc-sdr-pins/pins_cmd_dat": {},
+    "/soc/pinctrl@1000b000/i2c1-pins": {
+      "phandle": [
+        25
+      ]
+    },
+    "/soc/pinctrl@1000b000/i2c1-pins/pins": {},
+    "/soc/timer@10008000": {
+      "compatible": [
+        "mediatek,mt8163-timer",
+        "mediatek,mt6577-timer"
+      ],
+      "clock-names": [
+        "system-clk",
+        "rtc-clk"
+      ],
+      "reg": [
+        0,
+        268468224,
+        0,
+        4096
+      ],
+      "clocks": [
+        13,
+        3,
+        80
+      ]
+    },
+    "/soc/watchdog@10007000": {
+      "compatible": [
+        "mediatek,mt8163-wdt"
+      ],
+      "reg": [
+        0,
+        268464128,
+        0,
+        4096
+      ],
+      "#reset-cells": [
+        1
+      ]
+    },
+    "/soc/syscon@10006000": {
+      "compatible": [
+        "mediatek,mt8163-scpsys",
+        "syscon",
+        "simple-mfd"
+      ],
+      "reg": [
+        0,
+        268460032,
+        0,
+        4096
+      ]
+    },
+    "/soc/syscon@10006000/power-controller": {
+      "compatible": [
+        "mediatek,mt8163-power-controller"
+      ],
+      "phandle": [
+        21
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@6": {
+      "clock-names": [
+        "mfg"
+      ],
+      "reg": [
+        6
+      ],
+      "clocks": [
+        3,
+        54
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@6/power-domain@7": {
+      "reg": [
+        7
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@5": {
+      "reg": [
+        5
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@4": {
+      "reg": [
+        4
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@3": {
+      "clock-names": [
+        "mm"
+      ],
+      "reg": [
+        3
+      ],
+      "clocks": [
+        3,
+        51
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@2": {
+      "clock-names": [
+        "mm"
+      ],
+      "reg": [
+        2
+      ],
+      "clocks": [
+        3,
+        51
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@1": {
+      "clock-names": [
+        "mm"
+      ],
+      "reg": [
+        1
+      ],
+      "clocks": [
+        3,
+        51
+      ]
+    },
+    "/soc/syscon@10006000/power-controller/power-domain@0": {
+      "clock-names": [
+        "mm"
+      ],
+      "reg": [
+        0
+      ],
+      "clocks": [
+        3,
+        51
+      ]
+    },
+    "/soc/syscon@10005000": {
+      "compatible": [
+        "mediatek,mt8163-pctl-a-syscfg",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        268455936,
+        0,
+        4096
+      ],
+      "phandle": [
+        14
+      ]
+    },
+    "/soc/clock-controller@10001000": {
+      "compatible": [
+        "mediatek,mt8163-infracfg",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        268439552,
+        0,
+        4096
+      ],
+      "phandle": [
+        2
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "#reset-cells": [
+        1
+      ]
+    },
+    "/soc/clock-controller@10000000": {
+      "compatible": [
+        "mediatek,mt8163-topckgen"
+      ],
+      "reg": [
+        0,
+        268435456,
+        0,
+        4096
+      ],
+      "phandle": [
+        3
+      ],
+      "#clock-cells": [
+        1
+      ]
+    },
+    "/timer": {
+      "compatible": [
+        "arm,armv8-timer"
+      ],
+      "clock-frequency": [
+        13000000
+      ]
+    },
+    "/pmu": {
+      "compatible": [
+        "arm,cortex-a53-pmu"
+      ]
+    },
+    "/clocks": {},
+    "/clocks/dummy13m": {
+      "compatible": [
+        "fixed-clock"
+      ],
+      "phandle": [
+        13
+      ],
+      "#clock-cells": [
+        0
+      ],
+      "clock-frequency": [
+        13000000
+      ]
+    },
+    "/clocks/oscillator-32k": {
+      "compatible": [
+        "fixed-clock"
+      ],
+      "clock-output-names": [
+        "clk32k"
+      ],
+      "#clock-cells": [
+        0
+      ],
+      "clock-frequency": [
+        32000
+      ]
+    },
+    "/clocks/oscillator-26m": {
+      "compatible": [
+        "fixed-clock"
+      ],
+      "clock-output-names": [
+        "clk26m"
+      ],
+      "phandle": [
+        16
+      ],
+      "#clock-cells": [
+        0
+      ],
+      "clock-frequency": [
+        26000000
+      ]
+    },
+    "/psci": {
+      "compatible": [
+        "arm,psci-0.2"
+      ]
+    },
+    "/cpus": {},
+    "/cpus/l2-cache0": {
+      "compatible": [
+        "cache"
+      ],
+      "phandle": [
+        6
+      ]
+    },
+    "/cpus/cpu-map": {},
+    "/cpus/cpu-map/cluster0": {},
+    "/cpus/cpu-map/cluster0/core3": {},
+    "/cpus/cpu-map/cluster0/core2": {},
+    "/cpus/cpu-map/cluster0/core1": {},
+    "/cpus/cpu-map/cluster0/core0": {},
+    "/cpus/cpu@3": {
+      "compatible": [
+        "arm,cortex-a53"
+      ],
+      "clock-names": [
+        "cpu",
+        "intermediate"
+      ],
+      "reg": [
+        3
+      ],
+      "phandle": [
+        11
+      ],
+      "clocks": [
+        2,
+        71,
+        3,
+        81
+      ],
+      "clock-frequency": [
+        1300000000
+      ]
+    },
+    "/cpus/cpu@2": {
+      "compatible": [
+        "arm,cortex-a53"
+      ],
+      "clock-names": [
+        "cpu",
+        "intermediate"
+      ],
+      "reg": [
+        2
+      ],
+      "phandle": [
+        10
+      ],
+      "clocks": [
+        2,
+        71,
+        3,
+        81
+      ],
+      "clock-frequency": [
+        1300000000
+      ]
+    },
+    "/cpus/cpu@1": {
+      "compatible": [
+        "arm,cortex-a53"
+      ],
+      "clock-names": [
+        "cpu",
+        "intermediate"
+      ],
+      "reg": [
+        1
+      ],
+      "phandle": [
+        9
+      ],
+      "clocks": [
+        2,
+        71,
+        3,
+        81
+      ],
+      "clock-frequency": [
+        1300000000
+      ]
+    },
+    "/cpus/cpu@0": {
+      "compatible": [
+        "arm,cortex-a53"
+      ],
+      "clock-names": [
+        "cpu",
+        "intermediate"
+      ],
+      "reg": [
+        0
+      ],
+      "phandle": [
+        8
+      ],
+      "clocks": [
+        2,
+        71,
+        3,
+        81
+      ],
+      "clock-frequency": [
+        1300000000
+      ]
+    },
+    "/regulator-vgpu": {
+      "compatible": [
+        "regulator-fixed"
+      ],
+      "phandle": [
+        37
+      ]
+    },
+    "/opp-table-gpu": {
+      "compatible": [
+        "operating-points-v2"
+      ],
+      "phandle": [
+        38
+      ]
+    },
+    "/opp-table-gpu/opp-299000000": {},
+    "/opp-table-gpu/opp-416000000": {},
+    "/opp-table-gpu/opp-520000000": {},
+    "/opp-table-cluster0": {
+      "compatible": [
+        "operating-points-v2"
+      ],
+      "phandle": [
+        4
+      ]
+    },
+    "/opp-table-cluster0/opp-1300000000": {},
+    "/opp-table-cluster0/opp-1216000000": {},
+    "/opp-table-cluster0/opp-1133000000": {},
+    "/opp-table-cluster0/opp-1050000000": {},
+    "/opp-table-cluster0/opp-871000000": {},
+    "/opp-table-cluster0/opp-741000000": {},
+    "/opp-table-cluster0/opp-624000000": {},
+    "/opp-table-cluster0/opp-600000000": {},
+    "/aliases": {}
+  }
+}

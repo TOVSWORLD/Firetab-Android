@@ -1,0 +1,27 @@
+{
+  "scope": "Disabled board metadata linked to accepted compiled MIPI source and clock/reset declarations",
+  "source_pr": 430,
+  "source_merge": "9c3f4a81c8fb791ee76b1266f0365177223ceb82",
+  "source_build_run": 40859970271,
+  "sha256": {
+    "projects/firetabs-android/kernel/mipi-port/mt8163-mipi.patch": "476485d3be64710eebeb1be2f694233162d0f514142d594461559cc537fb5f0a",
+    "projects/firetabs-android/kernel/mipi-port/inputs.json": "4980ac7a88e351ca4b490027f4e47e3847babf4e160dc3ad848ff5257f90335d",
+    "evidence/mipi-kernel-integration/build-result.json": "fda50245e3f95391d3d2c35abd4dbb157d227a25339bca4e14141de4dca0b378",
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-apmixedsys.c": "09f1c75eec24c1c1004277edadef5fe11a1b601f7279b4af68451a2172b8f4f4",
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-infracfg.c": "c8d24c737034b3f2464ec3ebfb14ba27ab35d6901af1d9fd8509bb7b16c146d2",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-apmixedsys.h": "79ad800586196916c143d106be55e710e41e7f26849798e880fa7c6f6c5cbb07",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/reset/mediatek,mt8163-infracfg.h": "b6bcde0dc42803e783c95313952b8fb50d061d72fecf032e97e1f2a87cfd2317",
+    "scripts/build_mipi_provider.sh": "b9c4e84de0cce407482ab19ee3571d0bea89accb5f8e3388874d87f9d08bbc5b",
+    "scripts/build_sym827_provider.sh": "b41171108dd124688bab5862cf8ad5984ccff7634698de3d3edf03443d0df176",
+    "scripts/build_ack_baseline.sh": "40d2839a1adb5ee4e916582a8852bdfe289befe58b17c58a65510f19ae18a201",
+    "scripts/apply_mipi_port.py": "a761c047355ee149c1ba13ad01d17adb047c2e62d76bd4084f9af47f4b2744b5",
+    "scripts/validate_mipi_dependencies.py": "55c63405880d165ecdd8dbb7b75974ccc5d2206c1128a5a1d589b34fcc57053b",
+    "evidence/mipi-binding/portable-schemas.json": "fa1d277fde0812ed4cfe37e4fc98693e2f856476aa9ad14e2ccb357043a681aa",
+    "evidence/mipi-binding/captured-node.json": "cbf37b40060605819ef45d21809fe99cfbfbdc49dbf97e2b0a21171abacc6d2e",
+    "evidence/mipi-binding/captured-graph.json": "fd1db0f82eba4ee6e4414b88ddf64bafa6e4e88cf13f25800ab673d389e31120",
+    "evidence/mipi-binding/check-controls.py": "3950e9d0e148d1479ba3e20f9610403b65dd4c22bf4aa98595a852508441bd99",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-mipi-tx.json": "dcaf3fa0c4ddb76b24a5756cfd445844c30617eaa108a0676c016854d71076e5",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-mipi-tx.patch": "bb8802e0a23bcc6799a718fdd8f13a9e3e046263a97115916fca240a404230ca"
+  },
+  "runtime_qualified": false
+}

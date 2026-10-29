@@ -1,0 +1,9 @@
+{
+  "scope": "Full5186-YAML metadata diagnostic",
+  "diagnostics": 31,
+  "unmatched": 19,
+  "validation": 12,
+  "wrapper_exit": 1,
+  "passed": false,
+  "runtime_qualified": false
+}

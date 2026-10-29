@@ -1,0 +1,150 @@
+{
+  "scope": "Source-matched disabled MIPI metadata; PHY/reset/PLL/display runtime unqualified",
+  "count": 35,
+  "cases": [
+    {
+      "name": "actual disabled candidate metadata,not runtime",
+      "accepted": true
+    },
+    {
+      "name": "missing compatible",
+      "accepted": false
+    },
+    {
+      "name": "missing reg",
+      "accepted": false
+    },
+    {
+      "name": "missing clocks",
+      "accepted": false
+    },
+    {
+      "name": "missing clock-output-names",
+      "accepted": false
+    },
+    {
+      "name": "missing #phy-cells",
+      "accepted": false
+    },
+    {
+      "name": "missing #clock-cells",
+      "accepted": false
+    },
+    {
+      "name": "missing resets",
+      "accepted": false
+    },
+    {
+      "name": "wrong reg []",
+      "accepted": false
+    },
+    {
+      "name": "wrong reg [[0, 270618624, 0, 4096], [0, 270618624, 0, 4096]]",
+      "accepted": false
+    },
+    {
+      "name": "wrong reg bad",
+      "accepted": false
+    },
+    {
+      "name": "wrong clocks []",
+      "accepted": false
+    },
+    {
+      "name": "wrong clocks [[22, 13], [22, 13]]",
+      "accepted": false
+    },
+    {
+      "name": "wrong clocks bad",
+      "accepted": false
+    },
+    {
+      "name": "wrong resets []",
+      "accepted": false
+    },
+    {
+      "name": "wrong resets [[2, 10], [2, 10]]",
+      "accepted": false
+    },
+    {
+      "name": "wrong resets bad",
+      "accepted": false
+    },
+    {
+      "name": "wrong #clock-cells 1",
+      "accepted": false
+    },
+    {
+      "name": "wrong #clock-cells [0]",
+      "accepted": false
+    },
+    {
+      "name": "wrong #clock-cells 0",
+      "accepted": false
+    },
+    {
+      "name": "wrong #phy-cells 1",
+      "accepted": false
+    },
+    {
+      "name": "wrong #phy-cells [0]",
+      "accepted": false
+    },
+    {
+      "name": "wrong #phy-cells 0",
+      "accepted": false
+    },
+    {
+      "name": "rejected override nvmem-cells",
+      "accepted": false
+    },
+    {
+      "name": "rejected override nvmem-cell-names",
+      "accepted": false
+    },
+    {
+      "name": "rejected override drive-strength-microamp",
+      "accepted": false
+    },
+    {
+      "name": "unreviewed compatible ['mediatek,mt8163-mipi-tx', 'mediatek,mt8173-mipi-tx']",
+      "accepted": false
+    },
+    {
+      "name": "unreviewed compatible ['mediatek,mt8173-mipi-tx', 'mediatek,mt8163-mipi-tx']",
+      "accepted": false
+    },
+    {
+      "name": "unreviewed compatible ['mediatek,unknown-mipi-tx']",
+      "accepted": false
+    },
+    {
+      "name": "old overrides retained mediatek,mt2701-mipi-tx",
+      "accepted": true
+    },
+    {
+      "name": "old reset prohibition retained mediatek,mt2701-mipi-tx",
+      "accepted": false
+    },
+    {
+      "name": "old overrides retained mediatek,mt8173-mipi-tx",
+      "accepted": true
+    },
+    {
+      "name": "old reset prohibition retained mediatek,mt8173-mipi-tx",
+      "accepted": false
+    },
+    {
+      "name": "old overrides retained mediatek,mt8183-mipi-tx",
+      "accepted": true
+    },
+    {
+      "name": "old reset prohibition retained mediatek,mt8183-mipi-tx",
+      "accepted": false
+    }
+  ],
+  "old_soc_policy_structurally_preserved": true,
+  "type_policy_pipeline_retained": true,
+  "full_pipeline_equivalence_control_count": 35,
+  "runtime_qualified": false
+}

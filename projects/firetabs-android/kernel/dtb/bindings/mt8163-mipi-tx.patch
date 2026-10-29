@@ -1,0 +1,43 @@
+--- a/phy/mediatek,dsi-phy.yaml
++++ b/phy/mediatek,dsi-phy.yaml
+@@ -36,10 +36,14 @@
+               - mediatek,mt8365-mipi-tx
+           - const: mediatek,mt8183-mipi-tx
+       - const: mediatek,mt2701-mipi-tx
++      - const: mediatek,mt8163-mipi-tx
+       - const: mediatek,mt8173-mipi-tx
+       - const: mediatek,mt8183-mipi-tx
+ 
+   reg:
++    maxItems: 1
++
++  resets:
+     maxItems: 1
+ 
+   clocks:
+@@ -71,6 +75,25 @@
+     maximum: 6000
+     default: 4600
+ 
++allOf:
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8163-mipi-tx
++      required:
++        - compatible
++    then:
++      required:
++        - resets
++      properties:
++        nvmem-cells: false
++        nvmem-cell-names: false
++        drive-strength-microamp: false
++    else:
++      properties:
++        resets: false
++
+ required:
+   - compatible
+   - reg

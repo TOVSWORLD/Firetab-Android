@@ -1,0 +1,14 @@
+{
+  "scope": "Fresh disabled MIPI/DSI source graph only; no physical clock/reset/PHY/display admission",
+  "reference_clock_id": 13,
+  "reset_id": 10,
+  "resource_bytes": 4096,
+  "required_source_extent": 108,
+  "fixed_reference_hz": 26000000,
+  "dsi_pll_clock_reference": true,
+  "phy_and_dsi_remain_disabled": true,
+  "source_build_run": 40859970271,
+  "full_binding_validation_passed": false,
+  "runtime_qualified": false,
+  "dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4"
+}
