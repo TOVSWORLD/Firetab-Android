@@ -1,0 +1,367 @@
+{
+  "scope": "Actual decoded-node controls; actual larb IRQ rejection retained; no hardware qualification",
+  "cases": [
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "actual decoded candidate",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "missing IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "missing larbs",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "wrong IOMMU cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "no unnecessary bclk or infracfg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/iommu@10205000",
+      "name": "existing mt8167",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "actual decoded candidate",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "missing clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "missing power domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "reversed clock names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "extra clock role",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/smi@14017000",
+      "name": "existing mt8173",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "actual candidate rejects unsupported IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "decoded candidate without unused IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "missing clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "missing power domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "reversed clock names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "extra clock role",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "existing mt8173 ID4",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "missing common supplier",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "out of range larb ID",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "actual candidate rejects unsupported IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "decoded candidate without unused IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "missing clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "missing power domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "reversed clock names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "extra clock role",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "existing mt8173 ID4",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "missing common supplier",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "out of range larb ID",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "actual candidate rejects unsupported IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "decoded candidate without unused IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "missing clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "missing power domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "reversed clock names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "extra clock role",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "existing mt8173 ID4",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "missing common supplier",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "out of range larb ID",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "actual candidate rejects unsupported IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "decoded candidate without unused IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "unknown compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "missing clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "missing power domain",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "reversed clock names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "extra clock role",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "existing mt8173 ID4",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "missing common supplier",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "out of range larb ID",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "passed": true,
+  "runtime_qualified": false
+}

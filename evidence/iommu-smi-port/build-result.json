@@ -1,0 +1,22 @@
+{
+  "scope": "Actual ACK provider object/Image compilation and generic QEMU only; no MT8163 hardware probe",
+  "pr": 407,
+  "head": "302e51a22ac6c91e899176b99cde1128e8709bad",
+  "merge_commit": "6821d31282f9d533456a321417c6a2bb87196bf0",
+  "run": 40794335163,
+  "run_url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40794335163",
+  "private_log_sha256": "c44f081a6f0c4a32ccf7fb7e06bb12a352b2641e5903b2d8478e955c808e7d68",
+  "artifacts": {
+    "drivers/iommu/mtk_iommu.o": "b957a4c2cadcfebb5e1a9d025c252d6a95b8ee828cd5d888d67fd22afb12e070",
+    "drivers/memory/mtk-smi.o": "ee4532778e05a61079ac297f2ee7c7e99434b3bbc0b30c8e85f519ec678befe4",
+    "arch/arm64/boot/Image.gz": "f4fb1e8a958ab75f86220ffbc934707f31a10ba7794567ee27b8e126ed477e94",
+    ".config": "f97aa49390383aa722aa2d112ba2f5abb4e3ffce24dcdd11d1898c4f85757e3d",
+    "vmlinux": "fe49ef98ec4dbc5dbac8f2082542b3803f246f90892626cf921f27106e7c24d7",
+    "arch/arm64/boot/Image": "9bcae21c2e79ad87d1b87da718c65bea21abdf7d6021ccf909a9e76e3262d615"
+  },
+  "runtime_qualified": false,
+  "iommu_smi_object_marker": true,
+  "generic_qemu_completed": true,
+  "qemu_console_sha256": "9bea23aa1ca36bb109208b4b424c5561cbb9fd1127f179fbd1a491806e8a2c07",
+  "provider_object_hash_stage": "Explicit provider-object build before diagnostic Image configuration; Image build recompiles objects. These are not asserted final linked-object hashes."
+}

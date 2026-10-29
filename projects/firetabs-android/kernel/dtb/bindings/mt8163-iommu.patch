@@ -1,0 +1,10 @@
+--- a/iommu/mediatek,iommu.yaml
++++ b/iommu/mediatek,iommu.yaml
+@@ -75,6 +75,7 @@
+           - mediatek,mt6779-m4u  # generation two
+           - mediatek,mt6795-m4u  # generation two
+           - mediatek,mt6893-iommu-mm         # generation two
++          - mediatek,mt8163-m4u  # generation two
+           - mediatek,mt8167-m4u  # generation two
+           - mediatek,mt8173-m4u  # generation two
+           - mediatek,mt8183-m4u  # generation two
