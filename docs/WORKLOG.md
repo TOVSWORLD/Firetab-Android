@@ -3089,3 +3089,23 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable #27 acceptance: trace source ownership/origin of four larb IRQ
   declarations from cached sources before any DT correction. Runtime DMA/display/
   independent failed-boot return and retained logs remain open.
+
+## 2026-10-28 — source-backed optional larb IRQ resources (#27)
+
+- Exact legacy DTS declares SPI205/213/217/207 at the four larb addresses; donor
+  retains them. Legacy matching larb probe maps memory/clocks/common link without
+  IRQ request, while M4U maps its own node SPI147 and requests MTK_M4U_isr.
+  Exact paths/hashes/line excerpts retained in evidence/larb-irq-contract.
+- Preserve vendor hardware declarations rather than delete unhandled resources.
+  MT8163-only optional single-IRQ schema preserves old-SoC IRQ prohibition and all
+  unrelated prior constraints. Fresh-DTB guard checks declared vendor IRQ tuple.
+-40 actual decoded-node controls pass, including unchanged nodes, optional
+  absence, excess IRQs and old-SoC prohibition. Cardinality controls are separate
+  from board-specific type/number/polarity guard; no claim of handler support.
+- Full38→34 diagnostics: exactly four larb property errors removed, no additions;
+ 22unmatched/12validation remain, wrapper exit1/passedfalse. Historical409 receipts
+  unchanged. No DTB/driver/device/firmware change or download.
+- Exact reproduction commands/full diagnostics/provenance in evidence directory
+  and LARB-IRQ-CONTRACT.md. Next #27 source acceptance: USB MUSB/T-PHY actual
+  driver/OF/probe prerequisites before binding support; loader/return/log runtime
+  gates remain open.

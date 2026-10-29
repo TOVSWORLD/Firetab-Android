@@ -1,0 +1,97 @@
+{
+  "scope": "Vendor source declaration and driver ownership; not measured hardware IRQ wiring or handler support",
+  "sources": {
+    "legacy-larb-nodes.dtsi": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "path": "arch/arm64/boot/dts/mt8163.dtsi",
+      "source_sha256": "932dc928cc3ac247f101b75079e9c4234febfa708ecc2ff9e609e19e1da23fb1",
+      "first_line": 1237,
+      "last_line": 1440,
+      "excerpt_sha256": "0a8b2775b2321d36fb63bae55c98f15449ee78efb422cddb275e4017c6127602"
+    },
+    "legacy-larb-probe.c": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "path": "drivers/misc/mediatek/smi/variant/smi_variant.c",
+      "source_sha256": "a65a23c7c6b1fd76efe83756f72517b87a96f38951275da6516277ae08102f0d",
+      "first_line": 1016,
+      "last_line": 1083,
+      "excerpt_sha256": "d55b73ac62d9c163650a99e543f9df8907879b5803a976cda8e61663656c016c"
+    },
+    "legacy-m4u-probe.c": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "path": "drivers/misc/mediatek/m4u/mt8163/m4u.c",
+      "source_sha256": "8d524d6ef50ee241813fffe687b745d4fbebc0592e6bb6a5a23795376d20ab64",
+      "first_line": 1869,
+      "last_line": 1890,
+      "excerpt_sha256": "5118fd50ec3eafce63ccbc0273ee453106452b7b53566aba7f468e84cc0e842f"
+    },
+    "legacy-m4u-request.c": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "path": "drivers/misc/mediatek/m4u/mt8163/m4u_hw.c",
+      "source_sha256": "68570e7db10eb536d03f61f27ab8d0c31d104e87788ce94edf12a2c4aea14234",
+      "first_line": 2366,
+      "last_line": 2384,
+      "excerpt_sha256": "6be21545680aaebbd0f286744e6cc0737a7f18cee2cadbb0ab192568721095d7"
+    },
+    "drivers/misc/mediatek/smi/smi_common.c": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "c69c9472a50269d26132d2a11ecbbcb8969c8d7cf13a607a9e6615000d3a19b7",
+      "bounded_query": "request_irq/devm_request_irq/request_threaded_irq/platform_get_irq/irq_of_parse_and_map calls",
+      "matches": 0
+    },
+    "drivers/misc/mediatek/smi/variant/smi_variant.c": {
+      "git_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+      "source_sha256": "a65a23c7c6b1fd76efe83756f72517b87a96f38951275da6516277ae08102f0d",
+      "bounded_query": "request_irq/devm_request_irq/request_threaded_irq/platform_get_irq/irq_of_parse_and_map calls",
+      "matches": 0
+    },
+    "evidence/iommu-smi-port/ack/mtk-smi.c": {
+      "source_sha256": "d4d051520e02d4da0381ec46e9ab3d123f3e947f4477e0f3520bda01719c2cf7",
+      "bounded_query": "request_irq/devm_request_irq/request_threaded_irq/platform_get_irq/irq_of_parse_and_map calls",
+      "matches": 0
+    },
+    "evidence/kernel-audit/bengris7/drivers/memory/mtk-smi.c": {
+      "source_sha256": "d5f3b1a5a248a79a2f494666ecb23fd30ce431f356b2d09f9a955032f6a9875c",
+      "bounded_query": "request_irq/devm_request_irq/request_threaded_irq/platform_get_irq/irq_of_parse_and_map calls",
+      "matches": 0
+    }
+  },
+  "larbs": [
+    {
+      "node": "larb0",
+      "address": "0x14016000",
+      "gic_spi": 205,
+      "trigger": "IRQ_TYPE_LEVEL_LOW",
+      "selected_driver_requests_irq": false
+    },
+    {
+      "node": "larb1",
+      "address": "0x16010000",
+      "gic_spi": 213,
+      "trigger": "IRQ_TYPE_LEVEL_LOW",
+      "selected_driver_requests_irq": false
+    },
+    {
+      "node": "larb2",
+      "address": "0x15001000",
+      "gic_spi": 217,
+      "trigger": "IRQ_TYPE_LEVEL_LOW",
+      "selected_driver_requests_irq": false
+    },
+    {
+      "node": "larb3",
+      "address": "0x17001000",
+      "gic_spi": 207,
+      "trigger": "IRQ_TYPE_LEVEL_LOW",
+      "selected_driver_requests_irq": false
+    }
+  ],
+  "m4u_fault_irq": {
+    "gic_spi": 147,
+    "owner_node": "m4u@10205000",
+    "probe": "irq_of_parse_and_map(node,0)",
+    "request": "request_irq(m4u_dev->irq_num[m4u_id], MTK_M4U_isr, IRQF_TRIGGER_LOW, ...)"
+  },
+  "decision": "Preserve vendor-declared optional single larb interrupt in MT8163-only binding. Do not delete DT resources due to lack of handler. Keep other SoC policies and no runtime handler claim.",
+  "runtime_qualified": false
+}

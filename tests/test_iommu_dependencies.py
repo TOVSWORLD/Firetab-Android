@@ -42,3 +42,14 @@ class IOMMUDependencies(unittest.TestCase):
             elif change=='cells':n['#iommu-cells']=[2]
             else:n['phandle']=g['nodes'][PATHS['common']]['phandle']
             with self.assertRaises(ValueError,msg=change):validate(g)
+
+    def test_optional_larb_irq_declarations_match_vendor_source(self):
+        for values in [[0,999,8], [1,205,8], [0,205,4], [0,205], [0,205,8,0,206,8]]:
+            g=self.fixture();g['nodes'][PATHS['larb0']]['interrupts']=values
+            with self.assertRaises(ValueError,msg=values):validate(g)
+
+    def test_absent_optional_larb_irq_does_not_imply_handler_requirement(self):
+        g=self.fixture()
+        for i in range(4):g['nodes'][PATHS['larb'+str(i)]].pop('interrupts')
+        r=validate(g);self.assertTrue(r['optional_larb_irq_contract_checked'])
+        self.assertFalse(r['runtime_qualified'])

@@ -1,0 +1,204 @@
+		larb0: larb@14016000 {
+			compatible = "mediatek,mt8163-smi-larb";
+			reg = <0 0x14016000 0 0x1000>;
+			interrupts = <GIC_SPI 205 IRQ_TYPE_LEVEL_LOW>;
+			mediatek,smi = <&smi_common>;
+			mediatek,larbid = <0>;
+			clocks = <&mmsys CLK_MM_SMI_LARB0>,
+				 <&mmsys CLK_MM_SMI_LARB0>;
+			clock-names = "apb", "smi";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_DISP>;
+		};
+
+		smi_common: smi@14017000 {
+			compatible = "mediatek,mt8163-smi";
+			reg = <0 0x14017000 0 0x1000>;
+			clocks = <&mmsys CLK_MM_SMI_COMMON>,
+				 <&mmsys CLK_MM_SMI_COMMON>;
+			clock-names = "apb", "smi";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_DISP>;
+		};
+
+		disp_lvds_tx: disp_lvds_tx@1401b200 {
+			compatible = "mediatek,mt8163-disp_lvds_tx";
+			reg = <0 0x1401b200 0 0x1000>;
+		};
+
+		hdmi0: hdmi@1401d000 {
+			compatible = "mediatek,mt8163-hdmitx";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_DISP>;
+			reg  =	<0 0x1401d000 0 0x390>, /* HDMI Shell */
+				<0 0x1100f000 0 0x10>, /* HDMI DDC  */
+				<0 0x10013000 0 0xbc>; /* HDMI CEC  */
+			interrupts = <GIC_SPI 202 IRQ_TYPE_LEVEL_LOW>;
+
+			clocks = <&infracfg CLK_INFRA_CEC>,
+				 <&infracfg CLK_INFRA_CEC_26M>,
+				 <&mmsys CLK_MM_HDMI_PIXEL>,
+				 <&mmsys CLK_MM_HDMI_PLLCK>,
+				 <&mmsys CLK_MM_HDMI_ADSP>,
+				 <&mmsys CLK_MM_HDMI_SPDIF>;
+
+			clock-names = "cec_pdn",
+				      "clk_cec_26m",
+				      "mmsys_hdmi_pll",
+				      "mmsys_hdmi_pixel",
+				      "mmsys_hdmi_audio",
+				      "mmsys_hdmi_spidif";
+		};
+
+		imgsys: imgsys@15000000 {
+			compatible = "mediatek,mt8163-imgsys", "syscon";
+			reg = <0 0x15000000 0 0x1000>;
+			#clock-cells = <1>;
+		};
+
+		/* We need add another node to contrl DISP power in ISP driver */
+		isp_display: isp_display {
+			compatible = "mediatek,mt8163-isp_display";
+			/*power-domains = <&scpsys MT8163_POWER_DOMAIN_DISP>;*/
+		};
+
+		ispsys: ispsys@15000000 {
+			compatible = "mediatek,mt8163-ispsys";
+			reg = <0 0x15004000 0 0x9000>,	/* ISP_ADDR */
+			      <0 0x15000000 0 0x10000>,	/* IMGSYS_CONFIG_ADDR */
+			      <0 0x10217000 0 0x3000>;	/* MIPI_ANA_ADDR */
+
+			interrupts = <GIC_SPI 218 IRQ_TYPE_LEVEL_LOW>, /* SENINF */
+				     <GIC_SPI 219 IRQ_TYPE_LEVEL_LOW>; /* CAM0 */
+
+			clocks = <&imgsys CLK_IMG_LARB2_SMI>,
+				 <&imgsys CLK_IMG_CAM_SMI>,
+				 <&imgsys CLK_IMG_CAM_CAM>,
+				 <&imgsys CLK_IMG_SEN_TG>,
+				 <&imgsys CLK_IMG_SEN_CAM>,
+				 <&imgsys CLK_IMG_CAM_SV>,
+				 <&mmsys CLK_MM_SMI_COMMON>;
+
+			clock-names = "IMG_LARB2_SMI",
+				      "IMG_CAM_SMI",
+				      "IMG_CAM_CAM",
+				      "IMG_SEN_TG",
+				      "IMG_SEN_CAM",
+				      "IMG_CAM_SV",
+				      "MM_SMI_COMMON";
+
+			/* Power domains */
+			/* power-domains = <&scpsys MT8163_POWER_DOMAIN_ISP>; */
+		};
+
+		larb2: larb@15001000 {
+			compatible = "mediatek,mt8163-smi-larb";
+			reg = <0 0x15001000 0 0x1000>;
+			interrupts = <GIC_SPI 217 IRQ_TYPE_LEVEL_LOW>;
+			mediatek,smi = <&smi_common>;
+			mediatek,larbid = <2>;
+			clocks = <&imgsys CLK_IMG_LARB2_SMI>,
+				 <&imgsys CLK_IMG_LARB2_SMI>;
+			clock-names = "apb", "smi";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_ISP>;
+		};
+
+		/* Main Cam */
+		kd_camera_hw1: camera1@15008000 {
+			compatible = "mediatek,mt8163-camera_hw";
+			reg = <0 0x15008000 0 0x1000>;  /* SENINF_ADDR */
+
+			/* Camera Common Clock Framework (CCF) */
+			clocks = <&topckgen CLK_TOP_CAMTG_SEL>,
+				 <&topckgen CLK_TOP_UNIVPLL_D26>,
+				 <&topckgen CLK_TOP_UNIVPLL2_D2>;
+
+			clock-names = "TOP_CAMTG_SEL",
+				      "TOP_UNIVPLL_D26",
+				      "TOP_UNIVPLL2_D2";
+		};
+
+		/* Sub Cam */
+		kd_camera_hw2: camera2@15008000 {
+			compatible = "mediatek,mt8163-camera_hw2";
+			reg = <0 0x15008000 0 0x1000>;  /* SENINF_ADDR */
+		};
+
+		vdecsys: vdecsys@16000000 {
+			compatible = "mediatek,mt8163-vdecsys", "syscon";
+			reg = <0 0x16000000 0 0x1000>;
+			#clock-cells = <1>;
+		};
+
+		vdec_gcon: vdec_gcon@16000000 {
+			compatible = "mediatek,mt8163-vdec_gcon";
+			reg = <0 0x16000000 0 0x10000>;
+		};
+
+		larb1: larb@16010000 {
+			compatible = "mediatek,mt8163-smi-larb";
+			reg = <0 0x16010000 0 0x10000>;
+			interrupts = <GIC_SPI 213 IRQ_TYPE_LEVEL_LOW>;
+			mediatek,smi = <&smi_common>;
+			mediatek,larbid = <1>;
+			clocks = <&vdecsys CLK_VDEC_CKEN>,
+				 <&vdecsys CLK_VDEC_LARB_CKEN>;
+			clock-names = "apb", "smi";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_VDEC>;
+		};
+
+		vdec: vdec@16020000 {
+			compatible = "mediatek,mt8163-vdec";
+			reg = <0 0x16020000 0 0x10000>;
+			interrupts = <GIC_SPI 212 IRQ_TYPE_LEVEL_LOW>;
+		};
+
+		vencsys: vencsys@17000000 {
+			compatible = "mediatek,mt8163-vencsys", "syscon";
+			reg = <0 0x17000000 0 0x1000>;
+			#clock-cells = <1>;
+		};
+
+		larb3: larb@17001000 {
+			compatible = "mediatek,mt8163-smi-larb";
+			reg = <0 0x17001000 0 0x1000>;
+			interrupts = <GIC_SPI 207 IRQ_TYPE_LEVEL_LOW>;
+			mediatek,smi = <&smi_common>;
+			mediatek,larbid = <3>;
+			clocks = <&vencsys CLK_VENC_CKE1>,
+				 <&vencsys CLK_VENC_CKE0>;
+			clock-names = "apb", "smi";
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_VENC>;
+		};
+
+		venc: venc@17002000 {
+			compatible = "mediatek,mt8163-venc";
+			reg = <0 0x17002000 0 0x1000>;
+			interrupts = <GIC_SPI 206 IRQ_TYPE_LEVEL_LOW>;
+		};
+
+		jpgenc: jpgenc@17003000 {
+			compatible = "mediatek,mt8163-jpgenc","mediatek,jpgenc";
+			reg = <0 0x17003000 0 0x1000>;
+			interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_LOW>;
+			clocks = <&vencsys CLK_VENC_CKE2>; /* jpeg enc */
+			clock-names = "venc-jpgenc";
+		};
+
+		btcvsd@18000000 {
+			compatible = "mediatek,mt8163-audio_bt_cvsd",
+				     "mediatek,audio_bt_cvsd";
+			offset = <0xf00 0x800 0xfd0 0xfd4 0xfd8>;
+			/*INFRA MISC, conn_bt_cvsd_mask, cvsd_mcu_read, write, packet_indicator*/
+			reg = <0 0x10001000 0 0x1000>, /*AUDIO_INFRA_BASE_PHYSICAL*/
+			      <0 0x18000000 0 0x10000>, /*PKV_PHYSICAL_BASE*/
+			      <0 0x18080000 0 0x8000>; /*SRAM_BANK2*/
+			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_LOW>;
+		};
+
+		consys: consys@18070000 {
+			compatible = "mediatek,mt8163-consys";
+			reg = <0 0x18070000 0 0x0200>,  /*CONN_MCU_CONFIG_BASE      */
+			      <0 0x10007000 0 0x0100>,  /*AP_RGU_BASE               */
+			      <0 0x10001000 0 0x1000>;  /*TOPCKGEN_BASE             */
+			power-domains = <&scpsys MT8163_POWER_DOMAIN_CONN>;
+			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_LOW>,  /* BGF_EINT */
+				     <GIC_SPI 236 IRQ_TYPE_LEVEL_LOW>;  /* WDT_EINT */
+		};

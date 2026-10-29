@@ -1,0 +1,78 @@
+{
+  "baseline_count": 38,
+  "current_count": 34,
+  "removed": [
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@14016000",
+      "nodename": "larb@14016000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@14016000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@15001000",
+      "nodename": "larb@15001000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@15001000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@16010000",
+      "nodename": "larb@16010000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@16010000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@17001000",
+      "nodename": "larb@17001000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@17001000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    }
+  ],
+  "added": [],
+  "dtb_unchanged": true,
+  "passed": false,
+  "runtime_qualified": false
+}

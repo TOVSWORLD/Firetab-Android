@@ -10,7 +10,7 @@ spec.loader.exec_module(module)
 
 
 class IOMMUSMIBindings(unittest.TestCase):
-    def test_actual_locked_proposals_and_no_irq_suppression(self):
+    def test_actual_locked_proposals_and_soc_specific_irq_contract(self):
         evidence = ROOT/'evidence/iommu-smi-binding'
         for kind, relative in [('iommu', 'iommu/mediatek,iommu.yaml'),
                                ('smi-common', 'memory-controllers/mediatek,smi-common.yaml'),
@@ -23,9 +23,10 @@ class IOMMUSMIBindings(unittest.TestCase):
                 schema.write_bytes(original)
                 module.apply_locked_proposal(root, 'd9318bdb4c34e8b2d997b4f67ced56b120b22b87', 'mt8163-'+kind+'.json')
                 proposed = schema.read_bytes()
-                self.assertEqual(proposed, (evidence/(kind+'-proposed.yaml')).read_bytes())
+                self.assertEqual(proposed, ((ROOT/'evidence/larb-irq-contract/proposed.yaml') if kind == 'smi-larb' else (evidence/(kind+'-proposed.yaml'))).read_bytes())
                 if kind == 'smi-larb':
-                    self.assertNotIn(b'  interrupts:', proposed)
+                    self.assertIn(b'  interrupts:', proposed)
+                    self.assertIn(b'        interrupts: false', proposed)
                     self.assertIn(b'additionalProperties: false', proposed)
                     self.assertIn(b'        - mediatek,smi', proposed)
                 with self.assertRaises(ValueError):

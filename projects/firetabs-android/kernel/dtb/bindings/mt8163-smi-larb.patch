@@ -8,7 +8,18 @@
            - mediatek,mt8167-smi-larb
            - mediatek,mt8173-smi-larb
            - mediatek,mt8183-smi-larb
-@@ -126,6 +127,18 @@
+@@ -40,6 +41,10 @@
+           - const: mediatek,mt8186-smi-larb
+ 
+   reg:
++    maxItems: 1
++
++  interrupts:
++    description: Optional larb interrupt declared by the MT8163 vendor hardware description; the current driver does not request it.
+     maxItems: 1
+ 
+   clocks:
+@@ -126,6 +131,21 @@
        required:
          - mediatek,larb-id
  
@@ -23,6 +34,9 @@
 +      properties:
 +        mediatek,larb-id:
 +          maximum: 3
++    else:
++      properties:
++        interrupts: false
 +
  additionalProperties: false
  

@@ -1,0 +1,39 @@
+{
+  "scope": "Source-backed optional vendor resource; no handler or hardware qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/larb-irq-contract/captured-nodes.json": "d67dcea003c7ed991f22d8511bcb2fe884555e1935f71c22d809a8a8ffa4fc7a",
+    "evidence/larb-irq-contract/check-controls.py": "c510753cddfee335c57ccb39eaff44319d90b02533a4ac51451d970d11da96f8",
+    "evidence/larb-irq-contract/command.json": "5eb4d31f5ab814cd97d44b778a332d32b8685af1295aacb04a8e20846cd89289",
+    "evidence/larb-irq-contract/controls.json": "4331dd529b5571d3f3de3eeba9cfa97e8104e1a95a78201650f9c5e01b16d182",
+    "evidence/larb-irq-contract/delta.json": "d6d7de58a60af0b1c8f74bc04e511bedf5b061c3fb29deea6fe9ceee7031284e",
+    "evidence/larb-irq-contract/diagnostics.json": "2790ac82d1a72e44f301c0351ed6d1e2bd53b3f2ec3d9ef04d69da66b4cf5ec9",
+    "evidence/larb-irq-contract/fresh-dependency-result.json": "4194dbef8c9b191f33ef43f79e2eb773625a032843582226b1fc678b8ada8c87",
+    "evidence/larb-irq-contract/legacy-larb-nodes.dtsi": "0a8b2775b2321d36fb63bae55c98f15449ee78efb422cddb275e4017c6127602",
+    "evidence/larb-irq-contract/legacy-larb-probe.c": "d55b73ac62d9c163650a99e543f9df8907879b5803a976cda8e61663656c016c",
+    "evidence/larb-irq-contract/legacy-m4u-probe.c": "5118fd50ec3eafce63ccbc0273ee453106452b7b53566aba7f468e84cc0e842f",
+    "evidence/larb-irq-contract/legacy-m4u-request.c": "6be21545680aaebbd0f286744e6cc0737a7f18cee2cadbb0ab192568721095d7",
+    "evidence/larb-irq-contract/mt8163-smi-larb-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/larb-irq-contract/prior-proposed.yaml": "678b6988d3ee6068e95bfa2823e14c9b11ab828fa1a7096277b9345ce80c15b1",
+    "evidence/larb-irq-contract/processed-schemas.json": "648b08fde790e5b4a3c0bc6ac3ef77f58aeb6df3b12ec2dbd5c3055124e4c865",
+    "evidence/larb-irq-contract/proposed.yaml": "6474884c12a495a08fd4c229751c20f45a0d92b156d45b259bd7e638b64e4965",
+    "evidence/larb-irq-contract/report.json": "f3c31fe0cc2614497865947938d5a27289546587f1c615fc79a1b11600b268e6",
+    "evidence/larb-irq-contract/source-report.json": "bac7b0c24d356ace152b34da38016aa4059ffb144ea7cad0f56431f61b938eb3",
+    "evidence/larb-irq-contract/validate.stderr": "b8e4aa46f956b92f8e0dfbf799202268641511c8db453a84af68a13f94f8072b"
+  },
+  "commands": [
+    [
+      "work/dtb-tool/venv/bin/python",
+      "evidence/larb-irq-contract/check-controls.py"
+    ],
+    [
+      "python3",
+      "scripts/validate_iommu_dependencies.py",
+      "--dtb",
+      "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb"
+    ]
+  ],
+  "full_validation_passed": false,
+  "runtime_qualified": false
+}

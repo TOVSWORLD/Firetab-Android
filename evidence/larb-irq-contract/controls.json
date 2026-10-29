@@ -1,0 +1,248 @@
+{
+  "scope": "Actual decoded-node optional resource contract; not handler or wiring proof",
+  "cases": [
+    {
+      "node": "/soc/larb@14016000",
+      "name": "actual vendor-declared single IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "optional IRQ absent",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "two IRQs rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "unrelated unknown property rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "old mt8173 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "old mt8167 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "old mt8173 without IRQ remains valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "supplier still required",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "ID range still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@14016000",
+      "name": "clock order still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "actual vendor-declared single IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "optional IRQ absent",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "two IRQs rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "unrelated unknown property rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "old mt8173 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "old mt8167 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "old mt8173 without IRQ remains valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "supplier still required",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "ID range still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@16010000",
+      "name": "clock order still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "actual vendor-declared single IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "optional IRQ absent",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "two IRQs rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "unrelated unknown property rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "old mt8173 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "old mt8167 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "old mt8173 without IRQ remains valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "supplier still required",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "ID range still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@15001000",
+      "name": "clock order still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "actual vendor-declared single IRQ",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "optional IRQ absent",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "two IRQs rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "unrelated unknown property rejected",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "old mt8173 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "old mt8167 retains IRQ prohibition",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "old mt8173 without IRQ remains valid",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "supplier still required",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "ID range still enforced",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/larb@17001000",
+      "name": "clock order still enforced",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "prior_unrelated_constraints_preserved": true,
+  "passed": true,
+  "runtime_qualified": false
+}
