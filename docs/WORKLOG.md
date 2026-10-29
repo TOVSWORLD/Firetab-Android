@@ -3109,3 +3109,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   and LARB-IRQ-CONTRACT.md. Next #27 source acceptance: USB MUSB/T-PHY actual
   driver/OF/probe prerequisites before binding support; loader/return/log runtime
   gates remain open.
+
+## 2026-10-28 — actual USB fallback/probe and variant prerequisites (#27)
+
+- Acquired only two capped official ACK files (13649/46869bytes), pinned revision/
+  URL/SHA256; legacy source/hash/line receipts from cached e0a3a2b. Both candidate
+  fallbacks match actual tables, without proving MT8163 variant equivalence.
+- Legacy resource1 SIF->io_priv->macro+0x800 and calibration0xf00-0x800+0x0c
+  derive0x11210f0c; selected generic V1 SIF+0x100+0x0c derives0x1121010c. Legacy
+  formulaFRA48 vs V1 default26 also differs. No MMIO/device observation inferred.
+- Actual candidate controller and PHY disabled; diagnostic fragment requests
+  USB/GADGET disabled. Probe/PHY operations are not passive. No reset dependency
+  copied from siblings, no guessed DT property, no enabling/binding/build claim.
+- Added fresh-DTB metadata/source audit and negative controls for enablement,
+  resource/IRQ/clock/phandle/PHY-type drift. Report keeps variant/build/device
+  readiness false. Exact receipts/report/commands: evidence/usb-prerequisites and
+  USB-PREREQUISITES.md. Candidate SHA/full34 diagnostics unchanged.
+- Next bounded #27 source acceptance: USB2 bank/calibration arithmetic/timeouts
+  comparison and justified MT8163-specific variant/resource definition before
+  source/build integration. Runtime loading/independent return/log gates open.

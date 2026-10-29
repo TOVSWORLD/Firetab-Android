@@ -1,0 +1,139 @@
+{
+  "nodes": {
+    "controller": {
+      "compatible": [
+        "mediatek,mt8163-musb",
+        "mediatek,mtk-musb"
+      ],
+      "reg": [
+        0,
+        287309824,
+        0,
+        4096
+      ],
+      "interrupts": [
+        0,
+        72,
+        8
+      ],
+      "interrupt-names": [
+        "mc"
+      ],
+      "phys": [
+        28,
+        3
+      ],
+      "dr_mode": [
+        "otg"
+      ],
+      "clocks": [
+        2,
+        7,
+        2,
+        23,
+        22,
+        2
+      ],
+      "clock-names": [
+        "main",
+        "mcu",
+        "univpll"
+      ],
+      "status": [
+        "disabled"
+      ]
+    },
+    "phy": {
+      "compatible": [
+        "mediatek,mt8163-tphy",
+        "mediatek,generic-tphy-v1"
+      ],
+      "reg": [
+        0,
+        287375360,
+        0,
+        2048
+      ],
+      "status": [
+        "disabled"
+      ]
+    },
+    "port0": {
+      "reg": [
+        0,
+        287377408,
+        0,
+        256
+      ],
+      "clocks": [
+        22,
+        14
+      ],
+      "clock-names": [
+        "ref"
+      ],
+      "#phy-cells": [
+        1
+      ],
+      "phandle": [
+        28
+      ]
+    },
+    "port1": {
+      "reg": [
+        0,
+        287377664,
+        0,
+        256
+      ],
+      "clocks": [
+        22,
+        14
+      ],
+      "clock-names": [
+        "ref"
+      ],
+      "#phy-cells": [
+        1
+      ],
+      "phandle": [
+        35
+      ]
+    },
+    "infra": {
+      "compatible": [
+        "mediatek,mt8163-infracfg",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        268439552,
+        0,
+        4096
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        2
+      ]
+    },
+    "apmixed": {
+      "compatible": [
+        "mediatek,mt8163-apmixedsys"
+      ],
+      "reg": [
+        0,
+        268484608,
+        0,
+        4096
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        22
+      ]
+    }
+  }
+}

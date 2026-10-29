@@ -10,9 +10,13 @@ five PR checks. This is source/generic build evidence, not MT8163 runtime proof.
 IRQ declarations independent of handler support. MT8163-only optional single-IRQ
 schema and fresh-DTB SPI/type/polarity guard preserve all other SoC constraints.
 40 actual updated controls pass; full context38→34 diagnostics (22unmatched/
-12validation), wrapper exit1/passedfalse. No DTB/driver/device change. Next source
-acceptance: actual USB MUSB/T-PHY OF match, clock/reset/PHY/probe prerequisites
-before binding claims; no device/firmware execution or new loading admission.
+12validation), wrapper exit1/passedfalse. No DTB/driver/device change. USB source acceptance now identifies actual fallback
+matches but a V1 frequency-bank mismatch: source-derived0x1121010c vs legacy
+0x11210f0c and default reference26 vs legacy formula48. Candidate controller/PHY
+are disabled; diagnostic fragment disables USB/GADGET. Fresh-DTB audit reports
+metadata only, with no variant/build/device-transport readiness. Full34 diagnostics
+unchanged. Next source acceptance: finite USB2 bank/calibration comparison before
+MT8163-specific variant/resource/source/build integration; no generic-match claim.
 Runtime DMA/display/loading, independent failed-boot return/log gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated

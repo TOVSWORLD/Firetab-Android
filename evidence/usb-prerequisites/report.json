@@ -1,0 +1,27 @@
+{
+  "scope": "Pinned source/declared candidate prerequisites only; no USB compilation or runtime claim",
+  "declaration_contract_passed": true,
+  "source_facts": {
+    "ack_v1_frequency_bank_offset": 256,
+    "frequency_value_offset": 12,
+    "legacy_frequency_bank_offset": 3840,
+    "ack_v1_default_ref_mhz": 26,
+    "legacy_formula_ref": 48,
+    "controller_fallback": "mediatek,mtk-musb",
+    "phy_fallback": "mediatek,generic-tphy-v1"
+  },
+  "source_derived_frequency_value_addresses": {
+    "ack_generic_v1": "0x1121010c",
+    "legacy_declared_sif": "0x11210f0c"
+  },
+  "same_frequency_bank": false,
+  "candidate_controller_enabled": false,
+  "candidate_phy_enabled": false,
+  "diagnostic_fragment_requests_usb_disabled": true,
+  "source_variant_qualified": false,
+  "usb_build_integration_verified": false,
+  "device_transport_qualified": false,
+  "full_binding_validation_passed": false,
+  "runtime_qualified": false,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}
