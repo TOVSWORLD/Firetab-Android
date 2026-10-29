@@ -61,6 +61,8 @@ jobs:
       - run: python3 scripts/ci.py firetabs-android
       - name: Compile isolated diagnostic userspace (no firmware packing)
         run: python3 scripts/build_diagnostic_initramfs.py
+      - name: Compile separate admission-denied ACM PID1 archive (never execute)
+        run: python3 scripts/build_usb_acm_initramfs.py
       - name: Audit gadget prerequisites without granting transport admission
         run: python3 scripts/audit_usb_gadget_prerequisites.py
       - name: Build pinned isolated device-tree compiler

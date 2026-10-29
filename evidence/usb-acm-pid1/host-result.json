@@ -1,0 +1,22 @@
+{
+  "scope": "Actual source flow/adapters under RAM callbacks; no device execution",
+  "inputs": {
+    "projects/firetabs-android/diagnostic-usb/init.c": "2f96ef0ac1bf525914eb87dbab889210ad70bda9f323e2702bce41617685be55",
+    "projects/firetabs-android/diagnostic-usb/memory.c": "22490bd990402b1b523a32bde90ee95efbf00a5042023aa81bc4a11943fd3636",
+    "projects/firetabs-android/diagnostic-usb/pid1_flow.h": "4b69a45a273ff2d2b11d04abe783cb55e38a9cde63984e6e8da89b0b544986d1",
+    "projects/firetabs-android/diagnostic-usb/admission.h": "073327d472fa5e481a9ca20bcab85b98e09afded5e201b5a9683ce6ba4db32f7"
+  },
+  "native_asan_ubsan_passed": true,
+  "admission_gate_negative_cases": 21,
+  "mount_failure_points": 4,
+  "unmount_failure_points": 4,
+  "security_discovery_output_failure_controls": true,
+  "failed_unbind_preserves_mounts_and_primary_error": true,
+  "bounded_console_and_freestanding_memory_controls": true,
+  "gnu_static_link_and_archive_inspection_passed": true,
+  "clang_ci_required": true,
+  "acm_serial_output_implemented": false,
+  "boot_tested": false,
+  "runtime_policy_qualified": false,
+  "device_tested": false
+}

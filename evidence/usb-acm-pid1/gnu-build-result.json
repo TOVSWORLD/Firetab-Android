@@ -1,0 +1,72 @@
+{
+  "scope": "Separate static PID1 compile/archive only; current gadget admission denied",
+  "admission": {
+    "admitted": false,
+    "gates": {
+      "LOADING": false,
+      "RETURN": false,
+      "LOG_RETENTION": false,
+      "DEVICE_ROLE": false,
+      "SECURITY_POLICY": false,
+      "IMMUTABLE_NAMESPACE": false,
+      "DESCRIPTOR_ASSIGNMENT": false
+    },
+    "physical_descriptors_assigned": false
+  },
+  "compiler": "aarch64-linux-musl-gcc (GCC) 14.2.0",
+  "command": [
+    "/opt/homebrew/bin/aarch64-linux-musl-gcc",
+    "-nostdlib",
+    "-static",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-mgeneral-regs-only",
+    "-Wl,--build-id=none,-e,_start",
+    "-o",
+    "<workspace>/out/usb-acm-initramfs/init",
+    "<workspace>/projects/firetabs-android/diagnostic-usb/init.c",
+    "<workspace>/projects/firetabs-android/diagnostic-usb/memory.c"
+  ],
+  "source_sha256": {
+    "acm_fs.h": "0e569267e9542ad20d672d11391adb5ba849defac2c39163f9ba36d12dcf2e5f",
+    "acm_setup.h": "b7866dd37eaffa447a8add58888ca527631a9e7420d56bf85d5a3677ad74e86f",
+    "admission.h": "073327d472fa5e481a9ca20bcab85b98e09afded5e201b5a9683ce6ba4db32f7",
+    "init.c": "2f96ef0ac1bf525914eb87dbab889210ad70bda9f323e2702bce41617685be55",
+    "memory.c": "22490bd990402b1b523a32bde90ee95efbf00a5042023aa81bc4a11943fd3636",
+    "pid1_flow.h": "4b69a45a273ff2d2b11d04abe783cb55e38a9cde63984e6e8da89b0b544986d1"
+  },
+  "elf": {
+    "machine": "AArch64",
+    "type": "ET_EXEC",
+    "dynamic": false,
+    "entry": "0x40128c"
+  },
+  "archive_entries": [
+    "dev",
+    "proc",
+    "sys",
+    "security",
+    "config",
+    "dev/console",
+    "init"
+  ],
+  "artifacts": {
+    "init": {
+      "bytes": 67824,
+      "sha256": "542de2f91d583f97771c83b3748556f1025a050168c32a2ceefe4e11e28db187"
+    },
+    "initramfs.cpio.gz": {
+      "bytes": 5104,
+      "sha256": "5a63bc296c1334d9cf9a0650fb8dcdbd7ca2ec22ca491c7e5410ec325c0f0be2"
+    }
+  },
+  "acm_serial_output_implemented": false,
+  "boot_tested": false,
+  "device_tested": false,
+  "security_policy_qualified": false
+}

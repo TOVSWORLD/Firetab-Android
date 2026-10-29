@@ -3369,3 +3369,22 @@ PR420 final result: merged b68afe8 after exact-head bd288c7 run40828537870
 passed USB provider/nine builtin ACM components, security/LSM configuration and
 Image. No QEMU/device transport test. Normalized build receipt in
 evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
+
+
+## 2026-10-29 — #27 separate static PID1 and source lifecycle
+
+- Actual syscall bridge/static PID1 plus owned mount/security/discovery/configuration
+  lifecycle implemented separately from minimal diagnostic init. Seven denied gates
+  and empty physical descriptors are enforced by archive builder; no token enables
+  runtime. Read-only proc/sysfs/selinuxfs precede security check; configfs only after
+  enforcing/discovery. Cleanup stops on failed unbind/unmount and retains ownership.
+- RAM sanitizer controls cover21 gate negatives, four mount/four unmount failures,
+  security/discovery/output errors, bind/unbind failure with primary error preserved,
+  no automatic cleanup retry, bounded console and guarded freestanding memory.
+- GNU static link initially exposed missing memset; explicit tested compiler-support
+  implementations added without suppressing warnings. Actual AArch64 static ELF
+  and deterministic newc inspected, never executed. Separate Clang build wired inCI;
+  exact-head result pending. No new Linux Image build needed for userspace-only code.
+- No ACM serial output, device execution, DT change or runtime policy qualification.
+  Canonical34/isolated28 failing contexts unchanged. Next: actual bounded serial
+  endpoint/output with failure controls; loading/role/security/return/log gates open.
