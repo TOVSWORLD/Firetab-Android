@@ -1,0 +1,28 @@
+{
+  "source_pr": 416,
+  "source_head": "dad8de0ee4992b13c0bdd230315b05f10c79caba",
+  "source_merge": "6ef265b37da10f329f3a4d3b961791ce2b55ac2a",
+  "source_build": 40813924079,
+  "dtschema_version": "2026.9",
+  "actual_controls": 30,
+  "full_context_passed": false,
+  "runtime_qualified": false,
+  "inputs": {
+    "evidence/usb-analog-binding/check-controls.py": "fce815188921fb63deef6db8f334ef84914ab88f486b55209f7e7b4aba85d70f",
+    "evidence/usb-analog-binding/command.json": "8dbf3a10cea67db3b62ba642541cac1b309170047fc2989e160ddf5d4ff69ab9",
+    "evidence/usb-analog-binding/controls.json": "1bc13a45330aacb0edf1796ab3a53a90c649a95814521bda50164a170c985fb6",
+    "evidence/usb-analog-binding/delta.json": "51dc73d99f5997dec73f1fe50f48f209e4bf83a1ce02ca86339da7f4fef550f3",
+    "evidence/usb-analog-binding/diagnostics.json": "a599733056dbcab30cb55cce869340ae426193867d164484a1567f7a4b668997",
+    "evidence/usb-analog-binding/doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/usb-analog-binding/mk-schema.stderr": "bc75f0f57eb5cf45cb1e1549e8d5486437aba30e61f4aadba90ed2b8d12c9b70",
+    "evidence/usb-analog-binding/mt8163-tphy-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/usb-analog-binding/portable-schemas.json": "7c078ce55adf6988f58da59edc893843554a06797c7945b992f5639f81ac6b8c",
+    "evidence/usb-analog-binding/report.json": "072f5261f4ce0a4068f228deaf2c0b9796de300f32bce824d1f6b909785e224c",
+    "evidence/usb-analog-binding/tphy-captured-nodes.json": "83b1684bbfa6d326e1f316c632a0ba12080c63530662d0e5dd1aad508f73a5f0",
+    "evidence/usb-analog-binding/tphy-proposed.yaml": "1d5e5590844efca86c5ef3f7d538723d00b19799a782af6cda653709c1e3e0c8",
+    "evidence/usb-analog-binding/validate.stderr": "526a2757f892aad3886c63bd7874c4e81c8a1d4a24a4e4962279d7b90471c756",
+    "evidence/usb-analog-policy/build-result.json": "828d4e34a858ae0b022d6796eb0f080bac257fd8b9cdffd78487ed8fc70c540d",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-tphy.json": "7ae89e676c5260ed8b64304b333ef122a1fc3cdabe7a67a120e68fbfdb902b40",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-tphy.patch": "868585d8cd3cb71d018fe4d50b970adcb6c57912af35c286dc3e778ae47d1899"
+  }
+}

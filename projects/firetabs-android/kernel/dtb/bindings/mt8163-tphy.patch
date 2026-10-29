@@ -23,7 +23,7 @@
  
    "#address-cells":
      enum: [1, 2]
-@@ -282,6 +289,32 @@
+@@ -282,6 +289,36 @@
    - "#address-cells"
    - "#size-cells"
    - ranges
@@ -48,6 +48,10 @@
 +        "^(usb|pcie|sata)-phy@[0-9a-f]+$":
 +          properties:
 +            mediatek,eye-src: false
++            mediatek,eye-vrt:
++              const: 7
++            mediatek,eye-term:
++              const: 7
 +    else:
 +      properties:
 +        reg:

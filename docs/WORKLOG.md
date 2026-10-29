@@ -3245,3 +3245,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   Added exact one-cell count guard and actual C negative for multi-cell input
   beginning with7. Old-head Linux run40813337073 is superseded; replacement
   exact-head usb-providers run required after this fix. No build claim made.
+
+## 2026-10-29 — analog source build accepted and eye contract matched (#27)
+
+- PR416 merged6ef265b37da10f329f3a4d3b961791ce2b55ac2a after five distinct
+  final-head checks (successful reruns included), exact dad8de0 USB-enabled
+  run40813924079/job123250444675. MUSB/T-PHY objects/config/Image pass;
+  no QEMU/device test. Raw log ignored out/usb-analog-build-40813924079.log;
+  hashes/run/config receipt evidence/usb-analog-policy/build-result.json.
+- Replaced locked T-PHY proposal with MT8163-only eye-vrt/eye-term const7;
+  absent properties allowed, eye-src forbidden, other SoCs/constraints preserved.
+ 30 actual decoded-node controls pass, including malformed/multi-cell-first7.
+- Full matched5186-YAML context remains28 diagnostics (19unmatched/9validation),
+  unchanged identities; known Gunyah mk-schema warning retained. Wrapperexit1/
+  passedfalse. Canonical34 context and both disabled DTBs unchanged. Historical
+  414 controls remain untouched. No new source/kernel build needed for binding-only.
+- Exact inputs/commands/reports in evidence/usb-analog-binding; docs
+  kernel/dtb/USB-ANALOG-BINDING.md. Next #27 source acceptance: finite controller
+  gadget/device-role/init/config and initramfs prerequisites before any disabled
+  mode experiment; all physical USB/loading/independent return/log gates open.
