@@ -1,0 +1,12 @@
+#define GENMASK(h,l) ((~0U>>(31-(h)))&(~0U<<(l)))
+#define check_mul_overflow(a,b,p) __builtin_mul_overflow(a,b,p)
+#define div64_u64(n,d) ((n)/(d))
+#define IORESOURCE_MEM 0
+static void mutex_init(struct mutex *m){m->held=0;}static void mutex_lock(struct mutex *m){assert(!m->held);m->held=1;}static void mutex_unlock(struct mutex *m){assert(m->held);m->held=0;}
+struct resource {u64 start,end;};static struct resource resource={0x14014000,0x14014fff};static bool resource_present=true,domain_present=true;static int override_property;
+static struct resource *platform_get_resource(struct platform_device *p,int t,int n){assert(p==&pdev&&!t&&!n);return resource_present?&resource:NULL;}
+#define resource_size(r) ((r)->end-(r)->start+1)
+static void *of_find_property(struct device_node *n,const char *p,void *l){assert(n&&p&&!l);if(!strcmp(p,"power-domains"))return domain_present?n:NULL;int id=!strcmp(p,"assigned-clocks")?1:!strcmp(p,"assigned-clock-parents")?2:3;return override_property==id?n:NULL;}
+static void (*cleanup_action)(void *);static void *cleanup_data;static unsigned action_registered;static bool add_apply;
+static int __pwm_apply(struct pwm_device *,const struct pwm_state *);
+static int devm_add_action_or_reset(struct device *d,void (*fn)(void *),void *data){assert(d==&pdev.dev);action_registered++;if(step()){fn(data);return -ENOMEM;}cleanup_action=fn;cleanup_data=data;return 0;}

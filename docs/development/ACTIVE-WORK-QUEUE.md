@@ -15,17 +15,17 @@ Canonical b837e6cb/isolated4480f085 and source states unchanged. Final434 CI rec
 public in evidence/dsi-binding/ci-result.json; no further kernel Image for schema-only work. Physical/master/panel,
 thermal/loading/failed-return/retained-log/beta gates remain open.
 
-Current #27 finite PWM source audit executes actual ACK/core/legacy C in RAM:
-framework-valid disabled change can enable output/cache divergence; get_state
-misses encoded+1; u64 period wraps32-bit divider before check; zero-rate helper
-calls, clock failures/probe order and65536 period/commit controls recorded.
-Driver/donor byte-identical, no explicit MT8163 variant; no binding/width/runtime
-admission. Actual candidate PWM status is okay, correcting the queued disabled
-lead; source state unchanged and no device action. NEXT actual implementation:
-scoped MT8163 safety/lifecycle/readback and conservative source-derived field/
-commit policy, unchanged older SoCs, patched-C controls/locked preflight/explicit
-builtin PWM object/config/final Image. Do not repeat settled findings as another
-planning-only micro-scope or guess MT8173 hardware equivalence.
+PR435 finite PWM source/core audit merged32979e5a after five checks at592d8d62/
+483 CI tests; exact receipt now public evidence/disp-pwm-source/ci-result.json.
+Current ACTUAL PWM implementation adds scoped checked callbacks/ownership/devm
+cleanup/readback, conservative10/10/13-bit legacy-written fields/fullword commit,
+all-output shadow preflight and explicit pwm-provider real object/config/final
+Image wrapper. Actual patched-C/core RAM controls pass (65536 states/old variants/
+probe/errors/order); full host/PR/new exact-head Linux Image acceptance required.
+No binding/DT/runtime claim. Candidate PWM statusokay preserved. NEXT verify actual
+current-head builtin PWM object/config/final Image and all PR checks, fix actual
+errors and merge only all pass, then source-matched metadata. Do not repeat435
+as another planning-only audit or infer hardware widths from this support policy.
 
 Historical PR432 finite actual DSI source/lifecycle/packet contract complete.
 Explicit donor MT8163 descriptor exists, but common paths retain references on

@@ -3718,3 +3718,28 @@ No another source microtrace for settled callback errors. Full30/24 remains
 failed, all physical loading/failed-return/log/thermal/panel gates open.434 final
 CI receipt now public evidence/dsi-binding/ci-result.json. Reproduce audit script
 and test_disp_pwm_source; native helper callbacks never touch devices.
+
+
+## 2026-10-29 — #27 actual scoped PWM implementation
+
+Added explicit MT8163 callback boundary/descriptor; old descriptors/ops/bodies
+preserved. Scoped disabled handling ignores irrelevant parameters and never
+enables; checked64-bit arithmetic/rate/range precedes narrowing/MMIO/cache.
+Conservative source policy uses legacy-written10bit divider/period/13bit duty,
+fullword commit1→0; rejects existing wider-period bits rather than inventing
+hardware width. Encoded+1/overflow-safe readback, owned main/MM refs/mutex, resource/
+override probe checks and idempotent ordered devm cleanup/fault cover publication
+failure/removal without claiming physical shutdown. No DT/state changes or
+hardware action; PWM source statusokay is preserved.
+
+Actual shadow-patched C/core/native ASan/UBSan controls pass source reproducers,
+64bit limits/26MHz quantization, errors/output preservation, MMIO/cache order,
+65536 preservation states, six probe stages/publication failure/cleanup and all
+older descriptors. Atomic input/all-output preflight negatives preserve targets.
+Separate pwm-provider stages unchanged prior wrappers then builtin PWM object/
+config/final Image with distinct marker; NEW exact-head Image required before
+merge/binding. Prior435 final483-test CI receipt published with this actual code.
+Full30/24 diagnostic contexts and all loading/failed-return/log/physical gates
+remain open. No source-build or runtime success is claimed before actual CI.
+
+Local full host suite488 tests passed; repository checks at base32979e5a passed.
