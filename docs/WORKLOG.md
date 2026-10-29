@@ -3518,3 +3518,27 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   CPU handoff/loading/recovery/log gates remain unqualified; no hardware action.
   New binding exact-head checks required before merge, no repeated kernel build
   for schema-only scope. Existing task27/Phase328/Feature4/Epic2 remain Active.
+
+
+## 2026-10-29 — #27 finite thermal source prerequisite audit
+
+- PR427 final e2b07e238c4dfa829f39eaf473e0208d76de299c merged e56a1b7 after
+  five exact-head checks/458 tests/22 decoded controls/fresh-DTB raw-node check.
+  Final normalized receipt published evidence/sym827-binding/ci-result.json;
+  prior pending-CI text historical. Current full failed contexts32/26 unchanged.
+- Two capped pinned reads: ACK auxadc_thermal.c36490bytes (d9318bdb), donor38644
+  bytes (20951722); exact URLs/hashes plus cached legacy e0a3a2b thermal/devinfo
+  source in evidence/thermal-source. No large download or hardware operation.
+- Actual C RAM ASan/UBSan functions prove callback aggregate/per-bank/private-data
+  boundary difference; donor globally changes old SoCs. Actual legacy mux writes
+  bank0[0,1],bank1[2,16],bank2[3,1,2,16] differ from donor table selections.
+  Neither source establishes physical truth; stale comments are not acceptance.
+- Actual legacy/V1 parsers on256 synthetic ID/sign/slope cases differ126 signed
+  slope outputs when ID0; selected VTS/GE/DEGC fields agree given same word order.
+  Legacy chosen atag,devinfo7/8/9 identity to candidate nvmem0x100+12 is unproven.
+  No claim candidate offset wrong, whole conversion equivalent or calibrated.
+- Executable audit validates source hashes and runs actual selected C under RAM
+  mocks; drift rejects before compilation. No thermal source/binding admitted,
+  no Image build needed for host audit. Task27 stays Active; thermal prerequisite
+  recorded once and next independent MIPI-TX source qualification selected.
+  Runtime recovery/thermal/clock/identity/voltage gates remain unqualified.

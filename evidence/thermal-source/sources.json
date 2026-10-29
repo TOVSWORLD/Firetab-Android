@@ -1,0 +1,51 @@
+{
+  "scope": "Finite thermal source audit; kernel variant/binding/runtime not accepted",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/thermal/mediatek/auxadc_thermal.c?format=TEXT",
+  "bytes": 36490,
+  "sha256": {
+    "evidence/thermal-source/legacy-mtk_thermal.c": "3600459b5b2a8bdf9d00521e431d4e2b271ef261e965db81cfb2284081199e30",
+    "evidence/thermal-source/donor-auxadc_thermal.c": "57436eb568789622a8247040d0c6eaf983dcd34b7df7203bdfc8c68009e02dc7",
+    "evidence/thermal-source/legacy-devinfo.c": "a73971151713440163eed32b07c6002b50cbf11a551e68e026688acc42719243",
+    "evidence/thermal-source/ack-auxadc_thermal.c": "7b4a7ae9956f95a2eacae5d5448fe528c32c53498600d8bd96c15dd8adeb0312",
+    "evidence/thermal-source/legacy-mtk_ts_cpu.c": "08168c85d797a141a90e77c2c3c065116742d612941db2a7294b18265560d6de"
+  },
+  "runtime_qualified": false,
+  "legacy_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "legacy_sources": {
+    "drivers/misc/mediatek/thermal/mt8163/mtk_thermal.c": {
+      "file": "out/thermal-next-source/legacy-mtk_thermal.c",
+      "sha256": "3600459b5b2a8bdf9d00521e431d4e2b271ef261e965db81cfb2284081199e30",
+      "bytes": 75033
+    },
+    "drivers/misc/mediatek/thermal/mt8163/mtk_ts_cpu.c": {
+      "file": "out/thermal-next-source/legacy-mtk_ts_cpu.c",
+      "sha256": "08168c85d797a141a90e77c2c3c065116742d612941db2a7294b18265560d6de",
+      "bytes": 148977
+    }
+  },
+  "next": "Trace actual MT8163 sensor/bank/ADC mux/calibration/clock/reset/resource ownership and modern variant descriptor before justified implementation/binding. ACK has no mt8163 match; do not copy mt8173 fallback.",
+  "candidate": {
+    "node": "/soc/thermal@1100b000",
+    "compatible": "mediatek,mt8163-thermal",
+    "reg": "0x1100b000+0x1000",
+    "irq": "SPI78 level-low",
+    "dependencies": [
+      "therm/auxadc clocks",
+      "infra THERM_CTRL reset",
+      "auxadc/apmixedsys phandles",
+      "calibration-data nvmem"
+    ],
+    "runtime_qualified": false
+  },
+  "donor": {
+    "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+    "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/thermal/mediatek/auxadc_thermal.c",
+    "bytes": 38644,
+    "sha256": "57436eb568789622a8247040d0c6eaf983dcd34b7df7203bdfc8c68009e02dc7"
+  },
+  "legacy_devinfo": {
+    "path": "drivers/misc/mediatek/devinfo/devinfo.c",
+    "sha256": "a73971151713440163eed32b07c6002b50cbf11a551e68e026688acc42719243"
+  }
+}
