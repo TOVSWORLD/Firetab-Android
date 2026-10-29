@@ -1,0 +1,49 @@
+static const struct mtk_dsi_driver_data descriptor={.reg_cmdq_off=0x200,.reg_vm_cmd_off=0x130,.mt8163_strict=true};
+static void fixture(void){memset(&dsi,0,sizeof(dsi));memset(regs,0,sizeof(regs));dsi.host.dev=&pdev.dev;pdev.dev.of_node=&node;dsi.driver_data=&descriptor;match_data=&descriptor;dsi.regs=regs;dsi.phy=&phy;dsi.engine_clk=&clocks[0];dsi.digital_clk=&clocks[1];dsi.hs_clk=&clocks[2];dsi.lanes=4;dsi.vm.pixelclock=25000000;dsi.strict_ready=true;dsi.strict_irq=195;fail_bpp=fail_rate=fail_phy=fail_engine=fail_digital=fail_off=fail_probe=fail_bridge1=fail_bridge2=fail_component=fail_encoder=fail_reset=probe_step=poll_error=0;wait_result=1;bridge_get=0;configured=reg_writes=rate_set=phy_on=phy_off=engine_on=digital_on=engine_off=digital_off=irq_enabled=irq_disabled=0;}
+
+int main(void){
+ struct mipi_dsi_device peripheral={.lanes=4};
+ u8 payload[509],rx[10];memset(payload,0xff,sizeof(payload));
+ struct mipi_dsi_msg msg={.type=MIPI_DSI_DCS_LONG_WRITE,.tx_len=508,.tx_buf=payload};
+ struct drm_display_mode mode={.clock=25000};
+ fixture();assert(bridge_to_dsi(&dsi.bridge)==&dsi);
+ assert(mtk_dsi_bridge_mode_valid(&dsi.bridge,NULL,&mode)==MODE_OK);
+ mtk_dsi_bridge_mode_set(&dsi.bridge,&mode,&mode);assert(dsi.vm.pixelclock==25000000);
+ dsi.lanes=0;assert(mtk_dsi_bridge_mode_valid(&dsi.bridge,NULL,&mode)==MODE_ERROR);
+ for(int phase=0;phase<5;phase++){
+  fixture();if(phase==0)fail_bpp=1;if(phase==1)fail_rate=1;if(phase==2)fail_phy=1;if(phase==3)fail_engine=1;if(phase==4)fail_digital=1;
+  assert(mtk_dsi_poweron(&dsi)<0);assert(dsi.refcount==0&&!dsi.strict_active&&!configured&&!reg_writes);
+  mtk_output_dsi_enable(&dsi);assert(!configured);assert(!dsi.strict_phy_owned);
+ }
+ fixture();fail_digital=fail_off=1;assert(mtk_dsi_poweron(&dsi)==-EIO);assert(dsi.strict_fault&&dsi.strict_phy_owned&&!dsi.refcount);fail_digital=fail_off=0;assert(mtk_dsi_poweron(&dsi)==-EIO);
+ fixture();dsi.vm.pixelclock=UINT64_MAX;assert(mtk_dsi_poweron(&dsi)==-EOVERFLOW&&!rate_set);
+ fixture();dsi.vm.pixelclock=1;assert(mtk_dsi_poweron(&dsi)==-ERANGE&&!rate_set);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0);assert(dsi.refcount==1&&dsi.strict_active&&irq_enabled==1);assert(mtk_dsi_poweron(&dsi)==0&&dsi.refcount==2&&phy_on==1);
+ mtk_output_dsi_enable(&dsi);assert(dsi.enabled);mtk_dsi_poweroff(&dsi);assert(dsi.refcount==1);mtk_dsi_poweroff(&dsi);assert(!dsi.refcount&&!dsi.strict_phy_owned&&irq_disabled==1);
+ fixture();fail_reset=1;unsigned before=encoder_created;assert(mtk_dsi_bind(&pdev.dev,NULL,NULL)==-EIO&&encoder_created==before);
+ fixture();assert(mtk_dsi_bind(&pdev.dev,NULL,NULL)==0&&dsi.strict_encoder_owned);mtk_dsi_unbind(&pdev.dev,NULL,NULL);assert(!dsi.strict_encoder_owned);
+ fixture();peripheral.lanes=0;assert(mtk_dsi_host_attach(&dsi.host,&peripheral)==-EINVAL&&!bridge_get);peripheral.lanes=4;
+ fixture();fail_component=1;assert(mtk_dsi_host_attach(&dsi.host,&peripheral)==-EIO&&!dsi.strict_bridge_owned&&!dsi.strict_attached);
+ fixture();assert(mtk_dsi_host_attach(&dsi.host,&peripheral)==0&&dsi.strict_attached);assert(mtk_dsi_host_detach(&dsi.host,&peripheral)==0&&!dsi.strict_attached);
+ fixture();assert(mtk_dsi_strict_message(NULL)==-EINVAL);msg.tx_len=509;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==-EINVAL&&!reg_writes);msg.tx_len=248;assert(mtk_dsi_strict_message(&msg)==0);mtk_dsi_cmdq(&dsi,&msg);assert(max_offset<=0x3fc);assert((regs[DSI_CMDQ_SIZE/4]&CMDQ_SIZE)==63);
+ fixture();msg.tx_len=248;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==-EPIPE&&!reg_writes);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0);dsi.strict_attached=true;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==248);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0);dsi.strict_attached=true;poll_error=-ETIMEDOUT;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==-ETIMEDOUT&&dsi.strict_fault);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0);dsi.strict_attached=true;wait_result=-EINTR;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==-EINTR&&dsi.strict_fault);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0);dsi.strict_attached=true;msg.type=MIPI_DSI_DCS_READ;msg.tx_len=1;msg.rx_len=10;msg.rx_buf=rx;((u8 *)regs)[DSI_RX_DATA0]=MIPI_DSI_RX_DCS_SHORT_READ_RESPONSE_1BYTE;((u8 *)regs)[DSI_RX_DATA0+1]=0xa5;assert(mtk_dsi_host_transfer(&dsi.host,&msg)==1&&rx[0]==0xa5);
+ assert(mtk_dsi_switch_to_cmd_mode(&dsi,1,0)==0);mtk_dsi_irq_data_set(&dsi,1);mtk_dsi_irq_data_clear(&dsi,1);
+ fixture();resource_present=false;assert(mtk_dsi_probe(&pdev)==-EINVAL);resource_present=true;
+ for(int phase=1;phase<=9;phase++){fixture();dsi.strict_ready=false;fail_probe=phase;assert(mtk_dsi_probe(&pdev)<0&&!dsi.strict_ready);}
+ fixture();assert(mtk_dsi_probe(&pdev)==0&&dsi.strict_ready);mtk_dsi_remove(&pdev);assert(!dsi.strict_ready&&!dsi.strict_host_registered);
+
+ fixture();fail_phy=1;mtk_dsi_bridge_atomic_pre_enable(&dsi.bridge,NULL);mtk_dsi_bridge_atomic_enable(&dsi.bridge,NULL);assert(!dsi.refcount&&!dsi.enabled&&!configured);mtk_dsi_bridge_atomic_disable(&dsi.bridge,NULL);mtk_dsi_bridge_atomic_post_disable(&dsi.bridge,NULL);
+ fixture();mtk_dsi_bridge_atomic_pre_enable(&dsi.bridge,NULL);mtk_dsi_bridge_atomic_enable(&dsi.bridge,NULL);assert(dsi.refcount==1&&dsi.enabled);mtk_dsi_bridge_atomic_disable(&dsi.bridge,NULL);mtk_dsi_bridge_atomic_post_disable(&dsi.bridge,NULL);assert(!dsi.refcount&&!dsi.strict_phy_owned);
+ fixture();dsi.strict_active=true;regs[DSI_INTSTA/4]=CMD_DONE_INT_FLAG;assert(mtk_dsi_irq(195,&dsi)==IRQ_HANDLED&&(dsi.irq_data&CMD_DONE_INT_FLAG));dsi.strict_fault=true;assert(mtk_dsi_irq(195,&dsi)==IRQ_NONE);
+ fixture();msg.type=MIPI_DSI_DCS_LONG_WRITE;msg.tx_buf=payload;msg.rx_len=0;msg.rx_buf=NULL;
+ for(size_t length=0;length<=509;length++){msg.tx_len=length;unsigned writes=reg_writes;if(length>248){assert(mtk_dsi_strict_message(&msg)==-EINVAL);mtk_dsi_cmdq(&dsi,&msg);assert(reg_writes==writes);}else {mtk_dsi_cmdq(&dsi,&msg);assert((regs[DSI_CMDQ_SIZE/4]&CMDQ_SIZE)==(length>2?1+(length+3)/4:1));}}
+ fixture();static const struct mtk_dsi_driver_data old={.reg_cmdq_off=0x200};dsi.driver_data=&old;fail_bpp=1;assert(mtk_dsi_poweron(&dsi)==-EINVAL&&dsi.refcount==1);assert(mtk_dsi_poweron(&dsi)==0&&dsi.refcount==2);assert(mtk_dsi_irq(195,&dsi)==7);assert(mtk_dsi_probe(&pdev)==0); /* match_data remains strict, verified above */
+
+ fixture();fail_phy=1;mtk_dsi_ddp_start(&pdev.dev);assert(!dsi.refcount&&!dsi.strict_active);mtk_dsi_ddp_stop(&pdev.dev);
+ fixture();mtk_dsi_ddp_start(&pdev.dev);assert(dsi.refcount==1);mtk_dsi_ddp_stop(&pdev.dev);assert(!dsi.refcount);
+ puts("PASS actual patched DSI RAM lifecycle, failures, callers, packet, probe");return 0;
+}

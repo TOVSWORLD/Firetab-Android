@@ -3642,3 +3642,35 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   fault/cleanup/host/bind/queue handling+oldSoC controls/atomicapply/explicitbuiltin
   DSI/master/PHY/config/Image. Sourcecontroller integration isnot fullMMSYSpipeline
   orpanel support. AllDTs/disabledstates/31/25failedcontexts/runtimegates unchanged.
+
+
+## 2026-10-29 — #27 actual isolated DSI implementation
+
+Implemented a three-target locked ACK patch, MT8163-only descriptor/checked
+power/ref/cache/cleanup/host/probe/packet backend, and component identification
+without MMSYS pipeline data. Existing SoC bodies/descriptors remain unchanged.
+All-output shadow preflight handles absent new header and rejects input/output
+or revision drift before target writes. Separate builtin DRM/DSI build wrapper
+preserves prior build scripts and requires real mtk_dsi.o/mtk_drm_drv.o probes
+and final distinct Image marker; no aggregate object target or QEMU claim.
+
+Actual RAM test found ACK CMDQ_SIZE0x3f narrower than the legacy128-word layout:
+508B truncates count. Scoped cap248B fits63 words;249/508 rejected. Native actual
+patched helper/caller C with ASan/UBSan passes power/reference/cleanup failures,
+bridge/DDP callbacks, bind/attach/probe/IRQ and bounded packet/read/error paths.
+478 host tests pass locally. Commands: python3 scripts/audit_dsi_port.py;
+python3 -m unittest discover -s tests; python3 scripts/ci.py repository --base
+ d0eb1046bdd39b76094cebf0fed234974934c5eb. Prior432 final473-test CI receipt now
+public in evidence/dsi-source/ci-result.json. Current implementation is NOT kernel
+build accepted yet: exact-head dsi-provider object/config/final Image and PR
+checks next. No DT/schema/device/PHY/panel/reset/security action. Full31/25
+contexts/disabled states and all physical/loading/failed-return/log gates remain.
+
+PR433 opened at b818202bc31cce3877af2370386060a066290da9. Initial Linux
+repository gate found a GCC unused-but-set value in the RAM poll mock (Clang
+accepted it); fixed the mock to evaluate the actual condition, without warning
+suppression or kernel source change. Superseded build40871144375 cancelled;
+replacement exact-head dsi-provider build required after the fix. Private binding
+controls also expose missing candidate panel graph: full dt-validate suppresses
+disabled-node validation errors, so unmatched removal is not graph acceptance.
+No binding publication or DT change.

@@ -1,6 +1,16 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: finite actual DSI source/lifecycle/packet contract complete.
+2026-10-29 #27: actual isolated DSI kernel implementation in progress.
+New scoped descriptor/lifecycle/host/packet/probe paths and all-target preflight
+are implemented;478 host tests/native patched-C ASan/UBSan controls pass locally.
+Actual ACK six-bit CMDQ_SIZE narrows payload to248B, below the historical508B
+layout bound;249/508 reject before writes. Legacy function bodies/descriptors
+remain unchanged. New dsi-provider Linux objects/config/final Image and all
+exact-head PR checks are REQUIRED before source acceptance or binding work.
+No Image/runtime success is claimed. Next: submit exact-head implementation CI,
+fix real failures, then publish source-matched binding only after build passes.
+
+Historical PR432 finite actual DSI source/lifecycle/packet contract complete.
 Explicit donor MT8163 descriptor exists, but common paths retain references on
 format error/ignore PHY power failure, bind resets after encoder initialization,
 attach commits before dependency success, and packet writer lacks128-word bound.

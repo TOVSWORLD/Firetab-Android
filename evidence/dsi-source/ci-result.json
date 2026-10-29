@@ -1,0 +1,13 @@
+{
+  "scope": "Finite actual DSI source contract host CI, not controller/kernel/runtime acceptance",
+  "head": "15673cef7e2c733cc304d6dc31655f6f9b53e577",
+  "merge": "d0eb1046bdd39b76094cebf0fed234974934c5eb",
+  "run": 40867541105,
+  "android_job": 123426006243,
+  "repository_job": 123426006337,
+  "tests": 473,
+  "passed": true,
+  "log_sha256": "68e2e0d17a13ec2924bc6fc51e6f2150fcb25612b14c46adbf611232ebad65ef",
+  "kernel_variant_implemented": false,
+  "runtime_qualified": false
+}
