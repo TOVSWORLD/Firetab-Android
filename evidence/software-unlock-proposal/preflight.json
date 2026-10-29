@@ -1,0 +1,107 @@
+{
+  "scope": "Offline original archive/host compatibility preflight; no helper imports/execution or device access",
+  "archives": [
+    {
+      "name": "amonet-douglas-v1.2.zip",
+      "bytes": 17930182,
+      "sha256": "6647dd0b5b9d2c04a2f167f6ccc7a2cfbcaa6f1f93f8251c7a39455db77119b2"
+    },
+    {
+      "name": "brick-douglas.zip",
+      "bytes": 4399395,
+      "sha256": "ba017f1c4fc2f003924912a9099d18c94dd82401a2ad12881b7e7e158a4bc06b"
+    },
+    {
+      "name": "amonet-douglas-return-to-stock.zip",
+      "bytes": 9132032,
+      "sha256": "a9f8d3df1f42c1e135820024bd1020386bc6c2abd7c08a60fcdc17dc898dd370"
+    }
+  ],
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64"
+  },
+  "bundled_fastboot": [
+    {
+      "name": "amonet/bin/fastboot",
+      "format": "ELF",
+      "class": 64,
+      "machine_number": 62,
+      "sha256": "cb3d13b850143da85eb4b2099462514894459213da93d03d6ff4782d927d6e20"
+    },
+    {
+      "name": "amonet/bin/fastboot32",
+      "format": "ELF",
+      "class": 32,
+      "machine_number": 3,
+      "sha256": "8912e9926cfc45503ad960866501305a684462b1dd1a44c5d82b1f075d6dd8c1"
+    }
+  ],
+  "scripts": [
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/step-1.sh",
+      "sha256": "dcfdcdf8d3347422094f226f8b88603f2a243a92838b96800fc743a94c0a0252"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/boot-fastboot.sh",
+      "sha256": "bc27cb0f070ad13620ae6601525aea1edff83cdced7add285117639713ef5f57"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/boot-recovery.sh",
+      "sha256": "ad7d62eb9c4ba323cd1e1604b4f3ce0a26fe58ead60b81321a240976f9bb667f"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/bootrom-step.sh",
+      "sha256": "c7c93a2aff2b17bb2cd9fd1a90fcea7ac22699986f14c445d434668e56126799"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/step-2.sh",
+      "sha256": "7c227419952c7fcb8eee5cc79afef3ed119cf56a2ee56daba6951ad73c93a4b9"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/bootrom-step-minimal.sh",
+      "sha256": "551c11bf2add877b62e655e5c908ccb59da568e3b03a3a6e57fbd4e51a175cd8"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/modules/common.py",
+      "sha256": "672d56ba73009b0993ff2aa3b79d2547ae7dd24ed0358eb7e84888e534bf952c"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/modules/main.py",
+      "sha256": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5"
+    },
+    {
+      "archive": "amonet-douglas-v1.2.zip",
+      "name": "amonet/fastboot-step.sh",
+      "sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99"
+    },
+    {
+      "archive": "brick-douglas.zip",
+      "name": "amonet/brick-9820.sh",
+      "sha256": "26da6d7f38c7c02f1334d3947fb575635627d7d91bfc08c797e428f5a908b3fb"
+    },
+    {
+      "archive": "brick-douglas.zip",
+      "name": "amonet/brick.sh",
+      "sha256": "12040666b7b02e397ada72a50655f580ea8c39c0fb7eda3ef1ac159d6e3f1325"
+    },
+    {
+      "archive": "amonet-douglas-return-to-stock.zip",
+      "name": "amonet/return-to-stock.sh",
+      "sha256": "8c8ed5651d5fad0edc9bf2bea0fbf333e6940c2dcb2378f1307855170f7e21ee"
+    }
+  ],
+  "bundled_fastboot_runs_natively_on_current_host": false,
+  "required_unmodified_brick_host": "Linux x86_64 for bundled 64-bit x86 ELF; name-based uname64 selection is not architecture validation",
+  "firmware_or_helper_executed": false,
+  "device_accessed": false,
+  "trial_admitted": false
+}

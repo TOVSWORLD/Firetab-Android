@@ -3806,3 +3806,23 @@ ROM downloaded or device queried. Reopened439 software-first;345conditionalBlock
 Followup stays same primary issue. Next exact software-branch proposal must resolve
 package pairing/installed applicability/independent failure exit; no hardware-first
 assumption, unrelated scope or new synthetic wrapper. Runtime347/346/348 stay open.
+
+## 2026-10-29 — #439 concrete software-unlock proposal
+
+Prepared one reviewable original external-brick/full-BootROM/TWRP proposal, not a
+new helper or source microtrace. Offline preflight reverified three retained whole
+archives and12 script inputs. Header reads establish bundled fastboot64 ELF x86-64
+and fastboot32 ELF x86; current Darwin/arm64 cannot run them natively. No Linux
+image, VM, executable replacement or ROM downloaded/executed.
+
+Proposal specifies brick9820 as first destructive boundary, full v1.2 BootROM
+only, no minimal/step2 mixup, remapped TWRP stage and stop at recovery. Lists actual
+GPT/preloader/LK/TEE/RPMB mutations, uncertain5.7.1.0 applicability, existing helper
+size/selector weaknesses, and lack of guaranteed software-only return on initial
+failure. Exact stock material and later rooted/modified recovery return are not
+claimed as independent rescue before successful unlock. No device action occurred.
+
+Owner decision is explicit risk approval/rejection for this attended persistent
+software attempt on prepared Linux x86-64. No case opening/electrical action
+included. HOLD pending that decision/host; no unrelated peripheral work. Required
+exact-head PR checks before accepting proposal; physical gates remain open.

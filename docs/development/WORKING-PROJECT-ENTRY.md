@@ -79,7 +79,13 @@ configuration, not a proposed change to this project's security requirements.
 Source reuse must preserve enforcing security. Kernel source changes are not
 needed to establish today's documented entry distinction.
 
-## Next executable engineering action
+## Software proposal now prepared
+
+The [exact software-unlock proposal](SOFTWARE-UNLOCK-PROPOSAL.md) supplies the
+package identities, host mismatch, selected sequence and owner decision. It does
+not authorize execution or assert independent software rescue.
+
+## Source-review scope behind the proposal
 
 Continue **inside#439** with a source-only, reviewable software-unlock proposal
 for the original external-brick/full-BootROM branch. Reuse the retained original
