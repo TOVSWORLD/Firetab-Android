@@ -1,0 +1,28 @@
+{
+  "scope": "Actual patched C RAM/source host controls; Linux Image and physical behavior separate",
+  "tests": 468,
+  "passed": true,
+  "commands": [
+    "python3 -m unittest discover -s tests",
+    "python3 -m unittest discover -s tests -p test_mipi_port.py"
+  ],
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "preserve_cleanup_states": 65536,
+  "whole_mhz_pcw_cases": 1201,
+  "probe_failure_stages": 9,
+  "old_soc_probe_differential_cases": 10,
+  "sha256": {
+    "scripts/apply_mipi_port.py": "a761c047355ee149c1ba13ad01d17adb047c2e62d76bd4084f9af47f4b2744b5",
+    "scripts/build_mipi_provider.sh": "b9c4e84de0cce407482ab19ee3571d0bea89accb5f8e3388874d87f9d08bbc5b",
+    "tests/test_mipi_port.py": "0285ac03e2f7603461daa20bb30c4cabed1c3c62a463b166e41832c62c4d6719",
+    "evidence/mipi-kernel-integration/pll-ram.c.in": "03e1113d528cec26346dffeb473f7ac1d2ad6ff46a8625fe613ab205589a5cce",
+    "evidence/mipi-kernel-integration/probe-ram.c.in": "695bc45187579517eb33a761e24e38e8614fbaabee6c459f3ecefdcdab981ba9",
+    "projects/firetabs-android/kernel/mipi-port/inputs.json": "4980ac7a88e351ca4b490027f4e47e3847babf4e160dc3ad848ff5257f90335d",
+    "projects/firetabs-android/kernel/mipi-port/mt8163-mipi.patch": "476485d3be64710eebeb1be2f694233162d0f514142d594461559cc537fb5f0a"
+  },
+  "linux_build_qualified": false,
+  "runtime_qualified": false
+}

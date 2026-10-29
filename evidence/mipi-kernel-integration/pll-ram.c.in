@@ -1,0 +1,55 @@
+#include <assert.h>
+#include <stdint.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+typedef uint32_t u32;typedef uint64_t u64;typedef uint8_t u8;
+#define __iomem
+#define BIT(n) (1U<<(n))
+#define GENMASK(h,l) ((~0U>>(31-(h))) & (~0U<<(l)))
+#define FIELD_PREP(m,v) (((u32)(v)<<__builtin_ctz((u32)(m)))&(m))
+#define BUILD_BUG_ON_MSG(c,m) _Static_assert(!(c),m)
+#define dev_dbg(...) ((void)0)
+#define clamp_val(v,l,h) ((v)<(l)?(l):(v)>(h)?(h):(v))
+struct mtk_mipi_tx;
+struct clk_hw {struct mtk_mipi_tx *owner;struct clk_hw *parent;unsigned long rate;};
+struct mtk_mipitx_data {u32 mppll_preserve;};
+struct mtk_mipi_tx {void *regs;u32 data_rate;void *dev;const struct mtk_mipitx_data *driver_data;};
+static u32 regs[27];static unsigned reads,writes,delays,chg_count;static u32 chg[2];
+static unsigned slot(void *p){uintptr_t d=(uintptr_t)p-(uintptr_t)regs;assert(d<sizeof(regs) && !(d&3));return d/4;}
+static u32 readl(void *p){reads++;return regs[slot(p)];}
+static void writel(u32 v,void *p){unsigned i=slot(p);writes++;regs[i]=v;if(i==0x60/4 && chg_count<2)chg[chg_count++]=v;}
+static void usleep_range(unsigned l,unsigned h){assert(l==1000 && h==1100);delays++;}
+static u64 div_u64(u64 n,u32 d){assert(d);return n/d;}
+static struct mtk_mipi_tx *mtk_mipi_tx_from_clk_hw(struct clk_hw *hw){return hw->owner;}
+static struct clk_hw *clk_hw_get_parent(struct clk_hw *hw){return hw->parent;}
+static unsigned long clk_hw_get_rate(struct clk_hw *hw){return hw->rate;}
+struct clk_ops {int (*prepare)(struct clk_hw *);void (*unprepare)(struct clk_hw *);long (*round_rate)(struct clk_hw *,unsigned long,unsigned long *);int (*set_rate)(struct clk_hw *,unsigned long,unsigned long);unsigned long (*recalc_rate)(struct clk_hw *,unsigned long);};
+/* ACTUAL_SOURCE */
+static void reset_ram(void){memset(regs,0,sizeof(regs));reads=writes=delays=chg_count=0;}
+int main(void){
+ struct mtk_mipitx_data data={2};struct mtk_mipi_tx mt={.regs=regs,.driver_data=&data};struct clk_hw parent={.rate=26000000},hw={.owner=&mt,.parent=&parent};unsigned long ref=26000000;
+ for(unsigned initial=0;initial<65536;initial++){
+  reset_ram();mt.data_rate=500000000;regs[0x64/4]=initial;assert(mtk_mipi_tx_pll_ops_mt8163.prepare(&hw)==0);
+  assert(regs[0x64/4]==((initial&~0x7f80U)|0x100U));assert(delays==3);
+  mtk_mipi_tx_pll_ops_mt8163.unprepare(&hw);assert(regs[0x64/4]==(initial&~0x7f80U));
+ }
+ for(unsigned mhz=50;mhz<=1250;mhz++){
+  unsigned div=mhz>=500?1:mhz>=250?2:mhz>=125?4:mhz>62?8:16;unsigned product=mhz*div,rem=product%13;
+  u32 expected=((product/13)&127)<<24 | ((256*rem/13)&255)<<16 | ((256*(256*rem%13)/13)&255)<<8 | ((256*(256*(256*rem%13)%13)/13)&255);
+  reset_ram();assert(mtk_mipi_tx_pll_ops_mt8163.set_rate(&hw,mhz*1000000,ref)==0);assert(mtk_mipi_tx_pll_ops_mt8163.prepare(&hw)==0);assert(regs[0x58/4]==expected);assert(chg_count==2 && !(chg[0]&1) && (chg[1]&1));
+ }
+ unsigned long rates[]={0,49999999,50000000,62000000,62000001,125000000,250000000,500000000,1250000000,1250000001,0xffffffffU,~0UL};
+ for(unsigned i=0;i<sizeof(rates)/sizeof(*rates);i++){
+  reset_ram();u32 prior=mt.data_rate;int good=rates[i]>=50000000 && rates[i]<=1250000000;
+  assert((mtk_mipi_tx_pll_ops_mt8163.set_rate(&hw,rates[i],ref)==0)==good);if(!good)assert(mt.data_rate==prior);assert(!reads && !writes && !delays);
+  mt.data_rate=rates[i];assert((mtk_mipi_tx_pll_ops_mt8163.prepare(&hw)==0)==good);if(!good)assert(!reads && !writes && !delays);
+ }
+ reset_ram();mt.data_rate=500000000;parent.rate=25000000;assert(mtk_mipi_tx_pll_ops_mt8163.set_rate(&hw,600000000,ref)==-EINVAL && mt.data_rate==500000000);assert(mtk_mipi_tx_pll_ops_mt8163.prepare(&hw)==-EINVAL);assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,500000000,&ref)==-EINVAL);assert(!writes && !reads && !delays);
+ parent.rate=26000000;ref=24000000;assert(mtk_mipi_tx_pll_ops_mt8163.set_rate(&hw,600000000,ref)==-EINVAL && mt.data_rate==500000000);assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,500000000,&ref)==-EINVAL);
+ ref=26000000;hw.parent=NULL;assert(mtk_mipi_tx_pll_ops_mt8163.prepare(&hw)==-EINVAL);assert(mtk_mipi_tx_pll_ops_mt8163.set_rate(&hw,600000000,ref)==-EINVAL);assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,500000000,&ref)==-EINVAL);hw.parent=&parent;
+ assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,1,&ref)==50000000);assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,2000000000,&ref)==1250000000);assert(mtk_mipi_tx_pll_ops_mt8163.round_rate(&hw,500000000,NULL)==-EINVAL);
+ assert(mtk_mipi_tx_pll_ops_mt8163.recalc_rate(&hw,ref)==500000000);
+ puts("PASS actual patched MIPI PLL:65536 field/cleanup states,1201 PCWs,rate/reference/cache/no-I/O errors");return 0;
+}

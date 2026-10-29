@@ -1,0 +1,290 @@
+--- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
++++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.c
+@@ -2,6 +2,8 @@
+ /*
+  * Copyright (c) 2015 MediaTek Inc.
+  */
++
++#include <linux/reset.h>
+ 
+ #include "phy-mtk-mipi-dsi.h"
+ 
+@@ -100,6 +102,23 @@
+ 	mipi_tx->rt_code[4] = ((buf[2] >> 27 & 0x1f) << 5) |
+ 			       (buf[1] >> 2 & 0x1f);
+ 	kfree(buf);
++}
++
++/* MT8163 has no qualified calibration or drive-strength override path. */
++static int mtk_mipi_tx_mt8163_preflight(struct platform_device *pdev)
++{
++	struct device_node *np = pdev->dev.of_node;
++	struct resource *res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++
++	if (!np || !res || res->end < res->start || (res->start & 3) ||
++	    resource_size(res) < 0x6c || (resource_size(res) & 3))
++		return -EINVAL;
++	if (!of_find_property(np, "resets", NULL) ||
++	    of_find_property(np, "nvmem-cells", NULL) ||
++	    of_find_property(np, "nvmem-cell-names", NULL) ||
++	    of_find_property(np, "drive-strength-microamp", NULL))
++		return -EINVAL;
++	return 0;
+ }
+ 
+ static int mtk_mipi_tx_probe(struct platform_device *pdev)
+@@ -124,6 +143,11 @@
+ 	mipi_tx->driver_data = of_device_get_match_data(dev);
+ 	if (!mipi_tx->driver_data)
+ 		return -ENODEV;
++	if (mipi_tx->driver_data == &mt8163_mipitx_data) {
++		ret = mtk_mipi_tx_mt8163_preflight(pdev);
++		if (ret)
++			return dev_err_probe(dev, ret, "Invalid MT8163 resource/override contract\n");
++	}
+ 
+ 	mipi_tx->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(mipi_tx->regs))
+@@ -133,6 +157,10 @@
+ 	if (IS_ERR(ref_clk))
+ 		return dev_err_probe(dev, PTR_ERR(ref_clk),
+ 				     "Failed to get reference clock\n");
++
++	if (mipi_tx->driver_data == &mt8163_mipitx_data &&
++	    clk_get_rate(ref_clk) != 26000000)
++		return dev_err_probe(dev, -EINVAL, "MT8163 requires 26MHz reference\n");
+ 
+ 	ret = of_property_read_u32(dev->of_node, "drive-strength-microamp",
+ 				   &mipi_tx->mipitx_drive);
+@@ -155,6 +183,12 @@
+ 	if (ret < 0)
+ 		return dev_err_probe(dev, ret, "Failed to read clock-output-names\n");
+ 
++	if (mipi_tx->driver_data == &mt8163_mipitx_data) {
++		ret = device_reset(dev);
++		if (ret)
++			return ret;
++	}
++
+ 	clk_init.ops = mipi_tx->driver_data->mipi_tx_clk_ops;
+ 
+ 	mipi_tx->pll_hw.init = &clk_init;
+@@ -174,13 +208,15 @@
+ 
+ 	mipi_tx->dev = dev;
+ 
+-	mtk_mipi_tx_get_calibration_datal(mipi_tx);
++	if (mipi_tx->driver_data != &mt8163_mipitx_data)
++		mtk_mipi_tx_get_calibration_datal(mipi_tx);
+ 
+ 	return devm_of_clk_add_hw_provider(dev, of_clk_hw_simple_get, &mipi_tx->pll_hw);
+ }
+ 
+ static const struct of_device_id mtk_mipi_tx_match[] = {
+ 	{ .compatible = "mediatek,mt2701-mipi-tx", .data = &mt2701_mipitx_data },
++	{ .compatible = "mediatek,mt8163-mipi-tx", .data = &mt8163_mipitx_data },
+ 	{ .compatible = "mediatek,mt8173-mipi-tx", .data = &mt8173_mipitx_data },
+ 	{ .compatible = "mediatek,mt8183-mipi-tx", .data = &mt8183_mipitx_data },
+ 	{ /* sentinel */ }
+--- a/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
++++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c
+@@ -79,6 +79,10 @@
+ #define RG_DSI_MPPLL_SDM_SSC_PRD	GENMASK(31, 16)
+ 
+ #define MIPITX_DSI_PLL_CON2	0x58
++
++#define MIPITX_DSI_PLL_CHG	0x60
++#define RG_DSI_MPPLL_SDM_PCW_CHG	BIT(0)
++#define RG_DSI_MPPLL_PRESERVE_MT8163	GENMASK(14, 7)
+ 
+ #define MIPITX_DSI_PLL_TOP	0x64
+ #define RG_DSI_MPPLL_PRESERVE		GENMASK(15, 8)
+@@ -251,6 +255,164 @@
+ 	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
+ };
+ 
++static int mtk_mipi_tx_pll_prepare_mt8163(struct clk_hw *hw)
++{
++	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
++	void __iomem *base = mipi_tx->regs;
++	u8 txdiv, txdiv0, txdiv1;
++	u32 reg;
++	u64 pcw;
++	struct clk_hw *parent = clk_hw_get_parent(hw);
++
++	/* Validate the actual CCF parent and cached rate before any MMIO. */
++	if (!parent || clk_hw_get_rate(parent) != 26000000 ||
++	    mipi_tx->data_rate < 50000000 || mipi_tx->data_rate > 1250000000)
++		return -EINVAL;
++
++	dev_dbg(mipi_tx->dev, "prepare: %u Hz\n", mipi_tx->data_rate);
++
++	if (mipi_tx->data_rate >= 500000000) {
++		txdiv = 1;
++		txdiv0 = 0;
++		txdiv1 = 0;
++	} else if (mipi_tx->data_rate >= 250000000) {
++		txdiv = 2;
++		txdiv0 = 1;
++		txdiv1 = 0;
++	} else if (mipi_tx->data_rate >= 125000000) {
++		txdiv = 4;
++		txdiv0 = 2;
++		txdiv1 = 0;
++	} else if (mipi_tx->data_rate > 62000000) {
++		txdiv = 8;
++		txdiv0 = 2;
++		txdiv1 = 1;
++	} else if (mipi_tx->data_rate >= 50000000) {
++		txdiv = 16;
++		txdiv0 = 2;
++		txdiv1 = 2;
++	} else {
++		return -EINVAL;
++	}
++
++	for (reg = MIPITX_DSI_CLOCK_LANE;
++	     reg <= MIPITX_DSI_DATA_LANE3; reg += 4)
++		mtk_phy_update_bits(base + reg,
++				    RG_DSI_LNTx_RT_CODE,
++				    FIELD_PREP(RG_DSI_LNTx_RT_CODE, 0x8));
++
++	mtk_phy_set_bits(base + MIPITX_DSI_BG_CON,
++			    RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN |
++			    RG_DSI_BG_FAST_CHARGE);
++
++	usleep_range(1000, 1100);
++
++	mtk_phy_set_bits(base + MIPITX_DSI_TOP_CON, RG_DSI_LNT_HS_BIAS_EN);
++
++	mtk_phy_set_bits(base + MIPITX_DSI_CON,
++			 RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
++
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_PWR,
++			    RG_DSI_MPPLL_SDM_PWR_ON | RG_DSI_MPPLL_SDM_ISO_EN,
++			    RG_DSI_MPPLL_SDM_PWR_ON);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_BG_CON, RG_DSI_BG_FAST_CHARGE);
++
++	usleep_range(1000, 1100);
++
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_CON0,
++			    RG_DSI_MPPLL_TXDIV0 | RG_DSI_MPPLL_TXDIV1 |
++			    RG_DSI_MPPLL_PREDIV,
++			    FIELD_PREP(RG_DSI_MPPLL_TXDIV0, txdiv0) |
++			    FIELD_PREP(RG_DSI_MPPLL_TXDIV1, txdiv1));
++
++	/*
++	 * PLL PCW config
++	 * PCW bit 24~30 = integer part of pcw
++	 * PCW bit 0~23 = fractional part of pcw
++	 * pcw = data_Rate*4*txdiv/(Ref_clk*2);
++	 * Post DIV =4, so need data_Rate*4
++	 * Ref_clk is 26MHz
++	 */
++	pcw = div_u64(((u64)mipi_tx->data_rate * 2 * txdiv) << 24, 26000000);
++	writel(pcw, base + MIPITX_DSI_PLL_CON2);
++
++	mtk_phy_set_bits(base + MIPITX_DSI_PLL_CON1, RG_DSI_MPPLL_SDM_FRA_EN);
++
++	mtk_phy_update_field(base + MIPITX_DSI_PLL_TOP,
++			     RG_DSI_MPPLL_PRESERVE_MT8163,
++			     mipi_tx->driver_data->mppll_preserve);
++
++	mtk_phy_set_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
++
++	usleep_range(1000, 1100);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CHG, RG_DSI_MPPLL_SDM_PCW_CHG);
++
++	mtk_phy_set_bits(base + MIPITX_DSI_PLL_CHG, RG_DSI_MPPLL_SDM_PCW_CHG);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON1, RG_DSI_MPPLL_SDM_SSC_EN);
++
++	return 0;
++}
++
++static void mtk_mipi_tx_pll_unprepare_mt8163(struct clk_hw *hw)
++{
++	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
++	void __iomem *base = mipi_tx->regs;
++
++	dev_dbg(mipi_tx->dev, "unprepare\n");
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_PLL_EN);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_TOP, RG_DSI_MPPLL_PRESERVE_MT8163);
++
++	mtk_phy_update_bits(base + MIPITX_DSI_PLL_PWR,
++			    RG_DSI_MPPLL_SDM_ISO_EN | RG_DSI_MPPLL_SDM_PWR_ON,
++			    RG_DSI_MPPLL_SDM_ISO_EN);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_TOP_CON, RG_DSI_LNT_HS_BIAS_EN);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_CON,
++			   RG_DSI_CKG_LDOOUT_EN | RG_DSI_LDOCORE_EN);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_BG_CON,
++			   RG_DSI_BG_CKEN | RG_DSI_BG_CORE_EN);
++
++	mtk_phy_clear_bits(base + MIPITX_DSI_PLL_CON0, RG_DSI_MPPLL_DIV_MSK);
++}
++
++static long mtk_mipi_tx_pll_round_rate_mt8163(struct clk_hw *hw,
++					    unsigned long rate, unsigned long *prate)
++{
++	if (!clk_hw_get_parent(hw) ||
++	    clk_hw_get_rate(clk_hw_get_parent(hw)) != 26000000 ||
++	    !prate || *prate != 26000000)
++		return -EINVAL;
++	return clamp_val(rate, 50000000, 1250000000);
++}
++
++static int mtk_mipi_tx_pll_set_rate_mt8163(struct clk_hw *hw,
++					 unsigned long rate, unsigned long parent_rate)
++{
++	struct mtk_mipi_tx *mipi_tx = mtk_mipi_tx_from_clk_hw(hw);
++
++	if (!clk_hw_get_parent(hw) ||
++	    clk_hw_get_rate(clk_hw_get_parent(hw)) != 26000000 ||
++	    parent_rate != 26000000 || rate < 50000000 || rate > 1250000000)
++		return -EINVAL;
++	mipi_tx->data_rate = rate;
++	return 0;
++}
++
++static const struct clk_ops mtk_mipi_tx_pll_ops_mt8163 = {
++	.prepare = mtk_mipi_tx_pll_prepare_mt8163,
++	.unprepare = mtk_mipi_tx_pll_unprepare_mt8163,
++	.round_rate = mtk_mipi_tx_pll_round_rate_mt8163,
++	.set_rate = mtk_mipi_tx_pll_set_rate_mt8163,
++	.recalc_rate = mtk_mipi_tx_pll_recalc_rate,
++};
++
+ static void mtk_mipi_tx_power_on_signal(struct phy *phy)
+ {
+ 	struct mtk_mipi_tx *mipi_tx = phy_get_drvdata(phy);
+@@ -284,6 +446,13 @@
+ 	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
+ };
+ 
++const struct mtk_mipitx_data mt8163_mipitx_data = {
++	.mppll_preserve = 2,
++	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops_mt8163,
++	.mipi_tx_enable_signal = mtk_mipi_tx_power_on_signal,
++	.mipi_tx_disable_signal = mtk_mipi_tx_power_off_signal,
++};
++
+ const struct mtk_mipitx_data mt8173_mipitx_data = {
+ 	.mppll_preserve = 0,
+ 	.mipi_tx_clk_ops = &mtk_mipi_tx_pll_ops,
+--- a/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
++++ b/drivers/phy/mediatek/phy-mtk-mipi-dsi.h
+@@ -40,6 +40,7 @@
+ 					  unsigned long parent_rate);
+ 
+ extern const struct mtk_mipitx_data mt2701_mipitx_data;
++extern const struct mtk_mipitx_data mt8163_mipitx_data;
+ extern const struct mtk_mipitx_data mt8173_mipitx_data;
+ extern const struct mtk_mipitx_data mt8183_mipitx_data;
+ 

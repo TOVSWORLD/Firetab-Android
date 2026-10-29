@@ -5,7 +5,7 @@ on:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl, providers, usb-providers, usb-acm-diagnostic, sym827-provider, diagnostic]
+        options: [clocks, clocks-pinctrl, providers, usb-providers, usb-acm-diagnostic, sym827-provider, mipi-provider, diagnostic]
         default: diagnostic
       argument_profile:
         description: Generic-only forced argument selection (diagnostic mode)
@@ -21,6 +21,9 @@ on:
     paths:
       - projects/firetabs-android/kernel/clock-port/**
       - projects/firetabs-android/kernel/regulator-port/**
+      - projects/firetabs-android/kernel/mipi-port/**
+      - scripts/apply_mipi_port.py
+      - scripts/build_mipi_provider.sh
       - scripts/apply_sym827_port.py
       - scripts/build_sym827_provider.sh
       - scripts/apply_clock_port.py
@@ -76,7 +79,9 @@ jobs:
           BUILD_MODE: ${{ steps.scope.outputs.mode }}
           ARGUMENT_PROFILE: ${{ steps.scope.outputs.argument_profile }}
         run: |
-          if [ "$BUILD_MODE" = sym827-provider ]; then
+          if [ "$BUILD_MODE" = mipi-provider ]; then
+            bash scripts/build_mipi_provider.sh
+          elif [ "$BUILD_MODE" = sym827-provider ]; then
             bash scripts/build_sym827_provider.sh
           else
             bash scripts/build_ack_baseline.sh "$BUILD_MODE"

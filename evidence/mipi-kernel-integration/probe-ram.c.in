@@ -1,0 +1,89 @@
+#include <assert.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+#include <stdio.h>
+#include <errno.h>
+typedef uint32_t u32;
+#define __iomem
+#define GFP_KERNEL 0
+#define IORESOURCE_MEM 1
+#define CLK_SET_RATE_GATE 1
+#define THIS_MODULE NULL
+#define dev_dbg(...) ((void)0)
+#define dev_info(...) ((void)0)
+#define dev_warn(...) ((void)0)
+#define dev_err_probe(dev,err,...) (err)
+#define clamp_val(v,l,h) ((v)<(l)?(l):(v)>(h)?(h):(v))
+#define ERR_PTR(x) ((void *)(intptr_t)(x))
+#define PTR_ERR(p) ((int)(intptr_t)(p))
+#define IS_ERR(p) ((uintptr_t)(p)>=(uintptr_t)-4095)
+struct device_node {unsigned props;};struct device {struct device_node *of_node;};
+struct resource {uint64_t start,end;};struct platform_device {struct device dev;};
+struct clk {unsigned long rate;};struct clk_init_data {unsigned num_parents;const char *const *parent_names;unsigned flags;const char *name;const void *ops;};
+struct clk_hw {struct clk *clk;const struct clk_init_data *init;};struct clk_ops;
+struct phy {void *data;};struct phy_provider {int unused;};struct nvmem_cell {int unused;};
+struct phy_ops {int (*power_on)(struct phy *);int (*power_off)(struct phy *);void *owner;};
+/* ACTUAL_STRUCTS */
+static struct mtk_mipi_tx allocated;
+static struct phy fixture_phy;static struct phy_provider provider;static struct clk refclk={26000000};static u32 regs[27];
+static struct resource resource;static int resource_present,fail_stage;static unsigned calls[10],trace[30],trace_count,nvmem_calls,power_calls,signal_on,signal_off,power_off,fail_power;
+static const struct mtk_mipitx_data *match_data;
+enum {ALLOC=1,MAP,GETCLK,OUTNAME,RESET,CLKREG,PHYCREATE,PHYPROVIDER,CLKPROVIDER};
+static int event(unsigned stage){assert(stage<10 && trace_count<30);calls[stage]++;trace[trace_count++]=stage;return fail_stage==(int)stage?-EIO:0;}
+static void *devm_kzalloc(struct device *d,size_t s,int flags){(void)d;(void)flags;assert(s==sizeof(allocated));if(event(ALLOC))return NULL;memset(&allocated,0,sizeof(allocated));return &allocated;}
+static const void *of_device_get_match_data(struct device *d){(void)d;return match_data;}
+static struct resource *platform_get_resource(struct platform_device *p,unsigned type,unsigned i){(void)p;assert(type==IORESOURCE_MEM && i==0);return resource_present?&resource:NULL;}
+static uint64_t resource_size(struct resource *r){return r->end-r->start+1;}
+static const void *of_find_property(struct device_node *np,const char *name,void *len){(void)len;unsigned mask=!strcmp(name,"resets")?1:!strcmp(name,"nvmem-cells")?2:!strcmp(name,"nvmem-cell-names")?4:!strcmp(name,"drive-strength-microamp")?8:0;return (np->props&mask)?np:NULL;}
+static void *devm_platform_ioremap_resource(struct platform_device *p,unsigned i){(void)p;assert(i==0);return event(MAP)?ERR_PTR(-EIO):regs;}
+static struct clk *devm_clk_get(struct device *d,const char *name){(void)d;assert(!name);return event(GETCLK)?ERR_PTR(-EIO):&refclk;}
+static unsigned long clk_get_rate(struct clk *c){return c->rate;}
+static int of_property_read_u32(struct device_node *np,const char *name,u32 *v){(void)np;assert(!strcmp(name,"drive-strength-microamp"));*v=4600;return -ENOENT;}
+static const char *__clk_get_name(struct clk *c){assert(c==&refclk);return "clk26m";}
+static int of_property_read_string(struct device_node *np,const char *name,const char **v){(void)np;assert(!strcmp(name,"clock-output-names"));*v="mipi_pll";return event(OUTNAME);}
+static int device_reset(struct device *d){(void)d;return event(RESET);}
+static int devm_clk_hw_register(struct device *d,struct clk_hw *h){(void)d;assert(h->init);h->init=NULL;h->clk=&refclk;return event(CLKREG);}
+static struct phy *devm_phy_create(struct device *d,void *node,const struct phy_ops *ops){(void)d;assert(!node && ops);return event(PHYCREATE)?ERR_PTR(-EIO):&fixture_phy;}
+static void phy_set_drvdata(struct phy *p,void *v){p->data=v;}
+static void *phy_get_drvdata(struct phy *p){return p->data;}
+static void of_phy_simple_xlate(void){}
+static struct phy_provider *devm_of_phy_provider_register(struct device *d,void (*x)(void)){(void)d;assert(x==of_phy_simple_xlate);return event(PHYPROVIDER)?ERR_PTR(-EIO):&provider;}
+static void of_clk_hw_simple_get(void){}
+static int devm_of_clk_add_hw_provider(struct device *d,void (*x)(void),struct clk_hw *h){(void)d;(void)h;assert(x==of_clk_hw_simple_get);return event(CLKPROVIDER);}
+static struct nvmem_cell *nvmem_cell_get(struct device *d,const char *name){(void)d;assert(!strcmp(name,"calibration-data"));nvmem_calls++;return ERR_PTR(-ENOENT);}
+static void *nvmem_cell_read(struct nvmem_cell *c,size_t *len){(void)c;*len=0;return ERR_PTR(-EIO);}
+static void nvmem_cell_put(struct nvmem_cell *c){(void)c;}
+static void kfree(void *p){(void)p;}
+static int clk_prepare_enable(struct clk *c){assert(c==&refclk);power_calls++;return fail_power?-EIO:0;}
+static void clk_disable_unprepare(struct clk *c){assert(c==&refclk);power_off++;}
+static void on_signal(struct phy *p){assert(p==&fixture_phy);signal_on++;}
+static void off_signal(struct phy *p){assert(p==&fixture_phy);signal_off++;}
+const struct mtk_mipitx_data mt8163_mipitx_data={.mppll_preserve=2,.mipi_tx_enable_signal=on_signal,.mipi_tx_disable_signal=off_signal};
+const struct mtk_mipitx_data mt8173_mipitx_data={.mipi_tx_enable_signal=on_signal,.mipi_tx_disable_signal=off_signal};
+/* ACTUAL_FUNCTIONS */
+static struct device_node node;
+static struct platform_device pdev;
+static void fixture(int strict){memset(calls,0,sizeof(calls));memset(trace,0,sizeof(trace));trace_count=nvmem_calls=power_calls=signal_on=signal_off=power_off=fail_power=0;memset(&allocated,0,sizeof(allocated));memset(&fixture_phy,0,sizeof(fixture_phy));resource.start=0x10215000;resource.end=0x10215fff;resource_present=1;fail_stage=0;node.props=1;pdev.dev.of_node=&node;refclk.rate=26000000;match_data=strict?&mt8163_mipitx_data:&mt8173_mipitx_data;}
+int main(void){
+ fixture(1);assert(mtk_mipi_tx_probe(&pdev)==0);assert(calls[RESET]==1 && calls[CLKPROVIDER]==1 && !nvmem_calls);
+ unsigned order[]={ALLOC,MAP,GETCLK,OUTNAME,RESET,CLKREG,PHYCREATE,PHYPROVIDER,CLKPROVIDER};assert(trace_count==9 && !memcmp(trace,order,sizeof(order)));
+ assert(mtk_mipi_tx_ops.power_on(&fixture_phy)==0 && power_calls==1 && signal_on==1);fail_power=1;assert(mtk_mipi_tx_ops.power_on(&fixture_phy)==-EIO && signal_on==1);assert(mtk_mipi_tx_ops.power_off(&fixture_phy)==0 && signal_off==1 && power_off==1);
+ for(int fail=1;fail<=9;fail++){fixture(1);fail_stage=fail;int ret=mtk_mipi_tx_probe(&pdev);assert(ret==(fail==ALLOC?-ENOMEM:-EIO));assert(calls[fail]==1);for(int i=fail+1;i<=9;i++)assert(!calls[i]);}
+ for(unsigned prop=0;prop<4;prop++){fixture(1);node.props=prop?1U|(1U<<prop):0;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP] && !calls[RESET] && !calls[CLKREG]);}
+ fixture(1);pdev.dev.of_node=NULL;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);resource_present=0;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);resource.end=resource.start-1;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);resource.end=resource.start+0x67;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);resource.start++;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);resource.end--;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[MAP]);
+ fixture(1);refclk.rate=25000000;assert(mtk_mipi_tx_probe(&pdev)==-EINVAL && !calls[RESET] && !calls[CLKREG]);
+ fixture(1);match_data=NULL;assert(mtk_mipi_tx_probe(&pdev)==-ENODEV && !calls[MAP]);
+ /* Real original and patched probe functions follow identical old-SoC call paths. */
+ for(int fail=0;fail<=9;fail++){
+  fixture(0);fail_stage=fail;node.props=15;refclk.rate=25000000;int old=old_probe(&pdev);unsigned oldcalls[10];memcpy(oldcalls,calls,sizeof(calls));unsigned oldnvmem=nvmem_calls;
+  fixture(0);fail_stage=fail;node.props=15;refclk.rate=25000000;assert(mtk_mipi_tx_probe(&pdev)==old && !memcmp(oldcalls,calls,sizeof(calls)) && nvmem_calls==oldnvmem && !calls[RESET]);
+ }
+ puts("PASS actual MIPI probe/power C:success,9 failure stages,resource/override/reference negatives,old-SoC differential paths");return 0;
+}
