@@ -1,0 +1,41 @@
+{
+  "scope": "Fresh GNU cross-compiled current diagnostic source, never executed; not canonical Clang CI binary",
+  "compiler": "aarch64-linux-musl-gcc (GCC) 14.2.0",
+  "command": [
+    "/opt/homebrew/opt/musl-cross/bin/aarch64-linux-musl-gcc",
+    "-nostdlib",
+    "-static",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-mgeneral-regs-only",
+    "-Wl,--build-id=none,-e,_start",
+    "-o",
+    "<workspace>/out/usb-gadget-prerequisites/init",
+    "<workspace>/projects/firetabs-android/diagnostic/init.c"
+  ],
+  "elf": {
+    "machine": "AArch64",
+    "type": "ET_EXEC",
+    "dynamic": false,
+    "entry": "0x400ac0"
+  },
+  "source_sha256": "c371372906ad3d32594000041042a2301d54ca2ce46c5b05add40bf2905bf63b",
+  "archive_entries": [
+    "dev",
+    "proc",
+    "sys",
+    "dev/console",
+    "init"
+  ],
+  "init_sha256": "f266bfb6d3376c42dbfdd8f2dd4cc1665d0f8a2abf140e68d803e1bcb727e2e8",
+  "cpio_sha256": "a354d0aecb413d3f40c5a23f6a0b0951abb454cb05bb07916e5fec6443b7f044",
+  "compressed_sha256": "e71c2e9d851986d050ccf4dfc2dfde79de6be66bfbefd7f66f6000f224fe4318",
+  "compiler_note": "GNU Os emitted an unresolved memcpy; O2 compiled without extra runtime helpers. Default Clang builder unchanged.",
+  "executed": false,
+  "device_tested": false
+}
