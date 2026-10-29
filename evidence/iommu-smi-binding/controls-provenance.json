@@ -1,0 +1,39 @@
+{
+  "scope": "Actual processed decoded-node controls with expected larb rejection; source/build/hardware evidence separate",
+  "source_pr": 407,
+  "source_build_run": 40794335163,
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/iommu-smi-binding/check-controls.py": "ea286ac867733a89b19f9f741a560abee959bf2a274046acc23cc224cd29d652",
+    "evidence/iommu-smi-binding/command.json": "5eb4d31f5ab814cd97d44b778a332d32b8685af1295aacb04a8e20846cd89289",
+    "evidence/iommu-smi-binding/controls.json": "1020abbf593972c76a6f8b0dd084754f79c0073fafab738e70b15f664b41a7c9",
+    "evidence/iommu-smi-binding/delta.json": "57adb60e69827852087daf3baac6508c45ecd4d04ddee6bdf7db9bd4112d6499",
+    "evidence/iommu-smi-binding/diagnostics.json": "adaee58cd72f88217077e0f389c121657e13fec3580158f3bcec3344f1a5d371",
+    "evidence/iommu-smi-binding/iommu-captured-nodes.json": "36b9084e99fb3b92902b810a70b3eb615983463733cee2dc37b236b4a61670a6",
+    "evidence/iommu-smi-binding/iommu-original.yaml": "798653e4c1d7ee7fcfe0c5222bde85085a11579f6f219aba3fb9cd3d11769538",
+    "evidence/iommu-smi-binding/iommu-processed-schemas.json": "c3340c3a33d3c0bf257baa2202494e05318165357e0da921af5aa278324b3bd1",
+    "evidence/iommu-smi-binding/iommu-proposed.yaml": "2e3c80dcd2bdcff8dd2c3a00c7c8412c14bd7e813aa7dd615d60734a2c51a5e7",
+    "evidence/iommu-smi-binding/mt8163-iommu-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/iommu-smi-binding/mt8163-smi-common-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/iommu-smi-binding/mt8163-smi-larb-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/iommu-smi-binding/report.json": "f320e4b4faf9ebcbc19d9f89f4f0b48d9fb31e1cfec5195aff0bab8c3bce4bbb",
+    "evidence/iommu-smi-binding/smi-common-captured-nodes.json": "3267935a90b2d2c6c1f4c4fbe84cbb5ecbac87eef2daba8b979cbcc57db9397c",
+    "evidence/iommu-smi-binding/smi-common-original.yaml": "026aebcd85aa16c48f90975e4e6f1be2dd46af71c8e9a525775d2163fb0df868",
+    "evidence/iommu-smi-binding/smi-common-processed-schemas.json": "7bb54a66869c392e4e426f265afdd03be9b2f24c91ccd2a91b5e05d470c84d1e",
+    "evidence/iommu-smi-binding/smi-common-proposed.yaml": "d6db8e807ac8c0e5fa715da60b460c0393e6886ed26049588796c11b029dc026",
+    "evidence/iommu-smi-binding/smi-larb-captured-nodes.json": "d67dcea003c7ed991f22d8511bcb2fe884555e1935f71c22d809a8a8ffa4fc7a",
+    "evidence/iommu-smi-binding/smi-larb-original.yaml": "c3ee2b9246d4dc3bd3a246c51318b92adc88a884fd136d30a3bfe8358ca2f7d0",
+    "evidence/iommu-smi-binding/smi-larb-processed-schemas.json": "3e785418fd3485e6443b679df83ab96c95057c8559ab0a2d1876d3407ab17e92",
+    "evidence/iommu-smi-binding/smi-larb-proposed.yaml": "678b6988d3ee6068e95bfa2823e14c9b11ab828fa1a7096277b9345ce80c15b1",
+    "evidence/iommu-smi-binding/validate.stderr": "d27cfd5ab454e9e66c27c39d989d160d84263dfca48629f2ad1c7c9fd7cc1d8e"
+  },
+  "commands": [
+    [
+      "work/dtb-tool/venv/bin/python",
+      "evidence/iommu-smi-binding/check-controls.py"
+    ]
+  ],
+  "full_validation_passed": false,
+  "runtime_qualified": false
+}

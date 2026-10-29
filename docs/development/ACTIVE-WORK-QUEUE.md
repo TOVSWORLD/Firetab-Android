@@ -3,12 +3,15 @@
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
-Current #347 route review: no cached physical trial is admitted. #27 IOMMU/SMI
-minimal source integration and fresh-DTB dependency checks are implemented; actual
-provider object/Image/generic-QEMU CI is required before build claims. No matched
-binding is added yet; full40 diagnostics retained. Next acceptance after build:
-source-matched IOMMU/SMI contracts and decoded-node controls. Runtime DMA/display,
-loading, independent failed-boot return/log gates remain open.
+Current #347 route review: no cached physical trial is admitted. PR407 merged
+6821d312 after exact-head provider objects/Image/generic-QEMU run40794335163 and
+five PR checks. This is source/generic build evidence, not MT8163 runtime proof.
+#27 source-matched IOMMU/SMI contracts now pass60 actual controls with expected
+larb rejections retained. Full context40→38 diagnostics (22unmatched/16validation),
+wrapper exit1/passedfalse. No DTB/driver change in binding scope. Next acceptance:
+trace source origin/ownership of four candidate larb IRQ declarations before
+separately justified DT correction; preserve errors. Runtime DMA/display/loading,
+independent failed-boot return/log gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

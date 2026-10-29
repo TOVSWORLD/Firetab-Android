@@ -1,0 +1,163 @@
+{
+  "baseline_count": 40,
+  "candidate_count": 38,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/iommu@10205000",
+      "nodename": "iommu@10205000",
+      "compatible": [
+        "mediatek,mt8163-m4u"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-m4u']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/iommu@10205000: failed to match any schema with compatible: ['mediatek,mt8163-m4u']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@14016000",
+      "nodename": "larb@14016000",
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/larb@14016000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@15001000",
+      "nodename": "larb@15001000",
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/larb@15001000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@16010000",
+      "nodename": "larb@16010000",
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/larb@16010000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@17001000",
+      "nodename": "larb@17001000",
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/larb@17001000: failed to match any schema with compatible: ['mediatek,mt8163-smi-larb']"
+    },
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/smi@14017000",
+      "nodename": "smi@14017000",
+      "compatible": [
+        "mediatek,mt8163-smi-common"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-smi-common']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/smi@14017000: failed to match any schema with compatible: ['mediatek,mt8163-smi-common']"
+    }
+  ],
+  "added": [
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@14016000",
+      "nodename": "larb@14016000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@14016000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@15001000",
+      "nodename": "larb@15001000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@15001000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@16010000",
+      "nodename": "larb@16010000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@16010000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    },
+    {
+      "type": "validation",
+      "level": "error",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/larb@17001000",
+      "nodename": "larb@17001000",
+      "compatible": "mediatek,mt8163-smi-larb",
+      "property_path": [],
+      "schema_path": [
+        "additionalProperties"
+      ],
+      "schema": "http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml",
+      "message": "'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: larb@17001000 (mediatek,mt8163-smi-larb): 'interrupts' does not match any of the regexes: '^pinctrl-[0-9]+$'\n\tfrom schema $id: http://devicetree.org/schemas/memory-controllers/mediatek,smi-larb.yaml"
+    }
+  ],
+  "dtb_unchanged": true,
+  "passed": false,
+  "runtime_qualified": false
+}

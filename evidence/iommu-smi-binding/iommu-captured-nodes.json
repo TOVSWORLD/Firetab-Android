@@ -1,0 +1,44 @@
+{
+  "/soc/iommu@10205000": {
+    "compatible": [
+      "mediatek,mt8163-m4u"
+    ],
+    "reg": [
+      [
+        0,
+        270553088,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        147,
+        8
+      ]
+    ],
+    "mediatek,larbs": [
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ]
+    ],
+    "power-domains": [
+      [
+        21,
+        0
+      ]
+    ],
+    "#iommu-cells": 1,
+    "phandle": 41
+  }
+}

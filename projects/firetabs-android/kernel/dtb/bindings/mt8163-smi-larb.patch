@@ -1,0 +1,29 @@
+--- a/memory-controllers/mediatek,smi-larb.yaml
++++ b/memory-controllers/mediatek,smi-larb.yaml
+@@ -22,6 +22,7 @@
+           - mediatek,mt6779-smi-larb
+           - mediatek,mt6795-smi-larb
+           - mediatek,mt6893-smi-larb
++          - mediatek,mt8163-smi-larb
+           - mediatek,mt8167-smi-larb
+           - mediatek,mt8173-smi-larb
+           - mediatek,mt8183-smi-larb
+@@ -126,6 +127,18 @@
+       required:
+         - mediatek,larb-id
+ 
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: mediatek,mt8163-smi-larb
++    then:
++      required:
++        - mediatek,smi
++      properties:
++        mediatek,larb-id:
++          maximum: 3
++
+ additionalProperties: false
+ 
+ examples:

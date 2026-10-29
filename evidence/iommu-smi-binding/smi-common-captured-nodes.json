@@ -1,0 +1,36 @@
+{
+  "/soc/smi@14017000": {
+    "compatible": [
+      "mediatek,mt8163-smi-common"
+    ],
+    "reg": [
+      [
+        0,
+        335638528,
+        0,
+        4096
+      ]
+    ],
+    "clocks": [
+      [
+        40,
+        0
+      ],
+      [
+        40,
+        0
+      ]
+    ],
+    "clock-names": [
+      "apb",
+      "smi"
+    ],
+    "power-domains": [
+      [
+        21,
+        0
+      ]
+    ],
+    "phandle": 43
+  }
+}

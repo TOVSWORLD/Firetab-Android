@@ -3070,3 +3070,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next #20 acceptance: derive intended modern wakeup configuration and power
   transition behavior before any capability change; #27 source/build then matched
   IOMMU/SMI contracts remains the current queue priority.
+
+## 2026-10-28 — actual IOMMU/SMI build and matched contracts (#27)
+
+- PR407 merged6821d31282f9d533456a321417c6a2bb87196bf0 after five PR checks plus
+  exact-head302e51a run40794335163. Real provider objects/Image and generic QEMU
+  pass; normalized hashes/URL in evidence/iommu-smi-port/build-result.json. No
+  MT8163 hardware probe. Prior run superseded after worklog conflict resolution.
+- Three opt-in hash-locked source-matched contracts;60 actual decoded-node
+  controls and structural old-SoC preservation pass. Corrected larb-ID mutation
+  from array to decoded scalar to test actual range, not accidental type failure.
+- Full context40→38 (22unmatched/16validation): six unmatched nodes selected and
+  four larb interrupt errors exposed, no other delta. Selected SMI driver consumes
+  no IRQ; candidate rejection remains visible. Wrapper exit1/passedfalse retained.
+- Reproduce/check commands, hashes, portable schema/node receipts and full output
+  under evidence/iommu-smi-binding; IOMMU-SMI-BINDINGS.md describes limits.
+  No new source downloads, DTB/driver/device/firmware changes in binding scope.
+- Next executable #27 acceptance: trace source ownership/origin of four larb IRQ
+  declarations from cached sources before any DT correction. Runtime DMA/display/
+  independent failed-boot return and retained logs remain open.

@@ -1,0 +1,190 @@
+{
+  "/soc/larb@14016000": {
+    "compatible": [
+      "mediatek,mt8163-smi-larb"
+    ],
+    "reg": [
+      [
+        0,
+        335634432,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        205,
+        8
+      ]
+    ],
+    "mediatek,smi": [
+      [
+        43
+      ]
+    ],
+    "mediatek,larb-id": 0,
+    "clocks": [
+      [
+        40,
+        1
+      ],
+      [
+        40,
+        1
+      ]
+    ],
+    "clock-names": [
+      "apb",
+      "smi"
+    ],
+    "power-domains": [
+      [
+        21,
+        0
+      ]
+    ],
+    "phandle": 17
+  },
+  "/soc/larb@16010000": {
+    "compatible": [
+      "mediatek,mt8163-smi-larb"
+    ],
+    "reg": [
+      [
+        0,
+        369164288,
+        0,
+        65536
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        213,
+        8
+      ]
+    ],
+    "mediatek,smi": [
+      [
+        43
+      ]
+    ],
+    "mediatek,larb-id": 1,
+    "clocks": [
+      [
+        45,
+        0
+      ],
+      [
+        45,
+        1
+      ]
+    ],
+    "clock-names": [
+      "apb",
+      "smi"
+    ],
+    "power-domains": [
+      [
+        21,
+        1
+      ]
+    ],
+    "phandle": 18
+  },
+  "/soc/larb@15001000": {
+    "compatible": [
+      "mediatek,mt8163-smi-larb"
+    ],
+    "reg": [
+      [
+        0,
+        352325632,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        217,
+        8
+      ]
+    ],
+    "mediatek,smi": [
+      [
+        43
+      ]
+    ],
+    "mediatek,larb-id": 2,
+    "clocks": [
+      [
+        44,
+        0
+      ],
+      [
+        44,
+        0
+      ]
+    ],
+    "clock-names": [
+      "apb",
+      "smi"
+    ],
+    "power-domains": [
+      [
+        21,
+        3
+      ]
+    ],
+    "phandle": 19
+  },
+  "/soc/larb@17001000": {
+    "compatible": [
+      "mediatek,mt8163-smi-larb"
+    ],
+    "reg": [
+      [
+        0,
+        385880064,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        207,
+        8
+      ]
+    ],
+    "mediatek,smi": [
+      [
+        43
+      ]
+    ],
+    "mediatek,larb-id": 3,
+    "clocks": [
+      [
+        46,
+        1
+      ],
+      [
+        46,
+        0
+      ]
+    ],
+    "clock-names": [
+      "apb",
+      "smi"
+    ],
+    "power-domains": [
+      [
+        21,
+        2
+      ]
+    ],
+    "phandle": 20
+  }
+}
