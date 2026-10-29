@@ -15,18 +15,23 @@ def requirements():
     lock = json.loads((PROFILE / 'profile.json').read_text())
     if hashlib.sha256((ROOT / lock['kconfig_source']).read_bytes()).hexdigest() != lock['kconfig_sha256']:
         raise ValueError('Pinned gadget Kconfig drift')
+    for path, expected in lock.get('security_kconfig_sources', {}).items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != expected:
+            raise ValueError('Pinned security Kconfig drift')
     states = {}
     for line in (PROFILE / 'fragment.config').read_text().splitlines():
         yes = re.fullmatch(r'CONFIG_([A-Z0-9_]+)=y', line)
         no = re.fullmatch(r'# CONFIG_([A-Z0-9_]+) is not set', line)
-        if not (yes or no):
+        lsm = re.fullmatch(r'CONFIG_(LSM)=("[a-z,]+")', line)
+        if not (yes or no or lsm):
             if line: raise ValueError('Unexpected ACM fragment syntax')
             continue
-        name = (yes or no)[1]
+        name = (yes or no or lsm)[1]
         if name in states: raise ValueError('Duplicate ACM fragment symbol')
-        states[name] = 'y' if yes else 'n'
+        states[name] = lsm[2] if lsm else 'y' if yes else 'n'
     expected = {n: 'y' for n in lock['required_builtin']}
     expected.update({n: 'n' for n in lock['required_disabled']})
+    expected['LSM'] = '"'+lock['lsm']+'"'
     if states != expected:
         raise ValueError('ACM requested policy changed or security/unrequested symbols added')
     return states, lock
@@ -44,12 +49,12 @@ def check(text):
             resolved[name] = active[2] if active else 'n'
     errors = [f'{n}: expected {v}, resolved {resolved.get(n,"n")}'
               for n, v in expected.items() if resolved.get(n, 'n') != v]
-    errors += [f'{n}: existing security must remain builtin'
-               for n in lock['security_required_unchanged_builtin'] if resolved.get(n) != 'y']
+    errors += [f'{n}: required security must be builtin'
+               for n in lock['security_required_builtin'] if resolved.get(n) != 'y']
     if errors: raise ValueError('; '.join(errors))
     return {'scope': 'Resolved builtin ACM profile only, not configured or executed USB',
             'required_builtin': lock['required_builtin'], 'other_configfs_functions_disabled': True,
-            'selinux_kept_builtin': True, 'passed': True,
+            'selinux_required_builtin_and_listed': True, 'passed': True,
             'gadget_userspace_implemented': False, 'transport_qualified': False}
 
 
@@ -63,8 +68,10 @@ def main():
     if args.mode == 'apply':
         if args.source is None: parser.error('--source required for apply')
         for name, value in states.items():
-            subprocess.run([str(args.source/'scripts/config'), '--file', str(args.config),
-                            '--enable' if value == 'y' else '--disable', name], check=True)
+            command = [str(args.source/'scripts/config'), '--file', str(args.config)]
+            if name == 'LSM': command += ['--set-str', name, value[1:-1]]
+            else: command += ['--enable' if value == 'y' else '--disable', name]
+            subprocess.run(command, check=True)
     else:
         print(json.dumps(check(args.config.read_text()), indent=2))
 

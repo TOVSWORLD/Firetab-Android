@@ -12,7 +12,13 @@
     "USB_U_SERIAL",
     "USB_F_ACM",
     "USB_CONFIGFS_ACM",
-    "CONFIGFS_FS"
+    "CONFIGFS_FS",
+    "SECURITY",
+    "SECURITY_NETWORK",
+    "AUDIT",
+    "NET",
+    "INET",
+    "SECURITY_SELINUX"
   ],
   "required_disabled": [
     "USB_F_FS",
@@ -36,10 +42,22 @@
     "USB_CONFIGFS_PHONET",
     "USB_CONFIGFS_RNDIS",
     "USB_CONFIGFS_SERIAL",
-    "ANDROID_USB_CONFIGFS_UEVENT"
+    "ANDROID_USB_CONFIGFS_UEVENT",
+    "SECURITY_SELINUX_BOOTPARAM",
+    "SECURITY_SELINUX_DEVELOP"
   ],
-  "security_required_unchanged_builtin": [
+  "runtime_qualified": false,
+  "security_required_builtin": [
+    "SECURITY",
+    "SECURITY_NETWORK",
+    "AUDIT",
+    "NET",
+    "INET",
     "SECURITY_SELINUX"
   ],
-  "runtime_qualified": false
+  "lsm": "landlock,lockdown,yama,loadpin,safesetid,selinux,ipe,bpf",
+  "security_kconfig_sources": {
+    "evidence/usb-acm-profile/selinux-Kconfig": "f16e32b231c41264786da57da8b8a1b72afe1159cf76d06593c2bf3404b9e284",
+    "evidence/usb-acm-profile/security-Kconfig": "8a4a6fdbe072ad27721c52c98846afae025143b085cb629de99dd201873d5a59"
+  }
 }

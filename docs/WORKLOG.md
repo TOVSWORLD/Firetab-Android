@@ -3335,3 +3335,11 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Independent next userspace implementation: separate opt-in static gadget PID1/
   configuration/output with RAM cleanup/failure controls. Minimal PID1 remains
   unchanged; no current gadget setup or physical loading/return/log claim.
+
+- First ACM run40826710226 at6bbdd03 failed before objects/Image: four ACM
+  components resolved builtin, but generic defconfig SECURITY_NETWORK/SELinux
+  absent and LSM list excluded SELinux. Earlier preservation assumption corrected.
+  Security guard retained. Explicit dependency/SELinux requests and LSM membership
+  added; SELinux boot-disable/development switches disabled. No runtime bypass.
+  Exact rejected config/log receipt in evidence/usb-acm-profile; actual negative
+  regression added. Replacement exact-head build required; no success claim.

@@ -39,8 +39,10 @@ run40822461567 at93e62f8 passed.409 RAM/source tests and all-target preflight;
 physical rollback/concurrency/reprobe remain unqualified. Receipt usb-role-errors.
 Active #27 package phase: actual separate usb-acm-diagnostic config/build scope
 implemented, builtin ACM/component policy and forbidden-function/security guards.
-412 host tests pass; new exact-head Linux resolved config/ACM objects/Image build
+413 host tests pass; new exact-head Linux resolved config/ACM objects/Image build
 required before acceptance. Old provider/USB-off diagnostic/QEMU scopes unchanged.
+First ACM resolution caught absent generic SECURITY_NETWORK/SELinux/LSM selection;
+strict guard retained, explicit enforcing-capable security dependencies requested.
 Gadget PID1 not implemented; independent next source work is explicit opt-in
 static configuration/output path with actual RAM failure/cleanup controls. Keep
 minimal init/security/storage boundaries, both DTs disabled, canonical34/isolated28

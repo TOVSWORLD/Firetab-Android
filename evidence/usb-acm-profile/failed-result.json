@@ -1,0 +1,13 @@
+{
+  "run": 40826710226,
+  "head": "6bbdd037c57d4fc690783dcbbc5d579a93331f66",
+  "stage": "post-olddefconfig strict security check, before objects/Image",
+  "result": "rejected missing SELinux; guard retained",
+  "acm_components_resolved_builtin": true,
+  "security_network_resolved": "n",
+  "selinux_resolved": "unavailable due dependencies",
+  "lsm_lacked_selinux": true,
+  "private_log_sha256": "fce18b9df4cda4f57db7cbbf04c4f683beb1297548359db74e65953e6c4af192",
+  "correction": "Explicitly request security dependencies/SELinux, disable boot-disable/permissive build switches, append SELinux to preserved baseline LSM list; no runtime security bypass",
+  "kernel_build_passed": false
+}

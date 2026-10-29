@@ -15,7 +15,7 @@ from select_kernel_build_scope import choose
 class ACMProfile(unittest.TestCase):
     def fixture(self):
         # Policy-shaped synthetic input; only the actual Linux run resolves Kconfig.
-        return (usb_acm_config.PROFILE/'fragment.config').read_text()+'CONFIG_SECURITY_SELINUX=y\n'
+        return (usb_acm_config.PROFILE/'fragment.config').read_text()
 
     def test_model_builtin_success_is_not_gadget_or_runtime_admission(self):
         result = usb_acm_config.check(self.fixture())
@@ -35,11 +35,19 @@ class ACMProfile(unittest.TestCase):
             with self.subTest(symbol=name),self.assertRaises(ValueError):usb_acm_config.check(text)
         with self.assertRaises(ValueError):usb_acm_config.check(self.fixture().replace('CONFIG_SECURITY_SELINUX=y',''))
         with self.assertRaises(ValueError):usb_acm_config.check(self.fixture()+'# CONFIG_USB_CONFIGFS is not set\n')
+        with self.assertRaises(ValueError):usb_acm_config.check(self.fixture().replace('selinux,',''))
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);shutil.copytree(usb_acm_config.PROFILE,root/'profile')
             (root/'profile/fragment.config').write_text((root/'profile/fragment.config').read_text()+'# CONFIG_SECURITY_SELINUX is not set\n')
             with patch.object(usb_acm_config,'PROFILE',root/'profile'),self.assertRaises(ValueError):
                 usb_acm_config.requirements()
+
+    def test_actual_failed_resolved_config_remains_rejected(self):
+        text=(ROOT/'evidence/usb-acm-profile/failed-resolved.config').read_text()
+        for name in ['USB_CONFIGFS','USB_LIBCOMPOSITE','USB_F_ACM','USB_U_SERIAL']:
+            self.assertIn('CONFIG_'+name+'=y',text)
+        with self.assertRaisesRegex(ValueError,'SECURITY_NETWORK|SECURITY_SELINUX|LSM'):
+            usb_acm_config.check(text)
 
     def test_acm_selection_is_one_explicit_build_without_qemu(self):
         for path in ['scripts/usb_acm_config.py','projects/firetabs-android/kernel/usb-acm/fragment.config','projects/firetabs-android/kernel/usb-acm/profile.json']:
