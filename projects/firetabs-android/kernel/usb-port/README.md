@@ -102,3 +102,11 @@ controls. Keep current baseline/candidate unchanged until separately verified.
 Actual IRQ/PHY timing, analog tuning, device role, USB gadget logs, loading and
 independent recovery remain unqualified. The earlier definition/report captures
 the pre-implementation model and is retained as historical evidence.
+
+## Current analog extension
+
+The MT8163-only cold/recovery analog hooks and override validation are now
+implemented; see ANALOG-POLICY.md and evidence/usb-analog-policy. Generic callback
+bodies are preserved after removing only the MT8163 branches. The old definition
+and PR413 build remain historical bank/calibration evidence; this changed source
+requires its own exact-head usb-providers build. No runtime readiness follows.

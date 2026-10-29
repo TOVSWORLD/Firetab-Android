@@ -30,13 +30,17 @@ class USBPort(unittest.TestCase):
     def test_actual_patch_preserves_generic_policy_and_descriptors(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);target=self.tree(root);old=target.read_text();apply(root,LOCK['ack_commit']);new=target.read_text()
-            for name in ['u2_phy_instance_init','u2_phy_instance_power_on','u2_phy_instance_power_off','u2_phy_props_set']:
+            for name in ['u2_phy_instance_power_off','u2_phy_props_set']:
                 self.assertEqual(function(old,name),function(new,name),name)
             guard='\tif (tphy->pdata->mt8163_usb2) {\n\t\tmt8163_hs_slew_measure_and_apply(tphy, instance);\n\t\treturn;\n\t}\n\n'
             self.assertEqual(function(new,'hs_slew_rate_calibrate').replace(guard,''),function(old,'hs_slew_rate_calibrate'))
             for data in re.findall(r'static const struct mtk_phy_pdata \w+ = \{.*?\n\};',old,re.S):self.assertIn(data,new)
             self.assertIn('instance->type != PHY_TYPE_USB2 || instance->index != 0',new)
-            self.assertIn('of_property_read_bool(child_np, "mediatek,eye-src")',new)
+            self.assertIn('retval = mt8163_usb2_validate_eye(child_np)',new)
+            init_guard='\tif (tphy->pdata->mt8163_usb2)\n\t\tmt8163_usb2_apply_analog(instance, false);\n\telse\n\t'
+            self.assertEqual(function(new,'u2_phy_instance_init').replace(init_guard,'').replace('\t\tmtk_phy_update_field','\tmtk_phy_update_field'),function(old,'u2_phy_instance_init'))
+            on_guard='\tif (tphy->pdata->mt8163_usb2)\n\t\tmt8163_usb2_apply_analog(instance, true);\n'
+            self.assertEqual(function(new,'u2_phy_instance_power_on').replace(on_guard,''),function(old,'u2_phy_instance_power_on'))
             with self.assertRaises(ValueError):apply(root,LOCK['ack_commit'])
 
     def test_wrong_revision_and_header_drift_fail_before_writes(self):
@@ -46,6 +50,71 @@ class USBPort(unittest.TestCase):
             header=target.parent/'phy-mtk-io.h';header.write_bytes(header.read_bytes()+b'\n')
             with self.assertRaises(ValueError):apply(root,LOCK['ack_commit'])
             self.assertEqual(target.read_bytes(),before)
+
+    def test_actual_c_analog_bit_preservation_and_conflicting_properties_in_ram(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);target=self.tree(root);apply(root,LOCK['ack_commit']);source=target.read_text()
+            code=r'''
+#include <assert.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
+#include <errno.h>
+#define __iomem
+#define BIT(n) (1U<<(n))
+#define GENMASK(h,l) ((~0U>>(31-(h))) & (~0U<<(l)))
+#define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))
+typedef uint8_t u8; typedef uint32_t u32;
+#define U3P_USBPHYACR6 0x18
+#define U3P_USBPHYACR1 0x04
+#define PA1_RG_VRT_SEL GENMASK(14,12)
+#define PA1_RG_TERM_SEL GENMASK(10,8)
+struct u2phy_banks {void *com;};
+struct mtk_phy_instance {struct u2phy_banks u2_banks;};
+struct device_node {int present[3];u32 values[3];int malformed,extra_cells;};
+static int property(const char *name) {
+ if(!strcmp(name,"mediatek,eye-vrt"))return 0;
+ if(!strcmp(name,"mediatek,eye-term"))return 1;
+ assert(!strcmp(name,"mediatek,eye-src"));return 2;
+}
+static bool of_property_read_bool(struct device_node *n,const char *name) {return n->present[property(name)];}
+static int of_property_count_u32_elems(struct device_node *n,const char *name) {
+ (void)name;return n->malformed?-EINVAL:n->extra_cells?2:1;
+}
+static int of_property_read_u32(struct device_node *n,const char *name,u32 *v) {
+ if(n->malformed)return -EINVAL;
+ *v=n->values[property(name)];return 0;
+}
+static u8 readb(void *p) {return *(u8 *)p;}
+static void writeb(u8 v,void *p) {*(u8 *)p=v;}
+static void mtk_phy_set_bits(void *p,u32 mask) {u32 v;memcpy(&v,p,4);v|=mask;memcpy(p,&v,4);}
+''' + function(source,'mt8163_usb2_apply_analog')+'\n'+function(source,'mt8163_usb2_validate_eye')+r'''
+int main(void) {
+ unsigned char common[256];struct mtk_phy_instance instance={.u2_banks={.com=common}};
+ for(unsigned int mode=0;mode<2;mode++)for(u32 state=0;state<65536;state++) {
+  memset(common,0xa5,sizeof(common));u32 initial=0x5a5a0000|state;
+  memcpy(common+0x18,&initial,4);memcpy(common+0x04,&initial,4);
+  mt8163_usb2_apply_analog(&instance,mode);
+  u32 rx,eye;memcpy(&rx,common+0x18,4);memcpy(&eye,common+0x04,4);
+  assert(rx==((mode?(initial&~8U):initial)|6U));
+  assert(eye==(initial|0x7700U));
+  for(int i=0;i<256;i++)if(!(i>=4&&i<8)&&!(i>=0x18&&i<0x1c))assert(common[i]==0xa5);
+ }
+ struct device_node np={0};assert(mt8163_usb2_validate_eye(&np)==0);
+ for(int p=0;p<2;p++)for(u32 value=0;value<=8;value++) {
+  memset(&np,0,sizeof(np));np.present[p]=1;np.values[p]=value;
+  assert(mt8163_usb2_validate_eye(&np)==(value==7?0:-EINVAL));
+ }
+ np=(struct device_node){.present={1,1,0},.values={7,7,0}};
+ assert(mt8163_usb2_validate_eye(&np)==0);np.extra_cells=1;assert(mt8163_usb2_validate_eye(&np)==-EINVAL);np.extra_cells=0;np.malformed=1;assert(mt8163_usb2_validate_eye(&np)==-EINVAL);
+ np=(struct device_node){.present={0,0,1}};assert(mt8163_usb2_validate_eye(&np)==-EINVAL);
+ return 0;
+}
+'''
+            c=root/'analog.c';exe=root/'analog';c.write_text(code)
+            compiled=subprocess.run(['cc','-std=gnu11','-Wall','-Wextra','-Werror',str(c),'-o',str(exe)],capture_output=True,text=True)
+            self.assertEqual(compiled.returncode,0,compiled.stderr)
+            subprocess.run([str(exe)],check=True,timeout=5)
 
     def test_actual_c_resource_errors_measurement_cleanup_and_fixed_byte_in_ram(self):
         with tempfile.TemporaryDirectory() as d:
