@@ -1,0 +1,7 @@
+{
+  "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/pmdomain/core.c?format=TEXT",
+  "bytes": 102206,
+  "sha256": "4832ea7e8fb162a601385445b074e5602bfd756b5824a6c1011aada8f7f507b8",
+  "scope": "Pinned source acquired; semantic equivalence not yet analyzed",
+  "obsolete_path": "drivers/base/power/domain.c returns404 at selected modern revision"
+}

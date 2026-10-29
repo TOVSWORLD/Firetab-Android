@@ -10,6 +10,11 @@ binding is added yet; full40 diagnostics retained. Next acceptance after build:
 source-matched IOMMU/SMI contracts and decoded-node controls. Runtime DMA/display,
 loading, independent failed-boot return/log gates remain open.
 
+#20 source prerequisite update: pinned modern genpd core acquired at its relocated
+`drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in
+`kernel/GENPD-WAKEUP-COMPARISON.md`; missing-source blocker is resolved.
+No active-wakeup capability change or runtime equivalence is claimed.
+
 ## Execution contract
 
 - Continue useful authorized work within the active turn. The 15-minute heartbeat
