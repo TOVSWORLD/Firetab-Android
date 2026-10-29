@@ -1,0 +1,16 @@
+{
+  "scope": "Complete source-DTB metadata delta only; not PHY/device qualification",
+  "nodes_compared": 186,
+  "base_property_count": 880,
+  "candidate_property_count": 881,
+  "only_changed_properties": [
+    "/soc/t-phy@11210000/reg",
+    "/soc/t-phy@11210000/reg-names"
+  ],
+  "all_other_property_and_phandle_values_unchanged": true,
+  "child_order_preserved": true,
+  "reservation_table_preserved": true,
+  "usb0_usb1_and_phy_remain_disabled": true,
+  "usb1_port1_driver_supported": false,
+  "runtime_qualified": false
+}

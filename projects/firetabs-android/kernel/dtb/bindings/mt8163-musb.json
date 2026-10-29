@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in MT8163 USB metadata contract; port0-only driver support, disabled USB1 not qualified, no transport proof",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "usb/mediatek,musb.yaml",
+  "patch": "bindings/mt8163-musb.patch",
+  "patch_sha256": "cb1fb2f0ef5d209aa7ff14ad634bc01b68808050ca51ae6fca5dfb7ce4d7e3ca",
+  "original_sha256": "5e4ea9a5b48604458fa648739e59941a02f946c2dab89c4f2538d2f7b3dbee48",
+  "proposed_sha256": "314c1bd0f2e9120ccb2da2cc2a7b6134a7f046e02ad7fd38678e1120bfbe3442"
+}

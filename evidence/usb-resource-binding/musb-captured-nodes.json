@@ -1,0 +1,112 @@
+{
+  "/soc/usb@11200000": {
+    "compatible": [
+      "mediatek,mt8163-musb",
+      "mediatek,mtk-musb"
+    ],
+    "reg": [
+      [
+        0,
+        287309824,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        72,
+        8
+      ]
+    ],
+    "interrupt-names": [
+      "mc"
+    ],
+    "phys": [
+      [
+        28,
+        3
+      ]
+    ],
+    "dr_mode": [
+      "otg"
+    ],
+    "clocks": [
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        22,
+        2
+      ]
+    ],
+    "clock-names": [
+      "main",
+      "mcu",
+      "univpll"
+    ],
+    "status": [
+      "disabled"
+    ]
+  },
+  "/soc/usb@11270000": {
+    "compatible": [
+      "mediatek,mt8163-musb",
+      "mediatek,mtk-musb"
+    ],
+    "reg": [
+      [
+        0,
+        287768576,
+        0,
+        4096
+      ]
+    ],
+    "interrupts": [
+      [
+        0,
+        73,
+        8
+      ]
+    ],
+    "interrupt-names": [
+      "mc"
+    ],
+    "phys": [
+      [
+        35,
+        3
+      ]
+    ],
+    "dr_mode": [
+      "otg"
+    ],
+    "clocks": [
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        23
+      ],
+      [
+        22,
+        2
+      ]
+    ],
+    "clock-names": [
+      "main",
+      "mcu",
+      "univpll"
+    ],
+    "status": [
+      "disabled"
+    ]
+  }
+}

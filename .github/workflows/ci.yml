@@ -86,6 +86,10 @@ jobs:
           python3 scripts/validate_iommu_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/audit_usb_prerequisites.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_usb_variant_definition.py
+      - name: Compile isolated disabled USB resource experiment and verify complete delta
+        run: |
+          python3 scripts/build_douglas_dtb.py --experiment usb-frequency-resource
+          python3 scripts/compare_usb_resource_dtb.py
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04

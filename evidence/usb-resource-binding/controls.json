@@ -1,0 +1,158 @@
+{
+  "scope": "Schema metadata only, not driver readiness; disabled USB1/port1 remains unsupported",
+  "cases": [
+    {
+      "node": "/soc/usb@11200000",
+      "name": "actual disabled metadata; no runtime admission",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/usb@11200000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11200000",
+      "name": "missing PHY",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11200000",
+      "name": "wrong clock order",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11200000",
+      "name": "missing IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11200000",
+      "name": "existing mt2701 contract",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "actual disabled metadata; no runtime admission",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "missing PHY",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "wrong clock order",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "missing IRQ",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/usb@11270000",
+      "name": "existing mt2701 contract",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "actual disabled metadata; no runtime admission",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "missing frequency bank",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "missing names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "wrong names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "extra resource",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "unused reference override",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "unused coefficient override",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "child EYE bypass forbidden",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "explicit zero EYE presence forbidden",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "old V1 one resource retained",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "old V1 still rejects two resources",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "node": "/soc/t-phy@11210000",
+      "name": "old V2 optional reg retained",
+      "accepted": true,
+      "expected": true
+    }
+  ],
+  "prior_constraints_preserved": true,
+  "passed": true,
+  "runtime_qualified": false
+}

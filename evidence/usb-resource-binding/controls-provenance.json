@@ -1,0 +1,46 @@
+{
+  "scope": "Actual metadata controls/source-DTB delta; no device qualification or USB1 support",
+  "source_build_pr": 413,
+  "source_build_run": 40805824866,
+  "canonical_dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411",
+  "isolated_dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4",
+  "dtschema_version": "2026.9",
+  "inputs": {
+    "evidence/usb-resource-binding/check-controls.py": "c121084dbe55872e236bde43d59a4c06866306cbb872074dc222aad45be150a0",
+    "evidence/usb-resource-binding/controls.json": "2d83d23dd85c94843665f22520b5167c62c2743682c04883eca9096f1580e400",
+    "evidence/usb-resource-binding/mt8163-tphy-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/usb-resource-binding/report.json": "d460c50e615303afdd4877dfa98e545e7bfdccb7036addec5e9e592354bdc84e",
+    "evidence/usb-resource-binding/mt8163-musb-doc-validate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/usb-resource-binding/tphy-processed-schemas.json": "288b24a4568a58e8f2ff8edcb5ecd190f87f992dbb057a8695c0cdd395b5b716",
+    "evidence/usb-resource-binding/tphy-proposed.yaml": "1fdd47071b109019051c504c5e35b77948b87fef4e7d7d1a285877a50a77bce1",
+    "evidence/usb-resource-binding/tphy-original.yaml": "8906b7b837a812f3294e6ca61de68a526b620a22a5db5b3827bb9de5bcecd427",
+    "evidence/usb-resource-binding/musb-processed-schemas.json": "225af2825addb96509a5f0899bb94eaf8a3e8f63acb8764a950c74ba3a5528bb",
+    "evidence/usb-resource-binding/diagnostics.json": "a599733056dbcab30cb55cce869340ae426193867d164484a1567f7a4b668997",
+    "evidence/usb-resource-binding/validate.stderr": "526a2757f892aad3886c63bd7874c4e81c8a1d4a24a4e4962279d7b90471c756",
+    "evidence/usb-resource-binding/musb-captured-nodes.json": "90ed0297550cf383a4fbdd57bb535aca946f9e99473a0cc9cefc4d6a7aa1ad48",
+    "evidence/usb-resource-binding/tphy-captured-nodes.json": "83b1684bbfa6d326e1f316c632a0ba12080c63530662d0e5dd1aad508f73a5f0",
+    "evidence/usb-resource-binding/delta.json": "bd553a0617c6d62a968fa1650527b224d03379c040886071632d4171f0a72485",
+    "evidence/usb-resource-binding/dtb-compile-report.json": "c7fca47dc9d02c9d1d5e0e10a124ee5e1dcf9aebdb1a782b536378c018617a07",
+    "evidence/usb-resource-binding/property-delta.json": "cb0c3c5710fcfa3b035852d280dc625b3a65739b38069c769756a323da6aeb5b",
+    "evidence/usb-resource-binding/command.json": "8dbf3a10cea67db3b62ba642541cac1b309170047fc2989e160ddf5d4ff69ab9",
+    "evidence/usb-resource-binding/musb-original.yaml": "5e4ea9a5b48604458fa648739e59941a02f946c2dab89c4f2538d2f7b3dbee48",
+    "evidence/usb-resource-binding/musb-proposed.yaml": "314c1bd0f2e9120ccb2da2cc2a7b6134a7f046e02ad7fd38678e1120bfbe3442"
+  },
+  "commands": [
+    [
+      "python3",
+      "scripts/build_douglas_dtb.py",
+      "--experiment",
+      "usb-frequency-resource"
+    ],
+    [
+      "python3",
+      "scripts/compare_usb_resource_dtb.py"
+    ],
+    [
+      "work/dtb-tool/venv/bin/python",
+      "evidence/usb-resource-binding/check-controls.py"
+    ]
+  ],
+  "runtime_qualified": false
+}

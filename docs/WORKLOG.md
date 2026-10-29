@@ -3178,3 +3178,25 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next acceptance after exact-head Linux build: isolated disabled-DT frequency
   resource experiment and matched binding controls; baseline/full34 diagnostics,
   actual transport/loading/independent return/log gates remain unqualified.
+
+## 2026-10-28 — USB build accepted and isolated disabled resource/bindings (#27)
+
+- PR413 merged a387d72984736862777af376fa428abe1be11ec1 after five PR checks and
+  exact-head179c920 run40805824866. Actual MUSB/T-PHY objects, USB/GADGET/dual-role/
+  Inventra DMA config and Image pass. Object/config/Image hashes and exact run
+  retained in evidence/usb-kernel-integration/build-result.json. No QEMU/device test.
+- Registered explicit seven-patch/26-input disabled USB frequency experiment.
+  Fresh compile26307bytes SHA4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4.
+  Only parent reg/reg-names change across186nodes; all other values/phandles,
+  child order and reserve table preserved. All USB nodes remain disabled.
+- Two opt-in source-matched metadata schemas;25 actual decoded-node controls and
+  structural old-SoC preservation pass. Explicit top-level minItems1 prevents
+  dtschema inferring global minimum2; MT8163 requires two named resources only.
+- Paired isolated context34→28 removes six USB metadata diagnostics/no additions;
+ 19unmatched/9validation remain, wrapper exit1/passedfalse. Canonical pwrap b837e6cb
+  and its34-diagnostic context not replaced. Disabled USB1 metadata acceptance is
+  not driver support: initial MT8163 xlate rejects its port1. No activation.
+- Exact commands, source-DTB/property/schema receipts and negative controls in
+  evidence/usb-resource-binding and USB-RESOURCE-BINDINGS.md. No new downloads
+  or device/firmware execution. Next #27 source acceptance: finite USB0 analog/
+  role/clock dependency comparison, with all physical loading/return/log gates open.
