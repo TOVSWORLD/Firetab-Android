@@ -3288,3 +3288,29 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   actual C RAM tests and exact-head USB provider/Image build. Builtin ACM/profile
   and explicit gadget userspace remain separate. No kernel/DT/device changes here;
   canonical34/isolated28 failures and all loading/return/log gates remain open.
+
+## 2026-10-29 — actual MT8163 role/init PHY error transactions (#27)
+
+- PR418 merged19b5fb4af7c8a1881348aa29d8c6498003bdda8f after five final-head
+  checks ate6b43a0e2f5d29471bb2a40b5bc4b115790d6201;406 tests/source audit.
+- Added exact MT8163 MUSB match/data and scoped role/init/exit implementation;
+  previous generic functions retained byte-identical as legacy helpers. Checks
+  backend errors before controller/role commit; propagates caller errors; failed
+  transactions latch fault even after best-effort mode/power restoration. Init
+  handles failed set_mode/cleanup before interrupts; exit respects known refs.
+- Pinned31489-byte official ACK phy-core.c confirms successful-reference and
+  failure-count/mode semantics. Hardware partial change/physical rollback not
+  qualified. No concurrent callback or safe reprobe qualification claimed.
+-409 host tests, actual C RAM controls cover12 successful role/power combinations,
+  idempotency, initial NONE-owned power without duplication, mode/power/exit
+  cleanup failures, error preservation, no register/role commit, all init phases,
+  caller/getter/fault behavior and non-OTG lifecycle. Generic behavior preserved.
+- apply_usb_port now input-checks both source targets and every patch/helper;
+  shadow-applies/output-checks all targets before real writes. Second-source and
+  output drift negatives prove both real files unchanged. Exact hashes/commands
+  evidence/usb-role-errors; docs kernel/usb-port/ROLE-ERRORS.md.
+- Required next acceptance: new exact-head USB-enabled object/config/Image run;
+  no current build claim. No device/mode/firmware execution. Both disabled DTs and
+  canonical34/isolated28 failures unchanged. Next independent ready package work:
+  explicit opt-in builtin ACM/configfs profile/gadget userspace after source build,
+  retaining minimal diagnostic security/storage boundaries and all runtime gates.
