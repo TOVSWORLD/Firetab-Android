@@ -1,0 +1,36 @@
+{
+  "scope": "Actual selected C and isolated little-endian register/PCW model; no physical samples or whole-sequence equivalence",
+  "passed": true,
+  "controls": {
+    "low16_preserve_states": 65536,
+    "legacy_donor_equal_states": 8192,
+    "integer_mhz_pcw_cases": 1201,
+    "below_min_no_io": true,
+    "donor_prepare_above_round_max_accepts": true,
+    "generic_unprepare_clears_outside_donor_field": true
+  },
+  "donor_round_rate_reference_undefined_in_pinned_file": true,
+  "donor_globally_adds_optional_reset": true,
+  "legacy_preserve_bits": [
+    7,
+    14
+  ],
+  "donor_preserve_bits": [
+    7,
+    11
+  ],
+  "existing_unprepare_preserve_bits": [
+    8,
+    15
+  ],
+  "prepare_required_extent_bytes": 108,
+  "pll_reference_formula_hz": 26000000,
+  "donor_delay_us_lower_bounds": [
+    30,
+    30,
+    20
+  ],
+  "legacy_delay_ms": 1,
+  "phy_binding_admitted": false,
+  "runtime_qualified": false
+}

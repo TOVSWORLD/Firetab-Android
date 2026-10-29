@@ -1,24 +1,23 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: finite actual thermal source audit complete. Pinned ACK has no
-MT8163 match; donor adds descriptor AND globally changes callback/private-data/
-zone registration. Actual C RAM callbacks prove aggregate vs per-bank difference.
-Active legacy mux writes differ from donor bank tables; neither is hardware proof.
-Compiled calibration parsers agree selected fields for ordered synthetic words but
-signed slope differs126/256 ID/sign/slope cases. Legacy chosen atag,devinfo words
-are not proven equivalent to candidate nvmem0x100+12. No thermal source variant,
-binding, DT, thresholds or device changes admitted. Exact source/runtime blockers
-in kernel/THERMAL-SOURCE-PREREQUISITES.md and evidence/thermal-source.
+2026-10-29 #27: finite actual MIPI-TX source contract complete. Distinct donor
+MT8163 prepare/PLL path found (not MT8173 alias). Actual selected C/RAM controls:
+1201 whole-MHz PCW comparisons agree legacy arithmetic;65536 low-word preserve
+states yield8192 equal (legacybits7:14 vs donor7:11). Generic unprepare clears8:15;
+compiler negative confirms donor missing round_rate definition; donor global reset
+change must be isolated. Model source intent uses declared legacy field/value2,
+1ms settle steps/fixed RT8,26MHz and50..1250MHz bounds. No kernel variant/binding/
+DT/physical PHY support yet. Full failed contexts32/26 and disabled states retained.
+NEXT actual implementation: isolated MT8163 match/descriptor/prepare/unprepare,
+checked rate/reference/reset/resource/override paths, old SoCs byte-identical,
+atomic patch preflight, actual C negatives and explicit builtin PHY/Image build.
+Do not repeat a planning-only scope for settled field/rate/resource questions.
 
-PR427 mergede56a1b7 after five exact-head checks ate2b07e2:458 CI tests/22 decoded
-SYM controls/fresh-DTB hash/raw-node check passed. Exact receipt now public
- evidence/sym827-binding/ci-result.json. Accepted full contexts32 canonical (20
-unmatched/12validation),26 isolated (17/9), both failed/Gunyahwarning retained.
-PR426 source object/config/Image accepted4e358045; physical bank/voltage unqualified.
-Next independent existing #27 source: MT8163 MIPI-TX display PHY actual driver/
-variant/clock/resource/probe prerequisites before matching schema. Thermal source
-needs justified calibration lineage/bank/conversion isolation, no guessed alias.
-No device/thermal/ADC/voltage/firmware action; runtime loading/return/log gates open.
+PR428 merged12ba1852 after five exact-head checks at5840d29/460 actual CI tests.
+Final receipt public evidence/thermal-source/ci-result.json; no thermal port admitted.
+Thermal chosen-devinfo/nvmem lineage, bank/conversion prerequisites remain blocked.
+No hardware operation or threshold changes. Runtime loading/failed-return/retained
+logs/physical clock/PHY/regulator/beta acceptance remain unqualified.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

@@ -1,0 +1,13 @@
+{
+  "scope": "Finite thermal source audit exact-head CI, not kernel/thermal/binding acceptance",
+  "head": "5840d296b8981367ea364b9d7f82e9acfa6a6f2a",
+  "merge": "12ba1852f28a64aeb1cd0f0b8ad022a493bd7370",
+  "run": 40855318378,
+  "android_job": 123384702159,
+  "repository_job": 123384702528,
+  "tests": 460,
+  "passed": true,
+  "log_sha256": "2c4579d725884afc5cd5140b77550301989c592e671aaff2e45e5c2672a44742",
+  "thermal_source_port_admitted": false,
+  "runtime_qualified": false
+}
