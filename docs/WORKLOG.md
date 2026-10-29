@@ -3498,3 +3498,23 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   exact-head Linux result pending; no source build or binding acceptance yet.
 - DTBs/schema/canonical33/isolated27 failed contexts and all disabled states remain
   unchanged. No I2C/regulator/GPIO/device/voltage/security operations executed.
+
+
+## 2026-10-29 — #27 SYM827 source build and matched metadata
+
+- PR426 merged4e358045fd6a2fe2fa882100314c0b0f81e06084 after five host checks
+  plus exact-head dec1a898 run40847835013/job123359594153. Actual changed-source
+  SHA b3cc8c2daf66c36d72fce0b02d55b1aebccc15144406a46f639eb03a2a2c2e2d
+  matches lock; final Image eb064096cb41fb4e82b9f06d04027abcfd387f922c5fe2fd84cc9acda5f76c11
+  (28645888bytes), config REGULATOR_FAN53555=y. Normalized exact source/object/
+  config/vmlinux/Image receipt published; raw build log private. W1 object hash
+  is pre-Image probe, earlier baseline Image.gz not changed-source acceptance.
+- Actual source-matched opt-in SYM binding adds exact compatible and conditional
+  explicit scalar selector/no external GPIO ownership; older SoC policy retained.
+ 22 decoded controls pass; full5186-YAML canonical33→32(20unmatched/12validation),
+  isolated27→26(17/9), only SYM unmatched removed/no additions. Full wrappers keep
+  exit1/passedfalse/Gunyah warning and disabled unmatched AFE child.
+- DTBs/disabled states unchanged. Physical ID/GPIO34/DVS/activebank/voltage/ramp/
+  CPU handoff/loading/recovery/log gates remain unqualified; no hardware action.
+  New binding exact-head checks required before merge, no repeated kernel build
+  for schema-only scope. Existing task27/Phase328/Feature4/Epic2 remain Active.

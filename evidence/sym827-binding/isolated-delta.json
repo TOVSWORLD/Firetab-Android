@@ -1,0 +1,22 @@
+{
+  "before": 27,
+  "after": 26,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/usb-frequency-resource/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/i2c@11008000/regulator@60",
+      "nodename": "regulator@60",
+      "compatible": [
+        "silergy,sym827"
+      ],
+      "message": "failed to match any schema with compatible: ['silergy,sym827']",
+      "formatted": "work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/i2c@11008000/regulator@60: failed to match any schema with compatible: ['silergy,sym827']"
+    }
+  ],
+  "added": [],
+  "full_passed": false
+}

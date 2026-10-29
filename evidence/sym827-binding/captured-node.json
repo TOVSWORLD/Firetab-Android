@@ -1,0 +1,28 @@
+{
+  "compatible": [
+    "silergy,sym827"
+  ],
+  "reg": [
+    [
+      96
+    ]
+  ],
+  "fcs,suspend-voltage-selector": 1,
+  "regulator-name": [
+    "sym827-vproc"
+  ],
+  "regulator-min-microvolt": [
+    [
+      600000
+    ]
+  ],
+  "regulator-max-microvolt": [
+    [
+      1387500
+    ]
+  ],
+  "regulator-enable-ramp-delay": 400,
+  "regulator-ramp-delay": 8000,
+  "regulator-always-on": true,
+  "phandle": 7
+}

@@ -1,24 +1,20 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: isolated actual SYM827 kernel source port implemented; exact-head
-Linux Image build required before source acceptance/binding. Pinned modern donor
-ID1/rev12/min600000/step12500 isolated in a new vendor (existing SYR unchanged).
-Legacy manufacturer guard and strict explicit scalar bank selector reject
-unsupported identities/properties before setup/registration. Actual C RAM
-identity/range/bank controls and prior-vendor full-state comparisons pass;
-patch shadow preflight rejects drift before target replacement. No DT/schema
-change; canonical33/isolated27 full diagnostics remain failed. Physical GPIO34/
-DVS/active bank, chip identity, voltage/ramp and CPU supply handoff remain
-unqualified. No device/regulator/voltage operation authorized by this source work.
-New explicit sym827-provider build preserves the old build script byte-for-byte,
-then compiles changed regulator and rebuilds final Image; no QEMU claim.
+2026-10-29 #27: PR426 merged4e358045 after all six exact-head checks atdec1a898
+and Linux run40847835013. Actual changed fan53555 source/W1 object/config/final
+28645888-byte Image passed; exact receipt evidence/sym827-port/build-result.json.
+Earlier baseline Image is pre-SYM and W1 object is pre-final-Image, not asserted
+final linked object. No QEMU or physical regulator qualification.
 
-PR425 merged09bc5eb after five final-head checks at7d3208a:452 actual CI tests,
-30 decoded AUDSYS controls and both fresh-DTB guards. Linux pinned schema tools
-verified; exact receipt evidence/audsys-binding/ci-result.json. AUDSYS parent
-source acceptance does not qualify disabled unmatched AFE child or hardware.
-Next: require new SYM source exact-head host/object/config/Image checks, then
-source-matched binding controls only if justified; never infer physical bank.
+Source-matched opt-in SYM827 binding now implemented:22 decoded controls and
+structural older-SoC preservation pass. Full5186-YAML canonical33→32 (20unmatched/
+12validation), isolated27→26 (17/9): exactly SYM unmatched removed, no additions;
+wrappers exit1/passedfalse, Gunyah warning/disabled unmatched AFE child retained.
+DTB bytes/disabled states unchanged. Exact new-head CI required before merge.
+Actual GPIO34/DVS bank selection, identity, voltages/ramp/CPU supply handoff and
+loading/return/log/runtime gates stay unqualified. No hardware action scheduled.
+Next source selection follows exact binding acceptance; audit remaining unmatched
+nodes against actual cached drivers before any further metadata match claim.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

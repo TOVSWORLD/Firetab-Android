@@ -1,0 +1,26 @@
+{
+  "scope": "Exact-head source object/config/Image build; no QEMU or physical regulator qualification",
+  "repository_head": "dec1a898f0f49782cff96daaa61b6f364d6930b4",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "run": 40847835013,
+  "job": 123359594153,
+  "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40847835013/job/123359594153",
+  "passed": true,
+  "mode": "sym827-provider",
+  "command": "bash scripts/build_sym827_provider.sh",
+  "log_sha256": "6b3faecd75670b02fcf2b99bb34d1917aeee5a28dd855c5e36ebafc4903cf655",
+  "final_hashes": {
+    "output/drivers/iommu/mtk_iommu.o": "b957a4c2cadcfebb5e1a9d025c252d6a95b8ee828cd5d888d67fd22afb12e070",
+    "output/drivers/memory/mtk-smi.o": "ee4532778e05a61079ac297f2ee7c7e99434b3bbc0b30c8e85f519ec678befe4",
+    "output/.config": "16a9fe907a1354f4508deef5900654c7fcd9cb104a274a892b0331e959f3e68a",
+    "output/vmlinux": "59f898b1c8368c4ab4e05c6b2b77b963dedbd10c04c45e06abf3e055cc39af1f",
+    "output/arch/arm64/boot/Image": "eb064096cb41fb4e82b9f06d04027abcfd387f922c5fe2fd84cc9acda5f76c11",
+    "output/drivers/regulator/fan53555.o": "533924f4f98b63165fc3a2f1eb014641d42e38c5309450f1ee7354d7f4cef75f",
+    "source/drivers/regulator/fan53555.c": "b3cc8c2daf66c36d72fce0b02d55b1aebccc15144406a46f639eb03a2a2c2e2d"
+  },
+  "config_regulator_fan53555": "y",
+  "image_bytes": 28645888,
+  "object_hash_scope": "Explicit W1 pre-Image probe; Image rebuild compiles object again, not asserted final linked object hash",
+  "earlier_baseline_hashes": "Pre-SYM patch; excluded from changed-source acceptance; stale earlier Image.gz not a changed-source artifact",
+  "runtime_qualified": false
+}

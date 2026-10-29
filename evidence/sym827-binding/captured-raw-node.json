@@ -1,0 +1,12 @@
+{
+  "compatible": "73 69 6c 65 72 67 79 2c 73 79 6d 38 32 37 0",
+  "reg": "0 0 0 60",
+  "fcs,suspend-voltage-selector": "0 0 0 1",
+  "regulator-name": "73 79 6d 38 32 37 2d 76 70 72 6f 63 0",
+  "regulator-min-microvolt": "0 9 27 c0",
+  "regulator-max-microvolt": "0 15 2b ec",
+  "regulator-enable-ramp-delay": "0 0 1 90",
+  "regulator-ramp-delay": "0 0 1f 40",
+  "regulator-always-on": "",
+  "phandle": "0 0 0 7"
+}

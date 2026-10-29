@@ -1,0 +1,97 @@
+{
+  "scope": "Source-matched metadata; physical identity/GPIO34/DVS/active bank/voltage handoff remain unqualified",
+  "passed": true,
+  "count": 22,
+  "cases": [
+    {
+      "name": "actual candidate metadata; physical active bank not qualified",
+      "accepted": true
+    },
+    {
+      "name": "selector 0",
+      "accepted": true
+    },
+    {
+      "name": "selector 1",
+      "accepted": true
+    },
+    {
+      "name": "selector 2",
+      "accepted": false
+    },
+    {
+      "name": "selector []",
+      "accepted": false
+    },
+    {
+      "name": "selector [1]",
+      "accepted": false
+    },
+    {
+      "name": "selector [1, 0]",
+      "accepted": false
+    },
+    {
+      "name": "selector 1",
+      "accepted": false
+    },
+    {
+      "name": "missing explicit bank",
+      "accepted": false
+    },
+    {
+      "name": "unowned vsel-gpios",
+      "accepted": false
+    },
+    {
+      "name": "unowned vsel-gpio",
+      "accepted": false
+    },
+    {
+      "name": "unowned en-gpio",
+      "accepted": false
+    },
+    {
+      "name": "old optional selector silergy,syr827",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector silergy,syr828",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector fcs,fan53555",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector fcs,fan53526",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector rockchip,rk8600",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector rockchip,rk8602",
+      "accepted": true
+    },
+    {
+      "name": "old optional selector tcs,tcs4525",
+      "accepted": true
+    },
+    {
+      "name": "missing compatible",
+      "accepted": false
+    },
+    {
+      "name": "missing reg",
+      "accepted": false
+    },
+    {
+      "name": "legacy ABI not alias",
+      "accepted": false
+    }
+  ],
+  "older_soc_policy_structurally_preserved": true,
+  "runtime_qualified": false
+}
