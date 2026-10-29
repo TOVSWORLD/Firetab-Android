@@ -1,0 +1,76 @@
+{
+  "scope": "Finite actual DSI source/lifecycle/queue audit; no controller/runtime acceptance",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/mediatek/mtk_dsi.c?format=TEXT",
+  "bytes": 34699,
+  "sha256": {
+    "evidence/dsi-source/mipi_display.h": "36fc5778eda7503f25df5d75dcd8dd70e9bf7df20b387b3adcd05185391f23ab",
+    "evidence/dsi-source/ack-mtk_dsi.c": "a3d57e618dbf98dcaf03989351aeb81d8cbd091f64f4bc5c4bced5866c91685d",
+    "evidence/dsi-source/donor-mtk_dsi.c": "1cb253b4f064e961a88d86a17f36585afa31c66553685f7d489828056ecb6984",
+    "evidence/dsi-source/drm_mipi_dsi.h": "0ee268fc5a7c746ce39a3ac45b2bdb5faab2a1c4cc26f425cf5a006ad3ebc95f",
+    "evidence/mipi-source/legacy-ddp_dsi.c": "c73f9fe4697cc19abbc65afe51e536ed4ad5babda0e24083a1ac8cefa90f3b1b",
+    "evidence/mipi-source/legacy-ddp_reg.h": "09f3554a395991bcafde21c923be77a2d92c3e65faa14d681e5cb441588864f9",
+    "evidence/dsi-source/ram.c.in": "9de8ac19eeceba2d9f291653e041a5a1c63cedb78df2b628f57e812512501aff",
+    "evidence/dsi-source/mtk_drm_drv.c": "7c55fcf212abfc5e6ec7c8b88c086083dfdbec6c07359c8148fbaf683bad4d83",
+    "evidence/dsi-source/Kconfig": "9830ec11064268ea76b5f9eedc73cd75e361362477c78c7b02a78483b094a2af",
+    "evidence/dsi-source/Makefile": "00d3c5ee0ed5e7e2b83f1da77142611c46736e776a1d74e9f7aa9c3a77153716",
+    "projects/firetabs-android/kernel/dsi-port/variant-definition.json": "0d606f5fcc17d790f7c435ef6b5b65aad79f102f45e88262f18f7a221623e1fa"
+  },
+  "runtime_qualified": false,
+  "prior_config_drm_mediatek": "not observed enabled",
+  "source_match_present": false,
+  "legacy_sources_already_cached": [
+    "evidence/mipi-source/legacy-ddp_dsi.c",
+    "evidence/mipi-source/legacy-ddp_reg.h"
+  ],
+  "candidate": {
+    "node": "/soc/dsi@14012000",
+    "compatible": "mediatek,mt8163-dsi",
+    "status": "disabled",
+    "reg": "0x14012000+0x1000",
+    "irq": "SPI195 level-low",
+    "dependencies": [
+      "MM power domain",
+      "MMSYS engine/digital clocks",
+      "MIPI hs clock/PHY",
+      "MMSYS DSI reset"
+    ],
+    "runtime_qualified": false
+  },
+  "next": "Trace actual MT8163 variant/command-queue/reset/IRQ/clock/power and host/component/panel probe ownership against ACK/donor/legacy before any source/binding support. No guessed MT8173 alias or display operations.",
+  "donor": {
+    "commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+    "url": "https://raw.githubusercontent.com/bengris32/linux-f/20951722df6ae1f6fecbfcea0a7d585118a06f3f/drivers/gpu/drm/mediatek/mtk_dsi.c",
+    "bytes": 35854,
+    "sha256": "1cb253b4f064e961a88d86a17f36585afa31c66553685f7d489828056ecb6984"
+  },
+  "protocol_headers": {
+    "include/drm/drm_mipi_dsi.h": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/drm/drm_mipi_dsi.h?format=TEXT",
+      "bytes": 21404,
+      "sha256": "0ee268fc5a7c746ce39a3ac45b2bdb5faab2a1c4cc26f425cf5a006ad3ebc95f"
+    },
+    "include/video/mipi_display.h": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/video/mipi_display.h?format=TEXT",
+      "bytes": 5074,
+      "sha256": "36fc5778eda7503f25df5d75dcd8dd70e9bf7df20b387b3adcd05185391f23ab"
+    }
+  },
+  "drm_dependencies": {
+    "drivers/gpu/drm/mediatek/mtk_drm_drv.c": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/mediatek/mtk_drm_drv.c?format=TEXT",
+      "bytes": 36285,
+      "sha256": "7c55fcf212abfc5e6ec7c8b88c086083dfdbec6c07359c8148fbaf683bad4d83"
+    },
+    "drivers/gpu/drm/mediatek/Kconfig": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/mediatek/Kconfig?format=TEXT",
+      "bytes": 1091,
+      "sha256": "9830ec11064268ea76b5f9eedc73cd75e361362477c78c7b02a78483b094a2af"
+    },
+    "drivers/gpu/drm/mediatek/Makefile": {
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/gpu/drm/mediatek/Makefile?format=TEXT",
+      "bytes": 647,
+      "sha256": "00d3c5ee0ed5e7e2b83f1da77142611c46736e776a1d74e9f7aa9c3a77153716"
+    }
+  }
+}
