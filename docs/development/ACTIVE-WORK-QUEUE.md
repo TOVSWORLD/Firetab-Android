@@ -1,21 +1,26 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: PR430 merged9c3f4a81 after six exact-head checks atb5e12688 and
-actual builtin MIPI run40859970271. Three actual PHY objects/config/final28645888B
-Image passed; exact normalized receipt evidence/mipi-kernel-integration/build-result.json.
-Prior staged Images excluded; W1 objects pre-Image only, no physical admission.
+2026-10-29 #27: finite actual DSI source/lifecycle/packet contract complete.
+Explicit donor MT8163 descriptor exists, but common paths retain references on
+format error/ignore PHY power failure, bind resets after encoder initialization,
+attach commits before dependency success, and packet writer lacks128-word bound.
+Actual C RAM witnesses cover power/caller states, nine probe error stages, bridge/
+component ownership and12 packet cases; payload509 crosses declared legacy queue,
+1020 wraps u8 count. No physical errors or driver/binding admission claimed.
+Donor HSTX/initial-command changes must be scoped; legacy bypass helper is commented
+and VM_DONE enable is uncommented, so IRQ absence/equivalence is not established.
 
-Source-matched MIPI metadata implemented:35 actual decoded/type-policy controls,
-olderSoC structural preservation and fresh-DTB actual reference/reset/disabled DSI
-consumer graph checks pass. Full5186-YAML canonical32→31 (19unmatched/12validation),
-isolated26→25(16/9): only MIPI unmatched removed/no additions; wrappers exit1/false,
-Gunyah warning/disabled AFE unmatched retained. Source/DTBs/disabled states unchanged.
-New exact-head host/metadata checks required before merge. No extra kernel build
-for schema-only work. Physical PLL/reset/clock/lane/panel and recovery/beta open.
-Next independent #27 source after metadata acceptance: actual MT8163 DSI controller
-variant/IRQ/clock/power/resource/probe prerequisites, not guessed MT8173 alias.
-Thermal source remains unadmitted on actual calibration/bank/conversion lineage.
-No PHY/display/device/mode/firmware/helper/reset/electrical operations.
+NEXT ACTUAL implementation: isolated MT8163 descriptor/quirks plus checked power/
+reference/cleanup/host/queue/bind error boundaries, unchanged old SoCs, all-target
+preflight, actual C failures and explicit builtin DRM/DSI/PHY object/config/Image.
+Missing MT8163 DRM master/pipeline data remains separate; don't copy MT8173 paths
+or force panel activation. No another planning-only scope for settled findings.
+
+PR431 merged3bb81d6b after five checks atd503ce8/471 CI tests/35 type+metadata
+controls/two fresh guards; normalized receipt public evidence/mipi-binding/ci-result.json.
+Source430 actual MIPI Image accepted9c3f4a81. Full contexts31/25 still failed and
+all DT disabled states unchanged. No device/display/PHY/IRQ/reset/firmware action;
+thermal/physical clock/loading/failed-return/retained-log/beta gates stay open.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

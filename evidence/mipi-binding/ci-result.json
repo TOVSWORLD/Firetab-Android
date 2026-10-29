@@ -1,0 +1,14 @@
+{
+  "scope": "Exact-head MIPI metadata/type controls and fresh source-DTB graph, not physical admission",
+  "head": "d503ce80bc98568acdb14ac01c3fe6477834547a",
+  "merge": "3bb81d6b351585ac49781f5edbdd1e5c324d2e44",
+  "run": 40864717648,
+  "android_job": 123416452403,
+  "repository_job": 123416452392,
+  "tests": 471,
+  "metadata_type_controls": 35,
+  "fresh_dtb_graphs": 2,
+  "passed": true,
+  "log_sha256": "1380c92d8b9aef6c1a2eaa7bc9d46346ccd2ea71d79670d2b13eb621d9623019",
+  "runtime_qualified": false
+}

@@ -1,0 +1,88 @@
+#include <assert.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+typedef uint32_t u32;typedef uint8_t u8;
+#define BIT(n) (1U<<(n))
+#define GENMASK(h,l) ((~0U>>(31-(h))) & (~0U<<(l)))
+#define FIELD_PREP(m,v) (((u32)(v)<<__builtin_ctz((u32)(m)))&(m))
+#define DIV_ROUND_UP_ULL(n,d) (((n)+(d)-1)/(d))
+#define __iomem
+#define EPROBE_DEFER 517
+#define ERR_PTR(x) ((void *)(intptr_t)(x))
+#define PTR_ERR(x) ((int)(intptr_t)(x))
+#define IS_ERR(x) ((uintptr_t)(x)>=(uintptr_t)-4095)
+#define dev_err(dev,...) ((void)(dev))
+#define dev_err_probe(dev,err,...) ((void)(dev),(err))
+#define DRM_ERROR(...) ((void)0)
+#define IRQF_TRIGGER_NONE 0
+#define DRM_MODE_CONNECTOR_DSI 16
+struct device_node {int unused;};struct device {struct device_node *of_node;};struct platform_device {struct device dev;void *data;};struct clk {int id;};struct phy {int unused;};
+struct drm_device {int unused;};struct drm_encoder {int unused;};struct drm_atomic_state {int unused;};struct mtk_dsi;
+struct drm_bridge {struct mtk_dsi *owner;struct device_node *of_node;int type;};struct mipi_dsi_host {struct device *dev;const void *ops;};struct mipi_dsi_device {unsigned lanes;int format;unsigned long mode_flags;};
+struct mipi_dsi_msg {u8 type;unsigned flags;size_t tx_len;const void *tx_buf;};struct component_ops {int (*bind)(struct device *,struct device *,void *);void (*unbind)(struct device *,struct device *,void *);};
+struct mtk_dsi_driver_data {u32 reg_cmdq_off,reg_vm_cmd_off,reg_shadow_dbg_off;bool has_shadow_ctl,has_size_ctl,cmdq_long_packet_ctl,support_per_frame_lp,bypass_rack,no_vm_done_irq;};
+struct mtk_dsi {struct mipi_dsi_host host;struct drm_encoder encoder;struct drm_bridge bridge,*next_bridge;struct phy *phy;void *regs;struct clk *engine_clk,*digital_clk,*hs_clk;u32 data_rate;unsigned long mode_flags;int format;unsigned lanes;struct {uint64_t pixelclock;} vm;int refcount,irq_wait_queue;const struct mtk_dsi_driver_data *driver_data;};
+static struct mtk_dsi dsi;static struct clk clocks[3]={{0},{1},{2}};static struct phy phy;static struct drm_bridge next_bridge;static struct device_node node;static struct platform_device pdev;
+static u32 regs[1024];static unsigned max_offset,reg_writes,configured,cmd_mode,phy_on,phy_off,engine_on,digital_on,engine_off,digital_off,rate_set,host_reg,host_unreg,irq_request,bridge_add,bridge_remove,component_add_calls,component_del_calls,bridge_get,encoder_created,encoder_cleaned,reset_calls;
+static int fail_bpp,fail_rate,fail_phy,fail_engine,fail_digital,fail_off,fail_probe,fail_bridge1,fail_bridge2,fail_component,fail_encoder,fail_reset,probe_step;
+static const int mtk_dsi_ops=0,mtk_dsi_bridge_funcs=0;static const struct mtk_dsi_driver_data *match_data;
+static unsigned slot(void *p){uintptr_t off=(uintptr_t)p-(uintptr_t)regs;assert(off<sizeof(regs) && !(off&3));if(off>max_offset)max_offset=off;return off/4;}
+static u32 readl(void *p){return regs[slot(p)];}static void writel(u32 v,void *p){reg_writes++;regs[slot(p)]=v;}
+static struct mtk_dsi *host_to_dsi(struct mipi_dsi_host *h){assert(h==&dsi.host);return &dsi;}static struct mtk_dsi *bridge_to_dsi(struct drm_bridge *b){assert(b==&dsi.bridge);return &dsi;}
+static void *dev_get_drvdata(struct device *dev){assert(dev==&pdev.dev);return &dsi;}
+static int mipi_dsi_pixel_format_to_bpp(int f){(void)f;return fail_bpp?-EINVAL:24;}
+static int clk_set_rate(struct clk *c,unsigned long r){assert(c==&clocks[2] && r);rate_set++;return fail_rate?-EIO:0;}
+static int phy_power_on(struct phy *p){assert(p==&phy);phy_on++;return fail_phy?-EIO:0;}static int phy_power_off(struct phy *p){assert(p==&phy);phy_off++;return fail_off?-EBUSY:0;}
+static int clk_prepare_enable(struct clk *c){if(c==&clocks[0]){engine_on++;return fail_engine?-EIO:0;}assert(c==&clocks[1]);digital_on++;return fail_digital?-EIO:0;}
+static void clk_disable_unprepare(struct clk *c){if(c==&clocks[0])engine_off++;else {assert(c==&clocks[1]);digital_off++;}}
+static void mtk_dsi_enable(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_reset_engine(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_phy_timconfig(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_ps_control(struct mtk_dsi *d,bool b){assert(d==&dsi && b);configured++;}static void mtk_dsi_set_vm_cmd(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_config_vdo_timing(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_set_interrupt_enable(struct mtk_dsi *d){assert(d==&dsi);configured++;}static void mtk_dsi_set_cmd_mode(struct mtk_dsi *d){assert(d==&dsi);cmd_mode++;}static void mtk_output_dsi_enable(struct mtk_dsi *d){assert(d==&dsi);configured++;}
+static int mtk_dsi_encoder_init(struct drm_device *drm,struct mtk_dsi *d){(void)drm;assert(d==&dsi);if(fail_encoder)return -EIO;encoder_created++;return 0;}static void drm_encoder_cleanup(struct drm_encoder *e){assert(e==&dsi.encoder);encoder_cleaned++;}
+static int device_reset_optional(struct device *dev){assert(dev==&pdev.dev);reset_calls++;return fail_reset?-EIO:0;}
+static struct drm_bridge *devm_drm_of_get_bridge(struct device *d,struct device_node *n,unsigned p,unsigned e){assert(d==&pdev.dev && n==&node && e==0);bridge_get++;assert(p==(bridge_get==1?1U:0U));int error=bridge_get==1?fail_bridge1:fail_bridge2;return error?ERR_PTR(error):&next_bridge;}
+static void drm_bridge_add(struct drm_bridge *b){assert(b==&dsi.bridge);bridge_add++;}static void drm_bridge_remove(struct drm_bridge *b){assert(b==&dsi.bridge);bridge_remove++;}
+static int component_add(struct device *d,const struct component_ops *o){assert(d==&pdev.dev && o);component_add_calls++;return fail_component?-EIO:0;}static void component_del(struct device *d,const struct component_ops *o){assert(d==&pdev.dev && o);component_del_calls++;}
+static int step(void){return ++probe_step==fail_probe?-EIO:0;}
+static struct mtk_dsi *bridge_alloc(struct device *d,const void *f){assert(d==&pdev.dev && f==&mtk_dsi_bridge_funcs);if(step())return ERR_PTR(-ENOMEM);memset(&dsi,0,sizeof(dsi));return &dsi;}
+#define devm_drm_bridge_alloc(dev,type,member,funcs) bridge_alloc(dev,funcs)
+static const void *of_device_get_match_data(struct device *d){assert(d==&pdev.dev);return match_data;}
+static struct clk *devm_clk_get(struct device *d,const char *n){assert(d==&pdev.dev);int i=!strcmp(n,"engine")?0:!strcmp(n,"digital")?1:2;return step()?ERR_PTR(-EIO):&clocks[i];}
+static void *devm_platform_ioremap_resource(struct platform_device *p,unsigned i){assert(p==&pdev && i==0);return step()?ERR_PTR(-EIO):regs;}
+static struct phy *devm_phy_get(struct device *d,const char *name){assert(d==&pdev.dev && !strcmp(name,"dphy"));return step()?ERR_PTR(-EIO):&phy;}
+static int platform_get_irq(struct platform_device *p,unsigned i){assert(p==&pdev && !i);return step()?-EIO:195;}
+static void init_waitqueue_head(int *q){*q=0;}static void platform_set_drvdata(struct platform_device *p,void *v){p->data=v;}
+static int mipi_dsi_host_register(struct mipi_dsi_host *h){assert(h==&dsi.host);host_reg++;return step()?-EIO:0;}static void mipi_dsi_host_unregister(struct mipi_dsi_host *h){assert(h==&dsi.host);host_unreg++;}
+static const char *dev_name(struct device *d){assert(d==&pdev.dev);return "synthetic-dsi";}static int mtk_dsi_irq(int n,void *v){(void)n;(void)v;return 0;}
+static int devm_request_irq(struct device *d,int n,int (*fn)(int,void *),int flags,const char *name,void *data){assert(d==&pdev.dev && n==195 && fn==mtk_dsi_irq && !flags && name && data==&dsi);irq_request++;return step()?-EIO:0;}
+/* ACTUAL_SOURCE */
+static const struct mtk_dsi_driver_data descriptor={.reg_cmdq_off=0x200,.reg_vm_cmd_off=0x130};
+static void fixture(void){memset(&dsi,0,sizeof(dsi));memset(regs,0,sizeof(regs));max_offset=reg_writes=configured=cmd_mode=phy_on=phy_off=engine_on=digital_on=engine_off=digital_off=rate_set=host_reg=host_unreg=irq_request=bridge_add=bridge_remove=component_add_calls=component_del_calls=bridge_get=encoder_created=encoder_cleaned=reset_calls=0;fail_bpp=fail_rate=fail_phy=fail_engine=fail_digital=fail_off=fail_probe=fail_bridge1=fail_bridge2=fail_component=fail_encoder=fail_reset=probe_step=0;dsi.host.dev=&pdev.dev;pdev.dev.of_node=&node;dsi.engine_clk=&clocks[0];dsi.digital_clk=&clocks[1];dsi.hs_clk=&clocks[2];dsi.phy=&phy;dsi.regs=regs;dsi.lanes=4;dsi.vm.pixelclock=100000000;dsi.driver_data=&descriptor;match_data=&descriptor;}
+int main(void){
+ fixture();fail_bpp=1;assert(mtk_dsi_poweron(&dsi)==-EINVAL && dsi.refcount==1 && !rate_set && !phy_on);assert(mtk_dsi_poweron(&dsi)==0 && dsi.refcount==2 && !configured);
+ fixture();fail_bpp=1;mtk_dsi_bridge_atomic_pre_enable(&dsi.bridge,NULL);assert(dsi.refcount==1);mtk_dsi_bridge_atomic_enable(&dsi.bridge,NULL);assert(configured==1 && !phy_on);
+ fixture();fail_phy=1;assert(mtk_dsi_poweron(&dsi)==0 && dsi.refcount==1 && phy_on==1 && engine_on==1 && digital_on==1 && configured);
+ fixture();fail_phy=1;assert(donor_poweron(&dsi)==0 && configured && cmd_mode==1);
+ fixture();fail_rate=1;assert(mtk_dsi_poweron(&dsi)==-EIO && !dsi.refcount && !phy_on);
+ fixture();fail_engine=1;assert(mtk_dsi_poweron(&dsi)==-EIO && !dsi.refcount && phy_off==1 && !configured);
+ fixture();fail_digital=1;fail_off=1;assert(mtk_dsi_poweron(&dsi)==-EIO && !dsi.refcount && engine_off==1 && phy_off==1 && !configured);
+ fixture();assert(mtk_dsi_poweron(&dsi)==0 && dsi.refcount==1 && configured && !cmd_mode);
+ fixture();fail_reset=1;assert(mtk_dsi_bind(&pdev.dev,NULL,NULL)==-EIO && encoder_created==1 && !encoder_cleaned);mtk_dsi_unbind(&pdev.dev,NULL,NULL);assert(encoder_cleaned==1);
+ fixture();struct mipi_dsi_device device={.lanes=0,.format=0,.mode_flags=0};assert(mtk_dsi_host_attach(&dsi.host,&device)==0 && dsi.lanes==0 && component_add_calls==1);assert(mtk_dsi_host_detach(&dsi.host,&device)==0 && component_del_calls==1 && bridge_remove==1);
+ fixture();device.lanes=5;fail_component=1;assert(mtk_dsi_host_attach(&dsi.host,&device)==-EIO && dsi.lanes==5 && bridge_add==1 && bridge_remove==1);
+ fixture();fail_bridge1=-EPROBE_DEFER;assert(mtk_dsi_host_attach(&dsi.host,&device)==-EPROBE_DEFER && bridge_get==1 && !component_add_calls);
+ fixture();fail_bridge1=-ENODEV;fail_bridge2=-ENOENT;assert(mtk_dsi_host_attach(&dsi.host,&device)==-ENOENT && bridge_get==2 && !component_add_calls);
+ for(int i=1;i<=9;i++){fixture();fail_probe=i;int ret=mtk_dsi_probe(&pdev);assert(ret==(i==1?-ENOMEM:-EIO));assert(host_unreg==(i==9?1U:0U));assert(!component_add_calls && !bridge_get);}
+ fixture();assert(mtk_dsi_probe(&pdev)==0 && host_reg==1 && irq_request==1 && !component_add_calls && !reset_calls);
+ unsigned lengths[]={1,2,3,508,509,1020};static unsigned char payload[1020];memset(payload,0x5a,sizeof(payload));
+ for(unsigned i=0;i<sizeof(lengths)/sizeof(*lengths);i++)for(unsigned lp=0;lp<2;lp++){
+  fixture();struct mipi_dsi_msg msg={.type=MIPI_DSI_DCS_LONG_WRITE,.flags=lp?MIPI_DSI_MSG_USE_LPM:0,.tx_len=lengths[i],.tx_buf=payload};ack_cmdq(&dsi,&msg);u32 ack=regs[0x200/4];
+  if(lengths[i]==508)assert(max_offset<0x400);
+  if(lengths[i]==509)assert(max_offset==0x400);
+  if(lengths[i]==1020)assert((regs[DSI_CMDQ_SIZE/4]&CMDQ_SIZE)==0);
+  memset(regs,0,sizeof(regs));donor_cmdq(&dsi,&msg);assert((regs[0x200/4]&HSTX)==(lp?0:HSTX));assert(!(ack&HSTX));
+ }
+ puts("PASS actual DSI C:power/refcount/PHY errors,bind/attach/probe ownership,queue boundary and packet-mode differences");return 0;
+}

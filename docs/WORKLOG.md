@@ -3617,3 +3617,28 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
 - Next existing independent #27 source is disabled MT8163 DSI controller actual
   variant/IRQ/clock/power/probe/resource ownership. No guessed compatibility or
   device action. Thermal/physical PHY/clock/recovery/beta gates remain unqualified.
+
+
+## 2026-10-29 — #27 finite actual DSI source contract
+
+- PR431 merged3bb81d6b atd503ce8 after five exact-head checks/471 CI tests/35
+  metadata+type controls/two fresh graphs. Exact normalized receipt now public
+  evidence/mipi-binding/ci-result.json; prior new-CI-required text historical.
+- Pinned donor35854B plus cachedACK34699B, protocolheaders26478B and bounded DRM
+  master/Kconfig/Makefile38023B source in evidence/dsi-source; legacy DSIC/header
+  already cached/tracked. Actual descriptor cmdq200/VM130/bypass/noVM flags found,
+  no MT8173 alias. Legacybypasshelper commented, VM_DONE enableuncommented; no
+  IRQabsence/hardwarebehavior claim. ACKmaster lacks MT8163 MMSYS/component data.
+- Actual selected C RAM ASan/UBSan witnesses retained invalidformat reference,
+  false later success/caller enable, ignored PHY powererror, bind resetfailure
+  afterencoderinit, attach fieldcommit/lookup/bridge ownership andnine probeerrors.
+  IRQfailure unregistershost; component add ishostattach, notprobe. Kernel caller/
+  devres/clock/power/bridge/reset frameworks mocked, no physical failure observed.
+- Actual cmdq writers on12 syntheticbuilder cases showdonor globalHSTXchange and
+  layoutbounds: legacy128words ->508B payload;509 reachesnextword;1020 wraps u8
+  countzero. No measuredhardwaredepth/corruption or panel commands. New source
+  intent must boundinputs/widths andscope flags/initialcmdmode toMT8163.
+- NEXT actualkernelimplementation, not anothermodel: scopedvariant/lifecycle/
+  fault/cleanup/host/bind/queue handling+oldSoC controls/atomicapply/explicitbuiltin
+  DSI/master/PHY/config/Image. Sourcecontroller integration isnot fullMMSYSpipeline
+  orpanel support. AllDTs/disabledstates/31/25failedcontexts/runtimegates unchanged.
