@@ -1,20 +1,24 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: PR426 merged4e358045 after all six exact-head checks atdec1a898
-and Linux run40847835013. Actual changed fan53555 source/W1 object/config/final
-28645888-byte Image passed; exact receipt evidence/sym827-port/build-result.json.
-Earlier baseline Image is pre-SYM and W1 object is pre-final-Image, not asserted
-final linked object. No QEMU or physical regulator qualification.
+2026-10-29 #27: finite actual thermal source audit complete. Pinned ACK has no
+MT8163 match; donor adds descriptor AND globally changes callback/private-data/
+zone registration. Actual C RAM callbacks prove aggregate vs per-bank difference.
+Active legacy mux writes differ from donor bank tables; neither is hardware proof.
+Compiled calibration parsers agree selected fields for ordered synthetic words but
+signed slope differs126/256 ID/sign/slope cases. Legacy chosen atag,devinfo words
+are not proven equivalent to candidate nvmem0x100+12. No thermal source variant,
+binding, DT, thresholds or device changes admitted. Exact source/runtime blockers
+in kernel/THERMAL-SOURCE-PREREQUISITES.md and evidence/thermal-source.
 
-Source-matched opt-in SYM827 binding now implemented:22 decoded controls and
-structural older-SoC preservation pass. Full5186-YAML canonical33→32 (20unmatched/
-12validation), isolated27→26 (17/9): exactly SYM unmatched removed, no additions;
-wrappers exit1/passedfalse, Gunyah warning/disabled unmatched AFE child retained.
-DTB bytes/disabled states unchanged. Exact new-head CI required before merge.
-Actual GPIO34/DVS bank selection, identity, voltages/ramp/CPU supply handoff and
-loading/return/log/runtime gates stay unqualified. No hardware action scheduled.
-Next source selection follows exact binding acceptance; audit remaining unmatched
-nodes against actual cached drivers before any further metadata match claim.
+PR427 mergede56a1b7 after five exact-head checks ate2b07e2:458 CI tests/22 decoded
+SYM controls/fresh-DTB hash/raw-node check passed. Exact receipt now public
+ evidence/sym827-binding/ci-result.json. Accepted full contexts32 canonical (20
+unmatched/12validation),26 isolated (17/9), both failed/Gunyahwarning retained.
+PR426 source object/config/Image accepted4e358045; physical bank/voltage unqualified.
+Next independent existing #27 source: MT8163 MIPI-TX display PHY actual driver/
+variant/clock/resource/probe prerequisites before matching schema. Thermal source
+needs justified calibration lineage/bank/conversion isolation, no guessed alias.
+No device/thermal/ADC/voltage/firmware action; runtime loading/return/log gates open.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

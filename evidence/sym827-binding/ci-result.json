@@ -1,0 +1,15 @@
+{
+  "scope": "Exact-head schema/host/fresh-DTB controls, not physical regulator acceptance",
+  "head": "e2b07e238c4dfa829f39eaf473e0208d76de299c",
+  "merge": "e56a1b7ce9df44d19126b0ad8f1d6774fac431c9",
+  "run": 40853227370,
+  "android_job": 123377649141,
+  "repository_job": 123377648798,
+  "host_tests": 458,
+  "decoded_controls": 22,
+  "fresh_dtb_hash_and_raw_node_match": true,
+  "passed": true,
+  "dtschema": "2026.9",
+  "log_sha256": "e762ae80e8f4b721eb5c1c2a25efbbbd46cb409fcd1c2ef9d8e67bd56374a308",
+  "runtime_qualified": false
+}

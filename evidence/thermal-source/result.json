@@ -1,0 +1,23 @@
+{
+  "scope": "Actual C source/RAM comparisons, not thermal measurements or equivalent hardware behavior",
+  "passed": true,
+  "c_controls": {
+    "synthetic_calibration_cases": 256,
+    "signed_slope_differences": 126,
+    "callback_cases": 4,
+    "legacy_mux_banks": 3
+  },
+  "legacy_devinfo_indices": [
+    7,
+    8,
+    9
+  ],
+  "candidate_nvmem_offset": 256,
+  "candidate_nvmem_bytes": 12,
+  "atag_to_nvmem_identity_proven": false,
+  "donor_changes_existing_soc_callback_contract": true,
+  "donor_bank_table_matches_active_legacy_mux_writes": false,
+  "thermal_source_port_admitted": false,
+  "binding_match_admitted": false,
+  "runtime_qualified": false
+}
