@@ -25,6 +25,13 @@ The board is the source of live state. Do not resume historical peripheral queue
   failure logs#348 remain separate unpassed gates. No maintained-kernel or
   Android11/app-QA boot is claimed. Host sudo and temporary USB/service setup
   are complete; do not resurrect those resolved blockers or repeat approval.
+- **Android11 ROM and ARM Google services are now installed**, with actual
+  updater RC0 and recovery-menu return for both. Read-only system inspection
+  confirms API30/ARMv7. First Android boot has been requested; completion and
+  app/provider QA remain unmeasured. The GApps installer has a tested local ABI
+  compatibility correction; unchanged app payloads and exact receipts are in
+  [qa-install-result.json](../../evidence/approved-lab-entry/qa-install-result.json).
+  Do not repeat unlock, wipes, installations or first-boot request.
 - **Urgent milestone: usable Android lab QA for Connect and passkeys.** Use the
   existing working ROM path before completing the maintained kernel. A donor-ROM
   result never closes maintained-kernel hardware/boot gates. Connect currently

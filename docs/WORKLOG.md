@@ -3878,3 +3878,29 @@ recorded, not relabeledunlockedflagpassed. Maintainedkernel/Android11/Connect/
 passkeyQA have not booted/passed. Independent failed-load stockreturn and retained
 failurelog gates stayopen. No observeddamage, no caseopening/electricalaction.
 All actual scripts/receipts stay in same347/PR452, not a newmicro-issue/PR.
+
+## 2026-10-29 — #347 actual Android11 ROM and Google-services installation
+
+Owner confirmed TWRP startup swipe. USB initially absent; later Linux enumerated
+recovery again without another unlock/reflash. Verified staged ROM SHA8dacd21b
+and boot remapping to physical p5/system p14. One new install accepted after the
+previous unaccepted CLI request: actual system block writes, script succeeded,
+updater RC0, 59s and menu return. Read-only installed system confirms Android11,
+API30, ARMv7. Android first boot was not requested until Google services completed.
+
+Original ARM11 GApps uses recovery uname, which reports aarch64; recovery ABI
+property reports arm64-v8a while installed Android ABI is armeabi-v7a. Exact
+package ARM toybox executed with explicit shell RC0 (uname armv8l). Local installer
+correction checks helper executability and installed-system ABI separately,
+retaining original SDK guard. 35 actual shell ABI cases and three helper-exit
+cases pass; source-hash rejection precedes output creation. All29 payload members
+unchanged, stale archive signature metadata removed explicitly; no publisher
+signature claim. Initial archive verifier reused mutated ZipInfo offsets and
+failed before any install; copying ZipInfo fixed validation. Only verified v2
+archive installed. Actual GApps copied files, cleaned/unmounted, Done/updaterRC0
+and menu return. Exact receipts in approved-lab-entry/qa-install-result.json.
+
+497 current host tests pass. First Android boot requested once at22:31:15UTC;
+completion/provider/browser/Connect/passkey QA still pending. No maintained-kernel,
+failed-load stock return or retained-failure-log admission inferred. Preserve
+rollback assets until no longer needed and delete temporary installers afterward.

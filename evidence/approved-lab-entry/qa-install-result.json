@@ -1,0 +1,54 @@
+{
+  "issue": 347,
+  "primary_pr": 452,
+  "rom": {
+    "source_sha256": "8dacd21ba265318ef01d7b1d57422d2d9f28e962f0b7136c8f3d9136a2dce045",
+    "started_utc": "2026-10-29T22:25:16Z",
+    "completed_utc": "2026-10-29T22:26:16Z",
+    "client_exit": 0,
+    "recovery_log_sha256": "d7ba4bba1e7a5e00c93a4f4fdb6bb44c3a1944404842cde901fb280363fb2bd4"
+  },
+  "rom_install_acceptance": "Actual script succeeded / updater RC0 / install59s / recovery menu returned",
+  "installed_system_read_only_observation": {
+    "release": "11",
+    "sdk": 30,
+    "abi": "armeabi-v7a",
+    "abilist": "armeabi-v7a,armeabi"
+  },
+  "gapps": {
+    "original_sha256": "cd54071df4ccd43e1c290b57508a003d253a20f23e59bba1f3d90c5fc6ad1dd0",
+    "modified_sha256": "7853d4632b9c92e60b1bc3ec6c09b46f5a94fb87f979e6250d0f483f38a20f13",
+    "modified_bytes": 184884650,
+    "installer_sha256": "1303bb193921a09be6ca260b89322efc2b3b76a34acbbb7e1dbf6d63466d6976",
+    "unchanged_payload_members": 29,
+    "removed_stale_signature_members": [
+      "META-INF/CERT.RSA",
+      "META-INF/CERT.SF",
+      "META-INF/MANIFEST.MF",
+      "META-INF/com/android/otacert"
+    ],
+    "publisher_signature_claim": false,
+    "sdk_guard_preserved": true,
+    "target_abi_shell_controls": 35,
+    "started_utc": "2026-10-29T22:30:23Z",
+    "completed_utc": "2026-10-29T22:30:49Z",
+    "client_exit": 0,
+    "recovery_log_sha256": "aa5876813a0b3dc23309e24115522e5d28dea64f057e3bbf96a6b34799470449"
+  },
+  "gapps_install_acceptance": "Actual copying/cleanup/Done and updater RC0; recovery menu returned",
+  "compatibility": {
+    "kernel_uname": "aarch64",
+    "recovery_ro_product_cpu_abi": "arm64-v8a",
+    "package_helper_executed": true,
+    "helper_uname": "armv8l",
+    "note": "Recovery/kernel architecture differs from installed Android ARM32. Guard tests helper execution and installed system ABI, retaining SDK guard. Removed stale archive signatures; no publisher-signature claim. No app payload bytes changed."
+  },
+  "first_boot_requested_utc": "2026-10-29T22:31:15Z",
+  "first_boot_completed": false,
+  "host_tests": 497,
+  "qa_passed": false,
+  "maintained_kernel_booted": false,
+  "failed_load_return_qualified": false,
+  "failed_boot_log_retention_qualified": false,
+  "raw_logs_and_selectors_private": true
+}
