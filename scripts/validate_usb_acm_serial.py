@@ -39,7 +39,7 @@ def validate():
         found=re.search(r'^#define\s+'+original+r'\s+(0x[0-9a-f]+|[0-9]+)(?:U)?\b',source,re.M)
         if not found or integer(found[1])!=integer(macros['FT_SERIAL_'+name]):
             raise ValueError('Serial constant mismatch: '+name)
-    directory=json.loads((EVIDENCE/'arm64-uapi-directory.json').read_text().split('\n',1)[1])
+    directory=json.loads((EVIDENCE/'arm64-uapi-directory.txt').read_text().split('\n',1)[1])
     if any(x['name'] in ['termbits.h','termios.h','ioctls.h'] for x in directory['entries']):
         raise ValueError('ARM64 TTY header override requires fresh ABI review')
     chain=(EVIDENCE/'include_uapi_asm-generic_Kbuild').read_text()

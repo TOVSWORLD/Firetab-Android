@@ -3410,3 +3410,8 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   and canonical34/isolated28 failures unchanged. No device action. Next actual
   source scope: host bounded capture/frame validation and private receipts with
   mocks, before physical loading/role/policy/independent return/retained-log gates.
+
+- PR423 initial integrity check found raw Gitiles anti-XSSI-prefixed directory
+  response mislabeled .json. Renamed raw evidence .txt and reader, preserving
+  exact hash/bytes and strict repository JSON parsing. Local exact-base integrity
+  and serial controls pass; source C unchanged. New exact-head CI required.

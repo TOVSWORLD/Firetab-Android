@@ -75,7 +75,7 @@
     },
     {
       "path": "arch/arm64/include/uapi/asm/",
-      "file": "arm64-uapi-directory.json",
+      "file": "arm64-uapi-directory.txt",
       "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/include/uapi/asm/?format=JSON",
       "bytes": 2843,
       "sha256": "7f5ea03b20b6c655fc4042796e9899e95655ac4702d82beb4328f256c8a74500"
