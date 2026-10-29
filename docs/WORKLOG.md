@@ -3264,3 +3264,27 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   kernel/dtb/USB-ANALOG-BINDING.md. Next #27 source acceptance: finite controller
   gadget/device-role/init/config and initramfs prerequisites before any disabled
   mode experiment; all physical USB/loading/independent return/log gates open.
+
+## 2026-10-29 — gadget role/config/package prerequisites (#27)
+
+- PR417 merged414075c2c7dbabe6612a2f1150fcc8bfb22a7396 after five final-head
+  checks at644691e3fa90a46d2b6ec716fa8232c93e1f179f,402tests/30controls.
+- Pinned416 resolved gadget states: CONFIGFS/LIBCOMPOSITE/F_ACM/U_SERIAL=m,
+  ROLE_SWITCH=y/CONFIGFS_ACM=y. Three capped official ACK Kconfig/Makefile reads
+  total19703bytes verify selection/object links. No new kernel archive/device action.
+- Actual cached controller role function compiled/executed with RAM mocks over18
+  prior/target/error cases plus invalid-role negative: called PHY errors ignored,
+  advertised role still updates/return0. No actual hardware failure observed.
+- Fresh current PID1 cross-compiled with existing GNU AArch64 toolchain at O2;
+  static ELF/newc inspected, never executed. GNU Os required an unavailable memcpy;
+  O2 linked without added helpers. Canonical Clang builder unchanged. Actual package
+  is only dev/proc/sys/dev-console/init, no modules/configfs gadget setup. Current
+  sysfs mount read-only; console-only output does not establish USB logging.
+- Host audit now runs after fresh diagnostic build in CI; require-ready exits1,
+  default diagnostic reports source-package/transport false. Negative parser/config
+  controls and all-builtin non-admission tested. Exact hashes/commands/receipts in
+  evidence/usb-gadget-prerequisites; docs kernel/USB-GADGET-PREREQUISITES.md.
+- Next actual implementation: MT8163-scoped role/init error propagation and rollback,
+  actual C RAM tests and exact-head USB provider/Image build. Builtin ACM/profile
+  and explicit gadget userspace remain separate. No kernel/DT/device changes here;
+  canonical34/isolated28 failures and all loading/return/log gates remain open.

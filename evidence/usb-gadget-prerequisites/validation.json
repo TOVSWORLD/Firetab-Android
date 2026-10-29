@@ -1,0 +1,38 @@
+{
+  "scope": "Source/config/package diagnostic, never transport admission",
+  "host_role_scenarios": 18,
+  "invalid_role_checked": true,
+  "injected_phy_errors_ignored_by_cached_source": true,
+  "commands": [
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usb_gadget_prerequisites.py",
+      "-v"
+    ],
+    [
+      "python3",
+      "scripts/audit_usb_gadget_prerequisites.py",
+      "--initramfs",
+      "out/usb-gadget-prerequisites/initramfs.cpio.gz"
+    ]
+  ],
+  "inputs": {
+    "evidence/usb-gadget-prerequisites/function-Makefile": "a992613ee0462a337cb29b5bcebe32701061b4a8b209878c1a5b840487f2a5db",
+    "evidence/usb-gadget-prerequisites/gadget-Kconfig": "1571fd6c80f13dd88832742aba824f65724eceb1232a7b875f7eb14bd9b76792",
+    "evidence/usb-gadget-prerequisites/gadget-Makefile": "e3cabe915266f02601186f779a08409b3332bb721f883cd73dda02ae2950287e",
+    "evidence/usb-gadget-prerequisites/inputs.json": "008ada7aca2007ed81ffc6765cebdcd4d9946b1e796442cbade5d1b1dbf099b4",
+    "evidence/usb-gadget-prerequisites/package-result.json": "2570d034c6b4028d304d01c8b1611f93b30620214ed302b8fc6bf5fd45285d89",
+    "evidence/usb-gadget-prerequisites/report.json": "b5707a81e5b1d48535cb6d3638bab6ed2d110314929ff9b3e6f7f2095a475554",
+    "evidence/usb-gadget-prerequisites/resolved-gadget.config": "039050324ee598b986030944c725e61b7d47ff5fe9e6548661ebbae39a407203",
+    "evidence/usb-gadget-prerequisites/sources.json": "fec9ffcb04625485bf7a7a4472ed9cba94851c1a7058ea1f2c830e9241244db6",
+    "scripts/audit_usb_gadget_prerequisites.py": "5223b218ec92040f4a7a5dc50a4b002631ce4a2bc80f38829cd713e914ebfb9c",
+    "tests/test_usb_gadget_prerequisites.py": "995c697f6944084559242e6a18845ed121c90382208d350ab0c81d46fff96099"
+  },
+  "runtime_qualified": false
+}

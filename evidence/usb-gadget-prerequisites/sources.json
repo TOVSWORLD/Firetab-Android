@@ -1,0 +1,26 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "source_reads": [
+    {
+      "git_path": "drivers/usb/gadget/Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/Kconfig?format=TEXT",
+      "bytes": 17094,
+      "sha256": "1571fd6c80f13dd88832742aba824f65724eceb1232a7b875f7eb14bd9b76792",
+      "local": "evidence/usb-gadget-prerequisites/gadget-Kconfig"
+    },
+    {
+      "git_path": "drivers/usb/gadget/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/Makefile?format=TEXT",
+      "bytes": 488,
+      "sha256": "e3cabe915266f02601186f779a08409b3332bb721f883cd73dda02ae2950287e",
+      "local": "evidence/usb-gadget-prerequisites/gadget-Makefile"
+    },
+    {
+      "git_path": "drivers/usb/gadget/function/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/function/Makefile?format=TEXT",
+      "bytes": 2121,
+      "sha256": "a992613ee0462a337cb29b5bcebe32701061b4a8b209878c1a5b840487f2a5db",
+      "local": "evidence/usb-gadget-prerequisites/function-Makefile"
+    }
+  ]
+}

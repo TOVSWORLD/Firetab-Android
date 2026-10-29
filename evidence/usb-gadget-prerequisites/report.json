@@ -1,0 +1,31 @@
+{
+  "scope": "Pinned source/config/package prerequisites only, not gadget or boot execution",
+  "candidate_strategy": "builtin-only configfs ACM; module-loading alternative not admitted by this audit",
+  "non_builtin_required_symbols": {
+    "USB_CONFIGFS": "m",
+    "USB_LIBCOMPOSITE": "m",
+    "USB_F_ACM": "m",
+    "USB_U_SERIAL": "m"
+  },
+  "archive_entries": [
+    "dev",
+    "dev/console",
+    "init",
+    "proc",
+    "sys"
+  ],
+  "packaged_modules": [],
+  "pid1_gadget_setup_implemented": false,
+  "current_dt_role": "otg -> PHY_MODE_USB_OTG / USB_ROLE_NONE",
+  "controller_and_phy_remain_disabled": true,
+  "role_api_error_propagation_qualified": false,
+  "source_package_ready": false,
+  "transport_qualified": false,
+  "loading_return_log_qualified": false,
+  "blockers": [
+    "Builtin ACM candidate still has modular/unavailable prerequisites",
+    "Current PID1 has no configfs gadget setup or module-loading path",
+    "Current DT is disabled/OTG; no device-role handoff qualified",
+    "No physical USB or independent experimental failure return/log qualification"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "scripts/build_diagnostic_initramfs.py": "1df901c15de1b92ce16b4ebc231f471cd9e3a1407deb24a313bb9e5f84892931",
+    "projects/firetabs-android/diagnostic/init.c": "c371372906ad3d32594000041042a2301d54ca2ce46c5b05add40bf2905bf63b",
+    "projects/firetabs-android/diagnostic/cpu_contract.h": "9b7feede7391391dd61956ec3bec3f2d56d5dae0710df5fe61f43a9967db0e3b",
+    "evidence/usb-prerequisites/ack/mediatek.c": "33502cc67a3853560a26439fb93a81e034fdd519cb89ffb2dd0e9c2d069137f2",
+    "evidence/usb-prerequisites/candidate-graph.json": "432d4624ffdd4d6140590355c0de67007704486f993b992d7c135f9cd63434e8",
+    "evidence/usb-analog-policy/build-result.json": "828d4e34a858ae0b022d6796eb0f080bac257fd8b9cdffd78487ed8fc70c540d",
+    "evidence/usb-gadget-prerequisites/resolved-gadget.config": "039050324ee598b986030944c725e61b7d47ff5fe9e6548661ebbae39a407203",
+    "evidence/usb-gadget-prerequisites/gadget-Kconfig": "1571fd6c80f13dd88832742aba824f65724eceb1232a7b875f7eb14bd9b76792",
+    "evidence/usb-gadget-prerequisites/gadget-Makefile": "e3cabe915266f02601186f779a08409b3332bb721f883cd73dda02ae2950287e",
+    "evidence/usb-gadget-prerequisites/function-Makefile": "a992613ee0462a337cb29b5bcebe32701061b4a8b209878c1a5b840487f2a5db"
+  },
+  "config_source": {
+    "run": 40813924079,
+    "head": "dad8de0ee4992b13c0bdd230315b05f10c79caba",
+    "private_log_sha256": "14674eb5cacec6a9e638359534f13135e7c7a52f36cac3b188d226f3484190f4",
+    "normalization": "Selected exact final resolved symbol lines; original config hash in416 build receipt"
+  },
+  "device_tested": false
+}

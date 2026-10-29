@@ -28,9 +28,16 @@ MT8163-only eye const7 binding now matches the accepted source guard;30 actual
 decoded controls pass and prior SoC policies remain intact. Paired isolated28
 (19unmatched/9validation) and known Gunyah processing warning remain failed;
 canonical34 context/DTB and all disabled states unchanged. Prior414 receipts retained.
-Next #27 source acceptance: finite USB0 gadget/device-role handoff, actual controller
-role-switch/init/config and initramfs prerequisites before choosing any disabled
-device-mode experiment. No physical activation; loading/return/log/runtime gates open.
+Finite gadget role/config/package acceptance completed: exact416 config has
+CONFIGFS/LIBCOMPOSITE/F_ACM/U_SERIAL=m, no modules/gadget setup in current static
+initramfs. Actual cached role function RAM mocks (18 transitions/error cases)
+return success/update role despite called PHY failures. Source audit in
+kernel/USB-GADGET-PREREQUISITES.md and scripts/audit_usb_gadget_prerequisites.py;
+require-ready rejects current package. No transport admission or DT changes.
+Next actual #27 kernel implementation: MT8163-scoped role/init PHY error handling,
+rollback tests with actual C RAM mocks, preserve other SoCs and exact-head USB
+provider/Image build. Separate opt-in builtin ACM/gadget userspace remains needed.
+All physical role/clock/loading/return/log/runtime gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in
