@@ -17,7 +17,10 @@ The board is the source of live state. Do not resume historical peripheral queue
   reads original unlock/TWRP and LineageOS17.1/18.1 maintainer documentation.
   The guide describes case-closed unlock; opening is not established as necessary.
   Cached external-brick script/minimal-step advice conflicts with the author's
-  full-step warning. Next is the exact software-branch proposal inside#439.
+  full-step warning. The [software proposal](SOFTWARE-UNLOCK-PROPOSAL.md) now pins
+  the original archives, destructive boundary and full-stage pairing. Bundled
+  Linux/x86 binaries cannot run natively on this Darwin/arm64 host. Execution
+  is HOLD pending explicit high-risk approval and Linux host preparation.
   #345 stays conditional/Blocked. No high-risk helper/device action is admitted.
   PR449's NO-GO remains a historical trial decision, not software impossibility.
 
