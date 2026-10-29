@@ -1,0 +1,30 @@
+{
+  "scope": "Minimal MT8163-only source integration; compilation and hardware pending",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "patch": "mt8163-iommu-smi.patch",
+  "patch_sha256": "0abb39342dae37de04f33706ba483f9120b2ead9cffd27d811be8ec974c8cf35",
+  "files": [
+    {
+      "target": "drivers/iommu/mtk_iommu.c",
+      "original_source": "evidence/iommu-smi-port/ack/mtk_iommu.c",
+      "original_sha256": "9df2bd408cbc8d4242511a6acb27a41c068f91cdd81030ac69e7f7537dfd61d7",
+      "patched_sha256": "bddbe28a82a17374bd264208b80e1d6c8a455d8ed7f8be1abfb646ab7d2aa22c",
+      "donor_source": "evidence/kernel-audit/bengris7/drivers/iommu/mtk_iommu.c",
+      "donor_sha256": "f0b7d5eab2f193e2af018f4cc00c4df57ccdbf0a86695e24fa476981fc46a242"
+    },
+    {
+      "target": "drivers/memory/mtk-smi.c",
+      "original_source": "evidence/iommu-smi-port/ack/mtk-smi.c",
+      "original_sha256": "d4d051520e02d4da0381ec46e9ab3d123f3e947f4477e0f3520bda01719c2cf7",
+      "patched_sha256": "2e7c1a40f45cec3ab31ac9aabb39009b5bdb937ff647dece14412150b346ae19",
+      "donor_source": "evidence/kernel-audit/bengris7/drivers/memory/mtk-smi.c",
+      "donor_sha256": "d5f3b1a5a248a79a2f494666ecb23fd30ce431f356b2d09f9a955032f6a9875c"
+    }
+  ],
+  "excluded_donor_changes": [
+    "Newer SoC/APU/INFRA support and flags",
+    "Shared IOMMU/SMI cleanup/refcount/probe policy changes"
+  ],
+  "runtime_qualified": false
+}

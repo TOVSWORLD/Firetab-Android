@@ -21,6 +21,8 @@ on:
     paths:
       - projects/firetabs-android/kernel/clock-port/**
       - scripts/apply_clock_port.py
+      - projects/firetabs-android/kernel/iommu-port/**
+      - scripts/apply_iommu_port.py
       - scripts/build_ack_baseline.sh
       - scripts/diagnostic_config.py
       - scripts/check_diagnostic_commandline.py
