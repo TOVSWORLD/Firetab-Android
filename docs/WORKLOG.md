@@ -3743,3 +3743,30 @@ Full30/24 diagnostic contexts and all loading/failed-return/log/physical gates
 remain open. No source-build or runtime success is claimed before actual CI.
 
 Local full host suite488 tests passed; repository checks at base32979e5a passed.
+
+## 2026-10-29 — owner-requested ordered roadmap and issue-to-PR control (#438)
+
+Owner said practical progress was unchanged and requested a systematic board and
+Valethon-style issue→PR sequence. Created dedicated hardware tasks#441–#447 and
+split original combined#334/#335/#336 scopes; retained#22/#329/#330/#331 for the
+four foundation groups. All14 now have staged source/build/device criteria. Added
+entry decision#439 under operational recovery#344 and bounded source exception
+#440 for existingPR436. Historical#106 is at GitHub's100-sub-issue limit, so preserve
+it and place operational work under#344 instead of moving/deleting old evidence.
+
+PR436 now correctly Fixes#440 and source-mergedc2de79d47b6d6b6dc5a026a68d0db331c37302a0
+after all six exact-head checks at8ff8731 and actual488 tests/PWM object/config/final
+29374976B Image SHAa8b730da8bcf53cb332bfe84e1d8a4a8eef6c665b36ead367b69ca380a326d42.
+Its normalized receipt is published with this administrative change; no further
+PWM binding scope starts, and no hardware/DT gate closes from this source result.
+
+Project4 receives Execution order, Depends on, Acceptance gate and Primary PR,
+matching status/delivery fields, native hierarchy, explicit task contracts and
+manual row order. Default view remains unfiltered with completed scopes visible.
+Stable ordered-roadmap.json and checker negatives enforce hierarchy,14 unique
+hardware groups, backward acyclic dependencies, one primary task per PR, one active
+implementation task, and explicit GO before physical entry. NO-GO completion is
+not runtime admission. Replaced the operational queue and archived its old source
+history. First real next task is#439 after roadmap#438 acceptance; no unrelated
+peripheral bypass when blocked. Full30/24 and all physical/boot/log/beta gates remain
+open. Raw board/API/build captures stay ignored under out/.

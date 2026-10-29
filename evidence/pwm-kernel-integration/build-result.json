@@ -1,0 +1,35 @@
+{
+  "scope": "Exact-head PWM provider object/config/final Image compilation,not runtime qualification",
+  "repository_head": "8ff8731d4f06e4a4f5bb5b24bca96bec691f48a2",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "run": 40881461603,
+  "job": 123473775142,
+  "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40881461603/job/123473775142",
+  "command": "bash scripts/build_pwm_provider.sh",
+  "mode": "pwm-provider",
+  "passed": true,
+  "log_sha256": "d03f1655b2a37d0e2374a78719591c473d7a2e9ef5a96c8d6f5faf9a9e12f605",
+  "final_hashes": {
+    "output/.config": "809aec8c27024a3efae9cb3474640d92dd7eb82a9ac820508d92a6c472cb6271",
+    "output/vmlinux": "b82f97ab0dd860f207f611ca469599449d8fee8f0cad3dd12aa012079d357265",
+    "output/arch/arm64/boot/Image": "a8b730da8bcf53cb332bfe84e1d8a4a8eef6c665b36ead367b69ca380a326d42",
+    "output/drivers/pwm/pwm-mtk-disp.o": "fcc81b7edd92a7de76be8a05573c57b5fe2209b54b9cef086f824be664280cac",
+    "source/drivers/pwm/pwm-mtk-disp.c": "73c9522f30dddd7bdbd6c6e919024d68910f94f9ba35944ede23b2afbabdb4fd",
+    "source/drivers/pwm/mtk_pwm_mt8163.h": "4077072558519985a866e45b1191144dfc6db126d6100491c124164307cf7f5c"
+  },
+  "resolved_symbols": {
+    "PWM": "y",
+    "PWM_MTK_DISP": "y",
+    "HAS_IOMEM": "y",
+    "ARCH_MEDIATEK": "y",
+    "COMMON_CLK": "y",
+    "OF": "y",
+    "MTK_MMSYS": "y",
+    "DRM_MEDIATEK": "y",
+    "PHY_MTK_MIPI_DSI": "y"
+  },
+  "image_bytes": 29374976,
+  "object_hash_scope": "Explicit W1 pre-Image probe; not asserted final linked object bytes",
+  "earlier_baseline_outputs": "All earlier staged Images/gzip/PWM=m excluded",
+  "runtime_qualified": false
+}

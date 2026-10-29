@@ -1,0 +1,769 @@
+{
+  "version": 1,
+  "project_url": "https://github.com/users/TOVSWORLD/projects/4",
+  "repository": "TOVSWORLD/Firetab-Android",
+  "owner_priority": "First recoverable diagnostic boot with useful logs, then ordered hardware integration; no peripheral off-ramps while entry is blocked.",
+  "pr_contract": {
+    "primary_task_issue_required": true,
+    "one_primary_issue_per_pr": true,
+    "max_active_implementation_tasks": 1,
+    "predecessor_gate_required": true,
+    "reorder_requires_documented_prerequisite": true,
+    "no_unrelated_blocker_bypass": true,
+    "exact_head_checks_before_merge": true,
+    "hardware_done_requires_actual_device_evidence": true,
+    "unsupported_is_not_a_hardware_pass": true
+  },
+  "tasks": [
+    {
+      "issue": 438,
+      "order": 1,
+      "parent": 437,
+      "name": "Ordered roadmap and issue-to-PR workflow",
+      "depends_on": [],
+      "goal": "Make this roadmap and Project4 the single ordered delivery contract.",
+      "steps": [
+        "Inventory existing scopes and split combined hardware tasks without duplicating them.",
+        "Record native parent links, order, dependencies, done criteria and primary PRs.",
+        "Read back the board and validate this manifest; update the recurring workflow."
+      ],
+      "acceptance": "All14 hardware groups have dedicated issues, native hierarchy and visible order/dependency/gate/PR fields; roadmap PR and checks pass.",
+      "kind": "administrative",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 440,
+      "order": 5,
+      "parent": 328,
+      "name": "Finish already-open PWM source PR436",
+      "depends_on": [],
+      "goal": "Finish the source change opened before the roadmap correction; no new PWM scope.",
+      "steps": [
+        "Verify exact-head488 tests and Linux PWM object/config/final Image hashes.",
+        "Match PR436 to this dedicated source task.",
+        "Merge only all required exact-head checks pass; park private binding work."
+      ],
+      "acceptance": "PR436 exact-head source/native/preflight/object/config/Image acceptance passes; no hardware/DT/binding pass is claimed.",
+      "kind": "source",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": true,
+      "primary_pr": 436,
+      "no_new_scope": true
+    },
+    {
+      "issue": 439,
+      "order": 10,
+      "parent": 344,
+      "name": "First-boot entry and go/no-go decision",
+      "depends_on": [
+        438,
+        440
+      ],
+      "goal": "Resolve the actual barrier to a first recoverable diagnostic boot.",
+      "steps": [
+        "Use existing exact PL7/LK3/TEE262 route evidence; do not repeat source microtraces or completed stock captures.",
+        "Choose one reviewed operational route or identify why none is currently safe/applicable.",
+        "Specify exact minimal package, entry/memory/CPU/transport contract, recovery/log/power/thermal pretrial conditions and stop criteria.",
+        "Present one concrete next action/owner decision, with explicit approval if high brick risk."
+      ],
+      "acceptance": "Reviewable GO/NO-GO decision and single next action. NO-GO can finish this decision task but never unblocks physical entry or closes recovery/log gates.",
+      "kind": "decision",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 345,
+      "order": 15,
+      "parent": 344,
+      "name": "Conditional board-inspection proposal",
+      "depends_on": [
+        439
+      ],
+      "goal": "Prepare an exact-board inspection/isolation plan only if the route decision selects it.",
+      "steps": [
+        "Reuse completed owner/stock evidence; no repeat generic photo/cable request.",
+        "Specify exact target, tools, isolation, electrical risks and independent return limits.",
+        "Obtain any required approval before physical/electrical action."
+      ],
+      "acceptance": "Concrete exact-generation proposal is reviewable; physical entry/electrical/log gates stay unqualified until tested.",
+      "kind": "conditional",
+      "hardware_group": null,
+      "conditions": [
+        "Only selected if the admission decision makes this a necessary prerequisite; not an unrelated task bypass."
+      ],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 347,
+      "order": 20,
+      "parent": 344,
+      "name": "Qualified current-device entry and bounded trial",
+      "depends_on": [
+        439
+      ],
+      "goal": "Demonstrate the selected diagnostic entry under a reviewed recoverable plan.",
+      "steps": [
+        "Require GO, exact artifact/hash/CPU/memory/transport contract and all pretrial safety/log/recovery conditions.",
+        "Obtain explicit approval for any high-brick-risk route; standing low-risk permission is not unlock/downgrade permission.",
+        "Execute only that bounded approved route, capture attributable entry/first checkpoint and failure/timeout context.",
+        "Stop on missing checkpoint, unsafe state or failure-return uncertainty; publish sanitized evidence."
+      ],
+      "acceptance": "Exact installed route applicability and observed bounded entry/exit are demonstrated on the candidate; compilation or command names do not pass.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [
+        "Admission decision outcome must be GO; a closed NO-GO issue does not unblock this task.",
+        "Pretrial recovery/log provisions are reviewed in the admission package; #346/#348 stay open until actual runtime evidence."
+      ],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 346,
+      "order": 30,
+      "parent": 344,
+      "name": "Independent stock return and failed-load recovery",
+      "depends_on": [
+        347
+      ],
+      "goal": "Prove recovery is reachable independently of the failed experimental system.",
+      "steps": [
+        "Use the approved exact route and capture; do not repeat already-proven normal stock return.",
+        "Demonstrate the approved failure/timeout return case without depending on a healthy experimental OS.",
+        "Verify exact stock operation and enumerate uncovered security/retention state."
+      ],
+      "acceptance": "Independent return after the approved failed-load case and stock restoration are observed with exact revisions/logs; ordinary stock return alone fails.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 348,
+      "order": 40,
+      "parent": 344,
+      "name": "Usable retained diagnostic boot logs",
+      "depends_on": [
+        346
+      ],
+      "goal": "Obtain attributable experimental boot/failure logs through the approved channel.",
+      "steps": [
+        "Validate freshness/build identity and beginning/end/timeout context.",
+        "Retrieve the actual diagnostic/failure log, record cap/loss/retention behavior and checkpoint coverage.",
+        "Keep raw logs private and publish sanitized provenance; distinguish existing320KiB stock export."
+      ],
+      "acceptance": "Real candidate boot/failure log and retrieval/retention coverage are demonstrated. A fixed host frame, source config or stock archive alone fails.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 22,
+      "order": 50,
+      "parent": 21,
+      "name": "Diagnostic memory/UART and internal storage",
+      "depends_on": [
+        348
+      ],
+      "goal": "Boot the minimal diagnostic candidate with usable memory and internal storage evidence.",
+      "steps": [
+        "Verify actual RAM/reservations and UART/log integration from the admitted attempt.",
+        "Identify MMC/pinctrl/power/IRQ contracts and safe storage geometry.",
+        "Start with approved read-only integrity checks; use disposable user-data files only under the approved test scope.",
+        "Record checksums, errors and exact build; never treat firmware/security partition writes as routine storage smoke."
+      ],
+      "acceptance": "On-device memory/log integration and internal-storage integrity pass without corruption or unexplained faults.",
+      "kind": "qualification",
+      "hardware_group": "internal-storage",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 18,
+      "order": 60,
+      "parent": 328,
+      "name": "Clock/reset provider qualification",
+      "depends_on": [
+        22
+      ],
+      "goal": "Qualify the provider behavior needed by the integrated board.",
+      "steps": [
+        "Reuse accepted source/build work and completed audio-parent scope#29.",
+        "Compare actual candidate provider rates/parents/reset ownership with the reviewed contract.",
+        "Make only the active blocker fix; check exact build and approved device behavior."
+      ],
+      "acceptance": "Required clock/reset providers and ownership/rates are observed on-device; source compilation alone fails.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 19,
+      "order": 70,
+      "parent": 328,
+      "name": "Pinctrl and EINT qualification",
+      "depends_on": [
+        18
+      ],
+      "goal": "Qualify pin mux, bias, IRQ and GPIO ownership before dependent input devices.",
+      "steps": [
+        "Resolve exact controller/IRQ/source mappings including the retained GPIO87 question.",
+        "Integrate only source-backed pin/reset/power settings; no blind probing or electrical actions.",
+        "Exercise approved interrupt/input paths with actual logs."
+      ],
+      "acceptance": "Required pinctrl/EINT behavior is measured on-device with no lost interrupts or unsafe ownership changes.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 20,
+      "order": 80,
+      "parent": 328,
+      "name": "PMIC wrapper and power-domain qualification",
+      "depends_on": [
+        19
+      ],
+      "goal": "Qualify supply/domain behavior and safe MMIO ownership.",
+      "steps": [
+        "Reuse accepted pwrap/scpsys/SYM source work; preserve explicit bank/voltage/clock-order unknowns.",
+        "Review only the active candidate domain/clock/supply sequence.",
+        "Perform only approved bounded runtime checks; high-risk voltage/security/electrical actions need explicit approval."
+      ],
+      "acceptance": "Required supplies/domains and safe access/order pass on-device; no thermal/data-loss or unqualified voltage handoff is hidden.",
+      "kind": "qualification",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 329,
+      "order": 100,
+      "parent": 23,
+      "name": "Display and backlight",
+      "depends_on": [
+        20
+      ],
+      "goal": "Make the actual panel usable through its identified controller/PHY/backlight path.",
+      "steps": [
+        "Identify exact panel and source-backed init/power/reset/clock sequence; no copied unknown panel data.",
+        "Integrate DSI/MIPI/MMSYS/composition dependencies and the bounded PWM source policy as needed.",
+        "Build the exact candidate, then test panel output/orientation and approved brightness limits."
+      ],
+      "acceptance": "Correct stable panel image and brightness endpoints plus wake/resume are measured on-device; no blank/corrupt/unsafe output.",
+      "kind": "qualification",
+      "hardware_group": "display-backlight",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 330,
+      "order": 110,
+      "parent": 23,
+      "name": "Touch and input",
+      "depends_on": [
+        329
+      ],
+      "goal": "Make identified touch hardware and coordinates reliable.",
+      "steps": [
+        "Identify exact touch-controller variant, bus, power/reset/IRQ and board orientation.",
+        "Integrate kernel/DT/input configuration against the qualified pinctrl/EINT contract.",
+        "Test a non-sensitive grid, edges, declared contacts and wake behavior."
+      ],
+      "acceptance": "All screen areas and touch coordinates/contacts work on-device without dead regions, stuck input or wake loss.",
+      "kind": "qualification",
+      "hardware_group": "touch",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 331,
+      "order": 120,
+      "parent": 23,
+      "name": "GPU and Android graphics composition",
+      "depends_on": [
+        330
+      ],
+      "goal": "Qualify the declared renderer/GPU/composer path.",
+      "steps": [
+        "Identify exact GPU/kernel/userspace/Mesa/HAL and memory/IOMMU requirements.",
+        "Integrate one coherent graphics stack with explicit supported APIs and limitations.",
+        "Measure UI/composition/render behavior; software rendering is not hardware acceleration proof."
+      ],
+      "acceptance": "On-device rendering/composition and declared API/stability tests pass; any unsupported acceleration requires an explicit owner scope decision, not a hardware pass.",
+      "kind": "qualification",
+      "hardware_group": "gpu",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 333,
+      "order": 200,
+      "parent": 24,
+      "name": "Reproducible integrated Android candidate",
+      "depends_on": [
+        331
+      ],
+      "goal": "Build and boot a coherent Android userspace/kernel candidate.",
+      "steps": [
+        "Pin complete source/ABI/Binder/config/firmware/HAL/package inputs and licensing needs.",
+        "Reproduce the integrated candidate and artifact manifest.",
+        "Boot through setup/home UI with SELinux enforcing and approved security configuration; exercise settings/app lifecycle."
+      ],
+      "acceptance": "Exact reproducible Android candidate boots to usable UI with enforcing security and matching artifacts/logs; kernel entry alone fails.",
+      "kind": "integration",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 334,
+      "order": 300,
+      "parent": 25,
+      "name": "Wi-Fi integration and reconnect qualification",
+      "depends_on": [
+        333
+      ],
+      "goal": "Qualify actual wireless chip/firmware/kernel/HAL and network behavior.",
+      "steps": [
+        "Identify exact wireless module and source/firmware/proprietary interface compatibility.",
+        "Integrate one network path and build the exact candidate without security bypasses.",
+        "Use an authorized test network for integrity transfer, three reconnects and wake-cycle checks."
+      ],
+      "acceptance": "On-device authorized Wi-Fi connectivity, transfer integrity and reconnect behavior pass with private credentials/logs protected.",
+      "kind": "qualification",
+      "hardware_group": "wifi",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 442,
+      "order": 310,
+      "parent": 25,
+      "name": "Audio playback and recording",
+      "depends_on": [
+        334
+      ],
+      "goal": "Qualify actual AFE/codec/routes and Android audio integration.",
+      "steps": [
+        "Resolve the unmatched AFE source/codec/clock/reset contract; source AUDSYS clocks are not audio functionality.",
+        "Integrate kernel and Android audio HAL/policy for identified routes.",
+        "Test non-sensitive playback/recording, volume/mute and resume on declared routes."
+      ],
+      "acceptance": "On-device playback/recording and route/volume/wake behavior pass with exact logs and no persistent underrun or route loss.",
+      "kind": "qualification",
+      "hardware_group": "audio",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 335,
+      "order": 320,
+      "parent": 25,
+      "name": "Charging, battery and thermal qualification",
+      "depends_on": [
+        442
+      ],
+      "goal": "Qualify safe battery/charging reporting and model-specific thermal behavior.",
+      "steps": [
+        "Resolve exact sensor/calibration/bank/conversion/supply contracts; no guessed MT8173 thermal alias.",
+        "Integrate only source-backed battery/charger/thermal policy.",
+        "Use approved measurement methods and model-qualified limits; never invent thresholds or weaken protections."
+      ],
+      "acceptance": "On-device battery/charging/thermal observations agree with approved measurement and limits; unknown safe limits block sustained tests.",
+      "kind": "qualification",
+      "hardware_group": "charging-thermal",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 443,
+      "order": 330,
+      "parent": 25,
+      "name": "Suspend and wake",
+      "depends_on": [
+        335
+      ],
+      "goal": "Qualify wake sources, domain/clock order and Android power behavior.",
+      "steps": [
+        "Resolve the active wake/PMIC/domain/clock-policy blocker only.",
+        "Build the candidate retaining qualified charging/thermal behavior.",
+        "Run ten approved screen-off/suspend/wake cycles and inspect state/retention."
+      ],
+      "acceptance": "Ten on-device cycles pass without reboot, wake loop, storage corruption or persistent input/network/audio loss.",
+      "kind": "qualification",
+      "hardware_group": "suspend-wake",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 336,
+      "order": 340,
+      "parent": 25,
+      "name": "USB transport and integrity",
+      "depends_on": [
+        443
+      ],
+      "goal": "Qualify declared USB roles and usable diagnostic/data transport.",
+      "steps": [
+        "Identify actual port0/controller/PHY/role/security dependencies; port1 is not assumed supported.",
+        "Integrate the declared role/profile with approved userspace policy and no security weakening.",
+        "Test enumeration, approved data/log transfer, disconnect/reconnect and return behavior."
+      ],
+      "acceptance": "Declared on-device USB roles and integrity/cleanup pass; bytes queued by gadget writes are not host receipt or boot proof.",
+      "kind": "qualification",
+      "hardware_group": "usb",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 444,
+      "order": 350,
+      "parent": 25,
+      "name": "SD integrity and hotplug",
+      "depends_on": [
+        336
+      ],
+      "goal": "Qualify the identified SD host/pins/power/volume path.",
+      "steps": [
+        "Review exact controller/pinctrl/IRQ/voltage/timing support.",
+        "Integrate the supported mode and Android volume behavior.",
+        "Use a disposable authorized card for checksummed read/write, clean unmount and three hotplug cycles."
+      ],
+      "acceptance": "On-device SD integrity/hotplug passes with declared capacities/modes and no corruption.",
+      "kind": "qualification",
+      "hardware_group": "sd",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 446,
+      "order": 360,
+      "parent": 25,
+      "name": "Video decode and playback",
+      "depends_on": [
+        444
+      ],
+      "goal": "Qualify the declared codec/decoder and Android media path.",
+      "steps": [
+        "Identify codec block/firmware/memory/Codec2 dependencies and acceleration limits.",
+        "Integrate the selected media path with licensing and source obligations recorded.",
+        "Play approved local clips covering declared formats/resolutions; inspect seek, sync, frame delivery and thermal behavior."
+      ],
+      "acceptance": "On-device declared video playback tests pass; actual acceleration versus software decode and unsupported modes are explicit.",
+      "kind": "qualification",
+      "hardware_group": "video-decode",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 441,
+      "order": 370,
+      "parent": 25,
+      "name": "Bluetooth integration and qualification",
+      "depends_on": [
+        446
+      ],
+      "goal": "Qualify the exact controller/firmware/transport/HAL.",
+      "steps": [
+        "Identify exact controller and Android interface/firmware contract.",
+        "Integrate only the selected source/config/transport.",
+        "Pair an authorized device; exercise a declared profile, three reconnects and a wake cycle."
+      ],
+      "acceptance": "On-device Bluetooth pairing/profile/reconnect tests pass; unsupported profiles are explicit.",
+      "kind": "qualification",
+      "hardware_group": "bluetooth",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 445,
+      "order": 380,
+      "parent": 25,
+      "name": "Sensors integration and qualification",
+      "depends_on": [
+        441
+      ],
+      "goal": "Qualify identified sensor chips and Android events.",
+      "steps": [
+        "Identify actual buses/IRQs/orientation/ranges and permissions.",
+        "Integrate only identified kernel/HAL paths.",
+        "Test each declared sensor using bounded known stimuli and wake/event checks."
+      ],
+      "acceptance": "On-device sensor identity/orientation/range/event delivery pass for the declared list; unsupported sensors remain unqualified.",
+      "kind": "qualification",
+      "hardware_group": "sensors",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 447,
+      "order": 390,
+      "parent": 25,
+      "name": "Front/rear camera qualification",
+      "depends_on": [
+        445
+      ],
+      "goal": "Qualify actual sensors, ISP and Android camera integration.",
+      "steps": [
+        "Identify each sensor/bus/clock/reset/power/ISP/HAL dependency.",
+        "Implement only reviewed source-backed sequences; no guessed voltage/power writes.",
+        "Capture non-sensitive frames and preview/video on each declared camera, including open/close and wake."
+      ],
+      "acceptance": "On-device declared camera modes/orientation/capture tests pass; an explicit deferral never becomes a hardware pass.",
+      "kind": "qualification",
+      "hardware_group": "cameras",
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 27,
+      "order": 400,
+      "parent": 338,
+      "name": "Final candidate DT binding and dependency validation",
+      "depends_on": [
+        447
+      ],
+      "goal": "Validate the integrated candidate rather than chase unrelated bindings before first boot.",
+      "steps": [
+        "Reuse accepted source-matched controls; no new standalone peripheral scope without its ordered task.",
+        "Validate the exact candidate full corpus and fresh source graph, preserving diagnostic identities/unsupported scope.",
+        "Resolve candidate-required failures through their owning subsystem issues; do not suppress or fake bindings."
+      ],
+      "acceptance": "The exact beta candidate meets its approved DT/dependency gate; full failure counts, unsupported nodes and any exclusions stay explicit.",
+      "kind": "validation",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 353,
+      "order": 410,
+      "parent": 352,
+      "name": "Owner first-party license decision",
+      "depends_on": [
+        27
+      ],
+      "goal": "Record the actual owner licensing decision for first-party deliverables.",
+      "steps": [
+        "Present the exact license/ownership decision and implications.",
+        "Record the explicit owner decision without assuming it."
+      ],
+      "acceptance": "Owner decision and affected first-party scope are recorded; this is separate from third-party redistribution.",
+      "kind": "decision",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 354,
+      "order": 420,
+      "parent": 352,
+      "name": "Distribution and source obligations",
+      "depends_on": [
+        353
+      ],
+      "goal": "Resolve obligations for the exact candidate artifact set.",
+      "steps": [
+        "Inventory kernel/Android/firmware/HAL/app components and licenses.",
+        "Verify source notices/provisioning/redistribution restrictions and GMS/package feasibility.",
+        "Remove or hold artifacts lacking permission; record the supported distribution scope."
+      ],
+      "acceptance": "The exact deliverable has a documented lawful distribution/source-notice plan; unresolved paid/proprietary access is not silently assumed.",
+      "kind": "release",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 340,
+      "order": 500,
+      "parent": 338,
+      "name": "Exact beta package and recovery handoff",
+      "depends_on": [
+        354
+      ],
+      "goal": "Assemble a candidate whose install/restore/log procedure matches the evidence.",
+      "steps": [
+        "Pin all artifact/config/source hashes, device support, known defects and limitations.",
+        "Include reviewed installation/return/recovery/log instructions with exact risk/approval boundaries.",
+        "Check all mandatory roadmap gates and actual results against the beta matrix."
+      ],
+      "acceptance": "Exact coherent beta package and recoverable handoff are reviewable; generic Image or source-only receipts do not pass.",
+      "kind": "release",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    },
+    {
+      "issue": 341,
+      "order": 510,
+      "parent": 338,
+      "name": "Beta admission review",
+      "depends_on": [
+        340
+      ],
+      "goal": "Admit owner QA only after actual prerequisites pass.",
+      "steps": [
+        "Review exact package and the A01\u2013A07 admission matrix.",
+        "Confirm no unresolved critical recovery, data-loss, thermal or security failure.",
+        "Record Go/No-go and the supported/unsupported list; never close an untested runtime gate."
+      ],
+      "acceptance": "Owner QA admission is based on measured candidate evidence and an approved handoff, not task/PR counts.",
+      "kind": "release",
+      "hardware_group": null,
+      "conditions": [],
+      "existing_work_exception": false
+    }
+  ],
+  "containers": [
+    {
+      "issue": 2,
+      "parent": null,
+      "level": "Epic",
+      "order": 0,
+      "name": "FireTabs Android \u2014 beta platform for QA",
+      "state": "Active"
+    },
+    {
+      "issue": 8,
+      "parent": 2,
+      "level": "Feature",
+      "order": 0.2,
+      "name": "Delivery traceability and release governance",
+      "state": "Active"
+    },
+    {
+      "issue": 437,
+      "parent": 8,
+      "level": "Phase",
+      "order": 0.5,
+      "name": "Ordered roadmap and issue-to-PR execution control",
+      "state": "Active"
+    },
+    {
+      "issue": 327,
+      "parent": 2,
+      "level": "Feature",
+      "order": 9,
+      "name": "Recoverable diagnostic loading and real boot logs",
+      "state": "Active"
+    },
+    {
+      "issue": 344,
+      "parent": 327,
+      "level": "Phase",
+      "order": 9.5,
+      "name": "Phase 1 \u2014 Operational diagnostic entry, return and logs",
+      "state": "Active"
+    },
+    {
+      "issue": 4,
+      "parent": 2,
+      "level": "Feature",
+      "order": 49,
+      "name": "Maintained-kernel douglas board enablement",
+      "state": "Blocked"
+    },
+    {
+      "issue": 21,
+      "parent": 4,
+      "level": "Phase",
+      "order": 49.5,
+      "name": "Phase 2 \u2014 Diagnostic memory, UART and internal storage",
+      "state": "Blocked"
+    },
+    {
+      "issue": 328,
+      "parent": 4,
+      "level": "Phase",
+      "order": 59,
+      "name": "Phase 3 \u2014 Core board provider qualification",
+      "state": "Blocked"
+    },
+    {
+      "issue": 332,
+      "parent": 2,
+      "level": "Feature",
+      "order": 99,
+      "name": "Reproducible Android platform and essential hardware",
+      "state": "Blocked"
+    },
+    {
+      "issue": 23,
+      "parent": 332,
+      "level": "Phase",
+      "order": 99.5,
+      "name": "Phase 4 \u2014 Display, touch and graphics",
+      "state": "Blocked"
+    },
+    {
+      "issue": 24,
+      "parent": 332,
+      "level": "Phase",
+      "order": 199,
+      "name": "Phase 5 \u2014 Integrated Android candidate",
+      "state": "Blocked"
+    },
+    {
+      "issue": 25,
+      "parent": 332,
+      "level": "Phase",
+      "order": 299,
+      "name": "Phase 6 \u2014 Essential hardware and remaining peripherals",
+      "state": "Blocked"
+    },
+    {
+      "issue": 337,
+      "parent": 2,
+      "level": "Feature",
+      "order": 399,
+      "name": "Beta QA admission and reproducible handoff",
+      "state": "Blocked"
+    },
+    {
+      "issue": 338,
+      "parent": 337,
+      "level": "Phase",
+      "order": 399.5,
+      "name": "Phase 7 \u2014 Candidate validation, packaging and QA admission",
+      "state": "Blocked"
+    },
+    {
+      "issue": 352,
+      "parent": 8,
+      "level": "Phase",
+      "order": 409,
+      "name": "Licensing and distribution prerequisites",
+      "state": "Blocked"
+    },
+    {
+      "issue": 106,
+      "parent": 327,
+      "level": "Phase",
+      "order": 970,
+      "name": "Historical entry investigation \u2014 runtime exit still open",
+      "state": "Blocked",
+      "related_runtime_gates": [
+        347,
+        346,
+        348
+      ]
+    }
+  ],
+  "hardware_group_count": 14,
+  "historical_completed_issues": [
+    29,
+    339,
+    342,
+    343
+  ],
+  "first_critical_path_issue": 439,
+  "selection_source": "Live GitHub issue/project state and explicit outcome gates; never infer readiness from this static plan alone."
+}
