@@ -12,17 +12,23 @@ The board is the source of live state. Do not resume historical peripheral queue
   at8ff8731 and actual PWM object/config/final Image run40881461603. No new PWM
   binding/peripheral scope follows. The source receipt is in
   evidence/pwm-kernel-integration/build-result.json; hardware remains unqualified.
-- **Active execution task: #439**, reopened software-first review following owner
-  correction. [Working-project entry reconciliation](WORKING-PROJECT-ENTRY.md)
-  reads original unlock/TWRP and LineageOS17.1/18.1 maintainer documentation.
-  The guide describes case-closed unlock; opening is not established as necessary.
-  Cached external-brick script/minimal-step advice conflicts with the author's
-  full-step warning. The [software proposal](SOFTWARE-UNLOCK-PROPOSAL.md) now pins
-  the original archives, destructive boundary and full-stage pairing. Bundled
-  Linux/x86 binaries cannot run natively on this Darwin/arm64 host. Execution
-  is HOLD pending explicit high-risk approval and Linux host preparation.
-  #345 stays conditional/Blocked. No high-risk helper/device action is admitted.
-  PR449's NO-GO remains a historical trial decision, not software impossibility.
+- **Decision#439 is complete:** owner approved the reviewed persistent software
+  unlock and destructive lab-host/device work on29 October, with immediate
+  reporting of breakage or unexpected state. Do not ask that approval again.
+- **Active execution task: #347**, actual lab entry preparation. The dedicated
+  strict-key SSH Linux/x86-64 host is available; the Mac is only the desktop.
+  Original archives and exact current stock OTA/recovery are staged/hash-verified
+  there. ADB/fastboot/PySerial are available; no tablet mode/write has occurred.
+  Host admin access is the remaining immediate prerequisite: ModemManager is
+  active and the SSH account needs its authorized one-time sudo grant before
+  temporary USB/serial preparation. The grant command has been presented.
+- **Urgent milestone: usable Android lab QA for Connect and passkeys.** Use the
+  existing working ROM path before completing the maintained kernel. A donor-ROM
+  result never closes maintained-kernel hardware/boot gates. Connect currently
+  builds ARM64; current Lineage18.1 device source is ARM32, so APK/ROM ABI must be
+  matched before installation. Android9+ credential support and actual browser/
+  provider/user-verification/deep-link flows must be tested, not inferred.
+  #345 remains conditional; opening/electrical actions are not selected.
 
 The decision must identify one operational route or state why none is safely
 available, the minimum diagnostic package and entry/memory/CPU/transport contract,

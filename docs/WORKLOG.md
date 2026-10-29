@@ -3826,3 +3826,30 @@ Owner decision is explicit risk approval/rejection for this attended persistent
 software attempt on prepared Linux x86-64. No case opening/electrical action
 included. HOLD pending that decision/host; no unrelated peripheral work. Required
 exact-head PR checks before accepting proposal; physical gates remain open.
+
+## 2026-10-29 — owner-approved lab entry347 and urgent app QA
+
+Owner approved software attempt and free use of destructive lab Linux/device,
+with immediate reporting if broken.439decisioncompleted;347onlyActiveTask. Recovered
+existing strict-key SSH connection from this thread's history after mistakenly
+checking desktop VM inventory; dedicated lab is Linux/x86-64 with adb/fastboot/
+PySerial. One expected DouglasAPI22,PL7/LK3/TEE262,bootcompleted,USBpower/100%
+battery26C observed for pre-destructive identity/supply check. No mode or tablet
+write. Three pinned original archives staged/unpacked separately; exact current
+9299968B recovery and907705758B authenticated OTA transferred and hashes verified
+on lab. Seven Python host files compile, bundled Linux fastboot version probe
+passes. No existing ttyACM before entry.
+
+Host ModemManager active; SSH account lacks sudo/noninteractive admin. Owner
+explicitly wants admin rights; prepared one-time grant requested. Cannot grant
+root from unprivileged account. No firmware mutation until serial/service setup
+can be applied. Current private SSH args/workspace/receipts under ignored out;
+never publish selectors/hostnames. Parallels inventory query stopped after hang;
+no VMs changed and no VM provisioning needed.
+
+Immediate owner priority is full Connect and passkey QA on these onlylab devices.
+Known working ROM path precedes maintained-kernel completion. Source checks show
+Connect minSdk24/current CI aarch64; Googlepasskeys needAndroid9/API28+, and current
+Lineage18.1 source isARM32. Match APK/ROM ABI and test actual credentialprovider/
+userverification/browser/PKCE/deeplink, not merely boot. No ROM/GApps downloaded
+or account configured. Existing14 maintained-kernel hardware gates remain open.
