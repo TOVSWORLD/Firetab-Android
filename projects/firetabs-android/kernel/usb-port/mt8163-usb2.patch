@@ -1,0 +1,204 @@
+--- a/drivers/phy/mediatek/phy-mtk-tphy.c
++++ b/drivers/phy/mediatek/phy-mtk-tphy.c
+@@ -12,6 +12,7 @@
+ #include <linux/iopoll.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/module.h>
++#include <linux/mutex.h>
+ #include <linux/nvmem-consumer.h>
+ #include <linux/of.h>
+ #include <linux/of_address.h>
+@@ -285,12 +286,14 @@
+  *                            that is pointed at in the device tree node for this PHY
+  * @slew_ref_clk_mhz:         Default reference clock (in MHz) for slew rate calibration
+  * @slew_rate_coefficient:    Coefficient for slew rate calibration
++ * @mt8163_usb2:              Dedicated USB2 bank and vendor fixed-byte calibration
+  * @version:                  PHY IP Version
+  */
+ struct mtk_phy_pdata {
+ 	bool avoid_rx_sen_degradation;
+ 	bool sw_pll_48m_to_26m;
+ 	bool sw_efuse_supported;
++	bool mt8163_usb2;
+ 	u8 slew_ref_clock_mhz;
+ 	u8 slew_rate_coefficient;
+ 	enum mtk_phy_version version;
+@@ -339,6 +342,8 @@
+ struct mtk_tphy {
+ 	struct device *dev;
+ 	void __iomem *sif_base;	/* only shared sif */
++	void __iomem *u2_freq;
++	struct mutex u2_freq_lock;
+ 	const struct mtk_phy_pdata *pdata;
+ 	struct mtk_phy_instance **phys;
+ 	int nphys;
+@@ -678,6 +683,48 @@
+ 
+ #endif
+ 
++/* MT8163 vendor USB20 port0: measure first, then apply the full-byte policy. */
++static void mt8163_hs_slew_measure_and_apply(struct mtk_tphy *tphy,
++	struct mtk_phy_instance *instance)
++{
++	void __iomem *fmreg = instance->u2_banks.fmreg;
++	void __iomem *com = instance->u2_banks.com;
++	u32 fm_out = 0;
++	u32 control;
++	u8 status;
++	int ret;
++
++	mutex_lock(&tphy->u2_freq_lock);
++	writeb(0x80, com + 0x15);
++	udelay(1);
++	control = readl(fmreg + U3P_U2FREQ_FMMONR1) | P2F_RG_FRCK_EN;
++	writel(control, fmreg + U3P_U2FREQ_FMMONR1);
++	control = readl(fmreg + U3P_U2FREQ_FMCR0);
++	control &= ~(P2F_RG_CYCLECNT | P2F_RG_MONCLK_SEL);
++	control |= FIELD_PREP(P2F_RG_CYCLECNT, U3P_FM_DET_CYCLE_CNT);
++	writel(control, fmreg + U3P_U2FREQ_FMCR0);
++	writel(control | P2F_RG_FREQDET_EN, fmreg + U3P_U2FREQ_FMCR0);
++
++	ret = readb_poll_timeout(fmreg + U3P_U2FREQ_FMMONR1, status,
++				status & P2F_USB_FM_VALID, 10, 3000000);
++	if (!ret)
++		fm_out = readl(fmreg + U3P_U2FREQ_VALUE);
++
++	/* All measurement outcomes clean up; no unused formula or zero divide. */
++	control = readl(fmreg + U3P_U2FREQ_FMCR0) & ~P2F_RG_FREQDET_EN;
++	writel(control, fmreg + U3P_U2FREQ_FMCR0);
++	control = readl(fmreg + U3P_U2FREQ_FMMONR1) & ~P2F_RG_FRCK_EN;
++	writel(control, fmreg + U3P_U2FREQ_FMMONR1);
++	writeb(0x60, com + 0x15);
++	writeb(readb(com + 0x15) & ~0x80, com + 0x15);
++	mutex_unlock(&tphy->u2_freq_lock);
++
++	if (ret || !fm_out)
++		dev_warn_ratelimited(tphy->dev,
++			"MT8163 USB2 calibration observation: timeout=%d fm_out=%u; vendor byte applied\n",
++			ret, fm_out);
++}
++
+ static void hs_slew_rate_calibrate(struct mtk_tphy *tphy,
+ 	struct mtk_phy_instance *instance)
+ {
+@@ -687,6 +734,11 @@
+ 	int calibration_val;
+ 	int fm_out;
+ 	u32 tmp;
++
++	if (tphy->pdata->mt8163_usb2) {
++		mt8163_hs_slew_measure_and_apply(tphy, instance);
++		return;
++	}
+ 
+ 	/*
+ 	 * If a fixed HS slew rate (EYE) value was supplied, don't run the
+@@ -1077,7 +1129,8 @@
+ 	switch (instance->type) {
+ 	case PHY_TYPE_USB2:
+ 		u2_banks->misc = NULL;
+-		u2_banks->fmreg = tphy->sif_base + SSUSB_SIFSLV_V1_U2FREQ;
++		u2_banks->fmreg = tphy->pdata->mt8163_usb2 ? tphy->u2_freq :
++			tphy->sif_base + SSUSB_SIFSLV_V1_U2FREQ;
+ 		u2_banks->com = instance->port_base + SSUSB_SIFSLV_V1_U2PHY_COM;
+ 		break;
+ 	case PHY_TYPE_USB3:
+@@ -1476,6 +1529,9 @@
+ 	}
+ 
+ 	instance->type = args->args[0];
++	if (tphy->pdata->mt8163_usb2 &&
++	    (instance->type != PHY_TYPE_USB2 || instance->index != 0))
++		return ERR_PTR(-EOPNOTSUPP);
+ 	if (!(instance->type == PHY_TYPE_USB2 ||
+ 	      instance->type == PHY_TYPE_USB3 ||
+ 	      instance->type == PHY_TYPE_PCIE ||
+@@ -1518,6 +1574,11 @@
+ 	.owner		= THIS_MODULE,
+ };
+ 
++static const struct mtk_phy_pdata mt8163_usb2_pdata = {
++	.mt8163_usb2 = true,
++	.version = MTK_PHY_V1,
++};
++
+ static const struct mtk_phy_pdata tphy_v1_pdata = {
+ 	.avoid_rx_sen_degradation = false,
+ 	.slew_ref_clock_mhz = 26,
+@@ -1552,6 +1613,7 @@
+ };
+ 
+ static const struct of_device_id mtk_tphy_id_table[] = {
++	{ .compatible = "mediatek,mt8163-tphy", .data = &mt8163_usb2_pdata },
+ 	{ .compatible = "mediatek,mt2701-u3phy", .data = &tphy_v1_pdata },
+ 	{ .compatible = "mediatek,mt2712-u3phy", .data = &tphy_v2_pdata },
+ 	{ .compatible = "mediatek,mt8173-u3phy", .data = &mt8173_pdata },
+@@ -1563,6 +1625,24 @@
+ };
+ MODULE_DEVICE_TABLE(of, mtk_tphy_id_table);
+ 
++static int mt8163_usb2_map_frequency(struct platform_device *pdev,
++				     struct mtk_tphy *tphy)
++{
++	struct device *dev = &pdev->dev;
++	struct resource *freq_res;
++
++	freq_res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "u2-frequency");
++	if (!freq_res || (freq_res->start & 3) ||
++	    resource_size(freq_res) < U3P_U2FREQ_FMMONR1 + sizeof(u32))
++		return dev_err_probe(dev, -EINVAL,
++				     "MT8163 requires a separate frequency bank\n");
++	tphy->u2_freq = devm_ioremap_resource(dev, freq_res);
++	if (IS_ERR(tphy->u2_freq))
++		return PTR_ERR(tphy->u2_freq);
++	mutex_init(&tphy->u2_freq_lock);
++	return 0;
++}
++
+ static int mtk_tphy_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+@@ -1591,6 +1671,8 @@
+ 	platform_set_drvdata(pdev, tphy);
+ 
+ 	sif_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	if (tphy->pdata->mt8163_usb2 && !sif_res)
++		return dev_err_probe(dev, -EINVAL, "MT8163 requires the SIF resource\n");
+ 	/* SATA phy of V1 needn't it if not shared with PCIe or USB */
+ 	if (sif_res && tphy->pdata->version == MTK_PHY_V1) {
+ 		/* get banks shared by multiple phys */
+@@ -1601,6 +1683,12 @@
+ 		}
+ 	}
+ 
++	if (tphy->pdata->mt8163_usb2) {
++		ret = mt8163_usb2_map_frequency(pdev, tphy);
++		if (ret)
++			return ret;
++	}
++
+ 	/* Optional properties for slew calibration variation */
+ 	ret = device_property_read_u32(dev, "mediatek,src-ref-clk-mhz", &tphy->src_ref_clk);
+ 	if (ret)
+@@ -1618,6 +1706,11 @@
+ 		struct phy *phy;
+ 		int retval;
+ 
++		if (tphy->pdata->mt8163_usb2 &&
++		    of_property_read_bool(child_np, "mediatek,eye-src"))
++			return dev_err_probe(dev, -EINVAL,
++					     "MT8163 EYE override is not qualified\n");
++
+ 		instance = devm_kzalloc(dev, sizeof(*instance), GFP_KERNEL);
+ 		if (!instance)
+ 			return -ENOMEM;
+@@ -1638,6 +1731,9 @@
+ 			return retval;
+ 		}
+ 
++		if (tphy->pdata->mt8163_usb2 && ((res.start & 3) || resource_size(&res) < 0x100))
++			return dev_err_probe(subdev, -EINVAL, "MT8163 common bank too small\n");
++
+ 		instance->port_base = devm_ioremap_resource(subdev, &res);
+ 		if (IS_ERR(instance->port_base))
+ 			return PTR_ERR(instance->port_base);

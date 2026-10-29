@@ -3150,3 +3150,31 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
 - Next executable #27 acceptance: isolated actual MT8163 source implementation
   and source/build integration, preserving non-MT8163 behavior and explicit error
   paths. Remaining analog/role/clock policy and all runtime return/log gates open.
+
+## 2026-10-28 — actual MT8163 USB2 source and USB-enabled build integration (#27)
+
+- Implemented isolated exact MT8163 descriptor/USB2 port0 xlate; required separate
+  named frequency resource/minimum window, SIF/common extent and EYE guards.
+  Missing/invalid mappings error rather than selecting generic bank.
+- New serialized measurement uses source-derived byte sequence and bounded3sec
+  polling and explicit1024-cycle/channel0 field setup rather than reset-state
+  assumptions; success/zero/timeout all clean up and apply vendor full-byte0x60. No
+  dead formula/divide-by-zero or skip-calibration shortcut. Existing descriptors
+  and generic calibration body preserved. Analog/role/clock behavior unqualified.
+- Hash-lock apply validates exact ACK/source/helper/definition/patch/output.
+  Host tests compile actual new C functions against RAM-only I/O/resource mocks:
+  missing/small/busy mappings and success/zero/timeout/large readings checked.
+- Explicit usb-providers profile enables/resolves USB/GADGET/MUSB/T-PHY and
+  checks actual objects/config/Image; old USB-off diagnostic fragment unchanged.
+  Path-based PR selector chooses one build; non-USB changes retain generic QEMU.
+  Linux compilation must pass before build claims. No device/firmware execution.
+- Two capped pinned Kconfig reads total7581bytes confirm NOP transceiver/role/PHY
+  dependencies; receipts in evidence/usb-kernel-integration. Reproduce host tests,
+  scripts/apply_usb_port.py and build_ack_baseline.sh usb-providers.
+- Linux GCC caught stack-fixture addresses stored in global RAM-mock pointers;
+  changed fixture storage to static lifetime and exposed compiler stderr. GNU
+  cross-compile/link and native mock execution pass; no warning suppression or
+  kernel-patch change. New-head Linux build remains required after this test fix.
+- Next acceptance after exact-head Linux build: isolated disabled-DT frequency
+  resource experiment and matched binding controls; baseline/full34 diagnostics,
+  actual transport/loading/independent return/log gates remain unqualified.

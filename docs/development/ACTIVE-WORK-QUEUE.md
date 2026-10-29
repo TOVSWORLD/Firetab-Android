@@ -20,11 +20,14 @@ unchanged. Finite USB2 bank/calibration definition is now pinned under kernel/
 usb-port:65536 source-expression states reject field-only/EYE shortcuts; separate
 frequency resource prevents parent/child ownership overlap. Measurement retained,
 vendor byte policy defined, zero/timeout handling explicit; no kernel variant yet.
-Next source acceptance: implement the isolated MT8163 bank/calibration definition,
-missing-resource/type/error handling and unchanged-other-SoC guarantees, then
-actual object/config/Image build checks. Keep candidate disabled; no binding or
-whole-sequence/runtime equivalence claim. Runtime DMA/display/loading,
-independent failed-boot return/log gates remain open.
+Actual isolated MT8163 USB2 port0 bank/calibration implementation is prepared with
+hash-locked application, mandatory resource/type/EYE guards, serialized measurement
+and full-byte cleanup. Host actual-C/RAM mocks pass; Linux usb-providers scope
+requires USB-enabled symbols/objects/Image before a build claim. Existing USB-off
+diagnostic profile and disabled candidate remain unchanged. Next acceptance after
+successful exact-head build: isolated disabled-DT frequency-resource experiment
+and MT8163-specific binding controls, preserving baseline/full34 failure output.
+Runtime DMA/display/loading and independent failed-boot return/log gates stay open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

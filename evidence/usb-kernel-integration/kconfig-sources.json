@@ -1,0 +1,16 @@
+[
+  {
+    "path": "drivers/usb/musb/Kconfig",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/musb/Kconfig?format=TEXT",
+    "sha256": "799615aba275600620ab07aa8a1a29cb179effc5ce3d7916602764550a73c49e",
+    "bytes": 4533,
+    "local": "evidence/usb-kernel-integration/kconfig/musb-Kconfig"
+  },
+  {
+    "path": "drivers/phy/mediatek/Kconfig",
+    "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/phy/mediatek/Kconfig?format=TEXT",
+    "sha256": "d920e17fabbc433b337fcdb8d6a231a49a7a62a2d9f29fa6d76f874824543e66",
+    "bytes": 3048,
+    "local": "evidence/usb-kernel-integration/kconfig/phy-Kconfig"
+  }
+]

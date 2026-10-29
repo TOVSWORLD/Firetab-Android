@@ -1,9 +1,11 @@
 # MT8163 USB2 bank/calibration definition — #27
 
-This is a source-derived definition for the next kernel implementation, not an
-implemented or runtime-qualified PHY variant. It reuses the sources
-pinned by USB-PREREQUISITES.md plus one capped official phy-mtk-io.h read to
-verify actual mask/field RMW semantics; the helper URL/hash receipt is retained. No DT, driver, USB mode or device is changed.
+This directory retains the source-derived definition and the actual isolated
+kernel patch. The definition/model predates implementation and keeps its historical
+readiness flags; see the actual implementation/build section below for current
+source status. Neither source nor host models qualify physical USB transport.
+The sources are pinned by USB-PREREQUISITES.md plus the capped official RMW-helper
+header receipt in evidence/usb-variant-definition.
 
 ## Applied register effects
 
@@ -52,12 +54,51 @@ python3 scripts/validate_usb_variant_definition.py
 python3 -m unittest discover -s tests -p test_usb_variant_definition.py -v
 ```
 
-## Next implementation acceptance
+## Implementation criteria
 
-Implement the isolated MT8163 bank/calibration definition against pinned ACK,
-verify missing-bank/unsupported-PHY-type/error paths and preserve all other SoC
-policies. Add bounded source/build integration with actual object/config/Image
-results before binding or transport claims. Keep the candidate disabled. Remaining
+The locked patch implements the isolated bank/calibration definition against
+pinned ACK and is checked for missing-bank/unsupported-type/error paths and
+unchanged generic policy. Actual object/config/Image results are still required
+before build, binding or transport claims. Keep the candidate disabled. Remaining
 analog threshold/tuning, role-dependent init and clock/power sequences still need
 qualification; this definition does not assert whole legacy/ACK equivalence.
 No device/firmware/helper/reset or calibration-bypass execution is authorized here.
+
+## Actual source implementation and explicit build scope
+
+The hash-locked mt8163-usb2.patch implements the definition against pinned ACK.
+It adds an exact MT8163 descriptor, mandatory named u2-frequency mapping and
+minimum extent checks, a mutex around shared measurement, explicit 1024-cycle/channel0 measurement setup with preserved unrelated
+frequency bits, bounded polling and cleanup/fixed-byte application for timeout/zero
+results. It rejects an EYE override before provider registration. Only the
+reviewed USB2 port0 is admitted by xlate; port1/other PHY types remain unsupported
+for this new descriptor pending their own qualification. Existing descriptor data
+and generic calibration body remain unchanged. This is not whole analog/role/
+clock sequence equivalence and does not enable the current incomplete DT.
+
+Host tests apply the actual locked patch, compare unchanged generic functions,
+and compile the actual new C functions with RAM-only I/O/resource mocks. They
+exercise missing/undersized/busy mappings and successful/zero/timed-out readings,
+cleanup, locking and the full-byte write; no real hardware access is performed.
+
+The usb-providers Linux scope explicitly enables USB/GADGET, the MUSB MediaTek
+wrapper/dual-role core and Inventra DMA (not PIO-only), NOP transceiver and T-PHY. It requires the resolved symbols,
+compiles both actual USB objects, prints their hashes and builds Image/vmlinux.
+The existing USB-off diagnostic fragment is unchanged. PR source-path selection
+chooses one USB-enabled build for this patch, otherwise retains diagnostic/QEMU;
+manual scope requests are explicit. USB Image compilation is not USB transport
+execution, and generic QEMU is not claimed for this new profile. Only successful
+exact-head Linux CI establishes build evidence; source/host results do not.
+
+```sh
+python3 scripts/apply_usb_port.py /path/to/disposable/pinned/ack
+bash scripts/build_ack_baseline.sh usb-providers # Linux host / existing resource gates
+python3 -m unittest discover -s tests -p test_usb_port.py -v
+```
+
+Next acceptance after the actual build: isolated disabled-DT resource experiment
+with the second disjoint frequency bank and matched MT8163-specific binding
+controls. Keep current baseline/candidate unchanged until separately verified.
+Actual IRQ/PHY timing, analog tuning, device role, USB gadget logs, loading and
+independent recovery remain unqualified. The earlier definition/report captures
+the pre-implementation model and is retained as historical evidence.
