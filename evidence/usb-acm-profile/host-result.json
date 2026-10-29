@@ -2,12 +2,12 @@
   "scope": "Actual opt-in profile/build integration plus policy rejection models; resolved Linux build separate",
   "inputs": {
     "projects/firetabs-android/kernel/usb-acm/fragment.config": "eff513a6612f14911cc9c42446cbca1bb914a61a74b910e52df111ff1168225a",
-    "projects/firetabs-android/kernel/usb-acm/profile.json": "ad76f7e6212ce9936a8b1fc0ca9eed041b1192a2c324041c4576b3f383a3a9dd",
-    "scripts/usb_acm_config.py": "6eb90b71a098ddaa2a2f940077d48789327f2ae517a58265f37da00a49f8f606",
-    "scripts/build_ack_baseline.sh": "1188333f20246772b7a4392570edcddd1205ce38d6a7ef9bf9e41d57c5c9ec41",
+    "projects/firetabs-android/kernel/usb-acm/profile.json": "93f8959325762ef7db01e90a6fdbf483d0af30c10f5567d44876abe4af1f2df3",
+    "scripts/usb_acm_config.py": "d903945ee5bc8bad95aed517381cbf27d077d76f25cd2d06db3ce05cdd051478",
+    "scripts/build_ack_baseline.sh": "40d2839a1adb5ee4e916582a8852bdfe289befe58b17c58a65510f19ae18a201",
     "scripts/select_kernel_build_scope.py": "46a27dbaa2204828e358b1aac02a9adfa8f5b2f43452dbfd193fb622df8a55a4",
     ".github/workflows/kernel-baseline.yml": "19b7401d0707ff32583580e57a12b1efa234b3c472fe57485f8c1c4dc237d34a",
-    "tests/test_usb_acm_config.py": "d7a9e75533398a6ca019b745ad5f2f47d8fea7f312ac6d2b4728cbc0328e78c8"
+    "tests/test_usb_acm_config.py": "fe6a6a79ff744e61cde822fea48eb3ba5b8174588a0f1c0cc5b45ac699d7c8e4"
   },
   "commands": [
     [
@@ -27,10 +27,11 @@
       "scripts/build_ack_baseline.sh"
     ]
   ],
-  "host_tests": 413,
+  "host_tests": 414,
   "kernel_profile_resolved": false,
   "kernel_build_passed": false,
   "gadget_pid1_implemented": false,
   "transport_qualified": false,
-  "correction": "Strict security guard retained; explicit dependency/SELinux/LSM policy added after first real resolution failure."
+  "correction": "Strict security guard retained; explicit dependency/SELinux/LSM policy added after first real resolution failure.",
+  "component_probe_correction": "Hash-locked actual translation units, not nonexistent builtin aggregates."
 }

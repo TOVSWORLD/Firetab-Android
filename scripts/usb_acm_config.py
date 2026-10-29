@@ -58,12 +58,36 @@ def check(text):
             'gadget_userspace_implemented': False, 'transport_qualified': False}
 
 
+def object_targets():
+    _, lock = requirements()
+    for path, expected in lock['object_makefiles'].items():
+        if hashlib.sha256((ROOT/path).read_bytes()).hexdigest() != expected:
+            raise ValueError('Pinned gadget Makefile drift')
+    source = (ROOT/'evidence/usb-gadget-prerequisites/gadget-Makefile').read_text()
+    units = []
+    for row in re.findall(r'^libcomposite-y\s*(?::=|\+=)\s*(.*)$', source, re.M):
+        units += row.split()
+    if units != ['usbstring.o','config.o','epautoconf.o','composite.o','functions.o','configfs.o','u_f.o']:
+        raise ValueError('Unexpected builtin composite component set')
+    functions = (ROOT/'evidence/usb-gadget-prerequisites/function-Makefile').read_text()
+    if not re.search(r'^usb_f_acm-y\s*:=\s*f_acm.o$',functions,re.M):
+        raise ValueError('Unexpected ACM component mapping')
+    if not re.search(r'^obj-\$\(CONFIG_USB_U_SERIAL\)\s*\+=\s*u_serial.o$',functions,re.M):
+        raise ValueError('Unexpected serial component mapping')
+    return ['drivers/usb/gadget/'+n for n in units]+[
+        'drivers/usb/gadget/function/f_acm.o','drivers/usb/gadget/function/u_serial.o']
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode', choices=['apply', 'check'])
-    parser.add_argument('config', type=Path)
+    parser.add_argument('mode', choices=['apply', 'check', 'objects'])
+    parser.add_argument('config', type=Path, nargs='?')
     parser.add_argument('--source', type=Path)
     args = parser.parse_args()
+    if args.mode == 'objects':
+        print('\n'.join(object_targets()))
+        return
+    if args.config is None: parser.error('config required for apply/check')
     states, _ = requirements()
     if args.mode == 'apply':
         if args.source is None: parser.error('--source required for apply')

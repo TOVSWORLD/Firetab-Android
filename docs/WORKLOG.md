@@ -3343,3 +3343,9 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   added; SELinux boot-disable/development switches disabled. No runtime bypass.
   Exact rejected config/log receipt in evidence/usb-acm-profile; actual negative
   regression added. Replacement exact-head build required; no success claim.
+
+- Replacement40827564991 ataade0fa passed actual ACM/security/LSM resolution and
+  USB provider object checks, then failed at an invalid standalone builtin
+  libcomposite.o aggregate probe. Corrected to nine actual translation units from
+  hash-locked pinned Makefiles; Image link still required.414 host tests and target
+  regression controls pass; another exact-head ACM build required, no Image claim.

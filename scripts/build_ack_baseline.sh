@@ -123,8 +123,11 @@ if [ "$mode" != generic ]; then
     grep -qx '# CONFIG_MUSB_PIO_ONLY is not set' "$output/.config"
     echo MT8163_USB_PROVIDER_OBJECT_COMPILE_COMPLETE
     if [ "$mode" = usb-acm-diagnostic ]; then
-      make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/usb/gadget/libcomposite.o drivers/usb/gadget/function/usb_f_acm.o drivers/usb/gadget/function/u_serial.o
-      sha256sum "$output/drivers/usb/gadget/libcomposite.o" "$output/drivers/usb/gadget/function/usb_f_acm.o" "$output/drivers/usb/gadget/function/u_serial.o"
+      # Builtin composites are flattened; probe their actual translation units.
+      acm_targets="$(python3 scripts/usb_acm_config.py objects)"
+      readarray -t acm_objects <<< "$acm_targets"
+      make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 "${acm_objects[@]}"
+      for object in "${acm_objects[@]}"; do sha256sum "$output/$object"; done
       echo USB_ACM_BUILTIN_OBJECT_COMPILE_COMPLETE
     fi
   fi

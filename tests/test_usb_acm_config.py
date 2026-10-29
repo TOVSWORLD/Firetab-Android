@@ -49,6 +49,15 @@ class ACMProfile(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'SECURITY_NETWORK|SECURITY_SELINUX|LSM'):
             usb_acm_config.check(text)
 
+    def test_builtin_probe_uses_real_translation_units_not_module_aggregates(self):
+        targets=usb_acm_config.object_targets()
+        self.assertEqual(len(targets),9)
+        self.assertIn('drivers/usb/gadget/configfs.o',targets)
+        self.assertIn('drivers/usb/gadget/function/f_acm.o',targets)
+        self.assertIn('drivers/usb/gadget/function/u_serial.o',targets)
+        self.assertNotIn('drivers/usb/gadget/libcomposite.o',targets)
+        self.assertNotIn('drivers/usb/gadget/function/usb_f_acm.o',targets)
+
     def test_acm_selection_is_one_explicit_build_without_qemu(self):
         for path in ['scripts/usb_acm_config.py','projects/firetabs-android/kernel/usb-acm/fragment.config','projects/firetabs-android/kernel/usb-acm/profile.json']:
             self.assertEqual(choose('pull_request',[path,'scripts/apply_usb_port.py']),

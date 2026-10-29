@@ -17,7 +17,8 @@ symbols, enabled forbidden functions, ambiguous symbols and missing SELinux comp
 state or an LSM list excluding it. It does not establish runtime enforcement or a usable gadget.
 
 The actual apply path runs before olddefconfig; the checker runs afterward. Linux
-CI must compile MUSB/T-PHY plus libcomposite.o, usb_f_acm.o and u_serial.o, retain
+CI must compile MUSB/T-PHY plus the seven libcomposite component translation
+units, f_acm.o and u_serial.o, retain
 their explicit W=1 pre-Image hashes and resolved config, then build Image/vmlinux.
 USB_ACM_BUILTIN_OBJECT_COMPILE_COMPLETE is separate from the provider marker.
 Only an actual successful exact-head run establishes those claims; host policy
@@ -45,3 +46,9 @@ requests SECURITY/SECURITY_NETWORK/AUDIT/NET/INET/SELinux and LSM membership;
 actual replacement resolution/build is still required. Build-time security
 selection is not runtime policy/enforcement proof; policy/permissions remain
 prerequisites for any future diagnostic userspace, without bypasses for logging.
+
+Replacement run40827564991 ataade0fa passed the actual ACM/security/LSM resolution
+and provider object checks, then rejected the nonexistent builtin aggregate
+libcomposite.o probe. The probe now derives/hash-locks nine actual component C
+object targets from the pinned Makefiles. Requested configuration is unchanged;
+new exact-head component/Image validation is required, not a claimed prior pass.

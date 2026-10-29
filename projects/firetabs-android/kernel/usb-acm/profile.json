@@ -59,5 +59,9 @@
   "security_kconfig_sources": {
     "evidence/usb-acm-profile/selinux-Kconfig": "f16e32b231c41264786da57da8b8a1b72afe1159cf76d06593c2bf3404b9e284",
     "evidence/usb-acm-profile/security-Kconfig": "8a4a6fdbe072ad27721c52c98846afae025143b085cb629de99dd201873d5a59"
+  },
+  "object_makefiles": {
+    "evidence/usb-gadget-prerequisites/gadget-Makefile": "e3cabe915266f02601186f779a08409b3332bb721f883cd73dda02ae2950287e",
+    "evidence/usb-gadget-prerequisites/function-Makefile": "a992613ee0462a337cb29b5bcebe32701061b4a8b209878c1a5b840487f2a5db"
   }
 }
