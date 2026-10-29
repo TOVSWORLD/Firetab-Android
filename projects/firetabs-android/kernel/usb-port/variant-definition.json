@@ -1,0 +1,63 @@
+{
+  "scope": "Source-derived MT8163 USB2 variant definition for subsequent implementation; no kernel patch, DT change or runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "legacy_commit": "e0a3a2b2378ae4c7494ffdfea34d2a9e04a5fb74",
+  "compatible": "mediatek,mt8163-tphy",
+  "allowed_phy_types": [
+    3
+  ],
+  "resources": [
+    {
+      "name": "sif",
+      "owner": "parent",
+      "start": 287375360,
+      "length": 2048
+    },
+    {
+      "name": "u2-frequency",
+      "owner": "parent",
+      "start": 287379200,
+      "length": 256
+    },
+    {
+      "name": "port0",
+      "owner": "child0",
+      "start": 287377408,
+      "length": 256
+    },
+    {
+      "name": "port1",
+      "owner": "child1",
+      "start": 287377664,
+      "length": 256
+    }
+  ],
+  "frequency_bank": {
+    "resource": "u2-frequency",
+    "value_offset": 12,
+    "control_offset": 0,
+    "monitor_offset": 16,
+    "access_width": 4,
+    "cycle_count": 1024,
+    "timeout_us": 3000000,
+    "missing_resource_action": "error; no generic-bank fallback"
+  },
+  "slew_policy": {
+    "kind": "measure_then_vendor_fixed_byte",
+    "byte_offset": 21,
+    "byte_value": 96,
+    "field_mask": 28672,
+    "field_value": 6,
+    "oscillator_mask": 32768,
+    "measurement_required": true,
+    "timeout_action": "cleanup_then_fixed_byte",
+    "zero_measurement_action": "cleanup_then_fixed_byte",
+    "explicit_eye_override_action": "reject"
+  },
+  "non_mt8163_policy": "Preserve every existing compatible, bank, timeout and calibration path",
+  "candidate_enable_allowed": false,
+  "kernel_implementation_complete": false,
+  "build_integration_verified": false,
+  "runtime_qualified": false,
+  "non_mt8163_changes_allowed": false
+}

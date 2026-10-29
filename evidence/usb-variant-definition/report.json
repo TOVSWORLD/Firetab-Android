@@ -1,0 +1,29 @@
+{
+  "scope": "Exhaustive isolated 16-bit source expressions and interval ownership only; not whole PHY behavior",
+  "states_checked": 65536,
+  "equal_counts": {
+    "calibrated_field_hypothesis_equal": 8192,
+    "eye_src6_shortcut_equal": 4096
+  },
+  "difference_masks": {
+    "calibrated_field_hypothesis": "0x700",
+    "eye_src6_shortcut": "0x8700"
+  },
+  "counterexample": {
+    "initial": "0x8700",
+    "legacy": "0x6000",
+    "field_after_measurement": "0x6700",
+    "eye_src6_shortcut": "0xe700"
+  },
+  "field6_is_not_byte_write_equivalence": true,
+  "fixed_eye_shortcut_not_selected": true,
+  "resource_intervals_disjoint": true,
+  "frequency_value_address": "0x11210f0c",
+  "ack_current_timeout_us": 200,
+  "legacy_deadline": "3*HZ; selected definition converts intent to3000000us, not exact scheduling equivalence",
+  "candidate_unchanged": true,
+  "kernel_implementation_complete": false,
+  "build_integration_verified": false,
+  "runtime_qualified": false,
+  "definition_sha256": "6f1ab80fe9cd8b358117956b6067de0919ef5b21cd672b7f3fc60f88e8f4f0d7"
+}
