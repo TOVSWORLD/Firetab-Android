@@ -5,7 +5,7 @@ on:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl, providers, diagnostic]
+        options: [clocks, clocks-pinctrl, providers, usb-providers, diagnostic]
         default: diagnostic
       argument_profile:
         description: Generic-only forced argument selection (diagnostic mode)
@@ -23,6 +23,9 @@ on:
       - scripts/apply_clock_port.py
       - projects/firetabs-android/kernel/iommu-port/**
       - scripts/apply_iommu_port.py
+      - projects/firetabs-android/kernel/usb-port/**
+      - scripts/apply_usb_port.py
+      - scripts/select_kernel_build_scope.py
       - scripts/build_ack_baseline.sh
       - scripts/diagnostic_config.py
       - scripts/check_diagnostic_commandline.py
@@ -45,24 +48,33 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           persist-credentials: false
+          fetch-depth: 2
+      - name: Select explicit kernel build scope
+        id: scope
+        env:
+          BUILD_EVENT: ${{ github.event_name }}
+          REQUESTED_MODE: ${{ inputs.mode || 'diagnostic' }}
+          REQUESTED_ARGUMENTS: ${{ inputs.argument_profile || 'none' }}
+          REQUESTED_QEMU: ${{ inputs.emulated_boot || 'false' }}
+        run: python3 scripts/select_kernel_build_scope.py --event "$BUILD_EVENT" --mode "$REQUESTED_MODE" --argument-profile "$REQUESTED_ARGUMENTS" --emulated-boot "$REQUESTED_QEMU" --github-output "$GITHUB_OUTPUT"
       - name: Install kernel host dependencies
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y dwarves libelf-dev libssl-dev
           dpkg-query -W dwarves libelf-dev libssl-dev clang-18 lld-18
       - name: Gate and install generic ARM64 VM dependencies
-        if: github.event_name == 'pull_request' || inputs.emulated_boot
+        if: steps.scope.outputs.qemu == 'true'
         run: python3 scripts/install_qemu_for_ci.py --install
       - name: Preflight and compile generic ARM64 baseline
         env:
-          BUILD_MODE: ${{ inputs.mode || 'diagnostic' }}
-          ARGUMENT_PROFILE: ${{ github.event_name == 'pull_request' && 'generic-force' || inputs.argument_profile || 'none' }}
+          BUILD_MODE: ${{ steps.scope.outputs.mode }}
+          ARGUMENT_PROFILE: ${{ steps.scope.outputs.argument_profile }}
         run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"
 
       - name: Generic QEMU virt diagnostic userspace smoke test
-        if: github.event_name == 'pull_request' || inputs.emulated_boot
+        if: steps.scope.outputs.qemu == 'true'
         env:
-          ARGUMENT_PROFILE: ${{ github.event_name == 'pull_request' && 'generic-force' || inputs.argument_profile || 'none' }}
+          ARGUMENT_PROFILE: ${{ steps.scope.outputs.argument_profile }}
         run: |
           python3 scripts/build_diagnostic_initramfs.py
           force_option=()

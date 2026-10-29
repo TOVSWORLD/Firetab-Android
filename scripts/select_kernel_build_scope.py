@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+"""Choose a single explicit provider build; preserve the USB-off diagnostic scope."""
+import argparse
+import json
+from pathlib import Path
+import subprocess
+USB_PATHS={'scripts/apply_usb_port.py','scripts/select_kernel_build_scope.py'}
+MODES={'clocks','clocks-pinctrl','providers','usb-providers','diagnostic'}
+
+
+def choose(event,changed=(),mode='diagnostic',argument_profile='none',emulated_boot=False):
+    if event=='pull_request':
+        usb=any(p in USB_PATHS or p.startswith('projects/firetabs-android/kernel/usb-port/') and (p.endswith('.patch') or p.endswith('inputs.json')) for p in changed)
+        return {'mode':'usb-providers' if usb else 'diagnostic','argument_profile':'none' if usb else 'generic-force','qemu':not usb}
+    if mode not in MODES or argument_profile not in ['none','generic-force']:raise ValueError('Unknown build scope')
+    if mode!='diagnostic' and (argument_profile!='none' or emulated_boot):raise ValueError('Generic diagnostic QEMU requires diagnostic mode')
+    return {'mode':mode,'argument_profile':argument_profile,'qemu':emulated_boot}
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--event',required=True);p.add_argument('--mode',default='diagnostic');p.add_argument('--argument-profile',default='none');p.add_argument('--emulated-boot',choices=['true','false'],default='false');p.add_argument('--github-output',type=Path);a=p.parse_args()
+    changed=subprocess.check_output(['git','diff','--no-renames','--name-only','HEAD^1','HEAD'],text=True).splitlines() if a.event=='pull_request' else []
+    result=choose(a.event,changed,a.mode,a.argument_profile,a.emulated_boot=='true')
+    if a.github_output:
+        with a.github_output.open('a') as f:
+            for key,value in result.items():f.write(key+'='+str(value).lower()+'\n')
+    print(json.dumps({'scope':'One Linux build selected; USB provider compilation is not device transport','usb_scope_selected':result['mode']=='usb-providers',**result},indent=2))
+
+if __name__=='__main__':main()
