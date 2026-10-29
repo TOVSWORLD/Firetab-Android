@@ -1,0 +1,24 @@
+{
+  "before": 34,
+  "after": 33,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/clock-controller@11220000",
+      "nodename": "clock-controller@11220000",
+      "compatible": [
+        "mediatek,mt8163-audsys",
+        "syscon"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-audsys', 'syscon']",
+      "formatted": "work/dtb-compile/pwrap-pmic-node-name/douglas.dtb: /soc/clock-controller@11220000: failed to match any schema with compatible: ['mediatek,mt8163-audsys', 'syscon']"
+    }
+  ],
+  "added": [],
+  "unmatched_disabled_afe_child_preserved": true,
+  "full_passed": false
+}

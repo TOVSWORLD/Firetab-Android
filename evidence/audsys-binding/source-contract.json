@@ -1,0 +1,61 @@
+{
+  "scope": "Integrated parent clock source/build prerequisites only; disabled AFE child unsupported by this contract",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "donor_commit": "20951722df6ae1f6fecbfcea0a7d585118a06f3f",
+  "sha256": {
+    "projects/firetabs-android/kernel/clock-port/overlay/drivers/clk/mediatek/clk-mt8163-audsys.c": "b5ace0bf5329895a108960bb2c7a1abb61eb858d1f196c799959413c8ae80d74",
+    "projects/firetabs-android/kernel/clock-port/overlay/include/dt-bindings/clock/mediatek,mt8163-audsys.h": "50f777458df074d816da3bfa86c5276462799a3acb4555987dbcdabdaa0a6a77",
+    "evidence/clock-port/ack/drivers/clk/mediatek/clk-mtk.c": "6fe08df05e51750f1619c9c9e986933fe0ac0c6d94e85324da3cb5468718a076",
+    "evidence/clock-port/ack/drivers/clk/mediatek/clk-mtk.h": "67c603ab0a319e7672fba7f569a4e691fd8b3772b031427524d8da934198e6d9",
+    "evidence/clock-port/ack/drivers/clk/mediatek/clk-gate.h": "ac306d1e10a6ca619d472d1408f88cb8ae5ff2753e519e8a7c35417214e36e4c",
+    "scripts/apply_clock_port.py": "4e7b25245f983eb7352fe09c8c2a2c0cd664a10f5cbd3fa7b7e2cdbcfc5bafb8",
+    "scripts/build_ack_baseline.sh": "40d2839a1adb5ee4e916582a8852bdfe289befe58b17c58a65510f19ae18a201",
+    "projects/firetabs-android/kernel/clock-port/inputs.json": "830d79c9200c0f8931f47fa3b180943fada11262a1254008a08ada01c6be303f",
+    "projects/firetabs-android/kernel/clock-port/build-wiring.patch": "fb0a02ec33feb419e1e4db547d5af78359cfdd399c55837e612fa1d2909bdf06",
+    "projects/firetabs-android/kernel/clock-port/mux-api.patch": "63200df001b190198cc89dca99fec8d4327f07b66e4397874baca942b042f1a8",
+    "evidence/audsys-binding/ack/clk-gate.c": "ffa9459a8ea05895f028dd6f0f79f60aa911290ded3e6d69b9cec897d5f17de3",
+    "evidence/audsys-binding/ack/syscon.c": "50f931fb04d973d61fff6dd9d9bd9566bfc425dc09fb3ea4df2ac1ee69bb20b4",
+    "evidence/audsys-binding/ack/platform.c": "5c670486e3ec04cfe976d40b3cd4758c2ae2abe2176551cba0a8b7b75a1a3c85"
+  },
+  "build": {
+    "head": "bd288c7715f48e176f18280bfebd3f85c5475172",
+    "run": 40828537870,
+    "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40828537870",
+    "private_log_sha256": "550cb389e967a2673eca9d73569956a6b145320e583c02493a1c097962a94e8d",
+    "audsys_cc_observed": true,
+    "resolved_symbol": "CONFIG_COMMON_CLK_MT8163_AUDSYS=y",
+    "image_sha256": "c9da6d973b19628e4117936058e42ef0142e0b6d939954763d5da06cba631aaa",
+    "explicit_audsys_object_hash_available": false
+  },
+  "parent_population": "Only after successful clock-provider registration; failure unregisters provider; removal depopulates first",
+  "afe_child_compatible": "mediatek,mt8163-afe-pcm",
+  "afe_child_status": "disabled",
+  "afe_child_binding_covered": false,
+  "runtime_qualified": false,
+  "ack_helper_sources": [
+    {
+      "path": "drivers/clk/mediatek/clk-gate.c",
+      "local": "evidence/audsys-binding/ack/clk-gate.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/clk/mediatek/clk-gate.c?format=TEXT",
+      "bytes": 7419,
+      "sha256": "ffa9459a8ea05895f028dd6f0f79f60aa911290ded3e6d69b9cec897d5f17de3"
+    },
+    {
+      "path": "drivers/mfd/syscon.c",
+      "local": "evidence/audsys-binding/ack/syscon.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/mfd/syscon.c?format=TEXT",
+      "bytes": 9072,
+      "sha256": "50f931fb04d973d61fff6dd9d9bd9566bfc425dc09fb3ea4df2ac1ee69bb20b4"
+    },
+    {
+      "path": "drivers/of/platform.c",
+      "local": "evidence/audsys-binding/ack/platform.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/of/platform.c?format=TEXT",
+      "bytes": 22288,
+      "sha256": "5c670486e3ec04cfe976d40b3cd4758c2ae2abe2176551cba0a8b7b75a1a3c85"
+    }
+  ],
+  "parent_mapping": "Composite base exclusively maps resource0; gates device_node_to_regmap uses same node with check_res=false (no optional clock/reset management); default32-bit syscon, no candidate override",
+  "population_scope": "Managed populate skips unavailable/OF_POPULATED children; reviewed AFE child is disabled. RAM wrapper controls do not simulate kernel devres internals.",
+  "runtime_pm_scope": "Descriptor does not request need_runtime_pm; safe AUDIO domain/MMIO access remains unqualified"
+}

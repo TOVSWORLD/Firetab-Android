@@ -3439,3 +3439,29 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
 - Recovery items' obsolete watchdog-next delivery fields corrected; loading/return/
   retained-log blockers and all seven PID1/host serial gates remain unqualified.
   No runtime gate closed. Exact current-head host CI required before merge.
+
+
+## 2026-10-29 — #27/#18 actual AUDSYS parent contract
+
+- Source-pinned integrated parent:13 gates/6 composites/19 IDs, highest0x5a4 word
+  -> required0x5a8 inside4KiB. Fresh-DTB guard checks parent tuple/resource/phandle,
+  actual clock-specifier IDs/15 references and disabled child; rejects unreviewed
+  regmap/resource overrides. Cached provider build bd288c7/run40828537870 compiled
+  AUDSYS=y and Image; relevant inputs byte-identical. No audsys.o hash invented.
+- Three capped official ACK helper reads38779bytes establish gate regmap(no
+  optional clock/reset management), default32-bit width and managed/disabled child
+  population. Actual wrapper C RAM probe/populate-failure/remove-order controls
+  plus GNU AArch64 object compile pass; devres/MMIO/runtime not emulated or passed.
+- Opt-in schema requires MT8163 parent reg without inheriting unrelated MT2701
+  child schema. No child schema/stub added.30 decoded parent controls and exact
+  older-SoC structural preservation pass. Actual disabled AFE child remains
+  unmatched in both full5186-YAML contexts; no audio function/build claim.
+- Canonical34→33(21unmatched/12validation), isolated28→27(18/9): exactly parent
+  unmatched removed, nothing added. Known Gunyah warning and wrapper exit1/false
+  retained. DTBs/disabled states unchanged.450 host tests; exact-head CI pending.
+- Prior424 host source mergedb2d8847 after five checks/446tests; exact normalized
+  receipt now evidence/usb-acm-host/ci-result.json. Next existing unmatched board
+  prerequisite is silergy,sym827 regulator:19,323-byte pinned ACK fan53555 source
+  cached as a lead only (SYR table entry does not establish SYM ownership). Qualify
+  actual driver/legacy variant/probe/selector constraints before changes; no
+  voltage/device actions or guessed aliases. Runtime recovery/beta gates stay open.

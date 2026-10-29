@@ -1,0 +1,18 @@
+#include <assert.h>
+#include <stdio.h>
+struct device {int unused;};
+struct platform_device {struct device dev;};
+static struct platform_device unit;
+static int probe_error,populate_error,provider,child,events[8],count;
+static int mtk_clk_simple_probe(struct platform_device *p){assert(p==&unit);events[count++]=1;if(probe_error)return probe_error;provider=1;return 0;}
+static int devm_of_platform_populate(struct device *d){assert(d==&unit.dev&&provider);events[count++]=2;if(populate_error)return populate_error;child=1;return 0;}
+static void mtk_clk_simple_remove(struct platform_device *p){assert(p==&unit&&provider&&!child);events[count++]=3;provider=0;}
+static void of_platform_depopulate(struct device *d){assert(d==&unit.dev&&provider);events[count++]=4;child=0;}
+/* ACTUAL_WRAPPERS */
+int main(void){
+ probe_error=-12;assert(clk_mt8163_audio_probe(&unit)==-12&&count==1&&!provider&&!child);
+ probe_error=0;populate_error=-22;count=0;assert(clk_mt8163_audio_probe(&unit)==-22&&count==3&&!provider&&!child);assert(events[0]==1&&events[1]==2&&events[2]==3);
+ populate_error=0;count=0;assert(clk_mt8163_audio_probe(&unit)==0&&provider&&child&&count==2);
+ clk_mt8163_audio_remove(&unit);assert(!provider&&!child&&count==4&&events[2]==4&&events[3]==3);
+ puts("FIRETABS_AUDSYS_PARENT_RAM_PASS");return 0;
+}

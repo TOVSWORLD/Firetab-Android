@@ -1,18 +1,19 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: PR423 merged8ca3a01 after five checks at766d648; exact Clang18
-receipt now evidence/usb-acm-serial/clang-build-result.json. Actual host receiver,
-private file/CLI capture and mocked read-only serial adapters implemented.446 host
-tests pass (four receiver plus20 file/CLI controls); actual offline CLI validates
-73-byte fixed frame with host_frame_observed=false/runtimefalse. Serial admission
-remains denied before selector/device opens. No activation or mode/termios writes.
-Current PR exact-head CI required; no runtime or boot-log retention claim.
-Queue audit: #340 beta package depends on real loading/return/log gates; no cached
-Image found, no new artifact download. Existing ready #27/#18 AUDSYS binding source
-scope follows: pin integrated parent probe/descriptor/resource plus child ownership
-before actual decoded-node contracts; existing YAML incorrectly defaults unmatched
-MT8163 child to MT2701 if blindly extended. Leads out/audsys-next-source.json only.
-Keep all failing DT contexts/disabled states and runtime gates open.
+2026-10-29 #27/#18: actual AUDSYS parent contract and fresh-DTB source guard
+implemented.450 host tests/30 decoded parent controls pass; actual wrapper C RAM
+failure/order controls and GNU AArch64 object compile pass. Parent19 IDs/0x5a8
+extent/15 references pinned to accepted provider build; disabled AFE child remains
+independently unmatched, no MT2701 child policy guessed. Canonical matched context
+34→33 (21unmatched/12validation), isolated28→27 (18/9), exact one-parent removal,
+no additions; both wrappers exit1/passedfalse and Gunyah warning retained. DTB bytes
+and all disabled states unchanged. Exact-head fresh-DTB/controls CI required.
+Prior424 host source acceptedb2d8847 after five checks/446 tests; exact receipt now
+ evidence/usb-acm-host/ci-result.json. No actual host/device observation.
+Next ready board source scope: unmatched silergy,sym827 regulator driver/variant/
+probe/selector contract before binding. Small pinned ACK fan53555 lead cached in
+out/sym827-next-source; SYR entry is not a justified SYM alias. No device/voltage/
+clock/firmware execution; loading/return/log/runtime gates stay open.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

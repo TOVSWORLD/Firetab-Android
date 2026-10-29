@@ -1,0 +1,550 @@
+{
+  "root": "http://devicetree.org/schemas/arm/mediatek/mediatek,audsys.yaml",
+  "schemas": {
+    "http://devicetree.org/schemas/arm/mediatek/mediatek,audsys.yaml": {
+      "$id": "http://devicetree.org/schemas/arm/mediatek/mediatek,audsys.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "additionalProperties": false,
+      "else": {
+        "else": {
+          "properties": {
+            "audio-controller": {
+              "$ref": "/schemas/sound/mediatek,mt2701-audio.yaml#"
+            }
+          }
+        },
+        "if": {
+          "properties": {
+            "compatible": {
+              "contains": {
+                "const": "mediatek,mt8183-audiosys"
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "audio-controller": {
+              "$ref": "/schemas/sound/mediatek,mt8183-audio.yaml#"
+            }
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "compatible": {
+            "contains": {
+              "const": "mediatek,mt8163-audsys"
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "#clock-cells": {
+          "const": 1
+        },
+        "$nodename": true,
+        "audio-controller": {
+          "type": "object"
+        },
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "compatible": {
+          "oneOf": [
+            {
+              "items": [
+                {
+                  "enum": [
+                    "mediatek,mt2701-audsys",
+                    "mediatek,mt6765-audsys",
+                    "mediatek,mt6779-audsys",
+                    "mediatek,mt7622-audsys",
+                    "mediatek,mt8163-audsys",
+                    "mediatek,mt8167-audsys",
+                    "mediatek,mt8173-audsys",
+                    "mediatek,mt8183-audiosys",
+                    "mediatek,mt8183-audsys",
+                    "mediatek,mt8186-audsys",
+                    "mediatek,mt8192-audsys",
+                    "mediatek,mt8516-audsys"
+                  ]
+                },
+                {
+                  "const": "syscon"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "const": "mediatek,mt7623-audsys"
+                },
+                {
+                  "const": "mediatek,mt2701-audsys"
+                },
+                {
+                  "const": "syscon"
+                }
+              ],
+              "maxItems": 3,
+              "minItems": 3,
+              "type": "array"
+            }
+          ]
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "reg": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "status": true
+      },
+      "required": [
+        "compatible",
+        "#clock-cells"
+      ],
+      "then": {
+        "required": [
+          "reg"
+        ]
+      },
+      "title": "MediaTek AUDSYS controller",
+      "type": "object"
+    },
+    "http://devicetree.org/schemas/sound/mediatek,mt8183-audio.yaml": {
+      "$id": "http://devicetree.org/schemas/sound/mediatek,mt8183-audio.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "interrupts"
+          ]
+        },
+        {
+          "required": [
+            "interrupts-extended"
+          ]
+        }
+      ],
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "$nodename": true,
+        "assigned-clock-parents": true,
+        "assigned-clock-rates": true,
+        "assigned-clock-rates-u64": true,
+        "assigned-clock-sscs": true,
+        "assigned-clocks": true,
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "clock-names": {
+          "items": [
+            {
+              "const": "aud_afe_clk"
+            },
+            {
+              "const": "aud_dac_clk"
+            },
+            {
+              "const": "aud_dac_predis_clk"
+            },
+            {
+              "const": "aud_adc_clk"
+            },
+            {
+              "const": "aud_adc_adda6_clk"
+            },
+            {
+              "const": "aud_apll22m_clk"
+            },
+            {
+              "const": "aud_apll24m_clk"
+            },
+            {
+              "const": "aud_apll1_tuner_clk"
+            },
+            {
+              "const": "aud_apll2_tuner_clk"
+            },
+            {
+              "const": "aud_i2s1_bclk_sw"
+            },
+            {
+              "const": "aud_i2s2_bclk_sw"
+            },
+            {
+              "const": "aud_i2s3_bclk_sw"
+            },
+            {
+              "const": "aud_i2s4_bclk_sw"
+            },
+            {
+              "const": "aud_tdm_clk"
+            },
+            {
+              "const": "aud_tml_clk"
+            },
+            {
+              "const": "aud_infra_clk"
+            },
+            {
+              "const": "mtkaif_26m_clk"
+            },
+            {
+              "const": "top_mux_audio"
+            },
+            {
+              "const": "top_mux_aud_intbus"
+            },
+            {
+              "const": "top_syspll_d2_d4"
+            },
+            {
+              "const": "top_mux_aud_1"
+            },
+            {
+              "const": "top_apll1_ck"
+            },
+            {
+              "const": "top_mux_aud_2"
+            },
+            {
+              "const": "top_apll2_ck"
+            },
+            {
+              "const": "top_mux_aud_eng1"
+            },
+            {
+              "const": "top_apll1_d8"
+            },
+            {
+              "const": "top_mux_aud_eng2"
+            },
+            {
+              "const": "top_apll2_d8"
+            },
+            {
+              "const": "top_i2s0_m_sel"
+            },
+            {
+              "const": "top_i2s1_m_sel"
+            },
+            {
+              "const": "top_i2s2_m_sel"
+            },
+            {
+              "const": "top_i2s3_m_sel"
+            },
+            {
+              "const": "top_i2s4_m_sel"
+            },
+            {
+              "const": "top_i2s5_m_sel"
+            },
+            {
+              "const": "top_apll12_div0"
+            },
+            {
+              "const": "top_apll12_div1"
+            },
+            {
+              "const": "top_apll12_div2"
+            },
+            {
+              "const": "top_apll12_div3"
+            },
+            {
+              "const": "top_apll12_div4"
+            },
+            {
+              "const": "top_apll12_divb"
+            },
+            {
+              "const": "top_clk26m_clk"
+            }
+          ],
+          "maxItems": 41,
+          "minItems": 41,
+          "type": "array"
+        },
+        "clocks": {
+          "maxItems": 41,
+          "minItems": 41,
+          "type": "array"
+        },
+        "compatible": {
+          "items": [
+            {
+              "const": "mediatek,mt8183-audio"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "interrupt-parent": true,
+        "interrupts": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "interrupts-extended": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "memory-region": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "power-domains": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "reset-names": {
+          "items": [
+            {
+              "const": "audiosys"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "resets": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "status": true
+      },
+      "required": [
+        "compatible",
+        "resets",
+        "reset-names",
+        "power-domains",
+        "clocks",
+        "clock-names"
+      ],
+      "title": "Mediatek AFE PCM controller for mt8183",
+      "type": "object"
+    },
+    "http://devicetree.org/schemas/sound/mediatek,mt2701-audio.yaml": {
+      "$id": "http://devicetree.org/schemas/sound/mediatek,mt2701-audio.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "additionalProperties": false,
+      "oneOf": [
+        {
+          "required": [
+            "interrupts"
+          ]
+        },
+        {
+          "required": [
+            "interrupts-extended"
+          ]
+        }
+      ],
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "$nodename": true,
+        "assigned-clock-parents": true,
+        "assigned-clock-rates": true,
+        "assigned-clock-rates-u64": true,
+        "assigned-clock-sscs": true,
+        "assigned-clocks": true,
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "clock-names": {
+          "items": [
+            {
+              "const": "infra_sys_audio_clk"
+            },
+            {
+              "const": "top_audio_mux1_sel"
+            },
+            {
+              "const": "top_audio_mux2_sel"
+            },
+            {
+              "const": "top_audio_a1sys_hp"
+            },
+            {
+              "const": "top_audio_a2sys_hp"
+            },
+            {
+              "const": "i2s0_src_sel"
+            },
+            {
+              "const": "i2s1_src_sel"
+            },
+            {
+              "const": "i2s2_src_sel"
+            },
+            {
+              "const": "i2s3_src_sel"
+            },
+            {
+              "const": "i2s0_src_div"
+            },
+            {
+              "const": "i2s1_src_div"
+            },
+            {
+              "const": "i2s2_src_div"
+            },
+            {
+              "const": "i2s3_src_div"
+            },
+            {
+              "const": "i2s0_mclk_en"
+            },
+            {
+              "const": "i2s1_mclk_en"
+            },
+            {
+              "const": "i2s2_mclk_en"
+            },
+            {
+              "const": "i2s3_mclk_en"
+            },
+            {
+              "const": "i2so0_hop_ck"
+            },
+            {
+              "const": "i2so1_hop_ck"
+            },
+            {
+              "const": "i2so2_hop_ck"
+            },
+            {
+              "const": "i2so3_hop_ck"
+            },
+            {
+              "const": "i2si0_hop_ck"
+            },
+            {
+              "const": "i2si1_hop_ck"
+            },
+            {
+              "const": "i2si2_hop_ck"
+            },
+            {
+              "const": "i2si3_hop_ck"
+            },
+            {
+              "const": "asrc0_out_ck"
+            },
+            {
+              "const": "asrc1_out_ck"
+            },
+            {
+              "const": "asrc2_out_ck"
+            },
+            {
+              "const": "asrc3_out_ck"
+            },
+            {
+              "const": "audio_afe_pd"
+            },
+            {
+              "const": "audio_afe_conn_pd"
+            },
+            {
+              "const": "audio_a1sys_pd"
+            },
+            {
+              "const": "audio_a2sys_pd"
+            },
+            {
+              "const": "audio_mrgif_pd"
+            }
+          ],
+          "maxItems": 34,
+          "minItems": 34,
+          "type": "array"
+        },
+        "clocks": {
+          "maxItems": 34,
+          "minItems": 34,
+          "type": "array"
+        },
+        "compatible": {
+          "items": [
+            {
+              "enum": [
+                "mediatek,mt2701-audio",
+                "mediatek,mt7622-audio"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "interrupt-names": {
+          "items": [
+            {
+              "const": "afe"
+            },
+            {
+              "const": "asys"
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "interrupt-parent": true,
+        "interrupts": {
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "interrupts-extended": {
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "power-domains": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "status": true
+      },
+      "required": [
+        "compatible",
+        "interrupt-names",
+        "power-domains",
+        "clocks",
+        "clock-names"
+      ],
+      "title": "MediaTek Audio Front End (AFE) PCM controller for mt2701",
+      "type": "object"
+    }
+  }
+}

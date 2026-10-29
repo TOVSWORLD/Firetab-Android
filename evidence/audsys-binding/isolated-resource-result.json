@@ -1,0 +1,117 @@
+{
+  "scope": "Fresh source-DTB AUDSYS parent metadata, not clock/audio runtime",
+  "parent": "/soc/clock-controller@11220000",
+  "resource_bytes": 4096,
+  "source_layout": {
+    "clock_ids": {
+      "CLK_AUDIO_AFE": 0,
+      "CLK_AUDIO_I2S": 1,
+      "CLK_AUDIO_22M": 2,
+      "CLK_AUDIO_24M": 3,
+      "CLK_AUDIO_SPDF2": 4,
+      "CLK_AUDIO_APLL2_TUNER": 5,
+      "CLK_AUDIO_APLL_TUNER": 6,
+      "CLK_AUDIO_HDMI": 7,
+      "CLK_AUDIO_SPDF": 8,
+      "CLK_AUDIO_ADC": 9,
+      "CLK_AUDIO_DAC": 10,
+      "CLK_AUDIO_DAC_PREDIS": 11,
+      "CLK_AUDIO_TML": 12,
+      "CLK_AUDIO_APLL1_DIV0": 13,
+      "CLK_AUDIO_APLL2_DIV0": 14,
+      "CLK_AUDIO_APLL_I2S0": 15,
+      "CLK_AUDIO_APLL_I2S1": 16,
+      "CLK_AUDIO_APLL_I2S2": 17,
+      "CLK_AUDIO_APLL_I2S3": 18
+    },
+    "gates": 13,
+    "composites": 6,
+    "required_extent_bytes": 1448,
+    "build_run": 40828537870,
+    "selected_syscon_default_bits": 32,
+    "regmap_manages_optional_clock_reset": false,
+    "child_binding_covered": false
+  },
+  "audsys_clock_references": [
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 6
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 13
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 5
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 14
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 0
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 9
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 10
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 11
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 2
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 3
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 1
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 15
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 16
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 17
+    },
+    {
+      "node": "/soc/clock-controller@11220000/audio-controller",
+      "property": "clocks",
+      "id": 18
+    }
+  ],
+  "child_remains_disabled": true,
+  "child_binding_covered": false,
+  "full_binding_validation_passed": false,
+  "runtime_qualified": false,
+  "dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4"
+}

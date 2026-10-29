@@ -1,0 +1,15 @@
+{
+  "pr": 424,
+  "head": "be480a0b1c4e16c3293998ea40ccb1799f879cdf",
+  "merge": "b2d8847d9d2102f3d4f667362800339d8dae73a3",
+  "run": 40838885247,
+  "repository_job": 123330168720,
+  "host_tests": 446,
+  "distinct_exact_head_checks": 5,
+  "private_log_sha256": "d1bc151c324a775cd7fa121e717fff06996bdb7199f134b31254bed9f2f9f688",
+  "actual_offline_frame_validated": true,
+  "host_frame_observed": false,
+  "serial_device_capture_admitted": false,
+  "runtime_qualified": false,
+  "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40838885247/job/123330168720"
+}

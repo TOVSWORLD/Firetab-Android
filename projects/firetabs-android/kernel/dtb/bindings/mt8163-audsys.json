@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in MT8163 parent clock contract only; MT8163 AFE child remains independently unmatched, no audio/runtime qualification",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "arm/mediatek/mediatek,audsys.yaml",
+  "patch": "bindings/mt8163-audsys.patch",
+  "patch_sha256": "54fd41ae47f5841c0991cfe73026bf8c70e9a210cf0a5dc6188457638652a0bd",
+  "original_sha256": "97bd01ac678ce16c3d3be984487561b2ce31e76ccb930d06be7f35a764998d0a",
+  "proposed_sha256": "192039bc3951753932758ca8384bebbcc792a08ac9380289f2ba035dbf40d68c"
+}
