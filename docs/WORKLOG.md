@@ -3200,3 +3200,22 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   evidence/usb-resource-binding and USB-RESOURCE-BINDINGS.md. No new downloads
   or device/firmware execution. Next #27 source acceptance: finite USB0 analog/
   role/clock dependency comparison, with all physical loading/return/log gates open.
+
+## 2026-10-28 — finite USB0 analog/role/clock source comparison (#27)
+
+- PR414 merged fdeae38c02306a42cb396e3374d304cc6d89a88c after five exact-head
+  checks at9212cb590536683a58304617856ad8ba1a1d96b8;401 tests/25 decoded controls.
+- Pinned cached legacy e0a3a2b USB probe lines1325..1383 plus full-source hash,
+  ACKd9318bdb PHY/MUSB, current USB patch/clock providers and actual isolated-DTB
+  property inventory. No downloads/device or firmware execution.
+- Finite source expressions: RX differs for all256 states (mask0x5); eye-no-props
+  equals legacy in1024/65536 states, explicit7/7 inall65536; role-device equal2048/
+  65536 (mask0x3c08), role-OTG equal0 (mask0x3e0a). Not measurements/probabilities
+  or whole-sequence equivalence. Report/commands in evidence/usb0-transition-review.
+- CCF prepares four clocks, PHY first-enable path uses usbpll/usb/usbmcu; no ICUSB
+  CCF enable in pinned PHY. CLKMGR gates ICUSB separately. Modern MUSB bulk and
+  optional PHY ref ownership differ; candidate ref14 is separate from UNIVPLL2.
+- Next executable #27 implementation: isolated MT8163 RX/eye recovery policy,
+  preserve bits/reject conflicts, actual C RAM mocks and exact-head USB build;
+  role-force policy stays separate. Canonical34/isolated28 failing contexts and
+  disabled DT unchanged; all physical transport/loading/return/log gates remain open.

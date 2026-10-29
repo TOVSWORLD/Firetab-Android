@@ -90,6 +90,8 @@ jobs:
         run: |
           python3 scripts/build_douglas_dtb.py --experiment usb-frequency-resource
           python3 scripts/compare_usb_resource_dtb.py
+      - name: Verify finite USB0 analog, role and clock source comparison
+        run: python3 scripts/audit_usb0_transitions.py
   panel:
     name: Crestron Panel evidence
     runs-on: ubuntu-24.04

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "scripts/audit_usb0_transitions.py"
+  ],
+  "result": "report reproduced byte-for-byte",
+  "host_tests": 401,
+  "source_only": true,
+  "hashes": {
+    "scripts/audit_usb0_transitions.py": "fa601d90f713f4adf3bbf6ec304b0cd1755c6efb84165aff4efcd278767a30b4",
+    "evidence/usb0-transition-review/inputs.json": "b09dcf422d06a1708c148d376f5a2a6ab3c218b76212a9602365a7df22c842f0",
+    "evidence/usb0-transition-review/report.json": "f81bd326707b103a14818036bcf1e086b92f34c67b6b36d13569576d2b56e293"
+  }
+}
