@@ -1,0 +1,15 @@
+{
+  "boot_qualified": false,
+  "cleanup": [],
+  "expected_frame_sha256": "21bf0d50bb2b8556312fbf576df04928ce3d89aa56651fe4f6a004cfdef00be4",
+  "failure": null,
+  "frame_validated": true,
+  "host_frame_observed": false,
+  "kind": "offline-fixture",
+  "ok": true,
+  "raw_bytes": 73,
+  "raw_sha256": "21bf0d50bb2b8556312fbf576df04928ce3d89aa56651fe4f6a004cfdef00be4",
+  "runtime_qualified": false,
+  "schema": 1,
+  "source_header_sha256": "6a501e131f91c7118d5c9417f67a6292b57d03610371b689f3c07dcedb070a94"
+}

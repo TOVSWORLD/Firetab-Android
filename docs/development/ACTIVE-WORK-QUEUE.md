@@ -1,15 +1,18 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: PR422 static PID1 acceptedb0f84d7 after five final-head checks;
-actual Clang18 ELF/archive receipt now in evidence/usb-acm-pid1/clang-build-result.json.
-Current source implementation adds allocated ACM port/dynamic tty identity, opened-fd
-statx verification, checked raw termios, fixed bounded status output and cleanup.
-422 host tests/native RAM ASan/UBSan and GNU AArch64 object/static archive checks
-pass; exact-head Clang CI required. Seven current admission gates stayzero; no
-TTY/device actions executed. Existing minimal init/disabled DTs/failing contexts
-unchanged. Source fixed status is not host receipt or retained boot logs. Next:
-host-side bounded frame capture/private receipt with read/timeout mocks, then
-physical admission dependencies. See diagnostic-usb/SERIAL.md.
+2026-10-29 #27: PR423 merged8ca3a01 after five checks at766d648; exact Clang18
+receipt now evidence/usb-acm-serial/clang-build-result.json. Actual host receiver,
+private file/CLI capture and mocked read-only serial adapters implemented.446 host
+tests pass (four receiver plus20 file/CLI controls); actual offline CLI validates
+73-byte fixed frame with host_frame_observed=false/runtimefalse. Serial admission
+remains denied before selector/device opens. No activation or mode/termios writes.
+Current PR exact-head CI required; no runtime or boot-log retention claim.
+Queue audit: #340 beta package depends on real loading/return/log gates; no cached
+Image found, no new artifact download. Existing ready #27/#18 AUDSYS binding source
+scope follows: pin integrated parent probe/descriptor/resource plus child ownership
+before actual decoded-node contracts; existing YAML incorrectly defaults unmatched
+MT8163 child to MT2701 if blindly extended. Leads out/audsys-next-source.json only.
+Keep all failing DT contexts/disabled states and runtime gates open.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
