@@ -1,0 +1,16 @@
+{
+  "scope": "Pinned source/ABI checks only; no filesystem or gadget execution",
+  "syscalls": {
+    "mkdirat": 34,
+    "unlinkat": 35,
+    "symlinkat": 36,
+    "openat": 56,
+    "close": 57,
+    "getdents64": 61,
+    "read": 63,
+    "write": 64
+  },
+  "configfs_newline_unbind_and_empty_readback_checked": true,
+  "expected_controller_parent_source_checked": true,
+  "runtime_qualified": false
+}

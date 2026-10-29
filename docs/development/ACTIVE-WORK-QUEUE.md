@@ -1,5 +1,12 @@
 # Active work queue toward beta QA
 
+2026-10-29 draft #27 userspace component: bounded configuration/filesystem adapters
+and strict unique USB0 UDC discovery implemented in diagnostic-usb; RAM sanitizer
+and GNU AArch64 object controls pass. Unlinked, no PID1/runtime admission. PR420
+builtin ACM/security build40828537870 atbd288c7 remains pending; do not accept
+userspace/package readiness before matching build. Next: separate static PID1,
+security/mount admission and bounded output/archive controls. No device actions.
+
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 

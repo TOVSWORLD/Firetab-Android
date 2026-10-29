@@ -1,0 +1,110 @@
+{
+  "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "sources": [
+    {
+      "path": "drivers/usb/gadget/configfs.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/configfs.c?format=TEXT",
+      "bytes": 53303,
+      "sha256": "d0a39294295d1998a0e749cf9b9875d37406b36340b517ecc9a7ed91818537df",
+      "local": "evidence/usb-acm-userspace/source/configfs.c"
+    },
+    {
+      "path": "Documentation/usb/gadget_configfs.rst",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/Documentation/usb/gadget_configfs.rst?format=TEXT",
+      "bytes": 11181,
+      "sha256": "0eb89503c5188c0e49f40e6e24c1ae54b1acf9f8a9cf2b1a6ba5c4980d08a01e",
+      "local": "evidence/usb-acm-userspace/source/gadget_configfs.rst"
+    },
+    {
+      "path": "include/uapi/asm-generic/unistd.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/unistd.h?format=TEXT",
+      "bytes": 31792,
+      "sha256": "3e926f0eb23613d1293a8cae1db5a58dcdd575304e9ac75e5b492a8bf205c13f",
+      "local": "evidence/usb-acm-userspace/source/unistd.h"
+    },
+    {
+      "path": "include/uapi/asm-generic/fcntl.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/asm-generic/fcntl.h?format=TEXT",
+      "bytes": 5563,
+      "sha256": "08449ed601f650b5f6afbf8a4cfd7129242107e3d1c46c1f0c0abfedb44a21a4",
+      "local": "evidence/usb-acm-userspace/source/fcntl-generic.h"
+    },
+    {
+      "path": "include/uapi/linux/fcntl.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/uapi/linux/fcntl.h?format=TEXT",
+      "bytes": 6957,
+      "sha256": "d58b0d209a572c4351757404252bf0bb398cabf1879b52bdd27497a2eeea87ba",
+      "local": "evidence/usb-acm-userspace/source/fcntl-linux.h"
+    },
+    {
+      "path": "drivers/usb/gadget/udc/core.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/gadget/udc/core.c?format=TEXT",
+      "bytes": 55308,
+      "sha256": "76c9e781241a6131b6fc78dc46d141ee4854606f278355a43ab30572e57e64e8",
+      "local": "evidence/usb-acm-userspace/source/udc-core.c"
+    },
+    {
+      "path": "arch/arm64/include/uapi/asm/unistd.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/include/uapi/asm/unistd.h?format=TEXT",
+      "bytes": 90,
+      "sha256": "cc7ad787b726c5a50b9ed3765977beadc8867f7933a9f9daa1747d77ce7bda06",
+      "local": "evidence/usb-acm-userspace/source/arm64-unistd.h"
+    },
+    {
+      "path": "arch/arm64/tools/Makefile",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/tools/Makefile?format=TEXT",
+      "bytes": 820,
+      "sha256": "88f64141071dd7db0823e4de1589874209ce6fd6fe9f7098dd7f42997760a7fa",
+      "local": "evidence/usb-acm-userspace/source/arm64-tools-Makefile"
+    },
+    {
+      "path": "scripts/syscall.tbl",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/scripts/syscall.tbl?format=TEXT",
+      "bytes": 17534,
+      "sha256": "2839dcf1306798792f4678264d41d3bb2c618eb33504c3b7274704d0a57ab20c",
+      "local": "evidence/usb-acm-userspace/source/syscall.tbl"
+    },
+    {
+      "path": "arch/arm64/kernel/Makefile.syscalls",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/kernel/Makefile.syscalls?format=TEXT",
+      "bytes": 148,
+      "sha256": "27e95d7bd10c3ab67c8a3f16c7dfe5da30c586c2fda3993c42025109a22098c5",
+      "local": "evidence/usb-acm-userspace/source/arm64-Makefile.syscalls"
+    },
+    {
+      "path": "arch/arm64/tools/syscall_64.tbl",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/arch/arm64/tools/syscall_64.tbl?format=TEXT",
+      "bytes": 28,
+      "sha256": "e0a5d9a188af7952060d69e4e248675df79a583610ae535e68787bb5481a30db",
+      "local": "evidence/usb-acm-userspace/source/arm64-syscall_64.tbl"
+    },
+    {
+      "path": "scripts/Makefile.asm-headers",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/scripts/Makefile.asm-headers?format=TEXT",
+      "bytes": 3459,
+      "sha256": "a41518fb74c884e12f0b6a3addb974d13d76f008582f4e0e7c332a5e8201e325",
+      "local": "evidence/usb-acm-userspace/source/Makefile.asm-headers"
+    },
+    {
+      "path": "drivers/usb/musb/musb_gadget.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/drivers/usb/musb/musb_gadget.c?format=TEXT",
+      "bytes": 54459,
+      "sha256": "c0948905903b9e2998408d01adefbb69195bd493f165c209b350e019760a97a4",
+      "local": "evidence/usb-acm-userspace/source/musb_gadget.c"
+    },
+    {
+      "path": "include/linux/dirent.h",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/include/linux/dirent.h?format=TEXT",
+      "bytes": 215,
+      "sha256": "f2e71177f3542c6876e718edef445471bfb6d7a62e5d0f8f7c2ee117cb1a15e6",
+      "local": "evidence/usb-acm-userspace/source/dirent.h"
+    },
+    {
+      "path": "fs/readdir.c",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/fs/readdir.c?format=TEXT",
+      "bytes": 15971,
+      "sha256": "1559e74af299c14155eb6d4387ea2ea83ce9f385532aa0da025aee7b3f5d221a",
+      "local": "evidence/usb-acm-userspace/source/readdir.c"
+    }
+  ]
+}

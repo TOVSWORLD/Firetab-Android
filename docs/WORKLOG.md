@@ -3314,3 +3314,19 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   canonical34/isolated28 failures unchanged. Next independent ready package work:
   explicit opt-in builtin ACM/configfs profile/gadget userspace after source build,
   retaining minimal diagnostic security/storage boundaries and all runtime gates.
+
+
+## 2026-10-29 — #27 draft userspace adapters, pending profile build
+
+- Actual bounded configfs transaction and syscall callback adapters plus unique
+  expected USB0 discovery added outside the unchanged minimal PID1. All12 setup
+  failure points, owned reverse cleanup, unbind-before-delete, readback-confirmed
+  ENODEV, short/EINTR writes, close errors, malformed directory records, ambiguous
+  UDCs and wrong controller/OTG metadata checked with actual C RAM callbacks.
+- Native ASan/UBSan and GNU AArch64 object compilation pass. Pinned official ACK
+  configfs/UDC/MUSB and generated syscall-table/dirent ABI receipts retained in
+  evidence/usb-acm-userspace. No filesystem/device callback executes in tests.
+- Draft only: matching PR420 headbd288c7 ACM/security build40828537870 pending.
+  No PID1, syscall bridge, gadget archive, runtime policy/transport or physical
+  return/log qualification. Next implement separate opt-in PID1 and admission;
+  preserve no shell/ADB/storage and enforcing security prerequisites.

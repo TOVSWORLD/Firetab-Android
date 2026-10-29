@@ -1,0 +1,26 @@
+{
+  "scope": "Draft source component; unlinked adapters, no PID1 or runtime acceptance",
+  "dependency_pr": 420,
+  "dependency_head": "bd288c7715f48e176f18280bfebd3f85c5475172",
+  "required_build": 40828537870,
+  "matching_build_status_at_capture": "in_progress",
+  "inputs": {
+    "projects/firetabs-android/diagnostic-usb/acm_setup.h": "b7866dd37eaffa447a8add58888ca527631a9e7420d56bf85d5a3677ad74e86f",
+    "projects/firetabs-android/diagnostic-usb/acm_fs.h": "0e569267e9542ad20d672d11391adb5ba849defac2c39163f9ba36d12dcf2e5f",
+    "evidence/usb-acm-userspace/setup-ram.c": "b6663308a1025fbca1b276024c5276c302c49324aa981b37fae574d1764148eb",
+    "evidence/usb-acm-userspace/fs-ram.c": "0210fdd3b0603a8e9dac40e01050f08c8b1e118dba3a1b9d8429ff42bb5407ff"
+  },
+  "native_ram_asan_ubsan_passed": true,
+  "gnu_aarch64_object_compile_passed": true,
+  "setup_failure_points": 12,
+  "filesystem_adapter_implemented": true,
+  "strict_unique_expected_udc_discovery_implemented": true,
+  "pid1_implemented": false,
+  "device_tested": false,
+  "runtime_qualified": false,
+  "commands": [
+    "python3 -m unittest discover -s tests -p test_usb_acm_userspace.py -v",
+    "python3 scripts/validate_usb_acm_userspace_abi.py",
+    "/opt/homebrew/bin/aarch64-linux-musl-gcc -std=c11 -Wall -Wextra -Werror -I projects/firetabs-android/diagnostic-usb -c evidence/usb-acm-userspace/{setup,fs}-ram.c (each separately; output ignored out/)"
+  ]
+}
