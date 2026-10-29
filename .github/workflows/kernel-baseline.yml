@@ -5,7 +5,7 @@ on:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl, providers, usb-providers, diagnostic]
+        options: [clocks, clocks-pinctrl, providers, usb-providers, usb-acm-diagnostic, diagnostic]
         default: diagnostic
       argument_profile:
         description: Generic-only forced argument selection (diagnostic mode)
@@ -24,6 +24,9 @@ on:
       - projects/firetabs-android/kernel/iommu-port/**
       - scripts/apply_iommu_port.py
       - projects/firetabs-android/kernel/usb-port/**
+      - projects/firetabs-android/kernel/usb-acm/fragment.config
+      - projects/firetabs-android/kernel/usb-acm/profile.json
+      - scripts/usb_acm_config.py
       - scripts/apply_usb_port.py
       - scripts/select_kernel_build_scope.py
       - scripts/build_ack_baseline.sh

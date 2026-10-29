@@ -1,0 +1,19 @@
+{
+  "commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "sources": [
+    {
+      "path": "security/selinux/Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/security/selinux/Kconfig?format=TEXT",
+      "bytes": 3155,
+      "sha256": "f16e32b231c41264786da57da8b8a1b72afe1159cf76d06593c2bf3404b9e284",
+      "local": "evidence/usb-acm-profile/selinux-Kconfig"
+    },
+    {
+      "path": "security/Kconfig",
+      "url": "https://android.googlesource.com/kernel/common/+/d9318bdb4c34e8b2d997b4f67ced56b120b22b87/security/Kconfig?format=TEXT",
+      "bytes": 10456,
+      "sha256": "8a4a6fdbe072ad27721c52c98846afae025143b085cb629de99dd201873d5a59",
+      "local": "evidence/usb-acm-profile/security-Kconfig"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "run": 40827564991,
+  "head": "aade0fa1be66d45fcd5b0e93c04e90529c23b9cc",
+  "post_olddefconfig_acm_and_security_check_passed": true,
+  "usb_provider_object_probe_passed": true,
+  "failed_stage": "Direct builtin libcomposite.o aggregate target has no rule",
+  "image_built": false,
+  "private_log_sha256": "eafffafc1285e2f866108d8ab49c06bcfd8ec01dda82e328ed9c2f4c7c7f225b",
+  "correction": "Probe nine actual translation units derived/hash-locked to pinned gadget/function Makefiles; full Image still required",
+  "runtime_qualified": false
+}

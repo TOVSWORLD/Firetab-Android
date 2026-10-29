@@ -5,11 +5,13 @@ import json
 from pathlib import Path
 import subprocess
 USB_PATHS={'scripts/apply_usb_port.py','scripts/select_kernel_build_scope.py'}
-MODES={'clocks','clocks-pinctrl','providers','usb-providers','diagnostic'}
+MODES={'clocks','clocks-pinctrl','providers','usb-providers','usb-acm-diagnostic','diagnostic'}
 
 
 def choose(event,changed=(),mode='diagnostic',argument_profile='none',emulated_boot=False):
     if event=='pull_request':
+        acm=any(p in {'scripts/usb_acm_config.py','projects/firetabs-android/kernel/usb-acm/fragment.config','projects/firetabs-android/kernel/usb-acm/profile.json'} for p in changed)
+        if acm:return {'mode':'usb-acm-diagnostic','argument_profile':'none','qemu':False}
         usb=any(p in USB_PATHS or p.startswith('projects/firetabs-android/kernel/usb-port/') and (p.endswith('.patch') or p.endswith('inputs.json')) for p in changed)
         return {'mode':'usb-providers' if usb else 'diagnostic','argument_profile':'none' if usb else 'generic-force','qemu':not usb}
     if mode not in MODES or argument_profile not in ['none','generic-force']:raise ValueError('Unknown build scope')
@@ -24,6 +26,6 @@ def main():
     if a.github_output:
         with a.github_output.open('a') as f:
             for key,value in result.items():f.write(key+'='+str(value).lower()+'\n')
-    print(json.dumps({'scope':'One Linux build selected; USB provider compilation is not device transport','usb_scope_selected':result['mode']=='usb-providers',**result},indent=2))
+    print(json.dumps({'scope':'One Linux build selected; USB provider compilation is not device transport','usb_scope_selected':result['mode'] in ['usb-providers','usb-acm-diagnostic'],**result},indent=2))
 
 if __name__=='__main__':main()

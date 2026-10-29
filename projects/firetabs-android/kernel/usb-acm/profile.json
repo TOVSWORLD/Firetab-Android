@@ -1,0 +1,67 @@
+{
+  "scope": "Explicit opt-in builtin configfs ACM compilation, not gadget userspace/device execution",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "kconfig_source": "evidence/usb-gadget-prerequisites/gadget-Kconfig",
+  "kconfig_sha256": "1571fd6c80f13dd88832742aba824f65724eceb1232a7b875f7eb14bd9b76792",
+  "required_builtin": [
+    "USB_GADGET",
+    "USB_ROLE_SWITCH",
+    "USB_MUSB_DUAL_ROLE",
+    "USB_CONFIGFS",
+    "USB_LIBCOMPOSITE",
+    "USB_U_SERIAL",
+    "USB_F_ACM",
+    "USB_CONFIGFS_ACM",
+    "CONFIGFS_FS",
+    "SECURITY",
+    "SECURITY_NETWORK",
+    "AUDIT",
+    "NET",
+    "INET",
+    "SECURITY_SELINUX"
+  ],
+  "required_disabled": [
+    "USB_F_FS",
+    "USB_CONFIGFS_ECM",
+    "USB_CONFIGFS_ECM_SUBSET",
+    "USB_CONFIGFS_EEM",
+    "USB_CONFIGFS_F_FS",
+    "USB_CONFIGFS_F_HID",
+    "USB_CONFIGFS_F_LB_SS",
+    "USB_CONFIGFS_F_MIDI",
+    "USB_CONFIGFS_F_MIDI2",
+    "USB_CONFIGFS_F_PRINTER",
+    "USB_CONFIGFS_F_TCM",
+    "USB_CONFIGFS_F_UAC1",
+    "USB_CONFIGFS_F_UAC1_LEGACY",
+    "USB_CONFIGFS_F_UAC2",
+    "USB_CONFIGFS_F_UVC",
+    "USB_CONFIGFS_MASS_STORAGE",
+    "USB_CONFIGFS_NCM",
+    "USB_CONFIGFS_OBEX",
+    "USB_CONFIGFS_PHONET",
+    "USB_CONFIGFS_RNDIS",
+    "USB_CONFIGFS_SERIAL",
+    "ANDROID_USB_CONFIGFS_UEVENT",
+    "SECURITY_SELINUX_BOOTPARAM",
+    "SECURITY_SELINUX_DEVELOP"
+  ],
+  "runtime_qualified": false,
+  "security_required_builtin": [
+    "SECURITY",
+    "SECURITY_NETWORK",
+    "AUDIT",
+    "NET",
+    "INET",
+    "SECURITY_SELINUX"
+  ],
+  "lsm": "landlock,lockdown,yama,loadpin,safesetid,selinux,ipe,bpf",
+  "security_kconfig_sources": {
+    "evidence/usb-acm-profile/selinux-Kconfig": "f16e32b231c41264786da57da8b8a1b72afe1159cf76d06593c2bf3404b9e284",
+    "evidence/usb-acm-profile/security-Kconfig": "8a4a6fdbe072ad27721c52c98846afae025143b085cb629de99dd201873d5a59"
+  },
+  "object_makefiles": {
+    "evidence/usb-gadget-prerequisites/gadget-Makefile": "e3cabe915266f02601186f779a08409b3332bb721f883cd73dda02ae2950287e",
+    "evidence/usb-gadget-prerequisites/function-Makefile": "a992613ee0462a337cb29b5bcebe32701061b4a8b209878c1a5b840487f2a5db"
+  }
+}
