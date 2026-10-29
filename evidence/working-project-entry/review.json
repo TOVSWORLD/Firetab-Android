@@ -1,0 +1,96 @@
+{
+  "issue": 439,
+  "review_date": "2026-10-29",
+  "method": "Read original author pages in browser, expanded newer-firmware warning; cached source read as text; GitHub repository/release metadata only.",
+  "device_or_helper_executed": false,
+  "hardware_opening_required_established": false,
+  "physical_trial_admitted": false,
+  "source_instruction_conflict": {
+    "cached_external_brick9820_message": "minimal BootROM",
+    "original_author_expanded_warning": "full BootROM for external brick scripts",
+    "disposition": "Do not execute either; resolve exact software procedure and independent failure exit first."
+  },
+  "pages": [
+    {
+      "url": "https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/",
+      "posts": [
+        1,
+        3
+      ],
+      "scope": "case-closed route; GPT/wipe; rooted vs external-brick distinction; modified-layout return"
+    },
+    {
+      "url": "https://xdaforums.com/t/unlock-root-twrp-unbrick-fire-hd-8-2017-douglas.3962846/page-47",
+      "posts": [
+        923,
+        925,
+        926,
+        929
+      ],
+      "scope": "reported wrong-pair failures;5.7.1.0 applicability question unanswered on reviewed page, not impossibility proof"
+    },
+    {
+      "url": "https://xdaforums.com/t/rom-unofficial-10-lineageos-17-1-for-amazon-fire-hd8-7-6th-gen-douglas-giza.4474959/",
+      "posts": [
+        1,
+        2
+      ],
+      "scope": "ROM installation/bug logs/source links; presumes unlock"
+    },
+    {
+      "url": "https://xdaforums.com/t/rom-unofficial-11-lineageos-18-1-for-amazon-fire-hd8-7-6th-gen-douglas-giza.4806454/",
+      "posts": [
+        1
+      ],
+      "scope": "current maintainer ROM; explicit prior unlock/TWRP; amazon-oss source lead, not local qualification"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "<cached>/reference-amonet-douglas/step-1.sh",
+      "bytes": 2631,
+      "sha256": "7edb01494fef78671a166e8e396a4fd0de427452f829872ff01bb8293e9eb97d",
+      "repository_commit": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31"
+    },
+    {
+      "path": "<cached>/reference-amonet-douglas/fastboot-step.sh",
+      "bytes": 327,
+      "sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99",
+      "repository_commit": "2d8a4e6f73d9dab42d313c9cd751802b23ea7d31"
+    },
+    {
+      "path": "<cached>/amonet/brick-9820.sh",
+      "bytes": 461,
+      "sha256": "26da6d7f38c7c02f1334d3947fb575635627d7d91bfc08c797e428f5a908b3fb"
+    },
+    {
+      "path": "<cached>/device-douglas/BoardConfig.mk",
+      "bytes": 1147,
+      "sha256": "39f226cf92f2866444d78320ea89107433ed9ea46d513c7e56589ab0cc94115e",
+      "repository_commit": "4c557e6b83c62d41ff10090d5ff25dda1caba784"
+    },
+    {
+      "path": "<cached>/android_device_amazon_mt8163-common/BoardConfigCommon.mk",
+      "bytes": 6367,
+      "sha256": "bb09275a0a518b2c47f593ae598e40af4257c8dae59678b68de27319736f52e7",
+      "repository_commit": "7931739f1a5251fc5c72d532be35dea1d9be29cb"
+    },
+    {
+      "path": "<cached>/android_device_amazon_mt8163-common/recovery/root/fix-bootpatch.sh",
+      "bytes": 930,
+      "sha256": "07f4353c70f2025d86f76bab8e8a112e1e133648e25e705138825a82f1202715",
+      "repository_commit": "7931739f1a5251fc5c72d532be35dea1d9be29cb"
+    },
+    {
+      "path": "evidence/douglas-original-route/original-package-review.json",
+      "bytes": 11624,
+      "sha256": "822b565413d1f34614dcd03b85d0eabcf0d157bc69c2b16262e875705d60443d"
+    },
+    {
+      "path": "evidence/douglas-original-route/write-extents.json",
+      "bytes": 3921,
+      "sha256": "b17682e1401be94b91c14235e88c4bc78c969fa82229e9c0980b250d225b5f67"
+    }
+  ],
+  "next_action": "Same issue439 software-only proposal for original external-brick/full-BootROM route; no execution and no hardware-first assumption."
+}

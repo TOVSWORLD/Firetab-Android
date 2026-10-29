@@ -47,11 +47,10 @@ No high-brick-risk route is selected by this review.
 
 ## Current operational disposition
 
-The [29 October first-boot decision](FIRST-BOOT-DECISION.md), primary task#439,
-supersedes historical peripheral/watchdog next-actions and rough percentages.
-NO-GO for experimental loading; no cached route is admitted. The single next
-action is preparing existing#345's exact-board mechanical inspection/independent
-recovery-log proposal within authorized planning. Owner approval is requested
-only after that physical procedure is concrete and reviewable. No physical/electrical/helper action
-is authorized by that proposal choice. Keep#347/#346/#348 blocked and follow the
-ordered issue-to-PR roadmap; no unrelated peripheral bypass.
+The owner requested working-project documentation and rejected an unsupported
+hardware-first inference. [The direct-author review](WORKING-PROJECT-ENTRY.md)
+now confirms a documented case-closed route, with a full/minimal instruction
+conflict that must be resolved before any risky action. #439 is reopened Active
+for the exact software-branch proposal; #345 remains conditional. No physical
+trial is admitted. Prior NO-GO does not prove software impossibility or that the
+case must be opened. Continue in issue order, with no peripheral bypass.

@@ -3788,3 +3788,21 @@ approval only after a concrete physical procedure is ready for review; no openin
 electrical/firmware execution or peripheral bypass. NO-GO may complete439 decision acceptance but never admits347 or closes
 346/348. Replaced obsolete watchdog-next/percentage section in current route
 admission. Issue-linked PR and exact-head checks required before acceptance.
+
+## 2026-10-29 — #439 direct working-project documentation correction
+
+Read original k4y0z Douglas unlock guide (expanded newer-firmware warning), recent
+page47 reports, Rortiz2 LineageOS17.1 and newly linked18.1 author threads in browser
+after web502. Opening is explicitly not a normal installation prerequisite; it
+is a possible failure fallback. Cached external brick9820 script directs minimal
+BootROM whereas author's warning requires full for external brick scripts. Recent
+reports describe this wrong pairing and failures, not controlled causation;5.7.1.0
+question on reviewed page has no answer. Existing branch maxima are not whole-
+route exclusion.18.1 maintainer requires prior unlock/TWRP and points to amazon-oss.
+
+Pinned cached BoardConfig and recovery fix sources show packaging and modified-
+layout dependencies. No source script executed, security relaxed, tablet opened,
+ROM downloaded or device queried. Reopened439 software-first;345conditionalBlocked.
+Followup stays same primary issue. Next exact software-branch proposal must resolve
+package pairing/installed applicability/independent failure exit; no hardware-first
+assumption, unrelated scope or new synthetic wrapper. Runtime347/346/348 stay open.

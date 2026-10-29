@@ -1,5 +1,9 @@
 # First recoverable diagnostic boot decision — #439
 
+Owner correction: the [working-project review](WORKING-PROJECT-ENTRY.md) supersedes
+the hardware-next selection below. #439 is reopened Active, #345 conditional;
+opening is not established as necessary. No physical trial is admitted.
+
 29 October2026. **NO-GO for loading an experimental kernel on the current unit.**
 This completes an entry decision, not entry, recovery, logging or hardware
 qualification. #347/#346/#348 remain blocked. No device/helper/mode/firmware,
@@ -79,25 +83,11 @@ missing logs, or loss of the independent return path means **do not begin or do
 not continue the trial**; never retry automatically. The abort itself must be
 specified before entry—idle or closing USB is not proof of a safe device exit.
 
-## One next action and the owner approval boundary
+## Superseding next action
 
-**Select existing #345 to prepare the exact-board mechanical inspection and
-independent recovery/logging proposal.** This necessary entry prerequisite is
-within the already authorized planning scope. The software-only route inventory
-is exhausted at its current evidence boundary; do not ask the owner to approve
-writing a plan or restart unrelated peripherals.
-
-The concrete owner decision will be approval or rejection of that finished
-physical-inspection procedure. It must be reviewable before the question is asked:
-exact-generation mechanical provenance, tools/isolation, permitted unenergized
-observations, risks, stopping points and independent return limits. No opening,
-battery disconnection, pad contact, shorting, soldering, power application or
-unlock/firmware helper is authorized by this source decision. No new photos or
-cable checks are requested. If a sound procedure cannot be established, report
-that blocker rather than proposing guessed contacts or steps.
-
-Closing #439 with NO-GO does not satisfy #347's explicit GO condition. The route
-decision selects #345's proposal work only; its existing recorded conditional
-predecessor is now satisfied after this PR merges. Physical approval must wait
-until that proposal is concrete. Consent alone will not establish entry, rescue
-or log qualification. No peripheral issue can bypass this blocked entry path.
+Continue same-issue#439 software-first review using the original authors' working
+unlock/ROM instructions and cached source. The documented case-closed route and
+external-brick/full-versus-minimal conflict are now read directly; see
+[the reconciliation](WORKING-PROJECT-ENTRY.md). Prepare that exact software proposal
+before making a new operational decision. #345 is conditional, not selected.
+No hardware necessity or software impossibility follows from this NO-GO.
