@@ -1,0 +1,35 @@
+{
+  "scope": "Actual opt-in profile/build integration plus policy rejection models; resolved Linux build separate",
+  "inputs": {
+    "projects/firetabs-android/kernel/usb-acm/fragment.config": "30825429497c039f61e17c57fa79a2fe3c3092b0424715e4dc699b3e26a69563",
+    "projects/firetabs-android/kernel/usb-acm/profile.json": "0f3c3ebb6b2e09a1a366426a4dc25c4e79199185f04f1f9acee58be3b163c1c9",
+    "scripts/usb_acm_config.py": "4d5b4ae11c43c0ea6012619674545d1162f04ea914a02e90324b9310c75ef317",
+    "scripts/build_ack_baseline.sh": "1188333f20246772b7a4392570edcddd1205ce38d6a7ef9bf9e41d57c5c9ec41",
+    "scripts/select_kernel_build_scope.py": "46a27dbaa2204828e358b1aac02a9adfa8f5b2f43452dbfd193fb622df8a55a4",
+    ".github/workflows/kernel-baseline.yml": "19b7401d0707ff32583580e57a12b1efa234b3c472fe57485f8c1c4dc237d34a",
+    "tests/test_usb_acm_config.py": "52acfe5c217fc4377fbe20abc077f3f8eb8623652367688ed9b02977ba71db22"
+  },
+  "commands": [
+    [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_usb_acm_config.py",
+      "-v"
+    ],
+    [
+      "bash",
+      "-n",
+      "scripts/build_ack_baseline.sh"
+    ]
+  ],
+  "host_tests": 412,
+  "kernel_profile_resolved": false,
+  "kernel_build_passed": false,
+  "gadget_pid1_implemented": false,
+  "transport_qualified": false
+}

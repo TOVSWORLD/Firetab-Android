@@ -1,0 +1,45 @@
+{
+  "scope": "Explicit opt-in builtin configfs ACM compilation, not gadget userspace/device execution",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "kconfig_source": "evidence/usb-gadget-prerequisites/gadget-Kconfig",
+  "kconfig_sha256": "1571fd6c80f13dd88832742aba824f65724eceb1232a7b875f7eb14bd9b76792",
+  "required_builtin": [
+    "USB_GADGET",
+    "USB_ROLE_SWITCH",
+    "USB_MUSB_DUAL_ROLE",
+    "USB_CONFIGFS",
+    "USB_LIBCOMPOSITE",
+    "USB_U_SERIAL",
+    "USB_F_ACM",
+    "USB_CONFIGFS_ACM",
+    "CONFIGFS_FS"
+  ],
+  "required_disabled": [
+    "USB_F_FS",
+    "USB_CONFIGFS_ECM",
+    "USB_CONFIGFS_ECM_SUBSET",
+    "USB_CONFIGFS_EEM",
+    "USB_CONFIGFS_F_FS",
+    "USB_CONFIGFS_F_HID",
+    "USB_CONFIGFS_F_LB_SS",
+    "USB_CONFIGFS_F_MIDI",
+    "USB_CONFIGFS_F_MIDI2",
+    "USB_CONFIGFS_F_PRINTER",
+    "USB_CONFIGFS_F_TCM",
+    "USB_CONFIGFS_F_UAC1",
+    "USB_CONFIGFS_F_UAC1_LEGACY",
+    "USB_CONFIGFS_F_UAC2",
+    "USB_CONFIGFS_F_UVC",
+    "USB_CONFIGFS_MASS_STORAGE",
+    "USB_CONFIGFS_NCM",
+    "USB_CONFIGFS_OBEX",
+    "USB_CONFIGFS_PHONET",
+    "USB_CONFIGFS_RNDIS",
+    "USB_CONFIGFS_SERIAL",
+    "ANDROID_USB_CONFIGFS_UEVENT"
+  ],
+  "security_required_unchanged_builtin": [
+    "SECURITY_SELINUX"
+  ],
+  "runtime_qualified": false
+}

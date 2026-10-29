@@ -34,16 +34,17 @@ initramfs. Actual cached role function RAM mocks (18 transitions/error cases)
 return success/update role despite called PHY failures. Source audit in
 kernel/USB-GADGET-PREREQUISITES.md and scripts/audit_usb_gadget_prerequisites.py;
 require-ready rejects current package. No transport admission or DT changes.
-Active #27 actual implementation: exact-match MT8163 role/init PHY transactions,
-power/init bookkeeping and conservative fault latch now implemented. Actual C
-RAM failure/cleanup controls and byte-identical legacy-path checks pass;409 host
-tests. Both T-PHY/MUSB original and output hashes preflighted before source writes.
-New exact-head USB provider/config/Image build required before merge; old416 build
-not sufficient. DTs/canonical34/isolated28 contexts unchanged; no device action.
-After successful source build: next executable package scope is a separately
-opt-in builtin ACM/configfs diagnostic profile and explicit gadget userspace,
-preserving current minimal init/security/storage boundaries. Physical role/clock/
-loading/independent return/log/runtime gates remain open.
+PR419 merged37256b1 after six exact-head checks and USB provider/Image
+run40822461567 at93e62f8 passed.409 RAM/source tests and all-target preflight;
+physical rollback/concurrency/reprobe remain unqualified. Receipt usb-role-errors.
+Active #27 package phase: actual separate usb-acm-diagnostic config/build scope
+implemented, builtin ACM/component policy and forbidden-function/security guards.
+412 host tests pass; new exact-head Linux resolved config/ACM objects/Image build
+required before acceptance. Old provider/USB-off diagnostic/QEMU scopes unchanged.
+Gadget PID1 not implemented; independent next source work is explicit opt-in
+static configuration/output path with actual RAM failure/cleanup controls. Keep
+minimal init/security/storage boundaries, both DTs disabled, canonical34/isolated28
+failures and all physical USB/loading/return/log/runtime gates open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in
