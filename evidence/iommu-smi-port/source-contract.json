@@ -1,0 +1,32 @@
+{
+  "scope": "Selected source/probe requirements; build and hardware evidence separate",
+  "inputs": {
+    "evidence/kernel-audit/bengris7/drivers/iommu/mtk_iommu.c": "f0b7d5eab2f193e2af018f4cc00c4df57ccdbf0a86695e24fa476981fc46a242",
+    "evidence/kernel-audit/bengris7/drivers/memory/mtk-smi.c": "d5f3b1a5a248a79a2f494666ecb23fd30ce431f356b2d09f9a955032f6a9875c"
+  },
+  "iommu": {
+    "banks": 1,
+    "bank_size": 4096,
+    "irq_index": 0,
+    "requires_bclk": false,
+    "requires_4gb_infracfg_lookup": false,
+    "protect_memory": "Allocates512 bytes, aligns protected physical base to256 bytes; actual DMA placement unqualified",
+    "iova_region": "0..(4GiB-8MiB); physical DMA/page-table correctness unqualified",
+    "mm_links": "Four available larbs with unique IDs0..3, each bound driver and common SMI supplier required"
+  },
+  "smi": {
+    "required_clock_names": [
+      "apb",
+      "smi"
+    ],
+    "larb_optional_clock_name": "gals",
+    "common_generation": "GEN2, no required gals or async clock for selected descriptor",
+    "common_resume": "Enables clocks; programs three MT8163 init registers and bus_sel0",
+    "larb_resume": "Enables clocks; configures MT8173-style MMU port bits"
+  },
+  "excluded_shared_donor_policy_changes": true,
+  "build_result": "See required exact-head provider compile/Image/generic-QEMU CI; no local Linux compile claimed",
+  "full_binding_diagnostics": 40,
+  "full_binding_validation_passed": false,
+  "runtime_qualified": false
+}

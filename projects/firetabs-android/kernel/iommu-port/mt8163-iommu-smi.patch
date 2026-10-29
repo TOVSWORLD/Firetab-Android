@@ -1,0 +1,80 @@
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -167,6 +167,7 @@
+ 	M4U_MT2712,
+ 	M4U_MT6779,
+ 	M4U_MT6795,
++	M4U_MT8163,
+ 	M4U_MT8167,
+ 	M4U_MT8173,
+ 	M4U_MT8183,
+@@ -1585,6 +1586,18 @@
+ 			    {0, 14, 16}, {0, 13, 18, 17}},
+ };
+ 
++static const struct mtk_iommu_plat_data mt8163_data = {
++	.m4u_plat     = M4U_MT8163,
++	.flags	      = RESET_AXI | HAS_LEGACY_IVRP_PADDR | MTK_IOMMU_TYPE_MM |
++			TF_PORT_TO_ADDR_MT8173,
++	.inv_sel_reg  = REG_MMU_INV_SEL_GEN1,
++	.banks_num    = 1,
++	.banks_enable = {true},
++	.iova_region  = single_domain,
++	.iova_region_nr = ARRAY_SIZE(single_domain),
++	.larbid_remap = {{0}, {1}, {2}, {3}}, /* Linear mapping. */
++};
++
+ static const struct mtk_iommu_plat_data mt8167_data = {
+ 	.m4u_plat     = M4U_MT8167,
+ 	.flags        = RESET_AXI | HAS_LEGACY_IVRP_PADDR | MTK_IOMMU_TYPE_MM,
+@@ -1802,6 +1815,7 @@
+ 	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
+ 	{ .compatible = "mediatek,mt6795-m4u", .data = &mt6795_data},
+ 	{ .compatible = "mediatek,mt6893-iommu-mm", .data = &mt6893_data},
++	{ .compatible = "mediatek,mt8163-m4u", .data = &mt8163_data},
+ 	{ .compatible = "mediatek,mt8167-m4u", .data = &mt8167_data},
+ 	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+ 	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+--- a/drivers/memory/mtk-smi.c
++++ b/drivers/memory/mtk-smi.c
+@@ -551,6 +551,7 @@
+ 	{.compatible = "mediatek,mt6779-smi-larb", .data = &mtk_smi_larb_mt6779},
+ 	{.compatible = "mediatek,mt6795-smi-larb", .data = &mtk_smi_larb_mt8173},
+ 	{.compatible = "mediatek,mt6893-smi-larb", .data = &mtk_smi_larb_mt6893},
++	{.compatible = "mediatek,mt8163-smi-larb", .data = &mtk_smi_larb_mt8173},
+ 	{.compatible = "mediatek,mt8167-smi-larb", .data = &mtk_smi_larb_mt8167},
+ 	{.compatible = "mediatek,mt8173-smi-larb", .data = &mtk_smi_larb_mt8173},
+ 	{.compatible = "mediatek,mt8183-smi-larb", .data = &mtk_smi_larb_mt8183},
+@@ -743,6 +744,12 @@
+ 	{SMI_READ_FIFO_TH, 0x191f},
+ };
+ 
++static const struct mtk_smi_reg_pair mtk_smi_common_mt8163_init[SMI_COMMON_INIT_REGS_NR] = {
++	{SMI_L1_ARB, 0x1b},
++	{SMI_M4U_TH, 0xf7e19085},
++	{SMI_READ_FIFO_TH, 0x1d1f},
++};
++
+ static const struct mtk_smi_reg_pair mtk_smi_common_mt8195_init[SMI_COMMON_INIT_REGS_NR] = {
+ 	{SMI_L1LEN, 0xb},
+ 	{SMI_M4U_TH, 0xe100e10},
+@@ -780,6 +787,11 @@
+ 		    F_MMU1_LARB(5) | F_MMU1_LARB(7),
+ };
+ 
++static const struct mtk_smi_common_plat mtk_smi_common_mt8163 = {
++	.type	  = MTK_SMI_GEN2,
++	.init     = mtk_smi_common_mt8163_init,
++};
++
+ static const struct mtk_smi_common_plat mtk_smi_common_mt8183 = {
+ 	.type     = MTK_SMI_GEN2,
+ 	.has_gals = true,
+@@ -843,6 +855,7 @@
+ 	{.compatible = "mediatek,mt6779-smi-common", .data = &mtk_smi_common_mt6779},
+ 	{.compatible = "mediatek,mt6795-smi-common", .data = &mtk_smi_common_mt6795},
+ 	{.compatible = "mediatek,mt6893-smi-common", .data = &mtk_smi_common_mt6893},
++	{.compatible = "mediatek,mt8163-smi-common", .data = &mtk_smi_common_mt8163},
+ 	{.compatible = "mediatek,mt8167-smi-common", .data = &mtk_smi_common_gen2},
+ 	{.compatible = "mediatek,mt8173-smi-common", .data = &mtk_smi_common_gen2},
+ 	{.compatible = "mediatek,mt8183-smi-common", .data = &mtk_smi_common_mt8183},

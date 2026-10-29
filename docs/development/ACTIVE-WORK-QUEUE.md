@@ -3,12 +3,12 @@
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
-Current #347 route review: [no cached candidate admitted](CURRENT-ROUTE-ADMISSION.md)
-for a nonpersistent trial. #27 pinctrl syscfg provider/linkage/extent checks now
-pass12 actual schema controls and fresh-DTB drift checks; full context41→40
-and still unpassed. Next ready source scope: actual IOMMU/SMI driver/probe and
-candidate-resource dependencies before any matched binding claim. Runtime
-loading, pin/IRQ, watchdog and failed-boot return/log gates remain open.
+Current #347 route review: no cached physical trial is admitted. #27 IOMMU/SMI
+minimal source integration and fresh-DTB dependency checks are implemented; actual
+provider object/Image/generic-QEMU CI is required before build claims. No matched
+binding is added yet; full40 diagnostics retained. Next acceptance after build:
+source-matched IOMMU/SMI contracts and decoded-node controls. Runtime DMA/display,
+loading, independent failed-boot return/log gates remain open.
 
 ## Execution contract
 

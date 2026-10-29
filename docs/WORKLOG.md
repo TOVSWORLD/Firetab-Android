@@ -3036,3 +3036,20 @@ No device/helper execution. Existing tasks updated; no audit micro-issue created
   PINCTRL-SYSCFG-BINDING.md. No driver/DTB/device change or new download.
 - Next #27 source acceptance: actual IOMMU/SMI probe/resource dependencies, then
   source-matched contracts; keep40 diagnostics and all runtime recovery gates open.
+
+## 2026-10-28 — actual IOMMU/SMI source integration prerequisites (#27)
+
+- Retrieved only two bounded pinned official ACK files (57941/33691bytes),
+  retaining URLs/hashes; compared to cached donor20951722. Added80-line MT8163-
+  only patch, preserving shared ACK probe/error policies and unrelated SoCs.
+- Apply tool verifies revision/input/donor/patch/output hashes. Existing provider
+  build now requires IOMMU/SMI symbols and both objects before Image/generic-QEMU
+  checks. Source/host results are not compilation or hardware claims.
+- Fresh-DTB dependency guard checks four larbs/common SMI, exact phandle/clock/
+  domain roles and resources. Initial uniform4KiB assumption rejected actual64KiB
+  larb1 declaration; corrected reviewed model without changing DTB. No binding
+  added prematurely; all40 schema diagnostics remain.
+- Inputs/commands/source effects: kernel/iommu-port/README.md and
+  evidence/iommu-smi-port. No device/firmware execution or local kernel archive.
+- Next acceptance after exact-head build: matched IOMMU/SMI binding contracts and
+  actual node controls; runtime DMA/display/return/log qualification remains open.

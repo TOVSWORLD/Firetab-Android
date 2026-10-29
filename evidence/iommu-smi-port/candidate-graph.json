@@ -1,0 +1,309 @@
+{
+  "nodes": {
+    "/soc/iommu@10205000": {
+      "compatible": [
+        "mediatek,mt8163-m4u"
+      ],
+      "reg": [
+        0,
+        270553088,
+        0,
+        4096
+      ],
+      "interrupts": [
+        0,
+        147,
+        8
+      ],
+      "mediatek,larbs": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "power-domains": [
+        21,
+        0
+      ],
+      "#iommu-cells": [
+        1
+      ],
+      "phandle": [
+        41
+      ]
+    },
+    "/soc/smi@14017000": {
+      "compatible": [
+        "mediatek,mt8163-smi-common"
+      ],
+      "reg": [
+        0,
+        335638528,
+        0,
+        4096
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "clocks": [
+        40,
+        0,
+        40,
+        0
+      ],
+      "power-domains": [
+        21,
+        0
+      ],
+      "phandle": [
+        43
+      ]
+    },
+    "/soc/larb@14016000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "reg": [
+        0,
+        335634432,
+        0,
+        4096
+      ],
+      "interrupts": [
+        0,
+        205,
+        8
+      ],
+      "mediatek,smi": [
+        43
+      ],
+      "mediatek,larb-id": [
+        0
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "clocks": [
+        40,
+        1,
+        40,
+        1
+      ],
+      "power-domains": [
+        21,
+        0
+      ],
+      "phandle": [
+        17
+      ]
+    },
+    "/soc/larb@16010000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "reg": [
+        0,
+        369164288,
+        0,
+        65536
+      ],
+      "interrupts": [
+        0,
+        213,
+        8
+      ],
+      "mediatek,smi": [
+        43
+      ],
+      "mediatek,larb-id": [
+        1
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "clocks": [
+        45,
+        0,
+        45,
+        1
+      ],
+      "power-domains": [
+        21,
+        1
+      ],
+      "phandle": [
+        18
+      ]
+    },
+    "/soc/larb@15001000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "reg": [
+        0,
+        352325632,
+        0,
+        4096
+      ],
+      "interrupts": [
+        0,
+        217,
+        8
+      ],
+      "mediatek,smi": [
+        43
+      ],
+      "mediatek,larb-id": [
+        2
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "clocks": [
+        44,
+        0,
+        44,
+        0
+      ],
+      "power-domains": [
+        21,
+        3
+      ],
+      "phandle": [
+        19
+      ]
+    },
+    "/soc/larb@17001000": {
+      "compatible": [
+        "mediatek,mt8163-smi-larb"
+      ],
+      "reg": [
+        0,
+        385880064,
+        0,
+        4096
+      ],
+      "interrupts": [
+        0,
+        207,
+        8
+      ],
+      "mediatek,smi": [
+        43
+      ],
+      "mediatek,larb-id": [
+        3
+      ],
+      "clock-names": [
+        "apb",
+        "smi"
+      ],
+      "clocks": [
+        46,
+        1,
+        46,
+        0
+      ],
+      "power-domains": [
+        21,
+        2
+      ],
+      "phandle": [
+        20
+      ]
+    }
+  },
+  "clock_providers": {
+    "mmsys": {
+      "compatible": [
+        "mediatek,mt8163-mmsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        335544320,
+        0,
+        4096
+      ],
+      "power-domains": [
+        21,
+        0
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        40
+      ]
+    },
+    "imgsys": {
+      "compatible": [
+        "mediatek,mt8163-imgsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        352321536,
+        0,
+        4096
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        44
+      ]
+    },
+    "vdecsys": {
+      "compatible": [
+        "mediatek,mt8163-vdecsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        369098752,
+        0,
+        4096
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        45
+      ]
+    },
+    "vencsys": {
+      "compatible": [
+        "mediatek,mt8163-vencsys",
+        "syscon"
+      ],
+      "reg": [
+        0,
+        385875968,
+        0,
+        4096
+      ],
+      "#clock-cells": [
+        1
+      ],
+      "phandle": [
+        46
+      ]
+    }
+  },
+  "power_provider": {
+    "compatible": [
+      "mediatek,mt8163-power-controller"
+    ],
+    "#power-domain-cells": [
+      1
+    ],
+    "phandle": [
+      21
+    ]
+  }
+}

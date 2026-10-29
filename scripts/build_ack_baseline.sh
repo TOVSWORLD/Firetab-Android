@@ -42,6 +42,7 @@ if [ "$mode" != generic ]; then
   fi
   if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
     python3 scripts/apply_power_port.py "$root/source"
+    python3 scripts/apply_iommu_port.py "$root/source"
   fi
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 defconfig
@@ -56,7 +57,7 @@ if [ "$mode" != generic ]; then
     "$root/source/scripts/config" --file "$output/.config" --enable PINCTRL_MT8163
   fi
   if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
-    for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS; do
+    for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS MTK_IOMMU MTK_SMI; do
       "$root/source/scripts/config" --file "$output/.config" --enable "$symbol"
     done
   fi
@@ -90,9 +91,12 @@ if [ "$mode" != generic ]; then
     echo MT8163_PINCTRL_OBJECT_COMPILE_COMPLETE
   fi
   if [[ "$mode" = providers || "$mode" = diagnostic ]]; then
-    for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS; do grep -qx "CONFIG_${symbol}=y" "$output/.config"; done
+    for symbol in MTK_PMIC_WRAP MTK_SCPSYS_PM_DOMAINS MTK_IOMMU MTK_SMI; do grep -qx "CONFIG_${symbol}=y" "$output/.config"; done
     make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/soc/mediatek/mtk-pmic-wrap.o drivers/pmdomain/mediatek/mtk-pm-domains.o
     echo MT8163_POWER_OBJECT_COMPILE_COMPLETE
+    make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" W=1 drivers/iommu/mtk_iommu.o drivers/memory/mtk-smi.o
+    sha256sum "$output/drivers/iommu/mtk_iommu.o" "$output/drivers/memory/mtk-smi.o"
+    echo MT8163_IOMMU_SMI_OBJECT_COMPILE_COMPLETE
   fi
 fi
 make -C "$root/source" O="$output" ARCH=arm64 LLVM=-18 -j"$jobs" Image vmlinux
