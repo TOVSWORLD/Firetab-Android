@@ -1,0 +1,13 @@
+--- a/arch/arm64/boot/dts/mediatek/mt8163.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8163.dtsi
+@@ -683,7 +683,9 @@
+ 
+ 		u2phy0: t-phy@11210000 {
+ 			compatible = "mediatek,mt8163-tphy", "mediatek,generic-tphy-v1";
+-			reg = <0 0x11210000 0 0x0800>;
++			reg = <0 0x11210000 0 0x0800>,
++			      <0 0x11210f00 0 0x0100>;
++			reg-names = "sif", "u2-frequency";
+ 			#address-cells = <2>;
+ 			#size-cells = <2>;
+ 			ranges;

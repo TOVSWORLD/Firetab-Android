@@ -3,31 +3,22 @@
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 
-Current #347 route review: no cached physical trial is admitted. PR407 merged
-6821d312 after exact-head provider objects/Image/generic-QEMU run40794335163 and
-five PR checks. This is source/generic build evidence, not MT8163 runtime proof.
-#27 source-matched IOMMU/SMI contracts: vendor source establishes optional larb
-IRQ declarations independent of handler support. MT8163-only optional single-IRQ
-schema and fresh-DTB SPI/type/polarity guard preserve all other SoC constraints.
-40 actual updated controls pass; full context38→34 diagnostics (22unmatched/
-12validation), wrapper exit1/passedfalse. No DTB/driver/device change. USB source acceptance now identifies actual fallback
-matches but a V1 frequency-bank mismatch: source-derived0x1121010c vs legacy
-0x11210f0c and default reference26 vs legacy formula48; legacy computed slew write is
-commented out and active code writes fixed0x60. Candidate controller/PHY
-are disabled; diagnostic fragment disables USB/GADGET. Fresh-DTB audit reports
-metadata only, with no variant/build/device-transport readiness. Full34 diagnostics
-unchanged. Finite USB2 bank/calibration definition is now pinned under kernel/
-usb-port:65536 source-expression states reject field-only/EYE shortcuts; separate
-frequency resource prevents parent/child ownership overlap. Measurement retained,
-vendor byte policy defined, zero/timeout handling explicit; no kernel variant yet.
-Actual isolated MT8163 USB2 port0 bank/calibration implementation is prepared with
-hash-locked application, mandatory resource/type/EYE guards, serialized measurement
-and full-byte cleanup. Host actual-C/RAM mocks pass; Linux usb-providers scope
-requires USB-enabled symbols/objects/Image before a build claim. Existing USB-off
-diagnostic profile and disabled candidate remain unchanged. Next acceptance after
-successful exact-head build: isolated disabled-DT frequency-resource experiment
-and MT8163-specific binding controls, preserving baseline/full34 failure output.
-Runtime DMA/display/loading and independent failed-boot return/log gates stay open.
+Current #347 route review: no cached physical trial is admitted. Actual MT8163
+USB2 port0 source PR413 mergeda387d729 after exact-head USB-enabled object/config/
+Image run40805824866 and five PR checks; no QEMU or device USB test. Canonical
+pwrap-parent DTB remainsb837e6cb with the prior failing34-diagnostic context.
+
+The explicit disabled usb-frequency-resource experiment now adds only parent
+reg/reg-names, preserves186 nodes/all other values/phandles/child order/reservations
+and keeps USB0, USB1 and PHY disabled. Matched opt-in MUSB/T-PHY metadata controls
+pass25 cases with old-SoC policies preserved. Paired isolated context reports28
+(19unmatched/9validation), wrapper exit1/passedfalse; canonical baseline unchanged.
+Schema matching disabled USB1 does not qualify port1, rejected by the initial
+kernel xlate. Source, build, metadata and physical transport remain separate.
+
+Next #27 source acceptance: finite USB0 analog/role/clock prerequisite comparison
+against cached legacy/ACK sources before activation or transport claims. Keep
+loader/independent failure return/retained logs and all beta runtime gates open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in

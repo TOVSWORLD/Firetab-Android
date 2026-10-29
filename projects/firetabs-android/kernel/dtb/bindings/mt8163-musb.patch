@@ -1,0 +1,10 @@
+--- a/usb/mediatek,musb.yaml
++++ b/usb/mediatek,musb.yaml
+@@ -19,6 +19,7 @@
+       - enum:
+           - mediatek,mt8516-musb
+           - mediatek,mt2701-musb
++          - mediatek,mt8163-musb
+           - mediatek,mt7623-musb
+       - const: mediatek,mtk-musb
+ 

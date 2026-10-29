@@ -1,0 +1,1007 @@
+{
+  "root": "http://devicetree.org/schemas/usb/mediatek,musb.yaml",
+  "schemas": {
+    "http://devicetree.org/schemas/usb/mediatek,musb.yaml": {
+      "$id": "http://devicetree.org/schemas/usb/mediatek,musb.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "additionalProperties": false,
+      "dependentRequired": {
+        "connector": [
+          "usb-role-switch"
+        ],
+        "usb-role-switch": [
+          "connector"
+        ]
+      },
+      "oneOf": [
+        {
+          "required": [
+            "interrupts"
+          ]
+        },
+        {
+          "required": [
+            "interrupts-extended"
+          ]
+        }
+      ],
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "$nodename": {
+          "items": [
+            {
+              "pattern": "^usb@[0-9a-f]+$"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "assigned-clock-parents": true,
+        "assigned-clock-rates": true,
+        "assigned-clock-rates-u64": true,
+        "assigned-clock-sscs": true,
+        "assigned-clocks": true,
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "clock-names": {
+          "items": [
+            {
+              "const": "main"
+            },
+            {
+              "const": "mcu"
+            },
+            {
+              "const": "univpll"
+            }
+          ],
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "clocks": {
+          "maxItems": 3,
+          "minItems": 3,
+          "type": "array"
+        },
+        "compatible": {
+          "items": [
+            {
+              "enum": [
+                "mediatek,mt8516-musb",
+                "mediatek,mt2701-musb",
+                "mediatek,mt8163-musb",
+                "mediatek,mt7623-musb"
+              ]
+            },
+            {
+              "const": "mediatek,mtk-musb"
+            }
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        "connector": {
+          "$ref": "/schemas/connector/usb-connector.yaml#",
+          "type": "object"
+        },
+        "dr_mode": {
+          "items": [
+            {
+              "enum": [
+                "host",
+                "otg",
+                "peripheral"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "interrupt-names": {
+          "items": [
+            {
+              "const": "mc"
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "interrupt-parent": true,
+        "interrupts": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "interrupts-extended": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "phandle": true,
+        "phys": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "pinctrl-names": true,
+        "power-domains": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "reg": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "status": true,
+        "usb-role-switch": {
+          "$ref": "/schemas/types.yaml#/definitions/flag",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "compatible",
+        "reg",
+        "interrupt-names",
+        "phys",
+        "clocks",
+        "clock-names"
+      ],
+      "title": "MediaTek MUSB DRD/OTG Controller",
+      "type": "object"
+    },
+    "http://devicetree.org/schemas/types.yaml": {
+      "$id": "http://devicetree.org/schemas/types.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/base.yaml#",
+      "definitions": {
+        "address": {
+          "$ref": "#/definitions/uint32-matrix",
+          "items": {
+            "maxItems": 5,
+            "minItems": 1
+          },
+          "type": "array"
+        },
+        "flag": {
+          "oneOf": [
+            {
+              "const": true,
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "int16": {
+          "maximum": 8191,
+          "minimum": -8192,
+          "type": "integer",
+          "typeSize": 16
+        },
+        "int16-array": {
+          "items": {
+            "$ref": "#/definitions/int16"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int16-matrix": {
+          "items": {
+            "$ref": "#/definitions/int16-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int32": {
+          "maximum": 2147483647,
+          "minimum": -2147483648,
+          "type": "integer"
+        },
+        "int32-array": {
+          "items": {
+            "$ref": "#/definitions/int32"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int32-matrix": {
+          "items": {
+            "$ref": "#/definitions/int32-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int64": {
+          "maximum": 9223372036854775807,
+          "minimum": -9223372036854775808,
+          "type": "integer",
+          "typeSize": 64
+        },
+        "int64-array": {
+          "items": {
+            "$ref": "#/definitions/int64"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int64-matrix": {
+          "items": {
+            "$ref": "#/definitions/int64-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int8": {
+          "maximum": 127,
+          "minimum": -128,
+          "type": "integer",
+          "typeSize": 8
+        },
+        "int8-array": {
+          "items": {
+            "$ref": "#/definitions/int8"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "int8-matrix": {
+          "items": {
+            "$ref": "#/definitions/int8-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "non-unique-string-array": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "phandle": {
+          "$ref": "#/definitions/phandle-array",
+          "items": {
+            "maxItems": 1,
+            "minItems": 1
+          },
+          "maxItems": 1,
+          "type": "array"
+        },
+        "phandle-array": {
+          "items": {
+            "additionalItems": {
+              "$ref": "#/definitions/uint32"
+            },
+            "items": [
+              {
+                "oneOf": [
+                  {
+                    "maximum": 4294967295,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  {
+                    "const": 0,
+                    "type": "integer"
+                  }
+                ]
+              }
+            ],
+            "maxItems": 1024,
+            "minItems": 1,
+            "type": "array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "string": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/string-array"
+            },
+            {
+              "maxItems": 1,
+              "minItems": 1
+            }
+          ]
+        },
+        "string-array": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/non-unique-string-array"
+            },
+            {
+              "uniqueItems": true
+            }
+          ]
+        },
+        "uint16": {
+          "maximum": 65535,
+          "minimum": 0,
+          "type": "integer",
+          "typeSize": 16
+        },
+        "uint16-array": {
+          "items": {
+            "$ref": "#/definitions/uint16"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint16-matrix": {
+          "items": {
+            "$ref": "#/definitions/uint16-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint32": {
+          "maximum": 4294967295,
+          "minimum": 0,
+          "type": "integer",
+          "typeSize": 32
+        },
+        "uint32-array": {
+          "items": {
+            "$ref": "#/definitions/uint32"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint32-matrix": {
+          "items": {
+            "$ref": "#/definitions/uint32-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint64": {
+          "maximum": 18446744073709551615,
+          "minimum": 0,
+          "type": "integer",
+          "typeSize": 64
+        },
+        "uint64-array": {
+          "items": {
+            "$ref": "#/definitions/uint64"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint64-matrix": {
+          "items": {
+            "$ref": "#/definitions/uint64-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint8": {
+          "maximum": 255,
+          "minimum": 0,
+          "type": "integer",
+          "typeSize": 8
+        },
+        "uint8-array": {
+          "items": {
+            "$ref": "#/definitions/uint8"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "uint8-matrix": {
+          "items": {
+            "$ref": "#/definitions/uint8-array"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "title": "Core devicetree property data types",
+      "type": "object"
+    },
+    "http://devicetree.org/schemas/connector/usb-connector.yaml": {
+      "$defs": {
+        "capabilities": {
+          "properties": {
+            "op-sink-microwatt": {},
+            "sink-pdos": {
+              "$ref": "/schemas/types.yaml#/definitions/uint32-array",
+              "maxItems": 7,
+              "minItems": 1
+            },
+            "source-pdos": {
+              "$ref": "/schemas/types.yaml#/definitions/uint32-array",
+              "maxItems": 7,
+              "minItems": 1
+            }
+          },
+          "type": "object"
+        }
+      },
+      "$id": "http://devicetree.org/schemas/connector/usb-connector.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/core.yaml#",
+      "allOf": [
+        {
+          "$ref": "#/$defs/capabilities"
+        },
+        {
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "gpio-usb-b-connector"
+                }
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "vbus-gpios"
+                ]
+              },
+              {
+                "required": [
+                  "id-gpios"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "compatible": {
+                "contains": {
+                  "const": "samsung,usb-connector-11pin"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "type": {
+                "items": [
+                  {
+                    "const": "micro"
+                  }
+                ],
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array"
+              }
+            }
+          }
+        }
+      ],
+      "anyOf": [
+        {
+          "not": {
+            "required": [
+              "typec-power-opmode",
+              "new-source-frs-typec-current"
+            ]
+          }
+        }
+      ],
+      "dependentRequired": {
+        "pd-disable": [
+          "typec-power-opmode"
+        ],
+        "sink-vdos": [
+          "sink-vdos-v1"
+        ],
+        "sink-vdos-v1": [
+          "sink-vdos"
+        ]
+      },
+      "patternProperties": {
+        "^pinctrl-[0-9]+$": true
+      },
+      "properties": {
+        "$nodename": true,
+        "accessory-mode-audio": {
+          "type": "boolean"
+        },
+        "accessory-mode-debug": {
+          "type": "boolean"
+        },
+        "altmodes": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(displayport)$": {
+              "additionalProperties": false,
+              "patternProperties": {
+                "^pinctrl-[0-9]+$": true
+              },
+              "properties": {
+                "$nodename": true,
+                "bootph-all": true,
+                "bootph-pre-ram": true,
+                "bootph-pre-sram": true,
+                "bootph-some-ram": true,
+                "bootph-verify": true,
+                "phandle": true,
+                "pinctrl-names": true,
+                "secure-status": true,
+                "status": true,
+                "svid": {
+                  "$ref": "/schemas/types.yaml#/definitions/uint16",
+                  "enum": [
+                    65281
+                  ]
+                },
+                "vdo": {
+                  "$ref": "/schemas/types.yaml#/definitions/uint32"
+                }
+              },
+              "type": "object"
+            },
+            "^pinctrl-[0-9]+$": true
+          },
+          "properties": {
+            "$nodename": true,
+            "bootph-all": true,
+            "bootph-pre-ram": true,
+            "bootph-pre-sram": true,
+            "bootph-some-ram": true,
+            "bootph-verify": true,
+            "phandle": true,
+            "pinctrl-names": true,
+            "secure-status": true,
+            "status": true
+          },
+          "type": "object"
+        },
+        "bootph-all": true,
+        "bootph-pre-ram": true,
+        "bootph-pre-sram": true,
+        "bootph-some-ram": true,
+        "bootph-verify": true,
+        "capabilities": {
+          "additionalProperties": false,
+          "patternProperties": {
+            "^caps-[0-9]+$": {
+              "$ref": "#/$defs/capabilities",
+              "patternProperties": {
+                "^pinctrl-[0-9]+$": true
+              },
+              "properties": {
+                "$nodename": true,
+                "bootph-all": true,
+                "bootph-pre-ram": true,
+                "bootph-pre-sram": true,
+                "bootph-some-ram": true,
+                "bootph-verify": true,
+                "phandle": true,
+                "pinctrl-names": true,
+                "secure-status": true,
+                "status": true
+              },
+              "type": "object",
+              "unevaluatedProperties": false
+            },
+            "^pinctrl-[0-9]+$": true
+          },
+          "properties": {
+            "$nodename": true,
+            "bootph-all": true,
+            "bootph-pre-ram": true,
+            "bootph-pre-sram": true,
+            "bootph-some-ram": true,
+            "bootph-verify": true,
+            "phandle": true,
+            "pinctrl-names": true,
+            "secure-status": true,
+            "status": true
+          },
+          "type": "object"
+        },
+        "cc-debounce-time-ms": {
+          "default": 200,
+          "items": [
+            {
+              "maximum": 200,
+              "minimum": 100
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "charging-adapter-pdp-milliwatt": {
+          "items": [
+            {
+              "maximum": 100000,
+              "minimum": 0
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "compatible": {
+          "oneOf": [
+            {
+              "items": [
+                {
+                  "enum": [
+                    "usb-a-connector",
+                    "usb-b-connector",
+                    "usb-c-connector"
+                  ]
+                }
+              ],
+              "maxItems": 1,
+              "minItems": 1,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "const": "gpio-usb-b-connector"
+                },
+                {
+                  "const": "usb-b-connector"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "items": [
+                {
+                  "const": "samsung,usb-connector-11pin"
+                },
+                {
+                  "const": "usb-b-connector"
+                }
+              ],
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            }
+          ]
+        },
+        "data-role": {
+          "$ref": "/schemas/types.yaml#/definitions/string",
+          "items": [
+            {
+              "enum": [
+                "host",
+                "device",
+                "dual"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "id-gpios": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "label": {},
+        "new-source-frs-typec-current": {
+          "$ref": "/schemas/types.yaml#/definitions/uint32",
+          "enum": [
+            1,
+            2,
+            3
+          ]
+        },
+        "pd-disable": {
+          "type": "boolean"
+        },
+        "pd-revision": {
+          "$ref": "/schemas/types.yaml#/definitions/uint8-array",
+          "maxItems": 4,
+          "minItems": 4
+        },
+        "phandle": true,
+        "pinctrl-names": true,
+        "port": {
+          "$ref": "/schemas/graph.yaml#/properties/port"
+        },
+        "ports": {
+          "$ref": "/schemas/graph.yaml#/properties/ports",
+          "properties": {
+            "port@0": {
+              "$ref": "/schemas/graph.yaml#/properties/port"
+            },
+            "port@1": {
+              "$ref": "/schemas/graph.yaml#/properties/port"
+            },
+            "port@2": {
+              "$ref": "/schemas/graph.yaml#/properties/port"
+            }
+          },
+          "required": [
+            "port@0"
+          ]
+        },
+        "power-role": {
+          "$ref": "/schemas/types.yaml#/definitions/string",
+          "items": [
+            {
+              "enum": [
+                "source",
+                "sink",
+                "dual"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "ps-source-off-time-ms": {
+          "default": 920,
+          "items": [
+            {
+              "maximum": 920,
+              "minimum": 750
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "reg": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "secure-status": true,
+        "self-powered": {
+          "type": "boolean"
+        },
+        "sink-bc12-completion-time-ms": {
+          "default": 0
+        },
+        "sink-compliance": {
+          "$ref": "/schemas/types.yaml#/definitions/uint8",
+          "maximum": 7
+        },
+        "sink-load-characteristics": {
+          "$ref": "/schemas/types.yaml#/definitions/uint16"
+        },
+        "sink-load-step": {
+          "$ref": "/schemas/types.yaml#/definitions/uint32",
+          "default": 150,
+          "enum": [
+            150,
+            500
+          ]
+        },
+        "sink-vdos": {
+          "$ref": "/schemas/types.yaml#/definitions/uint32-array",
+          "maxItems": 6,
+          "minItems": 3
+        },
+        "sink-vdos-v1": {
+          "$ref": "/schemas/types.yaml#/definitions/uint32-array",
+          "maxItems": 6,
+          "minItems": 3
+        },
+        "sink-wait-cap-time-ms": {
+          "default": 310,
+          "items": [
+            {
+              "maximum": 620,
+              "minimum": 310
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "slow-charger-loop": {
+          "type": "boolean"
+        },
+        "status": true,
+        "try-power-role": {
+          "$ref": "/schemas/types.yaml#/definitions/string",
+          "items": [
+            {
+              "enum": [
+                "source",
+                "sink",
+                "dual"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "type": {
+          "$ref": "/schemas/types.yaml#/definitions/string",
+          "items": [
+            {
+              "enum": [
+                "mini",
+                "micro"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "typec-power-opmode": {
+          "$ref": "/schemas/types.yaml#/definitions/string",
+          "items": [
+            {
+              "enum": [
+                "default",
+                "1.5A",
+                "3.0A"
+              ]
+            }
+          ],
+          "maxItems": 1,
+          "minItems": 1,
+          "type": "array"
+        },
+        "vbus-gpios": {
+          "maxItems": 1,
+          "minItems": 1
+        },
+        "vbus-supply": {}
+      },
+      "required": [
+        "compatible"
+      ],
+      "title": "USB Connector",
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "http://devicetree.org/schemas/graph.yaml": {
+      "$defs": {
+        "endpoint-base": {
+          "properties": {
+            "reg": {
+              "maxItems": 1,
+              "minItems": 1
+            },
+            "remote-endpoint": {
+              "$ref": "/schemas/types.yaml#/definitions/phandle"
+            }
+          },
+          "type": "object"
+        },
+        "port-base": {
+          "patternProperties": {
+            "^endpoint@[0-9a-f]+$": {
+              "$ref": "#/$defs/endpoint-base",
+              "required": [
+                "reg"
+              ]
+            }
+          },
+          "properties": {
+            "#address-cells": {
+              "const": 1
+            },
+            "#size-cells": {
+              "const": 0
+            },
+            "endpoint": {
+              "type": "object"
+            },
+            "reg": {
+              "maxItems": 1,
+              "minItems": 1
+            }
+          },
+          "type": "object"
+        }
+      },
+      "$id": "http://devicetree.org/schemas/graph.yaml#",
+      "$schema": "http://devicetree.org/meta-schemas/base.yaml#",
+      "properties": {
+        "endpoint": {
+          "$ref": "#/$defs/endpoint-base",
+          "patternProperties": {
+            "^pinctrl-[0-9]+$": true
+          },
+          "properties": {
+            "$nodename": true,
+            "bootph-all": true,
+            "bootph-pre-ram": true,
+            "bootph-pre-sram": true,
+            "bootph-some-ram": true,
+            "bootph-verify": true,
+            "phandle": true,
+            "pinctrl-names": true,
+            "secure-status": true,
+            "status": true
+          },
+          "unevaluatedProperties": false
+        },
+        "port": {
+          "$ref": "#/$defs/port-base",
+          "patternProperties": {
+            "^endpoint(@[0-9a-f]+)?$": {
+              "$ref": "#/properties/endpoint"
+            },
+            "^pinctrl-[0-9]+$": true
+          },
+          "properties": {
+            "$nodename": true,
+            "bootph-all": true,
+            "bootph-pre-ram": true,
+            "bootph-pre-sram": true,
+            "bootph-some-ram": true,
+            "bootph-verify": true,
+            "phandle": true,
+            "pinctrl-names": true,
+            "secure-status": true,
+            "status": true
+          },
+          "unevaluatedProperties": false
+        },
+        "ports": {
+          "additionalProperties": false,
+          "oneOf": [
+            {
+              "required": [
+                "port"
+              ]
+            },
+            {
+              "required": [
+                "#address-cells",
+                "#size-cells"
+              ]
+            }
+          ],
+          "patternProperties": {
+            "^pinctrl-[0-9]+$": true,
+            "^port@[0-9a-f]+$": {
+              "required": [
+                "reg"
+              ],
+              "type": "object"
+            }
+          },
+          "properties": {
+            "#address-cells": {
+              "const": 1
+            },
+            "#size-cells": {
+              "const": 0
+            },
+            "$nodename": true,
+            "bootph-all": true,
+            "bootph-pre-ram": true,
+            "bootph-pre-sram": true,
+            "bootph-some-ram": true,
+            "bootph-verify": true,
+            "phandle": true,
+            "pinctrl-names": true,
+            "port": {
+              "type": "object"
+            },
+            "secure-status": true,
+            "status": true
+          },
+          "type": "object"
+        }
+      },
+      "title": "Device Graphs",
+      "type": "object"
+    }
+  }
+}

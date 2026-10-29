@@ -1,0 +1,74 @@
+{
+  "/soc/t-phy@11210000": {
+    "compatible": [
+      "mediatek,mt8163-tphy",
+      "mediatek,generic-tphy-v1"
+    ],
+    "reg": [
+      [
+        0,
+        287375360,
+        0,
+        2048
+      ],
+      [
+        0,
+        287379200,
+        0,
+        256
+      ]
+    ],
+    "reg-names": [
+      "sif",
+      "u2-frequency"
+    ],
+    "#address-cells": 2,
+    "#size-cells": 2,
+    "ranges": true,
+    "status": [
+      "disabled"
+    ],
+    "usb-phy@11210800": {
+      "reg": [
+        [
+          0,
+          287377408,
+          0,
+          256
+        ]
+      ],
+      "clocks": [
+        [
+          22,
+          14
+        ]
+      ],
+      "clock-names": [
+        "ref"
+      ],
+      "#phy-cells": 1,
+      "phandle": 28
+    },
+    "usb-phy@11210900": {
+      "reg": [
+        [
+          0,
+          287377664,
+          0,
+          256
+        ]
+      ],
+      "clocks": [
+        [
+          22,
+          14
+        ]
+      ],
+      "clock-names": [
+        "ref"
+      ],
+      "#phy-cells": 1,
+      "phandle": 35
+    }
+  }
+}
