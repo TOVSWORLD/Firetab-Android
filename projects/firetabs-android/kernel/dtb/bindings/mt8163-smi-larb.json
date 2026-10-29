@@ -1,9 +1,9 @@
 {
-  "scope": "Opt-in source-matched MT8163 smi-larb contract; actual larb IRQ errors retained, no DMA/runtime qualification",
+  "scope": "Opt-in source-matched MT8163 larb resource contract including optional single vendor-declared IRQ; no IRQ handler or hardware qualification",
   "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
   "patch": "bindings/mt8163-smi-larb.patch",
-  "patch_sha256": "70014f11fcfcc0c8aadcbbc1f26d5b07cfd30f726487149850b59bbe64bc612d",
+  "patch_sha256": "8e02da407f659c9c446c99004c1d0d282028c3e926b3dc479c6be59889f3bae0",
   "schema": "memory-controllers/mediatek,smi-larb.yaml",
   "original_sha256": "c3ee2b9246d4dc3bd3a246c51318b92adc88a884fd136d30a3bfe8358ca2f7d0",
-  "proposed_sha256": "678b6988d3ee6068e95bfa2823e14c9b11ab828fa1a7096277b9345ce80c15b1"
+  "proposed_sha256": "6474884c12a495a08fd4c229751c20f45a0d92b156d45b259bd7e638b64e4965"
 }

@@ -1,0 +1,11 @@
+{
+  "scope": "Candidate declaration dependency graph only",
+  "larbs_checked": 4,
+  "smi_common_checked": 1,
+  "source_clock_role_pairs_checked": 5,
+  "optional_larb_irq_contract_checked": true,
+  "source_integration_required": true,
+  "full_binding_validation_passed": false,
+  "runtime_qualified": false,
+  "dtb_sha256": "b837e6cb439d43778527c834e534abddb271170fd29cb6b13b174272214d1411"
+}

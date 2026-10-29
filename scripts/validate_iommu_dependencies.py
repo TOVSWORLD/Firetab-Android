@@ -55,10 +55,13 @@ def validate(graph):
     for i in range(4):
         n=nodes[PATHS['larb'+str(i)]]
         if n.get('mediatek,larb-id')!=[i] or n.get('mediatek,smi')!=common['phandle']:raise ValueError('Larb ID/common link drift')
+        # Optional vendor-declared larb IRQ; this validates metadata, not a handler.
+        if 'interrupts' in n and n['interrupts'] != [0, [205,213,217,207][i], 8]:
+            raise ValueError('Vendor larb IRQ declaration drift: larb'+str(i))
         larbs+=n['phandle']
     if iommu.get('mediatek,larbs')!=larbs:raise ValueError('IOMMU must link reviewed larb0..3')
     return {'scope':'Candidate declaration dependency graph only','larbs_checked':4,'smi_common_checked':1,
-            'source_clock_role_pairs_checked':5,'source_integration_required':True,
+            'source_clock_role_pairs_checked':5,'optional_larb_irq_contract_checked':True,'source_integration_required':True,
             'full_binding_validation_passed':False,'runtime_qualified':False}
 
 

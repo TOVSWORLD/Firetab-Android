@@ -6,12 +6,14 @@ Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
 Current #347 route review: no cached physical trial is admitted. PR407 merged
 6821d312 after exact-head provider objects/Image/generic-QEMU run40794335163 and
 five PR checks. This is source/generic build evidence, not MT8163 runtime proof.
-#27 source-matched IOMMU/SMI contracts now pass60 actual controls with expected
-larb rejections retained. Full context40→38 diagnostics (22unmatched/16validation),
-wrapper exit1/passedfalse. No DTB/driver change in binding scope. Next acceptance:
-trace source origin/ownership of four candidate larb IRQ declarations before
-separately justified DT correction; preserve errors. Runtime DMA/display/loading,
-independent failed-boot return/log gates remain open.
+#27 source-matched IOMMU/SMI contracts: vendor source establishes optional larb
+IRQ declarations independent of handler support. MT8163-only optional single-IRQ
+schema and fresh-DTB SPI/type/polarity guard preserve all other SoC constraints.
+40 actual updated controls pass; full context38→34 diagnostics (22unmatched/
+12validation), wrapper exit1/passedfalse. No DTB/driver/device change. Next source
+acceptance: actual USB MUSB/T-PHY OF match, clock/reset/PHY/probe prerequisites
+before binding claims; no device/firmware execution or new loading admission.
+Runtime DMA/display/loading, independent failed-boot return/log gates remain open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in
