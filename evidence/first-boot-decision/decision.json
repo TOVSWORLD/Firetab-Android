@@ -5,7 +5,7 @@
   "physical_trial_admitted": false,
   "integrated_candidate_admitted": false,
   "device_actions_performed": false,
-  "next_owner_decision": "Allow preparation only of exact-board mechanical inspection/independent recovery-log proposal in existing345; no physical/electrical/helper action authorized.",
+  "next_action": "Prepare existing345 exact-board mechanical inspection/independent recovery-log proposal within authorized planning; ask owner about physical procedure only after it is concrete and reviewable.",
   "runtime_gates_remain_open": [
     347,
     346,

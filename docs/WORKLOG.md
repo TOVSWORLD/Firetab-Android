@@ -3782,9 +3782,9 @@ all seven ACM gates stay zero. Signed stock material/normal return/320KiB export
 do not qualify experimental failure recovery or logs. Input hashes pinned in
 evidence/first-boot-decision/decision.json.
 
-Single next owner scope decision: allow preparation of existing345 exact-board
-mechanical inspection and independent recovery/logging proposal, not opening/
-electrical/firmware execution. If declined, stay blocked at entry; no peripheral
-bypass. NO-GO may complete439 decision acceptance but never admits347 or closes
+Single next action: prepare existing345 exact-board mechanical inspection and
+independent recovery/logging proposal within authorized planning. Request owner
+approval only after a concrete physical procedure is ready for review; no opening/
+electrical/firmware execution or peripheral bypass. NO-GO may complete439 decision acceptance but never admits347 or closes
 346/348. Replaced obsolete watchdog-next/percentage section in current route
 admission. Issue-linked PR and exact-head checks required before acceptance.

@@ -79,22 +79,25 @@ missing logs, or loss of the independent return path means **do not begin or do
 not continue the trial**; never retry automatically. The abort itself must be
 specified before entry—idle or closing USB is not proof of a safe device exit.
 
-## One owner decision
+## One next action and the owner approval boundary
 
-**Recommended scope decision: allow preparation of the exact-board mechanical
-inspection and independent recovery/logging proposal in existing #345.** The
-software-only route inventory is exhausted at its current evidence boundary;
-this is a prerequisite of entry, not an unrelated hardware task.
+**Select existing #345 to prepare the exact-board mechanical inspection and
+independent recovery/logging proposal.** This necessary entry prerequisite is
+within the already authorized planning scope. The software-only route inventory
+is exhausted at its current evidence boundary; do not ask the owner to approve
+writing a plan or restart unrelated peripherals.
 
-This decision would authorize preparation of a reviewable plan only. It does
-not authorize opening the tablet, disconnecting a battery, contacting a pad,
-shorting, soldering, applying power or executing an unlock/firmware helper. #345
-must identify exact-generation mechanical provenance, tools/isolation, what can
-be learned without energized contact, remaining uncertainty and stopping points
-before any physical action is proposed. No new photos or cable checks are being
-requested. If the owner declines that planning scope, keep the project blocked
-at entry; do not resume peripheral work to fill the gap.
+The concrete owner decision will be approval or rejection of that finished
+physical-inspection procedure. It must be reviewable before the question is asked:
+exact-generation mechanical provenance, tools/isolation, permitted unenergized
+observations, risks, stopping points and independent return limits. No opening,
+battery disconnection, pad contact, shorting, soldering, power application or
+unlock/firmware helper is authorized by this source decision. No new photos or
+cable checks are requested. If a sound procedure cannot be established, report
+that blocker rather than proposing guessed contacts or steps.
 
-Closing #439 with NO-GO does not satisfy #347's explicit GO condition. #345 stays
-conditional pending this owner scope decision. Approval to prepare a plan is not
-approval of a later high-risk procedure, nor proof the hardware route will work.
+Closing #439 with NO-GO does not satisfy #347's explicit GO condition. The route
+decision selects #345's proposal work only; its existing recorded conditional
+predecessor is now satisfied after this PR merges. Physical approval must wait
+until that proposal is concrete. Consent alone will not establish entry, rescue
+or log qualification. No peripheral issue can bypass this blocked entry path.

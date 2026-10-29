@@ -50,7 +50,8 @@ No high-brick-risk route is selected by this review.
 The [29 October first-boot decision](FIRST-BOOT-DECISION.md), primary task#439,
 supersedes historical peripheral/watchdog next-actions and rough percentages.
 NO-GO for experimental loading; no cached route is admitted. The single next
-owner scope decision is whether to prepare existing#345's exact-board mechanical
-inspection/independent recovery-log proposal. No physical/electrical/helper action
+action is preparing existing#345's exact-board mechanical inspection/independent
+recovery-log proposal within authorized planning. Owner approval is requested
+only after that physical procedure is concrete and reviewable. No physical/electrical/helper action
 is authorized by that proposal choice. Keep#347/#346/#348 blocked and follow the
 ordered issue-to-PR roadmap; no unrelated peripheral bypass.

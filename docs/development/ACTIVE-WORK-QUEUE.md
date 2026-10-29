@@ -14,8 +14,9 @@ The board is the source of live state. Do not resume historical peripheral queue
   evidence/pwm-kernel-integration/build-result.json; hardware remains unqualified.
 - **Next execution task: #439**, exact-build diagnostic entry/go-no-go decision.
   Its [decision package](FIRST-BOOT-DECISION.md) records NO-GO, pending exact-head
-  PR acceptance. Owner scope decision: allow preparing conditional#345's exact-board
-  mechanical inspection/independent recovery-log proposal, without physical action.
+  PR acceptance. Next is selected conditional#345's exact-board mechanical
+  inspection/independent recovery-log proposal within authorized planning;
+  physical approval waits for its concrete reviewable procedure.
   No cached nonpersistent trial route is qualified on observed PL7/LK3/TEE262.
 
 The decision must identify one operational route or state why none is safely
