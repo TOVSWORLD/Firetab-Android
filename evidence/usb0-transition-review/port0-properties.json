@@ -1,0 +1,16 @@
+{
+  "command": [
+    "work/dtb-tool/build/fdtget",
+    "-p",
+    "work/dtb-compile/usb-frequency-resource/douglas.dtb",
+    "/soc/t-phy@11210000/usb-phy@11210800"
+  ],
+  "dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4",
+  "properties": [
+    "reg",
+    "clocks",
+    "clock-names",
+    "#phy-cells",
+    "phandle"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "scope": "Pinned isolated source expressions/ownership only; not sequence or hardware equivalence",
+  "comparisons": {
+    "rx_threshold_recover_vs_init": {
+      "states": 256,
+      "equal": 0,
+      "difference_mask": "0x5",
+      "first_counterexample": {
+        "initial": "0x0",
+        "legacy": "0x6",
+        "modern": "0x2"
+      }
+    },
+    "eye_no_properties": {
+      "states": 65536,
+      "equal": 1024,
+      "difference_mask": "0x7700",
+      "first_counterexample": {
+        "initial": "0x0",
+        "legacy": "0x7700",
+        "modern": "0x0"
+      }
+    },
+    "eye_explicit_7_7_expression_only": {
+      "states": 65536,
+      "equal": 65536,
+      "difference_mask": "0x0",
+      "first_counterexample": null
+    },
+    "role_recover_vs_poweron_device": {
+      "states": 65536,
+      "equal": 2048,
+      "difference_mask": "0x3c08",
+      "first_counterexample": {
+        "initial": "0x0",
+        "legacy": "0x3e2e",
+        "modern": "0x226"
+      }
+    },
+    "role_recover_vs_poweron_otg": {
+      "states": 65536,
+      "equal": 0,
+      "difference_mask": "0x3e0a",
+      "first_counterexample": {
+        "initial": "0x0",
+        "legacy": "0x3e2e",
+        "modern": "0x24"
+      }
+    }
+  },
+  "legacy_ccf_prepare_names": [
+    "usbpll",
+    "usb",
+    "usbmcu",
+    "icusb"
+  ],
+  "legacy_ccf_first_enable_order": [
+    "usbpll",
+    "usb",
+    "usbmcu"
+  ],
+  "legacy_clkmgr_icusb_gate_is_separate_branch": true,
+  "modern_musb_bulk_names": [
+    "main",
+    "mcu",
+    "univpll"
+  ],
+  "modern_phy_optional_bulk_names": [
+    "ref",
+    "da_ref"
+  ],
+  "candidate_port0_ref": "apmixedsys CLK_APMIXED_REF2USB_TX (14); separate from UNIVPLL (2)",
+  "activation_allowed": false,
+  "device_tested": false,
+  "next_source_acceptance": "Select MT8163-specific RX/eye policy and device-role force-bit ownership, then implement only justified changes with RAM mocks and exact-head USB build; retain disabled DT and runtime gates."
+}

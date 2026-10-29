@@ -16,9 +16,15 @@ pass25 cases with old-SoC policies preserved. Paired isolated context reports28
 Schema matching disabled USB1 does not qualify port1, rejected by the initial
 kernel xlate. Source, build, metadata and physical transport remain separate.
 
-Next #27 source acceptance: finite USB0 analog/role/clock prerequisite comparison
-against cached legacy/ACK sources before activation or transport claims. Keep
-loader/independent failure return/retained logs and all beta runtime gates open.
+Completed finite USB0 analog/role/clock review: source expressions differ at RX
+mask0x5, role-device mask0x3c08 and role-OTG mask0x3e0a; explicit eye7/7 only
+matches the isolated legacy eye operation. Legacy CCF prepares ICUSB but the PHY
+CCF enable path does not enable it; CLKMGR is a distinct branch. Reproduce
+scripts/audit_usb0_transitions.py and kernel/USB0-TRANSITIONS.md.
+Next #27 implementation: isolated MT8163 RX/eye recovery policy, preserving vendor
+bits and rejecting conflicting overrides, actual C RAM mocks and exact-head USB
+provider/Image build. Role-force policy remains separate; keep DT disabled and
+all transport/loading/return/log/runtime gates open.
 
 #20 source prerequisite update: pinned modern genpd core acquired at its relocated
 `drivers/pmdomain/core.c` path. Finite wakeup branch comparison is in
