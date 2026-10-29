@@ -3472,3 +3472,29 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   locked bootstrap, real pylibfdt extension with required SWIG4.4.1 and offline
   dependency resolution. Controls remain enabled;452 host tests including lock/
   budget/platform/cache-drift rejection. Replacement exact-head CI required.
+
+
+## 2026-10-29 — #27 actual isolated SYM827 source port
+
+- PR425 final7d3208a accepted09bc5eb after five checks/452 CI tests/30 decoded
+  parent controls/two fresh guards. Normalized final schema-toolchain receipt
+  published evidence/audsys-binding/ci-result.json; prior pending text historical.
+- Cached donor20951722 explicitly implements ID1/rev12/min600000/step12500;
+  original ACK d9318bdb only supports SYR IDs8/9/min712500. Added separate appended
+  SYM vendor rather than changing shared SYR acceptance. Exact source hashes and
+  legacy manufacturer/voltage/GPIO provenance in evidence/sym827-port.
+- Actual C helper requires legacy manufacturer4 and donor ID/revision, one scalar
+  explicit selector0/1 and no ignored legacy GPIO ownership. Read errors retained;
+  guard precedes setup/registration. No legacy GPIO/DVS/debug ABI copied. Physical
+  active bank/GPIO34 handoff and voltage behavior remain unqualified.
+- Actual C RAM ASan/UBSan controls cover65536 raw identities,256 decoded ranges,
+  both banks/64 selectors and6144 prior-vendor full-state comparisons. Other prior
+  integer functions except setup/probe byte-identical. Full kernel probe/physical
+  behavior not simulated. Hash-locked shadow apply verifies output before writes;
+  wrong revision/source/output/reapply fail without target changes.
+- Separate sym827-provider wrapper retains build_ack_baseline.sh byte-identical
+  (AUDSYS build pin), runs existing baseline then changed regulator W1 object and
+  final Image/vmlinux. Earlier baseline Image precedes new patch. Required new
+  exact-head Linux result pending; no source build or binding acceptance yet.
+- DTBs/schema/canonical33/isolated27 failed contexts and all disabled states remain
+  unchanged. No I2C/regulator/GPIO/device/voltage/security operations executed.

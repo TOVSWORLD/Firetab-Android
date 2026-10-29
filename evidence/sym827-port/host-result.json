@@ -1,0 +1,25 @@
+{
+  "scope": "Actual C source RAM-only controls and host regression suite; not kernel/physical acceptance",
+  "commands": [
+    "python3 -m unittest discover -s tests",
+    "python3 scripts/ci.py repository --base 09bc5eb8e1f8cf81a6e93ab63a448e52eb0d7e4e"
+  ],
+  "tests": 456,
+  "passed": true,
+  "raw_identity_pairs": 65536,
+  "prior_vendor_setup_comparisons": 6144,
+  "sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "sha256": {
+    "tests/test_sym827_port.py": "ae64f34cc34dcf55c9b7ed97b6f7f95fda19d3ab1ba759bc55afbc09d5dfb8fb",
+    "tests/test_kernel_build_scope.py": "d74dcbd4d4c10bd03499eacad7a6b8f8dc814ca885e125f0074b7ebb3312236e",
+    "scripts/apply_sym827_port.py": "739a40320c93c6c441e22702604dc0dd6a8305e8d51fbeb1ec02b03024b5ad8e",
+    "scripts/build_sym827_provider.sh": "b41171108dd124688bab5862cf8ad5984ccff7634698de3d3edf03443d0df176",
+    "projects/firetabs-android/kernel/regulator-port/inputs.json": "767faab8a63b48baeefbe7e1d7316d0fe33640903435c604c9744e9c421b6411",
+    "projects/firetabs-android/kernel/regulator-port/mt8163-sym827.patch": "81192884bc1734634f48651d7d40428aff3b44b9e40dc189e25f332080afc5ca"
+  },
+  "kernel_build_passed": false,
+  "runtime_qualified": false
+}

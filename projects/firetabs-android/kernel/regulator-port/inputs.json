@@ -1,0 +1,15 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "target": "drivers/regulator/fan53555.c",
+  "patch": "mt8163-sym827.patch",
+  "patch_sha256": "81192884bc1734634f48651d7d40428aff3b44b9e40dc189e25f332080afc5ca",
+  "original_sha256": "85d81789a5fe438d544c13726d4b61c4cadb4131359d9d274a06531b47155af9",
+  "patched_sha256": "b3cc8c2daf66c36d72fce0b02d55b1aebccc15144406a46f639eb03a2a2c2e2d",
+  "sources": {
+    "evidence/sym827-port/donor-fan53555.c": "34e27caf98fd1f6716753cf8bf33aec9596d23beaa8dcbd15e5841212f40f975",
+    "evidence/sym827-port/legacy-sym827-regulator.h": "99717901fbb614a1fd6030a8886311deaefbba702ffcea3fb37776529facd190",
+    "evidence/sym827-port/legacy-sym827-regulator.c": "fb78c7455392240175cedfea0eb2050ef2ac3ab6e16fe7764d53edc10483af86",
+    "evidence/sym827-port/fan53555.c": "85d81789a5fe438d544c13726d4b61c4cadb4131359d9d274a06531b47155af9"
+  },
+  "runtime_qualified": false
+}

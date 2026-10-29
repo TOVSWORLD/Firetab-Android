@@ -1,0 +1,131 @@
+--- a/drivers/regulator/fan53555.c
++++ b/drivers/regulator/fan53555.c
+@@ -72,6 +72,7 @@
+ 	RK8602_VENDOR_ROCKCHIP,		/* RK8602, RK8603 */
+ 	FAN53555_VENDOR_SILERGY,
+ 	FAN53526_VENDOR_TCS,
++	FAN53555_VENDOR_SYM827,
+ };
+ 
+ enum {
+@@ -389,6 +390,43 @@
+ 	return 0;
+ }
+ 
++/* SYM827 ID/revision from the pinned MT8163 donor, not a SYR alias. */
++static int fan53555_sym827_validate(struct device_node *np,
++                                  unsigned int id, unsigned int rev,
++                                  unsigned int sleep_vsel_id)
++{
++	u32 selector;
++
++	if ((id & 0xe0) != 0x80 || (id & DIE_ID) != 1 ||
++	    (rev & DIE_REV) != 12)
++		return -ENODEV;
++	/* No implicit bank choice or legacy external GPIO/DVS ownership. */
++	if (!np || of_property_count_u32_elems(np,
++			"fcs,suspend-voltage-selector") != 1 ||
++	    of_property_read_u32(np, "fcs,suspend-voltage-selector", &selector) ||
++	    selector > 1 || selector != sleep_vsel_id ||
++	    of_find_property(np, "vsel-gpio", NULL) ||
++	    of_find_property(np, "vsel-gpios", NULL) ||
++	    of_find_property(np, "en-gpio", NULL))
++		return -EINVAL;
++	return 0;
++}
++
++static int fan53555_voltages_setup_sym827(struct fan53555_device_info *di)
++{
++	if (di->chip_id != 1 || di->chip_rev != 12)
++		return -ENODEV;
++	di->vsel_min = 600000;
++	di->vsel_step = 12500;
++	di->vsel_count = FAN53555_NVOLTAGES;
++	di->slew_reg = FAN53555_CONTROL;
++	di->slew_mask = CTL_SLEW_MASK;
++	di->ramp_delay_table = slew_rates;
++	di->n_ramp_values = ARRAY_SIZE(slew_rates);
++	di->enable_time = 400;
++	return 0;
++}
++
+ static int fan53555_voltages_setup_silergy(struct fan53555_device_info *di)
+ {
+ 	/* Init voltage range and step */
+@@ -452,6 +490,7 @@
+ 	case FAN53555_VENDOR_FAIRCHILD:
+ 	case FAN53555_VENDOR_ROCKCHIP:
+ 	case FAN53555_VENDOR_SILERGY:
++	case FAN53555_VENDOR_SYM827:
+ 		switch (pdata->sleep_vsel_id) {
+ 		case FAN53555_VSEL_ID_0:
+ 			di->sleep_reg = FAN53555_VSEL0;
+@@ -526,6 +565,7 @@
+ 	case FAN53555_VENDOR_FAIRCHILD:
+ 	case FAN53555_VENDOR_ROCKCHIP:
+ 	case FAN53555_VENDOR_SILERGY:
++	case FAN53555_VENDOR_SYM827:
+ 		di->mode_reg = di->vol_reg;
+ 		di->mode_mask = VSEL_MODE;
+ 		break;
+@@ -574,6 +614,9 @@
+ 		break;
+ 	case FAN53555_VENDOR_SILERGY:
+ 		ret = fan53555_voltages_setup_silergy(di);
++		break;
++	case FAN53555_VENDOR_SYM827:
++		ret = fan53555_voltages_setup_sym827(di);
+ 		break;
+ 	case FAN53526_VENDOR_TCS:
+ 		ret = fan53526_voltages_setup_tcs(di);
+@@ -655,6 +698,9 @@
+ 		.compatible = "rockchip,rk8602",
+ 		.data = (void *)RK8602_VENDOR_ROCKCHIP
+ 	}, {
++		.compatible = "silergy,sym827",
++		.data = (void *)FAN53555_VENDOR_SYM827,
++	}, {
+ 		.compatible = "silergy,syr827",
+ 		.data = (void *)FAN53555_VENDOR_SILERGY,
+ 	}, {
+@@ -678,7 +724,7 @@
+ 	struct fan53555_platform_data *pdata;
+ 	struct regulator_config config = { };
+ 	struct regmap *regmap;
+-	unsigned int val;
++	unsigned int val, raw_id;
+ 	int ret;
+ 
+ 	di = devm_kzalloc(&client->dev, sizeof(struct fan53555_device_info),
+@@ -720,6 +766,7 @@
+ 	if (ret < 0)
+ 		return dev_err_probe(&client->dev, ret, "Failed to get chip ID!\n");
+ 
++	raw_id = val;
+ 	di->chip_id = val & DIE_ID;
+ 	/* Get chip revision */
+ 	ret = regmap_read(regmap, FAN53555_ID2, &val);
+@@ -727,6 +774,13 @@
+ 		return dev_err_probe(&client->dev, ret, "Failed to get chip Rev!\n");
+ 
+ 	di->chip_rev = val & DIE_REV;
++	if (di->vendor == FAN53555_VENDOR_SYM827) {
++		ret = fan53555_sym827_validate(np, raw_id, val,
++					     pdata->sleep_vsel_id);
++		if (ret)
++			return dev_err_probe(&client->dev, ret,
++					     "Unsupported SYM827 identity/bank contract\n");
++	}
+ 	dev_info(&client->dev, "FAN53555 Option[%d] Rev[%d] Detected!\n",
+ 				di->chip_id, di->chip_rev);
+ 	/* Device init */
+@@ -761,6 +815,9 @@
+ 	}, {
+ 		.name = "rk8602",
+ 		.driver_data = RK8602_VENDOR_ROCKCHIP
++	}, {
++		.name = "sym827",
++		.driver_data = FAN53555_VENDOR_SYM827
+ 	}, {
+ 		.name = "syr827",
+ 		.driver_data = FAN53555_VENDOR_SILERGY
