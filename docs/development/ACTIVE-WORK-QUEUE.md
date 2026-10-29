@@ -1,21 +1,24 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27/#18: actual AUDSYS parent contract and fresh-DTB source guard
-implemented.452 host tests/30 decoded parent controls pass; actual wrapper C RAM
-failure/order controls and GNU AArch64 object compile pass. Parent19 IDs/0x5a8
-extent/15 references pinned to accepted provider build; disabled AFE child remains
-independently unmatched, no MT2701 child policy guessed. Canonical matched context
-34→33 (21unmatched/12validation), isolated28→27 (18/9), exact one-parent removal,
-no additions; both wrappers exit1/passedfalse and Gunyah warning retained. DTB bytes
-and all disabled states unchanged. Initial CI passed fresh-DTB guard but lacked dtschema. Explicit hash-locked4MB
-Linux/Python3.12 bootstrap added without skipping controls; replacement exact-head
-fresh-DTB/controls CI required.
-Prior424 host source acceptedb2d8847 after five checks/446 tests; exact receipt now
- evidence/usb-acm-host/ci-result.json. No actual host/device observation.
-Next ready board source scope: unmatched silergy,sym827 regulator driver/variant/
-probe/selector contract before binding. Small pinned ACK fan53555 lead cached in
-out/sym827-next-source; SYR entry is not a justified SYM alias. No device/voltage/
-clock/firmware execution; loading/return/log/runtime gates stay open.
+2026-10-29 #27: isolated actual SYM827 kernel source port implemented; exact-head
+Linux Image build required before source acceptance/binding. Pinned modern donor
+ID1/rev12/min600000/step12500 isolated in a new vendor (existing SYR unchanged).
+Legacy manufacturer guard and strict explicit scalar bank selector reject
+unsupported identities/properties before setup/registration. Actual C RAM
+identity/range/bank controls and prior-vendor full-state comparisons pass;
+patch shadow preflight rejects drift before target replacement. No DT/schema
+change; canonical33/isolated27 full diagnostics remain failed. Physical GPIO34/
+DVS/active bank, chip identity, voltage/ramp and CPU supply handoff remain
+unqualified. No device/regulator/voltage operation authorized by this source work.
+New explicit sym827-provider build preserves the old build script byte-for-byte,
+then compiles changed regulator and rebuilds final Image; no QEMU claim.
+
+PR425 merged09bc5eb after five final-head checks at7d3208a:452 actual CI tests,
+30 decoded AUDSYS controls and both fresh-DTB guards. Linux pinned schema tools
+verified; exact receipt evidence/audsys-binding/ci-result.json. AUDSYS parent
+source acceptance does not qualify disabled unmatched AFE child or hardware.
+Next: require new SYM source exact-head host/object/config/Image checks, then
+source-matched binding controls only if justified; never infer physical bank.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

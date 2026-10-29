@@ -5,11 +5,15 @@ import json
 from pathlib import Path
 import subprocess
 USB_PATHS={'scripts/apply_usb_port.py','scripts/select_kernel_build_scope.py'}
-MODES={'clocks','clocks-pinctrl','providers','usb-providers','usb-acm-diagnostic','diagnostic'}
+MODES={'clocks','clocks-pinctrl','providers','usb-providers','usb-acm-diagnostic','diagnostic','sym827-provider'}
 
 
 def choose(event,changed=(),mode='diagnostic',argument_profile='none',emulated_boot=False):
     if event=='pull_request':
+        sym=any(p in {'scripts/apply_sym827_port.py','scripts/build_sym827_provider.sh'} or p.startswith('projects/firetabs-android/kernel/regulator-port/') for p in changed)
+        if sym:
+            if any(p.startswith('projects/firetabs-android/kernel/usb-port/') or p.startswith('projects/firetabs-android/kernel/usb-acm/') or p in {'scripts/apply_usb_port.py','scripts/usb_acm_config.py'} for p in changed):raise ValueError('Mixed USB/SYM827 source scope requires a separate build')
+            return {'mode':'sym827-provider','argument_profile':'none','qemu':False}
         acm=any(p in {'scripts/usb_acm_config.py','projects/firetabs-android/kernel/usb-acm/fragment.config','projects/firetabs-android/kernel/usb-acm/profile.json'} for p in changed)
         if acm:return {'mode':'usb-acm-diagnostic','argument_profile':'none','qemu':False}
         usb=any(p in USB_PATHS or p.startswith('projects/firetabs-android/kernel/usb-port/') and (p.endswith('.patch') or p.endswith('inputs.json')) for p in changed)

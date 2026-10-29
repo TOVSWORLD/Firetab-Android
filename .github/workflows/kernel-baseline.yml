@@ -5,7 +5,7 @@ on:
       mode:
         description: Compile integration scope
         type: choice
-        options: [clocks, clocks-pinctrl, providers, usb-providers, usb-acm-diagnostic, diagnostic]
+        options: [clocks, clocks-pinctrl, providers, usb-providers, usb-acm-diagnostic, sym827-provider, diagnostic]
         default: diagnostic
       argument_profile:
         description: Generic-only forced argument selection (diagnostic mode)
@@ -20,6 +20,9 @@ on:
     types: [opened, ready_for_review]
     paths:
       - projects/firetabs-android/kernel/clock-port/**
+      - projects/firetabs-android/kernel/regulator-port/**
+      - scripts/apply_sym827_port.py
+      - scripts/build_sym827_provider.sh
       - scripts/apply_clock_port.py
       - projects/firetabs-android/kernel/iommu-port/**
       - scripts/apply_iommu_port.py
@@ -72,7 +75,12 @@ jobs:
         env:
           BUILD_MODE: ${{ steps.scope.outputs.mode }}
           ARGUMENT_PROFILE: ${{ steps.scope.outputs.argument_profile }}
-        run: bash scripts/build_ack_baseline.sh "$BUILD_MODE"
+        run: |
+          if [ "$BUILD_MODE" = sym827-provider ]; then
+            bash scripts/build_sym827_provider.sh
+          else
+            bash scripts/build_ack_baseline.sh "$BUILD_MODE"
+          fi
 
       - name: Generic QEMU virt diagnostic userspace smoke test
         if: steps.scope.outputs.qemu == 'true'
