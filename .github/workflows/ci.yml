@@ -67,6 +67,8 @@ jobs:
         run: python3 scripts/audit_usb_gadget_prerequisites.py
       - name: Build pinned isolated device-tree compiler
         run: python3 scripts/setup_dtb_tools.py --download
+      - name: Install hash-locked schema-control tools (bounded isolated work venv)
+        run: python3 scripts/setup_binding_tools.py --download
       - name: Compile and inspect experimental douglas DTB
         run: python3 scripts/build_douglas_dtb.py
       - name: Compile PMIC node-name candidate and compare all DT properties
@@ -88,12 +90,15 @@ jobs:
           python3 scripts/validate_power_provider_tree.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_pinctrl_syscfg.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_iommu_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
+          python3 scripts/validate_audsys_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
+          work/dtb-tool/venv/bin/python3 evidence/audsys-binding/check-controls.py --check
           python3 scripts/audit_usb_prerequisites.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_usb_variant_definition.py
       - name: Compile isolated disabled USB resource experiment and verify complete delta
         run: |
           python3 scripts/build_douglas_dtb.py --experiment usb-frequency-resource
           python3 scripts/compare_usb_resource_dtb.py
+          python3 scripts/validate_audsys_dependencies.py --dtb work/dtb-compile/usb-frequency-resource/douglas.dtb
       - name: Verify finite USB0 analog, role and clock source comparison
         run: python3 scripts/audit_usb0_transitions.py
   panel:

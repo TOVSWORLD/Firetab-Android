@@ -1,0 +1,160 @@
+{
+  "scope": "Parent metadata only; disabled AFE child independently unmatched, no child/audio support",
+  "passed": true,
+  "count": 30,
+  "cases": [
+    {
+      "name": "actual parent metadata with independently unmatched disabled MT8163 AFE child",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "missing compatible",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing reg",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "missing #clock-cells",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong reg cardinality 0",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong reg cardinality 2",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong clock cells 0",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong clock cells 2",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong clock cells [1]",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong compatible ['mediatek,mt8163-audsys']",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong compatible ['syscon', 'mediatek,mt8163-audsys']",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong compatible ['mediatek,mt8163-audsys', 'syscon', 'simple-mfd']",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "wrong compatible ['mediatek,unknown-audsys', 'syscon']",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported parent property/type clocks",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported parent property/type clock-names",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported parent property/type unexpected-parent",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "unsupported parent property/type audio-controller",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "name": "standalone parent without optional populated child",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt2701-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt6765-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt6779-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt7622-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8167-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8173-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8183-audiosys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8183-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8186-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8192-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior mediatek,mt8516-audsys still does not require reg",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "name": "prior MT2701 still rejects MT8163-only AFE child",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "other_soc_policy_structurally_preserved": true,
+  "unsupported_child_diagnostic_preserved_in_both_contexts": true,
+  "runtime_qualified": false
+}

@@ -1,0 +1,138 @@
+{
+  "scope": "Pinned Linux x86_64/Python3.12 schema-control bootstrap only",
+  "python": "3.12",
+  "platform": "Linux-x86_64",
+  "dtschema_version": "2026.9",
+  "max_download_bytes": 20000000,
+  "build_requirement": "pylibfdt1.7.2.post2 requires setuptools/setuptools_scm/swig4.4.*; no build-isolation/network resolution",
+  "items": [
+    {
+      "name": "attrs",
+      "version": "26.1.0",
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl",
+      "bytes": 67548,
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+    },
+    {
+      "name": "dtschema",
+      "version": "2026.9",
+      "filename": "dtschema-2026.9-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/32/59/e5fafef672bde12c0d237462e5e936650df55e2bfc46aac3164ad5d4e953/dtschema-2026.9-py3-none-any.whl",
+      "bytes": 125946,
+      "sha256": "defcbe1be176dec69c65b9700c9cd992cba3b409976a1404b9c0b5080aa5f4c1"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0",
+      "filename": "jsonschema-4.26.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl",
+      "bytes": 90630,
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1",
+      "filename": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "bytes": 18437,
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "filename": "packaging-26.3-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl",
+      "bytes": 129956,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0",
+      "filename": "referencing-0.37.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl",
+      "bytes": 26766,
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+    },
+    {
+      "name": "rfc3987",
+      "version": "1.3.8",
+      "filename": "rfc3987-1.3.8-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/65/d4/f7407c3d15d5ac779c3dd34fbbc6ea2090f77bd7dd12f207ccf881551208/rfc3987-1.3.8-py2.py3-none-any.whl",
+      "bytes": 13377,
+      "sha256": "10702b1e51e5658843460b189b185c0366d2cf4cff716f13111b0ea9fd2dce53"
+    },
+    {
+      "name": "ruamel.yaml",
+      "version": "0.19.1",
+      "filename": "ruamel_yaml-0.19.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/b8/0c/51f6841f1d84f404f92463fc2b1ba0da357ca1e3db6b7fbda26956c3b82a/ruamel_yaml-0.19.1-py3-none-any.whl",
+      "bytes": 118102,
+      "sha256": "27592957fedf6e0b62f281e96effd28043345e0e66001f97683aa9a40c667c93"
+    },
+    {
+      "name": "setuptools",
+      "version": "84.2.1",
+      "filename": "setuptools-84.2.1-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/ef/55/6dc6d6bb953bdfc52519a0059592c52b6e3b8ad51cf8256dffceb55b0610/setuptools-84.2.1-py3-none-any.whl",
+      "bytes": 876263,
+      "sha256": "ca140b45d5325a9478f880e351484f62fef15f336462e449ca0c03c873d589c2"
+    },
+    {
+      "name": "wheel",
+      "version": "0.48.0",
+      "filename": "wheel-0.48.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+      "bytes": 33320,
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    },
+    {
+      "name": "setuptools-scm",
+      "version": "10.3.4",
+      "filename": "setuptools_scm-10.3.4-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/da/f5/54538a1f17ea753c42b0928dc2e62986d463f8c393340b9a1e602f2d4dd9/setuptools_scm-10.3.4-py3-none-any.whl",
+      "bytes": 33366,
+      "sha256": "82f34c3e3084fc2b57d397200637cc13f2338004052d2fee47baa5f0e902464e"
+    },
+    {
+      "name": "vcs-versioning",
+      "version": "2.6.0",
+      "filename": "vcs_versioning-2.6.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/73/1d/ad4064bf12f4503bf61e65d74c93c523672776d25ee0a06aaf42ae09ef3f/vcs_versioning-2.6.0-py3-none-any.whl",
+      "bytes": 123154,
+      "sha256": "f8bebd1302ebc12e67ceb30fc7dd698ec969414b6fa43b30c3f14ac9b1e72c41"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.15.0",
+      "filename": "typing_extensions-4.15.0-py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+      "bytes": 44614,
+      "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+    },
+    {
+      "name": "pylibfdt",
+      "version": "1.7.2.post2",
+      "filename": "pylibfdt-1.7.2.post2.tar.gz",
+      "url": "https://files.pythonhosted.org/packages/0e/98/a25a6311bae8ccbdd56b3e581405c68ab49c57a1127a7c21b3da3847d4ab/pylibfdt-1.7.2.post2.tar.gz",
+      "bytes": 62955,
+      "sha256": "b23d03d10ab62ad1f4e7eedde0eb8a7a8872cc08d2a5c2bba7b48bb6fd3c69f4"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1",
+      "filename": "rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/1d/6d/b26eb1e75395925b3a142ed351cbed2ec8212f5c9d937aee3df32c701baa/rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 371261,
+      "sha256": "addeda51556dac7c1a2f14cda62db8b621cd12afba3091d03a96c72932387eab"
+    },
+    {
+      "name": "swig",
+      "version": "4.4.1",
+      "filename": "swig-4.4.1-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+      "url": "https://files.pythonhosted.org/packages/fa/7b/e3a14d053fa18b0d2e14efcc21883816964ddbe52a0c43018e195a99aba2/swig-4.4.1-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+      "bytes": 1895896,
+      "sha256": "ae3da2bf679a4c942a2c100789395d4d167e7da8286018124e4665f5eff43e31"
+    }
+  ]
+}

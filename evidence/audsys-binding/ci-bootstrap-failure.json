@@ -1,0 +1,12 @@
+{
+  "run": 40843369475,
+  "job": 123344867403,
+  "head": "909a5ff185efe96570d89b71d51fb22120e78672",
+  "passed_before_failure": "Fresh canonical DTB dependency guard",
+  "failed_stage": "Actual schema-control import",
+  "cause": "DTC bootstrap intentionally installs only meson/ninja; dtschema not present in clean CI venv",
+  "fix": "Explicit Linux/Python3.12 hash-locked16-artifact4031591-byte schema tool bootstrap, offline pip/no dependency resolution, actual pylibfdt extension/SWIG4.4.1",
+  "controls_not_skipped": true,
+  "private_log_sha256": "625a0dc25873cf964725a239da4a6becdb9eb82ffb1ac6a62c62b3f8ed00de1d",
+  "replacement_head_required": true
+}

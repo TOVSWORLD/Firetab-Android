@@ -1,0 +1,48 @@
+--- a/arm/mediatek/mediatek,audsys.yaml
++++ b/arm/mediatek/mediatek,audsys.yaml
+@@ -21,6 +21,7 @@
+               - mediatek,mt6765-audsys
+               - mediatek,mt6779-audsys
+               - mediatek,mt7622-audsys
++              - mediatek,mt8163-audsys
+               - mediatek,mt8167-audsys
+               - mediatek,mt8173-audsys
+               - mediatek,mt8183-audiosys
+@@ -48,19 +49,30 @@
+   - compatible
+   - '#clock-cells'
+ 
++# MT8163 has a separately described AFE child. This parent contract must not
++# apply the MT2701 sound schema to it; unmatched child coverage remains visible.
+ if:
+   properties:
+     compatible:
+       contains:
+-        const: mediatek,mt8183-audiosys
++        const: mediatek,mt8163-audsys
+ then:
+-  properties:
+-    audio-controller:
+-      $ref: /schemas/sound/mediatek,mt8183-audio.yaml#
++  required:
++    - reg
+ else:
+-  properties:
+-    audio-controller:
+-      $ref: /schemas/sound/mediatek,mt2701-audio.yaml#
++  if:
++    properties:
++      compatible:
++        contains:
++          const: mediatek,mt8183-audiosys
++  then:
++    properties:
++      audio-controller:
++        $ref: /schemas/sound/mediatek,mt8183-audio.yaml#
++  else:
++    properties:
++      audio-controller:
++        $ref: /schemas/sound/mediatek,mt2701-audio.yaml#
+ 
+ additionalProperties: false
+ 

@@ -1,0 +1,14 @@
+{
+  "wrapper_exit_code": 1,
+  "yaml_files": 5186,
+  "dtschema_version": "2026.9",
+  "dtb_sha256": "4480f085cfb03c2cb6a1b2c9b0c6a7619f3f4c0e395833b93d623deffe65c5c4",
+  "processed_sha256": "375467ce9c7fbda8287b4898f83dd4cd8255c536d6e16a9333bfea4af101afaa",
+  "portable_schemas_sha256": "14c6b4b8711e86b0603033d14ca7e29d8e87d818411660fba85ab4011fe7e54e",
+  "captured_node_sha256": "b56bf58d2048ffaeac5da1bfb4aad4dce4c618d7e16863c474df43c261c4cc81",
+  "doc_stderr_bytes": 0,
+  "mk_schema_warning_retained": true,
+  "full_passed": false,
+  "child_independently_unmatched": true,
+  "runtime_qualified": false
+}

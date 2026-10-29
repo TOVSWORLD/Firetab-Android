@@ -1,0 +1,30 @@
+{
+  "scope": "Parent-only binding/source metadata and actual C wrapper RAM tests, no child/audio/runtime support",
+  "host_tests": 452,
+  "actual_decoded_parent_controls": 30,
+  "source_clock_ids": 19,
+  "actual_audsys_clock_references": 15,
+  "required_source_extent_bytes": 1448,
+  "reviewed_resource_bytes": 4096,
+  "actual_wrapper_native_asan_ubsan_passed": true,
+  "gnu_aarch64_wrapper_object_compilation_passed": true,
+  "kernel_devres_internals_emulated": false,
+  "device_creation_executed": false,
+  "inputs": {
+    "scripts/validate_audsys_dependencies.py": "a2574fd5a92dfd3055739e6bae3cd9f3055334cec10e816a27c915ba7365fe2a",
+    "evidence/audsys-binding/check-controls.py": "f4eee6c9c294c5f193e73fe558076435f68b0438f4ee78d5aa3e89f33f9975d5",
+    "evidence/audsys-binding/probe-ram.c.in": "3347900f5b90920bdb26a18425d648cf9985884e3d59617f3f6141ecd152a6d4",
+    "evidence/audsys-binding/portable-schemas.json": "14c6b4b8711e86b0603033d14ca7e29d8e87d818411660fba85ab4011fe7e54e",
+    "evidence/audsys-binding/captured-node.json": "b56bf58d2048ffaeac5da1bfb4aad4dce4c618d7e16863c474df43c261c4cc81",
+    "evidence/audsys-binding/captured-clock-graph.json": "d81ca4be3fa9f8259c1e05e0aee4c634c8d6042ddeac3cecdf8e3263580be575",
+    "projects/firetabs-android/kernel/dtb/bindings/mt8163-audsys.patch": "54fd41ae47f5841c0991cfe73026bf8c70e9a210cf0a5dc6188457638652a0bd",
+    "scripts/setup_binding_tools.py": "86baef467f767ec0caa316eb54c3acf492a35e401c3951df37c0749092899cd0",
+    "projects/firetabs-android/kernel/dtb/schema-tools.lock.json": "4549a20ac149547b9dc734b3837c415283adc7c2457d37a267ef138e9585b85c"
+  },
+  "child_remains_disabled": true,
+  "child_binding_covered": false,
+  "canonical_full_context_passed": false,
+  "isolated_full_context_passed": false,
+  "runtime_qualified": false,
+  "linux_schema_tool_bootstrap_ci_pending": true
+}
