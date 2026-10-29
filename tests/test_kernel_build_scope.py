@@ -25,3 +25,12 @@ class KernelBuildScope(unittest.TestCase):
             with self.assertRaises(ValueError):choose('pull_request',[path,'scripts/apply_usb_port.py'])
         self.assertEqual(choose('workflow_dispatch',mode='sym827-provider')['mode'],'sym827-provider')
         with self.assertRaises(ValueError):choose('workflow_dispatch',mode='sym827-provider',emulated_boot=True)
+
+
+    def test_mipi_builtin_scope_and_mixed_usb_rejection(self):
+        for path in ['scripts/apply_mipi_port.py','scripts/build_mipi_provider.sh','projects/firetabs-android/kernel/mipi-port/mt8163-mipi.patch','projects/firetabs-android/kernel/mipi-port/inputs.json']:
+            self.assertEqual(choose('pull_request',[path]),{'mode':'mipi-provider','argument_profile':'none','qemu':False})
+            with self.assertRaises(ValueError):choose('pull_request',[path,'scripts/apply_usb_port.py'])
+        self.assertEqual(choose('workflow_dispatch',mode='mipi-provider')['mode'],'mipi-provider')
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='mipi-provider',emulated_boot=True)
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='mipi-provider',argument_profile='generic-force')

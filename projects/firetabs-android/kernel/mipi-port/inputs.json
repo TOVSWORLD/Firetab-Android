@@ -1,0 +1,40 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "mt8163-mipi.patch",
+  "patch_sha256": "476485d3be64710eebeb1be2f694233162d0f514142d594461559cc537fb5f0a",
+  "files": [
+    {
+      "target": "drivers/phy/mediatek/phy-mtk-mipi-dsi.c",
+      "source": "evidence/mipi-source/phy-mtk-mipi-dsi.c",
+      "original_sha256": "22cd8bea37a7663052a5576c37d1fd68712d98fc8c45f4c0754547539cb3aded",
+      "patched_sha256": "1638ecbae6d09099d80b27e6c6af4aedde91343256bc4d6f2fa3f235c9afde3b"
+    },
+    {
+      "target": "drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c",
+      "source": "evidence/mipi-source/phy-mtk-mipi-dsi-mt8173.c",
+      "original_sha256": "00941d33c0adf03c6726884cc6f534a407eba64f64d57aa766e2c7d2e9c338ea",
+      "patched_sha256": "e51d81393e8bb2a2320647d9e47bc068bc855f72c1728d828629704d595f2f31"
+    },
+    {
+      "target": "drivers/phy/mediatek/phy-mtk-mipi-dsi.h",
+      "source": "evidence/mipi-source/phy-mtk-mipi-dsi.h",
+      "original_sha256": "e2bc2b68cfad1e061eb61f27847fbac8c840db0597b4eccd4284d15c90e5e2b7",
+      "patched_sha256": "82b482d8b1a6d4b67e7cddb6296135fdd53e8aacc046cf9a0d5b11d30c5abea3"
+    }
+  ],
+  "helper_sha256": "518e3da709794b27e77528a92a09b2205aafec3b9a3b9c1239c18442dc99aa5c",
+  "definition_sha256": "3889e37c397821496fc1a91df6c7b8ab6ee65583a9efc1406a7cf1f5dc8b282e",
+  "runtime_qualified": false,
+  "build_inputs": [
+    {
+      "target": "drivers/phy/mediatek/Kconfig",
+      "source": "evidence/mipi-kernel-integration/Kconfig",
+      "sha256": "d920e17fabbc433b337fcdb8d6a231a49a7a62a2d9f29fa6d76f874824543e66"
+    },
+    {
+      "target": "drivers/phy/mediatek/Makefile",
+      "source": "evidence/mipi-kernel-integration/Makefile",
+      "sha256": "14a68d6d560c2fdf02e59d353505eb65f23be7768b0728e8115bd0ebd335a7f9"
+    }
+  ]
+}

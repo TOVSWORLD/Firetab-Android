@@ -3565,3 +3565,30 @@ evidence/usb-acm-profile/build-result.json. Prior failures remain historical.
   NEXT actual implementation, not another model-only scope: isolated functions,
   checked errors/resources/reset, unchanged oldSoCs, atomic patch+RAM negatives+
   explicit builtin PHY/object/config/Image checks. No device/reset/PHY execution.
+
+
+## 2026-10-29 — #27 actual MIPI-TX kernel implementation
+
+- PR429 merged44f5c87 atd292638 after five exact-head checks/462 CI tests; exact
+  normalized receipt now evidence/mipi-source/ci-result.json. Its definition stays
+  historical source intent, no retroactive kernel/runtime claim.
+- Actual isolated three-target patch implements MT8163 descriptor/clock ops and
+  mandatory scoped reset/resource/reference/override probe checks. Bounds and both
+  actual/supplied parent26MHz checked before cached rate commit; prepare rechecks
+  before MMIO. Resource0 must align/cover0x6c; unknown overrides rejected early.
+- MT8163 prepare/cleanup uses legacy7:14/value2,1ms/fixedRT8/donorPCW0->1 and
+  initialSSCoff. Existing SoC functions/ops byte-identical; actual original/patched
+  old-probe success/error paths compared. Physical/whole-sequence behavior open.
+-468 host tests pass: actual patched C RAM ASan/UBSan65536 field+cleanup states,
+ 1201 integer-MHz PCWs,64-bit bounds/reference/cache/no-I/O errors,nine probe
+  failure stages/provider order/resource/override/power failures. Framework CCF,
+  reset/devres/MMIO/delays are mocks, not hardware or cleanup qualification.
+- All-target shadow preflight verifies every input/output before source patch;
+  wrong source/header/helper/definition/patch/secondoutput/buildinput/reapply
+  negatives preserve targets. Kconfig/Makefile3904B pinned official cached reads.
+- New mipi-provider wrapper stages prior accepted diagnostic/SYM then applies MIPI,
+  resolves actual PHY/reset/clock builtin, W1 compiles all three real translation
+  units then rebuilds finalImage/vmlinux/config. Previous stagedImage/gzip pre-MIPI;
+  require distinct final marker/new exact-head build. No repeated generic QEMU.
+- No DT/schema/device change, full32/26 contexts remain failed/PHY disabled. New
+  source Image checks required before merge/matched binding; no runtime gate closed.

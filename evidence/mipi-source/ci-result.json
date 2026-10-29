@@ -1,0 +1,13 @@
+{
+  "scope": "Finite MIPI source contract exact-head host CI only",
+  "head": "d2926382a46d4b5cb00616ce4a7ce644331ddb3c",
+  "merge": "44f5c87ac0ebe66dc51c95124b5b4a7e0d7e2837",
+  "run": 40857595717,
+  "android_job": 123392360724,
+  "repository_job": 123392360632,
+  "tests": 462,
+  "passed": true,
+  "log_sha256": "1c88384ff5534b485c8d7b7c46ed7e2a10102b966ae97359d3efbf552c68fe00",
+  "kernel_variant_implemented": false,
+  "runtime_qualified": false
+}

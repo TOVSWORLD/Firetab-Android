@@ -1,23 +1,25 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: finite actual MIPI-TX source contract complete. Distinct donor
-MT8163 prepare/PLL path found (not MT8173 alias). Actual selected C/RAM controls:
-1201 whole-MHz PCW comparisons agree legacy arithmetic;65536 low-word preserve
-states yield8192 equal (legacybits7:14 vs donor7:11). Generic unprepare clears8:15;
-compiler negative confirms donor missing round_rate definition; donor global reset
-change must be isolated. Model source intent uses declared legacy field/value2,
-1ms settle steps/fixed RT8,26MHz and50..1250MHz bounds. No kernel variant/binding/
-DT/physical PHY support yet. Full failed contexts32/26 and disabled states retained.
-NEXT actual implementation: isolated MT8163 match/descriptor/prepare/unprepare,
-checked rate/reference/reset/resource/override paths, old SoCs byte-identical,
-atomic patch preflight, actual C negatives and explicit builtin PHY/Image build.
-Do not repeat a planning-only scope for settled field/rate/resource questions.
+2026-10-29 #27: ACTUAL isolated MIPI kernel implementation completed in source.
+Three-target patch adds MT8163 descriptor/ops, checked resource/override/reference/
+mandatory reset/probe paths, bounds/reference before cache or MMIO, specialized
+legacy7:14 prepare/cleanup/1ms/RT8 and donorPCW/change sequence. Old SoC functions/
+ops byte-identical; old probe differential paths pass.468 host tests incl actual
+patched C ASan/UBSan65536 states/1201 PCWs/nine failure stages/resource/override/
+reference/cache errors/power ordering. All-target shadow apply locks source/helper/
+definition/build inputs and outputs before writes. No DT/schema/device change.
 
-PR428 merged12ba1852 after five exact-head checks at5840d29/460 actual CI tests.
-Final receipt public evidence/thermal-source/ci-result.json; no thermal port admitted.
-Thermal chosen-devinfo/nvmem lineage, bank/conversion prerequisites remain blocked.
-No hardware operation or threshold changes. Runtime loading/failed-return/retained
-logs/physical clock/PHY/regulator/beta acceptance remain unqualified.
+Explicit mipi-provider Linux CI mode resolves builtin PHY/reset/clock dependencies,
+compiles three real translation units then FINAL Image/config/vmlinux. Required
+new exact-head Linux build pending; prior staged SYM/diagnostic Image is pre-MIPI,
+not build acceptance. No QEMU/device claim. No binding before new source build.
+Full failed contexts32/26/all disabled states unchanged. Physical PHY/analog/PLL/
+reset/clock/panel/lane/loading/failedreturn/retainedlog/beta remain unqualified.
+
+PR429 merged44f5c87 after five checks atd292638/462 CI tests; normalized exact
+receipt now evidence/mipi-source/ci-result.json. Prior source definition/audit
+retained as historical model, not implementation/build/runtime proof. Next verify
+actual final-head host and Linux Image checks; fix real failures before merge.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.
