@@ -1,0 +1,21 @@
+{
+  "scope": "Actual patched C RAM controls; required Linux Image pending",
+  "passed": true,
+  "register_states": 65536,
+  "old_descriptors": 3,
+  "probe_failure_stages": 6,
+  "core_caller_unchanged": true,
+  "native_sanitizers": [
+    "address",
+    "undefined"
+  ],
+  "kernel_build_passed": false,
+  "runtime_qualified": false,
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "sha256": {
+    "scripts/audit_pwm_port.py": "f7c327e1beb3c1407adcca67f8684b44192b32f53291b7a94248f9763be7963b",
+    "evidence/pwm-kernel-integration/ram-cases.c.in": "e4ca64330d1e7ee8fbc7a910900ef739e5702f2fef11fc23570edb3570ded835",
+    "evidence/pwm-kernel-integration/ram-extra.c.in": "c6c71cbec1ba5904382df9b1d02e63074860cdfbd15e6dfae4d1906373eae80f"
+  },
+  "host_tests": 488
+}

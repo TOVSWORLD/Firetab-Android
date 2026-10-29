@@ -43,3 +43,12 @@ class DsiScope(unittest.TestCase):
         with self.assertRaises(ValueError):choose('workflow_dispatch',mode='dsi-provider',emulated_boot=True)
         with self.assertRaises(ValueError):choose('workflow_dispatch',mode='dsi-provider',argument_profile='generic-force')
         with self.assertRaises(ValueError):choose('pull_request',['scripts/apply_dsi_port.py','scripts/apply_usb_port.py'])
+
+class PwmScope(unittest.TestCase):
+    def test_pwm_source_dispatch_and_no_mixed_usb(self):
+        for path in ['scripts/apply_pwm_port.py','scripts/build_pwm_provider.sh','projects/firetabs-android/kernel/pwm-port/mt8163-pwm.patch','projects/firetabs-android/kernel/pwm-port/inputs.json','projects/firetabs-android/kernel/pwm-port/mtk_pwm_mt8163.h']:
+            self.assertEqual(choose('pull_request',[path]),{'mode':'pwm-provider','argument_profile':'none','qemu':False})
+        self.assertEqual(choose('workflow_dispatch',mode='pwm-provider')['mode'],'pwm-provider')
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='pwm-provider',emulated_boot=True)
+        with self.assertRaises(ValueError):choose('workflow_dispatch',mode='pwm-provider',argument_profile='generic-force')
+        with self.assertRaises(ValueError):choose('pull_request',['scripts/apply_pwm_port.py','scripts/apply_usb_port.py'])

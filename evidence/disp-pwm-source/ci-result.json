@@ -1,0 +1,11 @@
+{
+  "scope": "Exact source-audit CI/native actual C RAM controls,not kernel variant/runtime acceptance",
+  "head": "592d8d62f9eec606983abd30f3e03afb449b45f0",
+  "run": 40878255306,
+  "repository_job": 123462579884,
+  "android_job": 123462580092,
+  "host_tests": 483,
+  "log_sha256": "8d315acd5a330ac8afd6fcfa06616d58f2d16285184c75c641f3768f58a678ec",
+  "passed": true,
+  "runtime_qualified": false
+}

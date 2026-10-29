@@ -1,0 +1,22 @@
+{
+  "scope": "Conservative source implementation policy,not measured hardware width or waveform acceptance",
+  "compatible": "mediatek,mt8163-disp-pwm",
+  "source": "Exact e0a3a2b active legacy init/duty/commit plus pinned ACK PWM core contract",
+  "registers": {
+    "enable": 0,
+    "commit": 8,
+    "con0": 16,
+    "con1": 20
+  },
+  "resource_minimum_bytes": 24,
+  "divider_mask": 1023,
+  "period_mask": 1023,
+  "duty_mask": 8191,
+  "commit": "full-word1then0 matching active legacy writes",
+  "wider_period_bits_11_10": "reject before enable/readback; do not reinterpret or clear",
+  "timing": "ACK cycles formula with checked64bit products, divider chosen to fit conservative1024ticks, readback encoded+1",
+  "disabled_state": "ignore irrelevant fields,neverenable,acquire refs only for checked off then release",
+  "cleanup": "devm reverse ordering,only stop powered resources owned by this instance; partial ownership latches fault and avoids MMIO",
+  "clock_scope": "two current main/mm clocks; no invented third legacy TOP_PWM_SEL delivery equivalence",
+  "runtime_qualified": false
+}

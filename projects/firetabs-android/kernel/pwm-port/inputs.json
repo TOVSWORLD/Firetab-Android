@@ -1,0 +1,43 @@
+{
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "patch": "mt8163-pwm.patch",
+  "patch_sha256": "1cf19038ad49cf204c9932282b1f033255c6e39695a5742696e69787fea4525b",
+  "files": [
+    {
+      "target": "drivers/pwm/pwm-mtk-disp.c",
+      "source": "evidence/disp-pwm-source/ack-pwm-mtk-disp.c",
+      "original_sha256": "b5d96101164845e366ff0527ee82640a29a7f9760c9396f46fb429e0381589a6",
+      "patched_sha256": "73c9522f30dddd7bdbd6c6e919024d68910f94f9ba35944ede23b2afbabdb4fd"
+    },
+    {
+      "target": "drivers/pwm/mtk_pwm_mt8163.h",
+      "source": "projects/firetabs-android/kernel/pwm-port/mtk_pwm_mt8163.h",
+      "original_sha256": null,
+      "patched_sha256": "4077072558519985a866e45b1191144dfc6db126d6100491c124164307cf7f5c"
+    }
+  ],
+  "definition_sha256": "b97cdd532f9a1e7d5a7f806b64fe4e10d9ebc8c569a31d2848535f80958f269b",
+  "runtime_qualified": false,
+  "build_inputs": [
+    {
+      "source": "evidence/pwm-kernel-integration/Kconfig",
+      "target": "drivers/pwm/Kconfig",
+      "sha256": "a6c9324b756b5c313084db2445e50af061c37c56aecb9c4d9e5025c206be5dfa"
+    },
+    {
+      "source": "evidence/pwm-kernel-integration/Makefile",
+      "target": "drivers/pwm/Makefile",
+      "sha256": "7e3efd2b018bddacbfd9d77fb551438b21f463f47ff494a6d5ca14f69bb0b42a"
+    },
+    {
+      "source": "evidence/disp-pwm-source/ack-pwm.h",
+      "target": "include/linux/pwm.h",
+      "sha256": "0387310ea7f56e225849fb9aa5d15e8fa9b1a2f4b41f0c7e8cf1d16a0f25e597"
+    },
+    {
+      "source": "evidence/disp-pwm-source/ack-core.c",
+      "target": "drivers/pwm/core.c",
+      "sha256": "e599eb855e715999104ab4b75dc4f26adc7d5c1eeea0b42490366099a18cc073"
+    }
+  ]
+}
