@@ -45,19 +45,12 @@ independent failed-load return with attributable retained logs. More exact-OTA
 LK disassembly alone cannot establish installed equivalence or those observations.
 No high-brick-risk route is selected by this review.
 
-## Continue useful independent work
+## Current operational disposition
 
-#347 and its runtime ancestors remain Blocked. Next ready source scope is #27:
-inspect the actual cached watchdog provider/probe/reset contract and its missing
-binding. Preserve the current full42-diagnostic baseline and require source-
-matched negative controls. Source/schema completion will not qualify watchdog
-reset behavior or independent failed-boot return. This is a real board/recovery
-prerequisite, not a way to replace the missing loading gate with test counts.
-
-## Beta progress communicated to the owner
-
-Approximately15% toward a testable beta is a rough engineering estimate, not a
-measured project percentage or a prediction of remaining time. Source/build and
-stock diagnostic groundwork is substantial; maintained-kernel device boot,
-Android UI integration, essential hardware and reliability QA are not qualified.
-Issue/task counts overlap the hierarchy and are not a valid percentage formula.
+The [29 October first-boot decision](FIRST-BOOT-DECISION.md), primary task#439,
+supersedes historical peripheral/watchdog next-actions and rough percentages.
+NO-GO for experimental loading; no cached route is admitted. The single next
+owner scope decision is whether to prepare existing#345's exact-board mechanical
+inspection/independent recovery-log proposal. No physical/electrical/helper action
+is authorized by that proposal choice. Keep#347/#346/#348 blocked and follow the
+ordered issue-to-PR roadmap; no unrelated peripheral bypass.

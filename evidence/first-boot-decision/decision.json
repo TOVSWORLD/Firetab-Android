@@ -1,0 +1,56 @@
+{
+  "issue": 439,
+  "date": "2026-10-29",
+  "decision": "NO-GO",
+  "physical_trial_admitted": false,
+  "integrated_candidate_admitted": false,
+  "device_actions_performed": false,
+  "next_owner_decision": "Allow preparation only of exact-board mechanical inspection/independent recovery-log proposal in existing345; no physical/electrical/helper action authorized.",
+  "runtime_gates_remain_open": [
+    347,
+    346,
+    348
+  ],
+  "inputs": [
+    {
+      "path": "evidence/route-admission/review.json",
+      "sha256": "6ca9126ea2f39d0b7962a41e9b92cfd4992f4dae8be6effd5b69169495a4f3ea"
+    },
+    {
+      "path": "evidence/diagnostic-kernel/diagnostic-image-result.json",
+      "sha256": "3f2eafc9d684d7c7ac616a881b2470f236c85d5470b27648892bf71cf744b79e"
+    },
+    {
+      "path": "evidence/diagnostic-initramfs/compile-result.json",
+      "sha256": "292fa07f320e0f97f3d7ddba3661483265ef4c20a0fb8618288dfee6cfe18c8a"
+    },
+    {
+      "path": "evidence/douglas-original-route/full-stock-package.json",
+      "sha256": "d1af0094f7a501e05368a84e19497792e99490c5f0ad74cab2530352fef3a7a0"
+    },
+    {
+      "path": "evidence/douglas-original-route/reconstructed-stock-recovery.json",
+      "sha256": "d52e83d57126989e11da2f0281a4cd3dcd2590a550a097192a986f6224cf3ffa"
+    },
+    {
+      "path": "evidence/douglas-original-route/observed-stock-recovery-return.json",
+      "sha256": "d65945d38af3e6c8e6281b3217121535a7f2c10d46c722f67dd3d26a7c62579d"
+    },
+    {
+      "path": "evidence/douglas-original-route/stock-recovery-archive-limit.json",
+      "sha256": "37724e5f4a1f6b5c200297df6a9331cff222cacfb8653f66a1ed56ffc33da938"
+    },
+    {
+      "path": "projects/firetabs-android/diagnostic/init.c",
+      "sha256": "c371372906ad3d32594000041042a2301d54ca2ce46c5b05add40bf2905bf63b"
+    },
+    {
+      "path": "projects/firetabs-android/diagnostic/cpu_contract.h",
+      "sha256": "9b7feede7391391dd61956ec3bec3f2d56d5dae0710df5fe61f43a9967db0e3b"
+    },
+    {
+      "path": "projects/firetabs-android/diagnostic-usb/admission.h",
+      "sha256": "073327d472fa5e481a9ca20bcab85b98e09afded5e201b5a9683ce6ba4db32f7"
+    }
+  ]
+}

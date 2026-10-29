@@ -7,13 +7,15 @@ The board is the source of live state. Do not resume historical peripheral queue
 
 ## Current selection
 
-- Administrative task#438 installs and verifies this roadmap through its own PR.
+- Administrative task#438/PR448 is complete; ordered board readback passed.
 - Existing-work exception#440/PR436 is source-accepted after six exact-head checks
   at8ff8731 and actual PWM object/config/final Image run40881461603. No new PWM
   binding/peripheral scope follows. The source receipt is in
   evidence/pwm-kernel-integration/build-result.json; hardware remains unqualified.
 - **Next execution task: #439**, exact-build diagnostic entry/go-no-go decision.
-  It starts only after the roadmap task and in-flight exception are complete.
+  Its [decision package](FIRST-BOOT-DECISION.md) records NO-GO, pending exact-head
+  PR acceptance. Owner scope decision: allow preparing conditional#345's exact-board
+  mechanical inspection/independent recovery-log proposal, without physical action.
   No cached nonpersistent trial route is qualified on observed PL7/LK3/TEE262.
 
 The decision must identify one operational route or state why none is safely
