@@ -1,0 +1,9 @@
+{
+  "scope": "Frozen35 controls equivalent to full matched validator, retaining relevant always/type selectors and complete reference closure",
+  "controls": 35,
+  "always_type_selectors": 52,
+  "closed_schemas": 54,
+  "registered_processed_type_pipeline_replayed_against_frozen_controls": true,
+  "pipeline": "Selected PHY schema plus relevant full DTValidator always/type selection, not selected schema alone",
+  "runtime_qualified": false
+}

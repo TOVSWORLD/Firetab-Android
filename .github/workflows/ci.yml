@@ -93,6 +93,8 @@ jobs:
           python3 scripts/validate_audsys_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           work/dtb-tool/venv/bin/python3 evidence/audsys-binding/check-controls.py --check
           work/dtb-tool/venv/bin/python3 evidence/sym827-binding/check-controls.py --check --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
+          python3 scripts/validate_mipi_dependencies.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
+          work/dtb-tool/venv/bin/python3 evidence/mipi-binding/check-controls.py --check
           python3 scripts/audit_usb_prerequisites.py --dtb work/dtb-compile/pwrap-pmic-node-name/douglas.dtb
           python3 scripts/validate_usb_variant_definition.py
       - name: Compile isolated disabled USB resource experiment and verify complete delta
@@ -100,6 +102,7 @@ jobs:
           python3 scripts/build_douglas_dtb.py --experiment usb-frequency-resource
           python3 scripts/compare_usb_resource_dtb.py
           python3 scripts/validate_audsys_dependencies.py --dtb work/dtb-compile/usb-frequency-resource/douglas.dtb
+          python3 scripts/validate_mipi_dependencies.py --dtb work/dtb-compile/usb-frequency-resource/douglas.dtb
       - name: Verify finite USB0 analog, role and clock source comparison
         run: python3 scripts/audit_usb0_transitions.py
   panel:

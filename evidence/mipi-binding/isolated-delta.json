@@ -1,0 +1,22 @@
+{
+  "before": 26,
+  "after": 25,
+  "removed": [
+    {
+      "type": "unmatched",
+      "level": "warning",
+      "file": "work/dtb-compile/usb-frequency-resource/douglas.dtb",
+      "line": null,
+      "column": null,
+      "node": "/soc/dsi-phy@10215000",
+      "nodename": "dsi-phy@10215000",
+      "compatible": [
+        "mediatek,mt8163-mipi-tx"
+      ],
+      "message": "failed to match any schema with compatible: ['mediatek,mt8163-mipi-tx']",
+      "formatted": "work/dtb-compile/usb-frequency-resource/douglas.dtb: /soc/dsi-phy@10215000: failed to match any schema with compatible: ['mediatek,mt8163-mipi-tx']"
+    }
+  ],
+  "added": [],
+  "full_passed": false
+}

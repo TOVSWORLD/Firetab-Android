@@ -1,0 +1,9 @@
+{
+  "scope": "Opt-in MT8163 MIPI metadata matching compiled source; disabled PHY/DSI physical behavior unqualified",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "schema": "phy/mediatek,dsi-phy.yaml",
+  "patch": "bindings/mt8163-mipi-tx.patch",
+  "patch_sha256": "bb8802e0a23bcc6799a718fdd8f13a9e3e046263a97115916fca240a404230ca",
+  "original_sha256": "e0195ab109cd4d78976341b0dbd3a7ca8d6261cda5ff8142e92be086da483ce2",
+  "proposed_sha256": "4fdb7166a25bde9ded8f9f884c677b10046695c11315520d27530da85328a42b"
+}

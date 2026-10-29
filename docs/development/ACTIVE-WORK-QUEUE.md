@@ -1,25 +1,21 @@
 # Active work queue toward beta QA
 
-2026-10-29 #27: ACTUAL isolated MIPI kernel implementation completed in source.
-Three-target patch adds MT8163 descriptor/ops, checked resource/override/reference/
-mandatory reset/probe paths, bounds/reference before cache or MMIO, specialized
-legacy7:14 prepare/cleanup/1ms/RT8 and donorPCW/change sequence. Old SoC functions/
-ops byte-identical; old probe differential paths pass.468 host tests incl actual
-patched C ASan/UBSan65536 states/1201 PCWs/nine failure stages/resource/override/
-reference/cache errors/power ordering. All-target shadow apply locks source/helper/
-definition/build inputs and outputs before writes. No DT/schema/device change.
+2026-10-29 #27: PR430 merged9c3f4a81 after six exact-head checks atb5e12688 and
+actual builtin MIPI run40859970271. Three actual PHY objects/config/final28645888B
+Image passed; exact normalized receipt evidence/mipi-kernel-integration/build-result.json.
+Prior staged Images excluded; W1 objects pre-Image only, no physical admission.
 
-Explicit mipi-provider Linux CI mode resolves builtin PHY/reset/clock dependencies,
-compiles three real translation units then FINAL Image/config/vmlinux. Required
-new exact-head Linux build pending; prior staged SYM/diagnostic Image is pre-MIPI,
-not build acceptance. No QEMU/device claim. No binding before new source build.
-Full failed contexts32/26/all disabled states unchanged. Physical PHY/analog/PLL/
-reset/clock/panel/lane/loading/failedreturn/retainedlog/beta remain unqualified.
-
-PR429 merged44f5c87 after five checks atd292638/462 CI tests; normalized exact
-receipt now evidence/mipi-source/ci-result.json. Prior source definition/audit
-retained as historical model, not implementation/build/runtime proof. Next verify
-actual final-head host and Linux Image checks; fix real failures before merge.
+Source-matched MIPI metadata implemented:35 actual decoded/type-policy controls,
+olderSoC structural preservation and fresh-DTB actual reference/reset/disabled DSI
+consumer graph checks pass. Full5186-YAML canonical32→31 (19unmatched/12validation),
+isolated26→25(16/9): only MIPI unmatched removed/no additions; wrappers exit1/false,
+Gunyah warning/disabled AFE unmatched retained. Source/DTBs/disabled states unchanged.
+New exact-head host/metadata checks required before merge. No extra kernel build
+for schema-only work. Physical PLL/reset/clock/lane/panel and recovery/beta open.
+Next independent #27 source after metadata acceptance: actual MT8163 DSI controller
+variant/IRQ/clock/power/resource/probe prerequisites, not guessed MT8173 alias.
+Thermal source remains unadmitted on actual calibration/bank/conversion lineage.
+No PHY/display/device/mode/firmware/helper/reset/electrical operations.
 
 Updated 2026-10-28 at owner request. This is an execution queue under the existing
 Epic → Feature → Phase → Task hierarchy, not a replacement issue tracker.

@@ -1,0 +1,38 @@
+{
+  "scope": "Exact-head builtin MIPI provider object/config/final Image compilation; no QEMU or device qualification",
+  "repository_head": "b5e12688ced84a917657d928365dec969eb66a1c",
+  "ack_commit": "d9318bdb4c34e8b2d997b4f67ced56b120b22b87",
+  "run": 40859970271,
+  "job": 123400424086,
+  "url": "https://github.com/TOVSWORLD/Firetab-Android/actions/runs/40859970271/job/123400424086",
+  "command": "bash scripts/build_mipi_provider.sh",
+  "mode": "mipi-provider",
+  "passed": true,
+  "log_sha256": "78b17a9d4bf49811db8cd10f00c577d2d887f79ab954546d5f2ef1a0942484a7",
+  "final_hashes": {
+    "output/.config": "2c1b0e1313c48921977449a800577a72f04fb650609fba536e0fbf61f0473a0d",
+    "output/vmlinux": "47eda3513dddd481431385df853f010d3aa34d8cc47d39c3694f81fd2dce4df2",
+    "output/arch/arm64/boot/Image": "3efbebf6bd60705a981f350129b3ad57ee2748414f94ea41c8563f2df20f0d94",
+    "output/drivers/phy/mediatek/phy-mtk-mipi-dsi.o": "77f6a9d37298e76ee43b51ef4ca1f783182ef3f3ad2a02d0601f77031ffcecf5",
+    "output/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.o": "2fc46b3f736cc173aabf9de896b8a0a433f54138934226181f0d240025c38a28",
+    "output/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8183.o": "20f499a479fd53122a0d32ab4e120b11138e2f7b1ae2f8f5524be7d05772877c",
+    "source/drivers/phy/mediatek/phy-mtk-mipi-dsi.c": "1638ecbae6d09099d80b27e6c6af4aedde91343256bc4d6f2fa3f235c9afde3b",
+    "source/drivers/phy/mediatek/phy-mtk-mipi-dsi-mt8173.c": "e51d81393e8bb2a2320647d9e47bc068bc855f72c1728d828629704d595f2f31",
+    "source/drivers/phy/mediatek/phy-mtk-mipi-dsi.h": "82b482d8b1a6d4b67e7cddb6296135fdd53e8aacc046cf9a0d5b11d30c5abea3"
+  },
+  "resolved_symbols": {
+    "PHY_MTK_MIPI_DSI": "y",
+    "RESET_CONTROLLER": "y",
+    "ARCH_MEDIATEK": "y",
+    "COMMON_CLK": "y",
+    "OF": "y",
+    "GENERIC_PHY": "y",
+    "MTK_INFRACFG": "y",
+    "COMMON_CLK_MT8163": "y",
+    "REGULATOR_FAN53555": "y"
+  },
+  "image_bytes": 28645888,
+  "object_hash_scope": "Explicit W1 pre-Image probes; final Image rebuild may recompile objects, not asserted final linked bytes",
+  "earlier_baseline_outputs": "Pre-MIPI Image/gzip excluded from acceptance",
+  "runtime_qualified": false
+}
