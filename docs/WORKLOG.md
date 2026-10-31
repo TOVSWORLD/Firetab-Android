@@ -3968,3 +3968,15 @@ achieved/current/next/blocker/concrete-exit information. Queued/history/complete
 phases explicitly say no implementation runs. Phase view places progress fields
 ahead of child-count widgets; exact Execution order/PrimaryPR/hierarchy retained.
 All-gates view retains completed/dropped scopes. Current physical operation: none.
+
+## 2026-10-30 — #347 actual entry acceptance reviewed
+
+Reviewed original GO/owner authorization, exact starting generation/package pairing,
+FULL/hacked-fastboot/TWRP endpoints, actual current logs, recovery restart and later
+Android11 home/setup/authorizedADB observations against issue347's bounded-entry
+acceptance. Accepted only the selected persistent software route/interim endpoint;
+no maintained-kernel, security, public-release or failed-load return/log gate inferred.
+ENTRY-ACCEPTANCE.md links exact observation-time receipts and accounts for deliberate
+disconnect, unaccepted CLI request, stop/retry limits and known security limitations.
+Next phase344 handoff is a concrete independent return/log proposal using retained
+assets; no device action or repeat installation is implied. Phase344 stays open.

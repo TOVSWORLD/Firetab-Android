@@ -20,8 +20,8 @@ The board is the source of live state. Do not resume historical peripheral queue
   identified Douglas; recovery_x capacity was corroborated against decoded GPT.
   ADB reports recovery/douglas/TWRP3.3.1-0, kernel3.18.19; recovery and kernel logs
   were retrieved. [Runtime receipt](../../evidence/approved-lab-entry/runtime-result.json).
-  The case stayed closed and no short was applied. Entry acceptance is under
-  exact-head PR review; independent failed-load stock return#346 and retained
+  The case stayed closed and no short was applied. [Entry acceptance review](ENTRY-ACCEPTANCE.md) accepts the selected route and
+  observed interim Android endpoint; independent failed-load stock return#346 and retained
   failure logs#348 remain separate unpassed gates. No maintained-kernel or
   app-QA boot is claimed; Android11 runtime is recorded separately below. Host sudo and temporary USB/service setup
   are complete; do not resurrect those resolved blockers or repeat approval.
@@ -46,8 +46,10 @@ The board is the source of live state. Do not resume historical peripheral queue
   #341 admits feature QA only afterward. The current LineageOS18.1 baseline is not
   that final release. Branding covers boot/setup/wallpaper/launcher/About, with
   truthful Android/security-patch fields and upstream notices. No parallel branding
-  task or unrelated peripheral off-ramp is opened. Current #347 next action is entry
-  acceptance review/handoff, then #346/#348 in the recorded order. #345 stays conditional.
+  task or unrelated peripheral off-ramp is opened. Current #347 entry milestone is accepted;
+  phase344 next prepares the independent return/log qualification handoff. Existing
+  #346 closure is not failure-test evidence; #348 failure retention remains unqualified.
+  #345 is closed not planned because no inspection was needed.
 
 The completed admission decision identified one operational route or state why none is safely
 available, the minimum diagnostic package and entry/memory/CPU/transport contract,
