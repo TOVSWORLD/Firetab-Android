@@ -3923,3 +3923,17 @@ remain unmeasured. Official Android CredentialManager documentation confirms
 API28+ minimum for passkeys; API30 alone is not actual provider acceptance.
 Public sanitized receipt android-runtime-result.json. Owner physical steps must
 be batched to avoid repeated trips between rooms.
+
+## 2026-10-30 — owner roadmap correction: platform release, branding, then app QA
+
+Owner does not want Connect/features QA until stable fully updated release.
+Installed LineageOS18.1 remains interim lab baseline, not finished public OS.
+Project-branded boot/setup/wallpaper/launcher/About identity is a release requirement
+under existing#333, retaining attribution/license notices and truthful Android and
+security-patch fields. #333 now explicitly selects supported upstream/patch/component
+versions and update path and validates stability/security. #354 reviews exact notices
+and public artifact obligations; #340 packages branded stable updated release; #341
+admits app QA afterward. No new micro-issue/parallel active implementation created.
+#347 remains current entry acceptance; #346/#348 next in order. Existing donor-ROM
+encryption/Permissive/2024patch facts remain limitations, never renamed as passes.
+Project overview/current-delivery sections and visible board fields updated/read back.

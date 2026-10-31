@@ -23,7 +23,7 @@ The board is the source of live state. Do not resume historical peripheral queue
   The case stayed closed and no short was applied. Entry acceptance is under
   exact-head PR review; independent failed-load stock return#346 and retained
   failure logs#348 remain separate unpassed gates. No maintained-kernel or
-  Android11/app-QA boot is claimed. Host sudo and temporary USB/service setup
+  app-QA boot is claimed; Android11 runtime is recorded separately below. Host sudo and temporary USB/service setup
   are complete; do not resurrect those resolved blockers or repeat approval.
 - **Android11 ROM and ARM Google services are now installed**, with actual
   updater RC0 and recovery-menu return for both. Read-only system inspection
@@ -38,15 +38,18 @@ The board is the source of live state. Do not resume historical peripheral queue
   records installed package/browser/security facts. Google Play services20.45 and
   no Chrome are current prerequisites to resolve before passkey/browser acceptance.
   Do not repeat unlock, wipes, installations or first-boot request.
-- **Urgent milestone: usable Android lab QA for Connect and passkeys.** Use the
-  existing working ROM path before completing the maintained kernel. A donor-ROM
-  result never closes maintained-kernel hardware/boot gates. Connect currently
-  builds ARM64; current Lineage18.1 device source is ARM32, so APK/ROM ABI must be
-  matched before installation. Android9+ credential support and actual browser/
-  provider/user-verification/deep-link flows must be tested, not inferred.
-  #345 remains conditional; opening/electrical actions are not selected.
+- **Owner correction,30 October: platform release before app QA.** Do not select,
+  build or install Connect/passkey QA candidates on the interim ROM. First deliver
+  the stable, supported, updated project OS. #333 owns explicit upstream/version/
+  security/update-path selection, reproducible integration, stability and branding;
+  #354 retains attribution/distribution review; #340 packages the branded release;
+  #341 admits feature QA only afterward. The current LineageOS18.1 baseline is not
+  that final release. Branding covers boot/setup/wallpaper/launcher/About, with
+  truthful Android/security-patch fields and upstream notices. No parallel branding
+  task or unrelated peripheral off-ramp is opened. Current #347 next action is entry
+  acceptance review/handoff, then #346/#348 in the recorded order. #345 stays conditional.
 
-The decision must identify one operational route or state why none is safely
+The completed admission decision identified one operational route or state why none is safely
 available, the minimum diagnostic package and entry/memory/CPU/transport contract,
 pretrial recovery/log/power/thermal provisions, stop criteria and one concrete
 reviewable next action/owner decision. Do not repeat stock/cable/photo captures,

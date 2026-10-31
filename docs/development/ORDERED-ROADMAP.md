@@ -6,11 +6,29 @@ not a completion percentage. [Project4](https://github.com/users/TOVSWORLD/proje
 and its issue bodies carry live delivery truth; [ordered-roadmap.json](ordered-roadmap.json)
 defines stable ordering, dependencies and acceptance contracts.
 
-The first execution issue is [#439](https://github.com/TOVSWORLD/Firetab-Android/issues/439):
-a concrete exact-build entry/go-no-go decision. Finish the roadmap task#438 first.
-The sole pre-existing implementation exception,#440/PR436, is source-accepted:
-all six exact-head checks and actual PWM object/config/Image passed. It does not
-qualify backlight hardware, authorize device use or start a PWM binding scope.
+## Current delivery and owner release requirements — 30 October2026
+
+- **Completed milestone:** the approved case-closed software route reached TWRP;
+  Android11 LineageOS18.1 and Google services were installed. Owner home screen,
+  completed setup and authorized ADB boot_completed=1 are measured under #347/PR452.
+- **Current execution:** #347 entry acceptance review and exact evidence handoff.
+  Then #346 independent failed-load return and #348 retained failure logs, in order.
+- **Interim versus public OS:** the installed upstream LineageOS build is a lab
+  baseline. It is not the finished project-branded OS or a stable/current release
+  acceptance. Its patch level is2024-02-05, encryption reports unsupported and
+  SELinux is Permissive; device-policy enrollment failed. None is hidden by branding.
+- **Public platform target, #333:** select supported Android/upstream maintenance,
+  actual security/component versions and update path; integrate and test stability,
+  security and project OS identity. Own boot animation, setup, wallpaper, launcher
+  defaults and About/build information must retain accurate upstream attribution,
+  licenses, Android version and security-patch details.
+- **Release and QA, #340 → #341:** package the stable updated branded OS and its
+  recovery/update/source handoff, then admit Connect/passkey/feature QA. App QA and
+  app installation for QA are deferred until those platform gates pass.
+
+This adds release acceptance requirements to existing ordered issues, not parallel
+branding or peripheral tasks. One active implementation Task remains #347. Existing
+PWM exception#440/PR436 is source-complete, without hardware admission or new scope.
 
 ## How work proceeds
 
@@ -116,8 +134,8 @@ charging/thermal qualification; no generic invented thresholds are permitted.
   thermal/security failure and no claim of passing an untested runtime gate.
 
 Existing completed scopes#29,#339,#342,#343 remain visible as history. They do not
-stand in for physical gates. The first next outcome is#439's actionable decision,
-not another peripheral PR or a repeated rough beta estimate.
+stand in for physical gates. The current next outcome is#347 entry acceptance review, followed by#346/#348,
+not app QA or an unrelated peripheral PR.
 
 ## Validation of the roadmap
 
