@@ -31,6 +31,8 @@ setup, wallpaper, launcher and About identity while retaining upstream attributi
 license notices and truthful Android/security-patch information. A new build date
 or new branding does not establish security maintenance or stability.
 
+Start with [phase progress and next steps](https://github.com/users/TOVSWORLD/projects/4/views/2)
+for achieved milestones, current work and remaining phase exits.
 Follow the [live delivery board](https://github.com/users/TOVSWORLD/projects/4),
 [current work queue](docs/development/ACTIVE-WORK-QUEUE.md), and
 [ordered roadmap](docs/development/ORDERED-ROADMAP.md). One Task is active at a time;

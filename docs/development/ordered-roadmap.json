@@ -79,7 +79,7 @@
       "issue": 345,
       "order": 15,
       "parent": 344,
-      "name": "Conditional board-inspection proposal",
+      "name": "Board inspection \u2014 not needed for selected software route",
       "depends_on": [
         439
       ],
@@ -95,7 +95,9 @@
       "conditions": [
         "Only selected if the admission decision makes this a necessary prerequisite; not an unrelated task bypass."
       ],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "disposition": "not_planned",
+      "disposition_reason": "Case-closed approved software route reached TWRP and Android11 without opening or a short; conditional inspection branch not selected. No physical-inspection pass claimed."
     },
     {
       "issue": 347,
@@ -139,13 +141,14 @@
       "kind": "qualification",
       "hardware_group": null,
       "conditions": [],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "closed_issue_evidence_boundary": "Issue is closed completed and board Done. Ordinary stock return is observed; closure alone does not qualify failed-experiment return. Remaining phase344/release failure-return acceptance stays explicit until tested."
     },
     {
       "issue": 348,
       "order": 40,
       "parent": 344,
-      "name": "Usable retained diagnostic boot logs",
+      "name": "Failed-boot log retention \u2014 normal log capture complete",
       "depends_on": [
         346
       ],
@@ -159,7 +162,9 @@
       "kind": "qualification",
       "hardware_group": null,
       "conditions": [],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "completed_milestone": "TWRP recovery log22493B/current kernel log130931B retrieved in PR452; see approved-lab-entry/runtime-result.json. Prior320KiB stock export is separate.",
+      "remaining_acceptance": "Fresh attributable failed-experiment log retention and retrieval remain unqualified; do not repeat normal capture as unfinished work."
     },
     {
       "issue": 22,
@@ -796,5 +801,18 @@
     "former_project_name": "FireTabs Android",
     "repository_name": "ValethonOS-Android",
     "owner_approved_rename_date": "2026-10-30"
+  },
+  "phase_progress_presentation": {
+    "view": "Phase gates \u2014 progress and next steps",
+    "view_url": "https://github.com/users/TOVSWORLD/projects/4/views/2",
+    "visible_summary": [
+      "Latest result: measured milestones already achieved",
+      "Current work: active task/PR or clearly queued/history/complete",
+      "Next action: specific next operation or handoff",
+      "Blocker: actual remaining dependency, not resolved approval/host waits",
+      "Acceptance gate: concrete phase exit"
+    ],
+    "completed_scopes_visible_in_all_gates_view": true,
+    "child_counts_are_not_phase_acceptance": true
   }
 }

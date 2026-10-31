@@ -67,8 +67,11 @@ LK microtraces or synthetic readiness wrappers. A closed NO-GO does not admit en
 5. #27 final DT/dependency validation → #353/#354 licensing/distribution → #340 exact
    beta/recovery handoff → #341 actual QA admission review.
 
-Issue#345 is a conditional inspection prerequisite only if selected by the route
-decision. Historical phase#106 has100 sub-issues; preserve its source evidence and
+Issue#345 is closed not planned; its conditional inspection branch was not selected.
+Normal recovery/current-kernel log capture is complete. Task#348 names only the
+remaining failed-boot retention/retrieval qualification. Issue#346 is closed completed;
+its closed state alone is not failed-load return evidence, which remains explicit
+in phase344/release acceptance. Historical phase#106 has100 sub-issues; preserve its source evidence and
 open runtime exit, but put operational work under#344. Do not create more source
 micro-scopes there or mistake completed child counts for recovery qualification.
 

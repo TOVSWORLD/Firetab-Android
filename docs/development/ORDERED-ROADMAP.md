@@ -30,6 +30,23 @@ This adds release acceptance requirements to existing ordered issues, not parall
 branding or peripheral tasks. One active implementation Task remains #347. Existing
 PWM exception#440/PR436 is source-complete, without hardware admission or new scope.
 
+## Follow phase progress without opening every child task
+
+Open [Phase gates — progress and next steps](https://github.com/users/TOVSWORLD/projects/4/views/2).
+Each row shows achieved milestones, **Current work**, the specific next handoff,
+remaining blocker and the concrete phase exit. Queued phases explicitly say no
+implementation is running. Child-issue counts are not the progress measure.
+
+Current phase1 has working interim Android11/recovery/ADB. Entry acceptance review
+is under#347/PR452. Conditional board inspection#345 is closed **not planned**;
+no opening was needed. Ordinary/current-boot log capture is complete; remaining
+#348 is explicitly failed-boot retention/retrieval. Issue#346 is closed completed;
+its ordinary stock-return evidence is retained, while phase/release acceptance must
+not infer a demonstrated failed-load return from the issue's closed state.
+
+The all-gates view retains completed/dropped history. Future phase summaries identify
+what source groundwork exists, what remains untested and the exact predecessor.
+
 ## How work proceeds
 
 1. Select the earliest open task whose predecessor and explicit outcome gates

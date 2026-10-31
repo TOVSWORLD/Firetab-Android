@@ -3951,3 +3951,20 @@ Old project overview was stale pre-boot text; replaced with measured milestone,
 interim-vs-public distinction, current/next issues and instructions to follow fields.
 Large board mutation hit transient502; same requested values replayed in bounded
 batches and verified by readback. No gate/status/order/primaryPR was silently changed.
+
+## 2026-10-30 — phase progress made visible; stale fallback/log scope corrected
+
+Owner said Phase gates did not show where we are or current work. Audited all30
+ordered task states plus native phase children. Inspection345 still had obsolete
+approval/Linux-host blockers despite completed case-closed entry; closed NOT_PLANNED
+and labeled as unneeded route, not hardware tested.348 now distinguishes completed
+normal recovery/current-kernel log capture from untested failed-boot retention.
+346 was already CLOSED/COMPLETED and boardStatusDone while DeliverystateBlocked;
+preserved closed state, aligned presentation and kept remaining failed-load gate
+explicit under phase344/release acceptance. No unsupported runtime pass inferred.
+
+Added visible Current work field and replaced10 generic phase summaries with
+achieved/current/next/blocker/concrete-exit information. Queued/history/complete
+phases explicitly say no implementation runs. Phase view places progress fields
+ahead of child-count widgets; exact Execution order/PrimaryPR/hierarchy retained.
+All-gates view retains completed/dropped scopes. Current physical operation: none.
