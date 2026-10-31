@@ -3980,3 +3980,17 @@ ENTRY-ACCEPTANCE.md links exact observation-time receipts and accounts for delib
 disconnect, unaccepted CLI request, stop/retry limits and known security limitations.
 Next phase344 handoff is a concrete independent return/log proposal using retained
 assets; no device action or repeat installation is implied. Phase344 stays open.
+
+## 2026-10-30 — #346 one-visit recovery preparation
+
+Owner clarified that chat desk and server room are separate: no chat reply is
+possible beside the tablet. Added explicit-arm Linux supervisor with10-minute
+travel/disconnection wait followed by one90-second reconnection/helper bound.
+It pins original helper/common/logger sources, rejects wrong/ambiguous MediaTek
+ports, never auto-discovers/opens unrelated serial nodes and kills the helper
+process group on timeout. Exclusive private attempt receipt prevents silent reuse.
+Default preflight opens no serial interface and does not change tablet mode.
+Eight negative/lifecycle tests plus full505 host tests passed. Dedicated Linux
+staging returned PREFLIGHT_OK; NOT_ARMED with matching source identities and current
+Android USB port. No listener/helper/device action started; actual TWRP entry and
+failed-load return/log retention remain unmeasured. Draft PR453 stays on existing346.
