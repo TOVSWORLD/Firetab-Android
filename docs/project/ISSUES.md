@@ -1,7 +1,7 @@
 # Issue hierarchy and triage
 
 Use GitHub native parent/sub-issue relationships, not only lists of linked text.
-The repository has exactly two project parents: FireTabs Android and Crestron Panel.
+The repository has exactly two project parents: ValethonOS for Android and Crestron Panel.
 A parent issue tracks scope; it is not proof that the scope has been implemented.
 
 ## Three levels
@@ -54,8 +54,8 @@ not a scheduled issue generator or evidence of approved implementation.
 
 ## Live project parents
 
-- [FireTabs Android #2](https://github.com/TOVSWORLD/Firetab-Android/issues/2)
-- [Crestron Panel #3](https://github.com/TOVSWORLD/Firetab-Android/issues/3)
+- [ValethonOS for Android #2](https://github.com/TOVSWORLD/ValethonOS-Android/issues/2)
+- [Crestron Panel #3](https://github.com/TOVSWORLD/ValethonOS-Android/issues/3)
 
 See `projects/github-setup.json` for feature/task and milestone identities.
 
@@ -64,7 +64,7 @@ See `projects/github-setup.json` for feature/task and milestone identities.
 The repository's Projects tab links two actual GitHub Projects, in addition to the
 source folders and parent/sub-issue hierarchy:
 
-- [FireTabs Android](https://github.com/users/TOVSWORLD/projects/4)
+- [ValethonOS for Android](https://github.com/users/TOVSWORLD/projects/4)
 - [Crestron Panel](https://github.com/users/TOVSWORLD/projects/5)
 
 Each contains its project/feature/task issues; shared repository issues appear in both.

@@ -1,0 +1,83 @@
+{
+  "issue": 347,
+  "scope": "Actual owner-approved persistent original software route from observed current stock build to custom recovery on lab Douglas; not a maintained-kernel or Android11 boot",
+  "owner_approval_recorded": true,
+  "case_opened": false,
+  "electrical_short_applied": false,
+  "before": {
+    "android_release": "5.1.1",
+    "api": 22,
+    "pl": 7,
+    "lk": 3,
+    "tee": 262
+  },
+  "full_stage": {
+    "mode": "FULL",
+    "started_utc": "2026-10-29T16:24:13Z",
+    "ended_utc": "2026-10-29T16:31:27Z",
+    "input_hashes": {
+      "bootrom-step.sh": "c7c93a2aff2b17bb2cd9fd1a90fcea7ac22699986f14c445d434668e56126799",
+      "modules/main.py": "0fc1e6b2455503c98ccfd5954174f701e6b2011f85f30d6aa5e40ee842df13d5",
+      "brom-payload/build/payload.bin": "80a45e7f4a9c88bb26dc361ce547c4cc0267a96330a39eeb1a8382c764bfc30c"
+    },
+    "no_minimal_argument": true,
+    "exit": 0,
+    "log_sha256": "5aec6155a9441cdfae8e72c770b581f87095b131de45091c5e74953c1acd1ea2"
+  },
+  "first_prompt_acknowledgement": "one Enter for exact conditional short-removal prompt; no short applied",
+  "post_full_fastboot_product_confirmed": true,
+  "recovery_stage": {
+    "started_utc": "2026-10-29T16:34:11Z",
+    "stage_sha256": "618590fcf823dc32a243d542f9ca85351cc4d754d915ec250cfbb44523976c99",
+    "twrp_sha256": "77889e8de3d48412bd29665d539c7559c0984ae7e46664581874b752484169af",
+    "twrp_bytes": 13512704,
+    "recovery_x_bytes": 17825792,
+    "partition_size_interpretation": "unprefixed hexadecimal, corroborated by exact full-stage GPT sector range",
+    "gpt_sector_range_inclusive": [
+      51200,
+      86015
+    ],
+    "firmware_stage": "original fastboot-step.sh",
+    "data_wipe_authorized": true,
+    "exit": 0,
+    "ended_utc": "2026-10-29T16:34:13Z",
+    "log_sha256": "6ffce4db3a0ef78ae312b0365049cb425b38edcfa527d07de575e2a8b8db8584"
+  },
+  "observed_boot": {
+    "observed_utc": "2026-10-29T16:35:04Z",
+    "transport": "recovery",
+    "device": "douglas",
+    "twrp_version": "3.3.1-0",
+    "recovery_api": 22,
+    "kernel_release": "3.18.19-g51c2c8d5bfb",
+    "recovery_selinux": "Permissive",
+    "uptime": "33.22 48.30"
+  },
+  "retrieved_current_boot_logs": {
+    "twrp-recovery.log": {
+      "exit": 0,
+      "bytes": 22493,
+      "sha256": "defc411d28cffb07d5788bf6e6de99066f5b72a9d6b6f37915d13c8915867f3f"
+    },
+    "twrp-kernel-dmesg.log": {
+      "exit": 0,
+      "bytes": 130931,
+      "sha256": "7d955508305631ffaef215c61935ff351c3e0a06cf8468eb2d5f5753e6d8159e"
+    }
+  },
+  "limits": {
+    "raw_logs_photos_selectors_private": true,
+    "helper_output_not_independent_all_partition_readback": true,
+    "secure_getvar_reported_yes": true,
+    "unlocked_getvar_empty": true,
+    "known_damage_observed": false,
+    "original_security_state_restored": false,
+    "independent_failed_load_stock_return_qualified": false,
+    "failed_boot_log_retention_qualified": false,
+    "maintained_kernel_booted": false,
+    "android11_installed": false,
+    "connect_qa_passed": false,
+    "passkey_qa_passed": false
+  },
+  "next": "Review entry347 acceptance with source-pinned runtime evidence; keep346/348 and maintained-kernel/QA gates open. Match donorROM/APK ABI before app QA."
+}

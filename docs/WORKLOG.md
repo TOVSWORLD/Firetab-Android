@@ -3826,3 +3826,157 @@ Owner decision is explicit risk approval/rejection for this attended persistent
 software attempt on prepared Linux x86-64. No case opening/electrical action
 included. HOLD pending that decision/host; no unrelated peripheral work. Required
 exact-head PR checks before accepting proposal; physical gates remain open.
+
+## 2026-10-29 — owner-approved lab entry347 and urgent app QA
+
+Owner approved software attempt and free use of destructive lab Linux/device,
+with immediate reporting if broken.439decisioncompleted;347onlyActiveTask. Recovered
+existing strict-key SSH connection from this thread's history after mistakenly
+checking desktop VM inventory; dedicated lab is Linux/x86-64 with adb/fastboot/
+PySerial. One expected DouglasAPI22,PL7/LK3/TEE262,bootcompleted,USBpower/100%
+battery26C observed for pre-destructive identity/supply check. No mode or tablet
+write. Three pinned original archives staged/unpacked separately; exact current
+9299968B recovery and907705758B authenticated OTA transferred and hashes verified
+on lab. Seven Python host files compile, bundled Linux fastboot version probe
+passes. No existing ttyACM before entry.
+
+Host ModemManager active; SSH account lacks sudo/noninteractive admin. Owner
+explicitly wants admin rights; prepared one-time grant requested. Cannot grant
+root from unprivileged account. No firmware mutation until serial/service setup
+can be applied. Current private SSH args/workspace/receipts under ignored out;
+never publish selectors/hostnames. Parallels inventory query stopped after hang;
+no VMs changed and no VM provisioning needed.
+
+Immediate owner priority is full Connect and passkey QA on these onlylab devices.
+Known working ROM path precedes maintained-kernel completion. Source checks show
+Connect minSdk24/current CI aarch64; Googlepasskeys needAndroid9/API28+, and current
+Lineage18.1 source isARM32. Match APK/ROM ABI and test actual credentialprovider/
+userverification/browser/PKCE/deeplink, not merely boot. No ROM/GApps downloaded
+or account configured. Existing14 maintained-kernel hardware gates remain open.
+
+## 2026-10-29 — #347 actual case-closed custom-recovery entry
+
+Owner granted sudo; stopped ModemManager reversibly, installed temporary /run
+USB/tty plugdev rules and preserved prior state. Stockfastboot identifiedDOUGLAS
+with same serial. Once-only original brick9820 sentOKAY5.194s; owner's privatephoto
+showedAllgood/unplug/poweroff/fullbootrom. Hoststatusreadfailed after deliberate
+ownerUSBdisconnect, not a reason to retry. Owner poweredoff/reconnected; single
+original FULL script handshook. Exact conditional no-short prompt ackedoneEnter;
+no short or caseopening. Helper reportedGPT/RPMB/preloader/TEE/LK/payload/header
+stages, exited0 at16:31:27UTC. This is not independent all-partition readback.
+
+PostfullfastbootDOUGLAS observed. Partition size1100000 was unprefixedhex,
+corroborated against actual GPT sectors51200..86015 =17MiB, notdecimal1.1MB;
+initial conservativefitparser held until resolved. Original TWRPstage hash618590
+ranonce: recovery_x13,512,704B send/writeOKAY, authorizeduserdataerase/MISCwrite/
+rebootOKAY, exit0 at16:34:13UTC. ActualADB recovery transport/douglas/TWRP3.3.1-0
+and kernel3.18.19-g51c2c8d5bfb observed. Retrieved22,493B recoverylog and130,931B
+currentkernellog privately; exact hashes/publiclimits in runtime-result.json.
+
+Legacycustomrecovery isPermissive; securegetvaryes and unlockedgetvarempty are
+recorded, not relabeledunlockedflagpassed. Maintainedkernel/Android11/Connect/
+passkeyQA have not booted/passed. Independent failed-load stockreturn and retained
+failurelog gates stayopen. No observeddamage, no caseopening/electricalaction.
+All actual scripts/receipts stay in same347/PR452, not a newmicro-issue/PR.
+
+## 2026-10-29 — #347 actual Android11 ROM and Google-services installation
+
+Owner confirmed TWRP startup swipe. USB initially absent; later Linux enumerated
+recovery again without another unlock/reflash. Verified staged ROM SHA8dacd21b
+and boot remapping to physical p5/system p14. One new install accepted after the
+previous unaccepted CLI request: actual system block writes, script succeeded,
+updater RC0, 59s and menu return. Read-only installed system confirms Android11,
+API30, ARMv7. Android first boot was not requested until Google services completed.
+
+Original ARM11 GApps uses recovery uname, which reports aarch64; recovery ABI
+property reports arm64-v8a while installed Android ABI is armeabi-v7a. Exact
+package ARM toybox executed with explicit shell RC0 (uname armv8l). Local installer
+correction checks helper executability and installed-system ABI separately,
+retaining original SDK guard. 35 actual shell ABI cases and three helper-exit
+cases pass; source-hash rejection precedes output creation. All29 payload members
+unchanged, stale archive signature metadata removed explicitly; no publisher
+signature claim. Initial archive verifier reused mutated ZipInfo offsets and
+failed before any install; copying ZipInfo fixed validation. Only verified v2
+archive installed. Actual GApps copied files, cleaned/unmounted, Done/updaterRC0
+and menu return. Exact receipts in approved-lab-entry/qa-install-result.json.
+
+497 current host tests pass. First Android boot requested once at22:31:15UTC;
+completion/provider/browser/Connect/passkey QA still pending. No maintained-kernel,
+failed-load stock return or retained-failure-log admission inferred. Preserve
+rollback assets until no longer needed and delete temporary installers afterward.
+
+## 2026-10-30 — #347 Android home screen and authorized runtime
+
+Owner completed setup using their own Google account and confirmed home screen;
+reported device-policy enrollment failed because device cannot be encrypted.
+Authorized ADB now reports device transport, sys.boot_completed=1, setup_complete=1
+and provisioned=1. Android11/API30/ARMv7 Lineage18.1-20261026 confirmed.
+Runtime ro.crypto.state=unsupported, crypto.type empty, SELinux Permissive,
+security patch2024-02-05, ro.secure1/ro.debuggable1. These are actual donor-ROM
+limits, not policy bypasses or maintained-kernel qualification. No account data,
+PIN, credentials or user content read.
+
+Allowlisted package versions: GMS20.45.16, PlayStore53.8.11 updated package plus
+20.4.33 system baseline, GSF11, AOSPWebView146.0.7680.153, Jelly11 defaultbrowser;
+Chrome absent. Browser/provider/passkey ceremonies and matchingARMv7 ConnectAPK
+remain unmeasured. Official Android CredentialManager documentation confirms
+API28+ minimum for passkeys; API30 alone is not actual provider acceptance.
+Public sanitized receipt android-runtime-result.json. Owner physical steps must
+be batched to avoid repeated trips between rooms.
+
+## 2026-10-30 — owner roadmap correction: platform release, branding, then app QA
+
+Owner does not want Connect/features QA until stable fully updated release.
+Installed LineageOS18.1 remains interim lab baseline, not finished public OS.
+Project-branded boot/setup/wallpaper/launcher/About identity is a release requirement
+under existing#333, retaining attribution/license notices and truthful Android and
+security-patch fields. #333 now explicitly selects supported upstream/patch/component
+versions and update path and validates stability/security. #354 reviews exact notices
+and public artifact obligations; #340 packages branded stable updated release; #341
+admits app QA afterward. No new micro-issue/parallel active implementation created.
+#347 remains current entry acceptance; #346/#348 next in order. Existing donor-ROM
+encryption/Permissive/2024patch facts remain limitations, never renamed as passes.
+Project overview/current-delivery sections and visible board fields updated/read back.
+
+## 2026-10-30 — owner-approved ValethonOS project/repository identity
+
+Owner selected ValethonOS for Android and explicitly approved repository rename.
+GitHub repository is now TOVSWORLD/ValethonOS-Android; local origin updated.
+Project4/epic/current issues, repository description, current README/roadmaps,
+contribution/security links, issue-form display choices and release-category name
+use ValethonOS identity. Historical evidence/source locks, build paths, scope labels
+and CI check identifiers retain stable engineering IDs; no runtime asset rebrand
+is claimed. Actual OS branding implementation remains ordered#333 release work.
+Old project overview was stale pre-boot text; replaced with measured milestone,
+interim-vs-public distinction, current/next issues and instructions to follow fields.
+Large board mutation hit transient502; same requested values replayed in bounded
+batches and verified by readback. No gate/status/order/primaryPR was silently changed.
+
+## 2026-10-30 — phase progress made visible; stale fallback/log scope corrected
+
+Owner said Phase gates did not show where we are or current work. Audited all30
+ordered task states plus native phase children. Inspection345 still had obsolete
+approval/Linux-host blockers despite completed case-closed entry; closed NOT_PLANNED
+and labeled as unneeded route, not hardware tested.348 now distinguishes completed
+normal recovery/current-kernel log capture from untested failed-boot retention.
+346 was already CLOSED/COMPLETED and boardStatusDone while DeliverystateBlocked;
+preserved closed state, aligned presentation and kept remaining failed-load gate
+explicit under phase344/release acceptance. No unsupported runtime pass inferred.
+
+Added visible Current work field and replaced10 generic phase summaries with
+achieved/current/next/blocker/concrete-exit information. Queued/history/complete
+phases explicitly say no implementation runs. Phase view places progress fields
+ahead of child-count widgets; exact Execution order/PrimaryPR/hierarchy retained.
+All-gates view retains completed/dropped scopes. Current physical operation: none.
+
+## 2026-10-30 — #347 actual entry acceptance reviewed
+
+Reviewed original GO/owner authorization, exact starting generation/package pairing,
+FULL/hacked-fastboot/TWRP endpoints, actual current logs, recovery restart and later
+Android11 home/setup/authorizedADB observations against issue347's bounded-entry
+acceptance. Accepted only the selected persistent software route/interim endpoint;
+no maintained-kernel, security, public-release or failed-load return/log gate inferred.
+ENTRY-ACCEPTANCE.md links exact observation-time receipts and accounts for deliberate
+disconnect, unaccepted CLI request, stop/retry limits and known security limitations.
+Next phase344 handoff is a concrete independent return/log proposal using retained
+assets; no device action or repeat installation is implied. Phase344 stays open.

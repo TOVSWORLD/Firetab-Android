@@ -12,19 +12,46 @@ The board is the source of live state. Do not resume historical peripheral queue
   at8ff8731 and actual PWM object/config/final Image run40881461603. No new PWM
   binding/peripheral scope follows. The source receipt is in
   evidence/pwm-kernel-integration/build-result.json; hardware remains unqualified.
-- **Active execution task: #439**, reopened software-first review following owner
-  correction. [Working-project entry reconciliation](WORKING-PROJECT-ENTRY.md)
-  reads original unlock/TWRP and LineageOS17.1/18.1 maintainer documentation.
-  The guide describes case-closed unlock; opening is not established as necessary.
-  Cached external-brick script/minimal-step advice conflicts with the author's
-  full-step warning. The [software proposal](SOFTWARE-UNLOCK-PROPOSAL.md) now pins
-  the original archives, destructive boundary and full-stage pairing. Bundled
-  Linux/x86 binaries cannot run natively on this Darwin/arm64 host. Execution
-  is HOLD pending explicit high-risk approval and Linux host preparation.
-  #345 stays conditional/Blocked. No high-risk helper/device action is admitted.
-  PR449's NO-GO remains a historical trial decision, not software impossibility.
+- **Decision#439 is complete:** owner approved the reviewed persistent software
+  unlock and destructive lab-host/device work on29 October, with immediate
+  reporting of breakage or unexpected state. Do not ask that approval again.
+- **Execution#347/PR452 has reached actual TWRP3.3.1-0.** Original full BootROM
+  stage and original fastboot recovery stage both exited0. Post-full fastboot
+  identified Douglas; recovery_x capacity was corroborated against decoded GPT.
+  ADB reports recovery/douglas/TWRP3.3.1-0, kernel3.18.19; recovery and kernel logs
+  were retrieved. [Runtime receipt](../../evidence/approved-lab-entry/runtime-result.json).
+  The case stayed closed and no short was applied. [Entry acceptance review](ENTRY-ACCEPTANCE.md) accepts the selected route and
+  observed interim Android endpoint; independent failed-load stock return#346 and retained
+  failure logs#348 remain separate unpassed gates. No maintained-kernel or
+  app-QA boot is claimed; Android11 runtime is recorded separately below. Host sudo and temporary USB/service setup
+  are complete; do not resurrect those resolved blockers or repeat approval.
+- **Android11 ROM and ARM Google services are now installed**, with actual
+  updater RC0 and recovery-menu return for both. Read-only system inspection
+  confirms API30/ARMv7. First Android boot and initial setup are now
+  confirmed by owner home-screen observation and authorized ADB boot_completed=1.
+  Android runtime reports encryption unsupported and SELinux Permissive; owner
+  reports device-policy enrollment failure. No policy/security bypass was applied.
+  App/provider QA remains unmeasured. The GApps installer has a tested local ABI
+  compatibility correction; unchanged app payloads and exact receipts are in
+  [qa-install-result.json](../../evidence/approved-lab-entry/qa-install-result.json).
+  [Runtime receipt](../../evidence/approved-lab-entry/android-runtime-result.json)
+  records installed package/browser/security facts. Google Play services20.45 and
+  no Chrome are current prerequisites to resolve before passkey/browser acceptance.
+  Do not repeat unlock, wipes, installations or first-boot request.
+- **Owner correction,30 October: platform release before app QA.** Do not select,
+  build or install Connect/passkey QA candidates on the interim ROM. First deliver
+  the stable, supported, updated project OS. #333 owns explicit upstream/version/
+  security/update-path selection, reproducible integration, stability and branding;
+  #354 retains attribution/distribution review; #340 packages the branded release;
+  #341 admits feature QA only afterward. The current LineageOS18.1 baseline is not
+  that final release. Branding covers boot/setup/wallpaper/launcher/About, with
+  truthful Android/security-patch fields and upstream notices. No parallel branding
+  task or unrelated peripheral off-ramp is opened. Current #347 entry milestone is accepted;
+  phase344 next prepares the independent return/log qualification handoff. Existing
+  #346 closure is not failure-test evidence; #348 failure retention remains unqualified.
+  #345 is closed not planned because no inspection was needed.
 
-The decision must identify one operational route or state why none is safely
+The completed admission decision identified one operational route or state why none is safely
 available, the minimum diagnostic package and entry/memory/CPU/transport contract,
 pretrial recovery/log/power/thermal provisions, stop criteria and one concrete
 reviewable next action/owner decision. Do not repeat stock/cable/photo captures,
@@ -42,8 +69,11 @@ LK microtraces or synthetic readiness wrappers. A closed NO-GO does not admit en
 5. #27 final DT/dependency validation → #353/#354 licensing/distribution → #340 exact
    beta/recovery handoff → #341 actual QA admission review.
 
-Issue#345 is a conditional inspection prerequisite only if selected by the route
-decision. Historical phase#106 has100 sub-issues; preserve its source evidence and
+Issue#345 is closed not planned; its conditional inspection branch was not selected.
+Normal recovery/current-kernel log capture is complete. Task#348 names only the
+remaining failed-boot retention/retrieval qualification. Issue#346 is closed completed;
+its closed state alone is not failed-load return evidence, which remains explicit
+in phase344/release acceptance. Historical phase#106 has100 sub-issues; preserve its source evidence and
 open runtime exit, but put operational work under#344. Do not create more source
 micro-scopes there or mistake completed child counts for recovery qualification.
 

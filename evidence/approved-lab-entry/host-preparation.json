@@ -1,0 +1,66 @@
+{
+  "issue": 347,
+  "scope": "Actual remote lab host preparation and read-only pre-destructive device identity; not a boot/unlock/runtime qualification",
+  "owner_approved_reviewed_attempt": true,
+  "owner_authorized_destructive_lab_host_and_device_work": true,
+  "report_unexpected_state_or_failure_immediately": true,
+  "host": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "existing_strict_key_ssh_reused": true,
+    "adb_fastboot_pyserial_available": true,
+    "python_host_sources_compiled": 7,
+    "bundled_fastboot_version": "fastboot version 28.0.0 rc1-eng.chaosm.20190910.064622",
+    "sudo_ready": false,
+    "modemmanager_still_active": true
+  },
+  "device": {
+    "expected_douglas_confirmed": true,
+    "api": 22,
+    "release": "5.1.1",
+    "versions": {
+      "pl_version": 7,
+      "lk_version": 3,
+      "tee_version": 262
+    },
+    "boot_completed_observed": true,
+    "usb_power_and_full_battery_observed": true,
+    "selector_published": false
+  },
+  "staged_original_archives": [
+    {
+      "name": "amonet-douglas-v1.2.zip",
+      "sha256": "6647dd0b5b9d2c04a2f167f6ccc7a2cfbcaa6f1f93f8251c7a39455db77119b2",
+      "unpacked_bytes": 19641788
+    },
+    {
+      "name": "brick-douglas.zip",
+      "sha256": "ba017f1c4fc2f003924912a9099d18c94dd82401a2ad12881b7e7e158a4bc06b",
+      "unpacked_bytes": 243441621
+    },
+    {
+      "name": "amonet-douglas-return-to-stock.zip",
+      "sha256": "a9f8d3df1f42c1e135820024bd1020386bc6c2abd7c08a60fcdc17dc898dd370",
+      "unpacked_bytes": 9279513
+    }
+  ],
+  "staged_current_stock_assets": {
+    "current-stock-ota.bin": {
+      "bytes": 907705758,
+      "sha256": "6e70792b002d5274286a8cd7e66da4b80e748a545b3303ab466795548d00f9ab"
+    },
+    "current-stock-recovery.img": {
+      "bytes": 9299968,
+      "sha256": "4de74a18736f3652a96db33453b230b72b91a7dbbec7a4d046ee5c9408a167e2"
+    }
+  },
+  "preentry_tty_acm_count": 0,
+  "tablet_mode_changed": false,
+  "tablet_written": false,
+  "unlock_executed": false,
+  "experimental_kernel_booted": false,
+  "known_damage": false,
+  "remaining_immediate_action": "One-time lab admin sudo grant already requested; no repeat risk approval. Then reversible host modem/USB/serial preparation before approved full-stage route.",
+  "urgent_goal": "Working Android baseline for Connect and passkey QA, separate from maintained-kernel qualification",
+  "qa_abi_requirement": "Selected current donor Lineage18.1 source is ARM32; current Connect CI is ARM64-only. Match APK/ROM ABI before QA installation; Android9+ and actual credential-provider/browser/deep-link/user-verification tests required."
+}

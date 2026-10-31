@@ -1,88 +1,80 @@
-# Beta delivery roadmap
+# ValethonOS delivery roadmap
 
-The milestone **Beta 1 — ready for owner QA** has no promised date. It is reached
-only when recovery, actual boot, essential hardware and the QA admission review
-pass on an exact candidate. We are currently before the first qualified physical
-loading gate. Generic compilation and completed source audits are supporting evidence.
+Use the [live board](https://github.com/users/TOVSWORLD/projects/4) for current state,
+[ordered acceptance contract](../development/ORDERED-ROADMAP.md) for execution rules,
+and [current queue](../development/ACTIVE-WORK-QUEUE.md) for the selected task.
 
-## Live delivery hierarchy
+Android11 upstream lab boot is measured; final ValethonOS platform is not yet admitted.
+Stable supported updates, security/stability, branded identity and recovery precede
+Connect/passkey/feature QA. Branding preserves truthful upstream/security attribution.
 
-- [[Epic] FireTabs Android — beta platform for QA](https://github.com/TOVSWORLD/Firetab-Android/issues/2)
-  - [[Feature] Recoverable diagnostic loading and real boot logs](https://github.com/TOVSWORLD/Firetab-Android/issues/327)
-    - [[Phase 1] Qualify recovery entry, stock return and capture](https://github.com/TOVSWORLD/Firetab-Android/issues/106)
-    - [[Phase 1b] Qualify owner recovery procedure and capture on exact board](https://github.com/TOVSWORLD/Firetab-Android/issues/344)
-      - [[Task] Source-qualify exact-generation inspection and isolation proposal](https://github.com/TOVSWORLD/Firetab-Android/issues/345)
-      - [[Task] Qualify wiped-test-unit stock return and failure recovery](https://github.com/TOVSWORLD/Firetab-Android/issues/346)
-      - [[Task] Qualify current-device entry and bounded return path](https://github.com/TOVSWORLD/Firetab-Android/issues/347)
-      - [[Task] Demonstrate real boot-log capture and retrieval](https://github.com/TOVSWORLD/Firetab-Android/issues/348)
-  - [[Feature] Maintained-kernel douglas board enablement](https://github.com/TOVSWORLD/Firetab-Android/issues/4)
-    - [[Phase 2] Integrate and validate core board providers](https://github.com/TOVSWORLD/Firetab-Android/issues/328)
-      - [[Task] Clock/reset providers](https://github.com/TOVSWORLD/Firetab-Android/issues/18)
-      - [[Task] Pinctrl and EINT](https://github.com/TOVSWORLD/Firetab-Android/issues/19)
-      - [[Task] PMIC wrapper and power domains](https://github.com/TOVSWORLD/Firetab-Android/issues/20)
-      - [[Task] Matched full DT binding validation](https://github.com/TOVSWORLD/Firetab-Android/issues/27)
-      - [[Task] Resolve HDMI clock dependency relevance and parents](https://github.com/TOVSWORLD/Firetab-Android/issues/29)
-    - [[Phase 3] Boot with memory, UART and storage evidence](https://github.com/TOVSWORLD/Firetab-Android/issues/21)
-      - [[Task] Validate UART/MMC diagnostic integration](https://github.com/TOVSWORLD/Firetab-Android/issues/22)
-    - [[Phase 4] Make display and input usable](https://github.com/TOVSWORLD/Firetab-Android/issues/23)
-      - [[Task] Panel and backlight bring-up](https://github.com/TOVSWORLD/Firetab-Android/issues/329)
-      - [[Task] Touch and input integration](https://github.com/TOVSWORLD/Firetab-Android/issues/330)
-      - [[Task] Android graphics composition](https://github.com/TOVSWORLD/Firetab-Android/issues/331)
-  - [[Feature] Reproducible Android platform and essential hardware](https://github.com/TOVSWORLD/Firetab-Android/issues/332)
-    - [[Phase 5] Build integrated Android userspace and kernel](https://github.com/TOVSWORLD/Firetab-Android/issues/24)
-      - [[Task] Reproduce complete Android candidate build](https://github.com/TOVSWORLD/Firetab-Android/issues/333)
-    - [[Phase 6] Essential hardware and reliability smoke](https://github.com/TOVSWORLD/Firetab-Android/issues/25)
-      - [[Task] Connectivity and audio smoke](https://github.com/TOVSWORLD/Firetab-Android/issues/334)
-      - [[Task] Power, charging and suspend smoke](https://github.com/TOVSWORLD/Firetab-Android/issues/335)
-      - [[Task] Storage and peripheral smoke](https://github.com/TOVSWORLD/Firetab-Android/issues/336)
-  - [[Feature] Beta QA admission and reproducible handoff](https://github.com/TOVSWORLD/Firetab-Android/issues/337)
-    - [[Phase 7] Admit beta candidate to owner QA](https://github.com/TOVSWORLD/Firetab-Android/issues/338)
-      - [[Task] Define beta QA matrix and defect severity](https://github.com/TOVSWORLD/Firetab-Android/issues/339)
-      - [[Task] Assemble exact beta package and recovery handoff](https://github.com/TOVSWORLD/Firetab-Android/issues/340)
-      - [[Task] Review beta admission evidence](https://github.com/TOVSWORLD/Firetab-Android/issues/341)
-  - [[Feature] Delivery traceability and release governance](https://github.com/TOVSWORLD/Firetab-Android/issues/8)
-    - [[Phase] Enforce issue-linked delivery workflow](https://github.com/TOVSWORLD/Firetab-Android/issues/342)
-      - [[Task] Enforce PR issue linkage and publish beta delivery map](https://github.com/TOVSWORLD/Firetab-Android/issues/343)
-    - [[Phase] Resolve beta licensing and distribution prerequisites](https://github.com/TOVSWORLD/Firetab-Android/issues/352)
-      - [[Task] Record owner first-party license decision](https://github.com/TOVSWORLD/Firetab-Android/issues/353)
-      - [[Task] Review beta artifact redistribution and source obligations](https://github.com/TOVSWORLD/Firetab-Android/issues/354)
-- [[Epic] Crestron Panel — supported client beta for QA](https://github.com/TOVSWORLD/Firetab-Android/issues/3)
-  - [[Feature] Supported Crestron client qualification](https://github.com/TOVSWORLD/Firetab-Android/issues/6)
-    - [[Phase] Prepare supported-client QA qualification](https://github.com/TOVSWORLD/Firetab-Android/issues/7)
-      - [[Task] Resolve supported client and processor prerequisites](https://github.com/TOVSWORLD/Firetab-Android/issues/349)
-      - [[Task] Execute authorized supported-client QA matrix](https://github.com/TOVSWORLD/Firetab-Android/issues/350)
+## Native Epic → Feature → Phase → Task hierarchy
 
-## Execution order and beta exit
+- [Epic #2 — ValethonOS for Android — stable public OS release](https://github.com/TOVSWORLD/ValethonOS-Android/issues/2) · order 0
+  - [Feature #8 — Delivery traceability and release governance](https://github.com/TOVSWORLD/ValethonOS-Android/issues/8) · order 0.2
+    - [Phase #437 — Ordered roadmap and issue-to-PR execution control](https://github.com/TOVSWORLD/ValethonOS-Android/issues/437) · order 0.5
+      - [Task #438 — Ordered roadmap and issue-to-PR workflow](https://github.com/TOVSWORLD/ValethonOS-Android/issues/438) · order 1
+    - [Phase #352 — Licensing and distribution prerequisites](https://github.com/TOVSWORLD/ValethonOS-Android/issues/352) · order 409
+      - [Task #353 — Owner first-party license decision](https://github.com/TOVSWORLD/ValethonOS-Android/issues/353) · order 410
+      - [Task #354 — Distribution and source obligations](https://github.com/TOVSWORLD/ValethonOS-Android/issues/354) · order 420
+  - [Feature #327 — Recoverable diagnostic loading and real boot logs](https://github.com/TOVSWORLD/ValethonOS-Android/issues/327) · order 9
+    - [Phase #344 — Phase 1 — Operational diagnostic entry, return and logs](https://github.com/TOVSWORLD/ValethonOS-Android/issues/344) · order 9.5
+      - [Task #439 — First-boot entry and go/no-go decision](https://github.com/TOVSWORLD/ValethonOS-Android/issues/439) · order 10
+      - [Task #345 — Conditional board-inspection proposal](https://github.com/TOVSWORLD/ValethonOS-Android/issues/345) · order 15
+      - [Task #347 — Qualified current-device entry and bounded trial](https://github.com/TOVSWORLD/ValethonOS-Android/issues/347) · order 20
+      - [Task #346 — Independent stock return and failed-load recovery](https://github.com/TOVSWORLD/ValethonOS-Android/issues/346) · order 30
+      - [Task #348 — Usable retained diagnostic boot logs](https://github.com/TOVSWORLD/ValethonOS-Android/issues/348) · order 40
+    - [Phase #106 — Historical entry investigation — runtime exit still open](https://github.com/TOVSWORLD/ValethonOS-Android/issues/106) · order 970
+  - [Feature #4 — Maintained-kernel douglas board enablement](https://github.com/TOVSWORLD/ValethonOS-Android/issues/4) · order 49
+    - [Phase #21 — Phase 2 — Diagnostic memory, UART and internal storage](https://github.com/TOVSWORLD/ValethonOS-Android/issues/21) · order 49.5
+      - [Task #22 — Diagnostic memory/UART and internal storage](https://github.com/TOVSWORLD/ValethonOS-Android/issues/22) · order 50
+    - [Phase #328 — Phase 3 — Core board provider qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/328) · order 59
+      - [Task #440 — Finish already-open PWM source PR436](https://github.com/TOVSWORLD/ValethonOS-Android/issues/440) · order 5
+      - [Task #18 — Clock/reset provider qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/18) · order 60
+      - [Task #19 — Pinctrl and EINT qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/19) · order 70
+      - [Task #20 — PMIC wrapper and power-domain qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/20) · order 80
+  - [Feature #332 — Reproducible Android platform and essential hardware](https://github.com/TOVSWORLD/ValethonOS-Android/issues/332) · order 99
+    - [Phase #23 — Phase 4 — Display, touch and graphics](https://github.com/TOVSWORLD/ValethonOS-Android/issues/23) · order 99.5
+      - [Task #329 — Display and backlight](https://github.com/TOVSWORLD/ValethonOS-Android/issues/329) · order 100
+      - [Task #330 — Touch and input](https://github.com/TOVSWORLD/ValethonOS-Android/issues/330) · order 110
+      - [Task #331 — GPU and Android graphics composition](https://github.com/TOVSWORLD/ValethonOS-Android/issues/331) · order 120
+    - [Phase #24 — Phase 5 — Integrated Android candidate](https://github.com/TOVSWORLD/ValethonOS-Android/issues/24) · order 199
+      - [Task #333 — Reproducible integrated Android candidate](https://github.com/TOVSWORLD/ValethonOS-Android/issues/333) · order 200
+    - [Phase #25 — Phase 6 — Essential hardware and remaining peripherals](https://github.com/TOVSWORLD/ValethonOS-Android/issues/25) · order 299
+      - [Task #334 — Wi-Fi integration and reconnect qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/334) · order 300
+      - [Task #442 — Audio playback and recording](https://github.com/TOVSWORLD/ValethonOS-Android/issues/442) · order 310
+      - [Task #335 — Charging, battery and thermal qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/335) · order 320
+      - [Task #443 — Suspend and wake](https://github.com/TOVSWORLD/ValethonOS-Android/issues/443) · order 330
+      - [Task #336 — USB transport and integrity](https://github.com/TOVSWORLD/ValethonOS-Android/issues/336) · order 340
+      - [Task #444 — SD integrity and hotplug](https://github.com/TOVSWORLD/ValethonOS-Android/issues/444) · order 350
+      - [Task #446 — Video decode and playback](https://github.com/TOVSWORLD/ValethonOS-Android/issues/446) · order 360
+      - [Task #441 — Bluetooth integration and qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/441) · order 370
+      - [Task #445 — Sensors integration and qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/445) · order 380
+      - [Task #447 — Front/rear camera qualification](https://github.com/TOVSWORLD/ValethonOS-Android/issues/447) · order 390
+  - [Feature #337 — Beta QA admission and reproducible handoff](https://github.com/TOVSWORLD/ValethonOS-Android/issues/337) · order 399
+    - [Phase #338 — Phase 7 — Candidate validation, packaging and QA admission](https://github.com/TOVSWORLD/ValethonOS-Android/issues/338) · order 399.5
+      - [Task #27 — Final candidate DT binding and dependency validation](https://github.com/TOVSWORLD/ValethonOS-Android/issues/27) · order 400
+      - [Task #340 — Exact beta package and recovery handoff](https://github.com/TOVSWORLD/ValethonOS-Android/issues/340) · order 500
+      - [Task #341 — Beta admission review](https://github.com/TOVSWORLD/ValethonOS-Android/issues/341) · order 510
 
-Recovery source qualification and the owner procedure/capture phase are first.
-Core-provider source/build tasks and the QA matrix can proceed independently,
-but physical boot/storage testing waits for qualified entry, restore and logs.
-Display/input follows boot/providers; complete Android integration follows the
-resolved platform/ABI contract; essential hardware smoke precedes beta admission.
+## Following delivery
 
-Beta admission requires reproducible candidate hashes and build instructions,
-owner-reviewed recovery/test procedures, real boot and essential hardware results,
-security/license/provenance review, triaged known limitations, zero critical
-recovery/data-loss/safety defects and a complete QA handoff. The admission task
-must explicitly accept or reject evidence; it is not passed by a green host CI run.
+Only the earliest admitted implementation Task is Active. Parents are rollups,
+not parallel implementation. Open the Task for numbered Work sequence and exact
+Acceptance/done gate; follow its Primary PR for the implementation/evidence.
+Status and Delivery state agree. Latest result reports measured facts, Next action
+the executable step, and Blocker its actual predecessor or missing evidence.
 
-The Crestron epic has separate supported-client and processor QA acceptance.
-Native panel parity remains unproven and outside Android beta admission.
+Completed scopes remain visible. There are14 ordered hardware groups; their count
+is not a completion percentage. Historical source audits do not replace device gates.
+No blocked-task hopping or one-issue-per-run workflow. Main accepts development releases.
 
-## Board and working rules
+Public release requirements are integrated in#333 (platform/branding),#354
+(distribution/source/notices),#340 (package/recovery/update handoff),#341 (QA admission).
+The interim LineageOS build is not the finished ValethonOS release.
 
-Use native Parent issue plus Level and Delivery state on the
-[Android board](https://github.com/users/TOVSWORLD/projects/4) and
-[Crestron board](https://github.com/users/TOVSWORLD/projects/5). Closed historical
-cards are archived from active delivery views; their issues/receipts are preserved.
-Current labels/statuses and dependencies live on issues; this checked-in map is
-the baseline, not an automatically asserted runtime progress report.
+Crestron remains a separate optional workload on the [Crestron board](https://github.com/users/TOVSWORLD/projects/5)
+and [Epic3](https://github.com/TOVSWORLD/ValethonOS-Android/issues/3); it does not replace Android platform acceptance.
 
-Every PR updates or closes a real issue. Follow the
-[delivery workflow](DELIVERY-WORKFLOW.md). Do not create one micro-issue per run.
-A blocked task records its exact missing input and moves out of the active lane.
-Hardware planning is acceptable; no specific tablet action is authorized by this
-roadmap. Main remains development-to-main releases only.
-
-The [Beta QA matrix](../development/BETA-QA-MATRIX.md) separates mandatory
-admission smoke from the later QA campaign; every runtime case starts NOT RUN.
+[Delivery workflow](DELIVERY-WORKFLOW.md) and [QA matrix](../development/BETA-QA-MATRIX.md)
+define evidence and admission rules. No roadmap sentence grants new device permissions.

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "project_url": "https://github.com/users/TOVSWORLD/projects/4",
-  "repository": "TOVSWORLD/Firetab-Android",
-  "owner_priority": "First recoverable diagnostic boot with useful logs, then ordered hardware integration; no peripheral off-ramps while entry is blocked.",
+  "repository": "TOVSWORLD/ValethonOS-Android",
+  "owner_priority": "Deliver a stable, supported and fully updated public OS release with its own project branding, recoverable installation and measured hardware/security acceptance. Connect and feature QA follow platform release readiness; no app QA on the interim donor ROM.",
   "pr_contract": {
     "primary_task_issue_required": true,
     "one_primary_issue_per_pr": true,
@@ -79,7 +79,7 @@
       "issue": 345,
       "order": 15,
       "parent": 344,
-      "name": "Conditional board-inspection proposal",
+      "name": "Board inspection \u2014 not needed for selected software route",
       "depends_on": [
         439
       ],
@@ -95,7 +95,9 @@
       "conditions": [
         "Only selected if the admission decision makes this a necessary prerequisite; not an unrelated task bypass."
       ],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "disposition": "not_planned",
+      "disposition_reason": "Case-closed approved software route reached TWRP and Android11 without opening or a short; conditional inspection branch not selected. No physical-inspection pass claimed."
     },
     {
       "issue": 347,
@@ -139,13 +141,14 @@
       "kind": "qualification",
       "hardware_group": null,
       "conditions": [],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "closed_issue_evidence_boundary": "Issue is closed completed and board Done. Ordinary stock return is observed; closure alone does not qualify failed-experiment return. Remaining phase344/release failure-return acceptance stays explicit until tested."
     },
     {
       "issue": 348,
       "order": 40,
       "parent": 344,
-      "name": "Usable retained diagnostic boot logs",
+      "name": "Failed-boot log retention \u2014 normal log capture complete",
       "depends_on": [
         346
       ],
@@ -159,7 +162,9 @@
       "kind": "qualification",
       "hardware_group": null,
       "conditions": [],
-      "existing_work_exception": false
+      "existing_work_exception": false,
+      "completed_milestone": "TWRP recovery log22493B/current kernel log130931B retrieved in PR452; see approved-lab-entry/runtime-result.json. Prior320KiB stock export is separate.",
+      "remaining_acceptance": "Fresh attributable failed-experiment log retention and retrieval remain unqualified; do not repeat normal capture as unfinished work."
     },
     {
       "issue": 22,
@@ -310,13 +315,16 @@
       "depends_on": [
         331
       ],
-      "goal": "Build and boot a coherent Android userspace/kernel candidate.",
+      "goal": "Build and boot a stable, supported, updated and reproducible Android platform with the ValethonOS identity.",
       "steps": [
+        "Select the supported Android/upstream release target and pin actual security patch/component versions and reproducible update/maintenance path; do not equate a new build date with current security fixes.",
         "Pin complete source/ABI/Binder/config/firmware/HAL/package inputs and licensing needs.",
         "Reproduce the integrated candidate and artifact manifest.",
-        "Boot through setup/home UI with SELinux enforcing and approved security configuration; exercise settings/app lifecycle."
+        "Boot through setup/home UI with SELinux enforcing and approved security configuration; exercise settings/app lifecycle.",
+        "Implement ValethonOS branding in boot animation, setup identity, wallpaper, launcher defaults and About/build information; preserve upstream attribution, license notices and accurate Android/security-patch fields.",
+        "Validate repeated normal boot, settings/app lifecycle and release stability using exact candidate evidence; resolve encryption/device-policy and enforcing-security requirements before claiming readiness."
       ],
-      "acceptance": "Exact reproducible Android candidate boots to usable UI with enforcing security and matching artifacts/logs; kernel entry alone fails.",
+      "acceptance": "Exact reproducible supported/updated Android candidate boots to usable UI, passes recorded stability and enforcing-security requirements, has a verified update path and ValethonOS branding with accurate upstream/security attribution. Interim LineageOS18.1 boot or branding alone does not pass; Connect/feature QA remains deferred.",
       "kind": "integration",
       "hardware_group": null,
       "conditions": [],
@@ -573,7 +581,8 @@
       "steps": [
         "Inventory kernel/Android/firmware/HAL/app components and licenses.",
         "Verify source notices/provisioning/redistribution restrictions and GMS/package feasibility.",
-        "Remove or hold artifacts lacking permission; record the supported distribution scope."
+        "Remove or hold artifacts lacking permission; record the supported distribution scope.",
+        "Verify project branding and retained upstream notices against the exact public artifact/source set; distinguish first-party identity from bundled upstream and proprietary components."
       ],
       "acceptance": "The exact deliverable has a documented lawful distribution/source-notice plan; unresolved paid/proprietary access is not silently assumed.",
       "kind": "release",
@@ -593,9 +602,10 @@
       "steps": [
         "Pin all artifact/config/source hashes, device support, known defects and limitations.",
         "Include reviewed installation/return/recovery/log instructions with exact risk/approval boundaries.",
-        "Check all mandatory roadmap gates and actual results against the beta matrix."
+        "Check all mandatory roadmap gates and actual results against the beta matrix.",
+        "Package the stable updated ValethonOS-branded OS with version/security-patch/update-channel information, source/notices and known limitations; distinguish it from the interim LineageOS lab baseline."
       ],
-      "acceptance": "Exact coherent beta package and recoverable handoff are reviewable; generic Image or source-only receipts do not pass.",
+      "acceptance": "Exact coherent beta package and recoverable handoff are reviewable; generic Image or source-only receipts do not pass. Public handoff includes truthful project branding, exact supported version/security patch and a tested update path; unsupported or unresolved mandatory security gates remain unpassed.",
       "kind": "release",
       "hardware_group": null,
       "conditions": [],
@@ -613,9 +623,10 @@
       "steps": [
         "Review exact package and the A01\u2013A07 admission matrix.",
         "Confirm no unresolved critical recovery, data-loss, thermal or security failure.",
-        "Record Go/No-go and the supported/unsupported list; never close an untested runtime gate."
+        "Record Go/No-go and the supported/unsupported list; never close an untested runtime gate.",
+        "Confirm stable, updated platform release readiness before admitting Connect, passkey or other feature QA; do not install app QA candidates merely because the interim ROM boots."
       ],
-      "acceptance": "Owner QA admission is based on measured candidate evidence and an approved handoff, not task/PR counts.",
+      "acceptance": "Owner QA admission is based on measured candidate evidence and an approved handoff, not task/PR counts. Connect and feature QA start only after the stable updated platform release meets the recorded platform admission gates.",
       "kind": "release",
       "hardware_group": null,
       "conditions": [],
@@ -628,7 +639,7 @@
       "parent": null,
       "level": "Epic",
       "order": 0,
-      "name": "FireTabs Android \u2014 beta platform for QA",
+      "name": "ValethonOS for Android \u2014 stable public OS release",
       "state": "Active"
     },
     {
@@ -765,5 +776,43 @@
     343
   ],
   "first_critical_path_issue": 439,
-  "selection_source": "Live GitHub issue/project state and explicit outcome gates; never infer readiness from this static plan alone."
+  "selection_source": "Live GitHub issue/project state and explicit outcome gates; never infer readiness from this static plan alone.",
+  "release_requirements": {
+    "owner_correction_date": "2026-10-30",
+    "interim_baseline": "Existing LineageOS18.1 Android11 build is an installed hardware/entry baseline, not the finished project OS.",
+    "platform_before_app_qa": true,
+    "up_to_date_definition": "Select and record the supported Android/upstream target, actual security patch level, component versions and reproducible update path. A recent build date alone is not evidence of current security maintenance.",
+    "branding_owner_issue": 333,
+    "branding_surfaces": [
+      "boot animation",
+      "setup identity",
+      "wallpaper",
+      "launcher defaults",
+      "About and build information"
+    ],
+    "branding_constraints": "Use the ValethonOS identity with owner-approved names/assets; preserve upstream attribution/license notices and truthful Android/security-patch information. Branding alone does not satisfy platform acceptance.",
+    "public_handoff_issue": 340,
+    "qa_admission_issue": 341,
+    "connect_and_passkey_qa": "Deferred until the stable updated platform release and exact QA admission gates pass."
+  },
+  "project_identity": {
+    "os_brand": "ValethonOS",
+    "project_name": "ValethonOS for Android",
+    "former_project_name": "FireTabs Android",
+    "repository_name": "ValethonOS-Android",
+    "owner_approved_rename_date": "2026-10-30"
+  },
+  "phase_progress_presentation": {
+    "view": "Phase gates \u2014 progress and next steps",
+    "view_url": "https://github.com/users/TOVSWORLD/projects/4/views/2",
+    "visible_summary": [
+      "Latest result: measured milestones already achieved",
+      "Current work: active task/PR or clearly queued/history/complete",
+      "Next action: specific next operation or handoff",
+      "Blocker: actual remaining dependency, not resolved approval/host waits",
+      "Acceptance gate: concrete phase exit"
+    ],
+    "completed_scopes_visible_in_all_gates_view": true,
+    "child_counts_are_not_phase_acceptance": true
+  }
 }

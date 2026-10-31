@@ -1,4 +1,4 @@
-# Contributing to Firetab Android
+# Contributing to ValethonOS for Android
 
 Welcome. The purpose is to maintain useful general-purpose Android on existing Fire
 hardware, with a separate optional Crestron panel load. Research, driver work, tests,
@@ -22,8 +22,8 @@ A public repository alone does not license its contents.
 ## Get a checkout and run checks
 
 ```sh
-git clone https://github.com/TOVSWORLD/Firetab-Android.git
-cd Firetab-Android
+git clone https://github.com/TOVSWORLD/ValethonOS-Android.git
+cd ValethonOS-Android
 git switch development
 git switch -c fix/descriptive-name
 python3 scripts/ci.py repository

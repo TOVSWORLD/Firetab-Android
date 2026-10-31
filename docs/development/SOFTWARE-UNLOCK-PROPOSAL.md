@@ -1,6 +1,10 @@
 # Douglas software-unlock proposal for owner review — #439
 
-29 October2026. **Prepared for review; execution is not authorized.** The selected
+29 October2026. **Owner approved the reviewed attempt and destructive lab work.**
+The dedicated lab Linux/x86-64 host is now connected and original/stock assets
+are staged. Execution#347 awaits the authorized host sudo/service/serial setup;
+the earlier approval hold below is historical and must not trigger a repeat
+permission request. No tablet mutation has yet occurred. The selected
 candidate is the original case-closed external-brick → **full** BootROM → hacked
 fastboot → TWRP sequence. This is persistent boot-chain modification, not a RAM-only
 kernel trial. Opening is not a planned step. If it fails, software-only rescue is
@@ -122,14 +126,15 @@ boundary; no automatic retry, fallback downgrade, guessed electrical action or
 new command improvisation. Existing helpers are not shown to provide transactional
 rollback or a universal abort. No invented temperature/current threshold applies.
 
-## Decision to record
+## Original decision request (now approved)
 
 **Approve or reject the persistent software-unlock attempt above, accepting data
 wipe, boot-chain/RPMB changes, uncertain5.7.1.0 applicability and the possibility
 that failure leaves no software-only rescue.** It would be an attended trial on a
 prepared Linux/x86-64 host; no tablet opening or electrical action is included.
 
-Until explicit approval and host preparation, disposition is **HOLD—no execution**.
+Owner approval is now recorded. Until host admin/service/serial preparation is
+complete, disposition remains **HOLD—no execution**.
 If the owner requires guaranteed case-closed recovery, this candidate cannot meet
 that requirement from current evidence. State that tradeoff plainly rather than
 claiming opening is required or returning to peripheral work. Approval may select
