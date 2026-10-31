@@ -1,0 +1,71 @@
+{
+  "observed_utc": "2026-10-31T00:23:20Z",
+  "adb_states": [
+    "device"
+  ],
+  "properties": {
+    "sys.boot_completed": "1",
+    "ro.product.device": "douglas",
+    "ro.build.version.release": "11",
+    "ro.build.version.sdk": "30",
+    "ro.product.cpu.abi": "armeabi-v7a",
+    "ro.product.cpu.abilist": "armeabi-v7a,armeabi",
+    "ro.lineage.version": "18.1-20261026-UNOFFICIAL-douglas",
+    "ro.build.version.security_patch": "2024-02-05",
+    "ro.crypto.state": "unsupported",
+    "ro.crypto.type": "",
+    "ro.secure": "1",
+    "ro.debuggable": "1"
+  },
+  "selinux": "Permissive",
+  "setup_complete": "1",
+  "provisioned": "1",
+  "packages": {
+    "com.google.android.gms": [
+      "primaryCpuAbi=armeabi-v7a",
+      "secondaryCpuAbi=null",
+      "versionCode=204516042 minSdk=30 targetSdk=30",
+      "versionName=20.45.16 (150300-344294571)"
+    ],
+    "com.android.vending": [
+      "primaryCpuAbi=armeabi-v7a",
+      "secondaryCpuAbi=null",
+      "versionCode=85381120 minSdk=29 targetSdk=37",
+      "versionName=53.8.11-29 [0] [PR] 1005778592",
+      "primaryCpuAbi=armeabi-v7a",
+      "secondaryCpuAbi=null",
+      "versionCode=82043300 minSdk=16 targetSdk=29",
+      "versionName=20.4.33-all [0] [PR] 319051143"
+    ],
+    "com.google.android.gsf": [
+      "primaryCpuAbi=armeabi-v7a",
+      "secondaryCpuAbi=null",
+      "versionCode=30 minSdk=30 targetSdk=30",
+      "versionName=11"
+    ],
+    "com.android.chrome": [],
+    "org.lineageos.jelly": [
+      "primaryCpuAbi=null",
+      "secondaryCpuAbi=null",
+      "versionCode=30 minSdk=30 targetSdk=30",
+      "versionName=11"
+    ],
+    "com.android.webview": [
+      "primaryCpuAbi=armeabi-v7a",
+      "secondaryCpuAbi=null",
+      "versionCode=768015300 minSdk=29 targetSdk=36",
+      "versionName=146.0.7680.153"
+    ],
+    "com.google.android.webview": []
+  },
+  "browser_activity": "priority=0 preferredOrder=0 match=0x208000 specificIndex=-1 isDefault=true\norg.lineageos.jelly/.MainActivity",
+  "issue": 347,
+  "primary_pr": 452,
+  "owner_confirmed_home_screen": true,
+  "owner_reported_device_policy_enrollment_failed": true,
+  "account_data_read": false,
+  "connect_qa_passed": false,
+  "passkey_qa_passed": false,
+  "maintained_kernel_qualified": false,
+  "runtime_security_qualified": false
+}

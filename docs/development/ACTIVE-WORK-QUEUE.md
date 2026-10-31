@@ -27,10 +27,16 @@ The board is the source of live state. Do not resume historical peripheral queue
   are complete; do not resurrect those resolved blockers or repeat approval.
 - **Android11 ROM and ARM Google services are now installed**, with actual
   updater RC0 and recovery-menu return for both. Read-only system inspection
-  confirms API30/ARMv7. First Android boot has been requested; completion and
-  app/provider QA remain unmeasured. The GApps installer has a tested local ABI
+  confirms API30/ARMv7. First Android boot and initial setup are now
+  confirmed by owner home-screen observation and authorized ADB boot_completed=1.
+  Android runtime reports encryption unsupported and SELinux Permissive; owner
+  reports device-policy enrollment failure. No policy/security bypass was applied.
+  App/provider QA remains unmeasured. The GApps installer has a tested local ABI
   compatibility correction; unchanged app payloads and exact receipts are in
   [qa-install-result.json](../../evidence/approved-lab-entry/qa-install-result.json).
+  [Runtime receipt](../../evidence/approved-lab-entry/android-runtime-result.json)
+  records installed package/browser/security facts. Google Play services20.45 and
+  no Chrome are current prerequisites to resolve before passkey/browser acceptance.
   Do not repeat unlock, wipes, installations or first-boot request.
 - **Urgent milestone: usable Android lab QA for Connect and passkeys.** Use the
   existing working ROM path before completing the maintained kernel. A donor-ROM

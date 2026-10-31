@@ -3904,3 +3904,22 @@ and menu return. Exact receipts in approved-lab-entry/qa-install-result.json.
 completion/provider/browser/Connect/passkey QA still pending. No maintained-kernel,
 failed-load stock return or retained-failure-log admission inferred. Preserve
 rollback assets until no longer needed and delete temporary installers afterward.
+
+## 2026-10-30 — #347 Android home screen and authorized runtime
+
+Owner completed setup using their own Google account and confirmed home screen;
+reported device-policy enrollment failed because device cannot be encrypted.
+Authorized ADB now reports device transport, sys.boot_completed=1, setup_complete=1
+and provisioned=1. Android11/API30/ARMv7 Lineage18.1-20261026 confirmed.
+Runtime ro.crypto.state=unsupported, crypto.type empty, SELinux Permissive,
+security patch2024-02-05, ro.secure1/ro.debuggable1. These are actual donor-ROM
+limits, not policy bypasses or maintained-kernel qualification. No account data,
+PIN, credentials or user content read.
+
+Allowlisted package versions: GMS20.45.16, PlayStore53.8.11 updated package plus
+20.4.33 system baseline, GSF11, AOSPWebView146.0.7680.153, Jelly11 defaultbrowser;
+Chrome absent. Browser/provider/passkey ceremonies and matchingARMv7 ConnectAPK
+remain unmeasured. Official Android CredentialManager documentation confirms
+API28+ minimum for passkeys; API30 alone is not actual provider acceptance.
+Public sanitized receipt android-runtime-result.json. Owner physical steps must
+be batched to avoid repeated trips between rooms.
