@@ -12,7 +12,7 @@ independent work can start; Blocked names missing evidence/dependencies; Active
 means work is actually executing; Ready for QA requires beta admission evidence;
 Done requires the issue's acceptance. GitHub's closed state for an audit means only
 that audit completed. It never passes a parent's hardware/runtime gate. Completed
-historical evidence can be archived on the board without deleting its issue.
+scopes remain visible in the default delivery view, with their issues and evidence.
 
 Every PR needs a standalone `Updates #123` (or `Refs #123`) for partial progress,
 or `Closes #123` / `Fixes #123` / `Resolves #123` when all issue acceptance is met.
@@ -44,3 +44,10 @@ estimates support one. Replan the phase dependencies when evidence changes rathe
 than generating more completed micro-issues. The current critical path starts with
 qualified recovery and capture; source-only board/build and QA-plan work can proceed
 where their task acceptance does not depend on a physical test.
+
+## ValethonOS release gate
+
+Current ordering and exact acceptance are in the [ordered roadmap](../development/ORDERED-ROADMAP.md).
+Stable updated ValethonOS platform readiness precedes Connect/feature QA. Branding
+is integrated under#333, public source/notices under#354, exact release handoff
+under#340 and QA admission under#341. Do not revive the old parallel-source workflow.

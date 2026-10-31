@@ -3,12 +3,12 @@
   "contact_links": [
     {
       "name": "Report a vulnerability privately",
-      "url": "https://github.com/TOVSWORLD/Firetab-Android/security/advisories/new",
+      "url": "https://github.com/TOVSWORLD/ValethonOS-Android/security/advisories/new",
       "about": "Do not disclose security reports or credentials in public issues."
     },
     {
       "name": "Contribution and support guidance",
-      "url": "https://github.com/TOVSWORLD/Firetab-Android/blob/development/CONTRIBUTING.md",
+      "url": "https://github.com/TOVSWORLD/ValethonOS-Android/blob/development/CONTRIBUTING.md",
       "about": "Read before opening a contribution or support issue."
     }
   ]

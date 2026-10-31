@@ -1,4 +1,4 @@
-# Ordered FireTabs delivery roadmap
+# Ordered ValethonOS delivery roadmap
 
 Owner correction,29 October2026. The objective is a recoverable diagnostic boot
 with useful logs, followed by a coherent Android beta. Source/PR/test counts are

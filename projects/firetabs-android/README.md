@@ -1,8 +1,11 @@
-# FireTabs Android
+# ValethonOS for Android
 
 Maintain general-purpose Fire tablets with current Android releases and a maintained,
 release-appropriate Android kernel. Initial device: Fire HD 8 (2017), douglas/KFDOWI,
-16 GB. Initial target: Android 17. No current-kernel build or boot has been demonstrated.
+16 GB. The maintained-platform target and update/security strategy are qualified under
+issue333. Source/build evidence exists; maintained-kernel device boot is not qualified.
+The installed LineageOS18.1 Android11 is an interim hardware/entry baseline, not the
+finished ValethonOS release. See the current ordered roadmap and live board.
 
 Crestron is an optional workload; this project's acceptance includes ordinary Android
 apps, supported browsers, graphics, audio, video, networking, storage, power management,

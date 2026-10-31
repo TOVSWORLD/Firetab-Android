@@ -1,7 +1,7 @@
 {
   "version": 1,
   "project_url": "https://github.com/users/TOVSWORLD/projects/4",
-  "repository": "TOVSWORLD/Firetab-Android",
+  "repository": "TOVSWORLD/ValethonOS-Android",
   "owner_priority": "Deliver a stable, supported and fully updated public OS release with its own project branding, recoverable installation and measured hardware/security acceptance. Connect and feature QA follow platform release readiness; no app QA on the interim donor ROM.",
   "pr_contract": {
     "primary_task_issue_required": true,
@@ -310,16 +310,16 @@
       "depends_on": [
         331
       ],
-      "goal": "Build and boot a stable, supported, updated and reproducible Android platform with the project OS identity.",
+      "goal": "Build and boot a stable, supported, updated and reproducible Android platform with the ValethonOS identity.",
       "steps": [
         "Select the supported Android/upstream release target and pin actual security patch/component versions and reproducible update/maintenance path; do not equate a new build date with current security fixes.",
         "Pin complete source/ABI/Binder/config/firmware/HAL/package inputs and licensing needs.",
         "Reproduce the integrated candidate and artifact manifest.",
         "Boot through setup/home UI with SELinux enforcing and approved security configuration; exercise settings/app lifecycle.",
-        "Implement project OS branding in boot animation, setup identity, wallpaper, launcher defaults and About/build information; preserve upstream attribution, license notices and accurate Android/security-patch fields.",
+        "Implement ValethonOS branding in boot animation, setup identity, wallpaper, launcher defaults and About/build information; preserve upstream attribution, license notices and accurate Android/security-patch fields.",
         "Validate repeated normal boot, settings/app lifecycle and release stability using exact candidate evidence; resolve encryption/device-policy and enforcing-security requirements before claiming readiness."
       ],
-      "acceptance": "Exact reproducible supported/updated Android candidate boots to usable UI, passes recorded stability and enforcing-security requirements, has a verified update path and project OS branding with accurate upstream/security attribution. Interim LineageOS18.1 boot or branding alone does not pass; Connect/feature QA remains deferred.",
+      "acceptance": "Exact reproducible supported/updated Android candidate boots to usable UI, passes recorded stability and enforcing-security requirements, has a verified update path and ValethonOS branding with accurate upstream/security attribution. Interim LineageOS18.1 boot or branding alone does not pass; Connect/feature QA remains deferred.",
       "kind": "integration",
       "hardware_group": null,
       "conditions": [],
@@ -598,7 +598,7 @@
         "Pin all artifact/config/source hashes, device support, known defects and limitations.",
         "Include reviewed installation/return/recovery/log instructions with exact risk/approval boundaries.",
         "Check all mandatory roadmap gates and actual results against the beta matrix.",
-        "Package the stable updated project-branded OS with version/security-patch/update-channel information, source/notices and known limitations; distinguish it from the interim LineageOS lab baseline."
+        "Package the stable updated ValethonOS-branded OS with version/security-patch/update-channel information, source/notices and known limitations; distinguish it from the interim LineageOS lab baseline."
       ],
       "acceptance": "Exact coherent beta package and recoverable handoff are reviewable; generic Image or source-only receipts do not pass. Public handoff includes truthful project branding, exact supported version/security patch and a tested update path; unsupported or unresolved mandatory security gates remain unpassed.",
       "kind": "release",
@@ -634,7 +634,7 @@
       "parent": null,
       "level": "Epic",
       "order": 0,
-      "name": "FireTabs Android \u2014 beta platform for QA",
+      "name": "ValethonOS for Android \u2014 stable public OS release",
       "state": "Active"
     },
     {
@@ -785,9 +785,16 @@
       "launcher defaults",
       "About and build information"
     ],
-    "branding_constraints": "Use the project OS identity with owner-approved names/assets; preserve upstream attribution/license notices and truthful Android/security-patch information. Branding alone does not satisfy platform acceptance.",
+    "branding_constraints": "Use the ValethonOS identity with owner-approved names/assets; preserve upstream attribution/license notices and truthful Android/security-patch information. Branding alone does not satisfy platform acceptance.",
     "public_handoff_issue": 340,
     "qa_admission_issue": 341,
     "connect_and_passkey_qa": "Deferred until the stable updated platform release and exact QA admission gates pass."
+  },
+  "project_identity": {
+    "os_brand": "ValethonOS",
+    "project_name": "ValethonOS for Android",
+    "former_project_name": "FireTabs Android",
+    "repository_name": "ValethonOS-Android",
+    "owner_approved_rename_date": "2026-10-30"
   }
 }

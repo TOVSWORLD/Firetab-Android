@@ -1,19 +1,42 @@
-# Firetab Android
+# ValethonOS for Android
 
 Two projects share one source and evidence repository. Their linked GitHub Projects are
-[FireTabs Android](https://github.com/users/TOVSWORLD/projects/4) and
+[ValethonOS for Android](https://github.com/users/TOVSWORLD/projects/4) and
 [Crestron Panel](https://github.com/users/TOVSWORLD/projects/5).
 
 Project source and scope:
 
-- **[FireTabs Android](projects/firetabs-android/)** — maintained, general-purpose Android
+- **[ValethonOS for Android](projects/firetabs-android/)** — maintained, general-purpose Android
   loads with a current maintained kernel appropriate to each Android release.
 - **[Crestron Panel](projects/crestron-panel/)** — optional single-application panel modes,
   supported Crestron Android clients and separate native panel compatibility research.
 
-Initial hardware: Amazon Fire HD 8 (2017), douglas/KFDOWI, 16 GB, Fire OS 5.7.1.0.
-Initial platform target: Android 17. Status: research, static inspection and historical
-patch preparation only. No firmware has been compiled, booted, flashed or validated.
+## Current delivery
+
+OS brand: **ValethonOS**. This repository and the Android board are
+**ValethonOS for Android**, formerly FireTabs Android. Initial hardware is the
+Amazon Fire HD8(2017), douglas/KFDOWI. Existing engineering paths and scope labels
+retain their stable identifiers so source locks and reproducible commands keep working.
+
+The approved software route has reached TWRP and an interim LineageOS18.1 Android11
+home screen with authorized ADB. This is a working upstream lab baseline, not the
+finished ValethonOS public release. Its actual security patch is2024-02-05,
+encryption reports unsupported and SELinux is Permissive; these remain limitations.
+Maintained-kernel source builds exist, but actual maintained-kernel boot/hardware and
+independent failed-load return/retained-log gates are still unqualified.
+
+The owner requires a stable, supported, updated **ValethonOS** release before
+Connect, passkey or other feature QA. The integrated candidate includes own boot,
+setup, wallpaper, launcher and About identity while retaining upstream attribution,
+license notices and truthful Android/security-patch information. A new build date
+or new branding does not establish security maintenance or stability.
+
+Follow the [live delivery board](https://github.com/users/TOVSWORLD/projects/4),
+[current work queue](docs/development/ACTIVE-WORK-QUEUE.md), and
+[ordered roadmap](docs/development/ORDERED-ROADMAP.md). One Task is active at a time;
+Execution order, Primary PR, Latest result, Next action and Blocker show how to follow
+progress. Completed scopes stay visible. The exact upstream target/update strategy
+is selected and qualified under#333 before a public release claim.
 
 ## Start here
 

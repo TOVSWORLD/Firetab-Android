@@ -1,6 +1,6 @@
 changelog:
   categories:
-    - title: FireTabs Android
+    - title: ValethonOS for Android
       labels: ["project:firetabs-android"]
     - title: Crestron Panel
       labels: ["project:crestron-panel"]

@@ -3937,3 +3937,17 @@ admits app QA afterward. No new micro-issue/parallel active implementation creat
 #347 remains current entry acceptance; #346/#348 next in order. Existing donor-ROM
 encryption/Permissive/2024patch facts remain limitations, never renamed as passes.
 Project overview/current-delivery sections and visible board fields updated/read back.
+
+## 2026-10-30 — owner-approved ValethonOS project/repository identity
+
+Owner selected ValethonOS for Android and explicitly approved repository rename.
+GitHub repository is now TOVSWORLD/ValethonOS-Android; local origin updated.
+Project4/epic/current issues, repository description, current README/roadmaps,
+contribution/security links, issue-form display choices and release-category name
+use ValethonOS identity. Historical evidence/source locks, build paths, scope labels
+and CI check identifiers retain stable engineering IDs; no runtime asset rebrand
+is claimed. Actual OS branding implementation remains ordered#333 release work.
+Old project overview was stale pre-boot text; replaced with measured milestone,
+interim-vs-public distinction, current/next issues and instructions to follow fields.
+Large board mutation hit transient502; same requested values replayed in bounded
+batches and verified by readback. No gate/status/order/primaryPR was silently changed.

@@ -10,7 +10,7 @@ No current LTS support period is declared. See [support policy](docs/releases/SU
 
 ## Report privately
 
-Use [Report a vulnerability](https://github.com/TOVSWORLD/Firetab-Android/security/advisories/new).
+Use [Report a vulnerability](https://github.com/TOVSWORLD/ValethonOS-Android/security/advisories/new).
 Do not open a public exploit report or include secrets in an issue. Include affected
 commit/tag, device and component, reproducible steps, expected/actual behavior, impact,
 and a small sanitized demonstration. Do not attack another person's tablet, processor,
